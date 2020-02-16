@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ecoreBCModel" nsURI="platform:/resource/EcoreBCModel/model/ecoreBCModel.ecore"
+    nsPrefix="ecoreBCModel">
+  <eClassifiers xsi:type="ecore:EClass" name="IntermediateModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//IntermComponent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patternContainer" lowerBound="1"
+        eType="#//PatternContainer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
+        defaultValueLiteral="UNTITLED"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermComponent" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermAgent" eSuperTypes="#//IntermComponent #//Bindable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sites" upperBound="-1"
+        eType="#//IntermSite" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermRule" eSuperTypes="#//IntermComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rate" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" eType="#//IntermPattern"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" eType="#//IntermPattern"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermSite">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="siteStates" upperBound="-1"
+        eType="#//IntermSiteState" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermInitialisation" eSuperTypes="#//IntermComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cnt" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initPattern" lowerBound="1"
+        eType="#//IntermPattern"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermObservable" eSuperTypes="#//IntermComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="obsPattern" lowerBound="1"
+        eType="#//IntermPattern"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermSiteState">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermPattern">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agentInstances" upperBound="-1"
+        eType="#//IntermAgentInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BindingState">
+    <eLiterals name="BOUND"/>
+    <eLiterals name="FREE" value="1"/>
+    <eLiterals name="UNSPECIFIED" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermAgentInstance" eSuperTypes="#//Bindable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="siteInstances" upperBound="-1"
+        eType="#//IntermSiteInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
+        eType="#//IntermAgent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
+        defaultValueLiteral="UNTITLED"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="local" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermSiteInstance" eSuperTypes="#//Bindable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
+        eType="#//IntermSite"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notBoundTo" upperBound="-1"
+        eType="#//Bindable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boundTo" eType="#//Bindable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" lowerBound="1"
+        eType="#//BindingState" defaultValueLiteral="UNSPECIFIED"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
+        defaultValueLiteral="UNTITLED" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="#//IntermSiteState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//IntermAgentInstance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PatternContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patterns" upperBound="-1"
+        eType="#//IntermPattern" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermCommand" eSuperTypes="#//IntermComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//CommandType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="patternToMatch" eType="#//IntermPattern"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cnt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        defaultValueLiteral="-1.0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CommandType">
+    <eLiterals name="TIME"/>
+    <eLiterals name="ITERATIONS" value="1"/>
+    <eLiterals name="MATCHES" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bindable" abstract="true" interface="true"/>
+</ecore:EPackage>
