@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="ASCII"?>
+<GTLanguage:GTRuleSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:GTLanguage="platform:/resource/org.emoflon.ibex.gt/model/Gt.ecore">
+  <rules name="simpleBind1_1" documentation="" executable="true" ruleNodes="//@rules.0/@nodes.0 //@rules.0/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+  </rules>
+  <rules name="simpleBind1_2" documentation="" executable="true" ruleNodes="//@rules.1/@nodes.0 //@rules.1/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+  </rules>
+  <rules name="simpleBind1State1" documentation="" executable="true" ruleNodes="//@rules.2/@nodes.0 //@rules.2/@nodes.1 //@rules.2/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleBind1State2" documentation="" executable="true" ruleNodes="//@rules.3/@nodes.0 //@rules.3/@nodes.1 //@rules.3/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleBind2" documentation="" executable="true" ruleNodes="//@rules.4/@nodes.0 //@rules.4/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+  </rules>
+  <rules name="simpleBind2State1" documentation="" executable="true" ruleNodes="//@rules.5/@nodes.0 //@rules.5/@nodes.1 //@rules.5/@nodes.2 //@rules.5/@nodes.3">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleBind2State2" documentation="" executable="true" ruleNodes="//@rules.6/@nodes.0 //@rules.6/@nodes.1 //@rules.6/@nodes.2 //@rules.6/@nodes.3">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleBind2State3" documentation="" executable="true" ruleNodes="//@rules.7/@nodes.0 //@rules.7/@nodes.1 //@rules.7/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleBind2State4" documentation="" executable="true" ruleNodes="//@rules.8/@nodes.0 //@rules.8/@nodes.1 //@rules.8/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="conditionPattern_Ab_to_Ti" documentation="" executable="true" ruleNodes="//@rules.9/@nodes.0 //@rules.9/@nodes.1">
+    <nodes name="src">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="trg">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+  </rules>
+  <rules name="simpleBind3" documentation="" executable="true" ruleNodes="//@rules.10/@nodes.0 //@rules.10/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+  </rules>
+  <rules name="conditionPattern_Ac_to_Ti" documentation="" executable="true" ruleNodes="//@rules.11/@nodes.0 //@rules.11/@nodes.1">
+    <nodes name="src">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="trg">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+  </rules>
+  <rules name="simpleBind3State1" documentation="" executable="true" ruleNodes="//@rules.12/@nodes.0 //@rules.12/@nodes.1 //@rules.12/@nodes.2 //@rules.12/@nodes.3">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleBind3State2" documentation="" executable="true" ruleNodes="//@rules.13/@nodes.0 //@rules.13/@nodes.1 //@rules.13/@nodes.2 //@rules.13/@nodes.3">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleBind3State3" documentation="" executable="true" ruleNodes="//@rules.14/@nodes.0 //@rules.14/@nodes.1 //@rules.14/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleBind3State4" documentation="" executable="true" ruleNodes="//@rules.15/@nodes.0 //@rules.15/@nodes.1 //@rules.15/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleSplit1" documentation="" executable="true" ruleNodes="//@rules.16/@nodes.0 //@rules.16/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+  </rules>
+  <rules name="simpleSplit1State1" documentation="" executable="true" ruleNodes="//@rules.17/@nodes.0 //@rules.17/@nodes.1 //@rules.17/@nodes.2 //@rules.17/@nodes.3">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleSplit1State2" documentation="" executable="true" ruleNodes="//@rules.18/@nodes.0 //@rules.18/@nodes.1 //@rules.18/@nodes.2 //@rules.18/@nodes.3">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleSplit1State3" documentation="" executable="true" ruleNodes="//@rules.19/@nodes.0 //@rules.19/@nodes.1 //@rules.19/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleSplit1State4" documentation="" executable="true" ruleNodes="//@rules.20/@nodes.0 //@rules.20/@nodes.1 //@rules.20/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleSplit2State1" documentation="" executable="true" ruleNodes="//@rules.21/@nodes.0 //@rules.21/@nodes.1 //@rules.21/@nodes.2 //@rules.21/@nodes.3">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleSplit2State2" documentation="" executable="true" ruleNodes="//@rules.22/@nodes.0 //@rules.22/@nodes.1 //@rules.22/@nodes.2 //@rules.22/@nodes.3">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleSplit2State3" documentation="" executable="true" ruleNodes="//@rules.23/@nodes.0 //@rules.23/@nodes.1 //@rules.23/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleSplit2State4" documentation="" executable="true" ruleNodes="//@rules.24/@nodes.0 //@rules.24/@nodes.1 //@rules.24/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="expandedSplit" documentation="" executable="true" ruleNodes="//@rules.25/@nodes.0 //@rules.25/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+  </rules>
+  <rules name="expandedSplitState1" documentation="" executable="true" ruleNodes="//@rules.26/@nodes.0 //@rules.26/@nodes.1 //@rules.26/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="expandedSplitState2" documentation="" executable="true" ruleNodes="//@rules.27/@nodes.0 //@rules.27/@nodes.1 //@rules.27/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="synthesisSingle1" documentation="" executable="true"/>
+  <rules name="synthesisSingle2" documentation="" executable="true"/>
+  <rules name="synthesisSingle3" documentation="" executable="true"/>
+  <rules name="synthesisSingle4" documentation="" executable="true" ruleNodes="//@rules.31/@nodes.0">
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="synthesisSingle5" documentation="" executable="true" ruleNodes="//@rules.32/@nodes.0">
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="synthesisSingle6" documentation="" executable="true"/>
+  <rules name="synthesisSingle7" documentation="" executable="true"/>
+  <rules name="synthesisSingle8" documentation="" executable="true" ruleNodes="//@rules.35/@nodes.0">
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="synthesisSingle9" documentation="" executable="true" ruleNodes="//@rules.36/@nodes.0">
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="synthesisSingle10" documentation="" executable="true"/>
+  <rules name="synthesisMulti1" documentation="" executable="true"/>
+  <rules name="synthesisMulti2" documentation="" executable="true"/>
+  <rules name="synthesisMulti3" documentation="" executable="true"/>
+  <rules name="synthesisMulti4" documentation="" executable="true" ruleNodes="//@rules.41/@nodes.0">
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="synthesisMulti5" documentation="" executable="true" ruleNodes="//@rules.42/@nodes.0">
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="synthesisMulti6" documentation="" executable="true" ruleNodes="//@rules.43/@nodes.0">
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="synthesisMulti7" documentation="" executable="true" ruleNodes="//@rules.44/@nodes.0">
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="synthesisMulti8" documentation="" executable="true"/>
+  <rules name="synthesisMulti9" documentation="" executable="true" ruleNodes="//@rules.46/@nodes.0">
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="partialSynthesis1" documentation="" executable="true" ruleNodes="//@rules.47/@nodes.0">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+  </rules>
+  <rules name="partialSynthesis2" documentation="" executable="true" ruleNodes="//@rules.48/@nodes.0 //@rules.48/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="degradation1" documentation="" executable="true" ruleNodes="//@rules.49/@nodes.0 //@rules.49/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+  </rules>
+  <rules name="degradation2" documentation="" executable="true" ruleNodes="//@rules.50/@nodes.0 //@rules.50/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+  </rules>
+  <rules name="degradation3" documentation="" executable="true" ruleNodes="//@rules.51/@nodes.0 //@rules.51/@nodes.1 //@rules.51/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="partialDegradation1" documentation="" executable="true" ruleNodes="//@rules.52/@nodes.0 //@rules.52/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+  </rules>
+  <rules name="partialDegradation2" documentation="" executable="true" ruleNodes="//@rules.53/@nodes.0 //@rules.53/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+  </rules>
+  <rules name="partialDegradation3" documentation="" executable="true" ruleNodes="//@rules.54/@nodes.0 //@rules.54/@nodes.1 //@rules.54/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="partialDegradation4" documentation="" executable="true" ruleNodes="//@rules.55/@nodes.0 //@rules.55/@nodes.1 //@rules.55/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="underspecified1" documentation="" executable="true" ruleNodes="//@rules.56/@nodes.0 //@rules.56/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+  </rules>
+  <rules name="underspecified2" documentation="" executable="true" ruleNodes="//@rules.57/@nodes.0 //@rules.57/@nodes.1 //@rules.57/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="underspecified3" documentation="" executable="true" ruleNodes="//@rules.58/@nodes.0 //@rules.58/@nodes.1 //@rules.58/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="underspecified4" documentation="" executable="true" ruleNodes="//@rules.59/@nodes.0 //@rules.59/@nodes.1 //@rules.59/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="underspecified5" documentation="" executable="true" ruleNodes="//@rules.60/@nodes.0 //@rules.60/@nodes.1 //@rules.60/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="unspecified1" documentation="" executable="true" ruleNodes="//@rules.61/@nodes.0">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+  </rules>
+  <rules name="unspecified2" documentation="" executable="true" ruleNodes="//@rules.62/@nodes.0 //@rules.62/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="unspecified3" documentation="" executable="true" ruleNodes="//@rules.63/@nodes.0 //@rules.63/@nodes.1 //@rules.63/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="unspecified4" documentation="" executable="true" ruleNodes="//@rules.64/@nodes.0 //@rules.64/@nodes.1 //@rules.64/@nodes.2 //@rules.64/@nodes.3">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="conditionPattern_Ab_to_LocalAgent_X" documentation="" executable="true" ruleNodes="//@rules.65/@nodes.0">
+    <nodes name="src">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+  </rules>
+  <rules name="conditionPattern_Ac_to_LocalAgent_X" documentation="" executable="true" ruleNodes="//@rules.66/@nodes.0">
+    <nodes name="src">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+  </rules>
+  <rules name="generic1" documentation="" executable="true" ruleNodes="//@rules.67/@nodes.0">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+  </rules>
+  <rules name="generic2" documentation="" executable="true" ruleNodes="//@rules.68/@nodes.0">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+  </rules>
+  <rules name="generic3" documentation="" executable="true" ruleNodes="//@rules.69/@nodes.0">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+  </rules>
+  <rules name="generic4" documentation="" executable="true" ruleNodes="//@rules.70/@nodes.0 //@rules.70/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="generic5" documentation="" executable="true" ruleNodes="//@rules.71/@nodes.0">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+  </rules>
+  <rules name="generic6State1" documentation="" executable="true" ruleNodes="//@rules.72/@nodes.0 //@rules.72/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="generic6State2" documentation="" executable="true" ruleNodes="//@rules.73/@nodes.0 //@rules.73/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="generic7" documentation="" executable="true" ruleNodes="//@rules.74/@nodes.0 //@rules.74/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="freeAgentsBind" documentation="" executable="true" ruleNodes="//@rules.75/@nodes.0 //@rules.75/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+  </rules>
+  <rules name="freeAgentsBind2" documentation="" executable="true" ruleNodes="//@rules.76/@nodes.0 //@rules.76/@nodes.1 //@rules.76/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="underspecifiedAgent" documentation="" executable="true" ruleNodes="//@rules.77/@nodes.0 //@rules.77/@nodes.1 //@rules.77/@nodes.2 //@rules.77/@nodes.3">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="conditionPattern_Ab_to_Xz_state_p" documentation="" executable="true" ruleNodes="//@rules.78/@nodes.0 //@rules.78/@nodes.1">
+    <nodes name="src">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="trg">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+  </rules>
+  <rules name="forbiddenBondState" documentation="" executable="true" ruleNodes="//@rules.79/@nodes.0 //@rules.79/@nodes.1 //@rules.79/@nodes.2 //@rules.79/@nodes.3">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="forbiddenBondStateGeneric" documentation="" executable="true" ruleNodes="//@rules.80/@nodes.0 //@rules.80/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+  </rules>
+  <rules name="forbiddenBondStateGenericWithSynthesis" documentation="" executable="true" ruleNodes="//@rules.81/@nodes.0">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+  </rules>
+  <rules name="breakSpecificBond" documentation="" executable="true" ruleNodes="//@rules.82/@nodes.0 //@rules.82/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+  </rules>
+  <rules name="bidirectionalRule" documentation="" executable="true" ruleNodes="//@rules.83/@nodes.0 //@rules.83/@nodes.1 //@rules.83/@nodes.2 //@rules.83/@nodes.3 //@rules.83/@nodes.4">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="bidirectionalRuleBwd" documentation="" executable="true" ruleNodes="//@rules.84/@nodes.0 //@rules.84/@nodes.1 //@rules.84/@nodes.2 //@rules.84/@nodes.3 //@rules.84/@nodes.4">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="t">
+      <type href="TestcasesModel.ecore#//T"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="complexStateChanges" documentation="" executable="true" ruleNodes="//@rules.85/@nodes.0 //@rules.85/@nodes.1 //@rules.85/@nodes.2 //@rules.85/@nodes.3">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="genericBondBreak" documentation="" executable="true" ruleNodes="//@rules.86/@nodes.0">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+  </rules>
+  <rules name="injectivity" documentation="" executable="true" ruleNodes="//@rules.87/@nodes.0 //@rules.87/@nodes.1 //@rules.87/@nodes.2">
+    <nodes name="a1">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="a2">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+  </rules>
+</GTLanguage:GTRuleSet>

@@ -1,0 +1,1218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HiPEPattern:HiPEPatternContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HiPEPattern="platform:/resource/hipe.pattern/model/HiPEPattern" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xsi:schemaLocation="platform:/resource/hipe.pattern/model/HiPEPattern java://hipe.pattern.HiPEPatternPackage http://www.eclipse.org/emf/2002/Ecore java://org.eclipse.emf.ecore.EcorePackage">
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="patternk_aBound" partialPatterns="//@patterns.20">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.0/@nodes.1" target="//@patterns.0/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokes="//@patterns.20/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokes="//@patterns.20/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="patternk_aBound_CONDITION_k" partialPatterns="//@patterns.23" invokedBy="//@patterns.8/@patternInvocations.0 //@patterns.10/@patternInvocations.0">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.1/@nodes.0" target="//@patterns.1/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.8/@nodes.0 //@patterns.10/@nodes.0" invokes="//@patterns.23/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokes="//@patterns.23/@nodes.1" local="true">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="patternp_aBound" partialPatterns="//@patterns.26">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.2/@nodes.1" target="//@patterns.2/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokes="//@patterns.26/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokes="//@patterns.26/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="patternp_aBound_CONDITION_p" partialPatterns="//@patterns.29" invokedBy="//@patterns.12/@patternInvocations.0 //@patterns.14/@patternInvocations.0">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.3/@nodes.0" target="//@patterns.3/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.12/@nodes.0 //@patterns.14/@nodes.0" invokes="//@patterns.29/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokes="//@patterns.29/@nodes.1" local="true">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="patternt_xBound" partialPatterns="//@patterns.32">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.4/@nodes.0" target="//@patterns.4/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokes="//@patterns.32/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokes="//@patterns.32/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="patternt_xBound_CONDITION_t" partialPatterns="//@patterns.35" invokedBy="//@patterns.8/@patternInvocations.1 //@patterns.12/@patternInvocations.1">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.5/@nodes.0" target="//@patterns.5/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.8/@nodes.1 //@patterns.12/@nodes.1" invokes="//@patterns.35/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokes="//@patterns.35/@nodes.1" local="true">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="patternt_yBound" partialPatterns="//@patterns.38">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.6/@nodes.0" target="//@patterns.6/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokes="//@patterns.38/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="y" invokes="//@patterns.38/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="patternt_yBound_CONDITION_t" partialPatterns="//@patterns.41" invokedBy="//@patterns.10/@patternInvocations.1 //@patterns.14/@patternInvocations.1">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.7/@nodes.0" target="//@patterns.7/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.10/@nodes.1 //@patterns.14/@nodes.1" invokes="//@patterns.41/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="y" invokes="//@patterns.41/@nodes.1" local="true">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="ruleKT_x" partialPatterns="//@patterns.117">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokes="//@patterns.1/@nodes.0 //@patterns.44/@nodes.1 //@patterns.116/@nodes.1 //@patterns.117/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokes="//@patterns.5/@nodes.0 //@patterns.44/@nodes.0 //@patterns.116/@nodes.0 //@patterns.117/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <patternInvocations xmi:type="HiPEPattern:HiPEPatternInvocation" invokedPattern="//@patterns.1" positive="false"/>
+    <patternInvocations xmi:type="HiPEPattern:HiPEPatternInvocation" invokedPattern="//@patterns.5" positive="false"/>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="ruleKT_xBwd" partialPatterns="//@patterns.47">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.9/@nodes.0" target="//@patterns.9/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.9/@nodes.1" target="//@patterns.9/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokes="//@patterns.47/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokes="//@patterns.47/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="ruleKT_y" partialPatterns="//@patterns.119">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokes="//@patterns.1/@nodes.0 //@patterns.52/@nodes.0 //@patterns.118/@nodes.0 //@patterns.119/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokes="//@patterns.7/@nodes.0 //@patterns.52/@nodes.1 //@patterns.118/@nodes.1 //@patterns.119/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <patternInvocations xmi:type="HiPEPattern:HiPEPatternInvocation" invokedPattern="//@patterns.1" positive="false"/>
+    <patternInvocations xmi:type="HiPEPattern:HiPEPatternInvocation" invokedPattern="//@patterns.7" positive="false"/>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="ruleKT_yBwd" partialPatterns="//@patterns.55">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.11/@nodes.0" target="//@patterns.11/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.11/@nodes.1" target="//@patterns.11/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokes="//@patterns.55/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokes="//@patterns.55/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="rulePT_x" partialPatterns="//@patterns.121">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokes="//@patterns.3/@nodes.0 //@patterns.60/@nodes.0 //@patterns.120/@nodes.0 //@patterns.121/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokes="//@patterns.5/@nodes.0 //@patterns.60/@nodes.1 //@patterns.120/@nodes.1 //@patterns.121/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <patternInvocations xmi:type="HiPEPattern:HiPEPatternInvocation" invokedPattern="//@patterns.3" positive="false"/>
+    <patternInvocations xmi:type="HiPEPattern:HiPEPatternInvocation" invokedPattern="//@patterns.5" positive="false"/>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="rulePT_xBwd" partialPatterns="//@patterns.63">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.13/@nodes.0" target="//@patterns.13/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.13/@nodes.1" target="//@patterns.13/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokes="//@patterns.63/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokes="//@patterns.63/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="rulePT_y" partialPatterns="//@patterns.123">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokes="//@patterns.3/@nodes.0 //@patterns.68/@nodes.0 //@patterns.122/@nodes.0 //@patterns.123/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokes="//@patterns.7/@nodes.0 //@patterns.68/@nodes.1 //@patterns.122/@nodes.1 //@patterns.123/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <patternInvocations xmi:type="HiPEPattern:HiPEPatternInvocation" invokedPattern="//@patterns.3" positive="false"/>
+    <patternInvocations xmi:type="HiPEPattern:HiPEPatternInvocation" invokedPattern="//@patterns.7" positive="false"/>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="rulePT_yBwd" partialPatterns="//@patterns.71">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.15/@nodes.0" target="//@patterns.15/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.15/@nodes.1" target="//@patterns.15/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokes="//@patterns.71/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokes="//@patterns.71/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="ruleTp_x" partialPatterns="//@patterns.76">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.16/@nodes.0" target="//@patterns.16/@nodes.2">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.16/@nodes.2" target="//@patterns.16/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x_u" source="//@patterns.16/@nodes.2" target="//@patterns.16/@nodes.3">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_u"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokes="//@patterns.76/@nodes.3">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokes="//@patterns.76/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokes="//@patterns.76/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokes="//@patterns.76/@nodes.2">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="ruleTp_y" partialPatterns="//@patterns.86">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.17/@nodes.0" target="//@patterns.17/@nodes.2">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x_u" source="//@patterns.17/@nodes.2" target="//@patterns.17/@nodes.3">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_u"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.17/@nodes.2" target="//@patterns.17/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokes="//@patterns.86/@nodes.2">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokes="//@patterns.86/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokes="//@patterns.86/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokes="//@patterns.86/@nodes.3">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="ruleTu_x" partialPatterns="//@patterns.96">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.18/@nodes.0" target="//@patterns.18/@nodes.2">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.18/@nodes.2" target="//@patterns.18/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x_p" source="//@patterns.18/@nodes.2" target="//@patterns.18/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_p"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokes="//@patterns.96/@nodes.3">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokes="//@patterns.96/@nodes.2">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokes="//@patterns.96/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokes="//@patterns.96/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPattern" name="ruleTu_y" partialPatterns="//@patterns.106">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.19/@nodes.0" target="//@patterns.19/@nodes.2">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.19/@nodes.2" target="//@patterns.19/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y_u" source="//@patterns.19/@nodes.2" target="//@patterns.19/@nodes.3">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_u"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokes="//@patterns.106/@nodes.3">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokes="//@patterns.106/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokes="//@patterns.106/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokes="//@patterns.106/@nodes.2">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternk_aBound_1" partialPatterns="//@patterns.21 //@patterns.22" parentPattern="//@patterns.0">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.20/@nodes.0" target="//@patterns.20/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.0/@nodes.1" invokes="//@patterns.21/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokedBy="//@patterns.0/@nodes.0" invokes="//@patterns.22/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+    <nodeConstraints xmi:type="HiPEPattern:UnequalConstraint" leftNode="//@patterns.20/@nodes.1" rightNode="//@patterns.20/@nodes.0"/>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternk_aBound_2" parentPattern="//@patterns.20">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.20/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternk_aBound_3" parentPattern="//@patterns.20">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokedBy="//@patterns.20/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternk_aBound_CONDITION_k_4" partialPatterns="//@patterns.24 //@patterns.25" parentPattern="//@patterns.1 //@patterns.116 //@patterns.118">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.23/@nodes.0" target="//@patterns.23/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.1/@nodes.0 //@patterns.116/@nodes.1 //@patterns.118/@nodes.0" invokes="//@patterns.24/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokedBy="//@patterns.1/@nodes.1" invokes="//@patterns.25/@nodes.0" local="true">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+    <nodeConstraints xmi:type="HiPEPattern:UnequalConstraint" leftNode="//@patterns.23/@nodes.1" rightNode="//@patterns.23/@nodes.0"/>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternk_aBound_CONDITION_k_5" parentPattern="//@patterns.23">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.23/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternk_aBound_CONDITION_k_6" parentPattern="//@patterns.23">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokedBy="//@patterns.23/@nodes.1" local="true">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternp_aBound_7" partialPatterns="//@patterns.27 //@patterns.28" parentPattern="//@patterns.2">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.26/@nodes.0" target="//@patterns.26/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.2/@nodes.1" invokes="//@patterns.27/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokedBy="//@patterns.2/@nodes.0" invokes="//@patterns.28/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+    <nodeConstraints xmi:type="HiPEPattern:UnequalConstraint" leftNode="//@patterns.26/@nodes.1" rightNode="//@patterns.26/@nodes.0"/>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternp_aBound_8" parentPattern="//@patterns.26">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.26/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternp_aBound_9" parentPattern="//@patterns.26">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokedBy="//@patterns.26/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternp_aBound_CONDITION_p_10" partialPatterns="//@patterns.30 //@patterns.31" parentPattern="//@patterns.3 //@patterns.120 //@patterns.122">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.29/@nodes.0" target="//@patterns.29/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.3/@nodes.0 //@patterns.120/@nodes.0 //@patterns.122/@nodes.0" invokes="//@patterns.30/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokedBy="//@patterns.3/@nodes.1" invokes="//@patterns.31/@nodes.0" local="true">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+    <nodeConstraints xmi:type="HiPEPattern:UnequalConstraint" leftNode="//@patterns.29/@nodes.1" rightNode="//@patterns.29/@nodes.0"/>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternp_aBound_CONDITION_p_11" parentPattern="//@patterns.29">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.29/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternp_aBound_CONDITION_p_12" parentPattern="//@patterns.29">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokedBy="//@patterns.29/@nodes.1" local="true">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternt_xBound_13" partialPatterns="//@patterns.33 //@patterns.34" parentPattern="//@patterns.4">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.32/@nodes.0" target="//@patterns.32/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.4/@nodes.0" invokes="//@patterns.33/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.4/@nodes.1" invokes="//@patterns.34/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+    <nodeConstraints xmi:type="HiPEPattern:UnequalConstraint" leftNode="//@patterns.32/@nodes.0" rightNode="//@patterns.32/@nodes.1"/>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternt_xBound_14" parentPattern="//@patterns.32">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.32/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternt_xBound_15" parentPattern="//@patterns.32">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.32/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternt_xBound_CONDITION_t_16" partialPatterns="//@patterns.36 //@patterns.37" parentPattern="//@patterns.5 //@patterns.117 //@patterns.121">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.35/@nodes.0" target="//@patterns.35/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.5/@nodes.0 //@patterns.117/@nodes.0 //@patterns.121/@nodes.1" invokes="//@patterns.36/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.5/@nodes.1" invokes="//@patterns.37/@nodes.0" local="true">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+    <nodeConstraints xmi:type="HiPEPattern:UnequalConstraint" leftNode="//@patterns.35/@nodes.0" rightNode="//@patterns.35/@nodes.1"/>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternt_xBound_CONDITION_t_17" parentPattern="//@patterns.35">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.35/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternt_xBound_CONDITION_t_18" parentPattern="//@patterns.35">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.35/@nodes.1" local="true">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternt_yBound_19" partialPatterns="//@patterns.39 //@patterns.40" parentPattern="//@patterns.6">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.38/@nodes.0" target="//@patterns.38/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.6/@nodes.0" invokes="//@patterns.39/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="y" invokedBy="//@patterns.6/@nodes.1" invokes="//@patterns.40/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+    <nodeConstraints xmi:type="HiPEPattern:UnequalConstraint" leftNode="//@patterns.38/@nodes.0" rightNode="//@patterns.38/@nodes.1"/>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternt_yBound_20" parentPattern="//@patterns.38">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.38/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternt_yBound_21" parentPattern="//@patterns.38">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="y" invokedBy="//@patterns.38/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternt_yBound_CONDITION_t_22" partialPatterns="//@patterns.42 //@patterns.43" parentPattern="//@patterns.7 //@patterns.119 //@patterns.123">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.41/@nodes.0" target="//@patterns.41/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.7/@nodes.0 //@patterns.119/@nodes.1 //@patterns.123/@nodes.1" invokes="//@patterns.42/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="y" invokedBy="//@patterns.7/@nodes.1" invokes="//@patterns.43/@nodes.0" local="true">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+    <nodeConstraints xmi:type="HiPEPattern:UnequalConstraint" leftNode="//@patterns.41/@nodes.0" rightNode="//@patterns.41/@nodes.1"/>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternt_yBound_CONDITION_t_23" parentPattern="//@patterns.41">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.41/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="patternt_yBound_CONDITION_t_24" parentPattern="//@patterns.41">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="y" invokedBy="//@patterns.41/@nodes.1" local="true">
+      <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_x_25" partialPatterns="//@patterns.45 //@patterns.46" parentPattern="//@patterns.116">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.8/@nodes.1 //@patterns.116/@nodes.0" invokes="//@patterns.45/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.8/@nodes.0 //@patterns.116/@nodes.1" invokes="//@patterns.46/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_x_26" parentPattern="//@patterns.44">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.44/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_x_27" parentPattern="//@patterns.44">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.44/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_xBwd_28" partialPatterns="//@patterns.48 //@patterns.51" parentPattern="//@patterns.9" overlaps="//@patterns.47/@nodes.0 //@patterns.47/@nodes.1">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.47/@nodes.0" target="//@patterns.47/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.47/@nodes.1" target="//@patterns.47/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.9/@nodes.0" invokes="//@patterns.48/@nodes.0 //@patterns.51/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.9/@nodes.1" invokes="//@patterns.48/@nodes.1 //@patterns.51/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_xBwd_29" partialPatterns="//@patterns.49 //@patterns.50" parentPattern="//@patterns.47">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.48/@nodes.0" target="//@patterns.48/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.47/@nodes.0" invokes="//@patterns.49/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.47/@nodes.1" invokes="//@patterns.50/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_xBwd_30" parentPattern="//@patterns.48 //@patterns.51">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.48/@nodes.0 //@patterns.51/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_xBwd_31" parentPattern="//@patterns.48 //@patterns.51">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.48/@nodes.1 //@patterns.51/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_xBwd_32" partialPatterns="//@patterns.50 //@patterns.49" parentPattern="//@patterns.47">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.51/@nodes.0" target="//@patterns.51/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.47/@nodes.1" invokes="//@patterns.50/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.47/@nodes.0" invokes="//@patterns.49/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_y_33" partialPatterns="//@patterns.53 //@patterns.54" parentPattern="//@patterns.118">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.10/@nodes.0 //@patterns.118/@nodes.0" invokes="//@patterns.53/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.10/@nodes.1 //@patterns.118/@nodes.1" invokes="//@patterns.54/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_y_34" parentPattern="//@patterns.52">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.52/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_y_35" parentPattern="//@patterns.52">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.52/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_yBwd_36" partialPatterns="//@patterns.56 //@patterns.59" parentPattern="//@patterns.11" overlaps="//@patterns.55/@nodes.0 //@patterns.55/@nodes.1">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.55/@nodes.0" target="//@patterns.55/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.55/@nodes.1" target="//@patterns.55/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.11/@nodes.0" invokes="//@patterns.56/@nodes.0 //@patterns.59/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.11/@nodes.1" invokes="//@patterns.56/@nodes.1 //@patterns.59/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_yBwd_37" partialPatterns="//@patterns.57 //@patterns.58" parentPattern="//@patterns.55">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.56/@nodes.0" target="//@patterns.56/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.55/@nodes.0" invokes="//@patterns.57/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.55/@nodes.1" invokes="//@patterns.58/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_yBwd_38" parentPattern="//@patterns.56 //@patterns.59">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.56/@nodes.0 //@patterns.59/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_yBwd_39" parentPattern="//@patterns.56 //@patterns.59">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.56/@nodes.1 //@patterns.59/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_yBwd_40" partialPatterns="//@patterns.58 //@patterns.57" parentPattern="//@patterns.55">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.59/@nodes.0" target="//@patterns.59/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.55/@nodes.1" invokes="//@patterns.58/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.55/@nodes.0" invokes="//@patterns.57/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_x_41" partialPatterns="//@patterns.61 //@patterns.62" parentPattern="//@patterns.120">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.12/@nodes.0 //@patterns.120/@nodes.0" invokes="//@patterns.61/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.12/@nodes.1 //@patterns.120/@nodes.1" invokes="//@patterns.62/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_x_42" parentPattern="//@patterns.60">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.60/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_x_43" parentPattern="//@patterns.60">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.60/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_xBwd_44" partialPatterns="//@patterns.64 //@patterns.67" parentPattern="//@patterns.13" overlaps="//@patterns.63/@nodes.0 //@patterns.63/@nodes.1">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.63/@nodes.0" target="//@patterns.63/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.63/@nodes.1" target="//@patterns.63/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.13/@nodes.0" invokes="//@patterns.64/@nodes.0 //@patterns.67/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.13/@nodes.1" invokes="//@patterns.64/@nodes.1 //@patterns.67/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_xBwd_45" partialPatterns="//@patterns.65 //@patterns.66" parentPattern="//@patterns.63">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.64/@nodes.0" target="//@patterns.64/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.63/@nodes.0" invokes="//@patterns.65/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.63/@nodes.1" invokes="//@patterns.66/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_xBwd_46" parentPattern="//@patterns.64 //@patterns.67">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.64/@nodes.0 //@patterns.67/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_xBwd_47" parentPattern="//@patterns.64 //@patterns.67">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.64/@nodes.1 //@patterns.67/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_xBwd_48" partialPatterns="//@patterns.66 //@patterns.65" parentPattern="//@patterns.63">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.67/@nodes.0" target="//@patterns.67/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.63/@nodes.1" invokes="//@patterns.66/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.63/@nodes.0" invokes="//@patterns.65/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_y_49" partialPatterns="//@patterns.69 //@patterns.70" parentPattern="//@patterns.122">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.14/@nodes.0 //@patterns.122/@nodes.0" invokes="//@patterns.69/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.14/@nodes.1 //@patterns.122/@nodes.1" invokes="//@patterns.70/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_y_50" parentPattern="//@patterns.68">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.68/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_y_51" parentPattern="//@patterns.68">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.68/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_yBwd_52" partialPatterns="//@patterns.72 //@patterns.75" parentPattern="//@patterns.15" overlaps="//@patterns.71/@nodes.0 //@patterns.71/@nodes.1">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.71/@nodes.0" target="//@patterns.71/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.71/@nodes.1" target="//@patterns.71/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.15/@nodes.0" invokes="//@patterns.72/@nodes.0 //@patterns.75/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.15/@nodes.1" invokes="//@patterns.72/@nodes.1 //@patterns.75/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_yBwd_53" partialPatterns="//@patterns.73 //@patterns.74" parentPattern="//@patterns.71">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.72/@nodes.0" target="//@patterns.72/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.71/@nodes.0" invokes="//@patterns.73/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.71/@nodes.1" invokes="//@patterns.74/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_yBwd_54" parentPattern="//@patterns.72 //@patterns.75">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.72/@nodes.0 //@patterns.75/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_yBwd_55" parentPattern="//@patterns.72 //@patterns.75">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.72/@nodes.1 //@patterns.75/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_yBwd_56" partialPatterns="//@patterns.74 //@patterns.73" parentPattern="//@patterns.71">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.75/@nodes.0" target="//@patterns.75/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.71/@nodes.1" invokes="//@patterns.74/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.71/@nodes.0" invokes="//@patterns.73/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_x_57" partialPatterns="//@patterns.77 //@patterns.78" parentPattern="//@patterns.16">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x_u" source="//@patterns.76/@nodes.1" target="//@patterns.76/@nodes.2">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_u"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.76/@nodes.3" target="//@patterns.76/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.76/@nodes.1" target="//@patterns.76/@nodes.3">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokedBy="//@patterns.16/@nodes.1" invokes="//@patterns.77/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.16/@nodes.2" invokes="//@patterns.78/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.16/@nodes.3" invokes="//@patterns.78/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.16/@nodes.0" invokes="//@patterns.78/@nodes.2">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_x_58" parentPattern="//@patterns.76">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokedBy="//@patterns.76/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_x_59" partialPatterns="//@patterns.79 //@patterns.82" parentPattern="//@patterns.76" overlaps="//@patterns.78/@nodes.0">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x_u" source="//@patterns.78/@nodes.0" target="//@patterns.78/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_u"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.78/@nodes.2" target="//@patterns.78/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.78/@nodes.0" target="//@patterns.78/@nodes.2">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.76/@nodes.1" invokes="//@patterns.79/@nodes.0 //@patterns.82/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.76/@nodes.2" invokes="//@patterns.79/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.76/@nodes.3" invokes="//@patterns.82/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_x_60" partialPatterns="//@patterns.80 //@patterns.81" parentPattern="//@patterns.78">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x_u" source="//@patterns.79/@nodes.0" target="//@patterns.79/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_u"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.78/@nodes.0" invokes="//@patterns.80/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.78/@nodes.1" invokes="//@patterns.81/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_x_61" parentPattern="//@patterns.79 //@patterns.83 //@patterns.85">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.79/@nodes.0 //@patterns.83/@nodes.1 //@patterns.85/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_x_62" parentPattern="//@patterns.79">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.79/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_x_63" partialPatterns="//@patterns.83 //@patterns.85" parentPattern="//@patterns.78" overlaps="//@patterns.82/@nodes.0 //@patterns.82/@nodes.1">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.82/@nodes.0" target="//@patterns.82/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.82/@nodes.1" target="//@patterns.82/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.78/@nodes.2" invokes="//@patterns.83/@nodes.0 //@patterns.85/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.78/@nodes.0" invokes="//@patterns.83/@nodes.1 //@patterns.85/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_x_64" partialPatterns="//@patterns.84 //@patterns.80" parentPattern="//@patterns.82">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.83/@nodes.0" target="//@patterns.83/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.82/@nodes.0" invokes="//@patterns.84/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.82/@nodes.1" invokes="//@patterns.80/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_x_65" parentPattern="//@patterns.83 //@patterns.85">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.83/@nodes.0 //@patterns.85/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_x_66" partialPatterns="//@patterns.80 //@patterns.84" parentPattern="//@patterns.82">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.85/@nodes.0" target="//@patterns.85/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.82/@nodes.1" invokes="//@patterns.80/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.82/@nodes.0" invokes="//@patterns.84/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_y_67" partialPatterns="//@patterns.87 //@patterns.88" parentPattern="//@patterns.17">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.86/@nodes.1" target="//@patterns.86/@nodes.2">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.86/@nodes.2" target="//@patterns.86/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x_u" source="//@patterns.86/@nodes.1" target="//@patterns.86/@nodes.3">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_u"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokedBy="//@patterns.17/@nodes.1" invokes="//@patterns.87/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.17/@nodes.2" invokes="//@patterns.88/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.17/@nodes.0" invokes="//@patterns.88/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.17/@nodes.3" invokes="//@patterns.88/@nodes.2">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_y_68" parentPattern="//@patterns.86">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokedBy="//@patterns.86/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_y_69" partialPatterns="//@patterns.89 //@patterns.92" parentPattern="//@patterns.86" overlaps="//@patterns.88/@nodes.0 //@patterns.88/@nodes.1">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.88/@nodes.0" target="//@patterns.88/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.88/@nodes.1" target="//@patterns.88/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x_u" source="//@patterns.88/@nodes.0" target="//@patterns.88/@nodes.2">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_u"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.86/@nodes.1" invokes="//@patterns.89/@nodes.0 //@patterns.92/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.86/@nodes.2" invokes="//@patterns.89/@nodes.1 //@patterns.92/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.86/@nodes.3" invokes="//@patterns.92/@nodes.2">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_y_70" partialPatterns="//@patterns.90 //@patterns.91" parentPattern="//@patterns.88">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.89/@nodes.0" target="//@patterns.89/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.88/@nodes.0" invokes="//@patterns.90/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.88/@nodes.1" invokes="//@patterns.91/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_y_71" parentPattern="//@patterns.89 //@patterns.93 //@patterns.94">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.89/@nodes.0 //@patterns.93/@nodes.1 //@patterns.94/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_y_72" parentPattern="//@patterns.89 //@patterns.93">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.89/@nodes.1 //@patterns.93/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_y_73" partialPatterns="//@patterns.93 //@patterns.94" parentPattern="//@patterns.88" overlaps="//@patterns.92/@nodes.1">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.92/@nodes.0" target="//@patterns.92/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x_u" source="//@patterns.92/@nodes.1" target="//@patterns.92/@nodes.2">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_u"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.88/@nodes.1" invokes="//@patterns.93/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.88/@nodes.0" invokes="//@patterns.93/@nodes.1 //@patterns.94/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.88/@nodes.2" invokes="//@patterns.94/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_y_74" partialPatterns="//@patterns.91 //@patterns.90" parentPattern="//@patterns.92">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="K_K_a" source="//@patterns.93/@nodes.0" target="//@patterns.93/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.92/@nodes.0" invokes="//@patterns.91/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.92/@nodes.1" invokes="//@patterns.90/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_y_75" partialPatterns="//@patterns.90 //@patterns.95" parentPattern="//@patterns.92">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x_u" source="//@patterns.94/@nodes.0" target="//@patterns.94/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_u"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.92/@nodes.1" invokes="//@patterns.90/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.92/@nodes.2" invokes="//@patterns.95/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTp_y_76" parentPattern="//@patterns.94">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.94/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_x_77" partialPatterns="//@patterns.97 //@patterns.98" parentPattern="//@patterns.18">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x_p" source="//@patterns.96/@nodes.1" target="//@patterns.96/@nodes.2">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_p"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.96/@nodes.3" target="//@patterns.96/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.96/@nodes.1" target="//@patterns.96/@nodes.3">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.18/@nodes.3" invokes="//@patterns.97/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.18/@nodes.2" invokes="//@patterns.98/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokedBy="//@patterns.18/@nodes.1" invokes="//@patterns.98/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.18/@nodes.0" invokes="//@patterns.98/@nodes.2">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_x_78" parentPattern="//@patterns.96">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.96/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_x_79" partialPatterns="//@patterns.99 //@patterns.102" parentPattern="//@patterns.96" overlaps="//@patterns.98/@nodes.0">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x_p" source="//@patterns.98/@nodes.0" target="//@patterns.98/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_p"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.98/@nodes.2" target="//@patterns.98/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.98/@nodes.0" target="//@patterns.98/@nodes.2">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.96/@nodes.1" invokes="//@patterns.99/@nodes.0 //@patterns.102/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokedBy="//@patterns.96/@nodes.2" invokes="//@patterns.99/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.96/@nodes.3" invokes="//@patterns.102/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_x_80" partialPatterns="//@patterns.100 //@patterns.101" parentPattern="//@patterns.98">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x_p" source="//@patterns.99/@nodes.0" target="//@patterns.99/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_p"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.98/@nodes.0" invokes="//@patterns.100/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokedBy="//@patterns.98/@nodes.1" invokes="//@patterns.101/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_x_81" parentPattern="//@patterns.99 //@patterns.103 //@patterns.105">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.99/@nodes.0 //@patterns.103/@nodes.1 //@patterns.105/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_x_82" parentPattern="//@patterns.99">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokedBy="//@patterns.99/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_x_83" partialPatterns="//@patterns.103 //@patterns.105" parentPattern="//@patterns.98" overlaps="//@patterns.102/@nodes.0 //@patterns.102/@nodes.1">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.102/@nodes.0" target="//@patterns.102/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.102/@nodes.1" target="//@patterns.102/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.98/@nodes.2" invokes="//@patterns.103/@nodes.0 //@patterns.105/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.98/@nodes.0" invokes="//@patterns.103/@nodes.1 //@patterns.105/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_x_84" partialPatterns="//@patterns.104 //@patterns.100" parentPattern="//@patterns.102">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.103/@nodes.0" target="//@patterns.103/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.102/@nodes.0" invokes="//@patterns.104/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.102/@nodes.1" invokes="//@patterns.100/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_x_85" parentPattern="//@patterns.103 //@patterns.105">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.103/@nodes.0 //@patterns.105/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_x_86" partialPatterns="//@patterns.100 //@patterns.104" parentPattern="//@patterns.102">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_x" source="//@patterns.105/@nodes.0" target="//@patterns.105/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.102/@nodes.1" invokes="//@patterns.100/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.102/@nodes.0" invokes="//@patterns.104/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_y_87" partialPatterns="//@patterns.107 //@patterns.108" parentPattern="//@patterns.19">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y_u" source="//@patterns.106/@nodes.1" target="//@patterns.106/@nodes.2">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_u"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.106/@nodes.3" target="//@patterns.106/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.106/@nodes.1" target="//@patterns.106/@nodes.3">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokedBy="//@patterns.19/@nodes.1" invokes="//@patterns.107/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.19/@nodes.2" invokes="//@patterns.108/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.19/@nodes.3" invokes="//@patterns.108/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.19/@nodes.0" invokes="//@patterns.108/@nodes.2">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_y_88" parentPattern="//@patterns.106">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokedBy="//@patterns.106/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_y_89" partialPatterns="//@patterns.109 //@patterns.112" parentPattern="//@patterns.106" overlaps="//@patterns.108/@nodes.0">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y_u" source="//@patterns.108/@nodes.0" target="//@patterns.108/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_u"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.108/@nodes.2" target="//@patterns.108/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.108/@nodes.0" target="//@patterns.108/@nodes.2">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.106/@nodes.1" invokes="//@patterns.109/@nodes.0 //@patterns.112/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.106/@nodes.2" invokes="//@patterns.109/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.106/@nodes.3" invokes="//@patterns.112/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_y_90" partialPatterns="//@patterns.110 //@patterns.111" parentPattern="//@patterns.108">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y_u" source="//@patterns.109/@nodes.0" target="//@patterns.109/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_u"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.108/@nodes.0" invokes="//@patterns.110/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.108/@nodes.1" invokes="//@patterns.111/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_y_91" parentPattern="//@patterns.109 //@patterns.113 //@patterns.115">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.109/@nodes.0 //@patterns.113/@nodes.1 //@patterns.115/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_y_92" parentPattern="//@patterns.109">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.109/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_y_93" partialPatterns="//@patterns.113 //@patterns.115" parentPattern="//@patterns.108" overlaps="//@patterns.112/@nodes.0 //@patterns.112/@nodes.1">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.112/@nodes.0" target="//@patterns.112/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.112/@nodes.1" target="//@patterns.112/@nodes.0">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.108/@nodes.2" invokes="//@patterns.113/@nodes.0 //@patterns.115/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.108/@nodes.0" invokes="//@patterns.113/@nodes.1 //@patterns.115/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_y_94" partialPatterns="//@patterns.114 //@patterns.110" parentPattern="//@patterns.112">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="P_P_a" source="//@patterns.113/@nodes.0" target="//@patterns.113/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.112/@nodes.0" invokes="//@patterns.114/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.112/@nodes.1" invokes="//@patterns.110/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_y_95" parentPattern="//@patterns.113 //@patterns.115">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.113/@nodes.0 //@patterns.115/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleTu_y_96" partialPatterns="//@patterns.110 //@patterns.114" parentPattern="//@patterns.112">
+    <edges xmi:type="HiPEPattern:HiPEEdge" name="T_T_y" source="//@patterns.115/@nodes.0" target="//@patterns.115/@nodes.1">
+      <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </edges>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.112/@nodes.1" invokes="//@patterns.110/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.112/@nodes.0" invokes="//@patterns.114/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_x_97" partialPatterns="//@patterns.44 //@patterns.23" parentPattern="//@patterns.117" overlaps="//@patterns.44/@nodes.0 //@patterns.44/@nodes.1" positive="false">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.8/@nodes.1 //@patterns.117/@nodes.0" invokes="//@patterns.44/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.8/@nodes.0 //@patterns.117/@nodes.1" invokes="//@patterns.44/@nodes.1 //@patterns.23/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_x_98" partialPatterns="//@patterns.116 //@patterns.35" parentPattern="//@patterns.8" overlaps="//@patterns.116/@nodes.0 //@patterns.116/@nodes.1" positive="false">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.8/@nodes.1" invokes="//@patterns.116/@nodes.0 //@patterns.35/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.8/@nodes.0" invokes="//@patterns.116/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_y_99" partialPatterns="//@patterns.52 //@patterns.23" parentPattern="//@patterns.119" overlaps="//@patterns.52/@nodes.0 //@patterns.52/@nodes.1" positive="false">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.10/@nodes.0 //@patterns.119/@nodes.0" invokes="//@patterns.52/@nodes.0 //@patterns.23/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.10/@nodes.1 //@patterns.119/@nodes.1" invokes="//@patterns.52/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="ruleKT_y_100" partialPatterns="//@patterns.118 //@patterns.41" parentPattern="//@patterns.10" overlaps="//@patterns.118/@nodes.0 //@patterns.118/@nodes.1" positive="false">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="k" invokedBy="//@patterns.10/@nodes.0" invokes="//@patterns.118/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.10/@nodes.1" invokes="//@patterns.118/@nodes.1 //@patterns.41/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_x_101" partialPatterns="//@patterns.60 //@patterns.29" parentPattern="//@patterns.121" overlaps="//@patterns.60/@nodes.0 //@patterns.60/@nodes.1" positive="false">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.12/@nodes.0 //@patterns.121/@nodes.0" invokes="//@patterns.60/@nodes.0 //@patterns.29/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.12/@nodes.1 //@patterns.121/@nodes.1" invokes="//@patterns.60/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_x_102" partialPatterns="//@patterns.120 //@patterns.35" parentPattern="//@patterns.12" overlaps="//@patterns.120/@nodes.0 //@patterns.120/@nodes.1" positive="false">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.12/@nodes.0" invokes="//@patterns.120/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.12/@nodes.1" invokes="//@patterns.120/@nodes.1 //@patterns.35/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_y_103" partialPatterns="//@patterns.68 //@patterns.29" parentPattern="//@patterns.123" overlaps="//@patterns.68/@nodes.0 //@patterns.68/@nodes.1" positive="false">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.14/@nodes.0 //@patterns.123/@nodes.0" invokes="//@patterns.68/@nodes.0 //@patterns.29/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.14/@nodes.1 //@patterns.123/@nodes.1" invokes="//@patterns.68/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="rulePT_y_104" partialPatterns="//@patterns.122 //@patterns.41" parentPattern="//@patterns.14" overlaps="//@patterns.122/@nodes.0 //@patterns.122/@nodes.1" positive="false">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="p" invokedBy="//@patterns.14/@nodes.0" invokes="//@patterns.122/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="t" invokedBy="//@patterns.14/@nodes.1" invokes="//@patterns.122/@nodes.1 //@patterns.41/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </nodes>
+  </patterns>
+</HiPEPattern:HiPEPatternContainer>

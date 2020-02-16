@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="ASCII"?>
+<IBeXLanguage:IBeXPatternSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBeXLanguage="platform:/resource/org.emoflon.ibex.common/model/Common.ecore">
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="p_aBound">
+    <injectivityConstraints values="//@contextPatterns.0/@signatureNodes.0 //@contextPatterns.0/@localNodes.0"/>
+    <localEdges sourceNode="//@contextPatterns.0/@signatureNodes.0" targetNode="//@contextPatterns.0/@localNodes.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </localEdges>
+    <localNodes name="trg" incomingEdges="//@contextPatterns.0/@localEdges.0">
+      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </localNodes>
+    <signatureNodes name="src" outgoingEdges="//@contextPatterns.0/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="t_xBound">
+    <injectivityConstraints values="//@contextPatterns.1/@signatureNodes.0 //@contextPatterns.1/@localNodes.0"/>
+    <localEdges sourceNode="//@contextPatterns.1/@signatureNodes.0" targetNode="//@contextPatterns.1/@localNodes.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </localEdges>
+    <localNodes name="trg" incomingEdges="//@contextPatterns.1/@localEdges.0">
+      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </localNodes>
+    <signatureNodes name="src" outgoingEdges="//@contextPatterns.1/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="t_yBound">
+    <injectivityConstraints values="//@contextPatterns.2/@signatureNodes.0 //@contextPatterns.2/@localNodes.0"/>
+    <localEdges sourceNode="//@contextPatterns.2/@signatureNodes.0" targetNode="//@contextPatterns.2/@localNodes.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </localEdges>
+    <localNodes name="trg" incomingEdges="//@contextPatterns.2/@localEdges.0">
+      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </localNodes>
+    <signatureNodes name="src" outgoingEdges="//@contextPatterns.2/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="k_aBound">
+    <injectivityConstraints values="//@contextPatterns.3/@signatureNodes.0 //@contextPatterns.3/@localNodes.0"/>
+    <localEdges sourceNode="//@contextPatterns.3/@signatureNodes.0" targetNode="//@contextPatterns.3/@localNodes.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K/K_a"/>
+    </localEdges>
+    <localNodes name="trg" incomingEdges="//@contextPatterns.3/@localEdges.0">
+      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </localNodes>
+    <signatureNodes name="src" outgoingEdges="//@contextPatterns.3/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="KT_x">
+    <invocations invokedPattern="//@contextPatterns.1">
+      <mapping key="//@contextPatterns.4/@signatureNodes.0" value="//@contextPatterns.1/@signatureNodes.0"/>
+    </invocations>
+    <invocations invokedPattern="//@contextPatterns.3">
+      <mapping key="//@contextPatterns.4/@signatureNodes.1" value="//@contextPatterns.3/@signatureNodes.0"/>
+    </invocations>
+    <signatureNodes name="t">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+    <signatureNodes name="k">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="KT_xBwd">
+    <localEdges sourceNode="//@contextPatterns.5/@signatureNodes.0" targetNode="//@contextPatterns.5/@signatureNodes.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </localEdges>
+    <signatureNodes name="t" outgoingEdges="//@contextPatterns.5/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+    <signatureNodes name="k" incomingEdges="//@contextPatterns.5/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="Tp_x">
+    <localEdges sourceNode="//@contextPatterns.6/@signatureNodes.0" targetNode="//@contextPatterns.6/@signatureNodes.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x"/>
+    </localEdges>
+    <localEdges sourceNode="//@contextPatterns.6/@signatureNodes.0" targetNode="//@contextPatterns.6/@signatureNodes.2">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_u"/>
+    </localEdges>
+    <signatureNodes name="t" outgoingEdges="//@contextPatterns.6/@localEdges.0 //@contextPatterns.6/@localEdges.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+    <signatureNodes name="k" incomingEdges="//@contextPatterns.6/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </signatureNodes>
+    <signatureNodes name="us" incomingEdges="//@contextPatterns.6/@localEdges.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </signatureNodes>
+    <signatureNodes name="ps">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="KT_y">
+    <invocations invokedPattern="//@contextPatterns.2">
+      <mapping key="//@contextPatterns.7/@signatureNodes.0" value="//@contextPatterns.2/@signatureNodes.0"/>
+    </invocations>
+    <invocations invokedPattern="//@contextPatterns.3">
+      <mapping key="//@contextPatterns.7/@signatureNodes.1" value="//@contextPatterns.3/@signatureNodes.0"/>
+    </invocations>
+    <signatureNodes name="t">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+    <signatureNodes name="k">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="KT_yBwd">
+    <localEdges sourceNode="//@contextPatterns.8/@signatureNodes.0" targetNode="//@contextPatterns.8/@signatureNodes.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </localEdges>
+    <signatureNodes name="t" outgoingEdges="//@contextPatterns.8/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+    <signatureNodes name="k" incomingEdges="//@contextPatterns.8/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="Tp_y">
+    <localEdges sourceNode="//@contextPatterns.9/@signatureNodes.0" targetNode="//@contextPatterns.9/@signatureNodes.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y"/>
+    </localEdges>
+    <localEdges sourceNode="//@contextPatterns.9/@signatureNodes.0" targetNode="//@contextPatterns.9/@signatureNodes.2">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_u"/>
+    </localEdges>
+    <signatureNodes name="t" outgoingEdges="//@contextPatterns.9/@localEdges.0 //@contextPatterns.9/@localEdges.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+    <signatureNodes name="k" incomingEdges="//@contextPatterns.9/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </signatureNodes>
+    <signatureNodes name="us" incomingEdges="//@contextPatterns.9/@localEdges.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </signatureNodes>
+    <signatureNodes name="ps">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="PT_x">
+    <invocations invokedPattern="//@contextPatterns.0">
+      <mapping key="//@contextPatterns.10/@signatureNodes.0" value="//@contextPatterns.0/@signatureNodes.0"/>
+    </invocations>
+    <invocations invokedPattern="//@contextPatterns.1">
+      <mapping key="//@contextPatterns.10/@signatureNodes.1" value="//@contextPatterns.1/@signatureNodes.0"/>
+    </invocations>
+    <signatureNodes name="p">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </signatureNodes>
+    <signatureNodes name="t">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="PT_xBwd">
+    <localEdges sourceNode="//@contextPatterns.11/@signatureNodes.0" targetNode="//@contextPatterns.11/@signatureNodes.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </localEdges>
+    <signatureNodes name="p" outgoingEdges="//@contextPatterns.11/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </signatureNodes>
+    <signatureNodes name="t" incomingEdges="//@contextPatterns.11/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="Tu_x">
+    <localEdges sourceNode="//@contextPatterns.12/@signatureNodes.0" targetNode="//@contextPatterns.12/@signatureNodes.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </localEdges>
+    <localEdges sourceNode="//@contextPatterns.12/@signatureNodes.1" targetNode="//@contextPatterns.12/@signatureNodes.2">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_p"/>
+    </localEdges>
+    <signatureNodes name="p" outgoingEdges="//@contextPatterns.12/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </signatureNodes>
+    <signatureNodes name="t" incomingEdges="//@contextPatterns.12/@localEdges.0" outgoingEdges="//@contextPatterns.12/@localEdges.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+    <signatureNodes name="ps" incomingEdges="//@contextPatterns.12/@localEdges.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </signatureNodes>
+    <signatureNodes name="us">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="PT_y">
+    <invocations invokedPattern="//@contextPatterns.0">
+      <mapping key="//@contextPatterns.13/@signatureNodes.0" value="//@contextPatterns.0/@signatureNodes.0"/>
+    </invocations>
+    <invocations invokedPattern="//@contextPatterns.2">
+      <mapping key="//@contextPatterns.13/@signatureNodes.1" value="//@contextPatterns.2/@signatureNodes.0"/>
+    </invocations>
+    <signatureNodes name="p">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </signatureNodes>
+    <signatureNodes name="t">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="PT_yBwd">
+    <localEdges sourceNode="//@contextPatterns.14/@signatureNodes.0" targetNode="//@contextPatterns.14/@signatureNodes.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </localEdges>
+    <signatureNodes name="p" outgoingEdges="//@contextPatterns.14/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </signatureNodes>
+    <signatureNodes name="t" incomingEdges="//@contextPatterns.14/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="Tu_y">
+    <localEdges sourceNode="//@contextPatterns.15/@signatureNodes.0" targetNode="//@contextPatterns.15/@signatureNodes.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a"/>
+    </localEdges>
+    <localEdges sourceNode="//@contextPatterns.15/@signatureNodes.1" targetNode="//@contextPatterns.15/@signatureNodes.2">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_p"/>
+    </localEdges>
+    <signatureNodes name="p" outgoingEdges="//@contextPatterns.15/@localEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </signatureNodes>
+    <signatureNodes name="t" incomingEdges="//@contextPatterns.15/@localEdges.0" outgoingEdges="//@contextPatterns.15/@localEdges.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+    <signatureNodes name="ps" incomingEdges="//@contextPatterns.15/@localEdges.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </signatureNodes>
+    <signatureNodes name="us">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//U_s"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="T_pp">
+    <localEdges sourceNode="//@contextPatterns.16/@signatureNodes.0" targetNode="//@contextPatterns.16/@signatureNodes.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_p"/>
+    </localEdges>
+    <localEdges sourceNode="//@contextPatterns.16/@signatureNodes.0" targetNode="//@contextPatterns.16/@signatureNodes.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_p"/>
+    </localEdges>
+    <signatureNodes name="t" outgoingEdges="//@contextPatterns.16/@localEdges.0 //@contextPatterns.16/@localEdges.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+    <signatureNodes name="ps" incomingEdges="//@contextPatterns.16/@localEdges.0 //@contextPatterns.16/@localEdges.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="T_pp_unbound">
+    <invocations invokedPattern="//@contextPatterns.1">
+      <mapping key="//@contextPatterns.17/@signatureNodes.0" value="//@contextPatterns.1/@signatureNodes.0"/>
+    </invocations>
+    <invocations invokedPattern="//@contextPatterns.2">
+      <mapping key="//@contextPatterns.17/@signatureNodes.0" value="//@contextPatterns.2/@signatureNodes.0"/>
+    </invocations>
+    <localEdges sourceNode="//@contextPatterns.17/@signatureNodes.0" targetNode="//@contextPatterns.17/@signatureNodes.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_p"/>
+    </localEdges>
+    <localEdges sourceNode="//@contextPatterns.17/@signatureNodes.0" targetNode="//@contextPatterns.17/@signatureNodes.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_p"/>
+    </localEdges>
+    <signatureNodes name="t" outgoingEdges="//@contextPatterns.17/@localEdges.0 //@contextPatterns.17/@localEdges.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </signatureNodes>
+    <signatureNodes name="ps" incomingEdges="//@contextPatterns.17/@localEdges.0 //@contextPatterns.17/@localEdges.1">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P_s"/>
+    </signatureNodes>
+  </contextPatterns>
+</IBeXLanguage:IBeXPatternSet>

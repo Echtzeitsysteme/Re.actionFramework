@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:reactionContainer="platform:/resource/reactionContainer/model/reactionContainer.ecore" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="platform:/resource/reactionContainer/model/reactionContainer.ecore">
+  <xsd:import namespace="http://www.omg.org/XMI" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/XMI.xsd"/>
+  <xsd:complexType name="Container">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="states" type="reactionContainer:State"/>
+      <xsd:element name="agents" type="reactionContainer:Agent"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="modelName" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Container" type="reactionContainer:Container"/>
+  <xsd:complexType name="Agent">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="ID" type="xsd:long"/>
+  </xsd:complexType>
+  <xsd:element name="Agent" type="reactionContainer:Agent"/>
+  <xsd:complexType name="State">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+  </xsd:complexType>
+  <xsd:element name="State" type="reactionContainer:State"/>
+</xsd:schema>
