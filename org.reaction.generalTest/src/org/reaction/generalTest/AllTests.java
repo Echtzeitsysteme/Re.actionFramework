@@ -5,12 +5,15 @@ import static org.junit.Assert.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.emoflon.ibex.gt.api.GraphTransformationPattern;
+import org.emoflon.ibex.gt.api.GraphTransformationRule;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -35,6 +38,9 @@ public class AllTests {
 	Map<String, Long> referenceMatches;
 	Map<String, Long> simsgMatches;
 
+	Map<String, GraphTransformationRule> referenceRules;
+	Map<String, GraphTransformationRule> simsgRules;
+
 	@Before
 	public void setup() {
 		TestcasesModelPackage.eINSTANCE.eClass();
@@ -43,6 +49,8 @@ public class AllTests {
 		final String modelLocation = "C:\\Users\\tobia\\eclipse-workspaces\\re.actionFramework\\org.reaction.generalTest\\model\\Testcases.xmi";
 		referenceMatches = new HashMap<>();
 		simsgMatches = new HashMap<>();
+		referenceRules = new HashMap<>();
+		simsgRules = new HashMap<>();
 
 		ModelGenerator.createAndSaveModel(modelLocation, 0);
 
@@ -57,10 +65,10 @@ public class AllTests {
 		Class<GeneralTestAPI> referenceApiClass = GeneralTestAPI.class;
 		for (Method method : referenceApiClass.getDeclaredMethods()) {
 			try {
-				GraphTransformationPattern pattern = (GraphTransformationPattern) method.invoke(referenceApi,
-						new Object[] {});
-				long matches = pattern.countMatches();
+				GraphTransformationRule rule = (GraphTransformationRule) method.invoke(referenceApi, new Object[] {});
+				long matches = rule.countMatches();
 				String key = method.getName();
+				referenceRules.put(key, rule);
 				referenceMatches.put(key, matches);
 			} catch (IllegalAccessException e) {
 				// Auto-generated catch block
@@ -84,10 +92,11 @@ public class AllTests {
 				if (method.getName().startsWith("condition")) {
 					continue;
 				}
-				GraphTransformationPattern pattern = (GraphTransformationPattern) method.invoke(simsgApi,
-						new Object[] {});
-				long matches = pattern.countMatches();
+				GraphTransformationRule rule = (GraphTransformationRule) method.invoke(simsgApi, new Object[] {});
+
+				long matches = rule.countMatches();
 				String key = method.getName();
+				simsgRules.put(key, rule);
 				simsgMatches.put(key, matches);
 			} catch (IllegalAccessException e) {
 				// Auto-generated catch block
@@ -104,9 +113,22 @@ public class AllTests {
 	}
 
 	@Test
-	public void testAgainstCreatedModel() {
+	public void testContextsAgainstCreatedModel() {
 		System.out.println("Test execution here");
+		Map<String, Boolean> matchesEqual = getMatches();
+		List<String> sortedList = matchesEqual.keySet().stream().sorted().collect(Collectors.toList());
+		for (String key : sortedList) {
+			try {
+				assertTrue(matchesEqual.get(key));
+			} catch (AssertionError e) {
+				collector.addError(e);
+			}
+		}
+	}
+
+	private Map<String, Boolean> getMatches() {
 		List<String> sortedList = referenceMatches.keySet().stream().sorted().collect(Collectors.toList());
+		Map<String, Boolean> matchesEqual = new HashMap<>();
 		for (String key : sortedList) {
 			if (referenceMatches.containsKey(key) && simsgMatches.containsKey(key)) {
 				long referenceMatchCnt = referenceMatches.get(key);
@@ -114,14 +136,49 @@ public class AllTests {
 				String formatPrint = String.format("\"Reference to SimSG --> %-30s:\t%-10s - %10s\n", key,
 						String.valueOf(referenceMatchCnt), String.valueOf(simsgMatchCnt));
 				try {
-					assertTrue(referenceMatchCnt == simsgMatchCnt);
-					System.out.printf(formatPrint);
+					if (referenceMatchCnt == simsgMatchCnt) {
+						matchesEqual.put(key, true);
+						System.out.printf(formatPrint);
+					} else {
+						matchesEqual.put(key, false);
+						System.err.printf(formatPrint);
+					}
+
 				} catch (AssertionError e) {
-					System.err.printf(formatPrint);
+
 					collector.addError(e);
 				}
 			}
 		}
+		return matchesEqual;
 	}
+
+//	@Test
+//	public void testChangePatternsAgainstCreatedModel() {
+//		List<String> sortedList = referenceRules.keySet().stream().sorted().collect(Collectors.toList());
+//		for (String key : sortedList) {
+//			GraphTransformationRule refRule = referenceRules.get(key);
+//			GraphTransformationRule simsgRule = simsgRules.get(key);
+//
+//			Random random = new Random();
+//			int numberOfApplications = random.nextInt(10) + 1; // 1 to 10 times
+//			int i = 0;
+//			while (i < numberOfApplications && refRule.isApplicable() && simsgRule.isApplicable()) {
+//				refRule.apply();
+//				simsgRule.apply();
+//				i++;
+//			}
+//
+//			Map<String, Boolean> equalMatches = getMatches();
+//			equalMatches.values().forEach((equal) -> {
+//				try {
+//					assertTrue(equal);
+//				} catch (AssertionError e) {
+//					collector.addError(e);
+//				}
+//			});
+//
+//		}
+//	}
 
 }

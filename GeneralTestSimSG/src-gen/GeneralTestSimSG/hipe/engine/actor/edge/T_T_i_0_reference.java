@@ -48,17 +48,17 @@ public class T_T_i_0_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("bidirectionalRuleBwd_567_nacjunction"), this::check_constraint_78));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("forbiddenBondStateGeneric_560_nacjunction"), this::check_constraint_71));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1State1_513_nacjunction"), this::check_constraint_17));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1State2_517_nacjunction"), this::check_constraint_21));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1_1_505_nacjunction"), this::check_constraint_9));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1_2_509_nacjunction"), this::check_constraint_13));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State1_522_nacjunction"), this::check_constraint_26));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State2_524_nacjunction"), this::check_constraint_28));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State3_526_nacjunction"), this::check_constraint_30));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State4_528_nacjunction"), this::check_constraint_32));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2_520_nacjunction"), this::check_constraint_24));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("bidirectionalRuleBwd_557_nacjunction"), this::check_constraint_78));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("forbiddenBondStateGeneric_552_nacjunction"), this::check_constraint_71));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1State1_505_nacjunction"), this::check_constraint_17));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1State2_509_nacjunction"), this::check_constraint_21));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1_1_497_nacjunction"), this::check_constraint_9));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1_2_501_nacjunction"), this::check_constraint_13));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State1_514_nacjunction"), this::check_constraint_26));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State2_516_nacjunction"), this::check_constraint_28));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State3_518_nacjunction"), this::check_constraint_30));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State4_520_nacjunction"), this::check_constraint_32));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2_512_nacjunction"), this::check_constraint_24));
 		ports.add(new PortEdge(getSelf(), name2actor.get("t_iBound_production"), this::check_constraint_3));
 	}	
 

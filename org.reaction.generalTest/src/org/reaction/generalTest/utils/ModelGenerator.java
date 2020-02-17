@@ -87,39 +87,47 @@ public class ModelGenerator {
 		}
 
 		// create bound configurations
-		// TODO: Maybe some state configurations
 		for (int i = 0; i < 10; i++) {
 			A a1 = entityfactory.createA();
 			X x1 = entityfactory.createX();
 			a1.setA_b(x1);
 			x1.setX_y(a1);
+			a1.setA_c_u(us);
+			x1.setX_z_u(us);
 			agents.add(a1);
 			agents.add(x1);
 
 			A a2 = entityfactory.createA();
 			X x2 = entityfactory.createX();
 			a2.setA_b(x2);
+			a2.setA_c_u(us);
 			x2.setX_z(a2);
+			x2.setX_z_u(us);
 			agents.add(a2);
 			agents.add(x2);
 
 			A a3 = entityfactory.createA();
 			X x3 = entityfactory.createX();
 			a3.setA_c(x3);
+			a3.setA_c_u(us);
 			x3.setX_y(a3);
+			x3.setX_z_u(us);
 			agents.add(a3);
 			agents.add(x3);
 
 			A a4 = entityfactory.createA();
 			X x4 = entityfactory.createX();
 			a4.setA_c(x4);
+			a4.setA_c_u(us);
 			x4.setX_z(a4);
+			x4.setX_z_u(us);
 			agents.add(a4);
 			agents.add(x4);
 
 			A at1 = entityfactory.createA();
 			T t1 = entityfactory.createT();
 			at1.setA_b(t1);
+			at1.setA_c_u(us);
 			t1.setT_i(at1);
 			agents.add(t1);
 			agents.add(at1);
@@ -127,6 +135,7 @@ public class ModelGenerator {
 			A at2 = entityfactory.createA();
 			T t2 = entityfactory.createT();
 			at2.setA_b(t2);
+			at2.setA_c_u(us);
 			t2.setT_i(at2);
 			agents.add(t2);
 			agents.add(at2);
@@ -143,7 +152,9 @@ public class ModelGenerator {
 			t.setT_j(a);
 
 			a.setA_c(x2);
+			a.setA_c_u(us);
 			x2.setX_y(a);
+			x2.setX_z_u(us);
 
 			t.setT_i(x1);
 			x1.setX_z(t);
@@ -176,6 +187,7 @@ public class ModelGenerator {
 			X x = entityfactory.createX();
 
 			a.setA_b(x);
+			a.setA_c_u(us);
 			x.setX_z(a);
 			x.setX_z_p(ps);
 
@@ -230,6 +242,38 @@ public class ModelGenerator {
 			}
 		}
 		
+		//some a1.b+x.y, a2.c+x.z
+		for(int i=0; i< 5; i++) {
+			A a1= entityfactory.createA();
+			A a2= entityfactory.createA();
+			X x = entityfactory.createX();
+			
+			x.setX_y(a1);
+			x.setX_z(a2);
+			x.setX_z_u(us);
+			a1.setA_b(x);
+			a1.setA_c_u(us);
+			a2.setA_c(x);
+			a2.setA_c_u(us);
+			
+			agents.add(x);
+			agents.add(a1);
+			agents.add(a2);
+		}
+		
+		//some a.c(u)+x.z(p)
+		for(int i=0; i < 9 ;i++) {
+			A a = entityfactory.createA();
+			X x = entityfactory.createX();
+			
+			a.setA_c(x);
+			a.setA_c_u(us);
+			x.setX_z(a);
+			x.setX_z_p(ps);
+			
+			agents.add(a);
+			agents.add(x);
+		}
 
 		container.getAgents().addAll(agents);
 		return container;

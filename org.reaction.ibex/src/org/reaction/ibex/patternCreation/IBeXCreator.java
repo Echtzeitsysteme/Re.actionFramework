@@ -732,9 +732,19 @@ public class IBeXCreator {
 				switch (si.getBindingState()) {
 				case FREE:
 					addFreeSiteToContextPattern(contextPattern, ai, si);
+					// Check for state
+					if (si.getState() != null) {
+						addStateToContextPattern(contextPattern, ai, si, true);
+					}
 					break;
 				case UNSPECIFIED:
-					addUnspecifiedSiteToContextPattern(contextPattern, ai, si);
+					if (!ai.isLocal()) {
+						addUnspecifiedSiteToContextPattern(contextPattern, ai, si);
+						// Check for state
+						if (si.getState() != null) {
+							addStateToContextPattern(contextPattern, ai, si, true);
+						}
+					}
 					break;
 				case BOUND:
 					addBoundSiteToContextPattern(contextPattern, ai, si);
@@ -743,12 +753,13 @@ public class IBeXCreator {
 						throw new IllegalStateException(
 								"A configuration where a site is bound to a site it was explicitly declared not to be bound to should not be possible.");
 					}
+					// Check for state
+					if (si.getState() != null) {
+						addStateToContextPattern(contextPattern, ai, si, true);
+					}
 					break;
 				}
-				// Check for state
-				if (si.getState() != null) {
-					addStateToContextPattern(contextPattern, ai, si, true);
-				}
+
 			}
 		}
 

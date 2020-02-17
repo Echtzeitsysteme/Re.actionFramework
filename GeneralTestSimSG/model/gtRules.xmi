@@ -693,29 +693,17 @@
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
   </rules>
-  <rules name="forbiddenBondStateGeneric" documentation="" executable="true" ruleNodes="//@rules.86/@nodes.0 //@rules.86/@nodes.1 //@rules.86/@nodes.2 //@rules.86/@nodes.3">
+  <rules name="forbiddenBondStateGeneric" documentation="" executable="true" ruleNodes="//@rules.86/@nodes.0 //@rules.86/@nodes.1">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
     <nodes name="t">
       <type href="TestcasesModel.ecore#//T"/>
     </nodes>
-    <nodes name="local_X">
-      <type href="TestcasesModel.ecore#//X"/>
-    </nodes>
-    <nodes name="ps">
-      <type href="TestcasesModel.ecore#//P_s"/>
-    </nodes>
   </rules>
-  <rules name="forbiddenBondStateGenericWithSynthesis" documentation="" executable="true" ruleNodes="//@rules.87/@nodes.0 //@rules.87/@nodes.1 //@rules.87/@nodes.2">
+  <rules name="forbiddenBondStateGenericWithSynthesis" documentation="" executable="true" ruleNodes="//@rules.87/@nodes.0">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes name="local_X">
-      <type href="TestcasesModel.ecore#//X"/>
-    </nodes>
-    <nodes name="ps">
-      <type href="TestcasesModel.ecore#//P_s"/>
     </nodes>
   </rules>
   <rules name="breakSpecificBond" documentation="" executable="true" ruleNodes="//@rules.88/@nodes.0 //@rules.88/@nodes.1">

@@ -48,10 +48,10 @@ public class X_X_y_0_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("degradation2_541_nacjunction"), this::check_constraint_35));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("freeAgentsBind2_555_nacjunction"), this::check_constraint_66));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("freeAgentsBind_551_nacjunction"), this::check_constraint_62));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("partialDegradation2_545_nacjunction"), this::check_constraint_39));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("degradation2_533_nacjunction"), this::check_constraint_35));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("freeAgentsBind2_547_nacjunction"), this::check_constraint_66));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("freeAgentsBind_543_nacjunction"), this::check_constraint_62));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("partialDegradation2_537_nacjunction"), this::check_constraint_39));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("underspecified1_275_junction"), this::check_constraint_43));
 		ports.add(new PortEdge(getSelf(), name2actor.get("x_yBound_production"), this::check_constraint_5));
 	}	

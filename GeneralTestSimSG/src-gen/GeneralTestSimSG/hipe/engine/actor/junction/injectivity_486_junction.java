@@ -25,12 +25,12 @@ import hipe.generic.actor.junction.GenericJunctionActor;
 
 import hipe.network.AbstractJunctionNode;
 
-public class injectivity_500_junction extends GenericJunctionActor{
+public class injectivity_486_junction extends GenericJunctionActor{
 	
 	@Override
 	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
 		ports = new LinkedList<>();
-		ports.add(new PortJunctionRight(getSelf(), name2actor.get("injectivity_493_junction"), this::check_constraint_80));
+		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("injectivity_485_junction"), this::check_constraint_79));
 	}
 	
 	@Override
@@ -51,8 +51,8 @@ public class injectivity_500_junction extends GenericJunctionActor{
 		message.initialMessage.decrement();
 	}
 	
-	public boolean check_constraint_80(HMatch match) {
-		TestcasesModel.A a1 = (TestcasesModel.A) match.getNodes()[1];
+	public boolean check_constraint_79(HMatch match) {
+		TestcasesModel.A a1 = (TestcasesModel.A) match.getNodes()[0];
 		TestcasesModel.A a2 = (TestcasesModel.A) match.getNodes()[2];
 		boolean predicate = !a1.equals(a2);
 		match.setConstraintSatisfied(predicate);

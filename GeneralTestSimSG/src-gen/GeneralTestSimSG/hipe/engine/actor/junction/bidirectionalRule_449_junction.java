@@ -25,12 +25,12 @@ import hipe.generic.actor.junction.GenericJunctionActor;
 
 import hipe.network.AbstractJunctionNode;
 
-public class bidirectionalRule_457_junction extends GenericJunctionActor{
+public class bidirectionalRule_449_junction extends GenericJunctionActor{
 	
 	@Override
 	protected void initializePorts(Map<String, ActorRef> name2actor, AbstractJunctionNode node) {
 		ports = new LinkedList<>();
-		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("bidirectionalRule_456_junction"), this::check_constraint_74));
+		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("bidirectionalRule_448_junction"), this::check_constraint_74));
 	}
 	
 	@Override
@@ -52,8 +52,8 @@ public class bidirectionalRule_457_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_74(HMatch match) {
-		reactionContainer.Agent a_c_local = (reactionContainer.Agent) match.getNodes()[2];
 		TestcasesModel.T t = (TestcasesModel.T) match.getNodes()[1];
+		reactionContainer.Agent a_c_local = (reactionContainer.Agent) match.getNodes()[2];
 		boolean predicate = !t.equals(a_c_local);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

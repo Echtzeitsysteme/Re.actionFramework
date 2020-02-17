@@ -53,12 +53,12 @@ public class A_A_b_2_reference extends AbstractActor {
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("conditionPattern_Ab_to_Xz_state_p_Local_426_junction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("conditionPattern_Xz_to_Ab_410_junction"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("degradation3_242_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("generic1_547_nacjunction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("generic1_539_nacjunction"), this::returnTrue));
 		ports.add(new PortEdge(getSelf(), name2actor.get("generic2_production"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("generic3_347_junction"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("generic4_356_junction"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("generic5_360_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("injectivity_494_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("injectivity_486_junction"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("partialDegradation3_256_junction"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("partialDegradation4_264_junction"), this::returnTrue));
 	}	

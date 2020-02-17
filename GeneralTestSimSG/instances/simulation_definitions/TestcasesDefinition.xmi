@@ -777,29 +777,17 @@
         <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
       </nodes>
     </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="forbiddenBondStateGeneric" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.86/@nodes.0 //@GtRuleSet/@rules.86/@nodes.1 //@GtRuleSet/@rules.86/@nodes.2 //@GtRuleSet/@rules.86/@nodes.3">
+    <rules xmi:type="GTLanguage:GTRule" name="forbiddenBondStateGeneric" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.86/@nodes.0 //@GtRuleSet/@rules.86/@nodes.1">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
         <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="t">
         <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//T"/>
       </nodes>
-      <nodes xmi:type="GTLanguage:GTNode" name="local_X">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
-      </nodes>
-      <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
-      </nodes>
     </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="forbiddenBondStateGenericWithSynthesis" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.87/@nodes.0 //@GtRuleSet/@rules.87/@nodes.1 //@GtRuleSet/@rules.87/@nodes.2">
+    <rules xmi:type="GTLanguage:GTRule" name="forbiddenBondStateGenericWithSynthesis" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.87/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
         <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
-      </nodes>
-      <nodes xmi:type="GTLanguage:GTNode" name="local_X">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
-      </nodes>
-      <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="breakSpecificBond" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.88/@nodes.0 //@GtRuleSet/@rules.88/@nodes.1">
@@ -2254,45 +2242,19 @@
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.3">
         <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.92/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.3/@signatureNodes.0"/>
       </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.89">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.92/@signatureNodes.2" value="//@ibexPatternSet/@contextPatterns.89/@signatureNodes.0"/>
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.92/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.89/@signatureNodes.1"/>
-      </invocations>
-      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.92/@signatureNodes.2" targetNode="//@ibexPatternSet/@contextPatterns.92/@signatureNodes.3">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
-      </localEdges>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="a">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </signatureNodes>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="t">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
       </signatureNodes>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="local_X" outgoingEdges="//@ibexPatternSet/@contextPatterns.92/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-      </signatureNodes>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="ps" incomingEdges="//@ibexPatternSet/@contextPatterns.92/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
-      </signatureNodes>
     </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="forbiddenBondStateGenericWithSynthesis">
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.91">
         <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.93/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.91/@signatureNodes.0"/>
       </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.89">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.93/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.89/@signatureNodes.0"/>
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.93/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.89/@signatureNodes.1"/>
-      </invocations>
-      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.93/@signatureNodes.1" targetNode="//@ibexPatternSet/@contextPatterns.93/@signatureNodes.2">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
-      </localEdges>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="a">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-      </signatureNodes>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="local_X" outgoingEdges="//@ibexPatternSet/@contextPatterns.93/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-      </signatureNodes>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="ps" incomingEdges="//@ibexPatternSet/@contextPatterns.93/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </signatureNodes>
     </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="breakSpecificBond">

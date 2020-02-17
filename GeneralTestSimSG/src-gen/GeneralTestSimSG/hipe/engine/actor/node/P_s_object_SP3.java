@@ -47,7 +47,7 @@ public class P_s_object_SP3 extends AbstractActor {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
 		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("freeAgentsBind2_385_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchRight<TestcasesModel.P_s>(getSelf(), name2actor.get("partialSynthesis2_229_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("partialSynthesis2_229_junction"), this::returnTrue));
 		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("simpleBind2State3_54_junction"), this::returnTrue));
 		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("simpleSplit2State4_191_junction"), this::returnTrue));
 	}

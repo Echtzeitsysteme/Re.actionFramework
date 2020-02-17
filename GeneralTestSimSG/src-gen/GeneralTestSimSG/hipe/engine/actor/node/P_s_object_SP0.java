@@ -49,7 +49,7 @@ public class P_s_object_SP0 extends AbstractActor {
 		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("simpleBind1State1_25_junction"), this::returnTrue));
 		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("simpleSplit1State1_130_junction"), this::returnTrue));
 		ports.add(new PortNodeMatch<TestcasesModel.P_s>(getSelf(), name2actor.get("synthesisMulti5_production"), this::returnTrue));
-		ports.add(new PortNodeMatchRight<TestcasesModel.P_s>(getSelf(), name2actor.get("unspecified3_327_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("unspecified3_327_junction"), this::returnTrue));
 	}
 
 	@Override

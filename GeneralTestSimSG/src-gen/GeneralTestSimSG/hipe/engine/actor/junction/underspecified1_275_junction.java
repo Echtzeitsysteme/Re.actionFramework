@@ -52,8 +52,8 @@ public class underspecified1_275_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_46(HMatch match) {
-		reactionContainer.Agent x_z_local = (reactionContainer.Agent) match.getNodes()[2];
 		reactionContainer.Agent x_y_local = (reactionContainer.Agent) match.getNodes()[1];
+		reactionContainer.Agent x_z_local = (reactionContainer.Agent) match.getNodes()[2];
 		boolean predicate = !x_y_local.equals(x_z_local);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

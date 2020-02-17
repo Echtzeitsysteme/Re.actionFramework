@@ -48,14 +48,14 @@ public class A_A_c_2_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("breakSpecificBond_442_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("complexStateChanges_478_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("breakSpecificBond_434_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("complexStateChanges_470_junction"), this::returnTrue));
 		ports.add(new PortEdge(getSelf(), name2actor.get("conditionPattern_Ac_to_LocalAgent_X_production"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("generic1_548_nacjunction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("generic1_540_nacjunction"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("generic6State1_365_junction"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("generic6State2_371_junction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("generic7_377_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("injectivity_494_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("injectivity_486_junction"), this::returnTrue));
 	}	
 
 	@Override

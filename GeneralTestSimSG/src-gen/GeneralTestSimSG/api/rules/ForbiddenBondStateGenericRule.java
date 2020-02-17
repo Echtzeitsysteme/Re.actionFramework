@@ -9,9 +9,7 @@ import org.emoflon.ibex.common.operational.IMatch;
 import org.emoflon.ibex.gt.api.GraphTransformationRule;
 import org.emoflon.ibex.gt.engine.GraphTransformationInterpreter;
 import TestcasesModel.A;
-import TestcasesModel.P_s;
 import TestcasesModel.T;
-import TestcasesModel.X;
 
 /**
  * The rule <code>forbiddenBondStateGeneric()</code> which does the following:
@@ -42,8 +40,6 @@ public class ForbiddenBondStateGenericRule extends GraphTransformationRule<Forbi
 		List<String> names = new ArrayList<String>();
 		names.add("a");
 		names.add("t");
-		names.add("local_X");
-		names.add("ps");
 		return names;
 	}
 
@@ -69,35 +65,11 @@ public class ForbiddenBondStateGenericRule extends GraphTransformationRule<Forbi
 		return this;
 	}
 
-	/**
-	 * Binds the node local_X to the given object.
-	 *
-	 * @param object
-	 *            the object to set
-	 */
-	public ForbiddenBondStateGenericRule bindLocal_X(final X object) {
-		parameters.put("local_X", Objects.requireNonNull(object, "local_X must not be null!"));
-		return this;
-	}
-
-	/**
-	 * Binds the node ps to the given object.
-	 *
-	 * @param object
-	 *            the object to set
-	 */
-	public ForbiddenBondStateGenericRule bindPs(final P_s object) {
-		parameters.put("ps", Objects.requireNonNull(object, "ps must not be null!"));
-		return this;
-	}
-
 	@Override
 	public String toString() {
 		String s = "rule " + patternName + " {" + System.lineSeparator();
 		s += "	a --> " + parameters.get("a") + System.lineSeparator();
 		s += "	t --> " + parameters.get("t") + System.lineSeparator();
-		s += "	local_X --> " + parameters.get("local_X") + System.lineSeparator();
-		s += "	ps --> " + parameters.get("ps") + System.lineSeparator();
 		s += "}";
 		return s;
 	}

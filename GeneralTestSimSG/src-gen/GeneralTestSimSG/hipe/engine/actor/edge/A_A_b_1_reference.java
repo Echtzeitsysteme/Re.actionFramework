@@ -48,11 +48,11 @@ public class A_A_b_1_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("bidirectionalRule_457_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("bidirectionalRule_449_junction"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("conditionPattern_Ab_to_Ti_62_junction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("conditionPattern_Ti_to_Ab_67_junction"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("expandedSplit_198_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("genericBondBreak_488_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("genericBondBreak_480_junction"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("simpleSplit1_125_junction"), this::returnTrue));
 	}	
 
