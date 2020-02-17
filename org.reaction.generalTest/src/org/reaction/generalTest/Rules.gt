@@ -814,10 +814,10 @@ rule unspecified4() {
 }
 
 //-------------------------------GENERICS-------------------------------
-rule generic1() {
-	a: A // TODO: How to kill all possible connections that a could have?
-}
-when aNotBoundToX
+//rule generic1() {
+//	a: A // TODO: How to kill all possible connections that a could have?
+//}
+//when aNotBoundToX
 
 rule generic2() {
 	a: A {
@@ -960,13 +960,29 @@ rule forbiddenBondStateGeneric() {
 		++ -T_i -> a
 	}
 
-	us: U_s
-
 	ps: P_s
 }
 when forbiddenBondStateGenericCondition
 
+rule forbiddenBondStateGenericWithSynthesis() {
+	a: A {
+		++ -A_b -> t
+	}
+
+	_x: X {
+		-- -X_z_p -> ps
+	}
+
+	++t: T {
+		++ -T_i -> a
+	}
+
+	ps: P_s
+}
+when forbiddenBondStateGenericWithSynthesisCondition
+
 condition forbiddenBondStateGenericCondition = tFree && forbid forbiddenBondStateGenericConditionPattern
+condition forbiddenBondStateGenericWithSynthesisCondition = forbid forbiddenBondStateGenericConditionPattern
 
 abstract pattern forbiddenBondStateGenericConditionPattern() {
 	a: A {
@@ -975,10 +991,10 @@ abstract pattern forbiddenBondStateGenericConditionPattern() {
 
 	_x: X {
 		-X_z -> a
-		-X_z_p -> ps
+		-X_z_p -> _ps
 	}
 
-	ps: P_s
+	_ps: P_s
 }
 
 condition forbiddenBondStateCondition = forbid forbiddenBondStateConditionPattern

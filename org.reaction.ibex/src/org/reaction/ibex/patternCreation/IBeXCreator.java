@@ -69,8 +69,6 @@ public class IBeXCreator {
 	private IBeXLanguageFactory ibexFactory;
 	private IBeXPatternSet ibexPatternSet;
 
-	private EClass agentClass;
-
 	public IBeXCreator(IntermediateModel model, EPackage metamodelPackage) {
 		this.model = model;
 		this.metamodelPackage = metamodelPackage;
@@ -135,63 +133,56 @@ public class IBeXCreator {
 		for (IntermRule rule : rules) {
 			// Create ContextPattern
 			createContextPatternFromRule(rule);
-
+		}
+		for (IntermRule rule : rules) {
 			// Create CreatePatterns and DeletePatterns
 			createChangePatternsFromRule(rule);
 		}
 
 		// Add node pairs = injectivity constraints
 		for (IBeXContext context : ibexPatternSet.getContextPatterns()) {
-			IBeXContextPattern pattern = (IBeXContextPattern) context;
-			Map<EClass, Integer> nodeTypeRecords = new HashMap<>();
-
-			List<IBeXNode> patternNodes = pattern.getSignatureNodes();
-//			TODO: Do local nodes need to be included in eventual nodePairs as well?
-//			patternNodes.addAll(pattern.getLocalNodes());
-			for (IBeXNode node : patternNodes) {
-				EClass nodeType = node.getType();
-				int cnt = 0;
-				if (nodeTypeRecords.containsKey(nodeType)) {
-					cnt = nodeTypeRecords.get(nodeType);
-				}
-
-				nodeTypeRecords.put(nodeType, cnt + 1);
-			}
-
-			for (Entry<EClass, Integer> entry : nodeTypeRecords.entrySet()) {
-				if (entry.getValue() > 1) {
-					EClass type = entry.getKey();
-					List<IBeXNode> nodesOfType = patternNodes.stream().filter((IBeXNode node) -> node.getType() == type)
-							.collect(Collectors.toList());
-					List<IBeXNodePair> pairs = createNodePairs(nodesOfType);
-					pattern.getInjectivityConstraints().addAll(pairs);
-				}
-			}
+			IBeXContextPattern contextPattern = (IBeXContextPattern) context;
+			List<IBeXNodePair> nodePairs = createNodePairs(contextPattern);
+			contextPattern.getInjectivityConstraints().addAll(nodePairs);
 		}
+
 	}
 
 	/**
 	 * @return a list of all possible pairs resulting from the given list of nodes,
 	 *         if each node can be paired with every other node except itself.
 	 */
-	private List<IBeXNodePair> createNodePairs(List<IBeXNode> nodes) {
+	private List<IBeXNodePair> createNodePairs(IBeXContextPattern contextPattern) {
 
-		if (nodes.isEmpty()) {
-			return new LinkedList<>();
-		}
+		List<IBeXNode> nodes = new LinkedList<>();
+		nodes.addAll(contextPattern.getSignatureNodes());
+		nodes.addAll(contextPattern.getLocalNodes());
+		List<IBeXNodePair> allPairs = new LinkedList<>();
 
-		List<IBeXNodePair> pairs = new LinkedList<>();
-		IBeXNode firstNode = nodes.remove(0);
-		for (IBeXNode otherNode : nodes) {
-			IBeXNodePair pair = ibexFactory.createIBeXNodePair();
-			pair.getValues().add(firstNode);
-			pair.getValues().add(otherNode);
-			pairs.add(pair);
+		for (int i = 0; i < nodes.size(); i++) {
+			for (int j = i + 1; j < nodes.size(); j++) {
+				IBeXNode n1 = nodes.get(i);
+				IBeXNode n2 = nodes.get(j);
+
+				if (!isAgent(n1.getType()) || !isAgent(n2.getType())) {
+					continue;
+				}
+
+				if (n1.getType() == ReactionContainerPackage.Literals.AGENT
+						|| n2.getType() == ReactionContainerPackage.Literals.AGENT || n1.getType() == n2.getType()) {
+
+					IBeXNodePair pair = ibexFactory.createIBeXNodePair();
+					pair.getValues().add(n1);
+					pair.getValues().add(n2);
+					if (!allPairs.contains(pair)) {
+						allPairs.add(pair);
+					}
+				}
+			}
 		}
-		List<IBeXNodePair> allPairs = createNodePairs(nodes);
-		allPairs.addAll(pairs);
 
 		return allPairs;
+
 	}
 
 	private void createObservablePatterns() {
@@ -214,23 +205,18 @@ public class IBeXCreator {
 				if (!superTypes.isEmpty()) {
 					EClass superType = superTypes.get(0);
 					if (superType == stateClass) {
-						continue; // TODO Check if transformation is still correct
+						continue;
 					}
 				}
 
 				// Pattern creation plus name
 				IBeXContextPattern contextPattern = ibexFactory.createIBeXContextPattern();
-				String refName = ref.getName();
-				contextPattern.setName(
-						agent.getName().toLowerCase() + "_" + refName.substring(2, refName.length()) + "Bound");
+
+				contextPattern.setName(getBoundSitePatternName(agent, ref));
 
 				// Node creation
 				IBeXNode n1 = IBeXPatternFactory.createNode("src", metamodelAgentTypes.get(agent.getName()));
 				IBeXNode n2 = IBeXPatternFactory.createNode("trg", ReactionContainerPackage.Literals.AGENT);
-
-				if (agentClass == null) {
-					agentClass = ref.getEReferenceType();
-				}
 
 				contextPattern.getSignatureNodes().add(n1);
 				contextPattern.getLocalNodes().add(n2);
@@ -238,12 +224,6 @@ public class IBeXCreator {
 				// Edge Creation
 				IBeXEdge edge = IBeXPatternFactory.createEdge(n1, n2, ref);
 				contextPattern.getLocalEdges().add(edge);
-
-				// Pair creation
-				IBeXNodePair nodePair = ibexFactory.createIBeXNodePair();
-				nodePair.getValues().add(n1);
-				nodePair.getValues().add(n2);
-				contextPattern.getInjectivityConstraints().add(nodePair);
 
 				// Save Pattern
 				ibexPatternSet.getContextPatterns().add(contextPattern);
@@ -266,47 +246,30 @@ public class IBeXCreator {
 		String stateNodeName = getStateNodeName(si);
 		IBeXNode stateNode = getSignatureNodeFromContextPattern(contextPattern, stateNodeName);
 
-		if (stateNode != null) {
-			IBeXNode nodeInState;
-			if (ai.isLocal()) {
-				nodeInState = getLocalNodeFromContextPattern(contextPattern, ai.getName());
-				if (nodeInState == null) {
-					throw new IllegalStateException(
-							"The attempt of adding a state to a non existent local node should not be possible within the control flow of the program.");
-				}
-			} else {
-				nodeInState = getSignatureNodeFromContextPattern(contextPattern, ai.getName());
-			}
-
-			if (nodeInState == null) {
-				nodeInState = IBeXPatternFactory.createNode(ai.getName(), metamodelStateTypes.get(getStateTypeKey(si)));
-
-				contextPattern.getSignatureNodes().add(nodeInState);
-			}
-			if (isActive) {
-				IBeXEdge stateEdge = IBeXPatternFactory.createEdge(nodeInState, stateNode, getEdgeType(ai, si, true));
-				contextPattern.getLocalEdges().add(stateEdge);
-			}
-
-		} else {
-
-			// Get node with state
-			// Get nodes or create new ones if not existent
-			IBeXNode nodeInState = getSignatureNodeFromContextPattern(contextPattern, ai.getName());
-			if (nodeInState == null) {
-				nodeInState = IBeXPatternFactory.createNode(ai.getName(),
-						metamodelAgentTypes.get(ai.getInstanceOf().getName()));
-				contextPattern.getSignatureNodes().add(nodeInState);
-			}
-
+		if (stateNode == null) {
 			stateNode = IBeXPatternFactory.createNode(stateNodeName, metamodelStateTypes.get(getStateTypeKey(si)));
 			contextPattern.getSignatureNodes().add(stateNode);
-
-			if (isActive) {
-				IBeXEdge stateEdge = IBeXPatternFactory.createEdge(nodeInState, stateNode, getEdgeType(ai, si, true));
-				contextPattern.getLocalEdges().add(stateEdge);
-			}
 		}
+
+		// Get node with state
+		// Get nodes or create new ones if not existent
+		IBeXNode nodeInState = getNodeFromContextPattern(contextPattern, ai.getName());
+		if (nodeInState == null) {
+			nodeInState = IBeXPatternFactory.createNode(ai.getName(),
+					metamodelAgentTypes.get(ai.getInstanceOf().getName()));
+			if (ai.isLocal()) {
+				contextPattern.getLocalNodes().add(nodeInState);
+			} else {
+				contextPattern.getSignatureNodes().add(nodeInState);
+			}
+
+		}
+
+		if (isActive) {
+			IBeXEdge stateEdge = IBeXPatternFactory.createEdge(nodeInState, stateNode, getEdgeType(ai, si, true));
+			contextPattern.getLocalEdges().add(stateEdge);
+		}
+
 	}
 
 	private EReference getEdgeType(IntermAgentInstance ai, IntermSiteInstance si, boolean toState) {
@@ -469,15 +432,11 @@ public class IBeXCreator {
 				forbiddenPattern.getSignatureNodes().add(trgNode);
 			}
 
-			// create node pair
-			IBeXNodePair pair = ibexFactory.createIBeXNodePair();
-			pair.getValues().add(srcNode);
-			pair.getValues().add(trgNode);
-			forbiddenPattern.getInjectivityConstraints().add(pair);
-
 			// create edge
-			IBeXEdge edge = IBeXPatternFactory.createEdge(srcNode, trgNode, getEdgeType(src.getParent(), src, false));
-			forbiddenPattern.getLocalEdges().add(edge);
+			IBeXEdge edge1 = IBeXPatternFactory.createEdge(srcNode, trgNode, getEdgeType(src.getParent(), src, false));
+			forbiddenPattern.getLocalEdges().add(edge1);
+			IBeXEdge edge2 = IBeXPatternFactory.createEdge(trgNode, srcNode, getEdgeType(trgParent, trgSi, false));
+			forbiddenPattern.getLocalEdges().add(edge2);
 
 			// Add state for target
 			IntermSiteState state = trgSi.getState();
@@ -517,14 +476,6 @@ public class IBeXCreator {
 			forbiddenPattern.getSignatureNodes().add(srcNode);
 			forbiddenPattern.getLocalNodes().add(trgNode);
 
-			// create injectivity constraint if nodes are of same type
-			if (srcNode.getType() == trgNode.getType()) {
-				IBeXNodePair pair = ibexFactory.createIBeXNodePair();
-				pair.getValues().add(srcNode);
-				pair.getValues().add(trgNode);
-				forbiddenPattern.getInjectivityConstraints().add(pair);
-			}
-
 			// create edge
 			IBeXEdge edge = IBeXPatternFactory.createEdge(srcNode, trgNode, getEdgeType(src.getParent(), src, false));
 			forbiddenPattern.getLocalEdges().add(edge);
@@ -549,7 +500,7 @@ public class IBeXCreator {
 			IntermSiteInstance si) {
 
 		// Get nodes or create new ones if not existent
-		IBeXNode boundNode = getSignatureNodeFromContextPattern(contextPattern, ai.getName());
+		IBeXNode boundNode = getNodeFromContextPattern(contextPattern, ai.getName());
 		if (boundNode == null) {
 			boundNode = IBeXPatternFactory.createNode(ai.getName(),
 					metamodelAgentTypes.get(ai.getInstanceOf().getName()));
@@ -562,36 +513,24 @@ public class IBeXCreator {
 
 				IntermSiteInstance boundToSite = (IntermSiteInstance) boundTo;
 
-				IntermAgentInstance boundToParent = boundToSite.getParent();
-				String partnerName = boundToParent.getName();
+				IntermAgentInstance boundToAgent = boundToSite.getParent();
+				String partnerName = boundToAgent.getName();
 				IBeXNode boundPartner;
-				if (boundToParent.isLocal()) {
+
+				boundPartner = getNodeFromContextPattern(contextPattern, partnerName);
+				if (boundPartner == null) {
 					boundPartner = IBeXPatternFactory.createNode(partnerName,
-							metamodelAgentTypes.get(boundToParent.getInstanceOf().getName()));
-					contextPattern.getLocalNodes().add(boundPartner);
-
-					// State for local nodes must be considered here since only signature nodes will
-					// actively be created when translating patterns
-					IntermSiteState state = boundToSite.getState();
-					if (state != null) {
-						addStateToContextPattern(contextPattern, boundToSite.getParent(), boundToSite, true);
-					}
-
-				} else {
-					boundPartner = getSignatureNodeFromContextPattern(contextPattern, partnerName);
-					if (boundPartner == null) {
-						boundPartner = IBeXPatternFactory.createNode(partnerName,
-								metamodelAgentTypes.get(boundToParent.getInstanceOf().getName()));
+							metamodelAgentTypes.get(boundToAgent.getInstanceOf().getName()));
+					if (boundToAgent.isLocal()) {
+						contextPattern.getLocalNodes().add(boundPartner);
+					} else {
 						contextPattern.getSignatureNodes().add(boundPartner);
 					}
 				}
 
-				if (!nodesAlreadyConnected(contextPattern, boundNode, boundPartner)) {
-					// Create Edge
-					IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner,
-							getEdgeType(ai, si, false));
-					contextPattern.getLocalEdges().add(connectingEdge);
-				}
+				IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner,
+						getEdgeType(ai, si, false));
+				contextPattern.getLocalEdges().add(connectingEdge);
 
 			} else if (boundTo instanceof IntermAgent) {
 
@@ -611,7 +550,7 @@ public class IBeXCreator {
 				contextPattern.getLocalEdges().add(connectingEdge);
 
 			} else if (boundTo instanceof IntermAgentInstance) {
-				
+
 				IntermAgentInstance boundToInstance = (IntermAgentInstance) boundTo;
 				String partnerName = boundToInstance.getName();
 				IBeXNode boundPartner;
@@ -628,12 +567,10 @@ public class IBeXCreator {
 					}
 				}
 
-				if (!nodesAlreadyConnected(contextPattern, boundNode, boundPartner)) {
-					// Create Edge
-					IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner,
-							getEdgeType(ai, si, false));
-					contextPattern.getLocalEdges().add(connectingEdge);
-				}
+				// Create Edge
+				IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner,
+						getEdgeType(ai, si, false));
+				contextPattern.getLocalEdges().add(connectingEdge);
 
 			} else {
 				throw new UnsupportedOperationException("Could not handle type of " + boundTo.toString());
@@ -641,19 +578,13 @@ public class IBeXCreator {
 		}
 		// for example: a.b+?
 		else {
+			// Create Local Node and bind to it
+			IBeXNode localNode = IBeXPatternFactory.createNode(ai.getName() + "_" + si.getName() + "_local",
+					ReactionContainerPackage.Literals.AGENT);
+			IBeXEdge edgeToLocal = IBeXPatternFactory.createEdge(boundNode, localNode, getEdgeType(ai, si, false));
 
-			// Create invocation
-			IBeXPatternInvocation invoc = ibexFactory.createIBeXPatternInvocation();
-			IBeXContextPattern invokedBoundPattern = boundPatterns.get(getBoundSitePatternName(ai, si));
-			invoc.setInvokedBy(contextPattern);
-			invoc.setInvokedPattern(invokedBoundPattern);
-			invoc.setPositive(true);
-
-			IBeXNode srcNode = getSignatureNodeFromContextPattern(invokedBoundPattern, "src");
-			invoc.getMapping().put(boundNode, srcNode);
-
-			// Add invocation
-			contextPattern.getInvocations().add(invoc);
+			contextPattern.getLocalNodes().add(localNode);
+			contextPattern.getLocalEdges().add(edgeToLocal);
 		}
 	}
 
@@ -705,6 +636,19 @@ public class IBeXCreator {
 	}
 
 	/**
+	 * @return the first found signature node with the given name or if there is no
+	 *         such node, the first local node with the given name. if there is no
+	 *         such local node as well, returns null.
+	 */
+	private IBeXNode getNodeFromContextPattern(IBeXContextPattern contextPattern, String name) {
+		IBeXNode foundNode = getSignatureNodeFromContextPattern(contextPattern, name);
+		if (foundNode == null) {
+			foundNode = getLocalNodeFromContextPattern(contextPattern, name);
+		}
+		return foundNode;
+	}
+
+	/**
 	 * @return the first context pattern found in the currently known contexts with
 	 *         matching name
 	 */
@@ -745,7 +689,7 @@ public class IBeXCreator {
 			for (IntermSiteInstance si : ai.getSiteInstances()) {
 				if (si.getState() != null) {
 					String stateNodeName = getStateNodeName(si);
-					IBeXNode stateNode = getOrCreateNode(contextPatternRule, stateNodeName);
+					IBeXNode stateNode = getNodeFromContextPattern(contextPatternRule, stateNodeName);
 					if (stateNode == null) {
 						stateNode = IBeXPatternFactory.createNode(stateNodeName,
 								metamodelStateTypes.get(getStateTypeKey(si)));
@@ -781,31 +725,29 @@ public class IBeXCreator {
 		List<IntermAgentInstance> instances = pattern.getAgentInstances();
 
 		for (IntermAgentInstance ai : instances) {
-			if (!ai.isLocal()) {
-				for (IntermSiteInstance si : ai.getSiteInstances()) {
+			for (IntermSiteInstance si : ai.getSiteInstances()) {
 
-					// Only create "actively binding" nodes for signature nodes. Local nodes will
-					// and should only be created as passive part to bind signature nodes to
-					switch (si.getBindingState()) {
-					case FREE:
-						addFreeSiteToContextPattern(contextPattern, ai, si);
-						break;
-					case UNSPECIFIED:
-						addUnspecifiedSiteToContextPattern(contextPattern, ai, si);
-						break;
-					case BOUND:
-						addBoundSiteToContextPattern(contextPattern, ai, si);
+				// Only create "actively binding" nodes for signature nodes. Local nodes will
+				// and should only be created as passive part to bind signature nodes to
+				switch (si.getBindingState()) {
+				case FREE:
+					addFreeSiteToContextPattern(contextPattern, ai, si);
+					break;
+				case UNSPECIFIED:
+					addUnspecifiedSiteToContextPattern(contextPattern, ai, si);
+					break;
+				case BOUND:
+					addBoundSiteToContextPattern(contextPattern, ai, si);
 
-						if (si.getNotBoundTo().contains(si.getBoundTo())) {
-							throw new IllegalStateException(
-									"A configuration where a site is bound to a site it was explicitly declared not to be bound to should not be possible.");
-						}
-						break;
+					if (si.getNotBoundTo().contains(si.getBoundTo())) {
+						throw new IllegalStateException(
+								"A configuration where a site is bound to a site it was explicitly declared not to be bound to should not be possible.");
 					}
-					// Check for state
-					if (si.getState() != null) {
-						addStateToContextPattern(contextPattern, ai, si, true);
-					}
+					break;
+				}
+				// Check for state
+				if (si.getState() != null) {
+					addStateToContextPattern(contextPattern, ai, si, true);
 				}
 			}
 		}
@@ -948,27 +890,6 @@ public class IBeXCreator {
 	}
 
 	/**
-	 * Checks whether a node corresponding to the given name already exists. If it
-	 * does not a new node will be created.
-	 * 
-	 * @return the already existent or newly created node.
-	 */
-	private IBeXNode getOrCreateNode(IBeXContextPattern pattern, String name) {
-		for (IBeXNode node : pattern.getSignatureNodes()) {
-			if (node.getName().equals(name)) {
-				return node;
-			}
-		}
-		for (IBeXNode node : pattern.getSignatureNodes()) {
-			if (node.getName().equals(name)) {
-				return node;
-			}
-		}
-		IBeXNode node = IBeXPatternFactory.createNode(name, agentClass);
-		return node;
-	}
-
-	/**
 	 * @return the first site instance found in the given list with the desired
 	 *         name.
 	 */
@@ -1024,10 +945,26 @@ public class IBeXCreator {
 	}
 
 	/**
+	 * @returns the valid and hopefully unique name for a bound pattern
+	 */
+	private String getBoundSitePatternName(EClass agentClass, EReference siteReference) {
+
+		int agentNameLength = agentClass.getName().length();
+		String siteName = siteReference.getName().substring(agentNameLength + 1);
+
+		return agentClass.getName().toLowerCase() + "_" + siteName + "Bound";
+	}
+
+	/**
 	 * @return true if the given class inherited from the agent class
 	 */
 	private boolean isAgent(EClass clazz) {
-		return clazz.getESuperTypes().get(0) == ReactionContainerPackage.Literals.AGENT;
+		EClass agentClass = ReactionContainerPackage.Literals.AGENT;
+		if (clazz == agentClass) {
+			return true;
+		} else {
+			return clazz.getESuperTypes().get(0) == agentClass;
+		}
 	}
 
 	/**

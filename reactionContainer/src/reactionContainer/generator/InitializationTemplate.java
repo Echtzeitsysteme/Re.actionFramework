@@ -3,7 +3,6 @@ package reactionContainer.generator;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 import ecoreBCModel.IntermAgentInstance;
@@ -48,8 +47,6 @@ public class InitializationTemplate {
 	}
 
 	private void findStates() {
-
-		Map<IntermSiteInstance, IntermSiteState> siteStates = new HashMap<>();
 
 		for (IntermAgentInstance instance : pattern.getAgentInstances()) {
 			for (IntermSiteInstance siteInstance : instance.getSiteInstances()) {

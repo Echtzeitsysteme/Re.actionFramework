@@ -109,7 +109,7 @@ public class IntermPatternTemplate {
 
 				localInstances.add(localInstance);
 
-				return localInstance;
+				return localSite;
 			} else {
 				// Only Agent given: return agent
 				IntermAgent intermAgent = transformation.agentToIntermAgent((Agent) abstrAgent);
@@ -196,27 +196,26 @@ public class IntermPatternTemplate {
 
 				if (bondType == BondType.UNBOUND) {
 					for (IntermSiteInstance si : intermLeftSiteInstances) {
-						si.setBindingState(BindingState.UNSPECIFIED);
-						si.getNotBoundTo().add(partner);
+						forbidSiteInstanceConnection(si, partner);
 					}
 				}
 				if (bondType == BondType.BOUND) {
 					for (IntermSiteInstance si : intermLeftSiteInstances) {
-						si.setBindingState(BindingState.BOUND);
-						si.setBoundTo(partner);
+						connectSiteInstanceTo(si, partner);
 					}
 				}
 			}
 		}
 		// left side unspecified
-		else {
-			BindingState stateToSet = BindingState.UNSPECIFIED;
-
-			for (IntermSiteInstance si : intermLeftSiteInstances) {
-				si.setBindingState(stateToSet);
-			}
-
-		}
+		//TODO: Probably not necessary since all created instances are in unspecified state at default?
+//		else {
+//			BindingState stateToSet = BindingState.UNSPECIFIED;
+//
+//			for (IntermSiteInstance si : intermLeftSiteInstances) {
+//				si.setBindingState(stateToSet);
+//			}
+//
+//		}
 	}
 
 	/**

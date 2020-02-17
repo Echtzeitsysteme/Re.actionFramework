@@ -3,10 +3,6 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xsi:schemaLocation="http://www.eclipse.org/emf/2002/Ecore java://org.eclipse.emf.ecore.EcorePackage"
     name="TestcasesModel" nsURI="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore"
     nsPrefix="TestcasesModel">
-  <eClassifiers xmi:type="ecore:EClass" name="T" eSuperTypes="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent">
-    <eStructuralFeatures xmi:type="ecore:EReference" name="T_i" eType="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
-    <eStructuralFeatures xmi:type="ecore:EReference" name="T_j" eType="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
-  </eClassifiers>
   <eClassifiers xmi:type="ecore:EClass" name="A" eSuperTypes="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent">
     <eStructuralFeatures xmi:type="ecore:EReference" name="A_b" eType="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="A_c" eType="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
@@ -20,5 +16,9 @@
     <eStructuralFeatures xmi:type="ecore:EReference" name="X_z" eType="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="X_z_u" eType="#//U_s"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="X_z_p" eType="#//P_s"/>
+  </eClassifiers>
+  <eClassifiers xmi:type="ecore:EClass" name="T" eSuperTypes="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent">
+    <eStructuralFeatures xmi:type="ecore:EReference" name="T_i" eType="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    <eStructuralFeatures xmi:type="ecore:EReference" name="T_j" eType="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
   </eClassifiers>
 </ecore:EPackage>

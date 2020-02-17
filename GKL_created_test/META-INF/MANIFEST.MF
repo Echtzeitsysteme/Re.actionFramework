@@ -1,7 +1,9 @@
 Manifest-Version: 1.0
 Automatic-Module-Name: GKL_created_test
 Bundle-SymbolicName: GKL_created_test;singleton:=true
-Export-Package: GKLModel
+Export-Package: GKLModel,
+ GKL_created_test.api,
+ test.benchmark
 Bundle-Name: GKL_created_test
 Bundle-Version: 0.0.1.qualifier
 Require-Bundle: org.eclipse.emf.ecore,

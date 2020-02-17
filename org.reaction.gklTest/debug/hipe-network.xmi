@@ -66,39 +66,39 @@
   <networknode xmi:type="hipe.network:ReferenceNode" name="P_P_a_0_reference" inputPort="//@networknode.68/@ports/@port.0 //@networknode.3/@ports/@port.1">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.7" initializationCode="" constraintName="check_constraint_3" predicateCode="!a.equals(p)">
-        <indices>1</indices>
         <indices>0</indices>
-        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+        <indices>1</indices>
         <types xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
-        <nodeNames>a</nodeNames>
+        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
         <nodeNames>p</nodeNames>
+        <nodeNames>a</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="hipe-patterns.xmi#//@patterns.26"/>
       </port>
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.8" initializationCode="" constraintName="check_constraint_4" predicateCode="!a.equals(p)">
-        <indices>1</indices>
         <indices>0</indices>
-        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+        <indices>1</indices>
         <types xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
-        <nodeNames>a</nodeNames>
+        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
         <nodeNames>p</nodeNames>
+        <nodeNames>a</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="hipe-patterns.xmi#//@patterns.29"/>
       </port>
       <port xmi:type="hipe.network:ConstraintPort" portSlot="RIGHT" portTarget="//@networknode.31" initializationCode="" constraintName="check_constraint_13" predicateCode="!a.equals(p)">
-        <indices>1</indices>
         <indices>0</indices>
-        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+        <indices>1</indices>
         <types xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
-        <nodeNames>a</nodeNames>
+        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
         <nodeNames>p</nodeNames>
+        <nodeNames>a</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="hipe-patterns.xmi#//@patterns.29"/>
       </port>
       <port xmi:type="hipe.network:ConstraintPort" portSlot="RIGHT" portTarget="//@networknode.39" initializationCode="" constraintName="check_constraint_15" predicateCode="!a.equals(p)">
-        <indices>1</indices>
         <indices>0</indices>
-        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+        <indices>1</indices>
         <types xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
-        <nodeNames>a</nodeNames>
+        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
         <nodeNames>p</nodeNames>
+        <nodeNames>a</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="hipe-patterns.xmi#//@patterns.29"/>
       </port>
     </ports>
@@ -115,39 +115,39 @@
   <networknode xmi:type="hipe.network:ReferenceNode" name="T_T_x_0_reference" inputPort="//@networknode.70/@ports/@port.0 //@networknode.3/@ports/@port.2">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.10" initializationCode="" constraintName="check_constraint_5" predicateCode="!t.equals(x)">
-        <indices>1</indices>
         <indices>0</indices>
-        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+        <indices>1</indices>
         <types xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
-        <nodeNames>x</nodeNames>
+        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
         <nodeNames>t</nodeNames>
+        <nodeNames>x</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="hipe-patterns.xmi#//@patterns.32"/>
       </port>
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.11" initializationCode="" constraintName="check_constraint_6" predicateCode="!t.equals(x)">
-        <indices>1</indices>
         <indices>0</indices>
-        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+        <indices>1</indices>
         <types xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
-        <nodeNames>x</nodeNames>
+        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
         <nodeNames>t</nodeNames>
+        <nodeNames>x</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="hipe-patterns.xmi#//@patterns.35"/>
       </port>
       <port xmi:type="hipe.network:ConstraintPort" portSlot="RIGHT" portTarget="//@networknode.17" initializationCode="" constraintName="check_constraint_10" predicateCode="!t.equals(x)">
-        <indices>1</indices>
         <indices>0</indices>
-        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+        <indices>1</indices>
         <types xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
-        <nodeNames>x</nodeNames>
+        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
         <nodeNames>t</nodeNames>
+        <nodeNames>x</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="hipe-patterns.xmi#//@patterns.35"/>
       </port>
       <port xmi:type="hipe.network:ConstraintPort" portSlot="RIGHT" portTarget="//@networknode.32" initializationCode="" constraintName="check_constraint_14" predicateCode="!t.equals(x)">
-        <indices>1</indices>
         <indices>0</indices>
-        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+        <indices>1</indices>
         <types xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
-        <nodeNames>x</nodeNames>
+        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
         <nodeNames>t</nodeNames>
+        <nodeNames>x</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="hipe-patterns.xmi#//@patterns.35"/>
       </port>
     </ports>
@@ -164,12 +164,12 @@
   <networknode xmi:type="hipe.network:ReferenceNode" name="T_T_y_0_reference" inputPort="//@networknode.71/@ports/@port.0 //@networknode.3/@ports/@port.3">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.13" initializationCode="" constraintName="check_constraint_7" predicateCode="!t.equals(y)">
-        <indices>1</indices>
         <indices>0</indices>
-        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+        <indices>1</indices>
         <types xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
-        <nodeNames>y</nodeNames>
+        <types xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
         <nodeNames>t</nodeNames>
+        <nodeNames>y</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="hipe-patterns.xmi#//@patterns.38"/>
       </port>
       <port xmi:type="hipe.network:ConstraintPort" portSlot="CENTER" portTarget="//@networknode.14" initializationCode="" constraintName="check_constraint_8" predicateCode="!t.equals(y)">
@@ -210,7 +210,7 @@
     <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="t" value="0"/>
     <signatureElts xmi:type="hipe.network:IntegerToIntegerMapEntry" key="0" value="0"/>
   </networknode>
-  <networknode xmi:type="hipe.network:JunctionNode" name="ruleKT_x_25_junction" inputPort="//@networknode.72/@ports/@port.0 //@networknode.67/@ports/@port.0" patternName="ruleKT_x_25">
+  <networknode xmi:type="hipe.network:JunctionNode" name="ruleKT_x_25_junction" inputPort="//@networknode.67/@ports/@port.0 //@networknode.72/@ports/@port.0" patternName="ruleKT_x_25">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.16"/>
     </ports>
@@ -225,7 +225,7 @@
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.17"/>
     </ports>
     <overlaps xmi:type="hipe.network:Overlaps">
-      <overlap xmi:type="hipe.network:Overlap" leftIndex="1"/>
+      <overlap xmi:type="hipe.network:Overlap"/>
     </overlaps>
   </networknode>
   <networknode xmi:type="hipe.network:NACJunctionNode" name="ruleKT_x_98_nacjunction" inputPort="//@networknode.16/@ports/@port.0 //@networknode.9/@ports/@port.2" patternName="ruleKT_x_98">
@@ -233,12 +233,12 @@
       <port xmi:type="hipe.network:SimplePort" portSlot="CENTER" portTarget="//@networknode.18"/>
     </ports>
     <overlaps xmi:type="hipe.network:Overlaps">
-      <overlap xmi:type="hipe.network:Overlap"/>
+      <overlap xmi:type="hipe.network:Overlap" leftIndex="1"/>
     </overlaps>
   </networknode>
   <networknode xmi:type="hipe.network:ProductionNode" name="ruleKT_x_production" inputPort="//@networknode.17/@ports/@port.0" patternName="ruleKT_x">
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="t" value="0"/>
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="k" value="1"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="k" value="0"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="t" value="1"/>
   </networknode>
   <networknode xmi:type="hipe.network:ReferenceNode" name="K_K_a_1_reference" inputPort="//@networknode.66/@ports/@port.1 //@networknode.73/@ports/@port.0">
     <ports xmi:type="hipe.network:Ports">
@@ -390,7 +390,7 @@
     <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="p" value="0"/>
     <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="t" value="1"/>
   </networknode>
-  <networknode xmi:type="hipe.network:JunctionNode" name="rulePT_y_49_junction" inputPort="//@networknode.68/@ports/@port.2 //@networknode.72/@ports/@port.2" patternName="rulePT_y_49">
+  <networknode xmi:type="hipe.network:JunctionNode" name="rulePT_y_49_junction" inputPort="//@networknode.72/@ports/@port.2 //@networknode.68/@ports/@port.2" patternName="rulePT_y_49">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.39"/>
     </ports>
@@ -405,7 +405,7 @@
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.40"/>
     </ports>
     <overlaps xmi:type="hipe.network:Overlaps">
-      <overlap xmi:type="hipe.network:Overlap"/>
+      <overlap xmi:type="hipe.network:Overlap" leftIndex="1"/>
     </overlaps>
   </networknode>
   <networknode xmi:type="hipe.network:NACJunctionNode" name="rulePT_y_104_nacjunction" inputPort="//@networknode.39/@ports/@port.0 //@networknode.12/@ports/@port.3" patternName="rulePT_y_104">
@@ -413,12 +413,12 @@
       <port xmi:type="hipe.network:SimplePort" portSlot="CENTER" portTarget="//@networknode.41"/>
     </ports>
     <overlaps xmi:type="hipe.network:Overlaps">
-      <overlap xmi:type="hipe.network:Overlap" leftIndex="1"/>
+      <overlap xmi:type="hipe.network:Overlap"/>
     </overlaps>
   </networknode>
   <networknode xmi:type="hipe.network:ProductionNode" name="rulePT_y_production" inputPort="//@networknode.40/@ports/@port.0" patternName="rulePT_y">
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="p" value="0"/>
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="t" value="1"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="t" value="0"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="p" value="1"/>
   </networknode>
   <networknode xmi:type="hipe.network:ReferenceNode" name="T_T_y_2_reference" inputPort="//@networknode.73/@ports/@port.2 //@networknode.69/@ports/@port.2">
     <ports xmi:type="hipe.network:Ports">
@@ -667,7 +667,7 @@
   </networknode>
   <networknode xmi:type="hipe.network:ObjectNode" name="K_object_SP1" dispatchnode="//@networknode.0">
     <ports xmi:type="hipe.network:Ports">
-      <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.15"/>
+      <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.15"/>
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.20"/>
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.27"/>
     </ports>
@@ -677,7 +677,7 @@
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.6"/>
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.34"/>
-      <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.38"/>
+      <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.38"/>
     </ports>
     <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
   </networknode>
@@ -709,9 +709,9 @@
   </networknode>
   <networknode xmi:type="hipe.network:ObjectNode" name="T_object_SP2" dispatchnode="//@networknode.0">
     <ports xmi:type="hipe.network:Ports">
-      <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.15"/>
+      <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.15"/>
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.27"/>
-      <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.38"/>
+      <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.38"/>
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.61"/>
     </ports>
     <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>

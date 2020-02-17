@@ -87,7 +87,6 @@ public class DslToIntermTransformation {
 		initialisationsInModel = findInitialisationsInModel();
 		observablesInModel = findObservablesInModel();
 		commandsInModel = findCommandsInModel();
-//		arithmeticVarsInModel = findArithmeticVarsInModel();
 	}
 
 	/**

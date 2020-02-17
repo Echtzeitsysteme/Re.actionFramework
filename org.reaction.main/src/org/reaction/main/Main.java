@@ -14,6 +14,7 @@ import org.xtext.biochemics.dotDsl.ReactionModel;
 
 import IBeXLanguage.IBeXPatternSet;
 import ecoreBCModel.IntermediateModel;
+import reactionContainer.ReactionContainerPackage;
 import reactionContainer.generator.ContainerEMF;
 import reactionContainer.generator.ContainerGenerator;
 
@@ -21,12 +22,12 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// Load Model
-//		final String dslModelLocation = "C:\\Users\\tobia\\OneDrive\\Dokumente\\BA\\runtime-EclipseXtext\\dsl.dotTest\\src\\GKL.xmi";
-//		final String trgProjectLocation = "C:\\Users\\tobia\\eclipse-workspaces\\runtime-EclipseApplication\\GKL_created_test";
+		ReactionContainerPackage.eINSTANCE.eClass();
 		
-		final String dslModelLocation = "C:\\Users\\tobia\\OneDrive\\Dokumente\\BA\\runtime-EclipseXtext\\dsl.dotTest\\src\\Testcases.xmi";
-		final String trgProjectLocation = "C:\\Users\\tobia\\eclipse-workspaces\\runtime-EclipseApplication\\GeneralTestSimSG";
+		
+		// Load Model
+		final String dslModelLocation = "C:\\Users\\tobia\\eclipse-workspaces\\languagePlayground\\dsl.dotTest\\bin\\Testcases.xmi";
+		final String trgProjectLocation = "C:\\Users\\tobia\\eclipse-workspaces\\re.actionFramework\\GeneralTestSimSG";
 		
 		final String userDir = System.getProperty("user.dir");
 		final String tempModels = userDir + "/models/";
@@ -71,7 +72,7 @@ public class Main {
 
 			EMFResourceHelper.saveResource(intermModel, intermModelSaveLocation);
 		} catch (Exception e) {
-			System.out.println("Transforming to Intermediate Model failed with:");
+			System.err.println("\nTransforming to Intermediate Model failed with:");
 			e.printStackTrace();
 			return;
 		}

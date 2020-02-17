@@ -5,12 +5,16 @@ import static org.junit.Assert.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.emoflon.ibex.gt.api.GraphTransformationPattern;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ErrorCollector;
 import org.reaction.generalTest.api.GeneralTestAPI;
 import org.reaction.generalTest.utils.ModelGenerator;
 
@@ -20,8 +24,10 @@ import TestcasesModel.TestcasesModelPackage;
 import reactionContainer.Container;
 import reactionContainer.ReactionContainerPackage;
 
-
 public class AllTests {
+
+	@Rule
+	public ErrorCollector collector = new ErrorCollector();
 
 	private GeneralTestAPI referenceApi;
 	private GeneralTestSimSGAPI simsgApi;
@@ -33,11 +39,12 @@ public class AllTests {
 	public void setup() {
 		TestcasesModelPackage.eINSTANCE.eClass();
 		ReactionContainerPackage.eINSTANCE.eClass();
-		String modelLocation = "C:\\Users\\tobia\\eclipse-workspaces\\runtime-EclipseApplication\\org.reaction.generalTest\\model\\TestcasesModel.xmi";
+//		final String modelLocation = "C:\\Users\\tobia\\eclipse-workspaces\\languagePlayground\\dsl.dotTest\\bin\\Testcases.xmi";
+		final String modelLocation = "C:\\Users\\tobia\\eclipse-workspaces\\re.actionFramework\\org.reaction.generalTest\\model\\Testcases.xmi";
 		referenceMatches = new HashMap<>();
 		simsgMatches = new HashMap<>();
 
-//		ModelGenerator.createAndSaveModel(modelLocation, 0);
+		ModelGenerator.createAndSaveModel(modelLocation, 0);
 
 		Resource contResource = ModelGenerator.loadModel(modelLocation);
 		Container container = (Container) contResource.getContents().get(0);
@@ -46,7 +53,7 @@ public class AllTests {
 		System.out.println("Initiating reference api...");
 
 		referenceApi = new GeneralTestValidator(modelLocation, container).initAPI();
-		
+
 		Class<GeneralTestAPI> referenceApiClass = GeneralTestAPI.class;
 		for (Method method : referenceApiClass.getDeclaredMethods()) {
 			try {
@@ -66,15 +73,15 @@ public class AllTests {
 				e.printStackTrace();
 			}
 		}
-		
+
 		System.out.println("Initiating simsg api...");
 		// init api and find simsg matches
 		simsgApi = new GeneralTestSimSGValidator(modelLocation, container).initAPI();
-		
+
 		Class<GeneralTestSimSGAPI> simsgApiClass = GeneralTestSimSGAPI.class;
 		for (Method method : simsgApiClass.getDeclaredMethods()) {
 			try {
-				if(method.getName().startsWith("condition")) {
+				if (method.getName().startsWith("condition")) {
 					continue;
 				}
 				GraphTransformationPattern pattern = (GraphTransformationPattern) method.invoke(simsgApi,
@@ -99,13 +106,21 @@ public class AllTests {
 	@Test
 	public void testAgainstCreatedModel() {
 		System.out.println("Test execution here");
-		for (String key : simsgMatches.keySet()) {
-			long referenceMatchCnt = referenceMatches.get(key);
-			long simsgMatchCnt = simsgMatches.get(key);
-			String formatPrint = String.format("\"Reference to SimSG --> %-20s:\t%-10s - %10s\n", key,
-					String.valueOf(referenceMatchCnt), String.valueOf(simsgMatchCnt));
-			System.out.printf(formatPrint);
-			assertTrue(referenceMatchCnt == simsgMatchCnt);
+		List<String> sortedList = referenceMatches.keySet().stream().sorted().collect(Collectors.toList());
+		for (String key : sortedList) {
+			if (referenceMatches.containsKey(key) && simsgMatches.containsKey(key)) {
+				long referenceMatchCnt = referenceMatches.get(key);
+				long simsgMatchCnt = simsgMatches.get(key);
+				String formatPrint = String.format("\"Reference to SimSG --> %-30s:\t%-10s - %10s\n", key,
+						String.valueOf(referenceMatchCnt), String.valueOf(simsgMatchCnt));
+				try {
+					assertTrue(referenceMatchCnt == simsgMatchCnt);
+					System.out.printf(formatPrint);
+				} catch (AssertionError e) {
+					System.err.printf(formatPrint);
+					collector.addError(e);
+				}
+			}
 		}
 	}
 
