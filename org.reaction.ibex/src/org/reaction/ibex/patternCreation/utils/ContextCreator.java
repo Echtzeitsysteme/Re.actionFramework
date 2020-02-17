@@ -1,24 +1,16 @@
 package org.reaction.ibex.patternCreation.utils;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EClassImpl;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.XMIResource;
-import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl;
 import org.emoflon.ibex.common.patterns.IBeXPatternFactory;
 
 import IBeXLanguage.IBeXContext;
@@ -101,7 +93,7 @@ public class ContextCreator {
 
 		for (EObject obj : metamodelPackage.eContents()) {
 			EClassImpl clazz = (EClassImpl) obj;
-			if (isAgent(clazz)) {
+			if (ModelHelper.isAgent(clazz)) {
 				metamodelAgentTypes.put(clazz.getName(), clazz);
 
 				for (EObject classContent : clazz.eContents()) {
@@ -154,7 +146,7 @@ public class ContextCreator {
 				IBeXNode n1 = nodes.get(i);
 				IBeXNode n2 = nodes.get(j);
 
-				if (!isAgent(n1.getType()) || !isAgent(n2.getType())) {
+				if (!ModelHelper.isAgent(n1.getType()) || !ModelHelper.isAgent(n2.getType())) {
 					continue;
 				}
 
@@ -202,7 +194,7 @@ public class ContextCreator {
 				// Pattern creation plus name
 				IBeXContextPattern contextPattern = ibexFactory.createIBeXContextPattern();
 
-				contextPattern.setName(getBoundSitePatternName(agent, ref));
+				contextPattern.setName(NameProvider.getBoundSitePatternName(agent, ref));
 
 				// Node creation
 				IBeXNode n1 = IBeXPatternFactory.createNode("src", metamodelAgentTypes.get(agent.getName()));
@@ -233,11 +225,11 @@ public class ContextCreator {
 			IntermSiteInstance si, boolean isActive) {
 
 		// if state node already exists -> only create new Edge
-		String stateNodeName = getStateNodeName(si);
+		String stateNodeName = NameProvider.getQualifiedStateNodeName(si);
 		IBeXNode stateNode = getSignatureNodeFromContextPattern(contextPattern, stateNodeName);
 
 		if (stateNode == null) {
-			stateNode = IBeXPatternFactory.createNode(stateNodeName, metamodelStateTypes.get(getStateTypeKey(si)));
+			stateNode = IBeXPatternFactory.createNode(stateNodeName, metamodelStateTypes.get(NameProvider.getStateTypeKey(si)));
 			contextPattern.getSignatureNodes().add(stateNode);
 		}
 
@@ -297,7 +289,7 @@ public class ContextCreator {
 		IBeXPatternInvocation invoc = ibexFactory.createIBeXPatternInvocation();
 		invoc.setInvokedBy(contextPattern);
 		invoc.setPositive(false);
-		String boundPatternName = getBoundSitePatternName(ai, si);
+		String boundPatternName = NameProvider.getBoundSitePatternName(ai, si);
 		IBeXContextPattern invokedPattern = getContextPatternByName(boundPatternName);
 		invoc.setInvokedPattern(invokedPattern);
 
@@ -397,7 +389,7 @@ public class ContextCreator {
 
 		if (trg instanceof IntermSiteInstance) {
 			IntermSiteInstance trgSi = (IntermSiteInstance) trg;
-			String qualifiedName = getQualifiedConditionPatternName(ai, src, trgSi, trgSi.getParent().isLocal());
+			String qualifiedName = NameProvider.getQualifiedConditionPatternName(ai, src, trgSi, trgSi.getParent().isLocal());
 			IBeXContextPattern forbiddenPattern = getConditionPatternByName(qualifiedName);
 			if (forbiddenPattern != null) {
 				return forbiddenPattern;
@@ -431,9 +423,9 @@ public class ContextCreator {
 			// Add state for target
 			IntermSiteState state = trgSi.getState();
 			if (state != null) {
-				String stateNodeName = getStateNodeName(trgSi);
+				String stateNodeName = NameProvider.getQualifiedStateNodeName(trgSi);
 				IBeXNode stateNode = IBeXPatternFactory.createNode(stateNodeName,
-						metamodelStateTypes.get(getStateTypeKey(trgSi)));
+						metamodelStateTypes.get(NameProvider.getStateTypeKey(trgSi)));
 				IBeXEdge stateEdge = IBeXPatternFactory.createEdge(trgNode, stateNode,
 						getEdgeType(trgParent, trgSi, true));
 
@@ -448,7 +440,7 @@ public class ContextCreator {
 		}
 		if (trg instanceof IntermAgent) {
 			IntermAgent trgAgent = (IntermAgent) trg;
-			String qualifiedName = getQualifiedConditionPatternName(ai, src, trgAgent, true);
+			String qualifiedName = NameProvider.getQualifiedConditionPatternName(ai, src, trgAgent, true);
 			IBeXContextPattern forbiddenPattern = getConditionPatternByName(qualifiedName);
 			if (forbiddenPattern != null) {
 				return forbiddenPattern;
@@ -657,13 +649,13 @@ public class ContextCreator {
 		for (IntermAgentInstance ai : rhsInstances) {
 			for (IntermSiteInstance si : ai.getSiteInstances()) {
 				if (si.getState() != null) {
-					String stateNodeName = getStateNodeName(si);
+					String stateNodeName = NameProvider.getQualifiedStateNodeName(si);
 					IBeXNode stateNode = getNodeFromContextPattern(contextPatternRule, stateNodeName);
 					if (stateNode == null) {
 						stateNode = IBeXPatternFactory.createNode(stateNodeName,
-								metamodelStateTypes.get(getStateTypeKey(si)));
+								metamodelStateTypes.get(NameProvider.getStateTypeKey(si)));
 					} else {
-						stateNode.setType(metamodelStateTypes.get(getStateTypeKey(si)));
+						stateNode.setType(metamodelStateTypes.get(NameProvider.getStateTypeKey(si)));
 					}
 
 					contextPatternRule.getSignatureNodes().add(stateNode);
@@ -733,146 +725,10 @@ public class ContextCreator {
 		}
 
 		return contextPattern;
-	}
-
-	/**
-	 * @returns the valid and hopefully unique name for a bound pattern
-	 */
-	private String getBoundSitePatternName(IntermAgentInstance ai, IntermSiteInstance si) {
-		return ai.getInstanceOf().getName().toLowerCase() + "_" + si.getInstanceOf().getName() + "Bound";
-	}
-
-	/**
-	 * @returns the valid and hopefully unique name for a bound pattern
-	 */
-	private String getBoundSitePatternName(EClass agentClass, EReference siteReference) {
-
-		int agentNameLength = agentClass.getName().length();
-		String siteName = siteReference.getName().substring(agentNameLength + 1);
-
-		return agentClass.getName().toLowerCase() + "_" + siteName + "Bound";
-	}
-
-	/**
-	 * @return true if the given class inherited from the agent class
-	 */
-	private boolean isAgent(EClass clazz) {
-		EClass agentClass = ReactionContainerPackage.Literals.AGENT;
-		if (clazz == agentClass) {
-			return true;
-		} else {
-			return clazz.getESuperTypes().get(0) == agentClass;
-		}
-	}
-
-	/**
-	 * @returns a valid name for a state node that should be unique in the context
-	 *          of its rule
-	 */
-	private String getStateNodeName(IntermSiteInstance si) {
-		return si.getState().getName() + "s";
-	}
-
-	/**
-	 * @return a qualified name for managing condition patterns.
-	 */
-	private String getQualifiedConditionPatternName(IntermAgentInstance aiSrc, IntermSiteInstance siSrc, Bindable trg,
-			boolean toLocalNode) {
-		StringBuilder sb = new StringBuilder("conditionPattern_");
-
-		if (trg instanceof IntermSiteInstance) {
-			IntermSiteInstance siTrg = (IntermSiteInstance) trg;
-
-			IntermAgentInstance aiTrg = siTrg.getParent();
-			IntermSiteState stateTrg = siTrg.getState();
-
-			sb.append(aiSrc.getInstanceOf().getName());
-			sb.append(siSrc.getName());
-			sb.append("_to_");
-			sb.append(aiTrg.getInstanceOf().getName());
-			sb.append(siTrg.getName());
-
-			if (stateTrg != null) {
-				sb.append("_state_" + stateTrg.getName());
-			}
-			if (toLocalNode) {
-				sb.append("_Local");
-			}
-
-		}
-		if (trg instanceof IntermAgent) {
-			IntermAgent trgAgent = (IntermAgent) trg;
-
-			sb.append(aiSrc.getInstanceOf().getName());
-			sb.append(siSrc.getName());
-			sb.append("_to_");
-			sb.append("LocalAgent_");
-			sb.append(trgAgent.getName().toUpperCase());
-		}
-		if (trg instanceof IntermAgentInstance) {
-			throw new UnsupportedOperationException("Could not handle type of " + trg.toString());
-		}
-		return sb.toString();
-	}
-
-	/**
-	 * @returns the key-string to get a state type from the state type map
-	 */
-	private String getStateTypeKey(IntermSiteInstance si) {
-		return si.getState().getName().toUpperCase() + "_s";
-	}
+	}	
 
 	public IBeXPatternSet getIBeXPatternSet() {
 		return ibexPatternSet;
 	}
 
-	public void savePatternSet2(String ibexSaveLocation) {
-		ResourceSet resSet = new ResourceSetImpl();
-		Resource resource = resSet.createResource(URI.createFileURI(ibexSaveLocation));
-		resource.getContents().add(ibexPatternSet);
-		Map<Object, Object> options = ((XMLResource) resource).getDefaultSaveOptions();
-		options.put(XMIResource.OPTION_ENCODING, "ASCII");
-		options.put(XMIResource.OPTION_SAVE_ONLY_IF_CHANGED, XMIResource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
-		options.put(XMLResource.OPTION_URI_HANDLER, new URIHandlerImpl() {
-			@Override
-			public URI deresolve(final URI uri) {
-				if (!uri.isPlatform()) {
-					// DONT TOUCH----------------------------------------------
-					String[] uriSegments = uri.segments();
-					String uriString;
-					final String MODEL_STRING = "model";
-					int modelPos = -1;
-
-					// find "model"-segment
-					for (int i = 0; i < uriSegments.length; i++) {
-						if (uriSegments[i].equals(MODEL_STRING)) {
-							modelPos = i;
-							break;
-						}
-					}
-
-					// create platform uri
-					StringBuilder sb = new StringBuilder("platform:/resource");
-					for (int i = modelPos - 1; i < uriSegments.length; i++) {
-						sb.append("/");
-						sb.append(uriSegments[i]);
-					}
-
-					sb.append("#");
-					sb.append(uri.fragment());
-					uriString = sb.toString();
-
-					return URI.createURI(uriString, true);
-				} else {
-					return uri;
-				}
-			}
-		});
-		try {
-			resource.save(options);
-		} catch (IOException e) {
-			System.out.println("Error trying to save the ibex-patterns at " + ibexSaveLocation);
-			return;
-		}
-	}
 }

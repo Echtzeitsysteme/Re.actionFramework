@@ -47,7 +47,7 @@ public class T_object_SP1 extends AbstractActor {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
 		ports.add(new PortNodeLeft<TestcasesModel.T>(getSelf(), name2actor.get("T_T_j_0_reference"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.T>(getSelf(), name2actor.get("forbiddenBondStateGeneric_430_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchRight<TestcasesModel.T>(getSelf(), name2actor.get("forbiddenBondStateGeneric_430_junction"), this::returnTrue));
 		ports.add(new PortNodeMatchRight<TestcasesModel.T>(getSelf(), name2actor.get("simpleBind2State1_39_junction"), this::returnTrue));
 		ports.add(new PortNodeMatchLeft<TestcasesModel.T>(getSelf(), name2actor.get("simpleBind3_72_junction"), this::returnTrue));
 	}

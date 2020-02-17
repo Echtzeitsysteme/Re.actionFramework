@@ -50,22 +50,6 @@ public class DispatchActor extends AbstractActor {
 	}
 	
 	private void initializeAdd() {
-		type2addConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getContainer(), obj -> {
-			reactionContainer.Container _container = (reactionContainer.Container) obj;
-		});
-		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getU_s(), obj -> {
-			TestcasesModel.U_s _u_s = (TestcasesModel.U_s) obj;
-			util.newMessage();
-			name2actor.get("U_s_object_SP0").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
-			util.newMessage();
-			name2actor.get("U_s_object_SP1").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
-			util.newMessage();
-			name2actor.get("U_s_object_SP2").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
-			util.newMessage();
-			name2actor.get("U_s_object_SP3").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
-			util.newMessage();
-			name2actor.get("U_s_object_SP4").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
-		});
 		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getT(), obj -> {
 			TestcasesModel.T _t = (TestcasesModel.T) obj;
 			util.newMessage();
@@ -85,8 +69,21 @@ public class DispatchActor extends AbstractActor {
 			util.newMessage();
 			name2actor.get("Agent_object_SP1").tell(new ObjectAdded<reactionContainer.Agent>(_t), getSelf());
 		});
-		type2addConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getState(), obj -> {
-			reactionContainer.State _state = (reactionContainer.State) obj;
+		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getU_s(), obj -> {
+			TestcasesModel.U_s _u_s = (TestcasesModel.U_s) obj;
+			util.newMessage();
+			name2actor.get("U_s_object_SP0").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
+			util.newMessage();
+			name2actor.get("U_s_object_SP1").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
+			util.newMessage();
+			name2actor.get("U_s_object_SP2").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
+			util.newMessage();
+			name2actor.get("U_s_object_SP3").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
+			util.newMessage();
+			name2actor.get("U_s_object_SP4").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
+		});
+		type2addConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getContainer(), obj -> {
+			reactionContainer.Container _container = (reactionContainer.Container) obj;
 		});
 		type2addConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getAgent(), obj -> {
 			reactionContainer.Agent _agent = (reactionContainer.Agent) obj;
@@ -94,33 +91,6 @@ public class DispatchActor extends AbstractActor {
 			name2actor.get("Agent_object_SP0").tell(new ObjectAdded<reactionContainer.Agent>(_agent), getSelf());
 			util.newMessage();
 			name2actor.get("Agent_object_SP1").tell(new ObjectAdded<reactionContainer.Agent>(_agent), getSelf());
-		});
-		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA(), obj -> {
-			TestcasesModel.A _a = (TestcasesModel.A) obj;
-			util.newMessage();
-			name2actor.get("A_object_SP0").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
-			util.newMessage();
-			name2actor.get("A_object_SP1").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
-			util.newMessage();
-			name2actor.get("A_object_SP2").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
-			util.newMessage();
-			name2actor.get("A_object_SP3").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
-			util.newMessage();
-			name2actor.get("A_object_SP4").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
-			util.newMessage();
-			name2actor.get("A_object_SP5").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
-			util.newMessage();
-			name2actor.get("A_object_SP6").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
-			util.newMessage();
-			name2actor.get("A_object_SP7").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
-			util.newMessage();
-			name2actor.get("A_object_SP8").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
-			util.newMessage();
-			name2actor.get("A_object_SP9").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
-			util.newMessage();
-			name2actor.get("Agent_object_SP0").tell(new ObjectAdded<reactionContainer.Agent>(_a), getSelf());
-			util.newMessage();
-			name2actor.get("Agent_object_SP1").tell(new ObjectAdded<reactionContainer.Agent>(_a), getSelf());
 		});
 		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getX(), obj -> {
 			TestcasesModel.X _x = (TestcasesModel.X) obj;
@@ -153,6 +123,36 @@ public class DispatchActor extends AbstractActor {
 			name2actor.get("P_s_object_SP4").tell(new ObjectAdded<TestcasesModel.P_s>(_p_s), getSelf());
 			util.newMessage();
 			name2actor.get("P_s_object_SP5").tell(new ObjectAdded<TestcasesModel.P_s>(_p_s), getSelf());
+		});
+		type2addConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getState(), obj -> {
+			reactionContainer.State _state = (reactionContainer.State) obj;
+		});
+		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA(), obj -> {
+			TestcasesModel.A _a = (TestcasesModel.A) obj;
+			util.newMessage();
+			name2actor.get("A_object_SP0").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
+			util.newMessage();
+			name2actor.get("A_object_SP1").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
+			util.newMessage();
+			name2actor.get("A_object_SP2").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
+			util.newMessage();
+			name2actor.get("A_object_SP3").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
+			util.newMessage();
+			name2actor.get("A_object_SP4").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
+			util.newMessage();
+			name2actor.get("A_object_SP5").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
+			util.newMessage();
+			name2actor.get("A_object_SP6").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
+			util.newMessage();
+			name2actor.get("A_object_SP7").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
+			util.newMessage();
+			name2actor.get("A_object_SP8").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
+			util.newMessage();
+			name2actor.get("A_object_SP9").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
+			util.newMessage();
+			name2actor.get("Agent_object_SP0").tell(new ObjectAdded<reactionContainer.Agent>(_a), getSelf());
+			util.newMessage();
+			name2actor.get("Agent_object_SP1").tell(new ObjectAdded<reactionContainer.Agent>(_a), getSelf());
 		});
 	}
 	

@@ -48,8 +48,8 @@ public class T_object_SP2 extends AbstractActor {
 		ports = new LinkedList<>();
 		ports.add(new PortNodeRight<TestcasesModel.T>(getSelf(), name2actor.get("A_A_c_1_reference"), this::returnTrue));
 		ports.add(new PortNodeRight<TestcasesModel.T>(getSelf(), name2actor.get("X_X_z_2_reference"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.T>(getSelf(), name2actor.get("simpleBind1_1_19_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.T>(getSelf(), name2actor.get("simpleBind2State2_46_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchRight<TestcasesModel.T>(getSelf(), name2actor.get("simpleBind1_1_19_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchRight<TestcasesModel.T>(getSelf(), name2actor.get("simpleBind2State2_46_junction"), this::returnTrue));
 	}
 
 	@Override
