@@ -111,7 +111,7 @@ public class Main {
 			IBeXCreator ibexCreator = new IBeXCreator(intermModel, metamodelPackage);
 			IBeXPatternSet ibexPatternSet = ibexCreator.getIBeXPatternSet();
 			String ibexSaveLocation = trgProjectLocation + "/model/ibex-patterns.xmi";
-			ibexCreator.savePatternSet2(ibexSaveLocation);
+			ibexCreator.savePatternSet(ibexSaveLocation);
 
 			GTCreator gtCreator = new GTCreator(ibexPatternSet);
 //			GTRuleSet gtRuleSet = gtCreator.getGTRuleSet();
