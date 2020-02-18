@@ -47,8 +47,8 @@ public class X_object_SP0 extends AbstractActor {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
 		ports.add(new PortNodeRight<TestcasesModel.X>(getSelf(), name2actor.get("A_A_b_2_reference"), this::returnTrue));
-		ports.add(new PortNodeRight<TestcasesModel.X>(getSelf(), name2actor.get("T_T_i_2_reference"), this::returnTrue));
 		ports.add(new PortNodeLeft<TestcasesModel.X>(getSelf(), name2actor.get("X_X_y_0_reference"), this::returnTrue));
+		ports.add(new PortNodeLeft<TestcasesModel.X>(getSelf(), name2actor.get("X_X_y_1_reference"), this::returnTrue));
 		ports.add(new PortNodeMatchRight<TestcasesModel.X>(getSelf(), name2actor.get("unspecified4_334_junction"), this::returnTrue));
 	}
 

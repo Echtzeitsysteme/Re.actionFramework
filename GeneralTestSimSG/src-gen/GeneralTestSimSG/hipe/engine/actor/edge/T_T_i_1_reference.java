@@ -57,7 +57,7 @@ public class T_T_i_1_reference extends AbstractActor {
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("expandedSplitState1_203_junction"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("expandedSplitState2_211_junction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("expandedSplit_198_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("genericBondBreak_480_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("genericBondBreak_481_junction"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("simpleSplit1State1_132_junction"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("simpleSplit1State2_142_junction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleSplit1State3_152_junction"), this::returnTrue));

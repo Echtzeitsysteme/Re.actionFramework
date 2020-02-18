@@ -49,20 +49,19 @@ public class A_A_c_0_reference extends AbstractActor {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
 		ports.add(new PortEdge(getSelf(), name2actor.get("a_cBound_production"), this::check_constraint_2));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("bidirectionalRuleBwd_556_nacjunction"), this::check_constraint_77));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("bidirectionalRule_449_junction"), this::check_constraint_73));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("degradation2_532_nacjunction"), this::check_constraint_34));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("freeAgentsBind2_546_nacjunction"), this::check_constraint_65));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("freeAgentsBind_542_nacjunction"), this::check_constraint_61));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("partialDegradation2_536_nacjunction"), this::check_constraint_38));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1State1_504_nacjunction"), this::check_constraint_16));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1State2_508_nacjunction"), this::check_constraint_20));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1_1_496_nacjunction"), this::check_constraint_8));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1_2_500_nacjunction"), this::check_constraint_12));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State1_513_nacjunction"), this::check_constraint_25));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State2_515_nacjunction"), this::check_constraint_27));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State3_517_nacjunction"), this::check_constraint_29));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State4_519_nacjunction"), this::check_constraint_31));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("bidirectionalRuleBwd_565_nacjunction"), this::check_constraint_74));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("degradation2_541_nacjunction"), this::check_constraint_34));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("freeAgentsBind2_555_nacjunction"), this::check_constraint_65));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("freeAgentsBind_551_nacjunction"), this::check_constraint_61));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("partialDegradation2_545_nacjunction"), this::check_constraint_38));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1State1_513_nacjunction"), this::check_constraint_16));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1State2_517_nacjunction"), this::check_constraint_20));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1_1_505_nacjunction"), this::check_constraint_8));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind1_2_509_nacjunction"), this::check_constraint_12));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State1_522_nacjunction"), this::check_constraint_25));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State2_524_nacjunction"), this::check_constraint_27));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State3_526_nacjunction"), this::check_constraint_29));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBind2State4_528_nacjunction"), this::check_constraint_31));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("underspecified1_269_junction"), this::check_constraint_42));
 	}	
 
@@ -334,18 +333,10 @@ public class A_A_c_0_reference extends AbstractActor {
 		return predicate;
 	}
 	
-	public boolean check_constraint_77(EdgeMatch edge) {
+	public boolean check_constraint_74(EdgeMatch edge) {
 		TestcasesModel.A src = (TestcasesModel.A) edge.source();
 		reactionContainer.Agent trg = (reactionContainer.Agent) edge.target();
 		boolean predicate = !src.equals(trg);
-		edge.setConstraintSatisfied(predicate);
-		return predicate;
-	}
-	
-	public boolean check_constraint_73(EdgeMatch edge) {
-		TestcasesModel.A a = (TestcasesModel.A) edge.source();
-		reactionContainer.Agent a_c_local = (reactionContainer.Agent) edge.target();
-		boolean predicate = !a.equals(a_c_local);
 		edge.setConstraintSatisfied(predicate);
 		return predicate;
 	}

@@ -41,12 +41,24 @@ public class ChangePatternTemplate {
 			changesMap.put(pre, post);
 		}
 
-		// TODO: Look for newly created agents on the right site
+		//Look for newly created agents on the right site
 		for(IntermAgentInstance post : rhs) {
-			if(!lhs.contains(post)) {
+			if(!ModelHelper.isInstanceInList(post, lhs)) {
 				createdInstances.add(post);
 			}
 		}
+	}
+	
+	public List<IntermAgentInstance> getCreatedInstances(){
+		return createdInstances;
+	}
+	
+	public Map<IntermAgentInstance, IntermAgentInstance> getChangesMap(){
+		return changesMap;
+	}
+	
+	public IntermRule getRule() {
+		return rule;
 	}
 	
 	public String getName() {

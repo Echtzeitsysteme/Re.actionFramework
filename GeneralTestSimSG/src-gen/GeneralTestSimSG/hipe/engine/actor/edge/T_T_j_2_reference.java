@@ -48,7 +48,7 @@ public class T_T_j_2_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("bidirectionalRuleBwd_465_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("bidirectionalRuleBwd_466_junction"), this::returnTrue));
 	}	
 
 	@Override

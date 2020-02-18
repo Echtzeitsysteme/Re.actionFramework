@@ -46,10 +46,10 @@ public class T_object_SP4 extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortNodeLeft<TestcasesModel.T>(getSelf(), name2actor.get("T_T_j_1_reference"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.T>(getSelf(), name2actor.get("simpleBind1State1_27_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchRight<TestcasesModel.T>(getSelf(), name2actor.get("simpleBind2State4_59_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchRight<TestcasesModel.T>(getSelf(), name2actor.get("simpleBind3State2_104_junction"), this::returnTrue));
+		ports.add(new PortNodeRight<TestcasesModel.T>(getSelf(), name2actor.get("X_X_z_2_reference"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.T>(getSelf(), name2actor.get("simpleBind1State1_25_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.T>(getSelf(), name2actor.get("simpleBind2State4_57_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.T>(getSelf(), name2actor.get("simpleBind3State2_104_junction"), this::returnTrue));
 	}
 
 	@Override

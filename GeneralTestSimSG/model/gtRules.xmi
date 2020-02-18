@@ -778,4 +778,20 @@
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
   </rules>
+  <rules name="rhsGeneric1" documentation="" executable="true" ruleNodes="//@rules.94/@nodes.0 //@rules.94/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="rhsGeneric2" documentation="" executable="true" ruleNodes="//@rules.95/@nodes.0 //@rules.95/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
 </GTLanguage:GTRuleSet>

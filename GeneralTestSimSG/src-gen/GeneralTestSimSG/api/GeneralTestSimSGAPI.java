@@ -42,6 +42,8 @@ import GeneralTestSimSG.api.rules.PartialDegradation3Rule;
 import GeneralTestSimSG.api.rules.PartialDegradation4Rule;
 import GeneralTestSimSG.api.rules.PartialSynthesis1Rule;
 import GeneralTestSimSG.api.rules.PartialSynthesis2Rule;
+import GeneralTestSimSG.api.rules.RhsGeneric1Rule;
+import GeneralTestSimSG.api.rules.RhsGeneric2Rule;
 import GeneralTestSimSG.api.rules.SimpleBind1_1Rule;
 import GeneralTestSimSG.api.rules.SimpleBind1_2Rule;
 import GeneralTestSimSG.api.rules.SimpleBind1State1Rule;
@@ -101,7 +103,7 @@ import org.emoflon.ibex.common.operational.IContextPatternInterpreter;
 import org.emoflon.ibex.gt.api.GraphTransformationAPI;
 
 /**
- * The GeneralTestSimSGAPI with 94 rules.
+ * The GeneralTestSimSGAPI with 96 rules.
  */
 public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	public static String patternPath = "GeneralTestSimSG/src-gen/GeneralTestSimSG/api/ibex-patterns.xmi";
@@ -1081,5 +1083,25 @@ public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	 */
 	public InjectivityRule injectivity() {
 		return new InjectivityRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>rhsGeneric1()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public RhsGeneric1Rule rhsGeneric1() {
+		return new RhsGeneric1Rule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>rhsGeneric2()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public RhsGeneric2Rule rhsGeneric2() {
+		return new RhsGeneric2Rule(this, interpreter);
 	}
 }

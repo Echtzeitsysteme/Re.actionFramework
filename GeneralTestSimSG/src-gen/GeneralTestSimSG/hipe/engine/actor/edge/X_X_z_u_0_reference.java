@@ -48,7 +48,7 @@ public class X_X_z_u_0_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("bidirectionalRuleBwd_461_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("bidirectionalRuleBwd_462_junction"), this::returnTrue));
 	}	
 
 	@Override

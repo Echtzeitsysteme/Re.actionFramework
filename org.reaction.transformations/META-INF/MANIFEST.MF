@@ -15,6 +15,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.xtext;bundle-version="2.20.0"
 Bundle-ActivationPolicy: lazy
 Import-Package: ecoreBCModel,
+ org.reaction.ibex.patternCreation.utils,
  org.xtext.biochemics.dotDsl,
  org.xtext.biochemics.dotDsl.impl,
  org.xtext.biochemics.interpreter,

@@ -274,6 +274,24 @@ public class ModelGenerator {
 			agents.add(a);
 			agents.add(x);
 		}
+		
+		//some a.b+t.j, a.c+x.y, t.i+x.z(p)
+		for(int i=0; i < 6; i++) {
+			A a = entityfactory.createA();
+			X x = entityfactory.createX();
+			T t = entityfactory.createT();
+			
+			a.setA_b(t);
+			a.setA_c(x);
+			a.setA_c_u(us);
+			
+			t.setT_i(x);
+			t.setT_j(a);
+			
+			x.setX_y(a);
+			x.setX_z(t);
+			x.setX_z_p(ps);
+		}
 
 		container.getAgents().addAll(agents);
 		return container;

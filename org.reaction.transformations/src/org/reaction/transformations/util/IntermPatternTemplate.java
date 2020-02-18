@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.EObject;
+import org.reaction.ibex.patternCreation.utils.NameProvider;
 import org.reaction.transformations.dslToIntermediateModel.DslToIntermTransformation;
 import org.xtext.biochemics.dotDsl.*;
 
@@ -90,6 +91,8 @@ public class IntermPatternTemplate {
 			// Agent and Site Instance given: create local instance and return it
 			if (rbsSi != null) {
 				IntermAgentInstance localInstance = this.createLocalAgent((Agent) abstrAgent);
+				String localInstanceName = NameProvider.getQualifiedLocalNodeName(rbs);
+				localInstance.setName(localInstanceName);
 
 				// create local site
 				IntermSiteInstance localSite = EcoreBCModelFactory.eINSTANCE.createIntermSiteInstance();
@@ -287,7 +290,7 @@ public class IntermPatternTemplate {
 	}
 
 	/**
-	 * Finds all instances within the given pattern and instantiates them in a
+	 * Finds all instances used within the given pattern and instantiates them in a
 	 * mapping to intermediate agent instances. These agent instances have all site
 	 * instances created but set to unspecified and only possess null site states.
 	 */
@@ -344,7 +347,6 @@ public class IntermPatternTemplate {
 		// create local agent
 		IntermAgentInstance localInstance = EcoreBCModelFactory.eINSTANCE.createIntermAgentInstance();
 		localInstance.setInstanceOf(rightIAgent);
-		localInstance.setName("local_" + rightIAgent.getName());
 		localInstance.setLocal(true);
 
 		return localInstance;
@@ -374,7 +376,7 @@ public class IntermPatternTemplate {
 	}
 
 	/**
-	 * Returns a list of all agent instances existent in an Bonds object.
+	 * Returns a list of all agent instances existent in a pattern.
 	 */
 	private List<AgentInstance> getAgentInstancesFromPattern(Pattern pattern) {
 

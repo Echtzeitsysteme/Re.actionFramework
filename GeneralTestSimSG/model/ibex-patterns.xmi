@@ -1123,7 +1123,7 @@
     <localEdges sourceNode="//@contextPatterns.79/@localNodes.0" targetNode="//@contextPatterns.79/@signatureNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
     </localEdges>
-    <localNodes name="local_X" incomingEdges="//@contextPatterns.79/@localEdges.0" outgoingEdges="//@contextPatterns.79/@localEdges.1">
+    <localNodes name="local_for_a_b" incomingEdges="//@contextPatterns.79/@localEdges.0" outgoingEdges="//@contextPatterns.79/@localEdges.1">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </localNodes>
     <signatureNodes name="a" incomingEdges="//@contextPatterns.79/@localEdges.1" outgoingEdges="//@contextPatterns.79/@localEdges.0">
@@ -1140,7 +1140,7 @@
     <localEdges sourceNode="//@contextPatterns.80/@localNodes.0" targetNode="//@contextPatterns.80/@signatureNodes.1">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
     </localEdges>
-    <localNodes name="local_X" incomingEdges="//@contextPatterns.80/@localEdges.0" outgoingEdges="//@contextPatterns.80/@localEdges.1 //@contextPatterns.80/@localEdges.2">
+    <localNodes name="local_for_a_b" incomingEdges="//@contextPatterns.80/@localEdges.0" outgoingEdges="//@contextPatterns.80/@localEdges.1 //@contextPatterns.80/@localEdges.2">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </localNodes>
     <signatureNodes name="a" incomingEdges="//@contextPatterns.80/@localEdges.1" outgoingEdges="//@contextPatterns.80/@localEdges.0">
@@ -1157,7 +1157,7 @@
     <localEdges sourceNode="//@contextPatterns.81/@localNodes.0" targetNode="//@contextPatterns.81/@signatureNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
     </localEdges>
-    <localNodes name="local_X" incomingEdges="//@contextPatterns.81/@localEdges.0" outgoingEdges="//@contextPatterns.81/@localEdges.1">
+    <localNodes name="local_for_a_b" incomingEdges="//@contextPatterns.81/@localEdges.0" outgoingEdges="//@contextPatterns.81/@localEdges.1">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </localNodes>
     <signatureNodes name="a" incomingEdges="//@contextPatterns.81/@localEdges.1" outgoingEdges="//@contextPatterns.81/@localEdges.0">
@@ -1408,13 +1408,10 @@
     </signatureNodes>
   </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="bidirectionalRule">
-    <injectivityConstraints values="//@contextPatterns.95/@signatureNodes.0 //@contextPatterns.95/@localNodes.0"/>
-    <injectivityConstraints values="//@contextPatterns.95/@signatureNodes.1 //@contextPatterns.95/@localNodes.0"/>
-    <injectivityConstraints values="//@contextPatterns.95/@signatureNodes.2 //@contextPatterns.95/@localNodes.0"/>
     <localEdges sourceNode="//@contextPatterns.95/@signatureNodes.0" targetNode="//@contextPatterns.95/@signatureNodes.1">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
     </localEdges>
-    <localEdges sourceNode="//@contextPatterns.95/@signatureNodes.0" targetNode="//@contextPatterns.95/@localNodes.0">
+    <localEdges sourceNode="//@contextPatterns.95/@signatureNodes.0" targetNode="//@contextPatterns.95/@signatureNodes.2">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
     </localEdges>
     <localEdges sourceNode="//@contextPatterns.95/@signatureNodes.1" targetNode="//@contextPatterns.95/@signatureNodes.2">
@@ -1423,25 +1420,25 @@
     <localEdges sourceNode="//@contextPatterns.95/@signatureNodes.1" targetNode="//@contextPatterns.95/@signatureNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_j"/>
     </localEdges>
+    <localEdges sourceNode="//@contextPatterns.95/@signatureNodes.2" targetNode="//@contextPatterns.95/@signatureNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_y"/>
+    </localEdges>
     <localEdges sourceNode="//@contextPatterns.95/@signatureNodes.2" targetNode="//@contextPatterns.95/@signatureNodes.1">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
     </localEdges>
     <localEdges sourceNode="//@contextPatterns.95/@signatureNodes.2" targetNode="//@contextPatterns.95/@signatureNodes.3">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
     </localEdges>
-    <localNodes name="a_c_local" incomingEdges="//@contextPatterns.95/@localEdges.1">
-      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
-    </localNodes>
-    <signatureNodes name="a" incomingEdges="//@contextPatterns.95/@localEdges.3" outgoingEdges="//@contextPatterns.95/@localEdges.0 //@contextPatterns.95/@localEdges.1">
+    <signatureNodes name="a" incomingEdges="//@contextPatterns.95/@localEdges.3 //@contextPatterns.95/@localEdges.4" outgoingEdges="//@contextPatterns.95/@localEdges.0 //@contextPatterns.95/@localEdges.1">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </signatureNodes>
-    <signatureNodes name="t" incomingEdges="//@contextPatterns.95/@localEdges.0 //@contextPatterns.95/@localEdges.4" outgoingEdges="//@contextPatterns.95/@localEdges.2 //@contextPatterns.95/@localEdges.3">
+    <signatureNodes name="t" incomingEdges="//@contextPatterns.95/@localEdges.0 //@contextPatterns.95/@localEdges.5" outgoingEdges="//@contextPatterns.95/@localEdges.2 //@contextPatterns.95/@localEdges.3">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
     </signatureNodes>
-    <signatureNodes name="x" incomingEdges="//@contextPatterns.95/@localEdges.2" outgoingEdges="//@contextPatterns.95/@localEdges.4 //@contextPatterns.95/@localEdges.5">
+    <signatureNodes name="x" incomingEdges="//@contextPatterns.95/@localEdges.1 //@contextPatterns.95/@localEdges.2" outgoingEdges="//@contextPatterns.95/@localEdges.4 //@contextPatterns.95/@localEdges.5 //@contextPatterns.95/@localEdges.6">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </signatureNodes>
-    <signatureNodes name="ps" incomingEdges="//@contextPatterns.95/@localEdges.5">
+    <signatureNodes name="ps" incomingEdges="//@contextPatterns.95/@localEdges.6">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
     </signatureNodes>
     <signatureNodes name="us">
@@ -1516,7 +1513,7 @@
     <localEdges sourceNode="//@contextPatterns.98/@localNodes.0" targetNode="//@contextPatterns.98/@signatureNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
     </localEdges>
-    <localNodes name="local_T" incomingEdges="//@contextPatterns.98/@localEdges.0" outgoingEdges="//@contextPatterns.98/@localEdges.1">
+    <localNodes name="local_for_a_b" incomingEdges="//@contextPatterns.98/@localEdges.0" outgoingEdges="//@contextPatterns.98/@localEdges.1">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
     </localNodes>
     <signatureNodes name="a" incomingEdges="//@contextPatterns.98/@localEdges.1" outgoingEdges="//@contextPatterns.98/@localEdges.0">
@@ -1547,53 +1544,609 @@
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </signatureNodes>
   </contextPatterns>
-  <createPatterns name="simpleBind1_1"/>
-  <createPatterns name="simpleBind1_2"/>
-  <createPatterns name="simpleBind1State1"/>
-  <createPatterns name="simpleBind1State2"/>
-  <createPatterns name="simpleBind2"/>
-  <createPatterns name="simpleBind2State1"/>
-  <createPatterns name="simpleBind2State2"/>
-  <createPatterns name="simpleBind2State3"/>
-  <createPatterns name="simpleBind2State4"/>
-  <createPatterns name="simpleBind3"/>
-  <createPatterns name="simpleBind3State1"/>
-  <createPatterns name="simpleBind3State2"/>
-  <createPatterns name="simpleBind3State3"/>
-  <createPatterns name="simpleBind3State4"/>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="rhsGeneric1">
+    <injectivityConstraints values="//@contextPatterns.100/@signatureNodes.0 //@contextPatterns.100/@localNodes.0"/>
+    <localEdges sourceNode="//@contextPatterns.100/@signatureNodes.0" targetNode="//@contextPatterns.100/@localNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </localEdges>
+    <localNodes name="a_b_local" incomingEdges="//@contextPatterns.100/@localEdges.0">
+      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    </localNodes>
+    <signatureNodes name="a" outgoingEdges="//@contextPatterns.100/@localEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </signatureNodes>
+    <signatureNodes name="ps">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
+    </signatureNodes>
+  </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="rhsGeneric2">
+    <invocations invokedPattern="//@contextPatterns.0">
+      <mapping key="//@contextPatterns.101/@signatureNodes.0" value="//@contextPatterns.0/@signatureNodes.0"/>
+    </invocations>
+    <signatureNodes name="a">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </signatureNodes>
+    <signatureNodes name="ps">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
+    </signatureNodes>
+  </contextPatterns>
+  <createPatterns name="simpleBind1_1">
+    <contextNodes name="t" incomingEdges="//@createPatterns.0/@createdEdges.1" outgoingEdges="//@createPatterns.0/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <contextNodes name="a" incomingEdges="//@createPatterns.0/@createdEdges.0" outgoingEdges="//@createPatterns.0/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <createdEdges sourceNode="//@createPatterns.0/@contextNodes.0" targetNode="//@createPatterns.0/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.0/@contextNodes.1" targetNode="//@createPatterns.0/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleBind1_2">
+    <contextNodes name="a" incomingEdges="//@createPatterns.1/@createdEdges.1" outgoingEdges="//@createPatterns.1/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="t" incomingEdges="//@createPatterns.1/@createdEdges.0" outgoingEdges="//@createPatterns.1/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <createdEdges sourceNode="//@createPatterns.1/@contextNodes.0" targetNode="//@createPatterns.1/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.1/@contextNodes.1" targetNode="//@createPatterns.1/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleBind1State1">
+    <contextNodes name="t" incomingEdges="//@createPatterns.2/@createdEdges.1" outgoingEdges="//@createPatterns.2/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <contextNodes name="a" incomingEdges="//@createPatterns.2/@createdEdges.0" outgoingEdges="//@createPatterns.2/@createdEdges.1 //@createPatterns.2/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.2/@createdEdges.2"/>
+    <createdEdges sourceNode="//@createPatterns.2/@contextNodes.0" targetNode="//@createPatterns.2/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.2/@contextNodes.1" targetNode="//@createPatterns.2/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.2/@contextNodes.1" targetNode="//@createPatterns.2/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleBind1State2">
+    <contextNodes name="a" incomingEdges="//@createPatterns.3/@createdEdges.2" outgoingEdges="//@createPatterns.3/@createdEdges.0 //@createPatterns.3/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="t" incomingEdges="//@createPatterns.3/@createdEdges.0" outgoingEdges="//@createPatterns.3/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <contextNodes name="us" incomingEdges="//@createPatterns.3/@createdEdges.1"/>
+    <createdEdges sourceNode="//@createPatterns.3/@contextNodes.0" targetNode="//@createPatterns.3/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.3/@contextNodes.0" targetNode="//@createPatterns.3/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.3/@contextNodes.1" targetNode="//@createPatterns.3/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleBind2">
+    <contextNodes name="a" incomingEdges="//@createPatterns.4/@createdEdges.1" outgoingEdges="//@createPatterns.4/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="t" incomingEdges="//@createPatterns.4/@createdEdges.0" outgoingEdges="//@createPatterns.4/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <createdEdges sourceNode="//@createPatterns.4/@contextNodes.0" targetNode="//@createPatterns.4/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.4/@contextNodes.1" targetNode="//@createPatterns.4/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleBind2State1">
+    <contextNodes name="a" incomingEdges="//@createPatterns.5/@createdEdges.2" outgoingEdges="//@createPatterns.5/@createdEdges.0 //@createPatterns.5/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="t" incomingEdges="//@createPatterns.5/@createdEdges.0" outgoingEdges="//@createPatterns.5/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.5/@createdEdges.1"/>
+    <createdEdges sourceNode="//@createPatterns.5/@contextNodes.0" targetNode="//@createPatterns.5/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.5/@contextNodes.0" targetNode="//@createPatterns.5/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.5/@contextNodes.1" targetNode="//@createPatterns.5/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleBind2State2">
+    <contextNodes name="a" incomingEdges="//@createPatterns.6/@createdEdges.2" outgoingEdges="//@createPatterns.6/@createdEdges.0 //@createPatterns.6/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="t" incomingEdges="//@createPatterns.6/@createdEdges.0" outgoingEdges="//@createPatterns.6/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <contextNodes name="us" incomingEdges="//@createPatterns.6/@createdEdges.1"/>
+    <createdEdges sourceNode="//@createPatterns.6/@contextNodes.0" targetNode="//@createPatterns.6/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.6/@contextNodes.0" targetNode="//@createPatterns.6/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.6/@contextNodes.1" targetNode="//@createPatterns.6/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleBind2State3">
+    <contextNodes name="a" incomingEdges="//@createPatterns.7/@createdEdges.2" outgoingEdges="//@createPatterns.7/@createdEdges.0 //@createPatterns.7/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="t" incomingEdges="//@createPatterns.7/@createdEdges.0" outgoingEdges="//@createPatterns.7/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.7/@createdEdges.1"/>
+    <createdEdges sourceNode="//@createPatterns.7/@contextNodes.0" targetNode="//@createPatterns.7/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.7/@contextNodes.0" targetNode="//@createPatterns.7/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.7/@contextNodes.1" targetNode="//@createPatterns.7/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleBind2State4">
+    <contextNodes name="a" incomingEdges="//@createPatterns.8/@createdEdges.2" outgoingEdges="//@createPatterns.8/@createdEdges.0 //@createPatterns.8/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="t" incomingEdges="//@createPatterns.8/@createdEdges.0" outgoingEdges="//@createPatterns.8/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <contextNodes name="us" incomingEdges="//@createPatterns.8/@createdEdges.1"/>
+    <createdEdges sourceNode="//@createPatterns.8/@contextNodes.0" targetNode="//@createPatterns.8/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.8/@contextNodes.0" targetNode="//@createPatterns.8/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.8/@contextNodes.1" targetNode="//@createPatterns.8/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleBind3">
+    <contextNodes name="a" incomingEdges="//@createPatterns.9/@createdEdges.1" outgoingEdges="//@createPatterns.9/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="t" incomingEdges="//@createPatterns.9/@createdEdges.0" outgoingEdges="//@createPatterns.9/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <createdEdges sourceNode="//@createPatterns.9/@contextNodes.0" targetNode="//@createPatterns.9/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.9/@contextNodes.1" targetNode="//@createPatterns.9/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleBind3State1">
+    <contextNodes name="a" incomingEdges="//@createPatterns.10/@createdEdges.2" outgoingEdges="//@createPatterns.10/@createdEdges.0 //@createPatterns.10/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="t" incomingEdges="//@createPatterns.10/@createdEdges.0" outgoingEdges="//@createPatterns.10/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.10/@createdEdges.1"/>
+    <createdEdges sourceNode="//@createPatterns.10/@contextNodes.0" targetNode="//@createPatterns.10/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.10/@contextNodes.0" targetNode="//@createPatterns.10/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.10/@contextNodes.1" targetNode="//@createPatterns.10/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleBind3State2">
+    <contextNodes name="a" incomingEdges="//@createPatterns.11/@createdEdges.2" outgoingEdges="//@createPatterns.11/@createdEdges.0 //@createPatterns.11/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="t" incomingEdges="//@createPatterns.11/@createdEdges.0" outgoingEdges="//@createPatterns.11/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <contextNodes name="us" incomingEdges="//@createPatterns.11/@createdEdges.1"/>
+    <createdEdges sourceNode="//@createPatterns.11/@contextNodes.0" targetNode="//@createPatterns.11/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.11/@contextNodes.0" targetNode="//@createPatterns.11/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.11/@contextNodes.1" targetNode="//@createPatterns.11/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleBind3State3">
+    <contextNodes name="a" incomingEdges="//@createPatterns.12/@createdEdges.2" outgoingEdges="//@createPatterns.12/@createdEdges.0 //@createPatterns.12/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="t" incomingEdges="//@createPatterns.12/@createdEdges.0" outgoingEdges="//@createPatterns.12/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.12/@createdEdges.1"/>
+    <createdEdges sourceNode="//@createPatterns.12/@contextNodes.0" targetNode="//@createPatterns.12/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.12/@contextNodes.0" targetNode="//@createPatterns.12/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.12/@contextNodes.1" targetNode="//@createPatterns.12/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleBind3State4">
+    <contextNodes name="t" incomingEdges="//@createPatterns.13/@createdEdges.1" outgoingEdges="//@createPatterns.13/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <contextNodes name="a" incomingEdges="//@createPatterns.13/@createdEdges.0" outgoingEdges="//@createPatterns.13/@createdEdges.1 //@createPatterns.13/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="us" incomingEdges="//@createPatterns.13/@createdEdges.2"/>
+    <createdEdges sourceNode="//@createPatterns.13/@contextNodes.0" targetNode="//@createPatterns.13/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.13/@contextNodes.1" targetNode="//@createPatterns.13/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.13/@contextNodes.1" targetNode="//@createPatterns.13/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </createdEdges>
+  </createPatterns>
   <createPatterns name="simpleSplit1"/>
-  <createPatterns name="simpleSplit1State1"/>
-  <createPatterns name="simpleSplit1State2"/>
-  <createPatterns name="simpleSplit1State3"/>
-  <createPatterns name="simpleSplit1State4"/>
-  <createPatterns name="simpleSplit2State1"/>
-  <createPatterns name="simpleSplit2State2"/>
-  <createPatterns name="simpleSplit2State3"/>
-  <createPatterns name="simpleSplit2State4"/>
+  <createPatterns name="simpleSplit1State1">
+    <contextNodes name="a" outgoingEdges="//@createPatterns.15/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.15/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.15/@contextNodes.0" targetNode="//@createPatterns.15/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleSplit1State2">
+    <contextNodes name="a" outgoingEdges="//@createPatterns.16/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="us" incomingEdges="//@createPatterns.16/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.16/@contextNodes.0" targetNode="//@createPatterns.16/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleSplit1State3">
+    <contextNodes name="a" outgoingEdges="//@createPatterns.17/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="us" incomingEdges="//@createPatterns.17/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.17/@contextNodes.0" targetNode="//@createPatterns.17/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleSplit1State4">
+    <contextNodes name="a" outgoingEdges="//@createPatterns.18/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.18/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.18/@contextNodes.0" targetNode="//@createPatterns.18/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleSplit2State1">
+    <contextNodes name="a" outgoingEdges="//@createPatterns.19/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.19/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.19/@contextNodes.0" targetNode="//@createPatterns.19/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleSplit2State2">
+    <contextNodes name="a" outgoingEdges="//@createPatterns.20/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="us" incomingEdges="//@createPatterns.20/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.20/@contextNodes.0" targetNode="//@createPatterns.20/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleSplit2State3">
+    <contextNodes name="a" outgoingEdges="//@createPatterns.21/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="us" incomingEdges="//@createPatterns.21/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.21/@contextNodes.0" targetNode="//@createPatterns.21/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="simpleSplit2State4">
+    <contextNodes name="a" outgoingEdges="//@createPatterns.22/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.22/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.22/@contextNodes.0" targetNode="//@createPatterns.22/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+  </createPatterns>
   <createPatterns name="expandedSplit"/>
   <createPatterns name="expandedSplitState1"/>
   <createPatterns name="expandedSplitState2"/>
-  <createPatterns name="synthesisSingle1"/>
-  <createPatterns name="synthesisSingle2"/>
-  <createPatterns name="synthesisSingle3"/>
-  <createPatterns name="synthesisSingle4"/>
-  <createPatterns name="synthesisSingle5"/>
-  <createPatterns name="synthesisSingle6"/>
-  <createPatterns name="synthesisSingle7"/>
-  <createPatterns name="synthesisSingle8"/>
-  <createPatterns name="synthesisSingle9"/>
-  <createPatterns name="synthesisSingle10"/>
-  <createPatterns name="synthesisMulti1"/>
-  <createPatterns name="synthesisMulti2"/>
-  <createPatterns name="synthesisMulti3"/>
-  <createPatterns name="synthesisMulti4"/>
-  <createPatterns name="synthesisMulti5"/>
-  <createPatterns name="synthesisMulti6"/>
-  <createPatterns name="synthesisMulti7"/>
-  <createPatterns name="synthesisMulti8"/>
-  <createPatterns name="synthesisMulti9"/>
-  <createPatterns name="partialSynthesis1"/>
-  <createPatterns name="partialSynthesis2"/>
+  <createPatterns name="synthesisSingle1">
+    <createdNodes name="a">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisSingle2">
+    <createdNodes name="a">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisSingle3">
+    <createdNodes name="a">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisSingle4">
+    <contextNodes name="us" incomingEdges="//@createPatterns.29/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.29/@createdNodes.0" targetNode="//@createPatterns.29/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </createdEdges>
+    <createdNodes name="a" outgoingEdges="//@createPatterns.29/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisSingle5">
+    <contextNodes name="ps" incomingEdges="//@createPatterns.30/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.30/@createdNodes.0" targetNode="//@createPatterns.30/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+    <createdNodes name="a" outgoingEdges="//@createPatterns.30/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisSingle6">
+    <createdNodes name="a">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisSingle7">
+    <createdNodes name="a">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisSingle8">
+    <contextNodes name="us" incomingEdges="//@createPatterns.33/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.33/@createdNodes.0" targetNode="//@createPatterns.33/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </createdEdges>
+    <createdNodes name="a" outgoingEdges="//@createPatterns.33/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisSingle9">
+    <contextNodes name="ps" incomingEdges="//@createPatterns.34/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.34/@createdNodes.0" targetNode="//@createPatterns.34/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+    <createdNodes name="a" outgoingEdges="//@createPatterns.34/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisSingle10">
+    <createdNodes name="a">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisMulti1">
+    <createdNodes name="a">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+    <createdNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisMulti2">
+    <createdNodes name="a">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+    <createdNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisMulti3">
+    <createdEdges sourceNode="//@createPatterns.38/@createdNodes.0" targetNode="//@createPatterns.38/@createdNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.38/@createdNodes.1" targetNode="//@createPatterns.38/@createdNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_y"/>
+    </createdEdges>
+    <createdNodes name="a" incomingEdges="//@createPatterns.38/@createdEdges.1" outgoingEdges="//@createPatterns.38/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+    <createdNodes name="x" incomingEdges="//@createPatterns.38/@createdEdges.0" outgoingEdges="//@createPatterns.38/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+    <createdNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisMulti4">
+    <contextNodes name="us" incomingEdges="//@createPatterns.39/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.39/@createdNodes.0" targetNode="//@createPatterns.39/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.39/@createdNodes.0" targetNode="//@createPatterns.39/@createdNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.39/@createdNodes.1" targetNode="//@createPatterns.39/@createdNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_y"/>
+    </createdEdges>
+    <createdNodes name="a" incomingEdges="//@createPatterns.39/@createdEdges.2" outgoingEdges="//@createPatterns.39/@createdEdges.0 //@createPatterns.39/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+    <createdNodes name="x" incomingEdges="//@createPatterns.39/@createdEdges.1" outgoingEdges="//@createPatterns.39/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+    <createdNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisMulti5">
+    <contextNodes name="ps" incomingEdges="//@createPatterns.40/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.40/@createdNodes.0" targetNode="//@createPatterns.40/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.40/@createdNodes.0" targetNode="//@createPatterns.40/@createdNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.40/@createdNodes.1" targetNode="//@createPatterns.40/@createdNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_y"/>
+    </createdEdges>
+    <createdNodes name="a" incomingEdges="//@createPatterns.40/@createdEdges.2" outgoingEdges="//@createPatterns.40/@createdEdges.0 //@createPatterns.40/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+    <createdNodes name="x" incomingEdges="//@createPatterns.40/@createdEdges.1" outgoingEdges="//@createPatterns.40/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+    <createdNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisMulti6">
+    <contextNodes name="us" incomingEdges="//@createPatterns.41/@createdEdges.0 //@createPatterns.41/@createdEdges.2"/>
+    <createdEdges sourceNode="//@createPatterns.41/@createdNodes.0" targetNode="//@createPatterns.41/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.41/@createdNodes.0" targetNode="//@createPatterns.41/@createdNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.41/@createdNodes.2" targetNode="//@createPatterns.41/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_u"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.41/@createdNodes.1" targetNode="//@createPatterns.41/@createdNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </createdEdges>
+    <createdNodes name="a" incomingEdges="//@createPatterns.41/@createdEdges.3" outgoingEdges="//@createPatterns.41/@createdEdges.0 //@createPatterns.41/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+    <createdNodes name="x" incomingEdges="//@createPatterns.41/@createdEdges.1" outgoingEdges="//@createPatterns.41/@createdEdges.3">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+    <createdNodes name="x" outgoingEdges="//@createPatterns.41/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisMulti7">
+    <contextNodes name="ps" incomingEdges="//@createPatterns.42/@createdEdges.0 //@createPatterns.42/@createdEdges.2"/>
+    <createdEdges sourceNode="//@createPatterns.42/@createdNodes.0" targetNode="//@createPatterns.42/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.42/@createdNodes.0" targetNode="//@createPatterns.42/@createdNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.42/@createdNodes.2" targetNode="//@createPatterns.42/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.42/@createdNodes.1" targetNode="//@createPatterns.42/@createdNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </createdEdges>
+    <createdNodes name="a" incomingEdges="//@createPatterns.42/@createdEdges.3" outgoingEdges="//@createPatterns.42/@createdEdges.0 //@createPatterns.42/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+    <createdNodes name="x" incomingEdges="//@createPatterns.42/@createdEdges.1" outgoingEdges="//@createPatterns.42/@createdEdges.3">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+    <createdNodes name="x" outgoingEdges="//@createPatterns.42/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisMulti8">
+    <createdEdges sourceNode="//@createPatterns.43/@createdNodes.0" targetNode="//@createPatterns.43/@createdNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.43/@createdNodes.0" targetNode="//@createPatterns.43/@createdNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.43/@createdNodes.1" targetNode="//@createPatterns.43/@createdNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_y"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.43/@createdNodes.1" targetNode="//@createPatterns.43/@createdNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </createdEdges>
+    <createdNodes name="a" incomingEdges="//@createPatterns.43/@createdEdges.2 //@createPatterns.43/@createdEdges.3" outgoingEdges="//@createPatterns.43/@createdEdges.0 //@createPatterns.43/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+    <createdNodes name="x" incomingEdges="//@createPatterns.43/@createdEdges.0 //@createPatterns.43/@createdEdges.1" outgoingEdges="//@createPatterns.43/@createdEdges.2 //@createPatterns.43/@createdEdges.3">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+    <createdNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="synthesisMulti9">
+    <contextNodes name="ps" incomingEdges="//@createPatterns.44/@createdEdges.0 //@createPatterns.44/@createdEdges.3"/>
+    <createdEdges sourceNode="//@createPatterns.44/@createdNodes.0" targetNode="//@createPatterns.44/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.44/@createdNodes.0" targetNode="//@createPatterns.44/@createdNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.44/@createdNodes.0" targetNode="//@createPatterns.44/@createdNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.44/@createdNodes.2" targetNode="//@createPatterns.44/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.44/@createdNodes.1" targetNode="//@createPatterns.44/@createdNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_y"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.44/@createdNodes.1" targetNode="//@createPatterns.44/@createdNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </createdEdges>
+    <createdNodes name="a" incomingEdges="//@createPatterns.44/@createdEdges.4 //@createPatterns.44/@createdEdges.5" outgoingEdges="//@createPatterns.44/@createdEdges.0 //@createPatterns.44/@createdEdges.1 //@createPatterns.44/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </createdNodes>
+    <createdNodes name="x" incomingEdges="//@createPatterns.44/@createdEdges.1 //@createPatterns.44/@createdEdges.2" outgoingEdges="//@createPatterns.44/@createdEdges.4 //@createPatterns.44/@createdEdges.5">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+    <createdNodes name="x" outgoingEdges="//@createPatterns.44/@createdEdges.3">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="partialSynthesis1">
+    <createdNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="partialSynthesis2">
+    <contextNodes name="ps" incomingEdges="//@createPatterns.46/@createdEdges.0"/>
+    <contextNodes name="a" incomingEdges="//@createPatterns.46/@createdEdges.1" outgoingEdges="//@createPatterns.46/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <createdEdges sourceNode="//@createPatterns.46/@createdNodes.0" targetNode="//@createPatterns.46/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.46/@createdNodes.0" targetNode="//@createPatterns.46/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.46/@contextNodes.1" targetNode="//@createPatterns.46/@createdNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </createdEdges>
+    <createdNodes name="x" incomingEdges="//@createPatterns.46/@createdEdges.2" outgoingEdges="//@createPatterns.46/@createdEdges.0 //@createPatterns.46/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+  </createPatterns>
   <createPatterns name="degradation1"/>
   <createPatterns name="degradation2"/>
   <createPatterns name="degradation3"/>
@@ -1607,9 +2160,46 @@
   <createPatterns name="underspecified4"/>
   <createPatterns name="underspecified5"/>
   <createPatterns name="unspecified1"/>
-  <createPatterns name="unspecified2"/>
-  <createPatterns name="unspecified3"/>
-  <createPatterns name="unspecified4"/>
+  <createPatterns name="unspecified2">
+    <contextNodes name="a" outgoingEdges="//@createPatterns.60/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.60/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.60/@contextNodes.0" targetNode="//@createPatterns.60/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="unspecified3">
+    <contextNodes name="a" outgoingEdges="//@createPatterns.61/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.61/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.61/@contextNodes.0" targetNode="//@createPatterns.61/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="unspecified4">
+    <contextNodes name="x" incomingEdges="//@createPatterns.62/@createdEdges.2" outgoingEdges="//@createPatterns.62/@createdEdges.0 //@createPatterns.62/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </contextNodes>
+    <contextNodes name="a" incomingEdges="//@createPatterns.62/@createdEdges.0" outgoingEdges="//@createPatterns.62/@createdEdges.2 //@createPatterns.62/@createdEdges.3">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.62/@createdEdges.1"/>
+    <contextNodes name="us" incomingEdges="//@createPatterns.62/@createdEdges.3"/>
+    <createdEdges sourceNode="//@createPatterns.62/@contextNodes.0" targetNode="//@createPatterns.62/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.62/@contextNodes.0" targetNode="//@createPatterns.62/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.62/@contextNodes.1" targetNode="//@createPatterns.62/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.62/@contextNodes.1" targetNode="//@createPatterns.62/@contextNodes.3">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </createdEdges>
+  </createPatterns>
   <createPatterns name="generic1"/>
   <createPatterns name="generic2"/>
   <createPatterns name="generic3"/>
@@ -1617,42 +2207,330 @@
   <createPatterns name="generic5"/>
   <createPatterns name="generic6State1"/>
   <createPatterns name="generic6State2"/>
-  <createPatterns name="generic7"/>
-  <createPatterns name="freeAgentsBind"/>
-  <createPatterns name="freeAgentsBind2"/>
-  <createPatterns name="underspecifiedAgent"/>
-  <createPatterns name="forbiddenBondState"/>
-  <createPatterns name="forbiddenBondStateGeneric"/>
-  <createPatterns name="forbiddenBondStateGenericWithSynthesis"/>
+  <createPatterns name="generic7">
+    <contextNodes name="a" incomingEdges="//@createPatterns.70/@createdEdges.0" outgoingEdges="//@createPatterns.70/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.70/@createdEdges.1"/>
+    <createdEdges sourceNode="//@createPatterns.70/@createdNodes.0" targetNode="//@createPatterns.70/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_y"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.70/@contextNodes.0" targetNode="//@createPatterns.70/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+    <createdNodes name="x" outgoingEdges="//@createPatterns.70/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </createdNodes>
+  </createPatterns>
+  <createPatterns name="freeAgentsBind">
+    <contextNodes name="x" incomingEdges="//@createPatterns.71/@createdEdges.1" outgoingEdges="//@createPatterns.71/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </contextNodes>
+    <contextNodes name="a" incomingEdges="//@createPatterns.71/@createdEdges.0" outgoingEdges="//@createPatterns.71/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <createdEdges sourceNode="//@createPatterns.71/@contextNodes.0" targetNode="//@createPatterns.71/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_y"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.71/@contextNodes.1" targetNode="//@createPatterns.71/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="freeAgentsBind2">
+    <contextNodes name="a" incomingEdges="//@createPatterns.72/@createdEdges.2" outgoingEdges="//@createPatterns.72/@createdEdges.0 //@createPatterns.72/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="x" incomingEdges="//@createPatterns.72/@createdEdges.0" outgoingEdges="//@createPatterns.72/@createdEdges.2 //@createPatterns.72/@createdEdges.3">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.72/@createdEdges.1 //@createPatterns.72/@createdEdges.3"/>
+    <createdEdges sourceNode="//@createPatterns.72/@contextNodes.0" targetNode="//@createPatterns.72/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.72/@contextNodes.0" targetNode="//@createPatterns.72/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.72/@contextNodes.1" targetNode="//@createPatterns.72/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.72/@contextNodes.1" targetNode="//@createPatterns.72/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="underspecifiedAgent">
+    <contextNodes name="x" outgoingEdges="//@createPatterns.73/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </contextNodes>
+    <contextNodes name="us" incomingEdges="//@createPatterns.73/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.73/@contextNodes.0" targetNode="//@createPatterns.73/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_u"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="forbiddenBondState">
+    <contextNodes name="a" incomingEdges="//@createPatterns.74/@createdEdges.1" outgoingEdges="//@createPatterns.74/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="x" incomingEdges="//@createPatterns.74/@createdEdges.0" outgoingEdges="//@createPatterns.74/@createdEdges.1 //@createPatterns.74/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </contextNodes>
+    <contextNodes name="us" incomingEdges="//@createPatterns.74/@createdEdges.2"/>
+    <createdEdges sourceNode="//@createPatterns.74/@contextNodes.0" targetNode="//@createPatterns.74/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.74/@contextNodes.1" targetNode="//@createPatterns.74/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.74/@contextNodes.1" targetNode="//@createPatterns.74/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_u"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="forbiddenBondStateGeneric">
+    <contextNodes name="t" incomingEdges="//@createPatterns.75/@createdEdges.1" outgoingEdges="//@createPatterns.75/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <contextNodes name="a" incomingEdges="//@createPatterns.75/@createdEdges.0" outgoingEdges="//@createPatterns.75/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <createdEdges sourceNode="//@createPatterns.75/@contextNodes.0" targetNode="//@createPatterns.75/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.75/@contextNodes.1" targetNode="//@createPatterns.75/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="forbiddenBondStateGenericWithSynthesis">
+    <contextNodes name="a" incomingEdges="//@createPatterns.76/@createdEdges.0" outgoingEdges="//@createPatterns.76/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <createdEdges sourceNode="//@createPatterns.76/@createdNodes.0" targetNode="//@createPatterns.76/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.76/@contextNodes.0" targetNode="//@createPatterns.76/@createdNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </createdEdges>
+    <createdNodes name="t" incomingEdges="//@createPatterns.76/@createdEdges.1" outgoingEdges="//@createPatterns.76/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </createdNodes>
+  </createPatterns>
   <createPatterns name="breakSpecificBond"/>
-  <createPatterns name="bidirectionalRule"/>
-  <createPatterns name="bidirectionalRuleBwd"/>
-  <createPatterns name="complexStateChanges"/>
+  <createPatterns name="bidirectionalRule">
+    <contextNodes name="t" incomingEdges="//@createPatterns.78/@createdEdges.1" outgoingEdges="//@createPatterns.78/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <contextNodes name="x" incomingEdges="//@createPatterns.78/@createdEdges.0" outgoingEdges="//@createPatterns.78/@createdEdges.1 //@createPatterns.78/@createdEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </contextNodes>
+    <contextNodes name="us" incomingEdges="//@createPatterns.78/@createdEdges.2"/>
+    <createdEdges sourceNode="//@createPatterns.78/@contextNodes.0" targetNode="//@createPatterns.78/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_j"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.78/@contextNodes.1" targetNode="//@createPatterns.78/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.78/@contextNodes.1" targetNode="//@createPatterns.78/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_u"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="bidirectionalRuleBwd">
+    <contextNodes name="t" incomingEdges="//@createPatterns.79/@createdEdges.3 //@createPatterns.79/@createdEdges.5" outgoingEdges="//@createPatterns.79/@createdEdges.0 //@createPatterns.79/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </contextNodes>
+    <contextNodes name="x" incomingEdges="//@createPatterns.79/@createdEdges.0 //@createPatterns.79/@createdEdges.6" outgoingEdges="//@createPatterns.79/@createdEdges.2 //@createPatterns.79/@createdEdges.3 //@createPatterns.79/@createdEdges.4">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </contextNodes>
+    <contextNodes name="a" incomingEdges="//@createPatterns.79/@createdEdges.1 //@createPatterns.79/@createdEdges.2" outgoingEdges="//@createPatterns.79/@createdEdges.5 //@createPatterns.79/@createdEdges.6">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.79/@createdEdges.4"/>
+    <createdEdges sourceNode="//@createPatterns.79/@contextNodes.0" targetNode="//@createPatterns.79/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.79/@contextNodes.0" targetNode="//@createPatterns.79/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_j"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.79/@contextNodes.1" targetNode="//@createPatterns.79/@contextNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_y"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.79/@contextNodes.1" targetNode="//@createPatterns.79/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.79/@contextNodes.1" targetNode="//@createPatterns.79/@contextNodes.3">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.79/@contextNodes.2" targetNode="//@createPatterns.79/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.79/@contextNodes.2" targetNode="//@createPatterns.79/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="complexStateChanges">
+    <contextNodes name="x" outgoingEdges="//@createPatterns.80/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </contextNodes>
+    <contextNodes name="us" incomingEdges="//@createPatterns.80/@createdEdges.0"/>
+    <contextNodes name="a" outgoingEdges="//@createPatterns.80/@createdEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.80/@createdEdges.1"/>
+    <createdEdges sourceNode="//@createPatterns.80/@contextNodes.0" targetNode="//@createPatterns.80/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_u"/>
+    </createdEdges>
+    <createdEdges sourceNode="//@createPatterns.80/@contextNodes.2" targetNode="//@createPatterns.80/@contextNodes.3">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+  </createPatterns>
   <createPatterns name="genericBondBreak"/>
   <createPatterns name="injectivity"/>
+  <createPatterns name="rhsGeneric1">
+    <contextNodes name="a" outgoingEdges="//@createPatterns.83/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.83/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.83/@contextNodes.0" targetNode="//@createPatterns.83/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+  </createPatterns>
+  <createPatterns name="rhsGeneric2">
+    <contextNodes name="a" outgoingEdges="//@createPatterns.84/@createdEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@createPatterns.84/@createdEdges.0"/>
+    <createdEdges sourceNode="//@createPatterns.84/@contextNodes.0" targetNode="//@createPatterns.84/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </createdEdges>
+  </createPatterns>
   <deletePatterns name="simpleBind1_1"/>
   <deletePatterns name="simpleBind1_2"/>
   <deletePatterns name="simpleBind1State1"/>
   <deletePatterns name="simpleBind1State2"/>
   <deletePatterns name="simpleBind2"/>
-  <deletePatterns name="simpleBind2State1"/>
-  <deletePatterns name="simpleBind2State2"/>
+  <deletePatterns name="simpleBind2State1">
+    <contextNodes name="us" incomingEdges="//@deletePatterns.5/@deletedEdges.0"/>
+    <deletedEdges sourceNode="//@deletePatterns.5/@deletedNodes.0" targetNode="//@deletePatterns.5/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </deletedEdges>
+    <deletedNodes name="a" outgoingEdges="//@deletePatterns.5/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="simpleBind2State2">
+    <contextNodes name="ps" incomingEdges="//@deletePatterns.6/@deletedEdges.0"/>
+    <deletedEdges sourceNode="//@deletePatterns.6/@deletedNodes.0" targetNode="//@deletePatterns.6/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </deletedEdges>
+    <deletedNodes name="a" outgoingEdges="//@deletePatterns.6/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+  </deletePatterns>
   <deletePatterns name="simpleBind2State3"/>
   <deletePatterns name="simpleBind2State4"/>
   <deletePatterns name="simpleBind3"/>
-  <deletePatterns name="simpleBind3State1"/>
-  <deletePatterns name="simpleBind3State2"/>
+  <deletePatterns name="simpleBind3State1">
+    <contextNodes name="us" incomingEdges="//@deletePatterns.10/@deletedEdges.0"/>
+    <deletedEdges sourceNode="//@deletePatterns.10/@deletedNodes.0" targetNode="//@deletePatterns.10/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </deletedEdges>
+    <deletedNodes name="a" outgoingEdges="//@deletePatterns.10/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="simpleBind3State2">
+    <contextNodes name="ps" incomingEdges="//@deletePatterns.11/@deletedEdges.0"/>
+    <deletedEdges sourceNode="//@deletePatterns.11/@deletedNodes.0" targetNode="//@deletePatterns.11/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </deletedEdges>
+    <deletedNodes name="a" outgoingEdges="//@deletePatterns.11/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+  </deletePatterns>
   <deletePatterns name="simpleBind3State3"/>
   <deletePatterns name="simpleBind3State4"/>
   <deletePatterns name="simpleSplit1"/>
-  <deletePatterns name="simpleSplit1State1"/>
-  <deletePatterns name="simpleSplit1State2"/>
+  <deletePatterns name="simpleSplit1State1">
+    <contextNodes name="us" incomingEdges="//@deletePatterns.15/@deletedEdges.0"/>
+    <deletedEdges sourceNode="//@deletePatterns.15/@deletedNodes.0" targetNode="//@deletePatterns.15/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </deletedEdges>
+    <deletedNodes name="a" outgoingEdges="//@deletePatterns.15/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="simpleSplit1State2">
+    <contextNodes name="ps" incomingEdges="//@deletePatterns.16/@deletedEdges.0"/>
+    <deletedEdges sourceNode="//@deletePatterns.16/@deletedNodes.0" targetNode="//@deletePatterns.16/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </deletedEdges>
+    <deletedNodes name="a" outgoingEdges="//@deletePatterns.16/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+  </deletePatterns>
   <deletePatterns name="simpleSplit1State3"/>
   <deletePatterns name="simpleSplit1State4"/>
-  <deletePatterns name="simpleSplit2State1"/>
-  <deletePatterns name="simpleSplit2State2"/>
-  <deletePatterns name="simpleSplit2State3"/>
-  <deletePatterns name="simpleSplit2State4"/>
+  <deletePatterns name="simpleSplit2State1">
+    <contextNodes name="us" incomingEdges="//@deletePatterns.19/@deletedEdges.1"/>
+    <deletedEdges sourceNode="//@deletePatterns.19/@deletedNodes.0" targetNode="//@deletePatterns.19/@deletedNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.19/@deletedNodes.0" targetNode="//@deletePatterns.19/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.19/@deletedNodes.1" targetNode="//@deletePatterns.19/@deletedNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </deletedEdges>
+    <deletedNodes name="a" incomingEdges="//@deletePatterns.19/@deletedEdges.2" outgoingEdges="//@deletePatterns.19/@deletedEdges.0 //@deletePatterns.19/@deletedEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+    <deletedNodes name="t" incomingEdges="//@deletePatterns.19/@deletedEdges.0" outgoingEdges="//@deletePatterns.19/@deletedEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="simpleSplit2State2">
+    <contextNodes name="ps" incomingEdges="//@deletePatterns.20/@deletedEdges.2"/>
+    <deletedEdges sourceNode="//@deletePatterns.20/@deletedNodes.0" targetNode="//@deletePatterns.20/@deletedNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.20/@deletedNodes.1" targetNode="//@deletePatterns.20/@deletedNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.20/@deletedNodes.1" targetNode="//@deletePatterns.20/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </deletedEdges>
+    <deletedNodes name="t" incomingEdges="//@deletePatterns.20/@deletedEdges.1" outgoingEdges="//@deletePatterns.20/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </deletedNodes>
+    <deletedNodes name="a" incomingEdges="//@deletePatterns.20/@deletedEdges.0" outgoingEdges="//@deletePatterns.20/@deletedEdges.1 //@deletePatterns.20/@deletedEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="simpleSplit2State3">
+    <deletedEdges sourceNode="//@deletePatterns.21/@deletedNodes.0" targetNode="//@deletePatterns.21/@deletedNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.21/@deletedNodes.1" targetNode="//@deletePatterns.21/@deletedNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </deletedEdges>
+    <deletedNodes name="a" incomingEdges="//@deletePatterns.21/@deletedEdges.1" outgoingEdges="//@deletePatterns.21/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+    <deletedNodes name="t" incomingEdges="//@deletePatterns.21/@deletedEdges.0" outgoingEdges="//@deletePatterns.21/@deletedEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="simpleSplit2State4">
+    <deletedEdges sourceNode="//@deletePatterns.22/@deletedNodes.0" targetNode="//@deletePatterns.22/@deletedNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.22/@deletedNodes.1" targetNode="//@deletePatterns.22/@deletedNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </deletedEdges>
+    <deletedNodes name="t" incomingEdges="//@deletePatterns.22/@deletedEdges.1" outgoingEdges="//@deletePatterns.22/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </deletedNodes>
+    <deletedNodes name="a" incomingEdges="//@deletePatterns.22/@deletedEdges.0" outgoingEdges="//@deletePatterns.22/@deletedEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+  </deletePatterns>
   <deletePatterns name="expandedSplit"/>
   <deletePatterns name="expandedSplitState1"/>
   <deletePatterns name="expandedSplitState2"/>
@@ -1677,40 +2555,243 @@
   <deletePatterns name="synthesisMulti9"/>
   <deletePatterns name="partialSynthesis1"/>
   <deletePatterns name="partialSynthesis2"/>
-  <deletePatterns name="degradation1"/>
-  <deletePatterns name="degradation2"/>
-  <deletePatterns name="degradation3"/>
-  <deletePatterns name="partialDegradation1"/>
-  <deletePatterns name="partialDegradation2"/>
-  <deletePatterns name="partialDegradation3"/>
-  <deletePatterns name="partialDegradation4"/>
+  <deletePatterns name="degradation1">
+    <deletedNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+    <deletedNodes name="a">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="degradation2">
+    <deletedNodes name="a">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+    <deletedNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="degradation3">
+    <deletedNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+    <deletedNodes name="a">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="partialDegradation1">
+    <deletedNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="partialDegradation2">
+    <deletedNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="partialDegradation3">
+    <deletedNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="partialDegradation4">
+    <deletedNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+  </deletePatterns>
   <deletePatterns name="underspecified1"/>
   <deletePatterns name="underspecified2"/>
   <deletePatterns name="underspecified3"/>
   <deletePatterns name="underspecified4"/>
   <deletePatterns name="underspecified5"/>
-  <deletePatterns name="unspecified1"/>
+  <deletePatterns name="unspecified1">
+    <deletedNodes name="a">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+  </deletePatterns>
   <deletePatterns name="unspecified2"/>
   <deletePatterns name="unspecified3"/>
   <deletePatterns name="unspecified4"/>
   <deletePatterns name="generic1"/>
   <deletePatterns name="generic2"/>
-  <deletePatterns name="generic3"/>
-  <deletePatterns name="generic4"/>
-  <deletePatterns name="generic5"/>
+  <deletePatterns name="generic3">
+    <deletedEdges sourceNode="//@deletePatterns.65/@deletedNodes.0" targetNode="//@deletePatterns.65/@deletedNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.65/@deletedNodes.1" targetNode="//@deletePatterns.65/@deletedNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </deletedEdges>
+    <deletedNodes name="a" incomingEdges="//@deletePatterns.65/@deletedEdges.1" outgoingEdges="//@deletePatterns.65/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+    <deletedNodes name="local_for_a_b" incomingEdges="//@deletePatterns.65/@deletedEdges.0" outgoingEdges="//@deletePatterns.65/@deletedEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="generic4">
+    <deletedEdges sourceNode="//@deletePatterns.66/@deletedNodes.0" targetNode="//@deletePatterns.66/@deletedNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.66/@deletedNodes.1" targetNode="//@deletePatterns.66/@deletedNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </deletedEdges>
+    <deletedNodes name="local_for_a_b" incomingEdges="//@deletePatterns.66/@deletedEdges.1" outgoingEdges="//@deletePatterns.66/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+    <deletedNodes name="a" incomingEdges="//@deletePatterns.66/@deletedEdges.0" outgoingEdges="//@deletePatterns.66/@deletedEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="generic5">
+    <deletedNodes name="local_for_a_b">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+  </deletePatterns>
   <deletePatterns name="generic6State1"/>
   <deletePatterns name="generic6State2"/>
   <deletePatterns name="generic7"/>
   <deletePatterns name="freeAgentsBind"/>
   <deletePatterns name="freeAgentsBind2"/>
-  <deletePatterns name="underspecifiedAgent"/>
-  <deletePatterns name="forbiddenBondState"/>
-  <deletePatterns name="forbiddenBondStateGeneric"/>
-  <deletePatterns name="forbiddenBondStateGenericWithSynthesis"/>
-  <deletePatterns name="breakSpecificBond"/>
-  <deletePatterns name="bidirectionalRule"/>
-  <deletePatterns name="bidirectionalRuleBwd"/>
-  <deletePatterns name="complexStateChanges"/>
-  <deletePatterns name="genericBondBreak"/>
-  <deletePatterns name="injectivity"/>
+  <deletePatterns name="underspecifiedAgent">
+    <contextNodes name="ps" incomingEdges="//@deletePatterns.73/@deletedEdges.0"/>
+    <deletedEdges sourceNode="//@deletePatterns.73/@deletedNodes.0" targetNode="//@deletePatterns.73/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
+    </deletedEdges>
+    <deletedNodes name="x" outgoingEdges="//@deletePatterns.73/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="forbiddenBondState">
+    <contextNodes name="ps" incomingEdges="//@deletePatterns.74/@deletedEdges.0"/>
+    <deletedEdges sourceNode="//@deletePatterns.74/@deletedNodes.0" targetNode="//@deletePatterns.74/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
+    </deletedEdges>
+    <deletedNodes name="x" outgoingEdges="//@deletePatterns.74/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="forbiddenBondStateGeneric">
+    <deletedNodes name="local_for_a_b">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="forbiddenBondStateGenericWithSynthesis">
+    <deletedNodes name="local_for_a_b">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="breakSpecificBond">
+    <deletedEdges sourceNode="//@deletePatterns.77/@deletedNodes.0" targetNode="//@deletePatterns.77/@deletedNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.77/@deletedNodes.1" targetNode="//@deletePatterns.77/@deletedNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </deletedEdges>
+    <deletedNodes name="a" incomingEdges="//@deletePatterns.77/@deletedEdges.1" outgoingEdges="//@deletePatterns.77/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+    <deletedNodes name="x" incomingEdges="//@deletePatterns.77/@deletedEdges.0" outgoingEdges="//@deletePatterns.77/@deletedEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="bidirectionalRule">
+    <contextNodes name="ps" incomingEdges="//@deletePatterns.78/@deletedEdges.2"/>
+    <deletedEdges sourceNode="//@deletePatterns.78/@deletedNodes.0" targetNode="//@deletePatterns.78/@deletedNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_j"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.78/@deletedNodes.2" targetNode="//@deletePatterns.78/@deletedNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.78/@deletedNodes.2" targetNode="//@deletePatterns.78/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
+    </deletedEdges>
+    <deletedNodes name="t" incomingEdges="//@deletePatterns.78/@deletedEdges.1" outgoingEdges="//@deletePatterns.78/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </deletedNodes>
+    <deletedNodes name="a" incomingEdges="//@deletePatterns.78/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+    <deletedNodes name="x" outgoingEdges="//@deletePatterns.78/@deletedEdges.1 //@deletePatterns.78/@deletedEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="bidirectionalRuleBwd">
+    <contextNodes name="us" incomingEdges="//@deletePatterns.79/@deletedEdges.2"/>
+    <deletedEdges sourceNode="//@deletePatterns.79/@deletedNodes.0" targetNode="//@deletePatterns.79/@deletedNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_j"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.79/@deletedNodes.1" targetNode="//@deletePatterns.79/@deletedNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.79/@deletedNodes.1" targetNode="//@deletePatterns.79/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_u"/>
+    </deletedEdges>
+    <deletedNodes name="t" incomingEdges="//@deletePatterns.79/@deletedEdges.1" outgoingEdges="//@deletePatterns.79/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </deletedNodes>
+    <deletedNodes name="x" incomingEdges="//@deletePatterns.79/@deletedEdges.0" outgoingEdges="//@deletePatterns.79/@deletedEdges.1 //@deletePatterns.79/@deletedEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="complexStateChanges">
+    <contextNodes name="ps" incomingEdges="//@deletePatterns.80/@deletedEdges.1"/>
+    <contextNodes name="us" incomingEdges="//@deletePatterns.80/@deletedEdges.3"/>
+    <deletedEdges sourceNode="//@deletePatterns.80/@deletedNodes.0" targetNode="//@deletePatterns.80/@deletedNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.80/@deletedNodes.0" targetNode="//@deletePatterns.80/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.80/@deletedNodes.1" targetNode="//@deletePatterns.80/@deletedNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.80/@deletedNodes.1" targetNode="//@deletePatterns.80/@contextNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </deletedEdges>
+    <deletedNodes name="x" incomingEdges="//@deletePatterns.80/@deletedEdges.2" outgoingEdges="//@deletePatterns.80/@deletedEdges.0 //@deletePatterns.80/@deletedEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+    <deletedNodes name="a" incomingEdges="//@deletePatterns.80/@deletedEdges.0" outgoingEdges="//@deletePatterns.80/@deletedEdges.2 //@deletePatterns.80/@deletedEdges.3">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="genericBondBreak">
+    <deletedEdges sourceNode="//@deletePatterns.81/@deletedNodes.0" targetNode="//@deletePatterns.81/@deletedNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.81/@deletedNodes.1" targetNode="//@deletePatterns.81/@deletedNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
+    </deletedEdges>
+    <deletedNodes name="a" incomingEdges="//@deletePatterns.81/@deletedEdges.1" outgoingEdges="//@deletePatterns.81/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+    <deletedNodes name="local_for_a_b" incomingEdges="//@deletePatterns.81/@deletedEdges.0" outgoingEdges="//@deletePatterns.81/@deletedEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="injectivity">
+    <deletedEdges sourceNode="//@deletePatterns.82/@deletedNodes.0" targetNode="//@deletePatterns.82/@deletedNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.82/@deletedNodes.2" targetNode="//@deletePatterns.82/@deletedNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.82/@deletedNodes.1" targetNode="//@deletePatterns.82/@deletedNodes.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_y"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.82/@deletedNodes.1" targetNode="//@deletePatterns.82/@deletedNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
+    </deletedEdges>
+    <deletedNodes name="a2" incomingEdges="//@deletePatterns.82/@deletedEdges.3" outgoingEdges="//@deletePatterns.82/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+    <deletedNodes name="x" incomingEdges="//@deletePatterns.82/@deletedEdges.0 //@deletePatterns.82/@deletedEdges.1" outgoingEdges="//@deletePatterns.82/@deletedEdges.2 //@deletePatterns.82/@deletedEdges.3">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+    <deletedNodes name="a1" incomingEdges="//@deletePatterns.82/@deletedEdges.2" outgoingEdges="//@deletePatterns.82/@deletedEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+  </deletePatterns>
+  <deletePatterns name="rhsGeneric1"/>
+  <deletePatterns name="rhsGeneric2"/>
 </IBeXLanguage:IBeXPatternSet>

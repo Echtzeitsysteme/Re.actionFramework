@@ -9,6 +9,10 @@ import ecoreBCModel.IntermAgentInstance;
 import ecoreBCModel.IntermSiteInstance;
 import ecoreBCModel.IntermSiteState;
 
+import org.xtext.biochemics.dotDsl.BondSide;
+import org.xtext.biochemics.dotDsl.Bond;
+import org.xtext.biochemics.dotDsl.AgentInstance;
+
 public class NameProvider {
 
 	/**
@@ -18,7 +22,29 @@ public class NameProvider {
 	public static String getQualifiedStateNodeName(IntermSiteInstance si) {
 		return si.getState().getName() + "s";
 	}
-	
+
+	/**
+	 * @returns a valid name for a local node
+	 */
+	public static String getQualifiedLocalNodeName(IntermSiteInstance si) {
+
+		IntermAgentInstance ai = si.getParent();
+
+		return "local_for_" + ai.getName() + "_" + si.getName();
+	}
+
+	/**
+	 * @returns a valid name for a local node
+	 */
+	public static String getQualifiedLocalNodeName(BondSide rbs) {
+
+		Bond bond = (Bond) rbs.eContainer();
+		String instanceName = ((AgentInstance) bond.getLeft().getAbstractAgent()).getName();
+		String siteName = bond.getLeft().getSiteInstance().getSite().getName();
+
+		return "local_for_" + instanceName + "_" + siteName;
+	}
+
 	/**
 	 * @returns the valid and hopefully unique name for a bound pattern
 	 */
@@ -36,12 +62,12 @@ public class NameProvider {
 
 		return agentClass.getName().toLowerCase() + "_" + siteName + "Bound";
 	}
-	
+
 	/**
 	 * @return a qualified name for managing condition patterns.
 	 */
-	public static String getQualifiedConditionPatternName(IntermAgentInstance aiSrc, IntermSiteInstance siSrc, Bindable trg,
-			boolean toLocalNode) {
+	public static String getQualifiedConditionPatternName(IntermAgentInstance aiSrc, IntermSiteInstance siSrc,
+			Bindable trg, boolean toLocalNode) {
 		StringBuilder sb = new StringBuilder("conditionPattern_");
 
 		if (trg instanceof IntermSiteInstance) {
@@ -78,13 +104,27 @@ public class NameProvider {
 		}
 		return sb.toString();
 	}
-	
+
 	/**
 	 * @returns the key-string to get a state type from the state type map
 	 */
 	public static String getStateTypeKey(IntermSiteInstance si) {
 		return si.getState().getName().toUpperCase() + "_s";
 	}
-	
-	
+
+	/**
+	 * @param ai      - the agent where the edge starts
+	 * @param si      - the site where the edge starts
+	 * @param toState - true, if it is an edge pointing to a state node
+	 * @return the key-string to get an edge type from the edge type map
+	 */
+	public static String getEdgeTypeKey(IntermAgentInstance ai, IntermSiteInstance si, boolean toState) {
+		String key = ai.getInstanceOf().getName().toUpperCase() + "_" + si.getName();
+		IntermSiteState state = si.getState();
+		if (state != null && toState) {
+			key = key + "_" + si.getState().getName();
+		}
+		return key;
+	}
+
 }

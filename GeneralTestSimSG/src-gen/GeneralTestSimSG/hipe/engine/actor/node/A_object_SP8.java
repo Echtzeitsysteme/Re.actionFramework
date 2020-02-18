@@ -47,8 +47,8 @@ public class A_object_SP8 extends AbstractActor {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
 		ports.add(new PortNodeLeft<TestcasesModel.A>(getSelf(), name2actor.get("A_A_c_p_0_reference"), this::returnTrue));
-		ports.add(new PortNodeRight<TestcasesModel.A>(getSelf(), name2actor.get("X_X_y_1_reference"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("partialSynthesis2_229_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchRight<TestcasesModel.A>(getSelf(), name2actor.get("bidirectionalRuleBwd_459_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchRight<TestcasesModel.A>(getSelf(), name2actor.get("partialSynthesis2_229_junction"), this::returnTrue));
 		ports.add(new PortNodeMatchRight<TestcasesModel.A>(getSelf(), name2actor.get("unspecified4_331_junction"), this::returnTrue));
 	}
 

@@ -255,17 +255,9 @@ public class ContextCreator {
 	}
 
 	private EReference getEdgeType(IntermAgentInstance ai, IntermSiteInstance si, boolean toState) {
-		return metamodelEdgeTypes.get(getEdgeTypeKey(ai, si, toState));
+		return metamodelEdgeTypes.get(NameProvider.getEdgeTypeKey(ai, si, toState));
 	}
 
-	private String getEdgeTypeKey(IntermAgentInstance ai, IntermSiteInstance si, boolean toState) {
-		String key = ai.getInstanceOf().getName().toUpperCase() + "_" + si.getName();
-		IntermSiteState state = si.getState();
-		if (state != null && toState) {
-			key = key + "_" + si.getState().getName();
-		}
-		return key;
-	}
 
 	/**
 	 * Adds node for a free site
@@ -329,7 +321,7 @@ public class ContextCreator {
 				IntermAgentInstance aiNotBoundTo = siteNotBoundTo.getParent();
 				IBeXNode nodeNotBoundTo;
 				if (aiNotBoundTo.isLocal()) {
-					nodeNotBoundTo = IBeXPatternFactory.createNode("local",
+					nodeNotBoundTo = IBeXPatternFactory.createNode(aiNotBoundTo.getName(),
 							metamodelAgentTypes.get(aiNotBoundTo.getInstanceOf().getName()));
 				} else {
 					nodeNotBoundTo = getSignatureNodeFromContextPattern(contextPattern, aiNotBoundTo.getName());

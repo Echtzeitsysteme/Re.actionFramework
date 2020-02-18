@@ -677,7 +677,7 @@ rule partialDegradation4() {
 
 //-------------------------------UNDERSPECIFIED-------------------------------
 rule underspecified1() {
-	// TODO: How to tell that locals can also be the same agent?
+	// TODO: How to tell that locals can also be the same agent? --> only have one local agent and use it for every connection?
 	a: A {
 		-- -A_b -> _loc1
 		-- -A_c -> _loc2
@@ -1088,7 +1088,7 @@ rule genericBondBreakFree() {
 rule bidirectionalRule() {
 	a: A {
 		-- -A_b -> t
-		-- -A_c -> _loc1
+		-- -A_c -> x
 	}
 
 	t: T {
@@ -1098,12 +1098,11 @@ rule bidirectionalRule() {
 	}
 
 	x: X {
+		-- -X_y -> a
 		-- -X_z_p -> ps
 		++ -X_z_u -> us
 		-X_z -> t
 	}
-
-	_loc1: Agent
 
 	us: U_s
 
@@ -1113,7 +1112,7 @@ rule bidirectionalRule() {
 rule bidirectionalRuleBwd() {
 	a: A {
 		++ -A_b -> t
-		++ -A_c -> _loc1
+		++ -A_c -> x
 	}
 
 	t: T {
@@ -1123,11 +1122,10 @@ rule bidirectionalRuleBwd() {
 
 	x: X {
 		-X_z -> t
+		++ -X_y -> a
 		-- -X_z_u -> us
 		++ -X_z_p -> ps
 	}
-
-	_loc1: Agent
 
 	us: U_s
 
