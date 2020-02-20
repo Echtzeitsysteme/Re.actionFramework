@@ -46,10 +46,9 @@ public class P_s_object_SP0 extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("freeAgentsBind2_385_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchRight<TestcasesModel.P_s>(getSelf(), name2actor.get("simpleBind1State1_27_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("simpleSplit1State4_157_junction"), this::returnTrue));
-		ports.add(new PortNodeMatch<TestcasesModel.P_s>(getSelf(), name2actor.get("synthesisMulti9_production"), this::returnTrue));
+		ports.add(new PortNodeRight<TestcasesModel.P_s>(getSelf(), name2actor.get("A_A_c_p_0_reference"), this::returnTrue));
+		ports.add(new PortNodeRight<TestcasesModel.P_s>(getSelf(), name2actor.get("X_X_z_p_0_reference"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("synthDegComplete_69_junction"), this::returnTrue));
 	}
 
 	@Override

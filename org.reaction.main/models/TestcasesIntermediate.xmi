@@ -18,1445 +18,181 @@
     <sites name="i"/>
     <sites name="j"/>
   </components>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBind1_1" rate="1.0" lhs="//@patternContainer/@patterns.0" rhs="//@patternContainer/@patterns.1"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBind1_2" rate="1.0" lhs="//@patternContainer/@patterns.2" rhs="//@patternContainer/@patterns.3"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBind1State1" rate="1.0" lhs="//@patternContainer/@patterns.4" rhs="//@patternContainer/@patterns.5"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBind1State2" rate="1.0" lhs="//@patternContainer/@patterns.6" rhs="//@patternContainer/@patterns.7"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBind2" rate="1.0" lhs="//@patternContainer/@patterns.8" rhs="//@patternContainer/@patterns.9"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBind2State1" rate="1.0" lhs="//@patternContainer/@patterns.10" rhs="//@patternContainer/@patterns.11"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBind2State2" rate="1.0" lhs="//@patternContainer/@patterns.12" rhs="//@patternContainer/@patterns.13"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBind2State3" rate="1.0" lhs="//@patternContainer/@patterns.14" rhs="//@patternContainer/@patterns.15"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBind2State4" rate="1.0" lhs="//@patternContainer/@patterns.16" rhs="//@patternContainer/@patterns.17"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBind3" rate="1.0" lhs="//@patternContainer/@patterns.18" rhs="//@patternContainer/@patterns.19"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBind3State1" rate="1.0" lhs="//@patternContainer/@patterns.20" rhs="//@patternContainer/@patterns.21"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBind3State2" rate="1.0" lhs="//@patternContainer/@patterns.22" rhs="//@patternContainer/@patterns.23"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBind3State3" rate="1.0" lhs="//@patternContainer/@patterns.24" rhs="//@patternContainer/@patterns.25"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBind3State4" rate="1.0" lhs="//@patternContainer/@patterns.26" rhs="//@patternContainer/@patterns.27"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleSplit1" rate="1.0" lhs="//@patternContainer/@patterns.28" rhs="//@patternContainer/@patterns.29"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleSplit1State1" rate="1.0" lhs="//@patternContainer/@patterns.30" rhs="//@patternContainer/@patterns.31"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleSplit1State2" rate="1.0" lhs="//@patternContainer/@patterns.32" rhs="//@patternContainer/@patterns.33"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleSplit1State3" rate="1.0" lhs="//@patternContainer/@patterns.34" rhs="//@patternContainer/@patterns.35"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleSplit1State4" rate="1.0" lhs="//@patternContainer/@patterns.36" rhs="//@patternContainer/@patterns.37"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleSplit2State1" rate="1.0" lhs="//@patternContainer/@patterns.38" rhs="//@patternContainer/@patterns.39"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleSplit2State2" rate="1.0" lhs="//@patternContainer/@patterns.40" rhs="//@patternContainer/@patterns.41"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleSplit2State3" rate="1.0" lhs="//@patternContainer/@patterns.42" rhs="//@patternContainer/@patterns.43"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="simpleSplit2State4" rate="1.0" lhs="//@patternContainer/@patterns.44" rhs="//@patternContainer/@patterns.45"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="expandedSplit" rate="1.0" lhs="//@patternContainer/@patterns.46" rhs="//@patternContainer/@patterns.47"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="expandedSplitState1" rate="1.0" lhs="//@patternContainer/@patterns.48" rhs="//@patternContainer/@patterns.49"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="expandedSplitState2" rate="1.0" lhs="//@patternContainer/@patterns.50" rhs="//@patternContainer/@patterns.51"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisSingle1" rate="1.0" lhs="//@patternContainer/@patterns.52" rhs="//@patternContainer/@patterns.53"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisSingle2" rate="1.0" lhs="//@patternContainer/@patterns.54" rhs="//@patternContainer/@patterns.55"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisSingle3" rate="1.0" lhs="//@patternContainer/@patterns.56" rhs="//@patternContainer/@patterns.57"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisSingle4" rate="1.0" lhs="//@patternContainer/@patterns.58" rhs="//@patternContainer/@patterns.59"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisSingle5" rate="1.0" lhs="//@patternContainer/@patterns.60" rhs="//@patternContainer/@patterns.61"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisSingle6" rate="1.0" lhs="//@patternContainer/@patterns.62" rhs="//@patternContainer/@patterns.63"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisSingle7" rate="1.0" lhs="//@patternContainer/@patterns.64" rhs="//@patternContainer/@patterns.65"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisSingle8" rate="1.0" lhs="//@patternContainer/@patterns.66" rhs="//@patternContainer/@patterns.67"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisSingle9" rate="1.0" lhs="//@patternContainer/@patterns.68" rhs="//@patternContainer/@patterns.69"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisSingle10" rate="1.0" lhs="//@patternContainer/@patterns.70" rhs="//@patternContainer/@patterns.71"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisMulti1" rate="1.0" lhs="//@patternContainer/@patterns.72" rhs="//@patternContainer/@patterns.73"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisMulti2" rate="1.0" lhs="//@patternContainer/@patterns.74" rhs="//@patternContainer/@patterns.75"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisMulti3" rate="1.0" lhs="//@patternContainer/@patterns.76" rhs="//@patternContainer/@patterns.77"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisMulti4" rate="1.0" lhs="//@patternContainer/@patterns.78" rhs="//@patternContainer/@patterns.79"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisMulti5" rate="1.0" lhs="//@patternContainer/@patterns.80" rhs="//@patternContainer/@patterns.81"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisMulti6" rate="1.0" lhs="//@patternContainer/@patterns.82" rhs="//@patternContainer/@patterns.83"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisMulti7" rate="1.0" lhs="//@patternContainer/@patterns.84" rhs="//@patternContainer/@patterns.85"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisMulti8" rate="1.0" lhs="//@patternContainer/@patterns.86" rhs="//@patternContainer/@patterns.87"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="synthesisMulti9" rate="1.0" lhs="//@patternContainer/@patterns.88" rhs="//@patternContainer/@patterns.89"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="partialSynthesis1" rate="1.0" lhs="//@patternContainer/@patterns.90" rhs="//@patternContainer/@patterns.91"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="partialSynthesis2" rate="1.0" lhs="//@patternContainer/@patterns.92" rhs="//@patternContainer/@patterns.93"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="degradation1" rate="1.0" lhs="//@patternContainer/@patterns.94" rhs="//@patternContainer/@patterns.95"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="degradation2" rate="1.0" lhs="//@patternContainer/@patterns.96" rhs="//@patternContainer/@patterns.97"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="degradation3" rate="1.0" lhs="//@patternContainer/@patterns.98" rhs="//@patternContainer/@patterns.99"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="partialDegradation1" rate="1.0" lhs="//@patternContainer/@patterns.100" rhs="//@patternContainer/@patterns.101"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="partialDegradation2" rate="1.0" lhs="//@patternContainer/@patterns.102" rhs="//@patternContainer/@patterns.103"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="partialDegradation3" rate="1.0" lhs="//@patternContainer/@patterns.104" rhs="//@patternContainer/@patterns.105"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="partialDegradation4" rate="1.0" lhs="//@patternContainer/@patterns.106" rhs="//@patternContainer/@patterns.107"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="underspecified1" rate="1.0" lhs="//@patternContainer/@patterns.108" rhs="//@patternContainer/@patterns.109"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="underspecified2" rate="1.0" lhs="//@patternContainer/@patterns.110" rhs="//@patternContainer/@patterns.111"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="underspecified3" rate="1.0" lhs="//@patternContainer/@patterns.112" rhs="//@patternContainer/@patterns.113"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="underspecified4" rate="1.0" lhs="//@patternContainer/@patterns.114" rhs="//@patternContainer/@patterns.115"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="underspecified5" rate="1.0" lhs="//@patternContainer/@patterns.116" rhs="//@patternContainer/@patterns.117"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="unspecified1" rate="1.0" lhs="//@patternContainer/@patterns.118" rhs="//@patternContainer/@patterns.119"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="unspecified2" rate="1.0" lhs="//@patternContainer/@patterns.120" rhs="//@patternContainer/@patterns.121"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="unspecified3" rate="1.0" lhs="//@patternContainer/@patterns.122" rhs="//@patternContainer/@patterns.123"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="unspecified4" rate="1.0" lhs="//@patternContainer/@patterns.124" rhs="//@patternContainer/@patterns.125"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="generic1" rate="1.0" lhs="//@patternContainer/@patterns.126" rhs="//@patternContainer/@patterns.127"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="generic2" rate="1.0" lhs="//@patternContainer/@patterns.128" rhs="//@patternContainer/@patterns.129"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="generic3" rate="1.0" lhs="//@patternContainer/@patterns.130" rhs="//@patternContainer/@patterns.131"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="generic4" rate="1.0" lhs="//@patternContainer/@patterns.132" rhs="//@patternContainer/@patterns.133"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="generic5" rate="1.0" lhs="//@patternContainer/@patterns.134" rhs="//@patternContainer/@patterns.135"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="generic6State1" rate="1.0" lhs="//@patternContainer/@patterns.136" rhs="//@patternContainer/@patterns.137"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="generic6State2" rate="1.0" lhs="//@patternContainer/@patterns.138" rhs="//@patternContainer/@patterns.139"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="generic7" rate="1.0" lhs="//@patternContainer/@patterns.140" rhs="//@patternContainer/@patterns.141"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="freeAgentsBind" rate="1.0" lhs="//@patternContainer/@patterns.142" rhs="//@patternContainer/@patterns.143"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="freeAgentsBind2" rate="1.0" lhs="//@patternContainer/@patterns.144" rhs="//@patternContainer/@patterns.145"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="underspecifiedAgent" rate="1.0" lhs="//@patternContainer/@patterns.146" rhs="//@patternContainer/@patterns.147"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="forbiddenBondState" rate="1.0" lhs="//@patternContainer/@patterns.148" rhs="//@patternContainer/@patterns.149"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="forbiddenBondStateGeneric" rate="1.0" lhs="//@patternContainer/@patterns.150" rhs="//@patternContainer/@patterns.151"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="forbiddenBondStateGenericWithSynthesis" rate="1.0" lhs="//@patternContainer/@patterns.152" rhs="//@patternContainer/@patterns.153"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="breakSpecificBond" rate="1.0" lhs="//@patternContainer/@patterns.154" rhs="//@patternContainer/@patterns.155"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="bidirectionalRule" rate="1.0" lhs="//@patternContainer/@patterns.156" rhs="//@patternContainer/@patterns.157"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="bidirectionalRuleBwd" rate="1.0" lhs="//@patternContainer/@patterns.157" rhs="//@patternContainer/@patterns.156"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="complexStateChanges" rate="1.0" lhs="//@patternContainer/@patterns.158" rhs="//@patternContainer/@patterns.159"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="genericBondBreak" rate="1.0" lhs="//@patternContainer/@patterns.160" rhs="//@patternContainer/@patterns.161"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="injectivity" rate="1.0" lhs="//@patternContainer/@patterns.162" rhs="//@patternContainer/@patterns.163"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="rhsGeneric1" rate="1.0" lhs="//@patternContainer/@patterns.164" rhs="//@patternContainer/@patterns.165"/>
-  <components xsi:type="ecoreBCModel:IntermRule" name="rhsGeneric2" rate="1.0" lhs="//@patternContainer/@patterns.166" rhs="//@patternContainer/@patterns.167"/>
-  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="100" initPattern="//@patternContainer/@patterns.168"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBinding" rate="1.0" lhs="//@patternContainer/@patterns.0" rhs="//@patternContainer/@patterns.1"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="simpleBindingBwd" rate="1.0" lhs="//@patternContainer/@patterns.1" rhs="//@patternContainer/@patterns.0"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="selfBinding" rate="1.0" lhs="//@patternContainer/@patterns.2" rhs="//@patternContainer/@patterns.3"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="selfBindingBwd" rate="1.0" lhs="//@patternContainer/@patterns.3" rhs="//@patternContainer/@patterns.2"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="synthDegComplete" rate="1.0" lhs="//@patternContainer/@patterns.4" rhs="//@patternContainer/@patterns.5"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="synthDegCompleteBwd" rate="1.0" lhs="//@patternContainer/@patterns.5" rhs="//@patternContainer/@patterns.4"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="synthDegPartial" rate="1.0" lhs="//@patternContainer/@patterns.6" rhs="//@patternContainer/@patterns.7"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="synthDegPartialBwd" rate="1.0" lhs="//@patternContainer/@patterns.7" rhs="//@patternContainer/@patterns.6"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="underspec" rate="1.0" lhs="//@patternContainer/@patterns.8" rhs="//@patternContainer/@patterns.9"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="underspecTest" rate="1.0" lhs="//@patternContainer/@patterns.10" rhs="//@patternContainer/@patterns.11"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="unspec" rate="1.0" lhs="//@patternContainer/@patterns.12" rhs="//@patternContainer/@patterns.13"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="unspecTest" rate="1.0" lhs="//@patternContainer/@patterns.14" rhs="//@patternContainer/@patterns.15"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="generic" rate="1.0" lhs="//@patternContainer/@patterns.16" rhs="//@patternContainer/@patterns.17"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="genericTest" rate="1.0" lhs="//@patternContainer/@patterns.18" rhs="//@patternContainer/@patterns.19"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="genericWithState" rate="1.0" lhs="//@patternContainer/@patterns.20" rhs="//@patternContainer/@patterns.21"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="genericWithStateTest" rate="1.0" lhs="//@patternContainer/@patterns.22" rhs="//@patternContainer/@patterns.23"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="100" initPattern="//@patternContainer/@patterns.24"/>
   <patternContainer>
-    <patterns name="simpleBind1_1Lhs">
+    <patterns name="simpleBindingLhs">
       <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.0/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.0/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.0/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.0/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.0/@agentInstances.0"/>
       </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.0/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" bindingState="FREE" name="j" parent="//@patternContainer/@patterns.0/@agentInstances.1"/>
+      <agentInstances instanceOf="X" name="x">
+        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.0/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.0/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.0/@agentInstances.1"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind1_1Rhs">
+    <patterns name="simpleBindingRhs">
       <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.1/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.1/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.0" notBoundTo="//@patternContainer/@patterns.1/@agentInstances.1/@siteInstances.1" name="b" parent="//@patternContainer/@patterns.1/@agentInstances.0"/>
         <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.1/@agentInstances.0"/>
       </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.1/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.1/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.1/@agentInstances.1"/>
+      <agentInstances instanceOf="X" name="x">
+        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.1/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.1/@sites.1" notBoundTo="//@patternContainer/@patterns.1/@agentInstances.0/@siteInstances.0" name="z" state="//@components.1/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.1/@agentInstances.1"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind1_2Lhs">
+    <patterns name="selfBindingLhs">
       <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.2/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.2/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.2/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.2/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.2/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.2/@agentInstances.0"/>
       </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.2/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" bindingState="FREE" name="j" parent="//@patternContainer/@patterns.2/@agentInstances.1"/>
+      <agentInstances instanceOf="X" name="x">
+        <siteInstances instanceOf="//@components.1/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.2/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.2/@agentInstances.1"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind1_2Rhs">
+    <patterns name="selfBindingRhs">
       <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.3/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.3/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.3/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.3/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.3/@agentInstances.0"/>
       </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.3/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.3/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.3/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleBind1State1Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.4/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.4/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.4/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" bindingState="FREE" name="j" parent="//@patternContainer/@patterns.4/@agentInstances.1"/>
+      <agentInstances instanceOf="X" name="x">
+        <siteInstances instanceOf="//@components.1/@sites.0" boundTo="//@patternContainer/@patterns.3/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.3/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.3/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="z" parent="//@patternContainer/@patterns.3/@agentInstances.1"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind1State1Rhs">
+    <patterns name="synthDegCompleteLhs"/>
+    <patterns name="synthDegCompleteRhs">
       <agentInstances instanceOf="A" name="a">
         <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.5/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.5/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.5/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.5/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.5/@agentInstances.0"/>
       </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.5/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.5/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.5/@agentInstances.1"/>
+      <agentInstances instanceOf="X" name="x">
+        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.5/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.5/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.5/@agentInstances.1"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind1State2Lhs">
+    <patterns name="synthDegPartialLhs">
       <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.6/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.6/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.6/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" bindingState="FREE" name="j" parent="//@patternContainer/@patterns.6/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.6/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.6/@agentInstances.0"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind1State2Rhs">
+    <patterns name="synthDegPartialRhs">
       <agentInstances instanceOf="A" name="a">
         <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.7/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.7/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.7/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.7/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.7/@agentInstances.0"/>
       </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.7/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.7/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.7/@agentInstances.1"/>
+      <agentInstances instanceOf="X" name="x">
+        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.7/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.7/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.7/@agentInstances.1"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind2Lhs">
+    <patterns name="underspecLhs">
       <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.8/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.8/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.8/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.8/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.8/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.8/@agentInstances.0"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind2Rhs">
+    <patterns name="underspecRhs">
       <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.9/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.9/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.9/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.9/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.9/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.9/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.9/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.9/@agentInstances.0"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind2State1Lhs">
+    <patterns name="underspecTestLhs">
       <agentInstances instanceOf="A" name="a">
         <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.10/@agentInstances.0"/>
         <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.10/@agentInstances.0"/>
       </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.10/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.10/@agentInstances.1"/>
-      </agentInstances>
     </patterns>
-    <patterns name="simpleBind2State1Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.11/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.11/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.11/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.11/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.11/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.11/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleBind2State2Lhs">
+    <patterns name="underspecTestRhs"/>
+    <patterns name="unspecLhs">
       <agentInstances instanceOf="A" name="a">
         <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.12/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.12/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.12/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.12/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.12/@agentInstances.0"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind2State2Rhs">
+    <patterns name="unspecRhs">
       <agentInstances instanceOf="A" name="a">
         <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.13/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.13/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.13/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.13/@agentInstances.0"/>
       </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.13/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.13/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.13/@agentInstances.1"/>
+      <agentInstances instanceOf="X" name="x">
+        <siteInstances instanceOf="//@components.1/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.13/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.13/@agentInstances.1"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind2State3Lhs">
+    <patterns name="unspecTestLhs">
       <agentInstances instanceOf="A" name="a">
         <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.14/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.14/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.14/@agentInstances.0"/>
       </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.14/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.14/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleBind2State3Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.15/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.15/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.15/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.15/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.15/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.15/@agentInstances.1"/>
+      <agentInstances instanceOf="X" name="x">
+        <siteInstances instanceOf="//@components.1/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.14/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.14/@agentInstances.1"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind2State4Lhs">
+    <patterns name="unspecTestRhs"/>
+    <patterns name="genericLhs">
       <agentInstances instanceOf="A" name="a">
         <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.16/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.16/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.16/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" parent="//@patternContainer/@patterns.16/@agentInstances.0"/>
       </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.16/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.16/@agentInstances.1"/>
+      <agentInstances instanceOf="X" name="local_for_a_c" local="true">
+        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.16/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="z" parent="//@patternContainer/@patterns.16/@agentInstances.1"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind2State4Rhs">
+    <patterns name="genericRhs">
       <agentInstances instanceOf="A" name="a">
         <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.17/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.17/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.17/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.17/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.17/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.17/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.17/@agentInstances.0"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind3Lhs">
+    <patterns name="genericTestLhs">
       <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" notBoundTo="//@patternContainer/@patterns.18/@agentInstances.1/@siteInstances.0" name="b" parent="//@patternContainer/@patterns.18/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.18/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" notBoundTo="//@patternContainer/@patterns.18/@agentInstances.0/@siteInstances.0" name="i" parent="//@patternContainer/@patterns.18/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.18/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.18/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.18/@agentInstances.0"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind3Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.19/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.19/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.19/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.19/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.19/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.19/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleBind3State1Lhs">
+    <patterns name="genericTestRhs"/>
+    <patterns name="genericWithStateLhs">
       <agentInstances instanceOf="A" name="a">
         <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.20/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" notBoundTo="//@patternContainer/@patterns.20/@agentInstances.1/@siteInstances.0" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.20/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.20/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" parent="//@patternContainer/@patterns.20/@agentInstances.0"/>
       </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" notBoundTo="//@patternContainer/@patterns.20/@agentInstances.0/@siteInstances.1" name="i" parent="//@patternContainer/@patterns.20/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.20/@agentInstances.1"/>
+      <agentInstances instanceOf="X" name="local_for_a_c" local="true">
+        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.20/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.20/@agentInstances.1"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind3State1Rhs">
+    <patterns name="genericWithStateRhs">
       <agentInstances instanceOf="A" name="a">
         <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.21/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.21/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.21/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.21/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.21/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.21/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.21/@agentInstances.0"/>
       </agentInstances>
     </patterns>
-    <patterns name="simpleBind3State2Lhs">
+    <patterns name="genericWithStateTestLhs">
       <agentInstances instanceOf="A" name="a">
         <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.22/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" notBoundTo="//@patternContainer/@patterns.22/@agentInstances.1/@siteInstances.0" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.22/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.22/@agentInstances.0"/>
       </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" notBoundTo="//@patternContainer/@patterns.22/@agentInstances.0/@siteInstances.1" name="i" parent="//@patternContainer/@patterns.22/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.22/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleBind3State2Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.23/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.23/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.23/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.23/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.23/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.23/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleBind3State3Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.24/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" notBoundTo="//@patternContainer/@patterns.24/@agentInstances.1/@siteInstances.0" name="c" parent="//@patternContainer/@patterns.24/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" notBoundTo="//@patternContainer/@patterns.24/@agentInstances.0/@siteInstances.1" name="i" parent="//@patternContainer/@patterns.24/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.24/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleBind3State3Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.25/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.25/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.25/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.25/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.25/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.25/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleBind3State4Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.26/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" notBoundTo="//@patternContainer/@patterns.26/@agentInstances.1/@siteInstances.0" name="c" parent="//@patternContainer/@patterns.26/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" notBoundTo="//@patternContainer/@patterns.26/@agentInstances.0/@siteInstances.1" name="i" parent="//@patternContainer/@patterns.26/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.26/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleBind3State4Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.27/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.27/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.27/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.27/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.27/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.27/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit1Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.28/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.28/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.28/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.28/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.28/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.28/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit1Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.29/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.29/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.29/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.29/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit1State1Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.30/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.30/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.30/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.30/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.30/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.30/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit1State1Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.31/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.31/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.31/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.31/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit1State2Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.32/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.32/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.32/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.32/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.32/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.32/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit1State2Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.33/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.33/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.33/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.33/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit1State3Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.34/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.34/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" parent="//@patternContainer/@patterns.34/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.34/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.34/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.34/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit1State3Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.35/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.35/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.35/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.35/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit1State4Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.36/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.36/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" parent="//@patternContainer/@patterns.36/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.36/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.36/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.36/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit1State4Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.37/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.37/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.37/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.37/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit2State1Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.38/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.38/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.38/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.38/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.38/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.38/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit2State1Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.39/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" notBoundTo="//@patternContainer/@patterns.39/@agentInstances.1/@siteInstances.0" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.39/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" notBoundTo="//@patternContainer/@patterns.39/@agentInstances.0/@siteInstances.1" name="i" parent="//@patternContainer/@patterns.39/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.39/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit2State2Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.40/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.40/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.40/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.40/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.40/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.40/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit2State2Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.41/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" notBoundTo="//@patternContainer/@patterns.41/@agentInstances.1/@siteInstances.0" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.41/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" notBoundTo="//@patternContainer/@patterns.41/@agentInstances.0/@siteInstances.1" name="i" parent="//@patternContainer/@patterns.41/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.41/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit2State3Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.42/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.42/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" parent="//@patternContainer/@patterns.42/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.42/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.42/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.42/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit2State3Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.43/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" notBoundTo="//@patternContainer/@patterns.43/@agentInstances.1/@siteInstances.0" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.43/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" notBoundTo="//@patternContainer/@patterns.43/@agentInstances.0/@siteInstances.1" name="i" parent="//@patternContainer/@patterns.43/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.43/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit2State4Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.44/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.44/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" parent="//@patternContainer/@patterns.44/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.44/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.44/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.44/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="simpleSplit2State4Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.45/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" notBoundTo="//@patternContainer/@patterns.45/@agentInstances.1/@siteInstances.0" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.45/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" notBoundTo="//@patternContainer/@patterns.45/@agentInstances.0/@siteInstances.1" name="i" parent="//@patternContainer/@patterns.45/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.45/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="expandedSplitLhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.46/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.46/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.46/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.46/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.46/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.46/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="expandedSplitRhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.47/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.47/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.47/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" bindingState="FREE" name="j" parent="//@patternContainer/@patterns.47/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="expandedSplitState1Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.48/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.48/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.48/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.48/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.48/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.48/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="expandedSplitState1Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.49/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.49/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.49/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" bindingState="FREE" name="j" parent="//@patternContainer/@patterns.49/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="expandedSplitState2Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.50/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.50/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.50/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.50/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.50/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.50/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="expandedSplitState2Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.51/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.51/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.51/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" bindingState="FREE" name="j" parent="//@patternContainer/@patterns.51/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisSingle1Lhs"/>
-    <patterns name="synthesisSingle1Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.53/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.53/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisSingle2Lhs"/>
-    <patterns name="synthesisSingle2Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.55/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.55/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisSingle3Lhs"/>
-    <patterns name="synthesisSingle3Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.57/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.57/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisSingle4Lhs"/>
-    <patterns name="synthesisSingle4Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.59/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.59/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisSingle5Lhs"/>
-    <patterns name="synthesisSingle5Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.61/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.61/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisSingle6Lhs"/>
-    <patterns name="synthesisSingle6Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.63/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.63/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisSingle7Lhs"/>
-    <patterns name="synthesisSingle7Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.65/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.65/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisSingle8Lhs"/>
-    <patterns name="synthesisSingle8Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.67/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.67/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisSingle9Lhs"/>
-    <patterns name="synthesisSingle9Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.69/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.69/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisSingle10Lhs"/>
-    <patterns name="synthesisSingle10Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.71/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.71/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisMulti1Lhs"/>
-    <patterns name="synthesisMulti1Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.73/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.73/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.73/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" name="z" parent="//@patternContainer/@patterns.73/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisMulti2Lhs"/>
-    <patterns name="synthesisMulti2Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.75/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.75/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.75/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.75/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisMulti3Lhs"/>
-    <patterns name="synthesisMulti3Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.77/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.77/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.77/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" boundTo="//@patternContainer/@patterns.77/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.77/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" name="z" parent="//@patternContainer/@patterns.77/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisMulti4Lhs"/>
-    <patterns name="synthesisMulti4Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.79/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.79/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.79/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" boundTo="//@patternContainer/@patterns.79/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.79/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" name="z" parent="//@patternContainer/@patterns.79/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisMulti5Lhs"/>
-    <patterns name="synthesisMulti5Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.81/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.81/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.81/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" boundTo="//@patternContainer/@patterns.81/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.81/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" name="z" parent="//@patternContainer/@patterns.81/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisMulti6Lhs"/>
-    <patterns name="synthesisMulti6Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.83/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.83/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.83/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.83/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.83/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.83/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisMulti7Lhs"/>
-    <patterns name="synthesisMulti7Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.85/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.85/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.85/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.85/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.85/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.85/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisMulti8Lhs"/>
-    <patterns name="synthesisMulti8Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.87/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.87/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.87/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" parent="//@patternContainer/@patterns.87/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" boundTo="//@patternContainer/@patterns.87/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.87/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.87/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" parent="//@patternContainer/@patterns.87/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="synthesisMulti9Lhs"/>
-    <patterns name="synthesisMulti9Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.89/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.89/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.89/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.89/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" boundTo="//@patternContainer/@patterns.89/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.89/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.89/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.89/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="partialSynthesis1Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.90/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.90/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="partialSynthesis1Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.91/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.91/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.91/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" name="z" parent="//@patternContainer/@patterns.91/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="partialSynthesis2Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.92/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.92/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="partialSynthesis2Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.93/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.93/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.93/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.93/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.93/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.93/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="degradation1Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.94/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.94/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.94/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" name="z" parent="//@patternContainer/@patterns.94/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="degradation1Rhs"/>
-    <patterns name="degradation2Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.96/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.96/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.96/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.96/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="degradation2Rhs"/>
-    <patterns name="degradation3Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.98/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.98/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.98/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.98/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.98/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.98/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="degradation3Rhs"/>
-    <patterns name="partialDegradation1Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.100/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.100/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.100/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" name="z" parent="//@patternContainer/@patterns.100/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="partialDegradation1Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.101/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.101/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="partialDegradation2Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.102/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.102/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.102/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.102/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="partialDegradation2Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.103/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.103/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="partialDegradation3Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.104/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.104/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.104/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.104/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.104/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.104/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="partialDegradation3Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.105/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.105/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="partialDegradation4Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.106/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.106/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.106/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.106/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.106/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.106/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="partialDegradation4Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.107/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.107/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="underspecified1Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.108/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="BOUND" name="c" parent="//@patternContainer/@patterns.108/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.108/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="BOUND" name="z" parent="//@patternContainer/@patterns.108/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="underspecified1Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.109/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.109/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.109/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.109/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="underspecified2Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.110/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.110/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.110/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.110/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="underspecified2Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.111/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.111/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.111/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.111/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="underspecified3Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.112/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.112/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.112/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.112/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="underspecified3Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.113/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.113/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.113/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="FREE" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.113/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="underspecified4Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.114/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.114/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.114/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.114/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="underspecified4Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.115/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.115/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.115/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.115/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.115/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.115/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="underspecified5Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.116/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.116/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.116/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.116/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="underspecified5Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.117/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.117/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.117/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.117/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.117/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.117/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="unspecified1Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.118/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.118/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="unspecified1Rhs"/>
-    <patterns name="unspecified2Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.120/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.120/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="unspecified2Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.121/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.121/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="unspecified3Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.122/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.122/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.122/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" name="z" parent="//@patternContainer/@patterns.122/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="unspecified3Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.123/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.123/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.123/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" name="z" parent="//@patternContainer/@patterns.123/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="unspecified4Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.124/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.124/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.124/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" name="z" parent="//@patternContainer/@patterns.124/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="unspecified4Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.125/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.125/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.125/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.125/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.125/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.125/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic1Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" notBoundTo="X" name="b" parent="//@patternContainer/@patterns.126/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" notBoundTo="X" name="c" parent="//@patternContainer/@patterns.126/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic1Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.127/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.127/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic2Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="X" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.128/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.128/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic2Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.129/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.129/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic3Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.130/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.130/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.130/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="local_for_a_b" local="true">
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.130/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" parent="//@patternContainer/@patterns.130/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic3Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" notBoundTo="//@patternContainer/@patterns.131/@agentInstances.1/@siteInstances.0" name="b" parent="//@patternContainer/@patterns.131/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.131/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="local_for_a_b" local="true">
-        <siteInstances instanceOf="//@components.1/@sites.1" notBoundTo="//@patternContainer/@patterns.131/@agentInstances.0/@siteInstances.0" name="z" parent="//@patternContainer/@patterns.131/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic4Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.132/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.132/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.132/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="local_for_a_b" local="true">
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.132/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.132/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic4Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" notBoundTo="//@patternContainer/@patterns.133/@agentInstances.1/@siteInstances.0" name="b" parent="//@patternContainer/@patterns.133/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.133/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="local_for_a_b" local="true">
-        <siteInstances instanceOf="//@components.1/@sites.1" notBoundTo="//@patternContainer/@patterns.133/@agentInstances.0/@siteInstances.0" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.133/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic5Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.134/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.134/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.134/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="local_for_a_b" local="true">
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.134/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" parent="//@patternContainer/@patterns.134/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic5Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.135/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.135/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic6State1Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.136/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="X" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.136/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic6State1Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.137/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.137/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic6State2Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.138/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="X" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.138/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic6State2Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.139/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.139/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic7Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.140/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="X" bindingState="BOUND" name="c" parent="//@patternContainer/@patterns.140/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="generic7Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.141/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.141/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.141/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" boundTo="//@patternContainer/@patterns.141/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.141/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" name="z" parent="//@patternContainer/@patterns.141/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="freeAgentsBindLhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.142/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.142/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.142/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.142/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="freeAgentsBindRhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.143/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.143/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.143/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" boundTo="//@patternContainer/@patterns.143/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.143/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" name="z" parent="//@patternContainer/@patterns.143/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="freeAgentsBind2Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.144/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.144/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.144/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.144/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="freeAgentsBind2Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.145/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.145/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.145/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.145/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.145/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.145/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="underspecifiedAgentLhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.146/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.146/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.146/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.146/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="underspecifiedAgentRhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.147/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.147/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.147/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="FREE" name="z" state="//@components.1/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.147/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="forbiddenBondStateLhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" notBoundTo="//@patternContainer/@patterns.148/@agentInstances.1/@siteInstances.1" name="b" parent="//@patternContainer/@patterns.148/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.148/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.148/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" notBoundTo="//@patternContainer/@patterns.148/@agentInstances.0/@siteInstances.0" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.148/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="forbiddenBondStateRhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.149/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.149/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.149/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.149/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.149/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.149/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="forbiddenBondStateGenericLhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" notBoundTo="//@patternContainer/@patterns.150/@agentInstances.2/@siteInstances.0" name="b" parent="//@patternContainer/@patterns.150/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.150/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.150/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" bindingState="FREE" name="j" parent="//@patternContainer/@patterns.150/@agentInstances.1"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="local_for_a_b" local="true">
-        <siteInstances instanceOf="//@components.1/@sites.1" notBoundTo="//@patternContainer/@patterns.150/@agentInstances.0/@siteInstances.0" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.150/@agentInstances.2"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="forbiddenBondStateGenericRhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.151/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.151/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.151/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.151/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.151/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.151/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="forbiddenBondStateGenericWithSynthesisLhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" notBoundTo="//@patternContainer/@patterns.152/@agentInstances.1/@siteInstances.0" name="b" parent="//@patternContainer/@patterns.152/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.152/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="local_for_a_b" local="true">
-        <siteInstances instanceOf="//@components.1/@sites.1" notBoundTo="//@patternContainer/@patterns.152/@agentInstances.0/@siteInstances.0" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.152/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="forbiddenBondStateGenericWithSynthesisRhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.153/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.153/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.153/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.153/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.153/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="j" parent="//@patternContainer/@patterns.153/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="breakSpecificBondLhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.154/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.154/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="c" parent="//@patternContainer/@patterns.154/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.154/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.154/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="z" parent="//@patternContainer/@patterns.154/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="breakSpecificBondRhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.155/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" notBoundTo="//@patternContainer/@patterns.155/@agentInstances.1/@siteInstances.1" name="c" parent="//@patternContainer/@patterns.155/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.155/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" notBoundTo="//@patternContainer/@patterns.155/@agentInstances.0/@siteInstances.1" name="z" parent="//@patternContainer/@patterns.155/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="bidirectionalRuleLhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.156/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.156/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.156/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="c" parent="//@patternContainer/@patterns.156/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.156/@agentInstances.2/@siteInstances.1" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.156/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" boundTo="//@patternContainer/@patterns.156/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="j" parent="//@patternContainer/@patterns.156/@agentInstances.1"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" boundTo="//@patternContainer/@patterns.156/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.156/@agentInstances.2"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.156/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.156/@agentInstances.2"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="bidirectionalRuleRhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.157/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="c" parent="//@patternContainer/@patterns.157/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="t">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="i" parent="//@patternContainer/@patterns.157/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" boundTo="//@patternContainer/@patterns.157/@agentInstances.2/@siteInstances.1" bindingState="BOUND" name="j" parent="//@patternContainer/@patterns.157/@agentInstances.1"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.157/@agentInstances.2"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.157/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.157/@agentInstances.2"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="complexStateChangesLhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.158/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.158/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.158/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.158/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.158/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="z" state="//@components.1/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.158/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="complexStateChangesRhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.159/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" notBoundTo="//@patternContainer/@patterns.159/@agentInstances.1/@siteInstances.1" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.159/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" name="y" parent="//@patternContainer/@patterns.159/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" notBoundTo="//@patternContainer/@patterns.159/@agentInstances.0/@siteInstances.1" name="z" state="//@components.1/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.159/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="genericBondBreakLhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.160/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.160/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.160/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="local_for_a_b" local="true">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.160/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="i" parent="//@patternContainer/@patterns.160/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="genericBondBreakRhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" notBoundTo="//@patternContainer/@patterns.161/@agentInstances.1/@siteInstances.0" name="b" parent="//@patternContainer/@patterns.161/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.161/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="T" name="local_for_a_b" local="true">
-        <siteInstances instanceOf="//@components.2/@sites.0" notBoundTo="//@patternContainer/@patterns.161/@agentInstances.0/@siteInstances.0" name="i" parent="//@patternContainer/@patterns.161/@agentInstances.1"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="injectivityLhs">
-      <agentInstances instanceOf="A" name="a1">
-        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.162/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.162/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.162/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="A" name="a2">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.162/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.162/@agentInstances.2/@siteInstances.1" bindingState="BOUND" name="c" parent="//@patternContainer/@patterns.162/@agentInstances.1"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" boundTo="//@patternContainer/@patterns.162/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.162/@agentInstances.2"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" boundTo="//@patternContainer/@patterns.162/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="z" parent="//@patternContainer/@patterns.162/@agentInstances.2"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="injectivityRhs">
-      <agentInstances instanceOf="A" name="a1">
-        <siteInstances instanceOf="//@components.0/@sites.0" notBoundTo="//@patternContainer/@patterns.163/@agentInstances.2/@siteInstances.0" name="b" parent="//@patternContainer/@patterns.163/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.163/@agentInstances.0"/>
-      </agentInstances>
-      <agentInstances instanceOf="A" name="a2">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.163/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" notBoundTo="//@patternContainer/@patterns.163/@agentInstances.2/@siteInstances.1" name="c" parent="//@patternContainer/@patterns.163/@agentInstances.1"/>
-      </agentInstances>
-      <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.1/@sites.0" notBoundTo="//@patternContainer/@patterns.163/@agentInstances.0/@siteInstances.0" name="y" parent="//@patternContainer/@patterns.163/@agentInstances.2"/>
-        <siteInstances instanceOf="//@components.1/@sites.1" notBoundTo="//@patternContainer/@patterns.163/@agentInstances.1/@siteInstances.1" name="z" parent="//@patternContainer/@patterns.163/@agentInstances.2"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="rhsGeneric1Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.164/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.164/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="rhsGeneric1Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.165/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.165/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="rhsGeneric2Lhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.166/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" parent="//@patternContainer/@patterns.166/@agentInstances.0"/>
-      </agentInstances>
-    </patterns>
-    <patterns name="rhsGeneric2Rhs">
-      <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.167/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.167/@agentInstances.0"/>
-      </agentInstances>
     </patterns>
+    <patterns name="genericWithStateTestRhs"/>
     <patterns name="init1madeConcrete">
       <agentInstances instanceOf="A" name="a">
         <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b"/>

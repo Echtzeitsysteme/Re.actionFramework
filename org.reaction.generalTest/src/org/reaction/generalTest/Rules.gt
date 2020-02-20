@@ -624,7 +624,6 @@ when axFree
 rule degradation3() {
 	--a: A {
 		-- -A_b -> x
-	// TODO: Will all other possible connections (A_c_u) also be destroyed or will those not even be matched like this?
 	}
 
 	--x: X {
@@ -1065,17 +1064,6 @@ rule complexStateChanges() {
 }
 
 rule genericBondBreak() {
-	a: A {
-		-- -A_b -> _t
-	}
-
-	_t: T {
-		-- -T_i -> a
-	}
-}
-
-//TODO: Ergänzen auf Zerstörung auch aller restlichen Verbindungen von a (t kann außen vor gelassen werden, da lokal, right?)
-rule genericBondBreakFree() {
 	a: A {
 		-- -A_b -> _t
 	}

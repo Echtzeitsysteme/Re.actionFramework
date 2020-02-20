@@ -48,20 +48,10 @@ public class A_A_c_1_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("conditionPattern_Ac_to_Ti_75_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("conditionPattern_Ti_to_Ac_110_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("conditionPattern_Ti_to_Ac_state_p_99_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("conditionPattern_Ti_to_Ac_state_u_84_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("expandedSplitState1_207_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("expandedSplitState2_215_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("simpleSplit1State1_136_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("simpleSplit1State2_146_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("simpleSplit1State3_152_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("simpleSplit1State4_159_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("simpleSplit2State1_170_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("simpleSplit2State2_180_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("simpleSplit2State3_186_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("simpleSplit2State4_193_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("genericWithState_124_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("generic_114_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("synthDegCompleteBwd_73_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("synthDegPartialBwd_89_junction"), this::returnTrue));
 	}	
 
 	@Override

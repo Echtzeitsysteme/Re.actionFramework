@@ -46,10 +46,9 @@ public class A_object_SP2 extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortNodeRight<TestcasesModel.A>(getSelf(), name2actor.get("T_T_i_1_reference"), this::returnTrue));
-		ports.add(new PortNodeRight<TestcasesModel.A>(getSelf(), name2actor.get("X_X_z_1_reference"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("freeAgentsBind2_387_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("simpleBind1_1_19_junction"), this::returnTrue));
+		ports.add(new PortNodeLeft<TestcasesModel.A>(getSelf(), name2actor.get("A_A_b_1_reference"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("selfBinding_57_junction"), this::check_constraint_7));
+		ports.add(new PortNodeMatch<TestcasesModel.A>(getSelf(), name2actor.get("unspec_production"), this::returnTrue));
 	}
 
 	@Override
@@ -121,6 +120,10 @@ public class A_object_SP2 extends AbstractActor {
 	
 	private boolean returnTrue(Object o) {
 		return true;
+	}
+	
+	public boolean check_constraint_7(TestcasesModel.A a) {
+		return a.getA_b().equals(a);
 	}
 	
 }

@@ -46,10 +46,10 @@ public class X_object_SP1 extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortNodeRight<TestcasesModel.X>(getSelf(), name2actor.get("A_A_c_2_reference"), this::returnTrue));
 		ports.add(new PortNodeLeft<TestcasesModel.X>(getSelf(), name2actor.get("X_X_z_0_reference"), this::returnTrue));
 		ports.add(new PortNodeLeft<TestcasesModel.X>(getSelf(), name2actor.get("X_X_z_1_reference"), this::returnTrue));
-		ports.add(new PortNodeLeft<TestcasesModel.X>(getSelf(), name2actor.get("X_X_z_2_reference"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.X>(getSelf(), name2actor.get("selfBindingBwd_66_junction"), this::check_constraint_11));
+		ports.add(new PortNodeMatchRight<TestcasesModel.X>(getSelf(), name2actor.get("unspecTest_111_junction"), this::returnTrue));
 	}
 
 	@Override
@@ -121,6 +121,10 @@ public class X_object_SP1 extends AbstractActor {
 	
 	private boolean returnTrue(Object o) {
 		return true;
+	}
+	
+	public boolean check_constraint_11(TestcasesModel.X x) {
+		return x.getX_y().equals(x);
 	}
 	
 }

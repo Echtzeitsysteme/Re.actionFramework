@@ -48,18 +48,13 @@ public class X_X_z_1_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("breakSpecificBond_434_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("complexStateChanges_477_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("conditionPattern_Ab_to_Xz_state_p_406_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("conditionPattern_Ab_to_Xz_state_p_Local_426_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("conditionPattern_Xz_to_Ab_410_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("degradation3_242_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("generic3_347_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("generic4_356_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("generic5_360_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("injectivity_493_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("partialDegradation3_256_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("partialDegradation4_264_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("conditionPattern_Ab_to_Xz_state_u_33_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("conditionPattern_Xz_to_Ab_37_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("genericWithState_124_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("generic_114_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBinding_25_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("synthDegCompleteBwd_79_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("synthDegPartialBwd_95_junction"), this::returnTrue));
 	}	
 
 	@Override
