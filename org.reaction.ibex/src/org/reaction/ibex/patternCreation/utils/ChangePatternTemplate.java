@@ -37,8 +37,10 @@ public class ChangePatternTemplate {
 
 		for (IntermAgentInstance pre : lhs) {
 			// get instance with same name from right site (null if it is deleted)
-			IntermAgentInstance post = ModelHelper.getAgentInstanceWithName(rhs, pre.getName());
-			changesMap.put(pre, post);
+			if(!pre.isLocal()) {
+				IntermAgentInstance post = ModelHelper.getAgentInstanceWithName(rhs, pre.getName());
+				changesMap.put(pre, post);
+			}
 		}
 
 		//Look for newly created agents on the right site

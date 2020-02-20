@@ -70,8 +70,8 @@ public class TestcasesModelAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected TestcasesModelSwitch<Adapter> modelSwitch = new TestcasesModelSwitch<Adapter>() {
 		@Override
-		public Adapter caseA(A object) {
-			return createAAdapter();
+		public Adapter caseX(X object) {
+			return createXAdapter();
 		}
 
 		@Override
@@ -85,13 +85,13 @@ public class TestcasesModelAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseX(X object) {
-			return createXAdapter();
+		public Adapter caseT(T object) {
+			return createTAdapter();
 		}
 
 		@Override
-		public Adapter caseT(T object) {
-			return createTAdapter();
+		public Adapter caseA(A object) {
+			return createAAdapter();
 		}
 
 		@Override
@@ -124,16 +124,16 @@ public class TestcasesModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link TestcasesModel.A <em>A</em>}'.
+	 * Creates a new adapter for an object of class '{@link TestcasesModel.X <em>X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see TestcasesModel.A
+	 * @see TestcasesModel.X
 	 * @generated
 	 */
-	public Adapter createAAdapter() {
+	public Adapter createXAdapter() {
 		return null;
 	}
 
@@ -166,20 +166,6 @@ public class TestcasesModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link TestcasesModel.X <em>X</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see TestcasesModel.X
-	 * @generated
-	 */
-	public Adapter createXAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link TestcasesModel.T <em>T</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -190,6 +176,20 @@ public class TestcasesModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link TestcasesModel.A <em>A</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see TestcasesModel.A
+	 * @generated
+	 */
+	public Adapter createAAdapter() {
 		return null;
 	}
 

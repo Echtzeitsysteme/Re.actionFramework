@@ -29,7 +29,7 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass aEClass = null;
+	private EClass xEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -50,14 +50,14 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass xEClass = null;
+	private EClass tEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass tEClass = null;
+	private EClass aEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -137,76 +137,6 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public EClass getA() {
-		return aEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getA_A_b() {
-		return (EReference) aEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getA_A_c() {
-		return (EReference) aEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getA_A_c_u() {
-		return (EReference) aEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getA_A_c_p() {
-		return (EReference) aEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getU_s() {
-		return u_sEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getP_s() {
-		return p_sEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getX() {
 		return xEClass;
 	}
@@ -257,6 +187,26 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * @generated
 	 */
 	@Override
+	public EClass getU_s() {
+		return u_sEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getP_s() {
+		return p_sEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getT() {
 		return tEClass;
 	}
@@ -279,6 +229,56 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	@Override
 	public EReference getT_T_j() {
 		return (EReference) tEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getA() {
+		return aEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getA_A_b() {
+		return (EReference) aEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getA_A_c() {
+		return (EReference) aEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getA_A_c_u() {
+		return (EReference) aEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getA_A_c_p() {
+		return (EReference) aEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -311,25 +311,25 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 		isCreated = true;
 
 		// Create classes and their features
-		aEClass = createEClass(A);
-		createEReference(aEClass, A__AB);
-		createEReference(aEClass, A__AC);
-		createEReference(aEClass, A__ACU);
-		createEReference(aEClass, A__ACP);
-
-		u_sEClass = createEClass(US);
-
-		p_sEClass = createEClass(PS);
-
 		xEClass = createEClass(X);
 		createEReference(xEClass, X__XY);
 		createEReference(xEClass, X__XZ);
 		createEReference(xEClass, X__XZU);
 		createEReference(xEClass, X__XZP);
 
+		u_sEClass = createEClass(US);
+
+		p_sEClass = createEClass(PS);
+
 		tEClass = createEClass(T);
 		createEReference(tEClass, T__TI);
 		createEReference(tEClass, T__TJ);
+
+		aEClass = createEClass(A);
+		createEReference(aEClass, A__AB);
+		createEReference(aEClass, A__AC);
+		createEReference(aEClass, A__ACU);
+		createEReference(aEClass, A__ACP);
 	}
 
 	/**
@@ -365,31 +365,13 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		aEClass.getESuperTypes().add(theReactionContainerPackage.getAgent());
+		xEClass.getESuperTypes().add(theReactionContainerPackage.getAgent());
 		u_sEClass.getESuperTypes().add(theReactionContainerPackage.getState());
 		p_sEClass.getESuperTypes().add(theReactionContainerPackage.getState());
-		xEClass.getESuperTypes().add(theReactionContainerPackage.getAgent());
 		tEClass.getESuperTypes().add(theReactionContainerPackage.getAgent());
+		aEClass.getESuperTypes().add(theReactionContainerPackage.getAgent());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(aEClass, TestcasesModel.A.class, "A", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getA_A_b(), theReactionContainerPackage.getAgent(), null, "A_b", null, 0, 1,
-				TestcasesModel.A.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getA_A_c(), theReactionContainerPackage.getAgent(), null, "A_c", null, 0, 1,
-				TestcasesModel.A.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getA_A_c_u(), this.getU_s(), null, "A_c_u", null, 0, 1, TestcasesModel.A.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getA_A_c_p(), this.getP_s(), null, "A_c_p", null, 0, 1, TestcasesModel.A.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		initEClass(u_sEClass, U_s.class, "U_s", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(p_sEClass, P_s.class, "P_s", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(xEClass, TestcasesModel.X.class, "X", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getX_X_y(), theReactionContainerPackage.getAgent(), null, "X_y", null, 0, 1,
 				TestcasesModel.X.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
@@ -404,6 +386,10 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
+		initEClass(u_sEClass, U_s.class, "U_s", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(p_sEClass, P_s.class, "P_s", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(tEClass, TestcasesModel.T.class, "T", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getT_T_i(), theReactionContainerPackage.getAgent(), null, "T_i", null, 0, 1,
 				TestcasesModel.T.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
@@ -411,6 +397,20 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 		initEReference(getT_T_j(), theReactionContainerPackage.getAgent(), null, "T_j", null, 0, 1,
 				TestcasesModel.T.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(aEClass, TestcasesModel.A.class, "A", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getA_A_b(), theReactionContainerPackage.getAgent(), null, "A_b", null, 0, 1,
+				TestcasesModel.A.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getA_A_c(), theReactionContainerPackage.getAgent(), null, "A_c", null, 0, 1,
+				TestcasesModel.A.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getA_A_c_u(), this.getU_s(), null, "A_c_u", null, 0, 1, TestcasesModel.A.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getA_A_c_p(), this.getP_s(), null, "A_c_p", null, 0, 1, TestcasesModel.A.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

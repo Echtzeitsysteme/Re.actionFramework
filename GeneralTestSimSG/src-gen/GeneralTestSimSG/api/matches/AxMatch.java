@@ -1,30 +1,30 @@
 package GeneralTestSimSG.api.matches;
 
-import GeneralTestSimSG.api.rules.UnderspecTestRule;
+import GeneralTestSimSG.api.rules.AxRule;
 import org.emoflon.ibex.common.operational.IMatch;
 import org.emoflon.ibex.gt.api.GraphTransformationMatch;
 import TestcasesModel.A;
-import TestcasesModel.U_s;
+import TestcasesModel.X;
 
 /**
- * A match for the rule <code>underspecTest()</code>.
+ * A match for the rule <code>ax()</code>.
  */
-public class UnderspecTestMatch extends GraphTransformationMatch<UnderspecTestMatch, UnderspecTestRule> {
+public class AxMatch extends GraphTransformationMatch<AxMatch, AxRule> {
 	private A varA;
-	private U_s varUs;
+	private X varX;
 
 	/**
-	 * Creates a new match for the rule <code>underspecTest()</code>.
+	 * Creates a new match for the rule <code>ax()</code>.
 	 * 
 	 * @param pattern
 	 *            the pattern
 	 * @param match
 	 *            the untyped match
 	 */
-	public UnderspecTestMatch(final UnderspecTestRule pattern, final IMatch match) {
+	public AxMatch(final AxRule pattern, final IMatch match) {
 		super(pattern, match);
 		varA = (A) match.get("a");
-		varUs = (U_s) match.get("us");
+		varX = (X) match.get("x");
 	}
 
 	/**
@@ -37,19 +37,19 @@ public class UnderspecTestMatch extends GraphTransformationMatch<UnderspecTestMa
 	}
 
 	/**
-	 * Returns the us.
+	 * Returns the x.
 	 *
-	 * @return the us
+	 * @return the x
 	 */
-	public U_s getUs() {
-		return varUs;
+	public X getX() {
+		return varX;
 	}
 
 	@Override
 	public String toString() {
 		String s = "match {" + System.lineSeparator();
 		s += "	a --> " + varA + System.lineSeparator();
-		s += "	us --> " + varUs + System.lineSeparator();
+		s += "	x --> " + varX + System.lineSeparator();
 		s += "} for " + getPattern();
 		return s;
 	}

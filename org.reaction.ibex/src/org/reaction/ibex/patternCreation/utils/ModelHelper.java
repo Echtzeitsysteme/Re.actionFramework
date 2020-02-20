@@ -45,6 +45,20 @@ public class ModelHelper {
 	
 
 	/**
+	 * @return true, if an instance with the given name is
+	 *         contained in the given list of instances.
+	 */
+	public static boolean isInstanceInList(String instanceName, List<IntermAgentInstance> instances) {
+		for (IntermAgentInstance listInstance : instances) {
+			if (listInstance.getName().equals(instanceName)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+
+	/**
 	 * @return true, if an instance with the same name as the given instance is
 	 *         contained in the given list of instances.
 	 */

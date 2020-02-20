@@ -1,11 +1,7 @@
 package GeneralTestSimSG.api;
 
-import GeneralTestSimSG.api.rules.ConditionPattern_Ab_to_Xz_state_uRule;
-import GeneralTestSimSG.api.rules.ConditionPattern_Xz_to_AbRule;
-import GeneralTestSimSG.api.rules.GenericRule;
-import GeneralTestSimSG.api.rules.GenericTestRule;
-import GeneralTestSimSG.api.rules.GenericWithStateRule;
-import GeneralTestSimSG.api.rules.GenericWithStateTestRule;
+import GeneralTestSimSG.api.rules.AFreeRule;
+import GeneralTestSimSG.api.rules.AxRule;
 import GeneralTestSimSG.api.rules.SelfBindingBwdRule;
 import GeneralTestSimSG.api.rules.SelfBindingRule;
 import GeneralTestSimSG.api.rules.SimpleBindingBwdRule;
@@ -14,10 +10,9 @@ import GeneralTestSimSG.api.rules.SynthDegCompleteBwdRule;
 import GeneralTestSimSG.api.rules.SynthDegCompleteRule;
 import GeneralTestSimSG.api.rules.SynthDegPartialBwdRule;
 import GeneralTestSimSG.api.rules.SynthDegPartialRule;
-import GeneralTestSimSG.api.rules.UnderspecRule;
-import GeneralTestSimSG.api.rules.UnderspecTestRule;
 import GeneralTestSimSG.api.rules.UnspecRule;
 import GeneralTestSimSG.api.rules.UnspecTestRule;
+import GeneralTestSimSG.api.rules.XFreeRule;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -25,7 +20,7 @@ import org.emoflon.ibex.common.operational.IContextPatternInterpreter;
 import org.emoflon.ibex.gt.api.GraphTransformationAPI;
 
 /**
- * The GeneralTestSimSGAPI with 18 rules.
+ * The GeneralTestSimSGAPI with 13 rules.
  */
 public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	public static String patternPath = "GeneralTestSimSG/src-gen/GeneralTestSimSG/api/ibex-patterns.xmi";
@@ -75,26 +70,6 @@ public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	 */
 	public SimpleBindingRule simpleBinding() {
 		return new SimpleBindingRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>conditionPattern_Ab_to_Xz_state_u()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public ConditionPattern_Ab_to_Xz_state_uRule conditionPattern_Ab_to_Xz_state_u() {
-		return new ConditionPattern_Ab_to_Xz_state_uRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>conditionPattern_Xz_to_Ab()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public ConditionPattern_Xz_to_AbRule conditionPattern_Xz_to_Ab() {
-		return new ConditionPattern_Xz_to_AbRule(this, interpreter);
 	}
 
 	/**
@@ -168,26 +143,6 @@ public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	}
 
 	/**
-	 * Creates a new instance of the rule <code>underspec()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public UnderspecRule underspec() {
-		return new UnderspecRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>underspecTest()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public UnderspecTestRule underspecTest() {
-		return new UnderspecTestRule(this, interpreter);
-	}
-
-	/**
 	 * Creates a new instance of the rule <code>unspec()</code> which does the following:
 	 * If this rule is not self-explaining, you really should add some comment in the specification.
 	 *
@@ -208,42 +163,32 @@ public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	}
 
 	/**
-	 * Creates a new instance of the rule <code>generic()</code> which does the following:
+	 * Creates a new instance of the rule <code>ax()</code> which does the following:
 	 * If this rule is not self-explaining, you really should add some comment in the specification.
 	 *
 	 * @return the new instance of the rule
 	 */
-	public GenericRule generic() {
-		return new GenericRule(this, interpreter);
+	public AxRule ax() {
+		return new AxRule(this, interpreter);
 	}
 
 	/**
-	 * Creates a new instance of the rule <code>genericTest()</code> which does the following:
+	 * Creates a new instance of the rule <code>aFree()</code> which does the following:
 	 * If this rule is not self-explaining, you really should add some comment in the specification.
 	 *
 	 * @return the new instance of the rule
 	 */
-	public GenericTestRule genericTest() {
-		return new GenericTestRule(this, interpreter);
+	public AFreeRule aFree() {
+		return new AFreeRule(this, interpreter);
 	}
 
 	/**
-	 * Creates a new instance of the rule <code>genericWithState()</code> which does the following:
+	 * Creates a new instance of the rule <code>xFree()</code> which does the following:
 	 * If this rule is not self-explaining, you really should add some comment in the specification.
 	 *
 	 * @return the new instance of the rule
 	 */
-	public GenericWithStateRule genericWithState() {
-		return new GenericWithStateRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>genericWithStateTest()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public GenericWithStateTestRule genericWithStateTest() {
-		return new GenericWithStateTestRule(this, interpreter);
+	public XFreeRule xFree() {
+		return new XFreeRule(this, interpreter);
 	}
 }

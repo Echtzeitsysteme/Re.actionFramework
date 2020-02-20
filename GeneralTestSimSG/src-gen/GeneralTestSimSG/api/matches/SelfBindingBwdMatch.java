@@ -6,7 +6,6 @@ import org.emoflon.ibex.gt.api.GraphTransformationMatch;
 import TestcasesModel.A;
 import TestcasesModel.P_s;
 import TestcasesModel.U_s;
-import TestcasesModel.X;
 
 /**
  * A match for the rule <code>selfBindingBwd()</code>.
@@ -14,7 +13,6 @@ import TestcasesModel.X;
 public class SelfBindingBwdMatch extends GraphTransformationMatch<SelfBindingBwdMatch, SelfBindingBwdRule> {
 	private A varA;
 	private U_s varUs;
-	private X varX;
 	private P_s varPs;
 
 	/**
@@ -29,7 +27,6 @@ public class SelfBindingBwdMatch extends GraphTransformationMatch<SelfBindingBwd
 		super(pattern, match);
 		varA = (A) match.get("a");
 		varUs = (U_s) match.get("us");
-		varX = (X) match.get("x");
 		varPs = (P_s) match.get("ps");
 	}
 
@@ -52,15 +49,6 @@ public class SelfBindingBwdMatch extends GraphTransformationMatch<SelfBindingBwd
 	}
 
 	/**
-	 * Returns the x.
-	 *
-	 * @return the x
-	 */
-	public X getX() {
-		return varX;
-	}
-
-	/**
 	 * Returns the ps.
 	 *
 	 * @return the ps
@@ -74,7 +62,6 @@ public class SelfBindingBwdMatch extends GraphTransformationMatch<SelfBindingBwd
 		String s = "match {" + System.lineSeparator();
 		s += "	a --> " + varA + System.lineSeparator();
 		s += "	us --> " + varUs + System.lineSeparator();
-		s += "	x --> " + varX + System.lineSeparator();
 		s += "	ps --> " + varPs + System.lineSeparator();
 		s += "} for " + getPattern();
 		return s;

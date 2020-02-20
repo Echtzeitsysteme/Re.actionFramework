@@ -11,7 +11,6 @@ import org.emoflon.ibex.gt.engine.GraphTransformationInterpreter;
 import TestcasesModel.A;
 import TestcasesModel.P_s;
 import TestcasesModel.U_s;
-import TestcasesModel.X;
 
 /**
  * The rule <code>selfBinding()</code> which does the following:
@@ -42,7 +41,6 @@ public class SelfBindingRule extends GraphTransformationRule<SelfBindingMatch, S
 		List<String> names = new ArrayList<String>();
 		names.add("a");
 		names.add("ps");
-		names.add("x");
 		names.add("us");
 		return names;
 	}
@@ -70,17 +68,6 @@ public class SelfBindingRule extends GraphTransformationRule<SelfBindingMatch, S
 	}
 
 	/**
-	 * Binds the node x to the given object.
-	 *
-	 * @param object
-	 *            the object to set
-	 */
-	public SelfBindingRule bindX(final X object) {
-		parameters.put("x", Objects.requireNonNull(object, "x must not be null!"));
-		return this;
-	}
-
-	/**
 	 * Binds the node us to the given object.
 	 *
 	 * @param object
@@ -96,7 +83,6 @@ public class SelfBindingRule extends GraphTransformationRule<SelfBindingMatch, S
 		String s = "rule " + patternName + " {" + System.lineSeparator();
 		s += "	a --> " + parameters.get("a") + System.lineSeparator();
 		s += "	ps --> " + parameters.get("ps") + System.lineSeparator();
-		s += "	x --> " + parameters.get("x") + System.lineSeparator();
 		s += "	us --> " + parameters.get("us") + System.lineSeparator();
 		s += "}";
 		return s;

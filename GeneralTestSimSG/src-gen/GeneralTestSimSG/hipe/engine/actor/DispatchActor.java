@@ -50,6 +50,28 @@ public class DispatchActor extends AbstractActor {
 	}
 	
 	private void initializeAdd() {
+		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getX(), obj -> {
+			TestcasesModel.X _x = (TestcasesModel.X) obj;
+			util.newMessage();
+			name2actor.get("X_object_SP0").tell(new ObjectAdded<TestcasesModel.X>(_x), getSelf());
+			util.newMessage();
+			name2actor.get("X_object_SP1").tell(new ObjectAdded<TestcasesModel.X>(_x), getSelf());
+			util.newMessage();
+			name2actor.get("X_object_SP2").tell(new ObjectAdded<TestcasesModel.X>(_x), getSelf());
+			util.newMessage();
+			name2actor.get("Agent_object_SP0").tell(new ObjectAdded<reactionContainer.Agent>(_x), getSelf());
+			util.newMessage();
+			name2actor.get("Agent_object_SP1").tell(new ObjectAdded<reactionContainer.Agent>(_x), getSelf());
+		});
+		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getT(), obj -> {
+			TestcasesModel.T _t = (TestcasesModel.T) obj;
+			util.newMessage();
+			name2actor.get("T_object").tell(new ObjectAdded<TestcasesModel.T>(_t), getSelf());
+			util.newMessage();
+			name2actor.get("Agent_object_SP0").tell(new ObjectAdded<reactionContainer.Agent>(_t), getSelf());
+			util.newMessage();
+			name2actor.get("Agent_object_SP1").tell(new ObjectAdded<reactionContainer.Agent>(_t), getSelf());
+		});
 		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA(), obj -> {
 			TestcasesModel.A _a = (TestcasesModel.A) obj;
 			util.newMessage();
@@ -65,13 +87,6 @@ public class DispatchActor extends AbstractActor {
 			util.newMessage();
 			name2actor.get("Agent_object_SP1").tell(new ObjectAdded<reactionContainer.Agent>(_a), getSelf());
 		});
-		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getP_s(), obj -> {
-			TestcasesModel.P_s _p_s = (TestcasesModel.P_s) obj;
-			util.newMessage();
-			name2actor.get("P_s_object_SP0").tell(new ObjectAdded<TestcasesModel.P_s>(_p_s), getSelf());
-			util.newMessage();
-			name2actor.get("P_s_object_SP1").tell(new ObjectAdded<TestcasesModel.P_s>(_p_s), getSelf());
-		});
 		type2addConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getAgent(), obj -> {
 			reactionContainer.Agent _agent = (reactionContainer.Agent) obj;
 			util.newMessage();
@@ -79,27 +94,18 @@ public class DispatchActor extends AbstractActor {
 			util.newMessage();
 			name2actor.get("Agent_object_SP1").tell(new ObjectAdded<reactionContainer.Agent>(_agent), getSelf());
 		});
-		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getT(), obj -> {
-			TestcasesModel.T _t = (TestcasesModel.T) obj;
+		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getP_s(), obj -> {
+			TestcasesModel.P_s _p_s = (TestcasesModel.P_s) obj;
 			util.newMessage();
-			name2actor.get("T_object").tell(new ObjectAdded<TestcasesModel.T>(_t), getSelf());
+			name2actor.get("P_s_object_SP0").tell(new ObjectAdded<TestcasesModel.P_s>(_p_s), getSelf());
 			util.newMessage();
-			name2actor.get("Agent_object_SP0").tell(new ObjectAdded<reactionContainer.Agent>(_t), getSelf());
-			util.newMessage();
-			name2actor.get("Agent_object_SP1").tell(new ObjectAdded<reactionContainer.Agent>(_t), getSelf());
+			name2actor.get("P_s_object_SP1").tell(new ObjectAdded<TestcasesModel.P_s>(_p_s), getSelf());
 		});
-		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getX(), obj -> {
-			TestcasesModel.X _x = (TestcasesModel.X) obj;
-			util.newMessage();
-			name2actor.get("X_object_SP0").tell(new ObjectAdded<TestcasesModel.X>(_x), getSelf());
-			util.newMessage();
-			name2actor.get("X_object_SP1").tell(new ObjectAdded<TestcasesModel.X>(_x), getSelf());
-			util.newMessage();
-			name2actor.get("X_object_SP2").tell(new ObjectAdded<TestcasesModel.X>(_x), getSelf());
-			util.newMessage();
-			name2actor.get("Agent_object_SP0").tell(new ObjectAdded<reactionContainer.Agent>(_x), getSelf());
-			util.newMessage();
-			name2actor.get("Agent_object_SP1").tell(new ObjectAdded<reactionContainer.Agent>(_x), getSelf());
+		type2addConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getState(), obj -> {
+			reactionContainer.State _state = (reactionContainer.State) obj;
+		});
+		type2addConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getContainer(), obj -> {
+			reactionContainer.Container _container = (reactionContainer.Container) obj;
 		});
 		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getU_s(), obj -> {
 			TestcasesModel.U_s _u_s = (TestcasesModel.U_s) obj;
@@ -107,12 +113,6 @@ public class DispatchActor extends AbstractActor {
 			name2actor.get("U_s_object_SP0").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
 			util.newMessage();
 			name2actor.get("U_s_object_SP1").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
-		});
-		type2addConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getContainer(), obj -> {
-			reactionContainer.Container _container = (reactionContainer.Container) obj;
-		});
-		type2addConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getState(), obj -> {
-			reactionContainer.State _state = (reactionContainer.State) obj;
 		});
 	}
 	
@@ -329,14 +329,6 @@ public class DispatchActor extends AbstractActor {
 	
 	private void handleRemoveAdapter(Notification notification) {
 		Object node = notification.getNotifier();
-		if (node instanceof reactionContainer.Agent) {
-			util.newMessage();
-			name2actor.get("Agent_object_SP0").tell(new ObjectDeleted<reactionContainer.Agent>((reactionContainer.Agent) node), getSelf());
-		}
-		if (node instanceof reactionContainer.Agent) {
-			util.newMessage();
-			name2actor.get("Agent_object_SP1").tell(new ObjectDeleted<reactionContainer.Agent>((reactionContainer.Agent) node), getSelf());
-		}
 		if (node instanceof TestcasesModel.T) {
 			util.newMessage();
 			name2actor.get("T_object").tell(new ObjectDeleted<TestcasesModel.T>((TestcasesModel.T) node), getSelf());
@@ -384,6 +376,14 @@ public class DispatchActor extends AbstractActor {
 		if (node instanceof TestcasesModel.P_s) {
 			util.newMessage();
 			name2actor.get("P_s_object_SP1").tell(new ObjectDeleted<TestcasesModel.P_s>((TestcasesModel.P_s) node), getSelf());
+		}
+		if (node instanceof reactionContainer.Agent) {
+			util.newMessage();
+			name2actor.get("Agent_object_SP0").tell(new ObjectDeleted<reactionContainer.Agent>((reactionContainer.Agent) node), getSelf());
+		}
+		if (node instanceof reactionContainer.Agent) {
+			util.newMessage();
+			name2actor.get("Agent_object_SP1").tell(new ObjectDeleted<reactionContainer.Agent>((reactionContainer.Agent) node), getSelf());
 		}
 	}
 }

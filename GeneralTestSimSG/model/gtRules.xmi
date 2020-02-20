@@ -14,23 +14,7 @@
       <type href="TestcasesModel.ecore#//U_s"/>
     </nodes>
   </rules>
-  <rules name="conditionPattern_Ab_to_Xz_state_u" documentation="" executable="true" ruleNodes="//@rules.1/@nodes.0 //@rules.1/@nodes.1">
-    <nodes name="src">
-      <type href="TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes name="trg">
-      <type href="TestcasesModel.ecore#//X"/>
-    </nodes>
-  </rules>
-  <rules name="conditionPattern_Xz_to_Ab" documentation="" executable="true" ruleNodes="//@rules.2/@nodes.0 //@rules.2/@nodes.1">
-    <nodes name="src">
-      <type href="TestcasesModel.ecore#//X"/>
-    </nodes>
-    <nodes name="trg">
-      <type href="TestcasesModel.ecore#//A"/>
-    </nodes>
-  </rules>
-  <rules name="simpleBindingBwd" documentation="" executable="true" ruleNodes="//@rules.3/@nodes.0 //@rules.3/@nodes.1 //@rules.3/@nodes.2 //@rules.3/@nodes.3">
+  <rules name="simpleBindingBwd" documentation="" executable="true" ruleNodes="//@rules.1/@nodes.0 //@rules.1/@nodes.1 //@rules.1/@nodes.2 //@rules.1/@nodes.3">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
@@ -44,35 +28,29 @@
       <type href="TestcasesModel.ecore#//P_s"/>
     </nodes>
   </rules>
-  <rules name="selfBinding" documentation="" executable="true" ruleNodes="//@rules.4/@nodes.0 //@rules.4/@nodes.1 //@rules.4/@nodes.2 //@rules.4/@nodes.3">
+  <rules name="selfBinding" documentation="" executable="true" ruleNodes="//@rules.2/@nodes.0 //@rules.2/@nodes.1 //@rules.2/@nodes.2">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
     <nodes name="ps">
       <type href="TestcasesModel.ecore#//P_s"/>
     </nodes>
-    <nodes name="x">
-      <type href="TestcasesModel.ecore#//X"/>
-    </nodes>
     <nodes name="us">
       <type href="TestcasesModel.ecore#//U_s"/>
     </nodes>
   </rules>
-  <rules name="selfBindingBwd" documentation="" executable="true" ruleNodes="//@rules.5/@nodes.0 //@rules.5/@nodes.1 //@rules.5/@nodes.2 //@rules.5/@nodes.3">
+  <rules name="selfBindingBwd" documentation="" executable="true" ruleNodes="//@rules.3/@nodes.0 //@rules.3/@nodes.1 //@rules.3/@nodes.2">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
     <nodes name="us">
       <type href="TestcasesModel.ecore#//U_s"/>
     </nodes>
-    <nodes name="x">
-      <type href="TestcasesModel.ecore#//X"/>
-    </nodes>
     <nodes name="ps">
       <type href="TestcasesModel.ecore#//P_s"/>
     </nodes>
   </rules>
-  <rules name="synthDegComplete" documentation="" executable="true" ruleNodes="//@rules.6/@nodes.0 //@rules.6/@nodes.1">
+  <rules name="synthDegComplete" documentation="" executable="true" ruleNodes="//@rules.4/@nodes.0 //@rules.4/@nodes.1">
     <nodes name="ps">
       <type href="TestcasesModel.ecore#//P_s"/>
     </nodes>
@@ -80,7 +58,7 @@
       <type href="TestcasesModel.ecore#//U_s"/>
     </nodes>
   </rules>
-  <rules name="synthDegCompleteBwd" documentation="" executable="true" ruleNodes="//@rules.7/@nodes.0 //@rules.7/@nodes.1 //@rules.7/@nodes.2 //@rules.7/@nodes.3">
+  <rules name="synthDegCompleteBwd" documentation="" executable="true" ruleNodes="//@rules.5/@nodes.0 //@rules.5/@nodes.1 //@rules.5/@nodes.2 //@rules.5/@nodes.3">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
@@ -94,7 +72,7 @@
       <type href="TestcasesModel.ecore#//U_s"/>
     </nodes>
   </rules>
-  <rules name="synthDegPartial" documentation="" executable="true" ruleNodes="//@rules.8/@nodes.0 //@rules.8/@nodes.1 //@rules.8/@nodes.2">
+  <rules name="synthDegPartial" documentation="" executable="true" ruleNodes="//@rules.6/@nodes.0 //@rules.6/@nodes.1 //@rules.6/@nodes.2">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
@@ -105,7 +83,7 @@
       <type href="TestcasesModel.ecore#//P_s"/>
     </nodes>
   </rules>
-  <rules name="synthDegPartialBwd" documentation="" executable="true" ruleNodes="//@rules.9/@nodes.0 //@rules.9/@nodes.1 //@rules.9/@nodes.2 //@rules.9/@nodes.3">
+  <rules name="synthDegPartialBwd" documentation="" executable="true" ruleNodes="//@rules.7/@nodes.0 //@rules.7/@nodes.1 //@rules.7/@nodes.2 //@rules.7/@nodes.3">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
@@ -119,18 +97,7 @@
       <type href="TestcasesModel.ecore#//U_s"/>
     </nodes>
   </rules>
-  <rules name="underspec" documentation="" executable="true" ruleNodes="//@rules.10/@nodes.0 //@rules.10/@nodes.1 //@rules.10/@nodes.2">
-    <nodes name="a">
-      <type href="TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes name="ps">
-      <type href="TestcasesModel.ecore#//P_s"/>
-    </nodes>
-    <nodes name="us">
-      <type href="TestcasesModel.ecore#//U_s"/>
-    </nodes>
-  </rules>
-  <rules name="underspecTest" documentation="" executable="true" ruleNodes="//@rules.11/@nodes.0 //@rules.11/@nodes.1">
+  <rules name="unspec" documentation="" executable="true" ruleNodes="//@rules.8/@nodes.0 //@rules.8/@nodes.1">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
@@ -138,12 +105,7 @@
       <type href="TestcasesModel.ecore#//U_s"/>
     </nodes>
   </rules>
-  <rules name="unspec" documentation="" executable="true" ruleNodes="//@rules.12/@nodes.0">
-    <nodes name="a">
-      <type href="TestcasesModel.ecore#//A"/>
-    </nodes>
-  </rules>
-  <rules name="unspecTest" documentation="" executable="true" ruleNodes="//@rules.13/@nodes.0 //@rules.13/@nodes.1">
+  <rules name="unspecTest" documentation="" executable="true" ruleNodes="//@rules.9/@nodes.0 //@rules.9/@nodes.1">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
@@ -151,27 +113,22 @@
       <type href="TestcasesModel.ecore#//X"/>
     </nodes>
   </rules>
-  <rules name="generic" documentation="" executable="true" ruleNodes="//@rules.14/@nodes.0">
+  <rules name="ax" documentation="" executable="true" ruleNodes="//@rules.10/@nodes.0 //@rules.10/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+  </rules>
+  <rules name="aFree" documentation="" executable="true" ruleNodes="//@rules.11/@nodes.0">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
   </rules>
-  <rules name="genericTest" documentation="" executable="true" ruleNodes="//@rules.15/@nodes.0">
-    <nodes name="a">
-      <type href="TestcasesModel.ecore#//A"/>
-    </nodes>
-  </rules>
-  <rules name="genericWithState" documentation="" executable="true" ruleNodes="//@rules.16/@nodes.0 //@rules.16/@nodes.1">
-    <nodes name="a">
-      <type href="TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes name="ps">
-      <type href="TestcasesModel.ecore#//P_s"/>
-    </nodes>
-  </rules>
-  <rules name="genericWithStateTest" documentation="" executable="true" ruleNodes="//@rules.17/@nodes.0">
-    <nodes name="a">
-      <type href="TestcasesModel.ecore#//A"/>
+  <rules name="xFree" documentation="" executable="true" ruleNodes="//@rules.12/@nodes.0">
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
     </nodes>
   </rules>
 </GTLanguage:GTRuleSet>

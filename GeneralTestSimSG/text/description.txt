@@ -11,25 +11,25 @@ Contains packages:
 
 Package TestcasesModel <platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore>
 
-  Class A -> Agent
-    Reference A_b : Agent
-    Reference A_c : Agent
-    Reference A_c_u : U_s
-    Reference A_c_p : P_s
-
-  Class U_s -> State
-
-  Class P_s -> State
-
   Class X -> Agent
     Reference X_y : Agent
     Reference X_z : Agent
     Reference X_z_u : U_s
     Reference X_z_p : P_s
 
+  Class U_s -> State
+
+  Class P_s -> State
+
   Class T -> Agent
     Reference T_i : Agent
     Reference T_j : Agent
+
+  Class A -> Agent
+    Reference A_b : Agent
+    Reference A_c : Agent
+    Reference A_c_u : U_s
+    Reference A_c_p : P_s
 
 Package reactionContainer <platform:/resource/reactionContainer/model/reactionContainer.ecore>
 

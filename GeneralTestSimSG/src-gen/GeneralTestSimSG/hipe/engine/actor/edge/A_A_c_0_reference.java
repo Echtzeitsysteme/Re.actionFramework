@@ -48,13 +48,10 @@ public class A_A_c_0_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("aFree_99_nacjunction"), this::check_constraint_17));
 		ports.add(new PortEdge(getSelf(), name2actor.get("a_cBound_production"), this::check_constraint_2));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("genericTest_139_nacjunction"), this::check_constraint_20));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("genericWithStateTest_140_nacjunction"), this::check_constraint_21));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBindingBwd_134_nacjunction"), this::check_constraint_14));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegPartial_135_nacjunction"), this::check_constraint_15));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("underspecTest_136_nacjunction"), this::check_constraint_17));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("underspec_101_junction"), this::check_constraint_16));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBindingBwd_94_nacjunction"), this::check_constraint_12));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegPartial_95_nacjunction"), this::check_constraint_13));
 	}	
 
 	@Override
@@ -317,46 +314,6 @@ public class A_A_c_0_reference extends AbstractActor {
 		return true;
 	}
 	
-	public boolean check_constraint_2(EdgeMatch edge) {
-		TestcasesModel.A src = (TestcasesModel.A) edge.source();
-		reactionContainer.Agent trg = (reactionContainer.Agent) edge.target();
-		boolean predicate = !src.equals(trg);
-		edge.setConstraintSatisfied(predicate);
-		return predicate;
-	}
-	
-	public boolean check_constraint_20(EdgeMatch edge) {
-		TestcasesModel.A src = (TestcasesModel.A) edge.source();
-		reactionContainer.Agent trg = (reactionContainer.Agent) edge.target();
-		boolean predicate = !src.equals(trg);
-		edge.setConstraintSatisfied(predicate);
-		return predicate;
-	}
-	
-	public boolean check_constraint_21(EdgeMatch edge) {
-		TestcasesModel.A src = (TestcasesModel.A) edge.source();
-		reactionContainer.Agent trg = (reactionContainer.Agent) edge.target();
-		boolean predicate = !src.equals(trg);
-		edge.setConstraintSatisfied(predicate);
-		return predicate;
-	}
-	
-	public boolean check_constraint_14(EdgeMatch edge) {
-		TestcasesModel.A src = (TestcasesModel.A) edge.source();
-		reactionContainer.Agent trg = (reactionContainer.Agent) edge.target();
-		boolean predicate = !src.equals(trg);
-		edge.setConstraintSatisfied(predicate);
-		return predicate;
-	}
-	
-	public boolean check_constraint_15(EdgeMatch edge) {
-		TestcasesModel.A src = (TestcasesModel.A) edge.source();
-		reactionContainer.Agent trg = (reactionContainer.Agent) edge.target();
-		boolean predicate = !src.equals(trg);
-		edge.setConstraintSatisfied(predicate);
-		return predicate;
-	}
-	
 	public boolean check_constraint_17(EdgeMatch edge) {
 		TestcasesModel.A src = (TestcasesModel.A) edge.source();
 		reactionContainer.Agent trg = (reactionContainer.Agent) edge.target();
@@ -365,10 +322,26 @@ public class A_A_c_0_reference extends AbstractActor {
 		return predicate;
 	}
 	
-	public boolean check_constraint_16(EdgeMatch edge) {
-		TestcasesModel.A a = (TestcasesModel.A) edge.source();
-		reactionContainer.Agent a_c_local = (reactionContainer.Agent) edge.target();
-		boolean predicate = !a.equals(a_c_local);
+	public boolean check_constraint_2(EdgeMatch edge) {
+		TestcasesModel.A src = (TestcasesModel.A) edge.source();
+		reactionContainer.Agent trg = (reactionContainer.Agent) edge.target();
+		boolean predicate = !src.equals(trg);
+		edge.setConstraintSatisfied(predicate);
+		return predicate;
+	}
+	
+	public boolean check_constraint_12(EdgeMatch edge) {
+		TestcasesModel.A src = (TestcasesModel.A) edge.source();
+		reactionContainer.Agent trg = (reactionContainer.Agent) edge.target();
+		boolean predicate = !src.equals(trg);
+		edge.setConstraintSatisfied(predicate);
+		return predicate;
+	}
+	
+	public boolean check_constraint_13(EdgeMatch edge) {
+		TestcasesModel.A src = (TestcasesModel.A) edge.source();
+		reactionContainer.Agent trg = (reactionContainer.Agent) edge.target();
+		boolean predicate = !src.equals(trg);
 		edge.setConstraintSatisfied(predicate);
 		return predicate;
 	}

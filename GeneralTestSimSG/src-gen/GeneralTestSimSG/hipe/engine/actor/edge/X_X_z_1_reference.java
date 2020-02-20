@@ -48,13 +48,9 @@ public class X_X_z_1_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("conditionPattern_Ab_to_Xz_state_u_33_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("conditionPattern_Xz_to_Ab_37_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("genericWithState_124_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("generic_114_junction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBinding_25_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("synthDegCompleteBwd_79_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("synthDegPartialBwd_95_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("synthDegCompleteBwd_60_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("synthDegPartialBwd_76_junction"), this::returnTrue));
 	}	
 
 	@Override

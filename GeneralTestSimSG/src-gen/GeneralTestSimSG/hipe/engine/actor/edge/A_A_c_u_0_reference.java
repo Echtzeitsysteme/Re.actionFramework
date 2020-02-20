@@ -48,9 +48,8 @@ public class A_A_c_u_0_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBindingBwd_61_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegPartial_83_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("underspecTest_136_nacjunction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBindingBwd_45_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegPartial_64_junction"), this::returnTrue));
 	}	
 
 	@Override

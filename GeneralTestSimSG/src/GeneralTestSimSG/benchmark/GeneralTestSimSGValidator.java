@@ -5,6 +5,7 @@ import java.io.File;
 import org.eclipse.emf.common.util.URI;
 
 import GeneralTestSimSG.api.GeneralTestSimSGDemoclesApp;
+import GeneralTestSimSG.api.GeneralTestSimSGHiPEApp;
 import reactionContainer.Container;
 
 public class GeneralTestSimSGValidator extends GeneralTestSimSGDemoclesApp {

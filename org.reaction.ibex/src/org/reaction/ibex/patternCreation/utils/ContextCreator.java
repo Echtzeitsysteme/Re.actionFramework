@@ -119,6 +119,26 @@ public class ContextCreator {
 		for (IntermRule rule : rules) {
 			// Create ContextPattern
 			createContextPatternFromRule(rule);
+
+			// Add default states of newly generated right site agents to context
+			for (IntermAgentInstance ai : rule.getRhs().getAgentInstances()) {
+				if (!ModelHelper.isInstanceInList(ai, rule.getLhs().getAgentInstances())) {
+					for (IntermSiteInstance si : ai.getSiteInstances()) {
+						List<IntermSiteState> allStates = si.getInstanceOf().getSiteStates();
+						if (si.getState() == null && allStates.size() > 0) {
+							
+							// Add default state node to context pattern
+							IBeXNode stateNode = IBeXPatternFactory.createNode(
+									NameProvider.getQualifiedDefaultStateNodeName(si),
+									metamodelStateTypes.get(NameProvider.getDefaultStateTypeKey(si)));
+							IBeXContextPattern contextPattern = getContextPatternByName(rule.getName());
+							contextPattern.getSignatureNodes().add(stateNode);
+
+						}
+					}
+				}
+			}
+
 		}
 
 		// Add node pairs = injectivity constraints
@@ -226,16 +246,17 @@ public class ContextCreator {
 
 		// if state node already exists -> only create new Edge
 		String stateNodeName = NameProvider.getQualifiedStateNodeName(si);
-		IBeXNode stateNode = getSignatureNodeFromContextPattern(contextPattern, stateNodeName);
+		IBeXNode stateNode = ModelHelper.getSignatureNodeFromContextPattern(contextPattern, stateNodeName);
 
 		if (stateNode == null) {
-			stateNode = IBeXPatternFactory.createNode(stateNodeName, metamodelStateTypes.get(NameProvider.getStateTypeKey(si)));
+			stateNode = IBeXPatternFactory.createNode(stateNodeName,
+					metamodelStateTypes.get(NameProvider.getStateTypeKey(si)));
 			contextPattern.getSignatureNodes().add(stateNode);
 		}
 
 		// Get node with state
 		// Get nodes or create new ones if not existent
-		IBeXNode nodeInState = getNodeFromContextPattern(contextPattern, ai.getName());
+		IBeXNode nodeInState = ModelHelper.getNodeFromContextPattern(contextPattern, ai.getName());
 		if (nodeInState == null) {
 			nodeInState = IBeXPatternFactory.createNode(ai.getName(),
 					metamodelAgentTypes.get(ai.getInstanceOf().getName()));
@@ -258,7 +279,6 @@ public class ContextCreator {
 		return metamodelEdgeTypes.get(NameProvider.getEdgeTypeKey(ai, si, toState));
 	}
 
-
 	/**
 	 * Adds node for a free site
 	 * 
@@ -270,7 +290,7 @@ public class ContextCreator {
 			IntermSiteInstance si) {
 
 		// Get nodes or create new ones if not existent
-		IBeXNode freeNode = getSignatureNodeFromContextPattern(contextPattern, ai.getName());
+		IBeXNode freeNode = ModelHelper.getSignatureNodeFromContextPattern(contextPattern, ai.getName());
 		if (freeNode == null) {
 			freeNode = IBeXPatternFactory.createNode(ai.getName(),
 					metamodelAgentTypes.get(ai.getInstanceOf().getName()));
@@ -285,7 +305,7 @@ public class ContextCreator {
 		IBeXContextPattern invokedPattern = getContextPatternByName(boundPatternName);
 		invoc.setInvokedPattern(invokedPattern);
 
-		IBeXNode srcNode = getSignatureNodeFromContextPattern(invokedPattern, "src");
+		IBeXNode srcNode = ModelHelper.getSignatureNodeFromContextPattern(invokedPattern, "src");
 
 		invoc.getMapping().put(freeNode, srcNode);
 
@@ -303,7 +323,7 @@ public class ContextCreator {
 			IntermSiteInstance si) {
 
 		// Get nodes or create new ones if not existent
-		IBeXNode unspecifiedNode = getSignatureNodeFromContextPattern(contextPattern, ai.getName());
+		IBeXNode unspecifiedNode = ModelHelper.getSignatureNodeFromContextPattern(contextPattern, ai.getName());
 		if (unspecifiedNode == null) {
 			unspecifiedNode = IBeXPatternFactory.createNode(ai.getName(),
 					metamodelAgentTypes.get(ai.getInstanceOf().getName()));
@@ -324,7 +344,8 @@ public class ContextCreator {
 					nodeNotBoundTo = IBeXPatternFactory.createNode(aiNotBoundTo.getName(),
 							metamodelAgentTypes.get(aiNotBoundTo.getInstanceOf().getName()));
 				} else {
-					nodeNotBoundTo = getSignatureNodeFromContextPattern(contextPattern, aiNotBoundTo.getName());
+					nodeNotBoundTo = ModelHelper.getSignatureNodeFromContextPattern(contextPattern,
+							aiNotBoundTo.getName());
 					if (nodeNotBoundTo == null) {
 						nodeNotBoundTo = IBeXPatternFactory.createNode(aiNotBoundTo.getName(),
 								metamodelAgentTypes.get(aiNotBoundTo.getInstanceOf().getName()));
@@ -340,11 +361,11 @@ public class ContextCreator {
 				invoc.setPositive(false);
 
 				// Set invocation mappings
-				IBeXNode invokedSrcNode = getSignatureNodeFromContextPattern(invokedPattern, "src");
+				IBeXNode invokedSrcNode = ModelHelper.getSignatureNodeFromContextPattern(invokedPattern, "src");
 				invoc.getMapping().put(unspecifiedNode, invokedSrcNode);
 
 				if (!aiNotBoundTo.isLocal()) {
-					IBeXNode invokedTrgNode = getSignatureNodeFromContextPattern(invokedPattern, "trg");
+					IBeXNode invokedTrgNode = ModelHelper.getSignatureNodeFromContextPattern(invokedPattern, "trg");
 					invoc.getMapping().put(nodeNotBoundTo, invokedTrgNode);
 				}
 
@@ -361,7 +382,7 @@ public class ContextCreator {
 				invoc.setPositive(false);
 
 				// Set invocation mappings
-				IBeXNode invokedSrcNode = getSignatureNodeFromContextPattern(invokedPattern, "src");
+				IBeXNode invokedSrcNode = ModelHelper.getSignatureNodeFromContextPattern(invokedPattern, "src");
 				invoc.getMapping().put(unspecifiedNode, invokedSrcNode);
 
 				// add pattern invocation
@@ -381,7 +402,8 @@ public class ContextCreator {
 
 		if (trg instanceof IntermSiteInstance) {
 			IntermSiteInstance trgSi = (IntermSiteInstance) trg;
-			String qualifiedName = NameProvider.getQualifiedConditionPatternName(ai, src, trgSi, trgSi.getParent().isLocal());
+			String qualifiedName = NameProvider.getQualifiedConditionPatternName(ai, src, trgSi,
+					trgSi.getParent().isLocal());
 			IBeXContextPattern forbiddenPattern = getConditionPatternByName(qualifiedName);
 			if (forbiddenPattern != null) {
 				return forbiddenPattern;
@@ -474,7 +496,7 @@ public class ContextCreator {
 			IntermSiteInstance si) {
 
 		// Get nodes or create new ones if not existent
-		IBeXNode boundNode = getNodeFromContextPattern(contextPattern, ai.getName());
+		IBeXNode boundNode = ModelHelper.getNodeFromContextPattern(contextPattern, ai.getName());
 		if (boundNode == null) {
 			boundNode = IBeXPatternFactory.createNode(ai.getName(),
 					metamodelAgentTypes.get(ai.getInstanceOf().getName()));
@@ -491,7 +513,7 @@ public class ContextCreator {
 				String partnerName = boundToAgent.getName();
 				IBeXNode boundPartner;
 
-				boundPartner = getNodeFromContextPattern(contextPattern, partnerName);
+				boundPartner = ModelHelper.getNodeFromContextPattern(contextPattern, partnerName);
 				if (boundPartner == null) {
 					boundPartner = IBeXPatternFactory.createNode(partnerName,
 							metamodelAgentTypes.get(boundToAgent.getInstanceOf().getName()));
@@ -500,6 +522,7 @@ public class ContextCreator {
 					} else {
 						contextPattern.getSignatureNodes().add(boundPartner);
 					}
+
 				}
 
 				IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner,
@@ -533,7 +556,7 @@ public class ContextCreator {
 							metamodelAgentTypes.get(boundToInstance.getInstanceOf().getName()));
 					contextPattern.getLocalNodes().add(boundPartner);
 				} else {
-					boundPartner = getSignatureNodeFromContextPattern(contextPattern, partnerName);
+					boundPartner = ModelHelper.getSignatureNodeFromContextPattern(contextPattern, partnerName);
 					if (boundPartner == null) {
 						boundPartner = IBeXPatternFactory.createNode(partnerName,
 								metamodelAgentTypes.get(boundToInstance.getInstanceOf().getName()));
@@ -560,45 +583,6 @@ public class ContextCreator {
 			contextPattern.getLocalNodes().add(localNode);
 			contextPattern.getLocalEdges().add(edgeToLocal);
 		}
-	}
-
-	/**
-	 * @return an already existent signature node with the given name within the
-	 *         given pattern or null if no such node exists.
-	 */
-	private IBeXNode getSignatureNodeFromContextPattern(IBeXContextPattern pattern, String nodeName) {
-		for (IBeXNode node : pattern.getSignatureNodes()) {
-			if (node.getName().equals(nodeName)) {
-				return node;
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * @return an already existent local node with the given name within the given
-	 *         pattern or null if no such node exists.
-	 */
-	private IBeXNode getLocalNodeFromContextPattern(IBeXContextPattern pattern, String nodeName) {
-		for (IBeXNode node : pattern.getLocalNodes()) {
-			if (node.getName().equals(nodeName)) {
-				return node;
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * @return the first found signature node with the given name or if there is no
-	 *         such node, the first local node with the given name. if there is no
-	 *         such local node as well, returns null.
-	 */
-	private IBeXNode getNodeFromContextPattern(IBeXContextPattern contextPattern, String name) {
-		IBeXNode foundNode = getSignatureNodeFromContextPattern(contextPattern, name);
-		if (foundNode == null) {
-			foundNode = getLocalNodeFromContextPattern(contextPattern, name);
-		}
-		return foundNode;
 	}
 
 	/**
@@ -642,7 +626,7 @@ public class ContextCreator {
 			for (IntermSiteInstance si : ai.getSiteInstances()) {
 				if (si.getState() != null) {
 					String stateNodeName = NameProvider.getQualifiedStateNodeName(si);
-					IBeXNode stateNode = getNodeFromContextPattern(contextPatternRule, stateNodeName);
+					IBeXNode stateNode = ModelHelper.getNodeFromContextPattern(contextPatternRule, stateNodeName);
 					if (stateNode == null) {
 						stateNode = IBeXPatternFactory.createNode(stateNodeName,
 								metamodelStateTypes.get(NameProvider.getStateTypeKey(si)));
@@ -663,7 +647,7 @@ public class ContextCreator {
 	 */
 	private void createContextPatternFromObs(IntermObservable obs) {
 		IBeXContextPattern obsContextPattern = createContextPatternFromPattern(obs.getObsPattern());
-		obsContextPattern.setName(obs.getName());
+		obsContextPattern.setName("obs_"+obs.getName());
 
 		ibexPatternSet.getContextPatterns().add(obsContextPattern);
 	}
@@ -717,7 +701,7 @@ public class ContextCreator {
 		}
 
 		return contextPattern;
-	}	
+	}
 
 	public IBeXPatternSet getIBeXPatternSet() {
 		return ibexPatternSet;

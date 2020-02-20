@@ -9,6 +9,7 @@ import org.emoflon.ibex.common.operational.IMatch;
 import org.emoflon.ibex.gt.api.GraphTransformationRule;
 import org.emoflon.ibex.gt.engine.GraphTransformationInterpreter;
 import TestcasesModel.A;
+import TestcasesModel.U_s;
 
 /**
  * The rule <code>unspec()</code> which does the following:
@@ -38,6 +39,7 @@ public class UnspecRule extends GraphTransformationRule<UnspecMatch, UnspecRule>
 	protected List<String> getParameterNames() {
 		List<String> names = new ArrayList<String>();
 		names.add("a");
+		names.add("us");
 		return names;
 	}
 
@@ -52,10 +54,22 @@ public class UnspecRule extends GraphTransformationRule<UnspecMatch, UnspecRule>
 		return this;
 	}
 
+	/**
+	 * Binds the node us to the given object.
+	 *
+	 * @param object
+	 *            the object to set
+	 */
+	public UnspecRule bindUs(final U_s object) {
+		parameters.put("us", Objects.requireNonNull(object, "us must not be null!"));
+		return this;
+	}
+
 	@Override
 	public String toString() {
 		String s = "rule " + patternName + " {" + System.lineSeparator();
 		s += "	a --> " + parameters.get("a") + System.lineSeparator();
+		s += "	us --> " + parameters.get("us") + System.lineSeparator();
 		s += "}";
 		return s;
 	}

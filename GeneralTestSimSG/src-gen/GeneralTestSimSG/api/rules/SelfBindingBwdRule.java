@@ -11,7 +11,6 @@ import org.emoflon.ibex.gt.engine.GraphTransformationInterpreter;
 import TestcasesModel.A;
 import TestcasesModel.P_s;
 import TestcasesModel.U_s;
-import TestcasesModel.X;
 
 /**
  * The rule <code>selfBindingBwd()</code> which does the following:
@@ -42,7 +41,6 @@ public class SelfBindingBwdRule extends GraphTransformationRule<SelfBindingBwdMa
 		List<String> names = new ArrayList<String>();
 		names.add("a");
 		names.add("us");
-		names.add("x");
 		names.add("ps");
 		return names;
 	}
@@ -70,17 +68,6 @@ public class SelfBindingBwdRule extends GraphTransformationRule<SelfBindingBwdMa
 	}
 
 	/**
-	 * Binds the node x to the given object.
-	 *
-	 * @param object
-	 *            the object to set
-	 */
-	public SelfBindingBwdRule bindX(final X object) {
-		parameters.put("x", Objects.requireNonNull(object, "x must not be null!"));
-		return this;
-	}
-
-	/**
 	 * Binds the node ps to the given object.
 	 *
 	 * @param object
@@ -96,7 +83,6 @@ public class SelfBindingBwdRule extends GraphTransformationRule<SelfBindingBwdMa
 		String s = "rule " + patternName + " {" + System.lineSeparator();
 		s += "	a --> " + parameters.get("a") + System.lineSeparator();
 		s += "	us --> " + parameters.get("us") + System.lineSeparator();
-		s += "	x --> " + parameters.get("x") + System.lineSeparator();
 		s += "	ps --> " + parameters.get("ps") + System.lineSeparator();
 		s += "}";
 		return s;

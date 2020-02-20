@@ -48,8 +48,8 @@ public class X_X_y_0_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBinding_131_nacjunction"), this::check_constraint_9));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("unspecTest_137_nacjunction"), this::check_constraint_18));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("unspecTest_96_nacjunction"), this::check_constraint_14));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("xFree_100_nacjunction"), this::check_constraint_18));
 		ports.add(new PortEdge(getSelf(), name2actor.get("x_yBound_production"), this::check_constraint_5));
 	}	
 
@@ -313,7 +313,7 @@ public class X_X_y_0_reference extends AbstractActor {
 		return true;
 	}
 	
-	public boolean check_constraint_9(EdgeMatch edge) {
+	public boolean check_constraint_14(EdgeMatch edge) {
 		TestcasesModel.X src = (TestcasesModel.X) edge.source();
 		reactionContainer.Agent trg = (reactionContainer.Agent) edge.target();
 		boolean predicate = !src.equals(trg);

@@ -1,7 +1,8 @@
 Manifest-Version: 1.0
 Automatic-Module-Name: org.reaction.generalTest
 Bundle-SymbolicName: org.reaction.generalTest; singleton:=true
-Export-Package: org.reaction.generalTest.api,
+Export-Package: org.reaction.generalTest,
+ org.reaction.generalTest.api,
  org.reaction.generalTest.api.matches,
  org.reaction.generalTest.api.rules
 Bundle-Name: org.reaction.generalTest

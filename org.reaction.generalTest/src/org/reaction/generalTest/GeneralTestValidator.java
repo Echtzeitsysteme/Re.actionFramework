@@ -3,7 +3,6 @@ package org.reaction.generalTest;
 import java.io.File;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.jdt.core.dom.ThisExpression;
 import org.reaction.generalTest.api.GeneralTestDemoclesApp;
 
 import reactionContainer.Container;

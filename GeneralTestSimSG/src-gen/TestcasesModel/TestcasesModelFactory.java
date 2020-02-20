@@ -22,13 +22,13 @@ public interface TestcasesModelFactory extends EFactory {
 	TestcasesModelFactory eINSTANCE = TestcasesModel.impl.TestcasesModelFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>A</em>'.
+	 * Returns a new object of class '<em>X</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>A</em>'.
+	 * @return a new object of class '<em>X</em>'.
 	 * @generated
 	 */
-	A createA();
+	X createX();
 
 	/**
 	 * Returns a new object of class '<em>Us</em>'.
@@ -49,15 +49,6 @@ public interface TestcasesModelFactory extends EFactory {
 	P_s createP_s();
 
 	/**
-	 * Returns a new object of class '<em>X</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>X</em>'.
-	 * @generated
-	 */
-	X createX();
-
-	/**
 	 * Returns a new object of class '<em>T</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,6 +56,15 @@ public interface TestcasesModelFactory extends EFactory {
 	 * @generated
 	 */
 	T createT();
+
+	/**
+	 * Returns a new object of class '<em>A</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>A</em>'.
+	 * @generated
+	 */
+	A createA();
 
 	/**
 	 * Returns the package supported by this factory.

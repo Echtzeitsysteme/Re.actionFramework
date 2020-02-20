@@ -23,6 +23,8 @@ import ecoreBCModel.IntermAgent;
 import ecoreBCModel.IntermAgentInstance;
 import ecoreBCModel.IntermSiteInstance;
 import ecoreBCModel.IntermSiteState;
+import reactionContainer.ReactionContainerFactory;
+import reactionContainer.ReactionContainerPackage;
 
 public class ChangePatternFactory {
 
@@ -100,15 +102,17 @@ public class ChangePatternFactory {
 		for (IntermAgentInstance ai : createdInstances) {
 
 			// Create new node
-			IBeXNode newNode = createNode(ai);
+			IBeXNode newNode = getOrCreateNode(createPattern, ai);
 
 			// Create state nodes
 			for (IntermSiteInstance si : ai.getSiteInstances()) {
-				IntermSiteState state = si.getState();
-				if (state != null) {
-					IBeXNode stateNode = getOrCreateStateNode(createPattern, si);
+
+				// Create state as specified
+				IBeXNode stateNode = getOrCreateStateNode(createPattern, si);
+				if (stateNode != null) {
 					createEdge(newNode, stateNode, NameProvider.getEdgeTypeKey(ai, si, true));
 				}
+
 			}
 
 			// Connections of new agents
@@ -157,7 +161,12 @@ public class ChangePatternFactory {
 				}
 
 				IntermSiteInstance postBoundTo = (IntermSiteInstance) postBoundToBindable;
-				if (preBoundToBindable instanceof IntermSiteInstance) {
+				if (preBoundToBindable == null) {
+
+					// TODO ?
+					// deleteGenericNode(NameProvider.getQualifiedLocalNodeName(pre));
+
+				} else if (preBoundToBindable instanceof IntermSiteInstance) {
 					if (postBoundToBindable instanceof IntermSiteInstance) {
 
 						IntermSiteInstance preBoundTo = (IntermSiteInstance) preBoundToBindable;
@@ -201,8 +210,7 @@ public class ChangePatternFactory {
 									+ template.getRule().getName() + ". Exiting.");
 				}
 			} else if (post.getBindingState() == BindingState.FREE) {
-				// TODO: Delete all potential old bonds
-				// deleteNode then createNode?
+				deleteBond(pre);
 			}
 
 		}
@@ -210,16 +218,13 @@ public class ChangePatternFactory {
 		if (pre.getBindingState() == BindingState.UNSPECIFIED) {
 			if (post.getBindingState() == BindingState.BOUND) {
 
-				// TODO: Delete potential old bond
-				// deleteBond?? --> delete old node and create new one?
-				createBond(post);
+				throw new RuntimeException("Underspecified transformation rule: " + template.getRule().getName());
 
 			} else if (post.getBindingState() == BindingState.UNSPECIFIED) {
 				/* Nothing to do */
 				return;
 			} else if (post.getBindingState() == BindingState.FREE) {
-				// TODO: Delete all potential old bonds
-				// deleteNode then createNode?
+				throw new RuntimeException("Free wildcard on right hand side of rule is not allowed.");
 			}
 		}
 
@@ -238,8 +243,6 @@ public class ChangePatternFactory {
 			}
 		}
 	}
-
-	
 
 	/**
 	 * Creates the bond given by the bound site instance si by adding all necessary
@@ -282,26 +285,34 @@ public class ChangePatternFactory {
 	private void deleteBond(IntermSiteInstance si) {
 
 		if (si.getBindingState() != BindingState.BOUND) {
-			throw new IllegalArgumentException("Given site instace " + si.getName()
+			throw new IllegalArgumentException("Given site instance " + si.getName()
 					+ " is expected to be in state BOUND but was in state " + si.getBindingState());
 		}
 
 		// establish new connection
 		IntermAgentInstance ai = si.getParent();
-		Bindable BoundToBindable = si.getBoundTo();
-		if (!(BoundToBindable instanceof IntermSiteInstance)) {
+		Bindable boundToBindable = si.getBoundTo();
+		if (boundToBindable != null && !(boundToBindable instanceof IntermSiteInstance)) {
 			throw new RuntimeException(
-					"All instances on the right hand side of a rule must be well defined. Encountered generic or unclear binding, exiting.");
+					"All instances on the right hand side of a rule must be well defined. Encountered generic or unclear binding in rule "
+							+ template.getRule().getName());
 		}
 
-		IntermSiteInstance siBoundTo = (IntermSiteInstance) BoundToBindable;
-		IntermAgentInstance aiBoundTo = siBoundTo.getParent();
+		IntermSiteInstance siBoundTo = (IntermSiteInstance) boundToBindable;
 
-		// create new bond
 		IBeXNode boundNode = getOrCreateNode(deletePattern, ai);
-		IBeXNode boundTo = getOrCreateNode(deletePattern, aiBoundTo);
+		if (siBoundTo != null) {
+			IntermAgentInstance aiBoundTo = siBoundTo.getParent();
 
-		deleteEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(ai, si, false));
+			// create new bond
+			IBeXNode boundTo = getOrCreateNode(deletePattern, aiBoundTo);
+
+			deleteEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(ai, si, false));
+		} else {
+			// Deletion of underspecified bond:
+			IBeXNode boundTo = getOrCreateGenericNode(deletePattern, NameProvider.getQualifiedLocalNodeName(si));
+			deleteEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(ai, si, false));
+		}
 	}
 
 	/**
@@ -321,8 +332,6 @@ public class ChangePatternFactory {
 		}
 
 		if (statePre == null) {
-
-			// TODO: How to delete old state if existent?
 
 			// Get agent instances
 			IntermAgentInstance aiPost = siPost.getParent();
@@ -378,8 +387,10 @@ public class ChangePatternFactory {
 
 		// delete node if not existent in post condition
 		if (aiPost == null) {
-			deleteNode(aiPre);
-			return;
+			if (!aiPre.isLocal()) {
+				deleteNode(aiPre);
+				return;
+			}
 		}
 
 		for (IntermSiteInstance siPre : aiPre.getSiteInstances()) {
@@ -458,6 +469,28 @@ public class ChangePatternFactory {
 	}
 
 	/**
+	 * Finds the node to the given agent instance name in the given pattern or
+	 * creates a new node and adds it to the corresponding pattern.
+	 * 
+	 * @returns the found or created node
+	 */
+	private IBeXNode getOrCreateGenericNode(IBeXPattern pattern, String instanceName) {
+		if (pattern instanceof IBeXCreatePattern) {
+			throw new RuntimeException("There should never be a need for creation of an local generic node");
+		}
+		if (pattern instanceof IBeXDeletePattern) {
+			IBeXDeletePattern deletePattern = (IBeXDeletePattern) pattern;
+			IBeXNode deletedNode = ModelHelper.getNodeFromDeletePattern(deletePattern, instanceName);
+			if (deletedNode == null) {
+				deletedNode = deleteGenericNode(instanceName);
+			}
+			return deletedNode;
+		}
+
+		throw new RuntimeException("Encountered ContextPattern during creation of change patterns. Exiting.");
+	}
+
+	/**
 	 * Creates a new ibex node corresponding to the given agent instance and adds it
 	 * to the create pattern.
 	 * 
@@ -475,9 +508,6 @@ public class ChangePatternFactory {
 		return newNode;
 	}
 
-	// TODO: CreateNodeWithContextInformation if it was deleted before to accomplish
-	// deletion of potential pre condition edges given by unspecified information.
-
 	/**
 	 * Creates a new ibex node corresponding to the given agent instance and adds it
 	 * to the delete pattern.
@@ -485,9 +515,56 @@ public class ChangePatternFactory {
 	 * @return the deleted node
 	 */
 	private IBeXNode deleteNode(IntermAgentInstance ai) {
+		
+		// delete node itself
 		IBeXNode deletedNode = IBeXPatternFactory.createNode(ai.getName(),
 				metamodelAgentTypes.get(ai.getInstanceOf().getName()));
 		deletedNode.setName(ai.getName());
+		if (changesMap.get(ai) != null) {
+			deletePattern.getContextNodes().add(deletedNode);
+			return deletedNode;
+		} else {
+			deletePattern.getDeletedNodes().add(deletedNode);
+
+			// delete all edges connected to it
+			for (IntermSiteInstance si : ai.getSiteInstances()) {
+				Bindable boundToBindable = si.getBoundTo();
+
+				if (boundToBindable instanceof IntermSiteInstance) {
+					IntermSiteInstance boundTo = (IntermSiteInstance) boundToBindable;
+					IntermAgentInstance boundToParent = boundTo.getParent();
+
+					IBeXNode boundToNode = getOrCreateNode(deletePattern, boundToParent);
+					deleteEdge(deletedNode, boundToNode, NameProvider.getEdgeTypeKey(ai, si, false));
+
+					// delete state
+					if (!ai.isLocal() && si.getState() != null) {
+						IBeXNode stateNode = getOrCreateStateNode(deletePattern, si);
+						deleteEdge(deletedNode, stateNode, NameProvider.getEdgeTypeKey(ai, si, true));
+					}
+				}
+				if (boundToBindable instanceof IntermAgentInstance) {
+					throw new UnsupportedOperationException();
+				}
+				if (boundToBindable instanceof IntermAgent) {
+					throw new UnsupportedOperationException();
+				}
+
+			}
+
+			return deletedNode;
+		}
+	}
+
+	/**
+	 * Creates a new ibex node corresponding to the given agent instance and adds it
+	 * to the delete pattern.
+	 * 
+	 * @return the deleted node
+	 */
+	private IBeXNode deleteGenericNode(String instanceName) {
+		IBeXNode deletedNode = IBeXPatternFactory.createNode(instanceName, ReactionContainerPackage.Literals.AGENT);
+		deletedNode.setName(instanceName);
 		deletePattern.getDeletedNodes().add(deletedNode);
 		return deletedNode;
 	}
@@ -500,14 +577,32 @@ public class ChangePatternFactory {
 	 */
 	private IBeXNode getOrCreateStateNode(IBeXPattern pattern, IntermSiteInstance siteInState) {
 
-		String stateNodeName = NameProvider.getQualifiedStateNodeName(siteInState);
+		boolean defaultState = false;
+
+		String stateNodeName;
+		if (siteInState.getState() != null) {
+			stateNodeName = NameProvider.getQualifiedStateNodeName(siteInState);
+		} else {
+			stateNodeName = NameProvider.getQualifiedDefaultStateNodeName(siteInState);
+			defaultState = true;
+			if (stateNodeName == null) {
+				return null;
+			}
+		}
 
 		if (pattern instanceof IBeXCreatePattern) {
 			IBeXCreatePattern createPattern = (IBeXCreatePattern) pattern;
 
 			IBeXNode stateNode = ModelHelper.getNodeFromCreatePattern(createPattern, stateNodeName);
 			if (stateNode == null) {
-				stateNode = IBeXPatternFactory.createNode(stateNodeName, metamodelStateTypes.get(stateNodeName));
+				if (!defaultState) {
+					stateNode = IBeXPatternFactory.createNode(stateNodeName,
+							metamodelStateTypes.get(NameProvider.getStateTypeKey(siteInState)));
+				} else {
+					stateNode = IBeXPatternFactory.createNode(stateNodeName,
+							metamodelStateTypes.get(NameProvider.getDefaultStateTypeKey(siteInState)));
+				}
+
 				stateNode.setName(stateNodeName);
 				createPattern.getContextNodes().add(stateNode);
 			}
@@ -518,7 +613,8 @@ public class ChangePatternFactory {
 
 			IBeXNode stateNode = ModelHelper.getNodeFromDeletePattern(deletePattern, stateNodeName);
 			if (stateNode == null) {
-				stateNode = IBeXPatternFactory.createNode(stateNodeName, metamodelStateTypes.get(stateNodeName));
+				stateNode = IBeXPatternFactory.createNode(stateNodeName,
+						metamodelStateTypes.get(NameProvider.getStateTypeKey(siteInState)));
 				stateNode.setName(stateNodeName);
 				deletePattern.getContextNodes().add(stateNode);
 			}

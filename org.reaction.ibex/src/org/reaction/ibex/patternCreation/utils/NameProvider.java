@@ -1,5 +1,7 @@
 package org.reaction.ibex.patternCreation.utils;
 
+import java.util.List;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
 
@@ -21,6 +23,19 @@ public class NameProvider {
 	 */
 	public static String getQualifiedStateNodeName(IntermSiteInstance si) {
 		return si.getState().getName() + "s";
+	}
+
+	/**
+	 * @returns a valid name for a state node in the default state of the given site
+	 *          that should be unique in the context of its rule
+	 */
+	public static String getQualifiedDefaultStateNodeName(IntermSiteInstance si) {
+		List<IntermSiteState> states = si.getInstanceOf().getSiteStates();
+		if (states.size() > 0) {
+			return states.get(0).getName() + "s";
+		} else {
+			return null;
+		}
 	}
 
 	/**
@@ -109,7 +124,23 @@ public class NameProvider {
 	 * @returns the key-string to get a state type from the state type map
 	 */
 	public static String getStateTypeKey(IntermSiteInstance si) {
+		if (si.getState() == null) {
+			return null;
+		}
 		return si.getState().getName().toUpperCase() + "_s";
+	}
+
+	/**
+	 * @returns a valid name for a state node in the default state of the given site
+	 *          that should be unique in the context of its rule
+	 */
+	public static String getDefaultStateTypeKey(IntermSiteInstance si) {
+		List<IntermSiteState> states = si.getInstanceOf().getSiteStates();
+		if (states.size() > 0) {
+			return states.get(0).getName().toUpperCase() + "_s";
+		} else {
+			return null;
+		}
 	}
 
 	/**
@@ -124,6 +155,19 @@ public class NameProvider {
 		if (state != null && toState) {
 			key = key + "_" + si.getState().getName();
 		}
+
+		// If no state given but state is possible, return key for default state
+		if (state == null && toState) {
+			List<IntermSiteState> possibleStates = si.getInstanceOf().getSiteStates();
+			if (possibleStates.size() > 0) {
+				IntermSiteState defaultState = possibleStates.get(0);
+				key = key + "_" + defaultState.getName();
+			} else {
+				throw new RuntimeException("I don't know if this program state should be reachable?");
+			}
+
+		}
+
 		return key;
 	}
 

@@ -56,16 +56,16 @@ public class TestcasesModelFactoryImpl extends EFactoryImpl implements Testcases
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case TestcasesModelPackage.A:
-			return createA();
+		case TestcasesModelPackage.X:
+			return createX();
 		case TestcasesModelPackage.US:
 			return createU_s();
 		case TestcasesModelPackage.PS:
 			return createP_s();
-		case TestcasesModelPackage.X:
-			return createX();
 		case TestcasesModelPackage.T:
 			return createT();
+		case TestcasesModelPackage.A:
+			return createA();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -77,9 +77,9 @@ public class TestcasesModelFactoryImpl extends EFactoryImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public A createA() {
-		AImpl a = new AImpl();
-		return a;
+	public X createX() {
+		XImpl x = new XImpl();
+		return x;
 	}
 
 	/**
@@ -110,9 +110,9 @@ public class TestcasesModelFactoryImpl extends EFactoryImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public X createX() {
-		XImpl x = new XImpl();
-		return x;
+	public T createT() {
+		TImpl t = new TImpl();
+		return t;
 	}
 
 	/**
@@ -121,9 +121,9 @@ public class TestcasesModelFactoryImpl extends EFactoryImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public T createT() {
-		TImpl t = new TImpl();
-		return t;
+	public A createA() {
+		AImpl a = new AImpl();
+		return a;
 	}
 
 	/**

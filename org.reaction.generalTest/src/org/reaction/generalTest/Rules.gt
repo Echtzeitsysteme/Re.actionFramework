@@ -2,1248 +2,185 @@ import "http://www.eclipse.org/emf/2002/Ecore"
 import "platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore"
 import "platform:/resource/reactionContainer/model/reactionContainer.ecore"
 
-//-------------------------------BINDINGS-------------------------------
-rule simpleBind1_1() {
-	a: A {
-		++ -A_b -> t
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-}
-when atFree
-
-rule simpleBind1_2() {
-	a: A {
-		++ -A_b -> t
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-}
-when atFree
-
-rule simpleBind1State1() {
-	// TODO: How to tell to disconnect from state u if this connection exists?
-	a: A {
-		++ -A_c -> t
-		++ -A_c_p -> ps
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-
-	ps: P_s
-}
-when atFree
-
-rule simpleBind1State2() {
-	// TODO: How to tell to disconnect from state u if this connection exists?
-	a: A {
-		++ -A_c -> t
-		++ -A_c_u -> us
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-
-	us: U_s
-}
-when atFree
-
-rule simpleBind2() {
-	a: A {
-		++ -A_b -> t
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-}
-when abtiFree
-
-rule simpleBind2State1() {
-	a: A {
-		++ -A_c -> t
-		-- -A_c_u -> us
-		++ -A_c_p -> ps
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-
-	us: U_s
-
-	ps: P_s
-}
-when actiFree
-
-rule simpleBind2State2() {
-	a: A {
-		++ -A_c -> t
-		++ -A_c_u -> us
-		-- -A_c_p -> ps
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-
-	us: U_s
-
-	ps: P_s
-}
-when actiFree
-
-rule simpleBind2State3() {
-	// TODO: Handle possible connection to state u before?
-	a: A {
-		++ -A_c -> t
-		++ -A_c_p -> ps
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-
-	ps: P_s
-}
-when actiFree
-
-rule simpleBind2State4() {
-	// TODO: see above
-	a: A {
-		++ -A_c -> t
-		++ -A_c_u -> us
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-
-	us: U_s
-}
-when actiFree
-
-rule simpleBind3() {
-	a: A {
-		++ -A_b -> t
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-}
-when abtiNot
-
-rule simpleBind3State1() {
-	a: A {
-		++ -A_c -> t
-		-- -A_c_u -> us
-		++ -A_c_p -> ps
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-
-	ps: P_s
-
-	us: U_s
-}
-when actiNot
-
-rule simpleBind3State2() {
-	a: A {
-		++ -A_c -> t
-		++ -A_c_u -> us
-		-- -A_c_p -> ps
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-
-	ps: P_s
-
-	us: U_s
-}
-when actiNot
-
-rule simpleBind3State3() {
-	// TODO: See above
-	a: A {
-		++ -A_c -> t
-		++ -A_c_p -> ps
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-
-	ps: P_s
-}
-when actiNot
-
-rule simpleBind3State4() {
-	// TODO: See above
-	a: A {
-		++ -A_c -> t
-		++ -A_c_u -> us
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-
-	us: U_s
-}
-when actiNot
-
-//-------------------------------SPLITS-------------------------------
-rule simpleSplit1() {
-	a: A {
-		-- -A_b -> t
-	}
-
-	t: T {
-		-- -T_i -> a
-	}
-}
-
-rule simpleSplit1State1() {
-	a: A {
-		-- -A_c -> t
-		-- -A_c_u -> us
-		++ -A_c_p -> ps
-	}
-
-	t: T {
-		-- -T_i -> a
-	}
-
-	us: U_s
-
-	ps: P_s
-}
-
-rule simpleSplit1State2() {
-	a: A {
-		-- -A_c -> t
-		++ -A_c_u -> us
-		-- -A_c_p -> ps
-	}
-
-	t: T {
-		-- -T_i -> a
-	}
-
-	us: U_s
-
-	ps: P_s
-}
-
-rule simpleSplit1State3() {
-	// TODO: See above
-	a: A {
-		-- -A_c -> t
-		++ -A_c_u -> us
-	}
-
-	t: T {
-		-- -T_i -> a
-	}
-
-	us: U_s
-}
-
-rule simpleSplit1State4() {
-	// TODO: See above
-	a: A {
-		-- -A_c -> t
-		++ -A_c_p -> ps
-	}
-
-	t: T {
-		-- -T_i -> a
-	}
-
-	ps: P_s
-}
-
-rule simpleSplit2State1() {
-	a: A {
-		-- -A_c -> t
-		-- -A_c_u -> us
-		++ -A_c_p -> ps
-	}
-
-	t: T {
-		-- -T_i -> a
-	}
-
-	us: U_s
-
-	ps: P_s
-}
-
-rule simpleSplit2State2() {
-	a: A {
-		-- -A_c -> t
-		++ -A_c_u -> us
-		-- -A_c_p -> ps
-	}
-
-	t: T {
-		-- -T_i -> a
-	}
-
-	us: U_s
-
-	ps: P_s
-}
-
-rule simpleSplit2State3() {
-	// TODO: See above
-	a: A {
-		-- -A_c -> t
-		++ -A_c_u -> us
-	}
-
-	t: T {
-		-- -T_i -> a
-	}
-
-	us: U_s
-}
-
-rule simpleSplit2State4() {
-	// TODO: See above
-	a: A {
-		-- -A_c -> t
-		++ -A_c_p -> ps
-	}
-
-	t: T {
-		-- -T_i -> a
-	}
-
-	ps: P_s
-}
-
-rule expandedSplit() {
-	// TODO: How to cut off all other possible connections?
-	a: A {
-		-- -A_b -> t
-	}
-
-	t: T {
-		-- -T_i -> a
-	}
-}
-
-rule expandedSplitState1() {
-	// TODO: How to cut off all other possible connections?
-	a: A {
-		-- -A_c -> t
-		-A_c_p -> ps
-	}
-
-	t: T {
-		-- -T_i -> a
-	}
-
-	ps: P_s
-}
-
-rule expandedSplitState2() {
-	// TODO: How to cut off all other possible connections?
-	a: A {
-		-- -A_c -> t
-		-A_c_u -> us
-	}
-
-	t: T {
-		-- -T_i -> a
-	}
-
-	us: U_s
-}
-
-//-------------------------------SYNTHESIS-------------------------------
-rule synthesisSingle1() {
-	++a: A {
-		++ -A_c_u -> us
-	}
-
-	us: U_s
-}
-
-rule synthesisSingle2() {
-	++a: A {
-		++ -A_c_u -> us
-	}
-
-	us: U_s
-}
-
-rule synthesisSingle3() {
-	++a: A {
-		++ -A_c_u -> us
-	}
-
-	us: U_s
-}
-
-rule synthesisSingle4() {
-	++a: A {
-		++ -A_c_u -> us
-	}
-
-	us: U_s
-}
-
-rule synthesisSingle5() {
-	++a: A {
-		++ -A_c_p -> ps
-	}
-
-	ps: P_s
-}
-
-rule synthesisSingle6() {
-	++a: A {
-		++ -A_c_u -> us
-	}
-
-	us: U_s
-}
-
-rule synthesisSingle7() {
-	++a: A {
-		++ -A_c_u -> us
-	}
-
-	us: U_s
-}
-
-rule synthesisSingle8() {
-	++a: A {
-		++ -A_c_u -> us
-	}
-
-	us: U_s
-}
-
-rule synthesisSingle9() {
-	++a: A {
-		++ -A_c_p -> ps
-	}
-
-	ps: P_s
-}
-
-rule synthesisSingle10() {
-	++a: A {
-		++ -A_c_u -> us
-	}
-
-	us: U_s
-}
-
-rule synthesisMulti1() {
-	++a: A {
-		++ -A_c_u -> us
-	}
-
-	++x: X {
-		++ -X_z_u -> us
-	}
-
-	us: U_s
-}
-
-rule synthesisMulti2() {
-	++a: A {
-		++ -A_c_u -> us
-	}
-
-	++x: X {
-		++ -X_z_u -> us
-	}
-
-	us: U_s
-}
-
-rule synthesisMulti3() {
-	++a: A {
-		++ -A_b -> x
-		++ -A_c_u -> us
-	}
-
-	++x: X {
-		++ -X_y -> a
-		++ -X_z_u -> us
-	}
-
-	us: U_s
-}
-
-rule synthesisMulti4() {
-	++a: A {
-		++ -A_c -> x
-		++ -A_c_u -> us
-	}
-
-	++x: X {
-		++ -X_y -> a
-		++ -X_z_u -> us
-	}
-
-	us: U_s
-}
-
-rule synthesisMulti5() {
-	++a: A {
-		++ -A_c -> x
-		++ -A_c_p -> ps
-	}
-
-	++x: X {
-		++ -X_y -> a
-		++ -X_z_u -> us
-	}
-
-	us: U_s
-
-	ps: P_s
-}
-
-rule synthesisMulti6() {
-	++a: A {
-		++ -A_c -> x
-		++ -A_c_u -> us
-	}
-
-	++x: X {
-		++ -X_z -> a
-		++ -X_z_u -> us
-	}
-
-	us: U_s
-}
-
-rule synthesisMulti7() {
-	++a: A {
-		++ -A_c -> x
-		++ -A_c_p -> ps
-	}
-
-	++x: X {
-		++ -X_z -> a
-		++ -X_z_p -> ps
-	}
-
-	ps: P_s
-}
-
-rule synthesisMulti8() {
-	++a: A {
-		++ -A_b -> x
-		++ -A_c -> x
-		++ -A_c_u -> us
-	}
-
-	++x: X {
-		++ -X_y -> a
-		++ -X_z -> a
-		++ -X_z_u -> us
-	}
-
-	us: U_s
-}
-
-rule synthesisMulti9() {
-	++a: A {
-		++ -A_b -> x
-		++ -A_c -> x
-		++ -A_c_p -> ps
-	}
-
-	++x: X {
-		++ -X_y -> a
-		++ -X_z -> a
-		++ -X_z_p -> ps
-	}
-
-	ps: P_s
-}
-
-rule partialSynthesis1() {
-	a: A
-
-	++ x: X {
-		++ -X_z_u -> us
-	}
-
-	us: U_s
-}
-
-rule partialSynthesis2() {
-	a: A {
-		++ -A_b -> x
-	}
-
-	++ x: X {
-		++ -X_z -> a
-		++ -X_z_p -> ps
-	}
-
-	ps: P_s
-}
-
-//-------------------------------DEGRADATION-------------------------------
-rule degradation1() {
-	--a: A
-
-	--x: X
-}
-
-rule degradation2() {
-	--a: A
-
-	--x: X
-}
-when axFree
-
-rule degradation3() {
-	--a: A {
-		-- -A_b -> x
-	}
-
-	--x: X {
-		-- -X_z -> a
-		-- -X_z_p -> ps
-	}
-
-	ps: P_s
-}
-
-rule partialDegradation1() {
-	a: A
-
-	-- x: X
-}
-
-rule partialDegradation2() {
-	a: A
-
-	-- x: X
-}
-when axFree
-
-rule partialDegradation3() {
+rule simpleBinding() {
 	a: A {
 		-- -A_b -> x
 	}
 
-	--x: X {
+	x: X {
 		-- -X_z -> a
 		-- -X_z_p -> ps
+		++ -X_z_u -> us
 	}
+
+	us: U_s
 
 	ps: P_s
 }
 
-rule partialDegradation4() {
+rule simpleBindingBwd() {
 	a: A {
 		-- -A_b -> x
-	// TODO: How to also destroy all other possible connection of a?
+	}
+
+	x: X {
+		-- -X_z -> a
+		-- -X_z_p -> ps
+		++ -X_z_u -> us
+	}
+
+	us: U_s
+
+	ps: P_s
+}
+when abxzFree
+
+condition abxzFree = forbid abBound && forbid xzBound
+
+pattern abBound() {
+	a: A {
+		-A_b -> agent
+	}
+
+	agent: Agent
+}
+
+pattern acBound() {
+	a: A {
+		-A_c -> agent
+	}
+
+	agent: Agent
+}
+
+rule selfBinding() {
+	a: A {
+		-- -A_b -> a
+		-- -A_c -> a
+		-- -A_c_p -> ps
+		++ -A_c_u -> us
+	}
+
+	ps: P_s
+
+	us: U_s
+}
+when xFree
+
+condition xFree = forbid xyBound && forbid xzBound
+
+pattern xyBound() {
+	x: X {
+		-X_y -> agent
+	}
+
+	agent: Agent
+}
+
+pattern xzBound() {
+	x: X {
+		-X_z -> agent
+	}
+
+	agent: Agent
+}
+
+rule selfBindingBwd() {
+	a: A {
+		-- -A_c_u -> us
+		++ -A_c_p -> ps
+		++ -A_b -> a
+		++ -A_c -> a
+	}
+
+	x: X {
+		-- -X_y -> x
+		-- -X_z -> x
+	}
+
+	ps: P_s
+
+	us: U_s
+}
+when aFree
+
+condition aFree = forbid abBound && forbid acBound
+
+rule synthDegComplete() {
+	++ a: A {
+		++ -A_c -> x
+		++ -A_c_p -> ps
+	}
+
+	++x: X {
+		++ -X_z -> a
+		++ -X_z_u -> us
+	}
+
+	us: U_s
+
+	ps: P_s
+}
+
+rule synthDegCompleteBwd() {
+	-- a: A {
+		-- -A_c -> x
+		-- -A_c_p -> ps
 	}
 
 	--x: X {
 		-- -X_z -> a
-		-- -X_z_p -> ps
-	}
-
-	ps: P_s
-}
-
-//-------------------------------UNDERSPECIFIED-------------------------------
-rule underspecified1() {
-	// TODO: How to tell that locals can also be the same agent? --> only have one local agent and use it for every connection?
-	a: A {
-		-- -A_b -> _loc1
-		-- -A_c -> _loc2
-	}
-
-	x: X {
-		-- -X_y -> _loc3
-		-- -X_z -> _loc4
-	}
-
-	_loc1: Agent
-
-	_loc2: Agent
-
-	_loc3: Agent
-
-	_loc4: Agent
-}
-
-rule underspecified2() {
-	// TODO: How to kill all other possible connections from a and x?
-	a: A {
-		-- -A_b -> _loc1
-	}
-
-	x: X {
-		-- -X_z -> _loc2
-		-- -X_z_p -> ps
-		++ -X_z_u -> us
-	}
-
-	us: U_s
-
-	ps: P_s
-
-	_loc1: Agent
-
-	_loc2: Agent
-}
-
-rule underspecified3() {
-	a: A {
-		-- -A_b -> _loc1
-	}
-
-	x: X {
-		-- -X_z -> _loc2
-		-X_z_p -> ps
-	}
-
-	ps: P_s
-
-	_loc1: Agent
-
-	_loc2: Agent
-}
-
-rule underspecified4() {
-	a: A {
-		-- -A_b -> _loc1
-		++ -A_b -> x
-	}
-
-	x: X {
-		-- -X_z -> _loc2
-		++ -X_z -> a
-		-X_z_p -> ps
-	}
-
-	ps: P_s
-
-	_loc1: Agent
-
-	_loc2: Agent
-}
-
-rule underspecified5() {
-	// TODO: How to kill other possible connection from a.c?
-	a: A {
-		-- -A_b -> _loc1
-		++ -A_b -> x
-	}
-
-	x: X {
-		-- -X_z -> _loc2
-		++ -X_z -> a
-		-X_z_p -> ps
-	}
-
-	ps: P_s
-
-	_loc1: Agent
-
-	_loc2: Agent
-}
-
-//-------------------------------UNDERSPECIFIED-------------------------------
-rule unspecified1() {
-	--a: A
-}
-
-rule unspecified2() {
-	a: A {
-		++ -A_c_p -> ps // TODO: What if A_c already was in state p? How to kill connection to eventual former state u?
-	}
-
-	ps: P_s
-}
-
-rule unspecified3() {
-	a: A {
-		++ -A_c_p -> ps // TODO: What if A_c already was in state p? How to kill connection to eventual former state u?
-	}
-
-	--x: X
-
-	ps: P_s
-}
-
-rule unspecified4() {
-	a: A {
-		++ -A_c_u -> us // TODO: What if A_c already was in state u? How to kill connection to eventual former state p?
-		++ -A_c -> x
-	}
-
-	x: X {
-		++ -X_z_p -> ps // TODO: What if X_z already was in state p? How to kill connection to eventual former state u?
-		++ -X_z -> a
-	}
-
-	us: U_s
-
-	ps: P_s
-}
-
-//-------------------------------GENERICS-------------------------------
-//rule generic1() {
-//	a: A // TODO: How to kill all possible connections that a could have?
-//}
-//when aNotBoundToX
-rule generic2() {
-	a: A {
-		-- -A_b -> _x // TODO: How to kill all possible connections that a could have?
-	}
-
-	_x: X
-}
-
-rule generic3() {
-	a: A {
-		-- -A_b -> _x
-	}
-
-	_x: X {
-		-- -X_z -> a // TODO: Need to specify this for local nodes?
-	}
-}
-
-rule generic4() {
-	a: A {
-		-- -A_b -> _x
-	}
-
-	_x: X {
-		-- -X_z -> a
-		-- -X_z_p -> ps
-	}
-
-	ps: P_s
-}
-
-rule generic5() {
-	a: A {
-		-- -A_b -> _x
-	}
-
-	_x: X {
-		-- -X_z -> a // TODO: Need to specify this for local nodes?
-	}
-}
-
-rule generic6State1() {
-	a: A {
-		-- -A_c -> _x
-		-A_c_u -> us
-	}
-
-	_x: X
-
-	us: U_s
-}
-
-rule generic6State2() {
-	a: A {
-		-- -A_c -> _x
-		-A_c_p -> ps
-	}
-
-	_x: X
-
-	ps: P_s
-}
-
-rule generic7() {
-	a: A {
-		-A_c -> _x
-		++ -A_c_p -> ps
-	}
-
-	_x: X
-
-	++ x: X {
-		++ -X_y -> a
-		++ -X_z_u -> us
-	}
-
-	us: U_s
-
-	ps: P_s
-}
-
-condition aNotBoundToX = forbid abBoundToX && forbid acBoundToX
-
-abstract pattern abBoundToX() {
-	a: A {
-		-A_b -> _locX
-	}
-
-	_locX: X
-}
-
-abstract pattern acBoundToX() {
-	a: A {
-		-A_c -> _locX
-	}
-
-	_locX: X
-}
-
-rule freeAgentsBind() {
-	a: A {
-		++ -A_b -> x
-	}
-
-	x: X {
-		++ -X_y -> a
-	}
-}
-when axFree
-
-//TODO: Check below rules
-rule forbiddenBondState() {
-	a: A {
-		++ -A_b -> x
-	}
-
-	x: X {
-		-- -X_z_p -> ps
-		++ -X_z_u -> us
-		++ -X_z -> a
-	}
-
-	us: U_s
-
-	ps: P_s
-}
-when forbiddenBondStateCondition
-
-rule forbiddenBondStateGeneric() {
-	a: A {
-		++ -A_b -> t
-	}
-
-	t: T {
-		++ -T_i -> a
-	}
-}
-when forbiddenBondStateGenericCondition
-
-rule forbiddenBondStateGenericWithSynthesis() {
-	a: A {
-		++ -A_b -> t
-	}
-
-	++t: T {
-		++ -T_i -> a
-	}
-}
-when forbiddenBondStateGenericWithSynthesisCondition
-
-condition forbiddenBondStateGenericCondition = tFree && forbid forbiddenBondStateGenericConditionPattern
-
-condition forbiddenBondStateGenericWithSynthesisCondition = forbid forbiddenBondStateGenericConditionPattern
-
-abstract pattern forbiddenBondStateGenericConditionPattern() {
-	a: A {
-		-A_b -> x
-	}
-
-	x: X {
-		-X_z -> a
-		-X_z_p -> ps
-	}
-
-	ps: P_s
-}
-
-condition forbiddenBondStateCondition = forbid forbiddenBondStateConditionPattern
-
-abstract pattern forbiddenBondStateConditionPattern() {
-	a: A {
-		-A_b -> x
-	}
-
-	x: X {
-		-X_z -> a
-		-X_z_p -> ps
-	}
-
-	ps: P_s
-}
-
-//TODO: Also add possible deletion of old state us ? --> If there are more than two states?
-rule freeAgentsBind2() {
-	a: A {
-		++ -A_c -> x
-		++ -A_c_p -> ps
-	}
-
-	x: X {
-		++ -X_z -> a
-		++ -X_z_p -> ps
-	}
-
-	ps: P_s
-}
-when axFree
-
-rule underspecifiedAgent() {
-	a: A {
-		-- -A_b -> _loc1
-	}
-
-	x: X {
-		-- -X_z -> _loc2
-		-- -X_z_p -> ps
-		++ -X_z_u -> us
-	}
-
-	_loc1: Agent
-
-	_loc2: Agent
-
-	us: U_s
-
-	ps: P_s
-}
-
-rule breakSpecificBond() {
-	a: A {
-		-- -A_c -> x
-	}
-
-	x: X {
-		-- -X_z -> a
-	}
-}
-
-rule complexStateChanges() {
-	a: A {
-		-- -A_c -> x
-		-- -A_c_u -> us
-		++ -A_c_p -> ps
-	}
-
-	x: X {
-		-- -X_z -> a
-		-- -X_z_p -> ps
-		++ -X_z_u -> us
-	}
-
-	ps: P_s
-
-	us: U_s
-}
-
-rule genericBondBreak() {
-	a: A {
-		-- -A_b -> _t
-	}
-
-	_t: T {
-		-- -T_i -> a
-	}
-}
-
-rule bidirectionalRule() {
-	a: A {
-		-- -A_b -> t
-		-- -A_c -> x
-	}
-
-	t: T {
-		-- -T_i -> x
-		-- -T_j -> a
-		++ -T_j -> x
-	}
-
-	x: X {
-		-- -X_y -> a
-		-- -X_z_p -> ps
-		++ -X_z_u -> us
-		-X_z -> t
-	}
-
-	us: U_s
-
-	ps: P_s
-}
-
-rule bidirectionalRuleBwd() {
-	a: A {
-		++ -A_b -> t
-		++ -A_c -> x
-	}
-
-	t: T {
-		-- -T_j -> x
-		++ -T_j -> a
-	}
-
-	x: X {
-		-X_z -> t
-		++ -X_y -> a
 		-- -X_z_u -> us
-		++ -X_z_p -> ps
 	}
 
 	us: U_s
 
 	ps: P_s
 }
-when atiFree
 
-condition atiFree = aFree && tiFree
-
-rule injectivity() {
-	a1: A {
-		-- -A_b -> x
+rule underspec() {
+	a: A {
+		-- -A_c -> _loc
+		-- -A_c_p -> ps
+		++ -A_c_u -> us
 	}
 
-	a2: A {
-		-- -A_c -> x
-	}
+	_loc: Agent
 
-	x: X {
-		-- -X_y -> a1
-		-- -X_z -> a2
-	}
+	ps: P_s
+
+	us: U_s
 }
 
-rule synthesis() {
-	++ a: A
-}
+rule unspecified() {
+	a: A
 
-rule synthesis2() {
 	++ x: X {
-		++ -X_z_p -> ps
+		++ -X_z_u -> us
+	}
+
+	us: U_s
+}
+
+rule generic() {
+	a: A {
+		-- -A_c -> _x
+	}
+
+	_x: X {
+		-- -X_z -> a
+	}
+}
+
+rule genericWithState() {
+	a: A {
+		-- -A_c -> _x
+	}
+
+	_x: X {
+		-- -X_z -> a
+		-X_z_p -> ps
 	}
 
 	ps: P_s
-}
-
-condition axFree = aFree && xFree
-
-condition atFree = aFree && tFree
-
-condition abFree = forbid a_bBound
-
-condition abtiFree = abFree && tiFree
-
-condition actiFree = acFree && tiFree
-
-condition acFree = forbid a_cBound
-
-condition aFree = abFree && acFree
-
-condition xyFree = forbid x_yBound
-
-condition xzFree = forbid x_zBound
-
-condition xFree = xyFree && xzFree
-
-condition tiFree = forbid t_iBound
-
-condition tjFree = forbid t_jBound
-
-condition tFree = tjFree && tiFree
-
-condition abtiNot = forbid abti
-
-condition actiNot = forbid acti
-
-abstract pattern abti() {
-	a: A {
-		-A_b -> t
-	}
-
-	t: T {
-		-T_i -> a
-	}
-}
-
-abstract pattern acti() {
-	a: A {
-		-A_c -> t
-	}
-
-	t: T {
-		-T_i -> a
-	}
-}
-
-abstract pattern a_bBound() {
-	a: A {
-		-A_b -> b
-	}
-
-	b: Agent
-}
-
-abstract pattern a_cBound() {
-	a: A {
-		-A_c -> c
-	}
-
-	c: Agent
-}
-
-abstract pattern x_yBound() {
-	x: X {
-		-X_y -> y
-	}
-
-	y: Agent
-}
-
-abstract pattern x_zBound() {
-	x: X {
-		-X_z -> z
-	}
-
-	z: Agent
-}
-
-abstract pattern t_iBound() {
-	t: T {
-		-T_i -> i
-	}
-
-	i: Agent
-}
-
-abstract pattern t_jBound() {
-	t: T {
-		-T_j -> j
-	}
-
-	j: Agent
 }

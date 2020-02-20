@@ -49,7 +49,7 @@ public class A_object_SP1 extends AbstractActor {
 		ports.add(new PortNodeLeft<TestcasesModel.A>(getSelf(), name2actor.get("A_A_c_0_reference"), this::returnTrue));
 		ports.add(new PortNodeLeft<TestcasesModel.A>(getSelf(), name2actor.get("A_A_c_1_reference"), this::returnTrue));
 		ports.add(new PortNodeLeft<TestcasesModel.A>(getSelf(), name2actor.get("A_A_c_p_0_reference"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("genericWithStateTest_140_nacjunction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("aFree_98_nacjunction"), this::returnTrue));
 	}
 
 	@Override
