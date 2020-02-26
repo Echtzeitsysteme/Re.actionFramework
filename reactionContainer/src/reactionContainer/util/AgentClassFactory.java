@@ -30,12 +30,14 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 
 	protected StateClassFactory stateClassFactory;
 	protected Map<String, List<IntermSite>> siteConnections;
+	Map<String, List<IntermSiteState>> statesInUse;
 
 	public AgentClassFactory(EPackage ecorePackage, StateClassFactory stateClassFactory,
-			Map<String, List<IntermSite>> siteConnections) {
+			Map<String, List<IntermSite>> siteConnections, Map<String, List<IntermSiteState>> statesInUse) {
 		super(ecorePackage);
 		this.stateClassFactory = stateClassFactory;
 		this.siteConnections = siteConnections;
+		this.statesInUse = statesInUse;
 	}
 
 	@Override
@@ -70,11 +72,24 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 			// generate site states
 			if (siteOfAgent.getSiteStates() != null) {
 				if (siteOfAgent.getSiteStates().size() > 0) {
-					for (IntermSiteState state : siteOfAgent.getSiteStates()) {
-						EClass stateClass = stateClassFactory.createClass(state);
+					// If no information about possibly needed states is stored, use default state
+					IntermSiteState defaultState = siteOfAgent.getSiteStates().get(0);
+					String refName = key + "_" + defaultState.getName();
+					// Create default state if not already happened
+					if (stateClassFactory.getEClassRegistry().getRegisteredReference(refName) == null) {
+						EClass stateClass = stateClassFactory.createClass(defaultState);
 						agentClass.getEStructuralFeatures()
-								.add(stateClassFactory.createReference(object, siteOfAgent, state, stateClass));
+								.add(stateClassFactory.createReference(object, siteOfAgent, defaultState, stateClass));
 					}
+
+					if (statesInUse.containsKey(key)) {
+						for (IntermSiteState state : statesInUse.get(key)) {
+							EClass stateClass = stateClassFactory.createClass(state);
+							agentClass.getEStructuralFeatures()
+									.add(stateClassFactory.createReference(object, siteOfAgent, state, stateClass));
+						}
+					}
+
 				}
 			}
 		}
@@ -83,8 +98,7 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 	}
 
 	public EReference createReference(IntermAgent agent, IntermSite site) {
-		String refName = createReferenceName(agent, site); // TODO: create filtered list with only really existent
-															// connections in set of all rules
+		String refName = createReferenceName(agent, site);
 		if (classRegistry.containsReference(refName)) {
 			return classRegistry.getRegisteredReference(refName);
 		}

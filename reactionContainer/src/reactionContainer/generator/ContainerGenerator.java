@@ -60,7 +60,7 @@ public abstract class ContainerGenerator {
 	protected Map<IntermInitialisation, InitializationTemplate> templates;
 	protected Map<String, List<IntermSite>> siteConnections;
 	protected List<IntermAgent> agentsInModel;
-	protected Map<IntermAgent, List<IntermSiteState>> statesInModel;
+	protected Map<String, List<IntermSiteState>> statesInModel;
 
 	protected URI containerURI;
 	protected String metaModelPath;
@@ -172,51 +172,52 @@ public abstract class ContainerGenerator {
 				}
 
 				for (IntermSiteInstance si : ai.getSiteInstances()) {
+					String key = ai.getInstanceOf().getName()+"_"+si.getName();
+					List<IntermSiteState> statesOfSite = statesInModel.get(key);
+					if(statesOfSite == null) {
+						statesOfSite = new LinkedList<>();
+					}
+					
 					Bindable siBindable = si.getBoundTo();
 					if (siBindable != null) {
 						IntermAgent boundToAgent = null;
 						IntermSiteInstance boundToSiteInstance = null;
 						IntermSite boundToSite = null;
-						if (siBindable instanceof IntermAgentInstance) {
-							IntermAgentInstance aiPartner = (IntermAgentInstance) siBindable;
-							boundToAgent = aiPartner.getInstanceOf();
-							throw new UnsupportedOperationException("Did not expect to get here");
-						}
 						if (siBindable instanceof IntermSiteInstance) {
 							IntermSiteInstance siPartner = (IntermSiteInstance) siBindable;
 							boundToAgent = siPartner.getParent().getInstanceOf();
 							boundToSiteInstance = siPartner;
 							boundToSite = boundToSiteInstance.getInstanceOf();
-						}
-						if (siBindable instanceof IntermAgent) {
-							boundToAgent = (IntermAgent) siBindable;
-							throw new UnsupportedOperationException("Did not expect to get here");
+						}else {
+							throw new UnsupportedOperationException("Unexpected type of siBindable encountered");
 						}
 
 						IntermAgent agentParent = ai.getInstanceOf();
 						if (!agentsInModel.contains(agentParent)) {
 							agentsInModel.add(agentParent);
 						}
-						
+
 						IntermSiteState state = si.getState();
-						if(state != null) {
-							List<IntermSiteState> existentStates = statesInModel.get(agentParent);
-							if(existentStates != null && !existentStates.contains(state)) {
-								existentStates.add(state);
-								statesInModel.put(agentParent, existentStates);
-							}
-						}
-						
-						IntermSiteState partnerState = boundToSiteInstance.getState();
-						if(partnerState != null) {
-							List<IntermSiteState> existentStates = statesInModel.get(boundToAgent);
-							if(existentStates != null && !existentStates.contains(partnerState)) {
-								existentStates.add(partnerState);
-								statesInModel.put(boundToAgent, existentStates);
+						if (state != null) {
+							if (!statesOfSite.contains(state)) {
+								statesOfSite.add(state);
+								statesInModel.put(key, statesOfSite);
 							}
 						}
 
-						String key = agentParent.getName() + "_" + si.getName();
+						IntermSiteState partnerState = boundToSiteInstance.getState();
+						String partnerKey = boundToAgent.getName()+"_"+boundToSite.getName();
+						List<IntermSiteState> statesOfPartnerSite = statesInModel.get(partnerKey);
+						if(statesOfPartnerSite == null) {
+							statesOfPartnerSite = new LinkedList<>();
+						}
+						if (partnerState != null) {
+							if(!statesOfPartnerSite.contains(partnerState)) {
+								statesOfPartnerSite.add(partnerState);
+								statesInModel.put(partnerKey, statesOfPartnerSite);
+							}
+						}
+
 						List<IntermSite> existentSites = siteConnections.get(key);
 						if (existentSites == null) {
 							existentSites = new LinkedList<>();
@@ -225,6 +226,16 @@ public abstract class ContainerGenerator {
 							existentSites.add(boundToSite);
 						}
 						siteConnections.put(key, existentSites);
+						
+						List<IntermSite> existentSitesPartner = siteConnections.get(partnerKey);
+						if (existentSitesPartner == null) {
+							existentSitesPartner = new LinkedList<>();
+						}
+						if (!existentSitesPartner.contains(si.getInstanceOf())) {
+							existentSitesPartner.add(si.getInstanceOf());
+						}
+						siteConnections.put(partnerKey, existentSitesPartner);
+						
 					}
 				}
 			}
@@ -324,7 +335,7 @@ public abstract class ContainerGenerator {
 		ReactionContainerPackage.eINSTANCE.getESubpackages().add(dynamicMetaModel);
 
 		stateClassFactory = new StateClassFactory(dynamicMetaModel);
-		agentClassFactory = new AgentClassFactory(dynamicMetaModel, stateClassFactory, siteConnections);
+		agentClassFactory = new AgentClassFactory(dynamicMetaModel, stateClassFactory, siteConnections, statesInModel);
 
 		agentsInModel.forEach(x -> {
 			agentClassFactory.createClass(x);
@@ -339,7 +350,7 @@ public abstract class ContainerGenerator {
 			containerModel.getStates().add(state);
 			stateInstances.put(state.eClass().getName(), state);
 		});
-		;
+
 	}
 
 	public URI createMetaModelURI() {

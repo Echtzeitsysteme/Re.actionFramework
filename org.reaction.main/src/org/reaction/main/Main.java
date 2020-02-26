@@ -96,40 +96,40 @@ public class Main {
 
 		System.out.print("Loading Ecore Model... ");
 		EPackage metamodelPackage;
-//		try {
-//			metamodelPackage = EMFResourceHelper.loadEPackage(metamodelPath);
-//		} catch (Exception e) {
-//			System.err.println("\nLoading Ecore-Model of SimSG failed with:");
-//			e.printStackTrace();
-//			return;
-//		}
-//		System.out.print(" Successful.\n");
-//
-//		// Creating IBeX items
-//		System.out.println("Initiating generation of IBeX items...");
-//		try {
-//			IBeXCreator ibexCreator = new IBeXCreator(intermModel, metamodelPackage);
-//			IBeXPatternSet ibexPatternSet = ibexCreator.getIBeXPatternSet();
-//			String ibexSaveLocation = trgProjectLocation + "/model/ibex-patterns.xmi";
-//			ibexCreator.savePatternSet(ibexSaveLocation);
-//
-//			GTCreator gtCreator = new GTCreator(ibexPatternSet);
-////			GTRuleSet gtRuleSet = gtCreator.getGTRuleSet();
-//			String gtSaveLocation = trgProjectLocation + "/model/gtRules.xmi";
-//			gtCreator.saveRuleSet(gtSaveLocation);
-//
-//			SimDefCreator simDefCreator = new SimDefCreator(intermModel, trgProjectLocation);
-//			String simDefSaveLocation = trgProjectLocation + "/instances/simulation_definitions/"
-//					+ simDefCreator.getDefinition().getName() + ".xmi";
-//			simDefCreator.saveDefinition(simDefSaveLocation);
-//		} catch (Exception e) {
-//			System.err.println("Creating IBeX items failed with:");
-//			e.printStackTrace();
-//			return;
-//		}
-//		System.out.println("IBeX items created successfully.");
-//		
-//		System.out.println("Transformation complete.");
+		try {
+			metamodelPackage = EMFResourceHelper.loadEPackage(metamodelPath);
+		} catch (Exception e) {
+			System.err.println("\nLoading Ecore-Model of SimSG failed with:");
+			e.printStackTrace();
+			return;
+		}
+		System.out.print(" Successful.\n");
+
+		// Creating IBeX items
+		System.out.println("Initiating generation of IBeX items...");
+		try {
+			IBeXCreator ibexCreator = new IBeXCreator(intermModel, metamodelPackage);
+			IBeXPatternSet ibexPatternSet = ibexCreator.getIBeXPatternSet();
+			String ibexSaveLocation = trgProjectLocation + "/model/ibex-patterns.xmi";
+			ibexCreator.savePatternSet(ibexSaveLocation);
+
+			GTCreator gtCreator = new GTCreator(ibexPatternSet);
+//			GTRuleSet gtRuleSet = gtCreator.getGTRuleSet();
+			String gtSaveLocation = trgProjectLocation + "/model/gtRules.xmi";
+			gtCreator.saveRuleSet(gtSaveLocation);
+
+			SimDefCreator simDefCreator = new SimDefCreator(intermModel, trgProjectLocation);
+			String simDefSaveLocation = trgProjectLocation + "/instances/simulation_definitions/"
+					+ simDefCreator.getDefinition().getName() + ".xmi";
+			simDefCreator.saveDefinition(simDefSaveLocation);
+		} catch (Exception e) {
+			System.err.println("Creating IBeX items failed with:");
+			e.printStackTrace();
+			return;
+		}
+		System.out.println("IBeX items created successfully.");
+		
+		System.out.println("Transformation complete.");
 
 	}
 	
