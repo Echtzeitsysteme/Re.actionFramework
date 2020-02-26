@@ -25,7 +25,7 @@ public class StateClassFactory extends EClassFactory<IntermSiteState, State> {
 	@Override
 	public EClass createClass(IntermSiteState object) {
 		
-		String qualifiedName = object.getName().toUpperCase()+"_s";	//TODO: Maybe look for another good name convention
+		String qualifiedName = object.getName().toUpperCase()+"_s";
 		
 		if(classRegistry.containsClass(qualifiedName)) {
 			return classRegistry.getRegisteredClass(qualifiedName);

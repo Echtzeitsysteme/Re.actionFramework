@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ecoreBCModel.IntermSite#getName <em>Name</em>}</li>
  *   <li>{@link ecoreBCModel.IntermSite#getSiteStates <em>Site States</em>}</li>
+ *   <li>{@link ecoreBCModel.IntermSite#getParent <em>Parent</em>}</li>
  * </ul>
  *
  * @see ecoreBCModel.EcoreBCModelPackage#getIntermSite()
@@ -57,5 +58,27 @@ public interface IntermSite extends EObject {
 	 * @generated
 	 */
 	EList<IntermSiteState> getSiteStates();
+
+	/**
+	 * Returns the value of the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent</em>' reference.
+	 * @see #setParent(IntermAgent)
+	 * @see ecoreBCModel.EcoreBCModelPackage#getIntermSite_Parent()
+	 * @model
+	 * @generated
+	 */
+	IntermAgent getParent();
+
+	/**
+	 * Sets the value of the '{@link ecoreBCModel.IntermSite#getParent <em>Parent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent</em>' reference.
+	 * @see #getParent()
+	 * @generated
+	 */
+	void setParent(IntermAgent value);
 
 } // IntermSite

@@ -47,7 +47,7 @@ public class InitializationTemplate {
 	}
 
 	private void findStates() {
-
+			//TODO: Only create states in use in ecore model
 		for (IntermAgentInstance instance : pattern.getAgentInstances()) {
 			for (IntermSiteInstance siteInstance : instance.getSiteInstances()) {
 				IntermSite site = siteInstance.getInstanceOf();

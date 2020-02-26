@@ -383,6 +383,16 @@ public class EcoreBCModelPackageImpl extends EPackageImpl implements EcoreBCMode
 	 * @generated
 	 */
 	@Override
+	public EReference getIntermSite_Parent() {
+		return (EReference) intermSiteEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getIntermInitialisation() {
 		return intermInitialisationEClass;
 	}
@@ -757,6 +767,7 @@ public class EcoreBCModelPackageImpl extends EPackageImpl implements EcoreBCMode
 		intermSiteEClass = createEClass(INTERM_SITE);
 		createEAttribute(intermSiteEClass, INTERM_SITE__NAME);
 		createEReference(intermSiteEClass, INTERM_SITE__SITE_STATES);
+		createEReference(intermSiteEClass, INTERM_SITE__PARENT);
 
 		intermInitialisationEClass = createEClass(INTERM_INITIALISATION);
 		createEAttribute(intermInitialisationEClass, INTERM_INITIALISATION__CNT);
@@ -889,6 +900,9 @@ public class EcoreBCModelPackageImpl extends EPackageImpl implements EcoreBCMode
 		initEReference(getIntermSite_SiteStates(), this.getIntermSiteState(), null, "siteStates", null, 0, -1,
 				IntermSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIntermSite_Parent(), this.getIntermAgent(), null, "parent", null, 0, 1, IntermSite.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(intermInitialisationEClass, IntermInitialisation.class, "IntermInitialisation", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -156,9 +156,10 @@ public class DslToIntermTransformation {
 		for (Agent agent : agentsInDeclarations) {
 			IntermAgent newAgent = EcoreBCModelFactory.eINSTANCE.createIntermAgent();
 			newAgent.setName(agent.getName());
-			List<IntermSite> newSites = createSites(agent.getSites());
-			newAgent.getSites().addAll(newSites);
 			agentToIntermAgent.put(agent, newAgent);
+			List<IntermSite> newSites = createSites(agent);
+			newAgent.getSites().addAll(newSites);
+
 		}
 	}
 
@@ -270,11 +271,12 @@ public class DslToIntermTransformation {
 	 * @param sites - original sites to be transformed
 	 * @return the transformed sites for the intermediate model
 	 */
-	private List<IntermSite> createSites(List<Site> sites) {
+	private List<IntermSite> createSites(Agent agent) {
 
 		List<IntermSite> intermSites = new ArrayList<>();
-		for (Site site : sites) {
+		for (Site site : agent.getSites()) {
 			IntermSite newSite = createSite(site);
+			newSite.setParent(agentToIntermAgent(agent)); //TODO: set parent
 			intermSites.add(newSite);
 		}
 		return intermSites;

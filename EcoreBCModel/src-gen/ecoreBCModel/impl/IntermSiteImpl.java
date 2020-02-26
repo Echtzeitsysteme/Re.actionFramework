@@ -3,6 +3,7 @@
 package ecoreBCModel.impl;
 
 import ecoreBCModel.EcoreBCModelPackage;
+import ecoreBCModel.IntermAgent;
 import ecoreBCModel.IntermSite;
 import ecoreBCModel.IntermSiteState;
 
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link ecoreBCModel.impl.IntermSiteImpl#getName <em>Name</em>}</li>
  *   <li>{@link ecoreBCModel.impl.IntermSiteImpl#getSiteStates <em>Site States</em>}</li>
+ *   <li>{@link ecoreBCModel.impl.IntermSiteImpl#getParent <em>Parent</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +68,16 @@ public class IntermSiteImpl extends MinimalEObjectImpl.Container implements Inte
 	 * @ordered
 	 */
 	protected EList<IntermSiteState> siteStates;
+
+	/**
+	 * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParent()
+	 * @generated
+	 * @ordered
+	 */
+	protected IntermAgent parent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,6 +142,48 @@ public class IntermSiteImpl extends MinimalEObjectImpl.Container implements Inte
 	 * @generated
 	 */
 	@Override
+	public IntermAgent getParent() {
+		if (parent != null && parent.eIsProxy()) {
+			InternalEObject oldParent = (InternalEObject) parent;
+			parent = (IntermAgent) eResolveProxy(oldParent);
+			if (parent != oldParent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EcoreBCModelPackage.INTERM_SITE__PARENT,
+							oldParent, parent));
+			}
+		}
+		return parent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IntermAgent basicGetParent() {
+		return parent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setParent(IntermAgent newParent) {
+		IntermAgent oldParent = parent;
+		parent = newParent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EcoreBCModelPackage.INTERM_SITE__PARENT, oldParent,
+					parent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case EcoreBCModelPackage.INTERM_SITE__SITE_STATES:
@@ -150,6 +204,10 @@ public class IntermSiteImpl extends MinimalEObjectImpl.Container implements Inte
 			return getName();
 		case EcoreBCModelPackage.INTERM_SITE__SITE_STATES:
 			return getSiteStates();
+		case EcoreBCModelPackage.INTERM_SITE__PARENT:
+			if (resolve)
+				return getParent();
+			return basicGetParent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -170,6 +228,9 @@ public class IntermSiteImpl extends MinimalEObjectImpl.Container implements Inte
 			getSiteStates().clear();
 			getSiteStates().addAll((Collection<? extends IntermSiteState>) newValue);
 			return;
+		case EcoreBCModelPackage.INTERM_SITE__PARENT:
+			setParent((IntermAgent) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -188,6 +249,9 @@ public class IntermSiteImpl extends MinimalEObjectImpl.Container implements Inte
 		case EcoreBCModelPackage.INTERM_SITE__SITE_STATES:
 			getSiteStates().clear();
 			return;
+		case EcoreBCModelPackage.INTERM_SITE__PARENT:
+			setParent((IntermAgent) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -204,6 +268,8 @@ public class IntermSiteImpl extends MinimalEObjectImpl.Container implements Inte
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case EcoreBCModelPackage.INTERM_SITE__SITE_STATES:
 			return siteStates != null && !siteStates.isEmpty();
+		case EcoreBCModelPackage.INTERM_SITE__PARENT:
+			return parent != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -8,7 +8,7 @@ import GeneralTestSimSG.api.GeneralTestSimSGDemoclesApp;
 import GeneralTestSimSG.api.GeneralTestSimSGHiPEApp;
 import reactionContainer.Container;
 
-public class GeneralTestSimSGValidator extends GeneralTestSimSGDemoclesApp {
+public class GeneralTestSimSGValidator extends GeneralTestSimSGHiPEApp {
 
 	public GeneralTestSimSGValidator(String location, Container container) {
 

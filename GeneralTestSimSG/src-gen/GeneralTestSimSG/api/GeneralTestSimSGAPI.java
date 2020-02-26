@@ -1,18 +1,31 @@
 package GeneralTestSimSG.api;
 
-import GeneralTestSimSG.api.rules.AFreeRule;
-import GeneralTestSimSG.api.rules.AxRule;
+import GeneralTestSimSG.api.rules.ForbiddenStandAloneRule;
+import GeneralTestSimSG.api.rules.GenericRule;
+import GeneralTestSimSG.api.rules.GenericWithStateRule;
+import GeneralTestSimSG.api.rules.GenericWithStateTestRule;
+import GeneralTestSimSG.api.rules.InjectivityBwdRule;
+import GeneralTestSimSG.api.rules.InjectivityRule;
+import GeneralTestSimSG.api.rules.Obs_aFreeRule;
+import GeneralTestSimSG.api.rules.Obs_axRule;
+import GeneralTestSimSG.api.rules.Obs_genericTestRule;
+import GeneralTestSimSG.api.rules.Obs_simpleSynthesisTestRule;
+import GeneralTestSimSG.api.rules.Obs_underspecTestRule;
+import GeneralTestSimSG.api.rules.Obs_unspecifiedStateChangeTestRule;
+import GeneralTestSimSG.api.rules.Obs_xFreeRule;
 import GeneralTestSimSG.api.rules.SelfBindingBwdRule;
 import GeneralTestSimSG.api.rules.SelfBindingRule;
 import GeneralTestSimSG.api.rules.SimpleBindingBwdRule;
 import GeneralTestSimSG.api.rules.SimpleBindingRule;
+import GeneralTestSimSG.api.rules.SimpleSynthesisRule;
 import GeneralTestSimSG.api.rules.SynthDegCompleteBwdRule;
 import GeneralTestSimSG.api.rules.SynthDegCompleteRule;
 import GeneralTestSimSG.api.rules.SynthDegPartialBwdRule;
 import GeneralTestSimSG.api.rules.SynthDegPartialRule;
+import GeneralTestSimSG.api.rules.UnderspecRule;
+import GeneralTestSimSG.api.rules.UnspecifiedStateChangeRule;
 import GeneralTestSimSG.api.rules.UnspecRule;
 import GeneralTestSimSG.api.rules.UnspecTestRule;
-import GeneralTestSimSG.api.rules.XFreeRule;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -20,7 +33,7 @@ import org.emoflon.ibex.common.operational.IContextPatternInterpreter;
 import org.emoflon.ibex.gt.api.GraphTransformationAPI;
 
 /**
- * The GeneralTestSimSGAPI with 13 rules.
+ * The GeneralTestSimSGAPI with 26 rules.
  */
 public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	public static String patternPath = "GeneralTestSimSG/src-gen/GeneralTestSimSG/api/ibex-patterns.xmi";
@@ -143,6 +156,26 @@ public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	}
 
 	/**
+	 * Creates a new instance of the rule <code>underspec()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public UnderspecRule underspec() {
+		return new UnderspecRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>forbiddenStandAlone()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public ForbiddenStandAloneRule forbiddenStandAlone() {
+		return new ForbiddenStandAloneRule(this, interpreter);
+	}
+
+	/**
 	 * Creates a new instance of the rule <code>unspec()</code> which does the following:
 	 * If this rule is not self-explaining, you really should add some comment in the specification.
 	 *
@@ -163,32 +196,142 @@ public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	}
 
 	/**
-	 * Creates a new instance of the rule <code>ax()</code> which does the following:
+	 * Creates a new instance of the rule <code>generic()</code> which does the following:
 	 * If this rule is not self-explaining, you really should add some comment in the specification.
 	 *
 	 * @return the new instance of the rule
 	 */
-	public AxRule ax() {
-		return new AxRule(this, interpreter);
+	public GenericRule generic() {
+		return new GenericRule(this, interpreter);
 	}
 
 	/**
-	 * Creates a new instance of the rule <code>aFree()</code> which does the following:
+	 * Creates a new instance of the rule <code>genericWithState()</code> which does the following:
 	 * If this rule is not self-explaining, you really should add some comment in the specification.
 	 *
 	 * @return the new instance of the rule
 	 */
-	public AFreeRule aFree() {
-		return new AFreeRule(this, interpreter);
+	public GenericWithStateRule genericWithState() {
+		return new GenericWithStateRule(this, interpreter);
 	}
 
 	/**
-	 * Creates a new instance of the rule <code>xFree()</code> which does the following:
+	 * Creates a new instance of the rule <code>genericWithStateTest()</code> which does the following:
 	 * If this rule is not self-explaining, you really should add some comment in the specification.
 	 *
 	 * @return the new instance of the rule
 	 */
-	public XFreeRule xFree() {
-		return new XFreeRule(this, interpreter);
+	public GenericWithStateTestRule genericWithStateTest() {
+		return new GenericWithStateTestRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>simpleSynthesis()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public SimpleSynthesisRule simpleSynthesis() {
+		return new SimpleSynthesisRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>unspecifiedStateChange()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public UnspecifiedStateChangeRule unspecifiedStateChange() {
+		return new UnspecifiedStateChangeRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>injectivity()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public InjectivityRule injectivity() {
+		return new InjectivityRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>injectivityBwd()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public InjectivityBwdRule injectivityBwd() {
+		return new InjectivityBwdRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>obs_underspecTest()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public Obs_underspecTestRule obs_underspecTest() {
+		return new Obs_underspecTestRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>obs_genericTest()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public Obs_genericTestRule obs_genericTest() {
+		return new Obs_genericTestRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>obs_simpleSynthesisTest()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public Obs_simpleSynthesisTestRule obs_simpleSynthesisTest() {
+		return new Obs_simpleSynthesisTestRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>obs_unspecifiedStateChangeTest()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public Obs_unspecifiedStateChangeTestRule obs_unspecifiedStateChangeTest() {
+		return new Obs_unspecifiedStateChangeTestRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>obs_aFree()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public Obs_aFreeRule obs_aFree() {
+		return new Obs_aFreeRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>obs_xFree()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public Obs_xFreeRule obs_xFree() {
+		return new Obs_xFreeRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>obs_ax()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public Obs_axRule obs_ax() {
+		return new Obs_axRule(this, interpreter);
 	}
 }

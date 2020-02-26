@@ -279,13 +279,22 @@ public interface EcoreBCModelPackage extends EPackage {
 	int INTERM_SITE__SITE_STATES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERM_SITE__PARENT = 2;
+
+	/**
 	 * The number of structural features of the '<em>Interm Site</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_SITE_FEATURE_COUNT = 2;
+	int INTERM_SITE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Interm Site</em>' class.
@@ -938,6 +947,17 @@ public interface EcoreBCModelPackage extends EPackage {
 	EReference getIntermSite_SiteStates();
 
 	/**
+	 * Returns the meta object for the reference '{@link ecoreBCModel.IntermSite#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Parent</em>'.
+	 * @see ecoreBCModel.IntermSite#getParent()
+	 * @see #getIntermSite()
+	 * @generated
+	 */
+	EReference getIntermSite_Parent();
+
+	/**
 	 * Returns the meta object for class '{@link ecoreBCModel.IntermInitialisation <em>Interm Initialisation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1449,6 +1469,14 @@ public interface EcoreBCModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTERM_SITE__SITE_STATES = eINSTANCE.getIntermSite_SiteStates();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERM_SITE__PARENT = eINSTANCE.getIntermSite_Parent();
 
 		/**
 		 * The meta object literal for the '{@link ecoreBCModel.impl.IntermInitialisationImpl <em>Interm Initialisation</em>}' class.

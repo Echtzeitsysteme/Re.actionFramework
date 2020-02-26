@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -27,6 +26,7 @@ public class AgentTemplate {
 	private String agentClassName;
 	private Map<String, String> siteStateReferences;
 	private Map<String, List<AgentTemplate>> agentReferences;
+	private Map<String, List<IntermSite>> siteReferences;
 
 	public AgentTemplate(IntermAgent agent, AgentClassFactory agentFactory, StateClassFactory stateFactory,
 			Map<String, State> stateInstances) {
@@ -46,14 +46,21 @@ public class AgentTemplate {
 				state.getName().toUpperCase()+"_s");
 	}
 
-	public void addReference(IntermSite site, AgentTemplate other) {
-		List<AgentTemplate> templates = agentReferences
+	public void addReference(IntermSite site, AgentTemplate otherAgent, IntermSite otherSite) {
+		List<AgentTemplate> agentTemplates = agentReferences
 				.get(AgentClassFactory.createCombinedClassName(agentClassName, site.getName()));
-		if (templates == null) {
-			templates = new LinkedList<AgentTemplate>();
-			agentReferences.put(AgentClassFactory.createCombinedClassName(agentClassName, site.getName()), templates);
+		List<IntermSite> siteTemplates = siteReferences
+				.get(AgentClassFactory.createCombinedClassName(agentClassName, site.getName()));
+		if (agentTemplates == null) {
+			agentTemplates = new LinkedList<AgentTemplate>();
+			agentReferences.put(AgentClassFactory.createCombinedClassName(agentClassName, site.getName(), otherAgent.getAgentClassName(), otherSite.getName()), agentTemplates);
 		}
-		templates.add(other);
+		if (siteTemplates == null) {
+			siteTemplates = new LinkedList<IntermSite>();
+			agentReferences.put(AgentClassFactory.createCombinedClassName(agentClassName, site.getName(), otherAgent.getAgentClassName(), otherSite.getName()), agentTemplates);
+		}
+		agentTemplates.add(otherAgent);
+		siteTemplates.add(otherSite);
 	}
 
 	public void setStates(Agent thisAgent) {

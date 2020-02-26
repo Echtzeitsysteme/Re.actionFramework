@@ -4,6 +4,7 @@
  */
 package ecoreBCModel.validation;
 
+import ecoreBCModel.IntermAgent;
 import ecoreBCModel.IntermSiteState;
 
 import org.eclipse.emf.common.util.EList;
@@ -20,4 +21,6 @@ public interface IntermSiteValidator {
 	boolean validateName(String value);
 
 	boolean validateSiteStates(EList<IntermSiteState> value);
+
+	boolean validateParent(IntermAgent value);
 }

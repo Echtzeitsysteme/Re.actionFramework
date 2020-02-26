@@ -24,10 +24,18 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import ecoreBCModel.Bindable;
 import ecoreBCModel.EcoreBCModelPackage;
 import ecoreBCModel.IntermAgent;
+import ecoreBCModel.IntermAgentInstance;
 import ecoreBCModel.IntermComponent;
 import ecoreBCModel.IntermInitialisation;
+import ecoreBCModel.IntermObservable;
+import ecoreBCModel.IntermPattern;
+import ecoreBCModel.IntermRule;
+import ecoreBCModel.IntermSite;
+import ecoreBCModel.IntermSiteInstance;
+import ecoreBCModel.IntermSiteState;
 import ecoreBCModel.IntermediateModel;
 import reactionContainer.*;
 import reactionContainer.impl.ReactionContainerFactoryImpl;
@@ -49,7 +57,10 @@ public abstract class ContainerGenerator {
 	protected StateClassFactory stateClassFactory;
 	protected Map<String, State> stateInstances;
 
-	private Map<IntermInitialisation, InitializationTemplate> templates;
+	protected Map<IntermInitialisation, InitializationTemplate> templates;
+	protected Map<String, List<IntermSite>> siteConnections;
+	protected List<IntermAgent> agentsInModel;
+	protected Map<IntermAgent, List<IntermSiteState>> statesInModel;
 
 	protected URI containerURI;
 	protected String metaModelPath;
@@ -63,34 +74,36 @@ public abstract class ContainerGenerator {
 
 		projectPath = this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
 		projectPath = projectPath.replaceFirst("/bin", "");
+
+		filterActiveComponents();
 	}
 
 	public ContainerGenerator(URI modelLocation) {
-		init();
-
 		this.modelLocation = modelLocation;
 		isInitialized = loadResource();
 		if (isInitialized)
 			isInitialized = loadModel();
+
+		init();
 	}
 
 	public ContainerGenerator(Resource model) {
-		init();
-
 		modelResource = model;
 		isInitialized = model != null;
 		if (isInitialized) {
 			modelLocation = modelResource.getURI();
 			isInitialized = loadModel();
 		}
+
+		init();
 	}
 
 	public ContainerGenerator(IntermediateModel model) {
-		init();
-
 		modelResource = null;
 		isInitialized = model != null;
 		this.model = (IntermediateModel) model;
+
+		init();
 	}
 
 	private boolean loadResource() {
@@ -118,6 +131,104 @@ public abstract class ContainerGenerator {
 			return true;
 
 		return false;
+	}
+
+	/**
+	 * filters all really used components within the model.
+	 */
+	protected void filterActiveComponents() {
+		siteConnections = new HashMap<>();
+		agentsInModel = new LinkedList<>();
+		statesInModel = new HashMap<>();
+
+		for (IntermComponent comp : model.getComponents()) {
+
+			IntermPattern patternLhs = null;
+			IntermPattern patternRhs = null;
+			if (comp instanceof IntermObservable) {
+				IntermObservable obs = (IntermObservable) comp;
+				patternLhs = obs.getObsPattern();
+			} else if (comp instanceof IntermInitialisation) {
+				IntermInitialisation init = (IntermInitialisation) comp;
+				patternLhs = init.getInitPattern();
+			} else if (comp instanceof IntermRule) {
+				IntermRule rule = (IntermRule) comp;
+				patternLhs = rule.getLhs();
+				patternRhs = rule.getRhs();
+			} else {
+				continue;
+			}
+
+			List<IntermAgentInstance> agentInstances = patternLhs.getAgentInstances();
+			if (patternRhs != null) {
+				agentInstances.addAll(patternRhs.getAgentInstances());
+			}
+
+			for (IntermAgentInstance ai : agentInstances) {
+
+				// put in list of existent agents
+				if (!agentsInModel.contains(ai.getInstanceOf())) {
+					agentsInModel.add(ai.getInstanceOf());
+				}
+
+				for (IntermSiteInstance si : ai.getSiteInstances()) {
+					Bindable siBindable = si.getBoundTo();
+					if (siBindable != null) {
+						IntermAgent boundToAgent = null;
+						IntermSiteInstance boundToSiteInstance = null;
+						IntermSite boundToSite = null;
+						if (siBindable instanceof IntermAgentInstance) {
+							IntermAgentInstance aiPartner = (IntermAgentInstance) siBindable;
+							boundToAgent = aiPartner.getInstanceOf();
+							throw new UnsupportedOperationException("Did not expect to get here");
+						}
+						if (siBindable instanceof IntermSiteInstance) {
+							IntermSiteInstance siPartner = (IntermSiteInstance) siBindable;
+							boundToAgent = siPartner.getParent().getInstanceOf();
+							boundToSiteInstance = siPartner;
+							boundToSite = boundToSiteInstance.getInstanceOf();
+						}
+						if (siBindable instanceof IntermAgent) {
+							boundToAgent = (IntermAgent) siBindable;
+							throw new UnsupportedOperationException("Did not expect to get here");
+						}
+
+						IntermAgent agentParent = ai.getInstanceOf();
+						if (!agentsInModel.contains(agentParent)) {
+							agentsInModel.add(agentParent);
+						}
+						
+						IntermSiteState state = si.getState();
+						if(state != null) {
+							List<IntermSiteState> existentStates = statesInModel.get(agentParent);
+							if(existentStates != null && !existentStates.contains(state)) {
+								existentStates.add(state);
+								statesInModel.put(agentParent, existentStates);
+							}
+						}
+						
+						IntermSiteState partnerState = boundToSiteInstance.getState();
+						if(partnerState != null) {
+							List<IntermSiteState> existentStates = statesInModel.get(boundToAgent);
+							if(existentStates != null && !existentStates.contains(partnerState)) {
+								existentStates.add(partnerState);
+								statesInModel.put(boundToAgent, existentStates);
+							}
+						}
+
+						String key = agentParent.getName() + "_" + si.getName();
+						List<IntermSite> existentSites = siteConnections.get(key);
+						if (existentSites == null) {
+							existentSites = new LinkedList<>();
+						}
+						if (!existentSites.contains(boundToSite)) {
+							existentSites.add(boundToSite);
+						}
+						siteConnections.put(key, existentSites);
+					}
+				}
+			}
+		}
 	}
 
 	protected abstract void setContainerURI(String path);
@@ -166,7 +277,7 @@ public abstract class ContainerGenerator {
 		createAndSetResource();
 
 		containerModel = factory.createContainer();
-		containerModel.setModelName(model.getName()+"Model");
+		containerModel.setModelName(model.getName() + "Model");
 
 		createStateInstances();
 		generateInitializationTemplates();
@@ -203,7 +314,7 @@ public abstract class ContainerGenerator {
 	protected void generateAgentClasses() {
 
 		dynamicMetaModel = EcoreFactory.eINSTANCE.createEPackage();
-		String dynamicMetaModelName = model.getName()+"Model";
+		String dynamicMetaModelName = model.getName() + "Model";
 		dynamicMetaModel.setName(dynamicMetaModelName);
 		dynamicMetaModel.setNsPrefix(dynamicMetaModelName);
 		URI uri = createMetaModelURI();
@@ -213,13 +324,10 @@ public abstract class ContainerGenerator {
 		ReactionContainerPackage.eINSTANCE.getESubpackages().add(dynamicMetaModel);
 
 		stateClassFactory = new StateClassFactory(dynamicMetaModel);
-		agentClassFactory = new AgentClassFactory(dynamicMetaModel, stateClassFactory);
+		agentClassFactory = new AgentClassFactory(dynamicMetaModel, stateClassFactory, siteConnections);
 
-		model.getComponents().forEach(x -> {
-			if (x instanceof IntermAgent) {
-				IntermAgent agnt = (IntermAgent) x;
-				agentClassFactory.createClass(agnt);
-			}
+		agentsInModel.forEach(x -> {
+			agentClassFactory.createClass(x);
 		});
 	}
 
@@ -236,17 +344,17 @@ public abstract class ContainerGenerator {
 
 	public URI createMetaModelURI() {
 		URI metamodelPathUri = URI.createFileURI(metaModelPath);
-		int i=0;
-		while(!metamodelPathUri.segment(i).equals("model")) {
+		int i = 0;
+		while (!metamodelPathUri.segment(i).equals("model")) {
 			i++;
 		}
 		i--;
-		
+
 		StringBuilder sb = new StringBuilder();
-		for(int j=i; j < metamodelPathUri.segmentCount(); j++) {
-			sb.append("/"+metamodelPathUri.segment(j));
+		for (int j = i; j < metamodelPathUri.segmentCount(); j++) {
+			sb.append("/" + metamodelPathUri.segment(j));
 		}
-		
+
 		String test = sb.toString();
 		return URI.createPlatformResourceURI(test, true);
 	}

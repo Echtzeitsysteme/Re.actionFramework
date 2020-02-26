@@ -27,6 +27,7 @@ Package ecoreBCModel <platform:/resource/EcoreBCModel/model/ecoreBCModel.ecore>
   Class IntermSite
     Attribute name : String<<1..1>>
     Reference siteStates : IntermSiteState<<0..*>>
+    Reference parent : IntermAgent
 
   Class IntermInitialisation -> IntermComponent
     Attribute cnt : EInt<<1..1>>

@@ -64,7 +64,7 @@ public class SimDefCreator {
 
 	private void init() {
 		definition = factory.createSimDefinition();
-		definition.setName(model.getName() + "Definition");
+		definition.setName(model.getName() + "Model");
 		setGtRules(trgProjectLocation + "/model/gtRules.xmi");
 		setIBeXPatterns(trgProjectLocation + "/model/ibex-patterns.xmi");
 		setModelURI(trgProjectLocation + "/model/"+model.getName()+"Model.ecore");
@@ -81,7 +81,7 @@ public class SimDefCreator {
 		}
 
 		for (IntermObservable obs : modelObs) {
-			addPatternObservation(obs.getName());
+			addPatternObservation("obs_"+obs.getName());
 		}
 
 		for (IntermCommand comm : modelCommands) {

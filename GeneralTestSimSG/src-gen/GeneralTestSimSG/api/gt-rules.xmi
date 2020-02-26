@@ -97,7 +97,23 @@
       <type href="TestcasesModel.ecore#//U_s"/>
     </nodes>
   </rules>
-  <rules name="unspec" documentation="" executable="true" ruleNodes="//@rules.8/@nodes.0 //@rules.8/@nodes.1">
+  <rules name="underspec" documentation="" executable="true" ruleNodes="//@rules.8/@nodes.0 //@rules.8/@nodes.1 //@rules.8/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="forbiddenStandAlone" documentation="" executable="true" ruleNodes="//@rules.9/@nodes.0">
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="unspec" documentation="" executable="true" ruleNodes="//@rules.10/@nodes.0 //@rules.10/@nodes.1">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
@@ -105,7 +121,7 @@
       <type href="TestcasesModel.ecore#//U_s"/>
     </nodes>
   </rules>
-  <rules name="unspecTest" documentation="" executable="true" ruleNodes="//@rules.9/@nodes.0 //@rules.9/@nodes.1">
+  <rules name="unspecTest" documentation="" executable="true" ruleNodes="//@rules.11/@nodes.0 //@rules.11/@nodes.1">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
@@ -113,20 +129,126 @@
       <type href="TestcasesModel.ecore#//X"/>
     </nodes>
   </rules>
-  <rules name="ax" documentation="" executable="true" ruleNodes="//@rules.10/@nodes.0 //@rules.10/@nodes.1">
+  <rules name="generic" documentation="" executable="true" ruleNodes="//@rules.12/@nodes.0 //@rules.12/@nodes.1 //@rules.12/@nodes.2">
     <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="genericWithState" documentation="" executable="true" ruleNodes="//@rules.13/@nodes.0 //@rules.13/@nodes.1 //@rules.13/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="genericWithStateTest" documentation="" executable="true" ruleNodes="//@rules.14/@nodes.0 //@rules.14/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="simpleSynthesis" documentation="" executable="true" ruleNodes="//@rules.15/@nodes.0 //@rules.15/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="unspecifiedStateChange" documentation="" executable="true" ruleNodes="//@rules.16/@nodes.0 //@rules.16/@nodes.1 //@rules.16/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="injectivity" documentation="" executable="true" ruleNodes="//@rules.17/@nodes.0 //@rules.17/@nodes.1 //@rules.17/@nodes.2">
+    <nodes name="a1">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="a2">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
     <nodes name="x">
       <type href="TestcasesModel.ecore#//X"/>
     </nodes>
   </rules>
-  <rules name="aFree" documentation="" executable="true" ruleNodes="//@rules.11/@nodes.0">
+  <rules name="injectivityBwd" documentation="" executable="true" ruleNodes="//@rules.18/@nodes.0 //@rules.18/@nodes.1 //@rules.18/@nodes.2">
+    <nodes name="a1">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="a2">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+  </rules>
+  <rules name="obs_underspecTest" documentation="" executable="true" ruleNodes="//@rules.19/@nodes.0 //@rules.19/@nodes.1 //@rules.19/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+  </rules>
+  <rules name="obs_genericTest" documentation="" executable="true" ruleNodes="//@rules.20/@nodes.0 //@rules.20/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="obs_simpleSynthesisTest" documentation="" executable="true" ruleNodes="//@rules.21/@nodes.0 //@rules.21/@nodes.1">
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="obs_unspecifiedStateChangeTest" documentation="" executable="true" ruleNodes="//@rules.22/@nodes.0 //@rules.22/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="obs_aFree" documentation="" executable="true" ruleNodes="//@rules.23/@nodes.0">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
   </rules>
-  <rules name="xFree" documentation="" executable="true" ruleNodes="//@rules.12/@nodes.0">
+  <rules name="obs_xFree" documentation="" executable="true" ruleNodes="//@rules.24/@nodes.0">
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
+    </nodes>
+  </rules>
+  <rules name="obs_ax" documentation="" executable="true" ruleNodes="//@rules.25/@nodes.0 //@rules.25/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
     <nodes name="x">
       <type href="TestcasesModel.ecore#//X"/>
     </nodes>
