@@ -25,7 +25,7 @@ import reactionContainer.State;
  * @see TestcasesModel.TestcasesModelPackage
  * @generated
  */
-public class TestcasesModelSwitch<T1> extends Switch<T1> {
+public class TestcasesModelSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -67,11 +67,20 @@ public class TestcasesModelSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	@Override
-	protected T1 doSwitch(int classifierID, EObject theEObject) {
+	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+		case TestcasesModelPackage.A: {
+			A a = (A) theEObject;
+			T result = caseA(a);
+			if (result == null)
+				result = caseAgent(a);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case TestcasesModelPackage.X: {
 			X x = (X) theEObject;
-			T1 result = caseX(x);
+			T result = caseX(x);
 			if (result == null)
 				result = caseAgent(x);
 			if (result == null)
@@ -80,7 +89,7 @@ public class TestcasesModelSwitch<T1> extends Switch<T1> {
 		}
 		case TestcasesModelPackage.US: {
 			U_s u_s = (U_s) theEObject;
-			T1 result = caseU_s(u_s);
+			T result = caseU_s(u_s);
 			if (result == null)
 				result = caseState(u_s);
 			if (result == null)
@@ -89,27 +98,9 @@ public class TestcasesModelSwitch<T1> extends Switch<T1> {
 		}
 		case TestcasesModelPackage.PS: {
 			P_s p_s = (P_s) theEObject;
-			T1 result = caseP_s(p_s);
+			T result = caseP_s(p_s);
 			if (result == null)
 				result = caseState(p_s);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case TestcasesModelPackage.T: {
-			T t = (T) theEObject;
-			T1 result = caseT(t);
-			if (result == null)
-				result = caseAgent(t);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case TestcasesModelPackage.A: {
-			A a = (A) theEObject;
-			T1 result = caseA(a);
-			if (result == null)
-				result = caseAgent(a);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -117,6 +108,21 @@ public class TestcasesModelSwitch<T1> extends Switch<T1> {
 		default:
 			return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>A</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>A</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseA(A object) {
+		return null;
 	}
 
 	/**
@@ -130,7 +136,7 @@ public class TestcasesModelSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseX(X object) {
+	public T caseX(X object) {
 		return null;
 	}
 
@@ -145,7 +151,7 @@ public class TestcasesModelSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseU_s(U_s object) {
+	public T caseU_s(U_s object) {
 		return null;
 	}
 
@@ -160,37 +166,7 @@ public class TestcasesModelSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseP_s(P_s object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>T</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>T</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T1 caseT(T object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>A</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>A</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T1 caseA(A object) {
+	public T caseP_s(P_s object) {
 		return null;
 	}
 
@@ -205,7 +181,7 @@ public class TestcasesModelSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseAgent(Agent object) {
+	public T caseAgent(Agent object) {
 		return null;
 	}
 
@@ -220,7 +196,7 @@ public class TestcasesModelSwitch<T1> extends Switch<T1> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseState(State object) {
+	public T caseState(State object) {
 		return null;
 	}
 
@@ -236,7 +212,7 @@ public class TestcasesModelSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	@Override
-	public T1 defaultCase(EObject object) {
+	public T defaultCase(EObject object) {
 		return null;
 	}
 

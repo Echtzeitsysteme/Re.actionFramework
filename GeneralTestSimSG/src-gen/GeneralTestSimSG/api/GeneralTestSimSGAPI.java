@@ -1,18 +1,14 @@
 package GeneralTestSimSG.api;
 
-import GeneralTestSimSG.api.rules.ForbiddenStandAloneRule;
 import GeneralTestSimSG.api.rules.GenericRule;
 import GeneralTestSimSG.api.rules.GenericWithStateRule;
 import GeneralTestSimSG.api.rules.GenericWithStateTestRule;
 import GeneralTestSimSG.api.rules.InjectivityBwdRule;
 import GeneralTestSimSG.api.rules.InjectivityRule;
-import GeneralTestSimSG.api.rules.Obs_aFreeRule;
-import GeneralTestSimSG.api.rules.Obs_axRule;
 import GeneralTestSimSG.api.rules.Obs_genericTestRule;
 import GeneralTestSimSG.api.rules.Obs_simpleSynthesisTestRule;
 import GeneralTestSimSG.api.rules.Obs_underspecTestRule;
 import GeneralTestSimSG.api.rules.Obs_unspecifiedStateChangeTestRule;
-import GeneralTestSimSG.api.rules.Obs_xFreeRule;
 import GeneralTestSimSG.api.rules.SelfBindingBwdRule;
 import GeneralTestSimSG.api.rules.SelfBindingRule;
 import GeneralTestSimSG.api.rules.SimpleBindingBwdRule;
@@ -33,7 +29,7 @@ import org.emoflon.ibex.common.operational.IContextPatternInterpreter;
 import org.emoflon.ibex.gt.api.GraphTransformationAPI;
 
 /**
- * The GeneralTestSimSGAPI with 26 rules.
+ * The GeneralTestSimSGAPI with 22 rules.
  */
 public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	public static String patternPath = "GeneralTestSimSG/src-gen/GeneralTestSimSG/api/ibex-patterns.xmi";
@@ -166,16 +162,6 @@ public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	}
 
 	/**
-	 * Creates a new instance of the rule <code>forbiddenStandAlone()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public ForbiddenStandAloneRule forbiddenStandAlone() {
-		return new ForbiddenStandAloneRule(this, interpreter);
-	}
-
-	/**
 	 * Creates a new instance of the rule <code>unspec()</code> which does the following:
 	 * If this rule is not self-explaining, you really should add some comment in the specification.
 	 *
@@ -303,35 +289,5 @@ public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	 */
 	public Obs_unspecifiedStateChangeTestRule obs_unspecifiedStateChangeTest() {
 		return new Obs_unspecifiedStateChangeTestRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>obs_aFree()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public Obs_aFreeRule obs_aFree() {
-		return new Obs_aFreeRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>obs_xFree()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public Obs_xFreeRule obs_xFree() {
-		return new Obs_xFreeRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>obs_ax()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public Obs_axRule obs_ax() {
-		return new Obs_axRule(this, interpreter);
 	}
 }

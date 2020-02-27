@@ -30,25 +30,31 @@ import hipe.engine.message.InputMessage;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 
-public class T_T_i_0_reference extends AbstractActor {
+public class A_A_b_A_b_0_reference extends AbstractActor {
 
 	private List<Port<EdgeMatch>> ports;
 
-	private Map<TestcasesModel.T, Set<EdgeMatch>> sourceElements = new HashMap<TestcasesModel.T, Set<EdgeMatch>>();
-	private Map<reactionContainer.Agent, Set<EdgeMatch>> targetElements = new HashMap<reactionContainer.Agent, Set<EdgeMatch>>();
+	private Map<TestcasesModel.A, Set<EdgeMatch>> sourceElements = new HashMap<TestcasesModel.A, Set<EdgeMatch>>();
+	private Map<TestcasesModel.A, Set<EdgeMatch>> targetElements = new HashMap<TestcasesModel.A, Set<EdgeMatch>>();
 	private HiPESet<EdgeMatch> matches = new HiPESet<>();
 	
-	private Map<reactionContainer.Agent, Set<TestcasesModel.T>> pending = new HashMap<>();
+	private Map<TestcasesModel.A, Set<TestcasesModel.A>> pending = new HashMap<>();
 
 	private int finishedNodes = 0;
 	
-	public T_T_i_0_reference() {
+	public A_A_b_A_b_0_reference() {
 	}
 	
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdge(getSelf(), name2actor.get("t_iBound_production"), this::check_constraint_3));
+		ports.add(new PortEdge(getSelf(), name2actor.get("A_b_A_bBound_production"), this::check_constraint_2));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("injectivityBwd_123_junction"), this::check_constraint_14));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("injectivityBwd_123_junction"), this::check_constraint_15));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("injectivity_168_nacjunction"), this::check_constraint_13));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBindingBwd_154_nacjunction"), this::check_constraint_7));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBindingBwd_150_nacjunction"), this::check_constraint_4));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleSynthesis_165_nacjunction"), this::check_constraint_10));
 	}	
 
 	@Override
@@ -100,7 +106,7 @@ public class T_T_i_0_reference extends AbstractActor {
 		}
 	}
 
-	private void addMatch(InputMessage message, TestcasesModel.T source, reactionContainer.Agent target) {
+	private void addMatch(InputMessage message, TestcasesModel.A source, TestcasesModel.A target) {
 		EdgeMatch match = new EdgeMatch(source, target);
 		if(!matches.add(match))
  			return;
@@ -127,22 +133,22 @@ public class T_T_i_0_reference extends AbstractActor {
 	}
 	
 	private void addPendingMatch(Object source, Object target) {
-		Set<TestcasesModel.T> sourcePending = pending.get(target);
+		Set<TestcasesModel.A> sourcePending = pending.get(target);
 		if(sourcePending == null) {
-			sourcePending = new HashSet<TestcasesModel.T>();
-			pending.put((reactionContainer.Agent) target, sourcePending);
+			sourcePending = new HashSet<TestcasesModel.A>();
+			pending.put((TestcasesModel.A) target, sourcePending);
 		}
-		sourcePending.add((TestcasesModel.T) source);
+		sourcePending.add((TestcasesModel.A) source);
 	}
 	
-	private void leftAdded(NodeAddedLeft<TestcasesModel.T> message) {
+	private void leftAdded(NodeAddedLeft<TestcasesModel.A> message) {
 		if(sourceElements.containsKey(message.input)) {
 			message.initialMessage.decrement();
 			return;
 		}
 			
 		sourceElements.put(message.input, null);
-		reactionContainer.Agent target = (reactionContainer.Agent) message.input.getT_i();
+		TestcasesModel.A target = (TestcasesModel.A) message.input.getA_b_A_b();
 		if(targetElements.containsKey(target))
 			addMatch(message.initialMessage, message.input, target);
 		else
@@ -150,7 +156,7 @@ public class T_T_i_0_reference extends AbstractActor {
 		message.initialMessage.decrement();
 	}
 
-	private void rightAdded(NodeAddedRight<reactionContainer.Agent> message) {
+	private void rightAdded(NodeAddedRight<TestcasesModel.A> message) {
 		if(targetElements.containsKey(message.input)) {
 			message.initialMessage.decrement();
 			return;
@@ -158,8 +164,8 @@ public class T_T_i_0_reference extends AbstractActor {
 		
 		targetElements.put(message.input, null);
 		if(pending.containsKey(message.input)) {
-			Set<TestcasesModel.T> pendingsSources = pending.get(message.input);
-			for(TestcasesModel.T source : pendingsSources) {
+			Set<TestcasesModel.A> pendingsSources = pending.get(message.input);
+			for(TestcasesModel.A source : pendingsSources) {
 				addMatch(message.initialMessage, source, message.input);
 			}
 			pending.remove(message.input);
@@ -167,7 +173,7 @@ public class T_T_i_0_reference extends AbstractActor {
 		message.initialMessage.decrement();
 	}
 
-	private void leftRemoved(NodeDeletedLeft<TestcasesModel.T> message) {
+	private void leftRemoved(NodeDeletedLeft<TestcasesModel.A> message) {
 		Set<EdgeMatch> sourceMatches = sourceElements.get(message.input);
 		if(sourceMatches == null) {
 			message.initialMessage.decrement();
@@ -187,14 +193,14 @@ public class T_T_i_0_reference extends AbstractActor {
 			}
 			
 			// remove waiting source from pending matches
-			Set<TestcasesModel.T> sourcePending = pending.get(match.target());
+			Set<TestcasesModel.A> sourcePending = pending.get(match.target());
 			if(sourcePending == null) continue;
 			sourcePending.remove(match.source());
 		}
 		message.initialMessage.decrement();
 	}
 
-	private void rightRemoved(NodeDeletedRight<reactionContainer.Agent> message) {
+	private void rightRemoved(NodeDeletedRight<TestcasesModel.A> message) {
 		Set<EdgeMatch> targetMatches = targetElements.get(message.input);
 		if(targetMatches == null) {
 			message.initialMessage.decrement();
@@ -219,7 +225,7 @@ public class T_T_i_0_reference extends AbstractActor {
 		message.initialMessage.decrement();
 	}
 
-	private void addReference(ReferenceAdded<TestcasesModel.T, reactionContainer.Agent> message) {
+	private void addReference(ReferenceAdded<TestcasesModel.A, TestcasesModel.A> message) {
 		if (sourceElements.containsKey(message.source)) {
 			if (targetElements.containsKey(message.target)) {
 				addMatch(message.initialMessage, message.source, message.target);
@@ -231,8 +237,8 @@ public class T_T_i_0_reference extends AbstractActor {
 		message.initialMessage.decrement();
 	}
 	
-	private void removeReference(ReferenceDeleted<TestcasesModel.T, reactionContainer.Agent> message) {
-		Set<TestcasesModel.T> pendingSources = pending.get(message.target);
+	private void removeReference(ReferenceDeleted<TestcasesModel.A, TestcasesModel.A> message) {
+		Set<TestcasesModel.A> pendingSources = pending.get(message.target);
 		if(pendingSources != null) {
 			pendingSources.remove(message.source);
 		}
@@ -264,12 +270,8 @@ public class T_T_i_0_reference extends AbstractActor {
 			port.forwardMessage(message);
 		}
 						
-		if(message.node instanceof TestcasesModel.T) {
-			leftChanged(message);
-		}
-		else {
-			rightChanged(message);
-		}
+		leftChanged(message);
+		rightChanged(message);
 		message.initialMessage.decrement();
 	}
 	
@@ -311,9 +313,57 @@ public class T_T_i_0_reference extends AbstractActor {
 		return true;
 	}
 	
-	public boolean check_constraint_3(EdgeMatch edge) {
-		TestcasesModel.T src = (TestcasesModel.T) edge.source();
-		reactionContainer.Agent trg = (reactionContainer.Agent) edge.target();
+	public boolean check_constraint_2(EdgeMatch edge) {
+		TestcasesModel.A src = (TestcasesModel.A) edge.source();
+		TestcasesModel.A trg = (TestcasesModel.A) edge.target();
+		boolean predicate = !src.equals(trg);
+		edge.setConstraintSatisfied(predicate);
+		return predicate;
+	}
+	
+	public boolean check_constraint_14(EdgeMatch edge) {
+		TestcasesModel.A a1 = (TestcasesModel.A) edge.source();
+		TestcasesModel.A a2 = (TestcasesModel.A) edge.target();
+		boolean predicate = !a1.equals(a2);
+		edge.setConstraintSatisfied(predicate);
+		return predicate;
+	}
+	
+	public boolean check_constraint_15(EdgeMatch edge) {
+		TestcasesModel.A a2 = (TestcasesModel.A) edge.source();
+		TestcasesModel.A a1 = (TestcasesModel.A) edge.target();
+		boolean predicate = !a1.equals(a2);
+		edge.setConstraintSatisfied(predicate);
+		return predicate;
+	}
+	
+	public boolean check_constraint_13(EdgeMatch edge) {
+		TestcasesModel.A src = (TestcasesModel.A) edge.source();
+		TestcasesModel.A trg = (TestcasesModel.A) edge.target();
+		boolean predicate = !src.equals(trg);
+		edge.setConstraintSatisfied(predicate);
+		return predicate;
+	}
+	
+	public boolean check_constraint_7(EdgeMatch edge) {
+		TestcasesModel.A src = (TestcasesModel.A) edge.source();
+		TestcasesModel.A trg = (TestcasesModel.A) edge.target();
+		boolean predicate = !src.equals(trg);
+		edge.setConstraintSatisfied(predicate);
+		return predicate;
+	}
+	
+	public boolean check_constraint_4(EdgeMatch edge) {
+		TestcasesModel.A src = (TestcasesModel.A) edge.source();
+		TestcasesModel.A trg = (TestcasesModel.A) edge.target();
+		boolean predicate = !src.equals(trg);
+		edge.setConstraintSatisfied(predicate);
+		return predicate;
+	}
+	
+	public boolean check_constraint_10(EdgeMatch edge) {
+		TestcasesModel.A src = (TestcasesModel.A) edge.source();
+		TestcasesModel.A trg = (TestcasesModel.A) edge.target();
 		boolean predicate = !src.equals(trg);
 		edge.setConstraintSatisfied(predicate);
 		return predicate;

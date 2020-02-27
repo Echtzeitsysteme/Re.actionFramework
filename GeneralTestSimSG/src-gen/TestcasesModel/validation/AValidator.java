@@ -4,10 +4,10 @@
  */
 package TestcasesModel.validation;
 
+import TestcasesModel.A;
 import TestcasesModel.P_s;
 import TestcasesModel.U_s;
-
-import reactionContainer.Agent;
+import TestcasesModel.X;
 
 /**
  * A sample validator interface for {@link TestcasesModel.A}.
@@ -18,9 +18,15 @@ import reactionContainer.Agent;
 public interface AValidator {
 	boolean validate();
 
-	boolean validateA_b(Agent value);
+	boolean validateA_b_X_z(X value);
 
-	boolean validateA_c(Agent value);
+	boolean validateA_b_A_c(A value);
+
+	boolean validateA_b_A_b(A value);
+
+	boolean validateA_c_X_z(X value);
+
+	boolean validateA_c_X_y(X value);
 
 	boolean validateA_c_u(U_s value);
 

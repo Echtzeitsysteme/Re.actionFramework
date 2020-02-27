@@ -70,6 +70,11 @@ public class TestcasesModelAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected TestcasesModelSwitch<Adapter> modelSwitch = new TestcasesModelSwitch<Adapter>() {
 		@Override
+		public Adapter caseA(A object) {
+			return createAAdapter();
+		}
+
+		@Override
 		public Adapter caseX(X object) {
 			return createXAdapter();
 		}
@@ -82,16 +87,6 @@ public class TestcasesModelAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseP_s(P_s object) {
 			return createP_sAdapter();
-		}
-
-		@Override
-		public Adapter caseT(T object) {
-			return createTAdapter();
-		}
-
-		@Override
-		public Adapter caseA(A object) {
-			return createAAdapter();
 		}
 
 		@Override
@@ -121,6 +116,20 @@ public class TestcasesModelAdapterFactory extends AdapterFactoryImpl {
 	@Override
 	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link TestcasesModel.A <em>A</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see TestcasesModel.A
+	 * @generated
+	 */
+	public Adapter createAAdapter() {
+		return null;
 	}
 
 	/**
@@ -162,34 +171,6 @@ public class TestcasesModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createP_sAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link TestcasesModel.T <em>T</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see TestcasesModel.T
-	 * @generated
-	 */
-	public Adapter createTAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link TestcasesModel.A <em>A</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see TestcasesModel.A
-	 * @generated
-	 */
-	public Adapter createAAdapter() {
 		return null;
 	}
 

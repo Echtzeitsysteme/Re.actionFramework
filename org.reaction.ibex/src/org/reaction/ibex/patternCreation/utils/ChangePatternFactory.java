@@ -17,13 +17,13 @@ import IBeXLanguage.IBeXEdge;
 import IBeXLanguage.IBeXLanguageFactory;
 import IBeXLanguage.IBeXNode;
 import IBeXLanguage.IBeXPattern;
+import IBeXLanguage.IBeXPatternSet;
 import ecoreBCModel.Bindable;
 import ecoreBCModel.BindingState;
 import ecoreBCModel.IntermAgent;
 import ecoreBCModel.IntermAgentInstance;
 import ecoreBCModel.IntermSiteInstance;
 import ecoreBCModel.IntermSiteState;
-import reactionContainer.ReactionContainerFactory;
 import reactionContainer.ReactionContainerPackage;
 
 public class ChangePatternFactory {
@@ -37,17 +37,20 @@ public class ChangePatternFactory {
 
 	private IBeXLanguageFactory ibexFactory = IBeXLanguageFactory.eINSTANCE;
 
-	private Map<String, EClassImpl> metamodelAgentTypes;
-	private Map<String, EReference> metamodelEdgeTypes;
-	private Map<String, EClassImpl> metamodelStateTypes;
+	private IBeXPatternSet ibexPatternSet;
+
+	private Map<String, EClassImpl> agentTypeRegistry;
+	private Map<String, EReference> edgeTypeRegistry;
+	private Map<String, EClassImpl> stateTypeRegistry;
 
 	private ChangePatternTemplate template;
 	private Map<IntermAgentInstance, IntermAgentInstance> changesMap;
 	private List<IntermAgentInstance> createdInstances;
 
-	private ChangePatternFactory(EPackage metamodelPackage) {
+	private ChangePatternFactory(EPackage metamodelPackage, IBeXPatternSet ibexPatternSet) {
 		created = true;
 		this.metamodelPackage = metamodelPackage;
+		this.ibexPatternSet = ibexPatternSet;
 		init();
 	}
 
@@ -56,24 +59,24 @@ public class ChangePatternFactory {
 	}
 
 	private void findAgentsAndStates() {
-		metamodelAgentTypes = new HashMap<>();
-		metamodelStateTypes = new HashMap<>();
-		metamodelEdgeTypes = new HashMap<>();
+		agentTypeRegistry = new HashMap<>();
+		stateTypeRegistry = new HashMap<>();
+		edgeTypeRegistry = new HashMap<>();
 
 		for (EObject obj : metamodelPackage.eContents()) {
 			EClassImpl clazz = (EClassImpl) obj;
 			if (ModelHelper.isAgent(clazz)) {
-				metamodelAgentTypes.put(clazz.getName(), clazz);
+				agentTypeRegistry.put(clazz.getName(), clazz);
 
 				for (EObject classContent : clazz.eContents()) {
 
 					if (classContent instanceof EReference) {
-						metamodelEdgeTypes.put(((EReference) classContent).getName(), (EReference) classContent);
+						edgeTypeRegistry.put(((EReference) classContent).getName(), (EReference) classContent);
 					}
 				}
 
 			} else {
-				metamodelStateTypes.put(clazz.getName(), clazz);
+				stateTypeRegistry.put(clazz.getName(), clazz);
 			}
 		}
 	}
@@ -110,7 +113,7 @@ public class ChangePatternFactory {
 				// Create state as specified
 				IBeXNode stateNode = getOrCreateStateNode(createPattern, si);
 				if (stateNode != null) {
-					createEdge(newNode, stateNode, NameProvider.getEdgeTypeKey(ai, si, true));
+					createEdge(newNode, stateNode, NameProvider.getEdgeTypeToStateKey(ai, si));
 				}
 
 			}
@@ -163,6 +166,7 @@ public class ChangePatternFactory {
 				IntermSiteInstance postBoundTo = (IntermSiteInstance) postBoundToBindable;
 				if (preBoundToBindable == null) {
 
+					throw new UnsupportedOperationException("TODO. Caused by rule: " + template.getRule().getName());
 					// TODO ?
 					// deleteGenericNode(NameProvider.getQualifiedLocalNodeName(pre));
 
@@ -273,7 +277,7 @@ public class ChangePatternFactory {
 		IBeXNode boundNode = getOrCreateNode(createPattern, ai);
 		IBeXNode boundTo = getOrCreateNode(createPattern, aiBoundTo);
 
-		createEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(ai, si, false));
+		createEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(si, siBoundTo));
 	}
 
 	/**
@@ -307,11 +311,12 @@ public class ChangePatternFactory {
 			// create new bond
 			IBeXNode boundTo = getOrCreateNode(deletePattern, aiBoundTo);
 
-			deleteEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(ai, si, false));
+			// delete old bond
+			deleteEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(si, siBoundTo));
 		} else {
 			// Deletion of underspecified bond:
 			IBeXNode boundTo = getOrCreateGenericNode(deletePattern, NameProvider.getQualifiedLocalNodeName(si));
-			deleteEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(ai, si, false));
+			deleteEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(si, siBoundTo));
 		}
 	}
 
@@ -343,7 +348,7 @@ public class ChangePatternFactory {
 			IBeXNode stateNodePost = getOrCreateStateNode(createPattern, siPost);
 
 			// add edges
-			createEdge(nodeInStatePost, stateNodePost, NameProvider.getEdgeTypeKey(aiPost, siPost, true));
+			createEdge(nodeInStatePost, stateNodePost, NameProvider.getEdgeTypeToStateKey(aiPost, siPost));
 		} else {
 
 			if (statePost == null) {
@@ -367,8 +372,8 @@ public class ChangePatternFactory {
 					IBeXNode stateNodePost = getOrCreateStateNode(createPattern, siPost);
 
 					// add edges
-					deleteEdge(nodeInStatePre, stateNodePre, NameProvider.getEdgeTypeKey(aiPre, siPre, true));
-					createEdge(nodeInStatePost, stateNodePost, NameProvider.getEdgeTypeKey(aiPost, siPost, true));
+					deleteEdge(nodeInStatePre, stateNodePre, NameProvider.getEdgeTypeToStateKey(aiPre, siPre));
+					createEdge(nodeInStatePost, stateNodePost, NameProvider.getEdgeTypeToStateKey(aiPost, siPost));
 				}
 			}
 		}
@@ -430,7 +435,7 @@ public class ChangePatternFactory {
 					nodeBoundTo = createNode(aiBoundTo);
 				}
 
-				createEdge(boundNode, nodeBoundTo, NameProvider.getEdgeTypeKey(ai, si, false));
+				createEdge(boundNode, nodeBoundTo, NameProvider.getEdgeTypeKey(si, siBoundTo));
 
 			} else {
 				throw new RuntimeException(
@@ -498,7 +503,7 @@ public class ChangePatternFactory {
 	 */
 	private IBeXNode createNode(IntermAgentInstance ai) {
 		IBeXNode newNode = IBeXPatternFactory.createNode(ai.getName(),
-				metamodelAgentTypes.get(ai.getInstanceOf().getName()));
+				agentTypeRegistry.get(ai.getInstanceOf().getName()));
 		newNode.setName(ai.getName());
 		if (ModelHelper.isInstanceInList(ai, createdInstances)) {
 			createPattern.getCreatedNodes().add(newNode);
@@ -515,10 +520,10 @@ public class ChangePatternFactory {
 	 * @return the deleted node
 	 */
 	private IBeXNode deleteNode(IntermAgentInstance ai) {
-		
+
 		// delete node itself
 		IBeXNode deletedNode = IBeXPatternFactory.createNode(ai.getName(),
-				metamodelAgentTypes.get(ai.getInstanceOf().getName()));
+				agentTypeRegistry.get(ai.getInstanceOf().getName()));
 		deletedNode.setName(ai.getName());
 		if (changesMap.get(ai) != null) {
 			deletePattern.getContextNodes().add(deletedNode);
@@ -535,12 +540,12 @@ public class ChangePatternFactory {
 					IntermAgentInstance boundToParent = boundTo.getParent();
 
 					IBeXNode boundToNode = getOrCreateNode(deletePattern, boundToParent);
-					deleteEdge(deletedNode, boundToNode, NameProvider.getEdgeTypeKey(ai, si, false));
+					deleteEdge(deletedNode, boundToNode, NameProvider.getEdgeTypeKey(si, boundTo));
 
 					// delete state
 					if (!ai.isLocal() && si.getState() != null) {
 						IBeXNode stateNode = getOrCreateStateNode(deletePattern, si);
-						deleteEdge(deletedNode, stateNode, NameProvider.getEdgeTypeKey(ai, si, true));
+						deleteEdge(deletedNode, stateNode, NameProvider.getEdgeTypeToStateKey(ai, si));
 					}
 				}
 				if (boundToBindable instanceof IntermAgentInstance) {
@@ -597,10 +602,10 @@ public class ChangePatternFactory {
 			if (stateNode == null) {
 				if (!defaultState) {
 					stateNode = IBeXPatternFactory.createNode(stateNodeName,
-							metamodelStateTypes.get(NameProvider.getStateTypeKey(siteInState)));
+							stateTypeRegistry.get(NameProvider.getStateTypeKey(siteInState)));
 				} else {
 					stateNode = IBeXPatternFactory.createNode(stateNodeName,
-							metamodelStateTypes.get(NameProvider.getDefaultStateTypeKey(siteInState)));
+							stateTypeRegistry.get(NameProvider.getDefaultStateTypeKey(siteInState)));
 				}
 
 				stateNode.setName(stateNodeName);
@@ -614,7 +619,7 @@ public class ChangePatternFactory {
 			IBeXNode stateNode = ModelHelper.getNodeFromDeletePattern(deletePattern, stateNodeName);
 			if (stateNode == null) {
 				stateNode = IBeXPatternFactory.createNode(stateNodeName,
-						metamodelStateTypes.get(NameProvider.getStateTypeKey(siteInState)));
+						stateTypeRegistry.get(NameProvider.getStateTypeKey(siteInState)));
 				stateNode.setName(stateNodeName);
 				deletePattern.getContextNodes().add(stateNode);
 			}
@@ -625,29 +630,46 @@ public class ChangePatternFactory {
 	}
 
 	/**
-	 * Creates a new ibex node corresponding to the given nodes and adds it to the
+	 * Creates a new ibex edge corresponding to the given nodes and adds it to the
 	 * create pattern.
 	 * 
 	 * @param edgeTypeKey - the key for getting the right edge type from the
-	 *                    metamodelEdgeTypes-map.
-	 * @return the deleted node
+	 *                    edgeTypeRegistry
+	 * @return the created edge
 	 */
 	private IBeXEdge createEdge(IBeXNode src, IBeXNode trg, String edgeTypeKey) {
-		IBeXEdge edge = IBeXPatternFactory.createEdge(src, trg, metamodelEdgeTypes.get(edgeTypeKey));
+		
+		EReference edgeType = edgeTypeRegistry.get(edgeTypeKey);
+		if (edgeType == null) {
+			return null;
+		}
+		
+		IBeXEdge edge = IBeXPatternFactory.createEdge(src, trg, edgeType);
 		createPattern.getCreatedEdges().add(edge);
 		return edge;
 	}
 
 	/**
-	 * Creates a new ibex node corresponding to the given nodes and adds it to the
+	 * Creates a new ibex edge corresponding to the given nodes and adds it to the
 	 * delete pattern.
 	 * 
 	 * @param edgeTypeKey - the key for getting the right edge type from the
-	 *                    metamodelEdgeTypes-map.
-	 * @return the deleted node
+	 *                    edgeTypeRegistry.
+	 * @return the deleted edge
 	 */
 	private IBeXEdge deleteEdge(IBeXNode src, IBeXNode trg, String edgeTypeKey) {
-		IBeXEdge edge = IBeXPatternFactory.createEdge(src, trg, metamodelEdgeTypes.get(edgeTypeKey));
+
+		EReference edgeType = edgeTypeRegistry.get(edgeTypeKey);
+		if (edgeType == null) {
+			return null;
+		}
+
+		// TODO: Is it necessary to look for the inverse edge? Or is it automatically
+		// handled?
+//		IBeXContextPattern preConditionPattern = ModelHelper.getContextPatternByName(ibexPatternSet, template.getRule().getName());
+//		IBeXEdge oldEdge = ModelHelper.findEdgeInContextPattern(preConditionPattern, src, trg, edgeType);
+
+		IBeXEdge edge = IBeXPatternFactory.createEdge(src, trg, edgeType);
 		deletePattern.getDeletedEdges().add(edge);
 		return edge;
 	}
@@ -660,9 +682,9 @@ public class ChangePatternFactory {
 		return deletePattern;
 	}
 
-	public static ChangePatternFactory getInstance(EPackage metamodelPackage) {
+	public static ChangePatternFactory getInstance(EPackage metamodelPackage, IBeXPatternSet ibexPatternSet) {
 		if (created == false) {
-			return new ChangePatternFactory(metamodelPackage);
+			return new ChangePatternFactory(metamodelPackage, ibexPatternSet);
 		} else {
 			return null;
 		}

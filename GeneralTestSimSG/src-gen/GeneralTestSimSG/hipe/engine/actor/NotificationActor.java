@@ -45,6 +45,10 @@ public class NotificationActor extends AbstractActor {
 	}
 	
 	private void initializeExploration() {
+		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getX(), obj -> {
+			Collection<EObject> children = new LinkedList<>();
+			return children;
+		});
 		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getU_s(), obj -> {
 			Collection<EObject> children = new LinkedList<>();
 			return children;
@@ -53,30 +57,7 @@ public class NotificationActor extends AbstractActor {
 			Collection<EObject> children = new LinkedList<>();
 			return children;
 		});
-		explorationConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getState(), obj -> {
-			Collection<EObject> children = new LinkedList<>();
-			return children;
-		});
 		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getP_s(), obj -> {
-			Collection<EObject> children = new LinkedList<>();
-			return children;
-		});
-		explorationConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getAgent(), obj -> {
-			Collection<EObject> children = new LinkedList<>();
-			return children;
-		});
-		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getT(), obj -> {
-			Collection<EObject> children = new LinkedList<>();
-			return children;
-		});
-		explorationConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getContainer(), obj -> {
-			Collection<EObject> children = new LinkedList<>();
-			reactionContainer.Container _container = (reactionContainer.Container) obj;
-			children.addAll(_container.getStates());
-			children.addAll(_container.getAgents());
-			return children;
-		});
-		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getX(), obj -> {
 			Collection<EObject> children = new LinkedList<>();
 			return children;
 		});

@@ -159,7 +159,8 @@ public abstract class ContainerGenerator {
 				continue;
 			}
 
-			List<IntermAgentInstance> agentInstances = patternLhs.getAgentInstances();
+			List<IntermAgentInstance> agentInstances = new LinkedList<>();
+			agentInstances.addAll(patternLhs.getAgentInstances());
 			if (patternRhs != null) {
 				agentInstances.addAll(patternRhs.getAgentInstances());
 			}
@@ -339,6 +340,9 @@ public abstract class ContainerGenerator {
 
 		agentsInModel.forEach(x -> {
 			agentClassFactory.createClass(x);
+		});
+		agentsInModel.forEach(x -> {
+			agentClassFactory.createAgentReferences(x);
 		});
 	}
 

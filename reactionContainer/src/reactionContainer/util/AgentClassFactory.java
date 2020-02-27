@@ -2,6 +2,8 @@ package reactionContainer.util;
 
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -57,6 +59,16 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 		ecorePackage.getEClassifiers().add(agentClass);
 		classRegistry.registerClass(agentClass);
 
+		return agentClass;
+	}
+
+	public EClass createAgentReferences(IntermAgent object) {
+		if (!classRegistry.containsClass(object.getName())) {
+			return null;
+		}
+
+		EClass agentClass = classRegistry.getRegisteredClass(object.getName());
+
 		// Create custom typed EReferences representing sites
 		for (IntermSite siteOfAgent : object.getSites()) {
 
@@ -64,8 +76,11 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 			String key = object.getName() + "_" + siteOfAgent.getName();
 			if (siteConnections.containsKey(key)) {
 				for (IntermSite possibleSite : siteConnections.get(object.getName() + "_" + siteOfAgent.getName())) {
-					agentClass.getEStructuralFeatures()
-							.add(createReferenceFromTo(object, siteOfAgent, possibleSite.getParent(), possibleSite));
+					EReference createdReference = createReferenceFromTo(object, siteOfAgent, possibleSite.getParent(),
+							possibleSite);
+					if (createdReference != null) {
+						agentClass.getEStructuralFeatures().add(createdReference);
+					}
 				}
 			}
 
@@ -103,7 +118,7 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 			return classRegistry.getRegisteredReference(refName);
 		}
 
-		return createSingleReference(refName);
+		return createGeneralSingleReference(refName);
 	}
 
 	public EReference createReferenceFromTo(IntermAgent agent, IntermSite site, IntermAgent otherAgent,
@@ -113,15 +128,37 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 			return classRegistry.getRegisteredReference(refName);
 		}
 
-		return createSingleReference(refName);
+		return createSingleReference(refName, otherAgent.getName());
 	}
 
-	public EReference createSingleReference(String refName) {
+	public EReference createGeneralSingleReference(String refName) {
 		EReference reference = ecoreFactory.createEReference();
 		reference.setUpperBound(1);
 		reference.setLowerBound(0);
 		reference.setName(refName);
+
 		reference.setEType(ReactionContainerPackage.Literals.AGENT);
+		classRegistry.registerReference(reference);
+		return reference;
+	}
+
+	/**
+	 * Creates and registers a new reference of given type
+	 * 
+	 * @return the created reference or null, if it failed or an inverse edge
+	 *         reference is already existent and registered
+	 */
+	public EReference createSingleReference(String refName, String typeName) {
+		if (checkReferenceAlreadyRegistered(refName)) {
+			return null;
+		}
+
+		EReference reference = ecoreFactory.createEReference();
+		reference.setUpperBound(1);
+		reference.setLowerBound(0);
+		reference.setName(refName);
+
+		reference.setEType(classRegistry.getRegisteredClass(typeName));
 		classRegistry.registerReference(reference);
 		return reference;
 	}
@@ -143,6 +180,27 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 	public static String createReferenceName(IntermAgent agent, IntermSite site, IntermAgent otherAgent,
 			IntermSite otherSite) {
 		return createCombinedClassName(agent.getName(), site.getName(), otherAgent.getName(), otherSite.getName());
+	}
+
+	private boolean checkReferenceAlreadyRegistered(EReference ref) {
+		return checkReferenceAlreadyRegistered(ref.getName());
+	}
+
+	private boolean checkReferenceAlreadyRegistered(String refName) {
+		String inverseRefName = getInverseReferenceName(refName);
+		return classRegistry.getRegisteredReference(refName) != null
+				|| classRegistry.getRegisteredReference(inverseRefName) != null;
+	}
+
+	private String getInverseReferenceName(String refName) {
+
+		String regex = "(?<agent1>.*)_(?<site1>.*)_(?<agent2>.*)_(?<site2>.*)";
+		Pattern regexPattern = Pattern.compile(regex);
+		Matcher matcher = regexPattern.matcher(refName);
+		matcher.find();
+
+		return matcher.group("agent2") + "_" + matcher.group("site2") + "_" + matcher.group("agent1") + "_"
+				+ matcher.group("site1");
 	}
 
 }

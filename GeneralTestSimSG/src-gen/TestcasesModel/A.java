@@ -13,8 +13,11 @@ import reactionContainer.Agent;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link TestcasesModel.A#getA_b <em>Ab</em>}</li>
- *   <li>{@link TestcasesModel.A#getA_c <em>Ac</em>}</li>
+ *   <li>{@link TestcasesModel.A#getA_b_X_z <em>AbXz</em>}</li>
+ *   <li>{@link TestcasesModel.A#getA_b_A_c <em>AbAc</em>}</li>
+ *   <li>{@link TestcasesModel.A#getA_b_A_b <em>AbAb</em>}</li>
+ *   <li>{@link TestcasesModel.A#getA_c_X_z <em>AcXz</em>}</li>
+ *   <li>{@link TestcasesModel.A#getA_c_X_y <em>AcXy</em>}</li>
  *   <li>{@link TestcasesModel.A#getA_c_u <em>Acu</em>}</li>
  *   <li>{@link TestcasesModel.A#getA_c_p <em>Acp</em>}</li>
  * </ul>
@@ -25,48 +28,114 @@ import reactionContainer.Agent;
  */
 public interface A extends Agent {
 	/**
-	 * Returns the value of the '<em><b>Ab</b></em>' reference.
+	 * Returns the value of the '<em><b>AbXz</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ab</em>' reference.
-	 * @see #setA_b(Agent)
-	 * @see TestcasesModel.TestcasesModelPackage#getA_A_b()
+	 * @return the value of the '<em>AbXz</em>' reference.
+	 * @see #setA_b_X_z(X)
+	 * @see TestcasesModel.TestcasesModelPackage#getA_A_b_X_z()
 	 * @model
 	 * @generated
 	 */
-	Agent getA_b();
+	X getA_b_X_z();
 
 	/**
-	 * Sets the value of the '{@link TestcasesModel.A#getA_b <em>Ab</em>}' reference.
+	 * Sets the value of the '{@link TestcasesModel.A#getA_b_X_z <em>AbXz</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ab</em>' reference.
-	 * @see #getA_b()
+	 * @param value the new value of the '<em>AbXz</em>' reference.
+	 * @see #getA_b_X_z()
 	 * @generated
 	 */
-	void setA_b(Agent value);
+	void setA_b_X_z(X value);
 
 	/**
-	 * Returns the value of the '<em><b>Ac</b></em>' reference.
+	 * Returns the value of the '<em><b>AbAc</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ac</em>' reference.
-	 * @see #setA_c(Agent)
-	 * @see TestcasesModel.TestcasesModelPackage#getA_A_c()
+	 * @return the value of the '<em>AbAc</em>' reference.
+	 * @see #setA_b_A_c(A)
+	 * @see TestcasesModel.TestcasesModelPackage#getA_A_b_A_c()
 	 * @model
 	 * @generated
 	 */
-	Agent getA_c();
+	A getA_b_A_c();
 
 	/**
-	 * Sets the value of the '{@link TestcasesModel.A#getA_c <em>Ac</em>}' reference.
+	 * Sets the value of the '{@link TestcasesModel.A#getA_b_A_c <em>AbAc</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ac</em>' reference.
-	 * @see #getA_c()
+	 * @param value the new value of the '<em>AbAc</em>' reference.
+	 * @see #getA_b_A_c()
 	 * @generated
 	 */
-	void setA_c(Agent value);
+	void setA_b_A_c(A value);
+
+	/**
+	 * Returns the value of the '<em><b>AbAb</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>AbAb</em>' reference.
+	 * @see #setA_b_A_b(A)
+	 * @see TestcasesModel.TestcasesModelPackage#getA_A_b_A_b()
+	 * @model
+	 * @generated
+	 */
+	A getA_b_A_b();
+
+	/**
+	 * Sets the value of the '{@link TestcasesModel.A#getA_b_A_b <em>AbAb</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>AbAb</em>' reference.
+	 * @see #getA_b_A_b()
+	 * @generated
+	 */
+	void setA_b_A_b(A value);
+
+	/**
+	 * Returns the value of the '<em><b>AcXz</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>AcXz</em>' reference.
+	 * @see #setA_c_X_z(X)
+	 * @see TestcasesModel.TestcasesModelPackage#getA_A_c_X_z()
+	 * @model
+	 * @generated
+	 */
+	X getA_c_X_z();
+
+	/**
+	 * Sets the value of the '{@link TestcasesModel.A#getA_c_X_z <em>AcXz</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>AcXz</em>' reference.
+	 * @see #getA_c_X_z()
+	 * @generated
+	 */
+	void setA_c_X_z(X value);
+
+	/**
+	 * Returns the value of the '<em><b>AcXy</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>AcXy</em>' reference.
+	 * @see #setA_c_X_y(X)
+	 * @see TestcasesModel.TestcasesModelPackage#getA_A_c_X_y()
+	 * @model
+	 * @generated
+	 */
+	X getA_c_X_y();
+
+	/**
+	 * Sets the value of the '{@link TestcasesModel.A#getA_c_X_y <em>AcXy</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>AcXy</em>' reference.
+	 * @see #getA_c_X_y()
+	 * @generated
+	 */
+	void setA_c_X_y(X value);
 
 	/**
 	 * Returns the value of the '<em><b>Acu</b></em>' reference.

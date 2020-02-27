@@ -4,14 +4,18 @@
     name="TestcasesModel" nsURI="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore"
     nsPrefix="TestcasesModel">
   <eClassifiers xmi:type="ecore:EClass" name="A" eSuperTypes="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent">
-    <eStructuralFeatures xmi:type="ecore:EReference" name="A_c_X_z" eType="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
+    <eStructuralFeatures xmi:type="ecore:EReference" name="A_b_X_z" eType="#//X"/>
+    <eStructuralFeatures xmi:type="ecore:EReference" name="A_b_A_c" eType="#//A"/>
+    <eStructuralFeatures xmi:type="ecore:EReference" name="A_b_A_b" eType="#//A"/>
+    <eStructuralFeatures xmi:type="ecore:EReference" name="A_c_X_z" eType="#//X"/>
+    <eStructuralFeatures xmi:type="ecore:EReference" name="A_c_X_y" eType="#//X"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="A_c_u" eType="#//U_s"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="A_c_p" eType="#//P_s"/>
   </eClassifiers>
+  <eClassifiers xmi:type="ecore:EClass" name="X" eSuperTypes="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent">
+    <eStructuralFeatures xmi:type="ecore:EReference" name="X_z_u" eType="#//U_s"/>
+    <eStructuralFeatures xmi:type="ecore:EReference" name="X_z_p" eType="#//P_s"/>
+  </eClassifiers>
   <eClassifiers xmi:type="ecore:EClass" name="U_s" eSuperTypes="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//State"/>
   <eClassifiers xmi:type="ecore:EClass" name="P_s" eSuperTypes="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//State"/>
-  <eClassifiers xmi:type="ecore:EClass" name="X" eSuperTypes="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent">
-    <eStructuralFeatures xmi:type="ecore:EReference" name="X_z_A_c" eType="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
-    <eStructuralFeatures xmi:type="ecore:EReference" name="X_z_u" eType="#//U_s"/>
-  </eClassifiers>
 </ecore:EPackage>

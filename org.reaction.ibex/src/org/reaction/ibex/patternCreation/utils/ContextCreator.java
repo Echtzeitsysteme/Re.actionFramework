@@ -28,6 +28,7 @@ import ecoreBCModel.IntermComponent;
 import ecoreBCModel.IntermObservable;
 import ecoreBCModel.IntermPattern;
 import ecoreBCModel.IntermRule;
+import ecoreBCModel.IntermSite;
 import ecoreBCModel.IntermSiteInstance;
 import ecoreBCModel.IntermSiteState;
 import ecoreBCModel.IntermediateModel;
@@ -41,9 +42,9 @@ public class ContextCreator {
 	private List<IntermRule> rules;
 	private List<IntermObservable> observables;
 
-	private Map<String, EClassImpl> metamodelAgentTypes;
-	private Map<String, EReference> metamodelEdgeTypes;
-	private Map<String, EClassImpl> metamodelStateTypes;
+	private Map<String, EClassImpl> agentTypeRegistry;
+	private Map<String, EReference> edgeTypeRegistry;
+	private Map<String, EClassImpl> stateTypeRegistry;
 
 	/**
 	 * Contains all bound patterns with the corresponding pattern name as key. <br>
@@ -87,26 +88,55 @@ public class ContextCreator {
 	}
 
 	private void findAgentsAndStates() {
-		metamodelAgentTypes = new HashMap<>();
-		metamodelStateTypes = new HashMap<>();
-		metamodelEdgeTypes = new HashMap<>();
-
+		agentTypeRegistry = new HashMap<>();
+		stateTypeRegistry = new HashMap<>();
+		edgeTypeRegistry = new HashMap<>();
 		for (EObject obj : metamodelPackage.eContents()) {
 			EClassImpl clazz = (EClassImpl) obj;
 			if (ModelHelper.isAgent(clazz)) {
-				metamodelAgentTypes.put(clazz.getName(), clazz);
+				agentTypeRegistry.put(clazz.getName(), clazz);
 
 				for (EObject classContent : clazz.eContents()) {
 
 					if (classContent instanceof EReference) {
-						metamodelEdgeTypes.put(((EReference) classContent).getName(), (EReference) classContent);
+						edgeTypeRegistry.put(((EReference) classContent).getName(), (EReference) classContent);
 					}
 				}
 
 			} else {
-				metamodelStateTypes.put(clazz.getName(), clazz);
+				stateTypeRegistry.put(clazz.getName(), clazz);
 			}
 		}
+		
+//		for (EObject obj : metamodelPackage.eContents()) {
+//			EClassImpl clazz = (EClassImpl) obj;
+//			if (ModelHelper.isAgent(clazz)) {
+//				agentTypeRegistry.put(clazz.getName(), clazz);
+//
+//				for (EObject classContent : clazz.eContents()) {
+//
+//					if (classContent instanceof EReference) {
+//						// if edge does not point to state and reference in other direction is already
+//						// existent, adjust mapping to that reference
+//						String refName = ((EReference) classContent).getName();
+//						EReference refToMap = (EReference) classContent;
+//						if (!((EReference) classContent).getEType().getName().endsWith("_s")) {
+//
+//							String inverseReferenceName = NameProvider.getInverseEdgeReferenceName(refName);
+//
+//							if (edgeTypeRegistry.containsKey(inverseReferenceName)) {
+//								refToMap = edgeTypeRegistry.get(inverseReferenceName);
+//							}
+//
+//						}
+//						edgeTypeRegistry.put(refName, refToMap);
+//					}
+//				}
+//
+//			} else {
+//				stateTypeRegistry.put(clazz.getName(), clazz);
+//			}
+//		}
 	}
 
 	public void generateIBeXPatterns() {
@@ -126,19 +156,17 @@ public class ContextCreator {
 					for (IntermSiteInstance si : ai.getSiteInstances()) {
 						List<IntermSiteState> allStates = si.getInstanceOf().getSiteStates();
 						if (si.getState() == null && allStates.size() > 0) {
-							
+
 							// Add default state node to context pattern
 							IBeXNode stateNode = IBeXPatternFactory.createNode(
 									NameProvider.getQualifiedDefaultStateNodeName(si),
-									metamodelStateTypes.get(NameProvider.getDefaultStateTypeKey(si)));
-							IBeXContextPattern contextPattern = getContextPatternByName(rule.getName());
+									stateTypeRegistry.get(NameProvider.getDefaultStateTypeKey(si)));
+							IBeXContextPattern contextPattern = ModelHelper.getContextPatternByName(ibexPatternSet, rule.getName());
 							contextPattern.getSignatureNodes().add(stateNode);
-
 						}
 					}
 				}
 			}
-
 		}
 
 		// Add node pairs = injectivity constraints
@@ -195,7 +223,7 @@ public class ContextCreator {
 
 	private void createBoundPatterns() {
 
-		for (EClassImpl agent : metamodelAgentTypes.values()) {
+		for (EClassImpl agent : agentTypeRegistry.values()) {
 			List<EReference> contents = agent.eContents().stream().filter((EObject obj) -> obj instanceof EReference)
 					.map((EObject obj) -> (EReference) obj).collect(Collectors.toList());
 
@@ -213,12 +241,12 @@ public class ContextCreator {
 
 				// Pattern creation plus name
 				IBeXContextPattern contextPattern = ibexFactory.createIBeXContextPattern();
-
 				contextPattern.setName(NameProvider.getBoundSitePatternName(agent, ref));
 
 				// Node creation
-				IBeXNode n1 = IBeXPatternFactory.createNode("src", metamodelAgentTypes.get(agent.getName()));
-				IBeXNode n2 = IBeXPatternFactory.createNode("trg", ReactionContainerPackage.Literals.AGENT);
+				IBeXNode n1 = IBeXPatternFactory.createNode("src", agentTypeRegistry.get(agent.getName()));
+				IBeXNode n2 = IBeXPatternFactory.createNode("trg",
+						agentTypeRegistry.get(ModelHelper.getPartnerAgentTypeKey(ref)));
 
 				contextPattern.getSignatureNodes().add(n1);
 				contextPattern.getLocalNodes().add(n2);
@@ -250,7 +278,7 @@ public class ContextCreator {
 
 		if (stateNode == null) {
 			stateNode = IBeXPatternFactory.createNode(stateNodeName,
-					metamodelStateTypes.get(NameProvider.getStateTypeKey(si)));
+					stateTypeRegistry.get(NameProvider.getStateTypeKey(si)));
 			contextPattern.getSignatureNodes().add(stateNode);
 		}
 
@@ -259,7 +287,7 @@ public class ContextCreator {
 		IBeXNode nodeInState = ModelHelper.getNodeFromContextPattern(contextPattern, ai.getName());
 		if (nodeInState == null) {
 			nodeInState = IBeXPatternFactory.createNode(ai.getName(),
-					metamodelAgentTypes.get(ai.getInstanceOf().getName()));
+					agentTypeRegistry.get(ai.getInstanceOf().getName()));
 			if (ai.isLocal()) {
 				contextPattern.getLocalNodes().add(nodeInState);
 			} else {
@@ -269,14 +297,43 @@ public class ContextCreator {
 		}
 
 		if (isActive) {
-			IBeXEdge stateEdge = IBeXPatternFactory.createEdge(nodeInState, stateNode, getEdgeType(ai, si, true));
+			IBeXEdge stateEdge = IBeXPatternFactory.createEdge(nodeInState, stateNode, getEdgeTypeToState(ai, si));
 			contextPattern.getLocalEdges().add(stateEdge);
 		}
 
 	}
 
-	private EReference getEdgeType(IntermAgentInstance ai, IntermSiteInstance si, boolean toState) {
-		return metamodelEdgeTypes.get(NameProvider.getEdgeTypeKey(ai, si, toState));
+	private EReference getEdgeType(IntermSiteInstance si, IntermSiteInstance siTrg) {
+		return edgeTypeRegistry.get(NameProvider.getEdgeTypeKey(si, siTrg));
+	}
+
+	private EReference getEdgeTypeToAgent(IntermSiteInstance si, IntermAgent agent) {
+
+		List<IntermSite> agentSites = agent.getSites();
+		int i = 0;
+		String keyPrefix = si.getParent().getInstanceOf().getName().toUpperCase() + "_" + si.getName() + "_"
+				+ agent.getName().toUpperCase() + "_";
+		String key = keyPrefix + agentSites.get(i).getName();
+		while (!edgeTypeRegistry.containsKey(key)) {
+			i++;
+
+			if (i == agentSites.size()) {
+				throw new IllegalStateException("No reference in metamodel for connecting " + si.getParent().getName()
+						+ "." + si.getName() + " with Agent " + agent.getName());
+			}
+
+			key = keyPrefix + agentSites.get(i).getName();
+		}
+
+		return edgeTypeRegistry.get(key);
+	}
+
+	private EReference getEdgeTypeToAgent(IntermSiteInstance si, IntermAgentInstance ai) {
+		return getEdgeTypeToAgent(si, ai.getInstanceOf());
+	}
+
+	private EReference getEdgeTypeToState(IntermAgentInstance ai, IntermSiteInstance si) {
+		return edgeTypeRegistry.get(NameProvider.getEdgeTypeToStateKey(ai, si));
 	}
 
 	/**
@@ -292,24 +349,31 @@ public class ContextCreator {
 		// Get nodes or create new ones if not existent
 		IBeXNode freeNode = ModelHelper.getSignatureNodeFromContextPattern(contextPattern, ai.getName());
 		if (freeNode == null) {
-			freeNode = IBeXPatternFactory.createNode(ai.getName(),
-					metamodelAgentTypes.get(ai.getInstanceOf().getName()));
+			freeNode = IBeXPatternFactory.createNode(ai.getName(), agentTypeRegistry.get(ai.getInstanceOf().getName()));
 			contextPattern.getSignatureNodes().add(freeNode);
 		}
 
-		// Add Pattern Invocation
-		IBeXPatternInvocation invoc = ibexFactory.createIBeXPatternInvocation();
-		invoc.setInvokedBy(contextPattern);
-		invoc.setPositive(false);
-		String boundPatternName = NameProvider.getBoundSitePatternName(ai, si);
-		IBeXContextPattern invokedPattern = getContextPatternByName(boundPatternName);
-		invoc.setInvokedPattern(invokedPattern);
+		// Add Pattern Invocations for every reference representing (typed) edges from
+		// this site
 
-		IBeXNode srcNode = ModelHelper.getSignatureNodeFromContextPattern(invokedPattern, "src");
+		List<IBeXContextPattern> boundPatterns = ModelHelper.getBoundPatternsForSite(ibexPatternSet, ai, si);
+		List<IBeXContextPattern> invokedPatterns = new LinkedList<>();
+		for (IBeXContextPattern invokedPattern : boundPatterns) {
+			if (!ModelHelper.patternAlreadyInvoked(contextPattern, invokedPattern)) {
+				IBeXPatternInvocation invoc = ibexFactory.createIBeXPatternInvocation();
+				invoc.setInvokedBy(contextPattern);
+				invoc.setPositive(false);
 
-		invoc.getMapping().put(freeNode, srcNode);
+				invoc.setInvokedPattern(invokedPattern);
 
-		contextPattern.getInvocations().add(invoc);
+				IBeXNode srcNode = ModelHelper.getSignatureNodeFromContextPattern(invokedPattern, "src");
+
+				invoc.getMapping().put(freeNode, srcNode);
+
+				contextPattern.getInvocations().add(invoc);
+				invokedPatterns.add(invokedPattern);
+			}
+		}
 	}
 
 	/**
@@ -326,7 +390,7 @@ public class ContextCreator {
 		IBeXNode unspecifiedNode = ModelHelper.getSignatureNodeFromContextPattern(contextPattern, ai.getName());
 		if (unspecifiedNode == null) {
 			unspecifiedNode = IBeXPatternFactory.createNode(ai.getName(),
-					metamodelAgentTypes.get(ai.getInstanceOf().getName()));
+					agentTypeRegistry.get(ai.getInstanceOf().getName()));
 			contextPattern.getSignatureNodes().add(unspecifiedNode);
 		}
 
@@ -342,13 +406,13 @@ public class ContextCreator {
 				IBeXNode nodeNotBoundTo;
 				if (aiNotBoundTo.isLocal()) {
 					nodeNotBoundTo = IBeXPatternFactory.createNode(aiNotBoundTo.getName(),
-							metamodelAgentTypes.get(aiNotBoundTo.getInstanceOf().getName()));
+							agentTypeRegistry.get(aiNotBoundTo.getInstanceOf().getName()));
 				} else {
 					nodeNotBoundTo = ModelHelper.getSignatureNodeFromContextPattern(contextPattern,
 							aiNotBoundTo.getName());
 					if (nodeNotBoundTo == null) {
 						nodeNotBoundTo = IBeXPatternFactory.createNode(aiNotBoundTo.getName(),
-								metamodelAgentTypes.get(aiNotBoundTo.getInstanceOf().getName()));
+								agentTypeRegistry.get(aiNotBoundTo.getInstanceOf().getName()));
 						contextPattern.getSignatureNodes().add(nodeNotBoundTo);
 					}
 				}
@@ -417,9 +481,9 @@ public class ContextCreator {
 
 			// Create nodes
 			IBeXNode srcNode = IBeXPatternFactory.createNode("src",
-					metamodelAgentTypes.get(src.getParent().getInstanceOf().getName()));
+					agentTypeRegistry.get(src.getParent().getInstanceOf().getName()));
 			IBeXNode trgNode = IBeXPatternFactory.createNode("trg",
-					metamodelAgentTypes.get(trgSi.getParent().getInstanceOf().getName()));
+					agentTypeRegistry.get(trgSi.getParent().getInstanceOf().getName()));
 
 			forbiddenPattern.getSignatureNodes().add(srcNode);
 			if (trgSi.getParent().isLocal()) {
@@ -429,19 +493,17 @@ public class ContextCreator {
 			}
 
 			// create edge
-			IBeXEdge edge1 = IBeXPatternFactory.createEdge(srcNode, trgNode, getEdgeType(src.getParent(), src, false));
+			IBeXEdge edge1 = IBeXPatternFactory.createEdge(srcNode, trgNode, getEdgeType(src, trgSi));
 			forbiddenPattern.getLocalEdges().add(edge1);
-			IBeXEdge edge2 = IBeXPatternFactory.createEdge(trgNode, srcNode, getEdgeType(trgParent, trgSi, false));
-			forbiddenPattern.getLocalEdges().add(edge2);
 
 			// Add state for target
 			IntermSiteState state = trgSi.getState();
 			if (state != null) {
 				String stateNodeName = NameProvider.getQualifiedStateNodeName(trgSi);
 				IBeXNode stateNode = IBeXPatternFactory.createNode(stateNodeName,
-						metamodelStateTypes.get(NameProvider.getStateTypeKey(trgSi)));
+						stateTypeRegistry.get(NameProvider.getStateTypeKey(trgSi)));
 				IBeXEdge stateEdge = IBeXPatternFactory.createEdge(trgNode, stateNode,
-						getEdgeType(trgParent, trgSi, true));
+						getEdgeTypeToState(trgParent, trgSi));
 
 				forbiddenPattern.getLocalNodes().add(stateNode);
 				forbiddenPattern.getLocalEdges().add(stateEdge);
@@ -452,6 +514,7 @@ public class ContextCreator {
 
 			return forbiddenPattern;
 		}
+
 		if (trg instanceof IntermAgent) {
 			IntermAgent trgAgent = (IntermAgent) trg;
 			String qualifiedName = NameProvider.getQualifiedConditionPatternName(ai, src, trgAgent, true);
@@ -466,14 +529,14 @@ public class ContextCreator {
 
 			// Create nodes
 			IBeXNode srcNode = IBeXPatternFactory.createNode("src",
-					metamodelAgentTypes.get(src.getParent().getInstanceOf().getName()));
-			IBeXNode trgNode = IBeXPatternFactory.createNode("trg", metamodelAgentTypes.get(trgAgent.getName()));
+					agentTypeRegistry.get(src.getParent().getInstanceOf().getName()));
+			IBeXNode trgNode = IBeXPatternFactory.createNode("trg", agentTypeRegistry.get(trgAgent.getName()));
 
 			forbiddenPattern.getSignatureNodes().add(srcNode);
 			forbiddenPattern.getLocalNodes().add(trgNode);
 
 			// create edge
-			IBeXEdge edge = IBeXPatternFactory.createEdge(srcNode, trgNode, getEdgeType(src.getParent(), src, false));
+			IBeXEdge edge = IBeXPatternFactory.createEdge(srcNode, trgNode, getEdgeTypeToAgent(src, trgAgent));
 			forbiddenPattern.getLocalEdges().add(edge);
 
 			conditionPatterns.put(qualifiedName, forbiddenPattern);
@@ -499,7 +562,7 @@ public class ContextCreator {
 		IBeXNode boundNode = ModelHelper.getNodeFromContextPattern(contextPattern, ai.getName());
 		if (boundNode == null) {
 			boundNode = IBeXPatternFactory.createNode(ai.getName(),
-					metamodelAgentTypes.get(ai.getInstanceOf().getName()));
+					agentTypeRegistry.get(ai.getInstanceOf().getName()));
 			contextPattern.getSignatureNodes().add(boundNode);
 		}
 
@@ -516,7 +579,7 @@ public class ContextCreator {
 				boundPartner = ModelHelper.getNodeFromContextPattern(contextPattern, partnerName);
 				if (boundPartner == null) {
 					boundPartner = IBeXPatternFactory.createNode(partnerName,
-							metamodelAgentTypes.get(boundToAgent.getInstanceOf().getName()));
+							agentTypeRegistry.get(boundToAgent.getInstanceOf().getName()));
 					if (boundToAgent.isLocal()) {
 						contextPattern.getLocalNodes().add(boundPartner);
 					} else {
@@ -525,9 +588,11 @@ public class ContextCreator {
 
 				}
 
-				IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner,
-						getEdgeType(ai, si, false));
-				contextPattern.getLocalEdges().add(connectingEdge);
+				EReference edgeType = getEdgeType(si, boundToSite);
+				if (edgeType != null) {
+					IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner, edgeType);
+					contextPattern.getLocalEdges().add(connectingEdge);
+				}
 
 			} else if (boundTo instanceof IntermAgent) {
 
@@ -538,13 +603,15 @@ public class ContextCreator {
 
 				// Create local node
 				boundPartner = IBeXPatternFactory.createNode(partnerName + "_local",
-						metamodelAgentTypes.get(partnerName));
+						agentTypeRegistry.get(partnerName));
 				contextPattern.getLocalNodes().add(boundPartner);
 
-				// Create Edge
-				IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner,
-						getEdgeType(ai, si, false));
-				contextPattern.getLocalEdges().add(connectingEdge);
+				EReference edgeType = getEdgeTypeToAgent(si, boundToAgent);
+				if (edgeType != null) {
+					// Create Edge
+					IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner, edgeType);
+					contextPattern.getLocalEdges().add(connectingEdge);
+				}
 
 			} else if (boundTo instanceof IntermAgentInstance) {
 
@@ -553,21 +620,24 @@ public class ContextCreator {
 				IBeXNode boundPartner;
 				if (boundToInstance.isLocal()) {
 					boundPartner = IBeXPatternFactory.createNode(partnerName,
-							metamodelAgentTypes.get(boundToInstance.getInstanceOf().getName()));
+							agentTypeRegistry.get(boundToInstance.getInstanceOf().getName()));
 					contextPattern.getLocalNodes().add(boundPartner);
 				} else {
 					boundPartner = ModelHelper.getSignatureNodeFromContextPattern(contextPattern, partnerName);
 					if (boundPartner == null) {
 						boundPartner = IBeXPatternFactory.createNode(partnerName,
-								metamodelAgentTypes.get(boundToInstance.getInstanceOf().getName()));
+								agentTypeRegistry.get(boundToInstance.getInstanceOf().getName()));
 						contextPattern.getSignatureNodes().add(boundPartner);
 					}
 				}
 
 				// Create Edge
-				IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner,
-						getEdgeType(ai, si, false));
-				contextPattern.getLocalEdges().add(connectingEdge);
+				EReference edgeType = getEdgeTypeToAgent(si, boundToInstance);
+				if (edgeType != null) {
+					// Create Edge
+					IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner, edgeType);
+					contextPattern.getLocalEdges().add(connectingEdge);
+				}
 
 			} else {
 				throw new UnsupportedOperationException("Could not handle type of " + boundTo.toString());
@@ -578,26 +648,14 @@ public class ContextCreator {
 			// Create Local Node and bind to it
 			IBeXNode localNode = IBeXPatternFactory.createNode(ai.getName() + "_" + si.getName() + "_local",
 					ReactionContainerPackage.Literals.AGENT);
-			IBeXEdge edgeToLocal = IBeXPatternFactory.createEdge(boundNode, localNode, getEdgeType(ai, si, false));
+			IBeXEdge edgeToLocal = IBeXPatternFactory.createEdge(boundNode, localNode, getEdgeTypeToAgent(si, ai));
 
 			contextPattern.getLocalNodes().add(localNode);
 			contextPattern.getLocalEdges().add(edgeToLocal);
 		}
 	}
 
-	/**
-	 * @return the first context pattern found in the currently known contexts with
-	 *         matching name
-	 */
-	private IBeXContextPattern getContextPatternByName(String name) {
-		for (IBeXContext context : ibexPatternSet.getContextPatterns()) {
-			IBeXContextPattern pattern = (IBeXContextPattern) context;
-			if (pattern.getName().equals(name)) {
-				return pattern;
-			}
-		}
-		return null;
-	}
+
 
 	/**
 	 * @return the first context pattern found in the currently known condition
@@ -629,9 +687,9 @@ public class ContextCreator {
 					IBeXNode stateNode = ModelHelper.getNodeFromContextPattern(contextPatternRule, stateNodeName);
 					if (stateNode == null) {
 						stateNode = IBeXPatternFactory.createNode(stateNodeName,
-								metamodelStateTypes.get(NameProvider.getStateTypeKey(si)));
+								stateTypeRegistry.get(NameProvider.getStateTypeKey(si)));
 					} else {
-						stateNode.setType(metamodelStateTypes.get(NameProvider.getStateTypeKey(si)));
+						stateNode.setType(stateTypeRegistry.get(NameProvider.getStateTypeKey(si)));
 					}
 
 					contextPatternRule.getSignatureNodes().add(stateNode);
@@ -647,7 +705,7 @@ public class ContextCreator {
 	 */
 	private void createContextPatternFromObs(IntermObservable obs) {
 		IBeXContextPattern obsContextPattern = createContextPatternFromPattern(obs.getObsPattern());
-		obsContextPattern.setName("obs_"+obs.getName());
+		obsContextPattern.setName("obs_" + obs.getName());
 
 		ibexPatternSet.getContextPatterns().add(obsContextPattern);
 	}
