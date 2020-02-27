@@ -81,7 +81,7 @@ public class SimDefCreator {
 		}
 
 		for (IntermObservable obs : modelObs) {
-			addPatternObservation(obs.getName());
+			addPatternObservation("obs_"+obs.getName());
 		}
 
 		for (IntermCommand comm : modelCommands) {

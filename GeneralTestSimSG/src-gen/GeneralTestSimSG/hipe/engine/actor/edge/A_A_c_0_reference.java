@@ -48,10 +48,10 @@ public class A_A_c_0_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("aFree_99_nacjunction"), this::check_constraint_17));
 		ports.add(new PortEdge(getSelf(), name2actor.get("a_cBound_production"), this::check_constraint_2));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBindingBwd_94_nacjunction"), this::check_constraint_12));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegPartial_95_nacjunction"), this::check_constraint_13));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("obs_aFree_193_nacjunction"), this::check_constraint_29));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBindingBwd_179_nacjunction"), this::check_constraint_12));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegPartial_180_nacjunction"), this::check_constraint_13));
 	}	
 
 	@Override
@@ -314,7 +314,7 @@ public class A_A_c_0_reference extends AbstractActor {
 		return true;
 	}
 	
-	public boolean check_constraint_17(EdgeMatch edge) {
+	public boolean check_constraint_2(EdgeMatch edge) {
 		TestcasesModel.A src = (TestcasesModel.A) edge.source();
 		reactionContainer.Agent trg = (reactionContainer.Agent) edge.target();
 		boolean predicate = !src.equals(trg);
@@ -322,7 +322,7 @@ public class A_A_c_0_reference extends AbstractActor {
 		return predicate;
 	}
 	
-	public boolean check_constraint_2(EdgeMatch edge) {
+	public boolean check_constraint_29(EdgeMatch edge) {
 		TestcasesModel.A src = (TestcasesModel.A) edge.source();
 		reactionContainer.Agent trg = (reactionContainer.Agent) edge.target();
 		boolean predicate = !src.equals(trg);
