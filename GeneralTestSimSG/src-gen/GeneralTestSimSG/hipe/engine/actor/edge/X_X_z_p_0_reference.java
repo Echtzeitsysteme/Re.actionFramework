@@ -48,9 +48,9 @@ public class X_X_z_p_0_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("genericWithStateTest_100_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("genericWithState_91_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBinding_18_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("genericWithStateTest_115_junction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("genericWithState_106_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("simpleBinding_33_junction"), this::returnTrue));
 	}	
 
 	@Override

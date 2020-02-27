@@ -2,10 +2,12 @@ package org.reaction.ibex.patternCreation.utils;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
 
@@ -24,23 +26,6 @@ import reactionContainer.ReactionContainerPackage;
 public class ModelHelper {
 
 	/**
-	 * @return the edge with the given source and target node and of the given type
-	 *         in the given context pattern. If not found, check for inverse
-	 *         bidirectional edge. null, if both edges do not exist.
-	 */
-	public static IBeXEdge findEdgeInContextPattern(IBeXContextPattern contextPattern, IBeXNode src, IBeXNode trg,
-			EReference edgeType) {
-
-		//TODO: Is this even necessary?
-		
-		//look for normal edge
-		
-		//look for inverse edge
-		
-		return null;
-	}
-
-	/**
 	 * @return the first context pattern found in the contexts of the pattern set
 	 *         with matching name
 	 */
@@ -54,10 +39,17 @@ public class ModelHelper {
 		return null;
 	}
 
-	public static boolean patternAlreadyInvoked(IBeXContextPattern contextPattern, IBeXContextPattern invokedPattern) {
-		List<IBeXContextPattern> invokedPatterns = contextPattern.getInvocations().stream()
-				.map((IBeXPatternInvocation invoc) -> invoc.getInvokedPattern()).collect(Collectors.toList());
-		return invokedPatterns.contains(invokedPattern);
+	public static boolean patternAlreadyInvokedWithNode(IBeXContextPattern contextPattern, IBeXContextPattern invokedPattern, IBeXNode node) {
+		List<IBeXPatternInvocation> invocations = contextPattern.getInvocations();
+		for(IBeXPatternInvocation invoc : invocations) {
+			IBeXContextPattern pattern = invoc.getInvokedPattern();
+			EMap<IBeXNode, IBeXNode> mapping = invoc.getMapping();
+			
+			if(pattern == invokedPattern && mapping.containsKey(node)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -149,6 +141,59 @@ public class ModelHelper {
 			if (agent1.equals(ai.getInstanceOf().getName().toUpperCase()) && site1.equals(si.getName())) {
 				boundPatterns.add(contextPattern);
 			}
+			if (agent2.equals(ai.getInstanceOf().getName().toUpperCase()) && site2.equals(si.getName())) {
+				boundPatterns.add(contextPattern);
+			}
+		}
+
+		return boundPatterns;
+	}
+	
+	/**
+	 * @param ai - the agent instance the site belongs
+	 * @param si - the site to find the patterns for
+	 * @return a list of all ContextPatterns representing the given site as bound
+	 */
+	public static List<IBeXContextPattern> getBoundPatternsForSiteAsSrc(IBeXPatternSet patternSet, IntermAgentInstance ai,
+			IntermSiteInstance si) {
+
+		List<IBeXContextPattern> boundPatterns = new LinkedList<>();
+
+		for (IBeXContext context : patternSet.getContextPatterns()) {
+			IBeXContextPattern contextPattern = (IBeXContextPattern) context;
+			if (!contextPattern.getName().endsWith("BoundSrc")) {
+				continue;
+			}
+
+			String agent1 = NameProvider.getComponentNameOfBoundPattern(contextPattern, "agent1");
+			String site1 = NameProvider.getComponentNameOfBoundPattern(contextPattern, "site1");
+			if (agent1.equals(ai.getInstanceOf().getName().toUpperCase()) && site1.equals(si.getName())) {
+				boundPatterns.add(contextPattern);
+			}
+		}
+
+		return boundPatterns;
+	}
+	
+	
+	/**
+	 * @param ai - the agent instance the site belongs
+	 * @param si - the site to find the patterns for
+	 * @return a list of all ContextPatterns representing the given site as bound
+	 */
+	public static List<IBeXContextPattern> getBoundPatternsForSiteAsTrg(IBeXPatternSet patternSet, IntermAgentInstance ai,
+			IntermSiteInstance si) {
+
+		List<IBeXContextPattern> boundPatterns = new LinkedList<>();
+
+		for (IBeXContext context : patternSet.getContextPatterns()) {
+			IBeXContextPattern contextPattern = (IBeXContextPattern) context;
+			if (!contextPattern.getName().endsWith("BoundTrg")) {
+				continue;
+			}
+
+			String agent2 = NameProvider.getComponentNameOfBoundPattern(contextPattern, "agent2");
+			String site2 = NameProvider.getComponentNameOfBoundPattern(contextPattern, "site2");
 			if (agent2.equals(ai.getInstanceOf().getName().toUpperCase()) && site2.equals(si.getName())) {
 				boundPatterns.add(contextPattern);
 			}

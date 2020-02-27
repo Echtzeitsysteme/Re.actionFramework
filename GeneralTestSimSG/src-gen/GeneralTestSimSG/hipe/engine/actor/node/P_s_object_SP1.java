@@ -46,10 +46,10 @@ public class P_s_object_SP1 extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("selfBindingBwd_38_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("simpleBindingBwd_25_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("synthDegPartial_55_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("unspecifiedStateChange_111_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("selfBindingBwd_53_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("simpleBindingBwd_40_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("synthDegPartial_70_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("unspecifiedStateChange_126_junction"), this::returnTrue));
 	}
 
 	@Override

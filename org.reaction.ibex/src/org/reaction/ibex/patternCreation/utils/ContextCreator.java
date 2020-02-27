@@ -48,7 +48,7 @@ public class ContextCreator {
 
 	/**
 	 * Contains all bound patterns with the corresponding pattern name as key. <br>
-	 * patternName = "{lowerCaseAgentName}_{lowerCaseSiteName}Bound"
+	 * patternName = "{UpperCaseAgentName}_{lowerCaseSiteName}Bound"
 	 */
 	private Map<String, IBeXContextPattern> boundPatterns;
 	private Map<String, IBeXContextPattern> conditionPatterns;
@@ -239,25 +239,45 @@ public class ContextCreator {
 					}
 				}
 
-				// Pattern creation plus name
-				IBeXContextPattern contextPattern = ibexFactory.createIBeXContextPattern();
-				contextPattern.setName(NameProvider.getBoundSitePatternName(agent, ref));
+				// Src bound pattern creation
+				IBeXContextPattern srcBoundPattern = ibexFactory.createIBeXContextPattern();
+				srcBoundPattern.setName(NameProvider.getBoundSitePatternName(agent, ref)+"Src");
 
 				// Node creation
 				IBeXNode n1 = IBeXPatternFactory.createNode("src", agentTypeRegistry.get(agent.getName()));
 				IBeXNode n2 = IBeXPatternFactory.createNode("trg",
 						agentTypeRegistry.get(ModelHelper.getPartnerAgentTypeKey(ref)));
 
-				contextPattern.getSignatureNodes().add(n1);
-				contextPattern.getLocalNodes().add(n2);
+				srcBoundPattern.getSignatureNodes().add(n1);
+				srcBoundPattern.getLocalNodes().add(n2);
 
 				// Edge Creation
-				IBeXEdge edge = IBeXPatternFactory.createEdge(n1, n2, ref);
-				contextPattern.getLocalEdges().add(edge);
+				IBeXEdge edge1 = IBeXPatternFactory.createEdge(n1, n2, ref);
+				srcBoundPattern.getLocalEdges().add(edge1);
 
 				// Save Pattern
-				ibexPatternSet.getContextPatterns().add(contextPattern);
-				boundPatterns.put(contextPattern.getName(), contextPattern);
+				ibexPatternSet.getContextPatterns().add(srcBoundPattern);
+				boundPatterns.put(srcBoundPattern.getName(), srcBoundPattern);
+				
+				// Src bound pattern creation
+				IBeXContextPattern trgBoundPattern = ibexFactory.createIBeXContextPattern();
+				trgBoundPattern.setName(NameProvider.getBoundSitePatternName(agent, ref)+"Trg");
+
+				// Node creation
+				IBeXNode n3 = IBeXPatternFactory.createNode("src", agentTypeRegistry.get(agent.getName()));
+				IBeXNode n4 = IBeXPatternFactory.createNode("trg",
+						agentTypeRegistry.get(ModelHelper.getPartnerAgentTypeKey(ref)));
+
+				trgBoundPattern.getLocalNodes().add(n3);
+				trgBoundPattern.getSignatureNodes().add(n4);
+
+				// Edge Creation
+				IBeXEdge edge2 = IBeXPatternFactory.createEdge(n3, n4, ref);
+				trgBoundPattern.getLocalEdges().add(edge2);
+
+				// Save Pattern
+				ibexPatternSet.getContextPatterns().add(trgBoundPattern);
+				boundPatterns.put(trgBoundPattern.getName(), trgBoundPattern);
 			}
 		}
 	}
@@ -353,13 +373,16 @@ public class ContextCreator {
 			contextPattern.getSignatureNodes().add(freeNode);
 		}
 
-		// Add Pattern Invocations for every reference representing (typed) edges from
-		// this site
+		// Add Pattern Invocations for every bound pattern mapped to source and for every bound pattern mapped to trg
 
-		List<IBeXContextPattern> boundPatterns = ModelHelper.getBoundPatternsForSite(ibexPatternSet, ai, si);
+//		List<IBeXContextPattern> boundPatterns = ModelHelper.getBoundPatternsForSite(ibexPatternSet, ai, si);
+		
+		List<IBeXContextPattern> boundPatternsSrc = ModelHelper.getBoundPatternsForSiteAsSrc(ibexPatternSet, ai, si);
+		List<IBeXContextPattern> boundPatternsTrg = ModelHelper.getBoundPatternsForSiteAsTrg(ibexPatternSet, ai, si);
 		List<IBeXContextPattern> invokedPatterns = new LinkedList<>();
-		for (IBeXContextPattern invokedPattern : boundPatterns) {
-			if (!ModelHelper.patternAlreadyInvoked(contextPattern, invokedPattern)) {
+		
+		for (IBeXContextPattern invokedPattern : boundPatternsSrc) {
+			if (!ModelHelper.patternAlreadyInvokedWithNode(contextPattern, invokedPattern, freeNode)) {
 				IBeXPatternInvocation invoc = ibexFactory.createIBeXPatternInvocation();
 				invoc.setInvokedBy(contextPattern);
 				invoc.setPositive(false);
@@ -369,6 +392,23 @@ public class ContextCreator {
 				IBeXNode srcNode = ModelHelper.getSignatureNodeFromContextPattern(invokedPattern, "src");
 
 				invoc.getMapping().put(freeNode, srcNode);
+
+				contextPattern.getInvocations().add(invoc);
+				invokedPatterns.add(invokedPattern);
+			}
+		}
+		
+		for (IBeXContextPattern invokedPattern : boundPatternsTrg) {
+			if (!ModelHelper.patternAlreadyInvokedWithNode(contextPattern, invokedPattern, freeNode)) {
+				IBeXPatternInvocation invoc = ibexFactory.createIBeXPatternInvocation();
+				invoc.setInvokedBy(contextPattern);
+				invoc.setPositive(false);
+
+				invoc.setInvokedPattern(invokedPattern);
+
+				IBeXNode trgNode = ModelHelper.getSignatureNodeFromContextPattern(invokedPattern, "trg");
+
+				invoc.getMapping().put(freeNode, trgNode);
 
 				contextPattern.getInvocations().add(invoc);
 				invokedPatterns.add(invokedPattern);

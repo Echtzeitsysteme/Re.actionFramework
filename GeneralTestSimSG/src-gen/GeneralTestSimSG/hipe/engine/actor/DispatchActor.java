@@ -50,15 +50,6 @@ public class DispatchActor extends AbstractActor {
 	}
 	
 	private void initializeAdd() {
-		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getX(), obj -> {
-			TestcasesModel.X _x = (TestcasesModel.X) obj;
-			util.newMessage();
-			name2actor.get("X_object_SP0").tell(new ObjectAdded<TestcasesModel.X>(_x), getSelf());
-			util.newMessage();
-			name2actor.get("X_object_SP1").tell(new ObjectAdded<TestcasesModel.X>(_x), getSelf());
-			util.newMessage();
-			name2actor.get("X_object_SP2").tell(new ObjectAdded<TestcasesModel.X>(_x), getSelf());
-		});
 		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getU_s(), obj -> {
 			TestcasesModel.U_s _u_s = (TestcasesModel.U_s) obj;
 			util.newMessage();
@@ -76,6 +67,15 @@ public class DispatchActor extends AbstractActor {
 			name2actor.get("A_object_SP2").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
 			util.newMessage();
 			name2actor.get("A_object_SP3").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
+		});
+		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getX(), obj -> {
+			TestcasesModel.X _x = (TestcasesModel.X) obj;
+			util.newMessage();
+			name2actor.get("X_object_SP0").tell(new ObjectAdded<TestcasesModel.X>(_x), getSelf());
+			util.newMessage();
+			name2actor.get("X_object_SP1").tell(new ObjectAdded<TestcasesModel.X>(_x), getSelf());
+			util.newMessage();
+			name2actor.get("X_object_SP2").tell(new ObjectAdded<TestcasesModel.X>(_x), getSelf());
 		});
 		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getP_s(), obj -> {
 			TestcasesModel.P_s _p_s = (TestcasesModel.P_s) obj;

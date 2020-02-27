@@ -46,10 +46,10 @@ public class U_s_object_SP0 extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortNodeMatchLeft<TestcasesModel.U_s>(getSelf(), name2actor.get("selfBinding_31_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.U_s>(getSelf(), name2actor.get("simpleBinding_16_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchRight<TestcasesModel.U_s>(getSelf(), name2actor.get("synthDegComplete_43_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchRight<TestcasesModel.U_s>(getSelf(), name2actor.get("unspec_77_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.U_s>(getSelf(), name2actor.get("selfBinding_46_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.U_s>(getSelf(), name2actor.get("simpleBinding_31_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.U_s>(getSelf(), name2actor.get("synthDegComplete_58_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchRight<TestcasesModel.U_s>(getSelf(), name2actor.get("unspec_92_junction"), this::returnTrue));
 	}
 
 	@Override

@@ -1,5 +1,15 @@
 package GeneralTestSimSG.api;
 
+import GeneralTestSimSG.api.rules.A_b_A_bBoundSrcRule;
+import GeneralTestSimSG.api.rules.A_b_A_bBoundTrgRule;
+import GeneralTestSimSG.api.rules.A_b_A_cBoundSrcRule;
+import GeneralTestSimSG.api.rules.A_b_A_cBoundTrgRule;
+import GeneralTestSimSG.api.rules.A_b_X_zBoundSrcRule;
+import GeneralTestSimSG.api.rules.A_b_X_zBoundTrgRule;
+import GeneralTestSimSG.api.rules.A_c_X_yBoundSrcRule;
+import GeneralTestSimSG.api.rules.A_c_X_yBoundTrgRule;
+import GeneralTestSimSG.api.rules.A_c_X_zBoundSrcRule;
+import GeneralTestSimSG.api.rules.A_c_X_zBoundTrgRule;
 import GeneralTestSimSG.api.rules.GenericRule;
 import GeneralTestSimSG.api.rules.GenericWithStateRule;
 import GeneralTestSimSG.api.rules.GenericWithStateTestRule;
@@ -29,7 +39,7 @@ import org.emoflon.ibex.common.operational.IContextPatternInterpreter;
 import org.emoflon.ibex.gt.api.GraphTransformationAPI;
 
 /**
- * The GeneralTestSimSGAPI with 22 rules.
+ * The GeneralTestSimSGAPI with 32 rules.
  */
 public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	public static String patternPath = "GeneralTestSimSG/src-gen/GeneralTestSimSG/api/ibex-patterns.xmi";
@@ -69,6 +79,106 @@ public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 		super(engine, model, defaultResource);
 		URI uri = URI.createFileURI(workspacePath + patternPath);
 		interpreter.loadPatternSet(uri);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>A_b_X_zBoundSrc()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public A_b_X_zBoundSrcRule A_b_X_zBoundSrc() {
+		return new A_b_X_zBoundSrcRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>A_b_X_zBoundTrg()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public A_b_X_zBoundTrgRule A_b_X_zBoundTrg() {
+		return new A_b_X_zBoundTrgRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>A_b_A_cBoundSrc()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public A_b_A_cBoundSrcRule A_b_A_cBoundSrc() {
+		return new A_b_A_cBoundSrcRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>A_b_A_cBoundTrg()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public A_b_A_cBoundTrgRule A_b_A_cBoundTrg() {
+		return new A_b_A_cBoundTrgRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>A_b_A_bBoundSrc()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public A_b_A_bBoundSrcRule A_b_A_bBoundSrc() {
+		return new A_b_A_bBoundSrcRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>A_b_A_bBoundTrg()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public A_b_A_bBoundTrgRule A_b_A_bBoundTrg() {
+		return new A_b_A_bBoundTrgRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>A_c_X_zBoundSrc()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public A_c_X_zBoundSrcRule A_c_X_zBoundSrc() {
+		return new A_c_X_zBoundSrcRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>A_c_X_zBoundTrg()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public A_c_X_zBoundTrgRule A_c_X_zBoundTrg() {
+		return new A_c_X_zBoundTrgRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>A_c_X_yBoundSrc()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public A_c_X_yBoundSrcRule A_c_X_yBoundSrc() {
+		return new A_c_X_yBoundSrcRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>A_c_X_yBoundTrg()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public A_c_X_yBoundTrgRule A_c_X_yBoundTrg() {
+		return new A_c_X_yBoundTrgRule(this, interpreter);
 	}
 
 	/**
