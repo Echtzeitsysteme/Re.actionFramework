@@ -4,10 +4,10 @@
  */
 package GKLModel.validation;
 
+import GKLModel.K;
+import GKLModel.P;
 import GKLModel.P_s;
 import GKLModel.U_s;
-
-import reactionContainer.Agent;
 
 /**
  * A sample validator interface for {@link GKLModel.T}.
@@ -18,13 +18,17 @@ import reactionContainer.Agent;
 public interface TValidator {
 	boolean validate();
 
-	boolean validateT_x(Agent value);
+	boolean validateT_x_K_a(K value);
+
+	boolean validateT_x_P_a(P value);
 
 	boolean validateT_x_u(U_s value);
 
 	boolean validateT_x_p(P_s value);
 
-	boolean validateT_y(Agent value);
+	boolean validateT_y_K_a(K value);
+
+	boolean validateT_y_P_a(P value);
 
 	boolean validateT_y_u(U_s value);
 

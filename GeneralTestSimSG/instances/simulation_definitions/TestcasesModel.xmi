@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<org.simsg:SimDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:GTLanguage="platform:/resource/org.emoflon.ibex.gt/model/Gt.ecore" xmlns:IBeXLanguage="platform:/resource/org.emoflon.ibex.common/model/Common.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.simsg="http://www.simsg.org/simulationdefinition/simulationdefinition" xsi:schemaLocation="platform:/resource/org.emoflon.ibex.gt/model/Gt.ecore java://GTLanguage.GTLanguagePackage platform:/resource/org.emoflon.ibex.common/model/Common.ecore java://IBeXLanguage.IBeXLanguagePackage http://www.eclipse.org/emf/2002/Ecore java://org.eclipse.emf.ecore.EcorePackage http://www.simsg.org/simulationdefinition/simulationdefinition java://SimulationDefinition.SimulationDefinitionPackage" name="TestcasesModel" simulationModelURI="file:/C:/Users/tobia/eclipse-workspaces/re.actionFramework/GeneralTestSimSG/model/TestcasesModel.ecore" gtRulesURI="file:/C:/Users/tobia/eclipse-workspaces/re.actionFramework/GeneralTestSimSG/model/gtRules.xmi" ibexPatternsURI="file:/C:/Users/tobia/eclipse-workspaces/re.actionFramework/GeneralTestSimSG/model/ibex-patterns.xmi">
+<org.simsg:SimDefinition xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:GTLanguage="platform:/resource/org.emoflon.ibex.gt/model/Gt.ecore" xmlns:IBeXLanguage="platform:/resource/org.emoflon.ibex.common/model/Common.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.simsg="http://www.simsg.org/simulationdefinition/simulationdefinition" xsi:schemaLocation="platform:/resource/org.emoflon.ibex.gt/model/Gt.ecore java://GTLanguage.GTLanguagePackage platform:/resource/org.emoflon.ibex.common/model/Common.ecore java://IBeXLanguage.IBeXLanguagePackage http://www.eclipse.org/emf/2002/Ecore java://org.eclipse.emf.ecore.EcorePackage http://www.simsg.org/simulationdefinition/simulationdefinition java://SimulationDefinition.SimulationDefinitionPackage" name="TestcasesModel" simulationModelURI="../../re.actionFramework/GeneralTestSimSG/instances/simulation_instances/TestcasesModel.xmi" gtRulesURI="../../re.actionFramework/GeneralTestSimSG/model/gtRules.xmi" ibexPatternsURI="../../re.actionFramework/GeneralTestSimSG/model/ibex-patterns.xmi">
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.10" rate="1.0"/>
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.11" rate="100.0"/>
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.12" rate="1.0"/>
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.13" rate="1.0"/>
-  <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.14" rate="1.0"/>
+  <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.14" rate="30.0"/>
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.15" rate="1.0"/>
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.16" rate="1.0"/>
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.17" rate="1.0"/>
@@ -21,330 +21,352 @@
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.29" rate="1.0"/>
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.30" rate="1.0"/>
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.31" rate="2.0"/>
+  <terminationConditions xmi:type="org.simsg:SimpleTerminationCondition" maxSimulationTime="20000.0"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_underspecTest" pattern="//@ibexPatternSet/@contextPatterns.32"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_genericTest" pattern="//@ibexPatternSet/@contextPatterns.33"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_simpleSynthesisTest" pattern="//@ibexPatternSet/@contextPatterns.34"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_unspecifiedStateChangeTest" pattern="//@ibexPatternSet/@contextPatterns.35"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_wildcardTest" pattern="//@ibexPatternSet/@contextPatterns.36"/>
+  <observations xmi:type="org.simsg:PatternObservation" name="obs_aFree" pattern="//@ibexPatternSet/@contextPatterns.37"/>
+  <observations xmi:type="org.simsg:PatternObservation" name="obs_xFree" pattern="//@ibexPatternSet/@contextPatterns.38"/>
+  <observations xmi:type="org.simsg:PatternObservation" name="obs_ax" pattern="//@ibexPatternSet/@contextPatterns.39"/>
   <GtRuleSet xmi:type="GTLanguage:GTRuleSet">
     <rules xmi:type="GTLanguage:GTRule" name="A_b_X_zBoundSrc" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.0/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="src">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="A_b_X_zBoundTrg" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.1/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="trg">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="A_b_A_cBoundSrc" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.2/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="src">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="A_b_A_cBoundTrg" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.3/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="trg">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="A_b_A_bBoundSrc" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.4/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="src">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="A_b_A_bBoundTrg" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.5/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="trg">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="A_c_X_zBoundSrc" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.6/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="src">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="A_c_X_zBoundTrg" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.7/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="trg">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="A_c_X_yBoundSrc" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.8/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="src">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="A_c_X_yBoundTrg" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.9/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="trg">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="simpleBinding" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.10/@nodes.0 //@GtRuleSet/@rules.10/@nodes.1 //@GtRuleSet/@rules.10/@nodes.2 //@GtRuleSet/@rules.10/@nodes.3">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="x">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="simpleBindingBwd" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.11/@nodes.0 //@GtRuleSet/@rules.11/@nodes.1 //@GtRuleSet/@rules.11/@nodes.2 //@GtRuleSet/@rules.11/@nodes.3">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="x">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="selfBinding" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.12/@nodes.0 //@GtRuleSet/@rules.12/@nodes.1 //@GtRuleSet/@rules.12/@nodes.2">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="selfBindingBwd" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.13/@nodes.0 //@GtRuleSet/@rules.13/@nodes.1 //@GtRuleSet/@rules.13/@nodes.2">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="synthDegComplete" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.14/@nodes.0 //@GtRuleSet/@rules.14/@nodes.1">
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="synthDegCompleteBwd" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.15/@nodes.0 //@GtRuleSet/@rules.15/@nodes.1 //@GtRuleSet/@rules.15/@nodes.2 //@GtRuleSet/@rules.15/@nodes.3">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="x">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="synthDegPartial" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.16/@nodes.0 //@GtRuleSet/@rules.16/@nodes.1 //@GtRuleSet/@rules.16/@nodes.2">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="synthDegPartialBwd" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.17/@nodes.0 //@GtRuleSet/@rules.17/@nodes.1 //@GtRuleSet/@rules.17/@nodes.2 //@GtRuleSet/@rules.17/@nodes.3">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="x">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="underspec" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.18/@nodes.0 //@GtRuleSet/@rules.18/@nodes.1 //@GtRuleSet/@rules.18/@nodes.2">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="unspec" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.19/@nodes.0 //@GtRuleSet/@rules.19/@nodes.1">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="unspecTest" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.20/@nodes.0 //@GtRuleSet/@rules.20/@nodes.1">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="x">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="generic" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.21/@nodes.0 //@GtRuleSet/@rules.21/@nodes.1 //@GtRuleSet/@rules.21/@nodes.2">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="genericWithState" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.22/@nodes.0 //@GtRuleSet/@rules.22/@nodes.1 //@GtRuleSet/@rules.22/@nodes.2">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="genericWithStateTest" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.23/@nodes.0 //@GtRuleSet/@rules.23/@nodes.1">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="simpleSynthesis" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.24/@nodes.0 //@GtRuleSet/@rules.24/@nodes.1">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="unspecifiedStateChange" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.25/@nodes.0 //@GtRuleSet/@rules.25/@nodes.1 //@GtRuleSet/@rules.25/@nodes.2">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="injectivity" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.26/@nodes.0 //@GtRuleSet/@rules.26/@nodes.1 //@GtRuleSet/@rules.26/@nodes.2">
       <nodes xmi:type="GTLanguage:GTNode" name="a1">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="a2">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="x">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="injectivityBwd" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.27/@nodes.0 //@GtRuleSet/@rules.27/@nodes.1 //@GtRuleSet/@rules.27/@nodes.2">
       <nodes xmi:type="GTLanguage:GTNode" name="a1">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="a2">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="x">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="A_cFree" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.28/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="src">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="wildcard" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.29/@nodes.0 //@GtRuleSet/@rules.29/@nodes.1">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="wildcardStateChange" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.30/@nodes.0 //@GtRuleSet/@rules.30/@nodes.1 //@GtRuleSet/@rules.30/@nodes.2">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="wildcardStateChangeBwd" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.31/@nodes.0 //@GtRuleSet/@rules.31/@nodes.1 //@GtRuleSet/@rules.31/@nodes.2">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="obs_underspecTest" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.32/@nodes.0 //@GtRuleSet/@rules.32/@nodes.1 //@GtRuleSet/@rules.32/@nodes.2">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="x">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="obs_genericTest" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.33/@nodes.0 //@GtRuleSet/@rules.33/@nodes.1">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="obs_simpleSynthesisTest" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.34/@nodes.0 //@GtRuleSet/@rules.34/@nodes.1">
       <nodes xmi:type="GTLanguage:GTNode" name="x">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//U_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="obs_unspecifiedStateChangeTest" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.35/@nodes.0 //@GtRuleSet/@rules.35/@nodes.1">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//A"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//P_s"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="obs_wildcardTest" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.36/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="x">
-        <type xmi:type="ecore:EClass" href="../../model/TestcasesModel.ecore#//X"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+      </nodes>
+    </rules>
+    <rules xmi:type="GTLanguage:GTRule" name="obs_aFree" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.37/@nodes.0">
+      <nodes xmi:type="GTLanguage:GTNode" name="a">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+      </nodes>
+    </rules>
+    <rules xmi:type="GTLanguage:GTRule" name="obs_xFree" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.38/@nodes.0">
+      <nodes xmi:type="GTLanguage:GTNode" name="x">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+      </nodes>
+    </rules>
+    <rules xmi:type="GTLanguage:GTRule" name="obs_ax" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.39/@nodes.0 //@GtRuleSet/@rules.39/@nodes.1">
+      <nodes xmi:type="GTLanguage:GTNode" name="a">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+      </nodes>
+      <nodes xmi:type="GTLanguage:GTNode" name="x">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
     </rules>
   </GtRuleSet>
@@ -998,6 +1020,54 @@
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </signatureNodes>
     </contextPatterns>
+    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="obs_aFree">
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.0">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.37/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.0/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.2">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.37/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.2/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.4">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.37/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.4/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.5">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.37/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.5/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.6">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.37/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.6/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.8">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.37/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.8/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.3">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.37/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.3/@signatureNodes.0"/>
+      </invocations>
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="a">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+      </signatureNodes>
+    </contextPatterns>
+    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="obs_xFree">
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.9">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.38/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.9/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.1">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.38/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.1/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.7">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.38/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.7/@signatureNodes.0"/>
+      </invocations>
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="x">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+      </signatureNodes>
+    </contextPatterns>
+    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="obs_ax">
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="a">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+      </signatureNodes>
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="x">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+      </signatureNodes>
+    </contextPatterns>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="simpleBinding">
       <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="x" outgoingEdges="//@ibexPatternSet/@createPatterns.0/@createdEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
@@ -1010,20 +1080,20 @@
       </createdEdges>
     </createPatterns>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="simpleBindingBwd">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="x" incomingEdges="//@ibexPatternSet/@createPatterns.1/@createdEdges.1" outgoingEdges="//@ibexPatternSet/@createPatterns.1/@createdEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-      </contextNodes>
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@createPatterns.1/@createdEdges.1">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@createPatterns.1/@createdEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </contextNodes>
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="ps" incomingEdges="//@ibexPatternSet/@createPatterns.1/@createdEdges.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="x" incomingEdges="//@ibexPatternSet/@createPatterns.1/@createdEdges.0" outgoingEdges="//@ibexPatternSet/@createPatterns.1/@createdEdges.1">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+      </contextNodes>
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="ps" incomingEdges="//@ibexPatternSet/@createPatterns.1/@createdEdges.1">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </contextNodes>
-      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.1/@contextNodes.0" targetNode="//@ibexPatternSet/@createPatterns.1/@contextNodes.2">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
-      </createdEdges>
-      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.1/@contextNodes.1" targetNode="//@ibexPatternSet/@createPatterns.1/@contextNodes.0">
+      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.1/@contextNodes.0" targetNode="//@ibexPatternSet/@createPatterns.1/@contextNodes.1">
         <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b_X_z"/>
+      </createdEdges>
+      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.1/@contextNodes.1" targetNode="//@ibexPatternSet/@createPatterns.1/@contextNodes.2">
+        <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
       </createdEdges>
     </createPatterns>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="selfBinding">
@@ -1280,35 +1350,32 @@
     </deletePatterns>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="synthDegComplete"/>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="synthDegCompleteBwd">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="ps" incomingEdges="//@ibexPatternSet/@deletePatterns.5/@deletedEdges.1 //@ibexPatternSet/@deletePatterns.5/@deletedEdges.4">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
-      </contextNodes>
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="us" incomingEdges="//@ibexPatternSet/@deletePatterns.5/@deletedEdges.2">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="us" incomingEdges="//@ibexPatternSet/@deletePatterns.5/@deletedEdges.0 //@ibexPatternSet/@deletePatterns.5/@deletedEdges.3">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </contextNodes>
-      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.5/@deletedNodes.1" targetNode="//@ibexPatternSet/@deletePatterns.5/@deletedNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_X_z"/>
-      </deletedEdges>
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="ps" incomingEdges="//@ibexPatternSet/@deletePatterns.5/@deletedEdges.2">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
+      </contextNodes>
       <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.5/@deletedNodes.1" targetNode="//@ibexPatternSet/@deletePatterns.5/@contextNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
-      </deletedEdges>
-      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.5/@deletedNodes.0" targetNode="//@ibexPatternSet/@deletePatterns.5/@contextNodes.1">
         <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_u"/>
       </deletedEdges>
-      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.5/@deletedNodes.2" targetNode="//@ibexPatternSet/@deletePatterns.5/@deletedNodes.0">
+      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.5/@deletedNodes.0" targetNode="//@ibexPatternSet/@deletePatterns.5/@deletedNodes.1">
         <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_X_z"/>
       </deletedEdges>
-      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.5/@deletedNodes.2" targetNode="//@ibexPatternSet/@deletePatterns.5/@contextNodes.0">
+      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.5/@deletedNodes.0" targetNode="//@ibexPatternSet/@deletePatterns.5/@contextNodes.1">
         <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
       </deletedEdges>
-      <deletedNodes xmi:type="IBeXLanguage:IBeXNode" name="x" incomingEdges="//@ibexPatternSet/@deletePatterns.5/@deletedEdges.0 //@ibexPatternSet/@deletePatterns.5/@deletedEdges.3" outgoingEdges="//@ibexPatternSet/@deletePatterns.5/@deletedEdges.2">
+      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.5/@deletedNodes.2" targetNode="//@ibexPatternSet/@deletePatterns.5/@contextNodes.0">
+        <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_u"/>
+      </deletedEdges>
+      <deletedNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@deletePatterns.5/@deletedEdges.1 //@ibexPatternSet/@deletePatterns.5/@deletedEdges.2">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+      </deletedNodes>
+      <deletedNodes xmi:type="IBeXLanguage:IBeXNode" name="x" incomingEdges="//@ibexPatternSet/@deletePatterns.5/@deletedEdges.1" outgoingEdges="//@ibexPatternSet/@deletePatterns.5/@deletedEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </deletedNodes>
-      <deletedNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@deletePatterns.5/@deletedEdges.0 //@ibexPatternSet/@deletePatterns.5/@deletedEdges.1">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-      </deletedNodes>
-      <deletedNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@deletePatterns.5/@deletedEdges.3 //@ibexPatternSet/@deletePatterns.5/@deletedEdges.4">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+      <deletedNodes xmi:type="IBeXLanguage:IBeXNode" name="x" outgoingEdges="//@ibexPatternSet/@deletePatterns.5/@deletedEdges.3">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </deletedNodes>
     </deletePatterns>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="synthDegPartial">

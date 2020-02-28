@@ -13,10 +13,12 @@ import reactionContainer.Agent;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link GKLModel.T#getT_x <em>Tx</em>}</li>
+ *   <li>{@link GKLModel.T#getT_x_K_a <em>TxKa</em>}</li>
+ *   <li>{@link GKLModel.T#getT_x_P_a <em>TxPa</em>}</li>
  *   <li>{@link GKLModel.T#getT_x_u <em>Txu</em>}</li>
  *   <li>{@link GKLModel.T#getT_x_p <em>Txp</em>}</li>
- *   <li>{@link GKLModel.T#getT_y <em>Ty</em>}</li>
+ *   <li>{@link GKLModel.T#getT_y_K_a <em>TyKa</em>}</li>
+ *   <li>{@link GKLModel.T#getT_y_P_a <em>TyPa</em>}</li>
  *   <li>{@link GKLModel.T#getT_y_u <em>Tyu</em>}</li>
  *   <li>{@link GKLModel.T#getT_y_p <em>Typ</em>}</li>
  * </ul>
@@ -27,26 +29,48 @@ import reactionContainer.Agent;
  */
 public interface T extends Agent {
 	/**
-	 * Returns the value of the '<em><b>Tx</b></em>' reference.
+	 * Returns the value of the '<em><b>TxKa</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tx</em>' reference.
-	 * @see #setT_x(Agent)
-	 * @see GKLModel.GKLModelPackage#getT_T_x()
+	 * @return the value of the '<em>TxKa</em>' reference.
+	 * @see #setT_x_K_a(K)
+	 * @see GKLModel.GKLModelPackage#getT_T_x_K_a()
 	 * @model
 	 * @generated
 	 */
-	Agent getT_x();
+	K getT_x_K_a();
 
 	/**
-	 * Sets the value of the '{@link GKLModel.T#getT_x <em>Tx</em>}' reference.
+	 * Sets the value of the '{@link GKLModel.T#getT_x_K_a <em>TxKa</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tx</em>' reference.
-	 * @see #getT_x()
+	 * @param value the new value of the '<em>TxKa</em>' reference.
+	 * @see #getT_x_K_a()
 	 * @generated
 	 */
-	void setT_x(Agent value);
+	void setT_x_K_a(K value);
+
+	/**
+	 * Returns the value of the '<em><b>TxPa</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>TxPa</em>' reference.
+	 * @see #setT_x_P_a(P)
+	 * @see GKLModel.GKLModelPackage#getT_T_x_P_a()
+	 * @model
+	 * @generated
+	 */
+	P getT_x_P_a();
+
+	/**
+	 * Sets the value of the '{@link GKLModel.T#getT_x_P_a <em>TxPa</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>TxPa</em>' reference.
+	 * @see #getT_x_P_a()
+	 * @generated
+	 */
+	void setT_x_P_a(P value);
 
 	/**
 	 * Returns the value of the '<em><b>Txu</b></em>' reference.
@@ -93,26 +117,48 @@ public interface T extends Agent {
 	void setT_x_p(P_s value);
 
 	/**
-	 * Returns the value of the '<em><b>Ty</b></em>' reference.
+	 * Returns the value of the '<em><b>TyKa</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ty</em>' reference.
-	 * @see #setT_y(Agent)
-	 * @see GKLModel.GKLModelPackage#getT_T_y()
+	 * @return the value of the '<em>TyKa</em>' reference.
+	 * @see #setT_y_K_a(K)
+	 * @see GKLModel.GKLModelPackage#getT_T_y_K_a()
 	 * @model
 	 * @generated
 	 */
-	Agent getT_y();
+	K getT_y_K_a();
 
 	/**
-	 * Sets the value of the '{@link GKLModel.T#getT_y <em>Ty</em>}' reference.
+	 * Sets the value of the '{@link GKLModel.T#getT_y_K_a <em>TyKa</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ty</em>' reference.
-	 * @see #getT_y()
+	 * @param value the new value of the '<em>TyKa</em>' reference.
+	 * @see #getT_y_K_a()
 	 * @generated
 	 */
-	void setT_y(Agent value);
+	void setT_y_K_a(K value);
+
+	/**
+	 * Returns the value of the '<em><b>TyPa</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>TyPa</em>' reference.
+	 * @see #setT_y_P_a(P)
+	 * @see GKLModel.GKLModelPackage#getT_T_y_P_a()
+	 * @model
+	 * @generated
+	 */
+	P getT_y_P_a();
+
+	/**
+	 * Sets the value of the '{@link GKLModel.T#getT_y_P_a <em>TyPa</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>TyPa</em>' reference.
+	 * @see #getT_y_P_a()
+	 * @generated
+	 */
+	void setT_y_P_a(P value);
 
 	/**
 	 * Returns the value of the '<em><b>Tyu</b></em>' reference.

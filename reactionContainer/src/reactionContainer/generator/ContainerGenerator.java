@@ -1,22 +1,16 @@
 package reactionContainer.generator;
 
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Collections;
+import java.nio.file.FileSystems;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
-import org.eclipse.emf.ecore.EPackage.Registry;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -37,7 +31,11 @@ import ecoreBCModel.IntermSite;
 import ecoreBCModel.IntermSiteInstance;
 import ecoreBCModel.IntermSiteState;
 import ecoreBCModel.IntermediateModel;
-import reactionContainer.*;
+import reactionContainer.Agent;
+import reactionContainer.Container;
+import reactionContainer.ReactionContainerFactory;
+import reactionContainer.ReactionContainerPackage;
+import reactionContainer.State;
 import reactionContainer.impl.ReactionContainerFactoryImpl;
 import reactionContainer.util.AgentClassFactory;
 import reactionContainer.util.StateClassFactory;
@@ -262,7 +260,10 @@ public abstract class ContainerGenerator {
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
 
 		ResourceSet resSet = new ResourceSetImpl();
-		Resource res = resSet.createResource(URI.createFileURI(metaModelPath));
+		String absoluteMetaModelPath = FileSystems.getDefault().getPath(metaModelPath).normalize().toAbsolutePath().toString();
+
+
+		Resource res = resSet.createResource(URI.createFileURI(absoluteMetaModelPath));
 		res.getContents().add(dynamicMetaModel);
 
 		EPackage.Registry.INSTANCE.put(dynamicMetaModel.getNsURI(), dynamicMetaModel);

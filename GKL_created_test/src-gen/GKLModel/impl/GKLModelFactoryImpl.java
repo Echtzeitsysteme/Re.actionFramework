@@ -56,12 +56,12 @@ public class GKLModelFactoryImpl extends EFactoryImpl implements GKLModelFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case GKLModelPackage.P:
-			return createP();
-		case GKLModelPackage.K:
-			return createK();
 		case GKLModelPackage.T:
 			return createT();
+		case GKLModelPackage.K:
+			return createK();
+		case GKLModelPackage.P:
+			return createP();
 		case GKLModelPackage.US:
 			return createU_s();
 		case GKLModelPackage.PS:
@@ -77,9 +77,9 @@ public class GKLModelFactoryImpl extends EFactoryImpl implements GKLModelFactory
 	 * @generated
 	 */
 	@Override
-	public P createP() {
-		PImpl p = new PImpl();
-		return p;
+	public T createT() {
+		TImpl t = new TImpl();
+		return t;
 	}
 
 	/**
@@ -99,9 +99,9 @@ public class GKLModelFactoryImpl extends EFactoryImpl implements GKLModelFactory
 	 * @generated
 	 */
 	@Override
-	public T createT() {
-		TImpl t = new TImpl();
-		return t;
+	public P createP() {
+		PImpl p = new PImpl();
+		return p;
 	}
 
 	/**

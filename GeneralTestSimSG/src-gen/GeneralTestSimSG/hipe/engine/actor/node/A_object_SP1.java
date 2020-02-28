@@ -48,7 +48,7 @@ public class A_object_SP1 extends AbstractActor {
 		ports = new LinkedList<>();
 		ports.add(new PortNodeLeft<TestcasesModel.A>(getSelf(), name2actor.get("A_A_b_A_c_0_reference"), this::returnTrue));
 		ports.add(new PortNodeLeft<TestcasesModel.A>(getSelf(), name2actor.get("A_A_c_X_y_0_reference"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("A_cFree_215_nacjunction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("A_cFree_220_nacjunction"), this::returnTrue));
 		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("unspec_92_junction"), this::returnTrue));
 	}
 

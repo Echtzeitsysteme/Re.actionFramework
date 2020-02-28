@@ -58,14 +58,14 @@ public interface GKLModelPackage extends EPackage {
 	GKLModelPackage eINSTANCE = GKLModel.impl.GKLModelPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link GKLModel.impl.PImpl <em>P</em>}' class.
+	 * The meta object id for the '{@link GKLModel.impl.TImpl <em>T</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see GKLModel.impl.PImpl
-	 * @see GKLModel.impl.GKLModelPackageImpl#getP()
+	 * @see GKLModel.impl.TImpl
+	 * @see GKLModel.impl.GKLModelPackageImpl#getT()
 	 * @generated
 	 */
-	int P = 0;
+	int T = 0;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -74,34 +74,97 @@ public interface GKLModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int P__ID = ReactionContainerPackage.AGENT__ID;
+	int T__ID = ReactionContainerPackage.AGENT__ID;
 
 	/**
-	 * The feature id for the '<em><b>Pa</b></em>' reference.
+	 * The feature id for the '<em><b>TxKa</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int P__PA = ReactionContainerPackage.AGENT_FEATURE_COUNT + 0;
+	int T__TXKA = ReactionContainerPackage.AGENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>P</em>' class.
+	 * The feature id for the '<em><b>TxPa</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int P_FEATURE_COUNT = ReactionContainerPackage.AGENT_FEATURE_COUNT + 1;
+	int T__TXPA = ReactionContainerPackage.AGENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>P</em>' class.
+	 * The feature id for the '<em><b>Txu</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int P_OPERATION_COUNT = ReactionContainerPackage.AGENT_OPERATION_COUNT + 0;
+	int T__TXU = ReactionContainerPackage.AGENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Txp</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T__TXP = ReactionContainerPackage.AGENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>TyKa</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T__TYKA = ReactionContainerPackage.AGENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>TyPa</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T__TYPA = ReactionContainerPackage.AGENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Tyu</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T__TYU = ReactionContainerPackage.AGENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Typ</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T__TYP = ReactionContainerPackage.AGENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The number of structural features of the '<em>T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T_FEATURE_COUNT = ReactionContainerPackage.AGENT_FEATURE_COUNT + 8;
+
+	/**
+	 * The number of operations of the '<em>T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T_OPERATION_COUNT = ReactionContainerPackage.AGENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link GKLModel.impl.KImpl <em>K</em>}' class.
@@ -123,22 +186,13 @@ public interface GKLModelPackage extends EPackage {
 	int K__ID = ReactionContainerPackage.AGENT__ID;
 
 	/**
-	 * The feature id for the '<em><b>Ka</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int K__KA = ReactionContainerPackage.AGENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>K</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int K_FEATURE_COUNT = ReactionContainerPackage.AGENT_FEATURE_COUNT + 1;
+	int K_FEATURE_COUNT = ReactionContainerPackage.AGENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>K</em>' class.
@@ -150,14 +204,14 @@ public interface GKLModelPackage extends EPackage {
 	int K_OPERATION_COUNT = ReactionContainerPackage.AGENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link GKLModel.impl.TImpl <em>T</em>}' class.
+	 * The meta object id for the '{@link GKLModel.impl.PImpl <em>P</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see GKLModel.impl.TImpl
-	 * @see GKLModel.impl.GKLModelPackageImpl#getT()
+	 * @see GKLModel.impl.PImpl
+	 * @see GKLModel.impl.GKLModelPackageImpl#getP()
 	 * @generated
 	 */
-	int T = 2;
+	int P = 2;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -166,79 +220,25 @@ public interface GKLModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int T__ID = ReactionContainerPackage.AGENT__ID;
+	int P__ID = ReactionContainerPackage.AGENT__ID;
 
 	/**
-	 * The feature id for the '<em><b>Tx</b></em>' reference.
+	 * The number of structural features of the '<em>P</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int T__TX = ReactionContainerPackage.AGENT_FEATURE_COUNT + 0;
+	int P_FEATURE_COUNT = ReactionContainerPackage.AGENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Txu</b></em>' reference.
+	 * The number of operations of the '<em>P</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int T__TXU = ReactionContainerPackage.AGENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Txp</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int T__TXP = ReactionContainerPackage.AGENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Ty</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int T__TY = ReactionContainerPackage.AGENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Tyu</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int T__TYU = ReactionContainerPackage.AGENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Typ</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int T__TYP = ReactionContainerPackage.AGENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The number of structural features of the '<em>T</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int T_FEATURE_COUNT = ReactionContainerPackage.AGENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of operations of the '<em>T</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int T_OPERATION_COUNT = ReactionContainerPackage.AGENT_OPERATION_COUNT + 0;
+	int P_OPERATION_COUNT = ReactionContainerPackage.AGENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link GKLModel.impl.U_sImpl <em>Us</em>}' class.
@@ -297,48 +297,6 @@ public interface GKLModelPackage extends EPackage {
 	int PS_OPERATION_COUNT = ReactionContainerPackage.STATE_OPERATION_COUNT + 0;
 
 	/**
-	 * Returns the meta object for class '{@link GKLModel.P <em>P</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>P</em>'.
-	 * @see GKLModel.P
-	 * @generated
-	 */
-	EClass getP();
-
-	/**
-	 * Returns the meta object for the reference '{@link GKLModel.P#getP_a <em>Pa</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Pa</em>'.
-	 * @see GKLModel.P#getP_a()
-	 * @see #getP()
-	 * @generated
-	 */
-	EReference getP_P_a();
-
-	/**
-	 * Returns the meta object for class '{@link GKLModel.K <em>K</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>K</em>'.
-	 * @see GKLModel.K
-	 * @generated
-	 */
-	EClass getK();
-
-	/**
-	 * Returns the meta object for the reference '{@link GKLModel.K#getK_a <em>Ka</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Ka</em>'.
-	 * @see GKLModel.K#getK_a()
-	 * @see #getK()
-	 * @generated
-	 */
-	EReference getK_K_a();
-
-	/**
 	 * Returns the meta object for class '{@link GKLModel.T <em>T</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -349,15 +307,26 @@ public interface GKLModelPackage extends EPackage {
 	EClass getT();
 
 	/**
-	 * Returns the meta object for the reference '{@link GKLModel.T#getT_x <em>Tx</em>}'.
+	 * Returns the meta object for the reference '{@link GKLModel.T#getT_x_K_a <em>TxKa</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Tx</em>'.
-	 * @see GKLModel.T#getT_x()
+	 * @return the meta object for the reference '<em>TxKa</em>'.
+	 * @see GKLModel.T#getT_x_K_a()
 	 * @see #getT()
 	 * @generated
 	 */
-	EReference getT_T_x();
+	EReference getT_T_x_K_a();
+
+	/**
+	 * Returns the meta object for the reference '{@link GKLModel.T#getT_x_P_a <em>TxPa</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>TxPa</em>'.
+	 * @see GKLModel.T#getT_x_P_a()
+	 * @see #getT()
+	 * @generated
+	 */
+	EReference getT_T_x_P_a();
 
 	/**
 	 * Returns the meta object for the reference '{@link GKLModel.T#getT_x_u <em>Txu</em>}'.
@@ -382,15 +351,26 @@ public interface GKLModelPackage extends EPackage {
 	EReference getT_T_x_p();
 
 	/**
-	 * Returns the meta object for the reference '{@link GKLModel.T#getT_y <em>Ty</em>}'.
+	 * Returns the meta object for the reference '{@link GKLModel.T#getT_y_K_a <em>TyKa</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Ty</em>'.
-	 * @see GKLModel.T#getT_y()
+	 * @return the meta object for the reference '<em>TyKa</em>'.
+	 * @see GKLModel.T#getT_y_K_a()
 	 * @see #getT()
 	 * @generated
 	 */
-	EReference getT_T_y();
+	EReference getT_T_y_K_a();
+
+	/**
+	 * Returns the meta object for the reference '{@link GKLModel.T#getT_y_P_a <em>TyPa</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>TyPa</em>'.
+	 * @see GKLModel.T#getT_y_P_a()
+	 * @see #getT()
+	 * @generated
+	 */
+	EReference getT_T_y_P_a();
 
 	/**
 	 * Returns the meta object for the reference '{@link GKLModel.T#getT_y_u <em>Tyu</em>}'.
@@ -413,6 +393,26 @@ public interface GKLModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getT_T_y_p();
+
+	/**
+	 * Returns the meta object for class '{@link GKLModel.K <em>K</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>K</em>'.
+	 * @see GKLModel.K
+	 * @generated
+	 */
+	EClass getK();
+
+	/**
+	 * Returns the meta object for class '{@link GKLModel.P <em>P</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>P</em>'.
+	 * @see GKLModel.P
+	 * @generated
+	 */
+	EClass getP();
 
 	/**
 	 * Returns the meta object for class '{@link GKLModel.U_s <em>Us</em>}'.
@@ -458,42 +458,6 @@ public interface GKLModelPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link GKLModel.impl.PImpl <em>P</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see GKLModel.impl.PImpl
-		 * @see GKLModel.impl.GKLModelPackageImpl#getP()
-		 * @generated
-		 */
-		EClass P = eINSTANCE.getP();
-
-		/**
-		 * The meta object literal for the '<em><b>Pa</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference P__PA = eINSTANCE.getP_P_a();
-
-		/**
-		 * The meta object literal for the '{@link GKLModel.impl.KImpl <em>K</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see GKLModel.impl.KImpl
-		 * @see GKLModel.impl.GKLModelPackageImpl#getK()
-		 * @generated
-		 */
-		EClass K = eINSTANCE.getK();
-
-		/**
-		 * The meta object literal for the '<em><b>Ka</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference K__KA = eINSTANCE.getK_K_a();
-
-		/**
 		 * The meta object literal for the '{@link GKLModel.impl.TImpl <em>T</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -504,12 +468,20 @@ public interface GKLModelPackage extends EPackage {
 		EClass T = eINSTANCE.getT();
 
 		/**
-		 * The meta object literal for the '<em><b>Tx</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>TxKa</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference T__TX = eINSTANCE.getT_T_x();
+		EReference T__TXKA = eINSTANCE.getT_T_x_K_a();
+
+		/**
+		 * The meta object literal for the '<em><b>TxPa</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference T__TXPA = eINSTANCE.getT_T_x_P_a();
 
 		/**
 		 * The meta object literal for the '<em><b>Txu</b></em>' reference feature.
@@ -528,12 +500,20 @@ public interface GKLModelPackage extends EPackage {
 		EReference T__TXP = eINSTANCE.getT_T_x_p();
 
 		/**
-		 * The meta object literal for the '<em><b>Ty</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>TyKa</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference T__TY = eINSTANCE.getT_T_y();
+		EReference T__TYKA = eINSTANCE.getT_T_y_K_a();
+
+		/**
+		 * The meta object literal for the '<em><b>TyPa</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference T__TYPA = eINSTANCE.getT_T_y_P_a();
 
 		/**
 		 * The meta object literal for the '<em><b>Tyu</b></em>' reference feature.
@@ -550,6 +530,26 @@ public interface GKLModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference T__TYP = eINSTANCE.getT_T_y_p();
+
+		/**
+		 * The meta object literal for the '{@link GKLModel.impl.KImpl <em>K</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see GKLModel.impl.KImpl
+		 * @see GKLModel.impl.GKLModelPackageImpl#getK()
+		 * @generated
+		 */
+		EClass K = eINSTANCE.getK();
+
+		/**
+		 * The meta object literal for the '{@link GKLModel.impl.PImpl <em>P</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see GKLModel.impl.PImpl
+		 * @see GKLModel.impl.GKLModelPackageImpl#getP()
+		 * @generated
+		 */
+		EClass P = eINSTANCE.getP();
 
 		/**
 		 * The meta object literal for the '{@link GKLModel.impl.U_sImpl <em>Us</em>}' class.

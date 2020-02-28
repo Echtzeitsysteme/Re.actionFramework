@@ -26,12 +26,18 @@ public class Main {
 		
 		
 		// Load Model
-		final String dslModelLocation = "C:\\Users\\tobia\\eclipse-workspaces\\languagePlayground\\dsl.dotTest\\bin\\Testcases.xmi";
-		final String trgProjectLocation = "C:\\Users\\tobia\\eclipse-workspaces\\re.actionFramework\\GeneralTestSimSG";
+//		final String dslModelLocation = "C:\\Users\\tobia\\eclipse-workspaces\\languagePlayground\\dsl.dotTest\\bin\\Testcases.xmi";
+//		final String trgProjectLocation = "C:\\Users\\tobia\\eclipse-workspaces\\re.actionFramework\\GeneralTestSimSG";
+		
+//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\bin\\Testcases.xmi";
+//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
+		
+		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\bin\\GKL.xmi";
+		final String trgProjectLocation = "..\\..\\re.actionFramework\\GKL_created_test";
 		
 		final String userDir = System.getProperty("user.dir");
 		final String tempModels = userDir + "/models/";
-
+		
 		IntermediateModel intermModel;
 
 		// Clear directories
@@ -81,6 +87,8 @@ public class Main {
 		System.out.println("Initiating Intermediate to SimSG Transformation...");
 
 		ContainerGenerator containerGen = new ContainerEMF(intermModel);
+		
+		String trgProjectLocationTest = "C:\\Users\\tobia\\eclipse-workspaces\\re.actionFramework\\GeneralTestSimSG";
 		String metamodelPath = trgProjectLocation + "/model/" + intermModel.getName() + "Model.ecore";
 		String modelPath = trgProjectLocation + "/instances/simulation_instances/" + intermModel.getName() + "Model.xmi";
 

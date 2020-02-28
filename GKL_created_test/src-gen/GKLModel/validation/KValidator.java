@@ -4,8 +4,6 @@
  */
 package GKLModel.validation;
 
-import reactionContainer.Agent;
-
 /**
  * A sample validator interface for {@link GKLModel.K}.
  * This doesn't really do anything, and it's not a real EMF artifact.
@@ -15,5 +13,4 @@ import reactionContainer.Agent;
 public interface KValidator {
 	boolean validate();
 
-	boolean validateK_a(Agent value);
 }

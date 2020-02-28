@@ -1,14 +1,5 @@
 package org.reaction.ibex.patternCreation;
 
-import GTLanguage.GTRuleSet;
-import ecoreBCModel.CommandType;
-import ecoreBCModel.EcoreBCModelPackage;
-import ecoreBCModel.IntermCommand;
-import ecoreBCModel.IntermComponent;
-import ecoreBCModel.IntermObservable;
-import ecoreBCModel.IntermRule;
-import ecoreBCModel.IntermediateModel;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -17,27 +8,31 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.xtext.biochemics.dotDsl.TerminateCommand;
 
 import GTLanguage.GTLanguagePackage;
 import GTLanguage.GTRule;
+import GTLanguage.GTRuleSet;
 import IBeXLanguage.IBeXContext;
 import IBeXLanguage.IBeXContextPattern;
 import IBeXLanguage.IBeXLanguagePackage;
 import IBeXLanguage.IBeXPatternSet;
 import SimulationDefinition.PatternObservation;
+import SimulationDefinition.PatternTerminationCondition;
 import SimulationDefinition.SimDefinition;
 import SimulationDefinition.SimpleTerminationCondition;
-import SimulationDefinition.PatternTerminationCondition;
 import SimulationDefinition.SimulationDefinitionFactory;
 import SimulationDefinition.StochasticRate;
+import ecoreBCModel.IntermCommand;
+import ecoreBCModel.IntermComponent;
+import ecoreBCModel.IntermObservable;
+import ecoreBCModel.IntermRule;
+import ecoreBCModel.IntermediateModel;
 
 public class SimDefCreator {
 
@@ -67,7 +62,7 @@ public class SimDefCreator {
 		definition.setName(model.getName() + "Model");
 		setGtRules(trgProjectLocation + "/model/gtRules.xmi");
 		setIBeXPatterns(trgProjectLocation + "/model/ibex-patterns.xmi");
-		setModelURI(trgProjectLocation + "/model/"+model.getName()+"Model.ecore");
+		setModelURI(trgProjectLocation + "/instances/simulation_instances/"+model.getName()+"Model.xmi");
 
 		setModelComponents();
 

@@ -45,7 +45,7 @@ public class NotificationActor extends AbstractActor {
 	}
 	
 	private void initializeExploration() {
-		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA(), obj -> {
+		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getU_s(), obj -> {
 			Collection<EObject> children = new LinkedList<>();
 			return children;
 		});
@@ -53,11 +53,11 @@ public class NotificationActor extends AbstractActor {
 			Collection<EObject> children = new LinkedList<>();
 			return children;
 		});
-		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getU_s(), obj -> {
+		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getP_s(), obj -> {
 			Collection<EObject> children = new LinkedList<>();
 			return children;
 		});
-		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getP_s(), obj -> {
+		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA(), obj -> {
 			Collection<EObject> children = new LinkedList<>();
 			return children;
 		});

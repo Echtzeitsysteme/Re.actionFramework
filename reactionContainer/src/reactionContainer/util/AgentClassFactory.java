@@ -5,22 +5,9 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcorePackage;
-
-//import org.simsg.simsgl.simSGL.Agent;
-//import org.simsg.simsgl.simSGL.Attribute;
-//import org.simsg.simsgl.simSGL.AttributeType;
-//import org.simsg.simsgl.simSGL.FloatAttribute;
-//import org.simsg.simsgl.simSGL.IntegerAttribute;
-//import org.simsg.simsgl.simSGL.SingleSite;
-//import org.simsg.simsgl.simSGL.Site;
-//import org.simsg.simsgl.simSGL.State;
 
 import ecoreBCModel.IntermAgent;
 import ecoreBCModel.IntermSite;
@@ -181,10 +168,6 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 	public static String createReferenceName(IntermAgent agent, IntermSite site, IntermAgent otherAgent,
 			IntermSite otherSite) {
 		return createCombinedClassName(agent.getName(), site.getName(), otherAgent.getName(), otherSite.getName());
-	}
-
-	private boolean checkReferenceAlreadyRegistered(EReference ref) {
-		return checkReferenceAlreadyRegistered(ref.getName());
 	}
 
 	private boolean checkReferenceAlreadyRegistered(String refName) {

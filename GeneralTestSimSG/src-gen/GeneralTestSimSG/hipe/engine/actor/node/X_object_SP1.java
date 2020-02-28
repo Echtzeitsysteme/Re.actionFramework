@@ -49,6 +49,7 @@ public class X_object_SP1 extends AbstractActor {
 		ports.add(new PortNodeRight<TestcasesModel.X>(getSelf(), name2actor.get("A_A_c_X_z_0_reference"), this::returnTrue));
 		ports.add(new PortNodeLeft<TestcasesModel.X>(getSelf(), name2actor.get("X_X_z_u_0_reference"), this::returnTrue));
 		ports.add(new PortNodeMatchLeft<TestcasesModel.X>(getSelf(), name2actor.get("injectivityBwd_136_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.X>(getSelf(), name2actor.get("obs_xFree_239_nacjunction"), this::returnTrue));
 	}
 
 	@Override

@@ -22,13 +22,13 @@ public interface GKLModelFactory extends EFactory {
 	GKLModelFactory eINSTANCE = GKLModel.impl.GKLModelFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>P</em>'.
+	 * Returns a new object of class '<em>T</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>P</em>'.
+	 * @return a new object of class '<em>T</em>'.
 	 * @generated
 	 */
-	P createP();
+	T createT();
 
 	/**
 	 * Returns a new object of class '<em>K</em>'.
@@ -40,13 +40,13 @@ public interface GKLModelFactory extends EFactory {
 	K createK();
 
 	/**
-	 * Returns a new object of class '<em>T</em>'.
+	 * Returns a new object of class '<em>P</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>T</em>'.
+	 * @return a new object of class '<em>P</em>'.
 	 * @generated
 	 */
-	T createT();
+	P createP();
 
 	/**
 	 * Returns a new object of class '<em>Us</em>'.

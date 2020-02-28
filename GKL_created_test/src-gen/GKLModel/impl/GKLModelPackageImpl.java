@@ -29,7 +29,7 @@ public class GKLModelPackageImpl extends EPackageImpl implements GKLModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pEClass = null;
+	private EClass tEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -43,7 +43,7 @@ public class GKLModelPackageImpl extends EPackageImpl implements GKLModelPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass tEClass = null;
+	private EClass pEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,8 +137,8 @@ public class GKLModelPackageImpl extends EPackageImpl implements GKLModelPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getP() {
-		return pEClass;
+	public EClass getT() {
+		return tEClass;
 	}
 
 	/**
@@ -147,8 +147,78 @@ public class GKLModelPackageImpl extends EPackageImpl implements GKLModelPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getP_P_a() {
-		return (EReference) pEClass.getEStructuralFeatures().get(0);
+	public EReference getT_T_x_K_a() {
+		return (EReference) tEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getT_T_x_P_a() {
+		return (EReference) tEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getT_T_x_u() {
+		return (EReference) tEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getT_T_x_p() {
+		return (EReference) tEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getT_T_y_K_a() {
+		return (EReference) tEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getT_T_y_P_a() {
+		return (EReference) tEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getT_T_y_u() {
+		return (EReference) tEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getT_T_y_p() {
+		return (EReference) tEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -167,78 +237,8 @@ public class GKLModelPackageImpl extends EPackageImpl implements GKLModelPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getK_K_a() {
-		return (EReference) kEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getT() {
-		return tEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getT_T_x() {
-		return (EReference) tEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getT_T_x_u() {
-		return (EReference) tEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getT_T_x_p() {
-		return (EReference) tEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getT_T_y() {
-		return (EReference) tEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getT_T_y_u() {
-		return (EReference) tEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getT_T_y_p() {
-		return (EReference) tEClass.getEStructuralFeatures().get(5);
+	public EClass getP() {
+		return pEClass;
 	}
 
 	/**
@@ -291,19 +291,19 @@ public class GKLModelPackageImpl extends EPackageImpl implements GKLModelPackage
 		isCreated = true;
 
 		// Create classes and their features
-		pEClass = createEClass(P);
-		createEReference(pEClass, P__PA);
-
-		kEClass = createEClass(K);
-		createEReference(kEClass, K__KA);
-
 		tEClass = createEClass(T);
-		createEReference(tEClass, T__TX);
+		createEReference(tEClass, T__TXKA);
+		createEReference(tEClass, T__TXPA);
 		createEReference(tEClass, T__TXU);
 		createEReference(tEClass, T__TXP);
-		createEReference(tEClass, T__TY);
+		createEReference(tEClass, T__TYKA);
+		createEReference(tEClass, T__TYPA);
 		createEReference(tEClass, T__TYU);
 		createEReference(tEClass, T__TYP);
+
+		kEClass = createEClass(K);
+
+		pEClass = createEClass(P);
 
 		u_sEClass = createEClass(US);
 
@@ -343,42 +343,42 @@ public class GKLModelPackageImpl extends EPackageImpl implements GKLModelPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		pEClass.getESuperTypes().add(theReactionContainerPackage.getAgent());
-		kEClass.getESuperTypes().add(theReactionContainerPackage.getAgent());
 		tEClass.getESuperTypes().add(theReactionContainerPackage.getAgent());
+		kEClass.getESuperTypes().add(theReactionContainerPackage.getAgent());
+		pEClass.getESuperTypes().add(theReactionContainerPackage.getAgent());
 		u_sEClass.getESuperTypes().add(theReactionContainerPackage.getState());
 		p_sEClass.getESuperTypes().add(theReactionContainerPackage.getState());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(pEClass, GKLModel.P.class, "P", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getP_P_a(), theReactionContainerPackage.getAgent(), null, "P_a", null, 0, 1, GKLModel.P.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(kEClass, GKLModel.K.class, "K", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getK_K_a(), theReactionContainerPackage.getAgent(), null, "K_a", null, 0, 1, GKLModel.K.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(tEClass, GKLModel.T.class, "T", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getT_T_x(), theReactionContainerPackage.getAgent(), null, "T_x", null, 0, 1, GKLModel.T.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getT_T_x_K_a(), this.getK(), null, "T_x_K_a", null, 0, 1, GKLModel.T.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getT_T_x_P_a(), this.getP(), null, "T_x_P_a", null, 0, 1, GKLModel.T.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEReference(getT_T_x_u(), this.getU_s(), null, "T_x_u", null, 0, 1, GKLModel.T.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getT_T_x_p(), this.getP_s(), null, "T_x_p", null, 0, 1, GKLModel.T.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getT_T_y(), theReactionContainerPackage.getAgent(), null, "T_y", null, 0, 1, GKLModel.T.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getT_T_y_K_a(), this.getK(), null, "T_y_K_a", null, 0, 1, GKLModel.T.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getT_T_y_P_a(), this.getP(), null, "T_y_P_a", null, 0, 1, GKLModel.T.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEReference(getT_T_y_u(), this.getU_s(), null, "T_y_u", null, 0, 1, GKLModel.T.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getT_T_y_p(), this.getP_s(), null, "T_y_p", null, 0, 1, GKLModel.T.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+
+		initEClass(kEClass, GKLModel.K.class, "K", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(pEClass, GKLModel.P.class, "P", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(u_sEClass, U_s.class, "U_s", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
