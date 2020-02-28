@@ -53,6 +53,9 @@ public class NameProvider {
 		return matcher.group(component);
 	}
 
+	public static String getFreeSitePatternName(IntermAgentInstance ai, IntermSiteInstance si) {
+		return ai.getInstanceOf().getName().toUpperCase()+"_"+si.getName()+"Free";
+	}
 	
 	public static String getComponentNameOfBoundPattern(IBeXContextPattern contextPattern, String component) {
 		String boundPatternName = contextPattern.getName();

@@ -36,19 +36,19 @@ import hipe.engine.message.junction.MatchAddedRight;
 import hipe.engine.message.junction.MatchDeletedLeft;
 import hipe.engine.message.junction.MatchDeletedRight;
 		
-public class P_s_object_SP0 extends AbstractActor {
+public class A_object_SP4 extends AbstractActor {
 	
-	private List<Port<TestcasesModel.P_s>> ports;		
+	private List<Port<TestcasesModel.A>> ports;		
 		
-	public P_s_object_SP0() {
+	public A_object_SP4() {
 	}
 
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortNodeRight<TestcasesModel.P_s>(getSelf(), name2actor.get("X_X_z_p_0_reference"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("generic_98_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("selfBindingBwd_53_junction"), this::returnTrue));
+		ports.add(new PortNodeRight<TestcasesModel.A>(getSelf(), name2actor.get("A_A_b_A_b_0_reference"), this::returnTrue));
+		ports.add(new PortNodeMatchRight<TestcasesModel.A>(getSelf(), name2actor.get("injectivity_133_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("selfBinding_48_junction"), this::check_constraint_1));
 	}
 
 	@Override
@@ -92,27 +92,27 @@ public class P_s_object_SP0 extends AbstractActor {
 		message.edgeActor.tell(message, getSelf());
 	}
 	
-	private void addNode(ObjectAdded<TestcasesModel.P_s> message) {
-		for(Port<TestcasesModel.P_s> port : ports) {
+	private void addNode(ObjectAdded<TestcasesModel.A> message) {
+		for(Port<TestcasesModel.A> port : ports) {
 			port.sendAdd(message, message.node);
 		}
 		message.initialMessage.decrement();
 	}
 	
-	private void removeNode(ObjectDeleted<TestcasesModel.P_s> message) {
-		for(Port<TestcasesModel.P_s> port : ports) {
+	private void removeNode(ObjectDeleted<TestcasesModel.A> message) {
+		for(Port<TestcasesModel.A> port : ports) {
 			port.sendRemove(message, message.node);
 		}		
 		message.initialMessage.decrement();
 	}
 	
-	private void changeAttribute(AttributeChanged<TestcasesModel.P_s> message) {
+	private void changeAttribute(AttributeChanged<TestcasesModel.A> message) {
 		for(Port<?> port : ports) {
 			message.initialMessage.increment();
 			port.forwardMessage(message);
 		}
 		
-		for(Port<TestcasesModel.P_s> port : ports) {
+		for(Port<TestcasesModel.A> port : ports) {
 			port.sendAttributeChanged(message, message.node);
 		}
 		message.initialMessage.decrement();
@@ -120,6 +120,10 @@ public class P_s_object_SP0 extends AbstractActor {
 	
 	private boolean returnTrue(Object o) {
 		return true;
+	}
+	
+	public boolean check_constraint_1(TestcasesModel.A a) {
+		return a.getA_b_A_c().equals(a);
 	}
 	
 }

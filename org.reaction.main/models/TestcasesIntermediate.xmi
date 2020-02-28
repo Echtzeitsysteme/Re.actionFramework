@@ -36,11 +36,15 @@
   <components xsi:type="ecoreBCModel:IntermRule" name="unspecifiedStateChange" rate="5.0" lhs="//@patternContainer/@patterns.22" rhs="//@patternContainer/@patterns.23"/>
   <components xsi:type="ecoreBCModel:IntermRule" name="injectivity" rate="2.0" lhs="//@patternContainer/@patterns.24" rhs="//@patternContainer/@patterns.25"/>
   <components xsi:type="ecoreBCModel:IntermRule" name="injectivityBwd" rate="6.0" lhs="//@patternContainer/@patterns.25" rhs="//@patternContainer/@patterns.24"/>
-  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="100" initPattern="//@patternContainer/@patterns.26"/>
-  <components xsi:type="ecoreBCModel:IntermObservable" name="underspecTest" obsPattern="//@patternContainer/@patterns.27"/>
-  <components xsi:type="ecoreBCModel:IntermObservable" name="genericTest" obsPattern="//@patternContainer/@patterns.28"/>
-  <components xsi:type="ecoreBCModel:IntermObservable" name="simpleSynthesisTest" obsPattern="//@patternContainer/@patterns.29"/>
-  <components xsi:type="ecoreBCModel:IntermObservable" name="unspecifiedStateChangeTest" obsPattern="//@patternContainer/@patterns.30"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="wildcard" rate="1.0" lhs="//@patternContainer/@patterns.26" rhs="//@patternContainer/@patterns.27"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="wildcardStateChange" rate="1.0" lhs="//@patternContainer/@patterns.28" rhs="//@patternContainer/@patterns.29"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="wildcardStateChangeBwd" rate="2.0" lhs="//@patternContainer/@patterns.29" rhs="//@patternContainer/@patterns.28"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="100" initPattern="//@patternContainer/@patterns.30"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="underspecTest" obsPattern="//@patternContainer/@patterns.31"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="genericTest" obsPattern="//@patternContainer/@patterns.32"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="simpleSynthesisTest" obsPattern="//@patternContainer/@patterns.33"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="unspecifiedStateChangeTest" obsPattern="//@patternContainer/@patterns.34"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="wildcardTest" obsPattern="//@patternContainer/@patterns.35"/>
   <patternContainer>
     <patterns name="simpleBindingLhs">
       <agentInstances instanceOf="A" name="a">
@@ -252,6 +256,34 @@
         <siteInstances instanceOf="//@components.2/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.25/@agentInstances.2"/>
       </agentInstances>
     </patterns>
+    <patterns name="wildcardLhs">
+      <agentInstances instanceOf="A" name="a">
+        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.26/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="BOUND" name="c" parent="//@patternContainer/@patterns.26/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="wildcardRhs">
+      <agentInstances instanceOf="A" name="a">
+        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.27/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="BOUND" name="c" parent="//@patternContainer/@patterns.27/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="X" name="x">
+        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.27/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.2/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.27/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="wildcardStateChangeLhs">
+      <agentInstances instanceOf="A" name="a">
+        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.28/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.28/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="wildcardStateChangeRhs">
+      <agentInstances instanceOf="A" name="a">
+        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.29/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.29/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
     <patterns name="init1madeConcrete">
       <agentInstances instanceOf="A" name="a">
         <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="b"/>
@@ -260,36 +292,42 @@
     </patterns>
     <patterns name="underspecTest">
       <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.27/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.27/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.27/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.31/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.31/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.31/@agentInstances.0"/>
       </agentInstances>
       <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.27/@agentInstances.1"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.27/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.31/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.2/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.31/@agentInstances.1"/>
       </agentInstances>
       <agentInstances instanceOf="X" name="local_for_a_c" local="true">
-        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.27/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.27/@agentInstances.2"/>
+        <siteInstances instanceOf="//@components.2/@sites.0" boundTo="//@patternContainer/@patterns.31/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.31/@agentInstances.2"/>
       </agentInstances>
     </patterns>
     <patterns name="genericTest">
       <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.28/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.28/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.28/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.32/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" boundTo="//@patternContainer/@patterns.32/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.32/@agentInstances.0"/>
       </agentInstances>
       <agentInstances instanceOf="X" name="local_for_a_c" local="true">
-        <siteInstances instanceOf="//@components.2/@sites.1" boundTo="//@patternContainer/@patterns.28/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="z" parent="//@patternContainer/@patterns.28/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.2/@sites.1" boundTo="//@patternContainer/@patterns.32/@agentInstances.0/@siteInstances.1" bindingState="BOUND" name="z" parent="//@patternContainer/@patterns.32/@agentInstances.1"/>
       </agentInstances>
     </patterns>
     <patterns name="simpleSynthesisTest">
       <agentInstances instanceOf="X" name="x">
-        <siteInstances instanceOf="//@components.2/@sites.0" name="y" parent="//@patternContainer/@patterns.29/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.2/@sites.1" name="z" state="//@components.2/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.29/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.2/@sites.0" name="y" parent="//@patternContainer/@patterns.33/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.2/@sites.1" name="z" state="//@components.2/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.33/@agentInstances.0"/>
       </agentInstances>
     </patterns>
     <patterns name="unspecifiedStateChangeTest">
       <agentInstances instanceOf="A" name="a">
-        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.30/@agentInstances.0"/>
-        <siteInstances instanceOf="//@components.0/@sites.1" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.30/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.0" name="b" parent="//@patternContainer/@patterns.34/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" name="c" state="//@components.0/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.34/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="wildcardTest">
+      <agentInstances instanceOf="X" name="x">
+        <siteInstances instanceOf="//@components.2/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.35/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.2/@sites.1" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.35/@agentInstances.0"/>
       </agentInstances>
     </patterns>
   </patternContainer>

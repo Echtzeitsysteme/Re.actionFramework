@@ -87,7 +87,8 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 			// generate site states
 			if (siteOfAgent.getSiteStates() != null) {
 				if (siteOfAgent.getSiteStates().size() > 0) {
-					// If no information about possibly needed states is stored, use default state
+					
+					// Always create defaultStates
 					IntermSiteState defaultState = siteOfAgent.getSiteStates().get(0);
 					String refName = key + "_" + defaultState.getName();
 					// Create default state if not already happened

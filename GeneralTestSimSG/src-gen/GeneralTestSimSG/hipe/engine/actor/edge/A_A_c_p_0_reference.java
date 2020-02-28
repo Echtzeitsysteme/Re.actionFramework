@@ -49,13 +49,14 @@ public class A_A_c_p_0_reference extends AbstractActor {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("genericWithStateTest_119_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("obs_genericTest_151_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("obs_underspecTest_145_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("obs_genericTest_165_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("obs_underspecTest_159_junction"), this::returnTrue));
 		ports.add(new PortEdge(getSelf(), name2actor.get("obs_unspecifiedStateChangeTest_production"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBinding_48_junction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegCompleteBwd_65_junction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegPartialBwd_79_junction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("underspec_86_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("wildcardStateChange_147_junction"), this::returnTrue));
 	}	
 
 	@Override

@@ -36,19 +36,19 @@ import hipe.engine.message.junction.MatchAddedRight;
 import hipe.engine.message.junction.MatchDeletedLeft;
 import hipe.engine.message.junction.MatchDeletedRight;
 		
-public class P_s_object_SP0 extends AbstractActor {
+public class P_s_object_SP2 extends AbstractActor {
 	
 	private List<Port<TestcasesModel.P_s>> ports;		
 		
-	public P_s_object_SP0() {
+	public P_s_object_SP2() {
 	}
 
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortNodeRight<TestcasesModel.P_s>(getSelf(), name2actor.get("X_X_z_p_0_reference"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("generic_98_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("selfBindingBwd_53_junction"), this::returnTrue));
+		ports.add(new PortNodeRight<TestcasesModel.P_s>(getSelf(), name2actor.get("A_A_c_p_0_reference"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("synthDegPartial_70_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("wildcardStateChangeBwd_152_junction"), this::returnTrue));
 	}
 
 	@Override

@@ -180,6 +180,16 @@ public abstract class ContainerGenerator {
 					}
 					
 					Bindable siBindable = si.getBoundTo();
+					
+
+					IntermSiteState state = si.getState();
+					if (state != null) {
+						if (!statesOfSite.contains(state)) {
+							statesOfSite.add(state);
+							statesInModel.put(key, statesOfSite);
+						}
+					}
+
 					if (siBindable != null) {
 						IntermAgent boundToAgent = null;
 						IntermSiteInstance boundToSiteInstance = null;
@@ -198,13 +208,6 @@ public abstract class ContainerGenerator {
 							agentsInModel.add(agentParent);
 						}
 
-						IntermSiteState state = si.getState();
-						if (state != null) {
-							if (!statesOfSite.contains(state)) {
-								statesOfSite.add(state);
-								statesInModel.put(key, statesOfSite);
-							}
-						}
 
 						IntermSiteState partnerState = boundToSiteInstance.getState();
 						String partnerKey = boundToAgent.getName()+"_"+boundToSite.getName();

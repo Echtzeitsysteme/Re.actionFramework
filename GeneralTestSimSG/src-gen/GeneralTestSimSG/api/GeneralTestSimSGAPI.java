@@ -10,6 +10,7 @@ import GeneralTestSimSG.api.rules.A_c_X_yBoundSrcRule;
 import GeneralTestSimSG.api.rules.A_c_X_yBoundTrgRule;
 import GeneralTestSimSG.api.rules.A_c_X_zBoundSrcRule;
 import GeneralTestSimSG.api.rules.A_c_X_zBoundTrgRule;
+import GeneralTestSimSG.api.rules.A_cFreeRule;
 import GeneralTestSimSG.api.rules.GenericRule;
 import GeneralTestSimSG.api.rules.GenericWithStateRule;
 import GeneralTestSimSG.api.rules.GenericWithStateTestRule;
@@ -19,6 +20,7 @@ import GeneralTestSimSG.api.rules.Obs_genericTestRule;
 import GeneralTestSimSG.api.rules.Obs_simpleSynthesisTestRule;
 import GeneralTestSimSG.api.rules.Obs_underspecTestRule;
 import GeneralTestSimSG.api.rules.Obs_unspecifiedStateChangeTestRule;
+import GeneralTestSimSG.api.rules.Obs_wildcardTestRule;
 import GeneralTestSimSG.api.rules.SelfBindingBwdRule;
 import GeneralTestSimSG.api.rules.SelfBindingRule;
 import GeneralTestSimSG.api.rules.SimpleBindingBwdRule;
@@ -32,6 +34,9 @@ import GeneralTestSimSG.api.rules.UnderspecRule;
 import GeneralTestSimSG.api.rules.UnspecifiedStateChangeRule;
 import GeneralTestSimSG.api.rules.UnspecRule;
 import GeneralTestSimSG.api.rules.UnspecTestRule;
+import GeneralTestSimSG.api.rules.WildcardRule;
+import GeneralTestSimSG.api.rules.WildcardStateChangeBwdRule;
+import GeneralTestSimSG.api.rules.WildcardStateChangeRule;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -39,7 +44,7 @@ import org.emoflon.ibex.common.operational.IContextPatternInterpreter;
 import org.emoflon.ibex.gt.api.GraphTransformationAPI;
 
 /**
- * The GeneralTestSimSGAPI with 32 rules.
+ * The GeneralTestSimSGAPI with 37 rules.
  */
 public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	public static String patternPath = "GeneralTestSimSG/src-gen/GeneralTestSimSG/api/ibex-patterns.xmi";
@@ -362,6 +367,46 @@ public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	}
 
 	/**
+	 * Creates a new instance of the rule <code>A_cFree()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public A_cFreeRule A_cFree() {
+		return new A_cFreeRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>wildcard()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public WildcardRule wildcard() {
+		return new WildcardRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>wildcardStateChange()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public WildcardStateChangeRule wildcardStateChange() {
+		return new WildcardStateChangeRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>wildcardStateChangeBwd()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public WildcardStateChangeBwdRule wildcardStateChangeBwd() {
+		return new WildcardStateChangeBwdRule(this, interpreter);
+	}
+
+	/**
 	 * Creates a new instance of the rule <code>obs_underspecTest()</code> which does the following:
 	 * If this rule is not self-explaining, you really should add some comment in the specification.
 	 *
@@ -399,5 +444,15 @@ public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	 */
 	public Obs_unspecifiedStateChangeTestRule obs_unspecifiedStateChangeTest() {
 		return new Obs_unspecifiedStateChangeTestRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>obs_wildcardTest()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public Obs_wildcardTestRule obs_wildcardTest() {
+		return new Obs_wildcardTestRule(this, interpreter);
 	}
 }

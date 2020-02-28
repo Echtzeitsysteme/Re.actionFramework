@@ -245,7 +245,42 @@
       <type href="TestcasesModel.ecore#//X"/>
     </nodes>
   </rules>
-  <rules name="obs_underspecTest" documentation="" executable="true" ruleNodes="//@rules.28/@nodes.0 //@rules.28/@nodes.1 //@rules.28/@nodes.2">
+  <rules name="A_cFree" documentation="" executable="true" ruleNodes="//@rules.28/@nodes.0">
+    <nodes name="src">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+  </rules>
+  <rules name="wildcard" documentation="" executable="true" ruleNodes="//@rules.29/@nodes.0 //@rules.29/@nodes.1">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="wildcardStateChange" documentation="" executable="true" ruleNodes="//@rules.30/@nodes.0 //@rules.30/@nodes.1 //@rules.30/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+  </rules>
+  <rules name="wildcardStateChangeBwd" documentation="" executable="true" ruleNodes="//@rules.31/@nodes.0 //@rules.31/@nodes.1 //@rules.31/@nodes.2">
+    <nodes name="a">
+      <type href="TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="us">
+      <type href="TestcasesModel.ecore#//U_s"/>
+    </nodes>
+    <nodes name="ps">
+      <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="obs_underspecTest" documentation="" executable="true" ruleNodes="//@rules.32/@nodes.0 //@rules.32/@nodes.1 //@rules.32/@nodes.2">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
@@ -256,7 +291,7 @@
       <type href="TestcasesModel.ecore#//X"/>
     </nodes>
   </rules>
-  <rules name="obs_genericTest" documentation="" executable="true" ruleNodes="//@rules.29/@nodes.0 //@rules.29/@nodes.1">
+  <rules name="obs_genericTest" documentation="" executable="true" ruleNodes="//@rules.33/@nodes.0 //@rules.33/@nodes.1">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
@@ -264,7 +299,7 @@
       <type href="TestcasesModel.ecore#//P_s"/>
     </nodes>
   </rules>
-  <rules name="obs_simpleSynthesisTest" documentation="" executable="true" ruleNodes="//@rules.30/@nodes.0 //@rules.30/@nodes.1">
+  <rules name="obs_simpleSynthesisTest" documentation="" executable="true" ruleNodes="//@rules.34/@nodes.0 //@rules.34/@nodes.1">
     <nodes name="x">
       <type href="TestcasesModel.ecore#//X"/>
     </nodes>
@@ -272,12 +307,17 @@
       <type href="TestcasesModel.ecore#//U_s"/>
     </nodes>
   </rules>
-  <rules name="obs_unspecifiedStateChangeTest" documentation="" executable="true" ruleNodes="//@rules.31/@nodes.0 //@rules.31/@nodes.1">
+  <rules name="obs_unspecifiedStateChangeTest" documentation="" executable="true" ruleNodes="//@rules.35/@nodes.0 //@rules.35/@nodes.1">
     <nodes name="a">
       <type href="TestcasesModel.ecore#//A"/>
     </nodes>
     <nodes name="ps">
       <type href="TestcasesModel.ecore#//P_s"/>
+    </nodes>
+  </rules>
+  <rules name="obs_wildcardTest" documentation="" executable="true" ruleNodes="//@rules.36/@nodes.0">
+    <nodes name="x">
+      <type href="TestcasesModel.ecore#//X"/>
     </nodes>
   </rules>
 </GTLanguage:GTRuleSet>

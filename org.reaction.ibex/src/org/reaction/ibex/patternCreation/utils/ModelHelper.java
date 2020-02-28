@@ -123,6 +123,39 @@ public class ModelHelper {
 	 * @param si - the site to find the patterns for
 	 * @return a list of all ContextPatterns representing the given site as bound
 	 */
+	public static IBeXContextPattern getFreePatternForSite(IBeXPatternSet patternSet, IntermAgentInstance ai,
+			IntermSiteInstance si) {
+
+		for (IBeXContext context : patternSet.getContextPatterns()) {
+			IBeXContextPattern contextPattern = (IBeXContextPattern) context;
+			String contextPatternName = contextPattern.getName();
+			if (!contextPatternName.endsWith("Free")) {
+				continue;
+			}
+
+			//Cut off "Free"
+			contextPatternName = contextPatternName.substring(0, contextPatternName.length()-4);
+			
+			//Check agent and site name
+			String regex = "(?<agent>.*)_(?<site>.*)";
+			Pattern regexPattern = Pattern.compile(regex);
+			Matcher matcher = regexPattern.matcher(contextPatternName);
+			matcher.find();
+
+			if(matcher.group("agent").equals(ai.getInstanceOf().getName().toUpperCase()) && matcher.group("site").equals(si.getName())){
+				return contextPattern;
+			}
+			
+		}
+
+		return null;
+	}
+	
+	/**
+	 * @param ai - the agent instance the site belongs
+	 * @param si - the site to find the patterns for
+	 * @return a list of all ContextPatterns representing the given site as bound
+	 */
 	public static List<IBeXContextPattern> getBoundPatternsForSite(IBeXPatternSet patternSet, IntermAgentInstance ai,
 			IntermSiteInstance si) {
 

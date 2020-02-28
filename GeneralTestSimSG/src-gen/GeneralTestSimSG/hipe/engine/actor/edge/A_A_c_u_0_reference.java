@@ -53,6 +53,7 @@ public class A_A_c_u_0_reference extends AbstractActor {
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBindingBwd_53_junction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegPartial_70_junction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("unspecifiedStateChange_126_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("wildcardStateChangeBwd_152_junction"), this::returnTrue));
 	}	
 
 	@Override

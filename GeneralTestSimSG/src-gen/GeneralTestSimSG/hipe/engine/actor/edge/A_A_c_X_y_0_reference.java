@@ -48,16 +48,18 @@ public class A_A_c_X_y_0_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("A_cFree_216_nacjunction"), this::returnTrue));
 		ports.add(new PortEdge(getSelf(), name2actor.get("A_c_X_yBoundSrc_production"), this::returnTrue));
 		ports.add(new PortEdge(getSelf(), name2actor.get("A_c_X_yBoundTrg_production"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("injectivityBwd_197_nacjunction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("injectivity_194_nacjunction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("obs_underspecTest_145_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("obs_underspecTest_200_nacjunction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBindingBwd_174_nacjunction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegPartial_177_nacjunction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("injectivityBwd_212_nacjunction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("injectivity_209_nacjunction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("obs_underspecTest_159_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("obs_underspecTest_221_nacjunction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("obs_wildcardTest_224_nacjunction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBindingBwd_189_nacjunction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegPartial_192_nacjunction"), this::returnTrue));
 		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("underspec_86_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("unspecTest_179_nacjunction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("unspecTest_194_nacjunction"), this::returnTrue));
 	}	
 
 	@Override

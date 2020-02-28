@@ -36,19 +36,19 @@ import hipe.engine.message.junction.MatchAddedRight;
 import hipe.engine.message.junction.MatchDeletedLeft;
 import hipe.engine.message.junction.MatchDeletedRight;
 		
-public class P_s_object_SP0 extends AbstractActor {
+public class U_s_object_SP2 extends AbstractActor {
 	
-	private List<Port<TestcasesModel.P_s>> ports;		
+	private List<Port<TestcasesModel.U_s>> ports;		
 		
-	public P_s_object_SP0() {
+	public U_s_object_SP2() {
 	}
 
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortNodeRight<TestcasesModel.P_s>(getSelf(), name2actor.get("X_X_z_p_0_reference"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("generic_98_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.P_s>(getSelf(), name2actor.get("selfBindingBwd_53_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.U_s>(getSelf(), name2actor.get("selfBinding_46_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.U_s>(getSelf(), name2actor.get("underspec_84_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.U_s>(getSelf(), name2actor.get("wildcard_144_junction"), this::returnTrue));
 	}
 
 	@Override
@@ -92,27 +92,27 @@ public class P_s_object_SP0 extends AbstractActor {
 		message.edgeActor.tell(message, getSelf());
 	}
 	
-	private void addNode(ObjectAdded<TestcasesModel.P_s> message) {
-		for(Port<TestcasesModel.P_s> port : ports) {
+	private void addNode(ObjectAdded<TestcasesModel.U_s> message) {
+		for(Port<TestcasesModel.U_s> port : ports) {
 			port.sendAdd(message, message.node);
 		}
 		message.initialMessage.decrement();
 	}
 	
-	private void removeNode(ObjectDeleted<TestcasesModel.P_s> message) {
-		for(Port<TestcasesModel.P_s> port : ports) {
+	private void removeNode(ObjectDeleted<TestcasesModel.U_s> message) {
+		for(Port<TestcasesModel.U_s> port : ports) {
 			port.sendRemove(message, message.node);
 		}		
 		message.initialMessage.decrement();
 	}
 	
-	private void changeAttribute(AttributeChanged<TestcasesModel.P_s> message) {
+	private void changeAttribute(AttributeChanged<TestcasesModel.U_s> message) {
 		for(Port<?> port : ports) {
 			message.initialMessage.increment();
 			port.forwardMessage(message);
 		}
 		
-		for(Port<TestcasesModel.P_s> port : ports) {
+		for(Port<TestcasesModel.U_s> port : ports) {
 			port.sendAttributeChanged(message, message.node);
 		}
 		message.initialMessage.decrement();
