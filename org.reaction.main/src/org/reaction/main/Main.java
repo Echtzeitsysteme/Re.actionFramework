@@ -24,7 +24,6 @@ public class Main {
 
 		ReactionContainerPackage.eINSTANCE.eClass();
 		
-		
 		// Load Model
 //		final String dslModelLocation = "C:\\Users\\tobia\\eclipse-workspaces\\languagePlayground\\dsl.dotTest\\bin\\Testcases.xmi";
 //		final String trgProjectLocation = "C:\\Users\\tobia\\eclipse-workspaces\\re.actionFramework\\GeneralTestSimSG";

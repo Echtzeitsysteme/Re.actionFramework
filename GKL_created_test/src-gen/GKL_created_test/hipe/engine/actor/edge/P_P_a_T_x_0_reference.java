@@ -30,33 +30,33 @@ import hipe.engine.message.InputMessage;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 
-public class T_T_y_P_a_0_reference extends AbstractActor {
+public class P_P_a_T_x_0_reference extends AbstractActor {
 
 	private List<Port<EdgeMatch>> ports;
 
-	private Map<GKLModel.T, Set<EdgeMatch>> sourceElements = new HashMap<GKLModel.T, Set<EdgeMatch>>();
-	private Map<GKLModel.P, Set<EdgeMatch>> targetElements = new HashMap<GKLModel.P, Set<EdgeMatch>>();
+	private Map<GKLModel.P, Set<EdgeMatch>> sourceElements = new HashMap<GKLModel.P, Set<EdgeMatch>>();
+	private Map<GKLModel.T, Set<EdgeMatch>> targetElements = new HashMap<GKLModel.T, Set<EdgeMatch>>();
 	private HiPESet<EdgeMatch> matches = new HiPESet<>();
 	
-	private Map<GKLModel.P, Set<GKLModel.T>> pending = new HashMap<>();
+	private Map<GKLModel.T, Set<GKLModel.P>> pending = new HashMap<>();
 
 	private int finishedNodes = 0;
 	
-	public T_T_y_P_a_0_reference() {
+	public P_P_a_T_x_0_reference() {
 	}
 	
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("KT_y_96_nacjunction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("PT_x_100_nacjunction"), this::returnTrue));
-		ports.add(new PortEdge(getSelf(), name2actor.get("PT_yBwd_production"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("PT_y_104_nacjunction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("PT_y_106_nacjunction"), this::returnTrue));
-		ports.add(new PortEdge(getSelf(), name2actor.get("T_y_P_aBoundSrc_production"), this::returnTrue));
-		ports.add(new PortEdge(getSelf(), name2actor.get("T_y_P_aBoundTrg_production"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("Tu_y_75_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("obs_T_pp_unbound_110_nacjunction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("KT_x_92_nacjunction"), this::returnTrue));
+		ports.add(new PortEdge(getSelf(), name2actor.get("PT_xBwd_production"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("PT_x_102_nacjunction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("PT_x_99_nacjunction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("PT_y_103_nacjunction"), this::returnTrue));
+		ports.add(new PortEdge(getSelf(), name2actor.get("P_a_T_xBoundSrc_production"), this::returnTrue));
+		ports.add(new PortEdge(getSelf(), name2actor.get("P_a_T_xBoundTrg_production"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("Tu_x_61_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("obs_T_pp_unbound_108_nacjunction"), this::returnTrue));
 	}	
 
 	@Override
@@ -108,7 +108,7 @@ public class T_T_y_P_a_0_reference extends AbstractActor {
 		}
 	}
 
-	private void addMatch(InputMessage message, GKLModel.T source, GKLModel.P target) {
+	private void addMatch(InputMessage message, GKLModel.P source, GKLModel.T target) {
 		EdgeMatch match = new EdgeMatch(source, target);
 		if(!matches.add(match))
  			return;
@@ -135,22 +135,22 @@ public class T_T_y_P_a_0_reference extends AbstractActor {
 	}
 	
 	private void addPendingMatch(Object source, Object target) {
-		Set<GKLModel.T> sourcePending = pending.get(target);
+		Set<GKLModel.P> sourcePending = pending.get(target);
 		if(sourcePending == null) {
-			sourcePending = new HashSet<GKLModel.T>();
-			pending.put((GKLModel.P) target, sourcePending);
+			sourcePending = new HashSet<GKLModel.P>();
+			pending.put((GKLModel.T) target, sourcePending);
 		}
-		sourcePending.add((GKLModel.T) source);
+		sourcePending.add((GKLModel.P) source);
 	}
 	
-	private void leftAdded(NodeAddedLeft<GKLModel.T> message) {
+	private void leftAdded(NodeAddedLeft<GKLModel.P> message) {
 		if(sourceElements.containsKey(message.input)) {
 			message.initialMessage.decrement();
 			return;
 		}
 			
 		sourceElements.put(message.input, null);
-		GKLModel.P target = (GKLModel.P) message.input.getT_y_P_a();
+		GKLModel.T target = (GKLModel.T) message.input.getP_a_T_x();
 		if(targetElements.containsKey(target))
 			addMatch(message.initialMessage, message.input, target);
 		else
@@ -158,7 +158,7 @@ public class T_T_y_P_a_0_reference extends AbstractActor {
 		message.initialMessage.decrement();
 	}
 
-	private void rightAdded(NodeAddedRight<GKLModel.P> message) {
+	private void rightAdded(NodeAddedRight<GKLModel.T> message) {
 		if(targetElements.containsKey(message.input)) {
 			message.initialMessage.decrement();
 			return;
@@ -166,8 +166,8 @@ public class T_T_y_P_a_0_reference extends AbstractActor {
 		
 		targetElements.put(message.input, null);
 		if(pending.containsKey(message.input)) {
-			Set<GKLModel.T> pendingsSources = pending.get(message.input);
-			for(GKLModel.T source : pendingsSources) {
+			Set<GKLModel.P> pendingsSources = pending.get(message.input);
+			for(GKLModel.P source : pendingsSources) {
 				addMatch(message.initialMessage, source, message.input);
 			}
 			pending.remove(message.input);
@@ -175,7 +175,7 @@ public class T_T_y_P_a_0_reference extends AbstractActor {
 		message.initialMessage.decrement();
 	}
 
-	private void leftRemoved(NodeDeletedLeft<GKLModel.T> message) {
+	private void leftRemoved(NodeDeletedLeft<GKLModel.P> message) {
 		Set<EdgeMatch> sourceMatches = sourceElements.get(message.input);
 		if(sourceMatches == null) {
 			message.initialMessage.decrement();
@@ -195,14 +195,14 @@ public class T_T_y_P_a_0_reference extends AbstractActor {
 			}
 			
 			// remove waiting source from pending matches
-			Set<GKLModel.T> sourcePending = pending.get(match.target());
+			Set<GKLModel.P> sourcePending = pending.get(match.target());
 			if(sourcePending == null) continue;
 			sourcePending.remove(match.source());
 		}
 		message.initialMessage.decrement();
 	}
 
-	private void rightRemoved(NodeDeletedRight<GKLModel.P> message) {
+	private void rightRemoved(NodeDeletedRight<GKLModel.T> message) {
 		Set<EdgeMatch> targetMatches = targetElements.get(message.input);
 		if(targetMatches == null) {
 			message.initialMessage.decrement();
@@ -227,7 +227,7 @@ public class T_T_y_P_a_0_reference extends AbstractActor {
 		message.initialMessage.decrement();
 	}
 
-	private void addReference(ReferenceAdded<GKLModel.T, GKLModel.P> message) {
+	private void addReference(ReferenceAdded<GKLModel.P, GKLModel.T> message) {
 		if (sourceElements.containsKey(message.source)) {
 			if (targetElements.containsKey(message.target)) {
 				addMatch(message.initialMessage, message.source, message.target);
@@ -239,8 +239,8 @@ public class T_T_y_P_a_0_reference extends AbstractActor {
 		message.initialMessage.decrement();
 	}
 	
-	private void removeReference(ReferenceDeleted<GKLModel.T, GKLModel.P> message) {
-		Set<GKLModel.T> pendingSources = pending.get(message.target);
+	private void removeReference(ReferenceDeleted<GKLModel.P, GKLModel.T> message) {
+		Set<GKLModel.P> pendingSources = pending.get(message.target);
 		if(pendingSources != null) {
 			pendingSources.remove(message.source);
 		}
@@ -272,7 +272,7 @@ public class T_T_y_P_a_0_reference extends AbstractActor {
 			port.forwardMessage(message);
 		}
 						
-		if(message.node instanceof GKLModel.T) {
+		if(message.node instanceof GKLModel.P) {
 			leftChanged(message);
 		}
 		else {

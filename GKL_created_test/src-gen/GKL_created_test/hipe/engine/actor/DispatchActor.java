@@ -50,15 +50,20 @@ public class DispatchActor extends AbstractActor {
 	}
 	
 	private void initializeAdd() {
-		type2addConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getK(), obj -> {
-			GKLModel.K _k = (GKLModel.K) obj;
+		type2addConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getP(), obj -> {
+			GKLModel.P _p = (GKLModel.P) obj;
 			util.newMessage();
-			name2actor.get("K_object").tell(new ObjectAdded<GKLModel.K>(_k), getSelf());
+			name2actor.get("P_object").tell(new ObjectAdded<GKLModel.P>(_p), getSelf());
 		});
 		type2addConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getP_s(), obj -> {
 			GKLModel.P_s _p_s = (GKLModel.P_s) obj;
 			util.newMessage();
 			name2actor.get("P_s_object").tell(new ObjectAdded<GKLModel.P_s>(_p_s), getSelf());
+		});
+		type2addConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getK(), obj -> {
+			GKLModel.K _k = (GKLModel.K) obj;
+			util.newMessage();
+			name2actor.get("K_object").tell(new ObjectAdded<GKLModel.K>(_k), getSelf());
 		});
 		type2addConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getU_s(), obj -> {
 			GKLModel.U_s _u_s = (GKLModel.U_s) obj;
@@ -74,32 +79,27 @@ public class DispatchActor extends AbstractActor {
 			util.newMessage();
 			name2actor.get("T_object_SP2").tell(new ObjectAdded<GKLModel.T>(_t), getSelf());
 		});
-		type2addConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getP(), obj -> {
-			GKLModel.P _p = (GKLModel.P) obj;
-			util.newMessage();
-			name2actor.get("P_object").tell(new ObjectAdded<GKLModel.P>(_p), getSelf());
-		});
 	}
 	
 	private void initializeSet() {
 	}
 	
 	private void initializeAddEdge() {
+		feature2addEdgeConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getP_P_a_T_x(), notification -> {
+			util.newMessage();
+			name2actor.get("P_object").tell(new ReferenceAdded<GKLModel.P, GKLModel.T>((GKLModel.P) notification.getNotifier(), (GKLModel.T) notification.getNewValue(), name2actor.get("P_P_a_T_x_0_reference")), getSelf());
+		});
+		feature2addEdgeConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getP_P_a_T_y(), notification -> {
+			util.newMessage();
+			name2actor.get("P_object").tell(new ReferenceAdded<GKLModel.P, GKLModel.T>((GKLModel.P) notification.getNotifier(), (GKLModel.T) notification.getNewValue(), name2actor.get("P_P_a_T_y_0_reference")), getSelf());
+		});
 		feature2addEdgeConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getT_T_x_K_a(), notification -> {
 			util.newMessage();
-			name2actor.get("T_object_SP0").tell(new ReferenceAdded<GKLModel.T, GKLModel.K>((GKLModel.T) notification.getNotifier(), (GKLModel.K) notification.getNewValue(), name2actor.get("T_T_x_K_a_0_reference")), getSelf());
-		});
-		feature2addEdgeConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getT_T_x_P_a(), notification -> {
-			util.newMessage();
-			name2actor.get("T_object_SP1").tell(new ReferenceAdded<GKLModel.T, GKLModel.P>((GKLModel.T) notification.getNotifier(), (GKLModel.P) notification.getNewValue(), name2actor.get("T_T_x_P_a_0_reference")), getSelf());
+			name2actor.get("T_object_SP2").tell(new ReferenceAdded<GKLModel.T, GKLModel.K>((GKLModel.T) notification.getNotifier(), (GKLModel.K) notification.getNewValue(), name2actor.get("T_T_x_K_a_0_reference")), getSelf());
 		});
 		feature2addEdgeConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getT_T_y_K_a(), notification -> {
 			util.newMessage();
-			name2actor.get("T_object_SP2").tell(new ReferenceAdded<GKLModel.T, GKLModel.K>((GKLModel.T) notification.getNotifier(), (GKLModel.K) notification.getNewValue(), name2actor.get("T_T_y_K_a_0_reference")), getSelf());
-		});
-		feature2addEdgeConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getT_T_y_P_a(), notification -> {
-			util.newMessage();
-			name2actor.get("T_object_SP0").tell(new ReferenceAdded<GKLModel.T, GKLModel.P>((GKLModel.T) notification.getNotifier(), (GKLModel.P) notification.getNewValue(), name2actor.get("T_T_y_P_a_0_reference")), getSelf());
+			name2actor.get("T_object_SP0").tell(new ReferenceAdded<GKLModel.T, GKLModel.K>((GKLModel.T) notification.getNotifier(), (GKLModel.K) notification.getNewValue(), name2actor.get("T_T_y_K_a_0_reference")), getSelf());
 		});
 		feature2addEdgeConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getT_T_x_u(), notification -> {
 			util.newMessage();
@@ -120,21 +120,21 @@ public class DispatchActor extends AbstractActor {
 	}
 	
 	private void initializeRemoveEdge() {
+		feature2removeEdgeConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getP_P_a_T_x(), notification -> {
+			util.newMessage();
+			name2actor.get("P_object").tell(new ReferenceDeleted<GKLModel.P, GKLModel.T>((GKLModel.P) notification.getNotifier(), (GKLModel.T) notification.getOldValue(), name2actor.get("P_P_a_T_x_0_reference")), getSelf());
+		});
+		feature2removeEdgeConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getP_P_a_T_y(), notification -> {
+			util.newMessage();
+			name2actor.get("P_object").tell(new ReferenceDeleted<GKLModel.P, GKLModel.T>((GKLModel.P) notification.getNotifier(), (GKLModel.T) notification.getOldValue(), name2actor.get("P_P_a_T_y_0_reference")), getSelf());
+		});
 		feature2removeEdgeConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getT_T_x_K_a(), notification -> {
 			util.newMessage();
-			name2actor.get("T_object_SP0").tell(new ReferenceDeleted<GKLModel.T, GKLModel.K>((GKLModel.T) notification.getNotifier(), (GKLModel.K) notification.getOldValue(), name2actor.get("T_T_x_K_a_0_reference")), getSelf());
-		});
-		feature2removeEdgeConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getT_T_x_P_a(), notification -> {
-			util.newMessage();
-			name2actor.get("T_object_SP1").tell(new ReferenceDeleted<GKLModel.T, GKLModel.P>((GKLModel.T) notification.getNotifier(), (GKLModel.P) notification.getOldValue(), name2actor.get("T_T_x_P_a_0_reference")), getSelf());
+			name2actor.get("T_object_SP2").tell(new ReferenceDeleted<GKLModel.T, GKLModel.K>((GKLModel.T) notification.getNotifier(), (GKLModel.K) notification.getOldValue(), name2actor.get("T_T_x_K_a_0_reference")), getSelf());
 		});
 		feature2removeEdgeConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getT_T_y_K_a(), notification -> {
 			util.newMessage();
-			name2actor.get("T_object_SP2").tell(new ReferenceDeleted<GKLModel.T, GKLModel.K>((GKLModel.T) notification.getNotifier(), (GKLModel.K) notification.getOldValue(), name2actor.get("T_T_y_K_a_0_reference")), getSelf());
-		});
-		feature2removeEdgeConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getT_T_y_P_a(), notification -> {
-			util.newMessage();
-			name2actor.get("T_object_SP0").tell(new ReferenceDeleted<GKLModel.T, GKLModel.P>((GKLModel.T) notification.getNotifier(), (GKLModel.P) notification.getOldValue(), name2actor.get("T_T_y_P_a_0_reference")), getSelf());
+			name2actor.get("T_object_SP0").tell(new ReferenceDeleted<GKLModel.T, GKLModel.K>((GKLModel.T) notification.getNotifier(), (GKLModel.K) notification.getOldValue(), name2actor.get("T_T_y_K_a_0_reference")), getSelf());
 		});
 		feature2removeEdgeConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getT_T_x_u(), notification -> {
 			util.newMessage();
@@ -230,13 +230,13 @@ public class DispatchActor extends AbstractActor {
 	
 	private void handleRemoveAdapter(Notification notification) {
 		Object node = notification.getNotifier();
-		if (node instanceof GKLModel.K) {
-			util.newMessage();
-			name2actor.get("K_object").tell(new ObjectDeleted<GKLModel.K>((GKLModel.K) node), getSelf());
-		}
 		if (node instanceof GKLModel.P) {
 			util.newMessage();
 			name2actor.get("P_object").tell(new ObjectDeleted<GKLModel.P>((GKLModel.P) node), getSelf());
+		}
+		if (node instanceof GKLModel.K) {
+			util.newMessage();
+			name2actor.get("K_object").tell(new ObjectDeleted<GKLModel.K>((GKLModel.K) node), getSelf());
 		}
 		if (node instanceof GKLModel.P_s) {
 			util.newMessage();

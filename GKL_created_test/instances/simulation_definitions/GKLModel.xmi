@@ -16,44 +16,44 @@
   <observations xmi:type="org.simsg:PatternObservation" name="obs_T_pp" pattern="//@ibexPatternSet/@contextPatterns.20"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_T_pp_unbound" pattern="//@ibexPatternSet/@contextPatterns.21"/>
   <GtRuleSet xmi:type="GTLanguage:GTRuleSet">
-    <rules xmi:type="GTLanguage:GTRule" name="T_x_K_aBoundSrc" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.0/@nodes.0">
+    <rules xmi:type="GTLanguage:GTRule" name="P_a_T_xBoundSrc" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.0/@nodes.0">
+      <nodes xmi:type="GTLanguage:GTNode" name="src">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+      </nodes>
+    </rules>
+    <rules xmi:type="GTLanguage:GTRule" name="P_a_T_xBoundTrg" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.1/@nodes.0">
+      <nodes xmi:type="GTLanguage:GTNode" name="trg">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+      </nodes>
+    </rules>
+    <rules xmi:type="GTLanguage:GTRule" name="P_a_T_yBoundSrc" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.2/@nodes.0">
+      <nodes xmi:type="GTLanguage:GTNode" name="src">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+      </nodes>
+    </rules>
+    <rules xmi:type="GTLanguage:GTRule" name="P_a_T_yBoundTrg" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.3/@nodes.0">
+      <nodes xmi:type="GTLanguage:GTNode" name="trg">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+      </nodes>
+    </rules>
+    <rules xmi:type="GTLanguage:GTRule" name="T_x_K_aBoundSrc" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.4/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="src">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </nodes>
     </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="T_x_K_aBoundTrg" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.1/@nodes.0">
+    <rules xmi:type="GTLanguage:GTRule" name="T_x_K_aBoundTrg" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.5/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="trg">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
       </nodes>
     </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="T_x_P_aBoundSrc" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.2/@nodes.0">
+    <rules xmi:type="GTLanguage:GTRule" name="T_y_K_aBoundSrc" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.6/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="src">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </nodes>
     </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="T_x_P_aBoundTrg" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.3/@nodes.0">
-      <nodes xmi:type="GTLanguage:GTNode" name="trg">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
-      </nodes>
-    </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="T_y_K_aBoundSrc" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.4/@nodes.0">
-      <nodes xmi:type="GTLanguage:GTNode" name="src">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
-      </nodes>
-    </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="T_y_K_aBoundTrg" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.5/@nodes.0">
+    <rules xmi:type="GTLanguage:GTRule" name="T_y_K_aBoundTrg" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.7/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="trg">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
-      </nodes>
-    </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="T_y_P_aBoundSrc" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.6/@nodes.0">
-      <nodes xmi:type="GTLanguage:GTNode" name="src">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
-      </nodes>
-    </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="T_y_P_aBoundTrg" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.7/@nodes.0">
-      <nodes xmi:type="GTLanguage:GTNode" name="trg">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="KT_x" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.8/@nodes.0 //@GtRuleSet/@rules.8/@nodes.1">
@@ -194,53 +194,53 @@
     </rules>
   </GtRuleSet>
   <ibexPatternSet xmi:type="IBeXLanguage:IBeXPatternSet">
-    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="T_x_K_aBoundSrc">
+    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="P_a_T_xBoundSrc">
       <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.0/@signatureNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.0/@localNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_K_a"/>
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_x"/>
       </localEdges>
       <localNodes xmi:type="IBeXLanguage:IBeXNode" name="trg" incomingEdges="//@ibexPatternSet/@contextPatterns.0/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </localNodes>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="src" outgoingEdges="//@ibexPatternSet/@contextPatterns.0/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
       </signatureNodes>
     </contextPatterns>
-    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="T_x_K_aBoundTrg">
+    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="P_a_T_xBoundTrg">
       <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.1/@localNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.1/@signatureNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_K_a"/>
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_x"/>
       </localEdges>
       <localNodes xmi:type="IBeXLanguage:IBeXNode" name="src" outgoingEdges="//@ibexPatternSet/@contextPatterns.1/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
       </localNodes>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="trg" incomingEdges="//@ibexPatternSet/@contextPatterns.1/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </signatureNodes>
     </contextPatterns>
-    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="T_x_P_aBoundSrc">
+    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="P_a_T_yBoundSrc">
       <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.2/@signatureNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.2/@localNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_P_a"/>
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_y"/>
       </localEdges>
       <localNodes xmi:type="IBeXLanguage:IBeXNode" name="trg" incomingEdges="//@ibexPatternSet/@contextPatterns.2/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </localNodes>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="src" outgoingEdges="//@ibexPatternSet/@contextPatterns.2/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
-      </signatureNodes>
-    </contextPatterns>
-    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="T_x_P_aBoundTrg">
-      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.3/@localNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.3/@signatureNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_P_a"/>
-      </localEdges>
-      <localNodes xmi:type="IBeXLanguage:IBeXNode" name="src" outgoingEdges="//@ibexPatternSet/@contextPatterns.3/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
-      </localNodes>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="trg" incomingEdges="//@ibexPatternSet/@contextPatterns.3/@localEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
       </signatureNodes>
     </contextPatterns>
-    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="T_y_K_aBoundSrc">
+    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="P_a_T_yBoundTrg">
+      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.3/@localNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.3/@signatureNodes.0">
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_y"/>
+      </localEdges>
+      <localNodes xmi:type="IBeXLanguage:IBeXNode" name="src" outgoingEdges="//@ibexPatternSet/@contextPatterns.3/@localEdges.0">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+      </localNodes>
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="trg" incomingEdges="//@ibexPatternSet/@contextPatterns.3/@localEdges.0">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+      </signatureNodes>
+    </contextPatterns>
+    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="T_x_K_aBoundSrc">
       <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.4/@signatureNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.4/@localNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_K_a"/>
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_K_a"/>
       </localEdges>
       <localNodes xmi:type="IBeXLanguage:IBeXNode" name="trg" incomingEdges="//@ibexPatternSet/@contextPatterns.4/@localEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
@@ -249,9 +249,9 @@
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </signatureNodes>
     </contextPatterns>
-    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="T_y_K_aBoundTrg">
+    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="T_x_K_aBoundTrg">
       <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.5/@localNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.5/@signatureNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_K_a"/>
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_K_a"/>
       </localEdges>
       <localNodes xmi:type="IBeXLanguage:IBeXNode" name="src" outgoingEdges="//@ibexPatternSet/@contextPatterns.5/@localEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
@@ -260,40 +260,40 @@
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
       </signatureNodes>
     </contextPatterns>
-    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="T_y_P_aBoundSrc">
+    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="T_y_K_aBoundSrc">
       <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.6/@signatureNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.6/@localNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_P_a"/>
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_K_a"/>
       </localEdges>
       <localNodes xmi:type="IBeXLanguage:IBeXNode" name="trg" incomingEdges="//@ibexPatternSet/@contextPatterns.6/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
       </localNodes>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="src" outgoingEdges="//@ibexPatternSet/@contextPatterns.6/@localEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </signatureNodes>
     </contextPatterns>
-    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="T_y_P_aBoundTrg">
+    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="T_y_K_aBoundTrg">
       <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.7/@localNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.7/@signatureNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_P_a"/>
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_K_a"/>
       </localEdges>
       <localNodes xmi:type="IBeXLanguage:IBeXNode" name="src" outgoingEdges="//@ibexPatternSet/@contextPatterns.7/@localEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </localNodes>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="trg" incomingEdges="//@ibexPatternSet/@contextPatterns.7/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
       </signatureNodes>
     </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="KT_x">
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.0">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.8/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.0/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.2">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.8/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.2/@signatureNodes.0"/>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.4">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.8/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.4/@signatureNodes.0"/>
       </invocations>
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.1">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.8/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.1/@signatureNodes.0"/>
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.8/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.1/@signatureNodes.0"/>
       </invocations>
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.5">
         <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.8/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.5/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.7">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.8/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.7/@signatureNodes.0"/>
       </invocations>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="t">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
@@ -334,17 +334,17 @@
       </signatureNodes>
     </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="KT_y">
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.4">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.11/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.4/@signatureNodes.0"/>
-      </invocations>
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.6">
         <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.11/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.6/@signatureNodes.0"/>
       </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.1">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.11/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.1/@signatureNodes.0"/>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.3">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.11/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.3/@signatureNodes.0"/>
       </invocations>
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.5">
         <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.11/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.5/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.7">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.11/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.7/@signatureNodes.0"/>
       </invocations>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="t">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
@@ -385,17 +385,17 @@
       </signatureNodes>
     </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="PT_x">
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.3">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.14/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.3/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.7">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.14/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.7/@signatureNodes.0"/>
-      </invocations>
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.0">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.14/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.0/@signatureNodes.0"/>
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.14/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.0/@signatureNodes.0"/>
       </invocations>
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.2">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.14/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.2/@signatureNodes.0"/>
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.14/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.2/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.4">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.14/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.4/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.1">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.14/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.1/@signatureNodes.0"/>
       </invocations>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="p">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
@@ -405,27 +405,27 @@
       </signatureNodes>
     </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="PT_xBwd">
-      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.15/@signatureNodes.1" targetNode="//@ibexPatternSet/@contextPatterns.15/@signatureNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_P_a"/>
+      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.15/@signatureNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.15/@signatureNodes.1">
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_x"/>
       </localEdges>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="p" incomingEdges="//@ibexPatternSet/@contextPatterns.15/@localEdges.0">
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="p" outgoingEdges="//@ibexPatternSet/@contextPatterns.15/@localEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
       </signatureNodes>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="t" outgoingEdges="//@ibexPatternSet/@contextPatterns.15/@localEdges.0">
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="t" incomingEdges="//@ibexPatternSet/@contextPatterns.15/@localEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </signatureNodes>
     </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="Tu_x">
-      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.16/@signatureNodes.1" targetNode="//@ibexPatternSet/@contextPatterns.16/@signatureNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_P_a"/>
+      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.16/@signatureNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.16/@signatureNodes.1">
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_x"/>
       </localEdges>
       <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.16/@signatureNodes.1" targetNode="//@ibexPatternSet/@contextPatterns.16/@signatureNodes.2">
         <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_p"/>
       </localEdges>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="p" incomingEdges="//@ibexPatternSet/@contextPatterns.16/@localEdges.0">
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="p" outgoingEdges="//@ibexPatternSet/@contextPatterns.16/@localEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
       </signatureNodes>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="t" outgoingEdges="//@ibexPatternSet/@contextPatterns.16/@localEdges.0 //@ibexPatternSet/@contextPatterns.16/@localEdges.1">
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="t" incomingEdges="//@ibexPatternSet/@contextPatterns.16/@localEdges.0" outgoingEdges="//@ibexPatternSet/@contextPatterns.16/@localEdges.1">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </signatureNodes>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="ps" incomingEdges="//@ibexPatternSet/@contextPatterns.16/@localEdges.1">
@@ -436,17 +436,17 @@
       </signatureNodes>
     </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="PT_y">
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.3">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.17/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.3/@signatureNodes.0"/>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.0">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.17/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.0/@signatureNodes.0"/>
       </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.7">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.17/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.7/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.4">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.17/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.4/@signatureNodes.0"/>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.2">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.17/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.2/@signatureNodes.0"/>
       </invocations>
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.6">
         <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.17/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.6/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.3">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.17/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.3/@signatureNodes.0"/>
       </invocations>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="p">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
@@ -456,27 +456,27 @@
       </signatureNodes>
     </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="PT_yBwd">
-      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.18/@signatureNodes.1" targetNode="//@ibexPatternSet/@contextPatterns.18/@signatureNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_P_a"/>
+      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.18/@signatureNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.18/@signatureNodes.1">
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_y"/>
       </localEdges>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="p" incomingEdges="//@ibexPatternSet/@contextPatterns.18/@localEdges.0">
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="p" outgoingEdges="//@ibexPatternSet/@contextPatterns.18/@localEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
       </signatureNodes>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="t" outgoingEdges="//@ibexPatternSet/@contextPatterns.18/@localEdges.0">
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="t" incomingEdges="//@ibexPatternSet/@contextPatterns.18/@localEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </signatureNodes>
     </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="Tu_y">
-      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.19/@signatureNodes.1" targetNode="//@ibexPatternSet/@contextPatterns.19/@signatureNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_P_a"/>
+      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.19/@signatureNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.19/@signatureNodes.1">
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_y"/>
       </localEdges>
       <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.19/@signatureNodes.1" targetNode="//@ibexPatternSet/@contextPatterns.19/@signatureNodes.2">
         <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_p"/>
       </localEdges>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="p" incomingEdges="//@ibexPatternSet/@contextPatterns.19/@localEdges.0">
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="p" outgoingEdges="//@ibexPatternSet/@contextPatterns.19/@localEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
       </signatureNodes>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="t" outgoingEdges="//@ibexPatternSet/@contextPatterns.19/@localEdges.0 //@ibexPatternSet/@contextPatterns.19/@localEdges.1">
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="t" incomingEdges="//@ibexPatternSet/@contextPatterns.19/@localEdges.0" outgoingEdges="//@ibexPatternSet/@contextPatterns.19/@localEdges.1">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </signatureNodes>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="ps" incomingEdges="//@ibexPatternSet/@contextPatterns.19/@localEdges.1">
@@ -501,17 +501,17 @@
       </signatureNodes>
     </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="obs_T_pp_unbound">
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.0">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.21/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.0/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.2">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.21/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.2/@signatureNodes.0"/>
-      </invocations>
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.4">
         <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.21/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.4/@signatureNodes.0"/>
       </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.1">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.21/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.1/@signatureNodes.0"/>
+      </invocations>
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.6">
         <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.21/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.6/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.3">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.21/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.3/@signatureNodes.0"/>
       </invocations>
       <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.21/@signatureNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.21/@signatureNodes.1">
         <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_p"/>
@@ -527,13 +527,13 @@
       </signatureNodes>
     </contextPatterns>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="KT_x">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="k" incomingEdges="//@ibexPatternSet/@createPatterns.0/@createdEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
-      </contextNodes>
       <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" outgoingEdges="//@ibexPatternSet/@createPatterns.0/@createdEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </contextNodes>
-      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.0/@contextNodes.1" targetNode="//@ibexPatternSet/@createPatterns.0/@contextNodes.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="k" incomingEdges="//@ibexPatternSet/@createPatterns.0/@createdEdges.0">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+      </contextNodes>
+      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.0/@contextNodes.0" targetNode="//@ibexPatternSet/@createPatterns.0/@contextNodes.1">
         <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_K_a"/>
       </createdEdges>
     </createPatterns>
@@ -550,13 +550,13 @@
       </createdEdges>
     </createPatterns>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="KT_y">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" outgoingEdges="//@ibexPatternSet/@createPatterns.3/@createdEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
-      </contextNodes>
       <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="k" incomingEdges="//@ibexPatternSet/@createPatterns.3/@createdEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
       </contextNodes>
-      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.3/@contextNodes.0" targetNode="//@ibexPatternSet/@createPatterns.3/@contextNodes.1">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" outgoingEdges="//@ibexPatternSet/@createPatterns.3/@createdEdges.0">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+      </contextNodes>
+      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.3/@contextNodes.1" targetNode="//@ibexPatternSet/@createPatterns.3/@contextNodes.0">
         <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_K_a"/>
       </createdEdges>
     </createPatterns>
@@ -573,14 +573,14 @@
       </createdEdges>
     </createPatterns>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="PT_x">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="p" incomingEdges="//@ibexPatternSet/@createPatterns.6/@createdEdges.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="p" outgoingEdges="//@ibexPatternSet/@createPatterns.6/@createdEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
       </contextNodes>
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" outgoingEdges="//@ibexPatternSet/@createPatterns.6/@createdEdges.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" incomingEdges="//@ibexPatternSet/@createPatterns.6/@createdEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </contextNodes>
-      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.6/@contextNodes.1" targetNode="//@ibexPatternSet/@createPatterns.6/@contextNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_P_a"/>
+      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.6/@contextNodes.0" targetNode="//@ibexPatternSet/@createPatterns.6/@contextNodes.1">
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_x"/>
       </createdEdges>
     </createPatterns>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="PT_xBwd"/>
@@ -596,14 +596,14 @@
       </createdEdges>
     </createPatterns>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="PT_y">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="p" incomingEdges="//@ibexPatternSet/@createPatterns.9/@createdEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
-      </contextNodes>
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" outgoingEdges="//@ibexPatternSet/@createPatterns.9/@createdEdges.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" incomingEdges="//@ibexPatternSet/@createPatterns.9/@createdEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </contextNodes>
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="p" outgoingEdges="//@ibexPatternSet/@createPatterns.9/@createdEdges.0">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+      </contextNodes>
       <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.9/@contextNodes.1" targetNode="//@ibexPatternSet/@createPatterns.9/@contextNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_P_a"/>
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_y"/>
       </createdEdges>
     </createPatterns>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="PT_yBwd"/>
@@ -643,13 +643,13 @@
     </deletePatterns>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="KT_y"/>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="KT_yBwd">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" outgoingEdges="//@ibexPatternSet/@deletePatterns.4/@deletedEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
-      </contextNodes>
       <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="k" incomingEdges="//@ibexPatternSet/@deletePatterns.4/@deletedEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
       </contextNodes>
-      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.4/@contextNodes.0" targetNode="//@ibexPatternSet/@deletePatterns.4/@contextNodes.1">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" outgoingEdges="//@ibexPatternSet/@deletePatterns.4/@deletedEdges.0">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+      </contextNodes>
+      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.4/@contextNodes.1" targetNode="//@ibexPatternSet/@deletePatterns.4/@contextNodes.0">
         <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_K_a"/>
       </deletedEdges>
     </deletePatterns>
@@ -666,14 +666,14 @@
     </deletePatterns>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="PT_x"/>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="PT_xBwd">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="p" incomingEdges="//@ibexPatternSet/@deletePatterns.7/@deletedEdges.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="p" outgoingEdges="//@ibexPatternSet/@deletePatterns.7/@deletedEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
       </contextNodes>
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" outgoingEdges="//@ibexPatternSet/@deletePatterns.7/@deletedEdges.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" incomingEdges="//@ibexPatternSet/@deletePatterns.7/@deletedEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </contextNodes>
-      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.7/@contextNodes.1" targetNode="//@ibexPatternSet/@deletePatterns.7/@contextNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_P_a"/>
+      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.7/@contextNodes.0" targetNode="//@ibexPatternSet/@deletePatterns.7/@contextNodes.1">
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_x"/>
       </deletedEdges>
     </deletePatterns>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="Tu_x">
@@ -689,14 +689,14 @@
     </deletePatterns>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="PT_y"/>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="PT_yBwd">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="p" incomingEdges="//@ibexPatternSet/@deletePatterns.10/@deletedEdges.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="p" outgoingEdges="//@ibexPatternSet/@deletePatterns.10/@deletedEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
       </contextNodes>
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" outgoingEdges="//@ibexPatternSet/@deletePatterns.10/@deletedEdges.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" incomingEdges="//@ibexPatternSet/@deletePatterns.10/@deletedEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </contextNodes>
-      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.10/@contextNodes.1" targetNode="//@ibexPatternSet/@deletePatterns.10/@contextNodes.0">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_y_P_a"/>
+      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.10/@contextNodes.0" targetNode="//@ibexPatternSet/@deletePatterns.10/@contextNodes.1">
+        <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_y"/>
       </deletedEdges>
     </deletePatterns>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="Tu_y">

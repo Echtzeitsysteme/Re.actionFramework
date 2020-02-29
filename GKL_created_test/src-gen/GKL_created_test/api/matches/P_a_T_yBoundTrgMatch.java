@@ -1,27 +1,27 @@
 package GKL_created_test.api.matches;
 
-import GKL_created_test.api.rules.T_y_P_aBoundTrgRule;
-import GKLModel.P;
+import GKL_created_test.api.rules.P_a_T_yBoundTrgRule;
+import GKLModel.T;
 import org.emoflon.ibex.common.operational.IMatch;
 import org.emoflon.ibex.gt.api.GraphTransformationMatch;
 
 /**
- * A match for the rule <code>T_y_P_aBoundTrg()</code>.
+ * A match for the rule <code>P_a_T_yBoundTrg()</code>.
  */
-public class T_y_P_aBoundTrgMatch extends GraphTransformationMatch<T_y_P_aBoundTrgMatch, T_y_P_aBoundTrgRule> {
-	private P varTrg;
+public class P_a_T_yBoundTrgMatch extends GraphTransformationMatch<P_a_T_yBoundTrgMatch, P_a_T_yBoundTrgRule> {
+	private T varTrg;
 
 	/**
-	 * Creates a new match for the rule <code>T_y_P_aBoundTrg()</code>.
+	 * Creates a new match for the rule <code>P_a_T_yBoundTrg()</code>.
 	 * 
 	 * @param pattern
 	 *            the pattern
 	 * @param match
 	 *            the untyped match
 	 */
-	public T_y_P_aBoundTrgMatch(final T_y_P_aBoundTrgRule pattern, final IMatch match) {
+	public P_a_T_yBoundTrgMatch(final P_a_T_yBoundTrgRule pattern, final IMatch match) {
 		super(pattern, match);
-		varTrg = (P) match.get("trg");
+		varTrg = (T) match.get("trg");
 	}
 
 	/**
@@ -29,7 +29,7 @@ public class T_y_P_aBoundTrgMatch extends GraphTransformationMatch<T_y_P_aBoundT
 	 *
 	 * @return the trg
 	 */
-	public P getTrg() {
+	public T getTrg() {
 		return varTrg;
 	}
 

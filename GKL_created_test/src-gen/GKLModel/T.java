@@ -14,11 +14,9 @@ import reactionContainer.Agent;
  * </p>
  * <ul>
  *   <li>{@link GKLModel.T#getT_x_K_a <em>TxKa</em>}</li>
- *   <li>{@link GKLModel.T#getT_x_P_a <em>TxPa</em>}</li>
  *   <li>{@link GKLModel.T#getT_x_u <em>Txu</em>}</li>
  *   <li>{@link GKLModel.T#getT_x_p <em>Txp</em>}</li>
  *   <li>{@link GKLModel.T#getT_y_K_a <em>TyKa</em>}</li>
- *   <li>{@link GKLModel.T#getT_y_P_a <em>TyPa</em>}</li>
  *   <li>{@link GKLModel.T#getT_y_u <em>Tyu</em>}</li>
  *   <li>{@link GKLModel.T#getT_y_p <em>Typ</em>}</li>
  * </ul>
@@ -49,28 +47,6 @@ public interface T extends Agent {
 	 * @generated
 	 */
 	void setT_x_K_a(K value);
-
-	/**
-	 * Returns the value of the '<em><b>TxPa</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>TxPa</em>' reference.
-	 * @see #setT_x_P_a(P)
-	 * @see GKLModel.GKLModelPackage#getT_T_x_P_a()
-	 * @model
-	 * @generated
-	 */
-	P getT_x_P_a();
-
-	/**
-	 * Sets the value of the '{@link GKLModel.T#getT_x_P_a <em>TxPa</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>TxPa</em>' reference.
-	 * @see #getT_x_P_a()
-	 * @generated
-	 */
-	void setT_x_P_a(P value);
 
 	/**
 	 * Returns the value of the '<em><b>Txu</b></em>' reference.
@@ -137,28 +113,6 @@ public interface T extends Agent {
 	 * @generated
 	 */
 	void setT_y_K_a(K value);
-
-	/**
-	 * Returns the value of the '<em><b>TyPa</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>TyPa</em>' reference.
-	 * @see #setT_y_P_a(P)
-	 * @see GKLModel.GKLModelPackage#getT_T_y_P_a()
-	 * @model
-	 * @generated
-	 */
-	P getT_y_P_a();
-
-	/**
-	 * Sets the value of the '{@link GKLModel.T#getT_y_P_a <em>TyPa</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>TyPa</em>' reference.
-	 * @see #getT_y_P_a()
-	 * @generated
-	 */
-	void setT_y_P_a(P value);
 
 	/**
 	 * Returns the value of the '<em><b>Tyu</b></em>' reference.

@@ -56,12 +56,12 @@ public class GKLModelFactoryImpl extends EFactoryImpl implements GKLModelFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+		case GKLModelPackage.P:
+			return createP();
 		case GKLModelPackage.T:
 			return createT();
 		case GKLModelPackage.K:
 			return createK();
-		case GKLModelPackage.P:
-			return createP();
 		case GKLModelPackage.US:
 			return createU_s();
 		case GKLModelPackage.PS:
@@ -69,6 +69,17 @@ public class GKLModelFactoryImpl extends EFactoryImpl implements GKLModelFactory
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public P createP() {
+		PImpl p = new PImpl();
+		return p;
 	}
 
 	/**
@@ -91,17 +102,6 @@ public class GKLModelFactoryImpl extends EFactoryImpl implements GKLModelFactory
 	public K createK() {
 		KImpl k = new KImpl();
 		return k;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public P createP() {
-		PImpl p = new PImpl();
-		return p;
 	}
 
 	/**

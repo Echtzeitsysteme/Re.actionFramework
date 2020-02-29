@@ -11,19 +11,19 @@ Contains packages:
 
 Package GKLModel <platform:/resource/GKL_created_test/model/GKLModel.ecore>
 
+  Class P -> Agent
+    Reference P_a_T_x : T
+    Reference P_a_T_y : T
+
   Class T -> Agent
     Reference T_x_K_a : K
-    Reference T_x_P_a : P
     Reference T_x_u : U_s
     Reference T_x_p : P_s
     Reference T_y_K_a : K
-    Reference T_y_P_a : P
     Reference T_y_u : U_s
     Reference T_y_p : P_s
 
   Class K -> Agent
-
-  Class P -> Agent
 
   Class U_s -> State
 

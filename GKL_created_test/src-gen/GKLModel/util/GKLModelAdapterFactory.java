@@ -70,6 +70,11 @@ public class GKLModelAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected GKLModelSwitch<Adapter> modelSwitch = new GKLModelSwitch<Adapter>() {
 		@Override
+		public Adapter caseP(P object) {
+			return createPAdapter();
+		}
+
+		@Override
 		public Adapter caseT(T object) {
 			return createTAdapter();
 		}
@@ -77,11 +82,6 @@ public class GKLModelAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseK(K object) {
 			return createKAdapter();
-		}
-
-		@Override
-		public Adapter caseP(P object) {
-			return createPAdapter();
 		}
 
 		@Override
@@ -124,6 +124,20 @@ public class GKLModelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link GKLModel.P <em>P</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see GKLModel.P
+	 * @generated
+	 */
+	public Adapter createPAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link GKLModel.T <em>T</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -148,20 +162,6 @@ public class GKLModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createKAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link GKLModel.P <em>P</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see GKLModel.P
-	 * @generated
-	 */
-	public Adapter createPAdapter() {
 		return null;
 	}
 

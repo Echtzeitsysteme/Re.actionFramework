@@ -3,18 +3,19 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xsi:schemaLocation="http://www.eclipse.org/emf/2002/Ecore java://org.eclipse.emf.ecore.EcorePackage"
     name="GKLModel" nsURI="platform:/resource/GKL_created_test/model/GKLModel.ecore"
     nsPrefix="GKLModel">
+  <eClassifiers xmi:type="ecore:EClass" name="P" eSuperTypes="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent">
+    <eStructuralFeatures xmi:type="ecore:EReference" name="P_a_T_x" eType="#//T"/>
+    <eStructuralFeatures xmi:type="ecore:EReference" name="P_a_T_y" eType="#//T"/>
+  </eClassifiers>
   <eClassifiers xmi:type="ecore:EClass" name="T" eSuperTypes="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent">
     <eStructuralFeatures xmi:type="ecore:EReference" name="T_x_K_a" eType="#//K"/>
-    <eStructuralFeatures xmi:type="ecore:EReference" name="T_x_P_a" eType="#//P"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="T_x_u" eType="#//U_s"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="T_x_p" eType="#//P_s"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="T_y_K_a" eType="#//K"/>
-    <eStructuralFeatures xmi:type="ecore:EReference" name="T_y_P_a" eType="#//P"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="T_y_u" eType="#//U_s"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="T_y_p" eType="#//P_s"/>
   </eClassifiers>
   <eClassifiers xmi:type="ecore:EClass" name="K" eSuperTypes="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
-  <eClassifiers xmi:type="ecore:EClass" name="P" eSuperTypes="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
   <eClassifiers xmi:type="ecore:EClass" name="U_s" eSuperTypes="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//State"/>
   <eClassifiers xmi:type="ecore:EClass" name="P_s" eSuperTypes="ecore:EClass platform:/resource/reactionContainer/model/reactionContainer.ecore#//State"/>
 </ecore:EPackage>

@@ -57,13 +57,13 @@ public class DslToIntermTransformation {
 		transformAgents();
 		intermModel.getComponents().addAll(agentToIntermAgent.values());
 
-		// Transfrom Rules and add to model
-		transformRules();
-		intermModel.getComponents().addAll(translatedRules);
-
 		// Transform Initialisations and add to model
 		transformInitialisations();
 		intermModel.getComponents().addAll(initToIntermInit.values());
+		
+		// Transfrom Rules and add to model
+		transformRules();
+		intermModel.getComponents().addAll(translatedRules);
 
 		// Transform observables and add to model
 		transformObservables();

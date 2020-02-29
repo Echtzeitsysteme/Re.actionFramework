@@ -169,10 +169,12 @@ public class IntermPatternTemplate {
 
 		// update state (if existent) or recognize as unspecified
 		if (leftSi != null) {
-			if (leftSi.getSiteState() != null) {
-				leftIntermSi.setState(getIntermSiteState(leftIntermSi, leftSi.getSiteState()));
-			} else {
-				addSiteWithUnspecifiedState(leftIntermSi);
+			if (leftSi.getSite().getStates().size() > 0) {
+				if (leftSi.getSiteState() != null) {
+					leftIntermSi.setState(getIntermSiteState(leftIntermSi, leftSi.getSiteState()));
+				} else {
+					addSiteWithUnspecifiedState(leftIntermSi);
+				}
 			}
 		}
 
@@ -195,7 +197,7 @@ public class IntermPatternTemplate {
 			else {
 
 				BondSide rbs = (BondSide) rbsOrWild;
-				Bindable partner = findPartner(rbs);
+				Bindable partner = findPartner(rbs); // Finds partner AND sets state
 
 				if (bondType == BondType.UNBOUND) {
 					for (IntermSiteInstance si : intermLeftSiteInstances) {
@@ -209,16 +211,6 @@ public class IntermPatternTemplate {
 				}
 			}
 		}
-		// left side unspecified
-		//TODO: Probably not necessary since all created instances are in unspecified state at default?
-//		else {
-//			BindingState stateToSet = BindingState.UNSPECIFIED;
-//
-//			for (IntermSiteInstance si : intermLeftSiteInstances) {
-//				si.setBindingState(stateToSet);
-//			}
-//
-//		}
 	}
 
 	/**

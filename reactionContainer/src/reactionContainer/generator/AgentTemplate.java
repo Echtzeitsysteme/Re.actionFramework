@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import ecoreBCModel.IntermAgent;
 import ecoreBCModel.IntermSite;
+import ecoreBCModel.IntermSiteInstance;
 import ecoreBCModel.IntermSiteState;
 import reactionContainer.Agent;
 import reactionContainer.State;
@@ -25,8 +26,7 @@ public class AgentTemplate {
 
 	private String agentClassName;
 	private Map<String, String> siteStateReferences;
-	private Map<String, List<AgentTemplate>> agentReferences;
-	private Map<String, List<IntermSite>> siteReferences;
+	private Map<IntermSite, IntermSite> siteReferences;
 
 	public AgentTemplate(IntermAgent agent, AgentClassFactory agentFactory, StateClassFactory stateFactory,
 			Map<String, State> stateInstances) {
@@ -36,8 +36,8 @@ public class AgentTemplate {
 		this.stateFactory = stateFactory;
 
 		agentClassName = agent.getName();
-		agentReferences = new HashMap<String, List<AgentTemplate>>();
-		siteStateReferences = new HashMap<String, String>();
+		siteStateReferences = new HashMap<>();
+		siteReferences = new HashMap<>();
 	}
 
 	public void defineSiteState(IntermSite site, IntermSiteState state) {
@@ -45,22 +45,9 @@ public class AgentTemplate {
 				StateClassFactory.createCombinedClassName(agentClassName, site.getName(), state.getName()),
 				state.getName().toUpperCase()+"_s");
 	}
-
-	public void addReference(IntermSite site, AgentTemplate otherAgent, IntermSite otherSite) {
-		List<AgentTemplate> agentTemplates = agentReferences
-				.get(AgentClassFactory.createCombinedClassName(agentClassName, site.getName()));
-		List<IntermSite> siteTemplates = siteReferences
-				.get(AgentClassFactory.createCombinedClassName(agentClassName, site.getName()));
-		if (agentTemplates == null) {
-			agentTemplates = new LinkedList<AgentTemplate>();
-			agentReferences.put(AgentClassFactory.createCombinedClassName(agentClassName, site.getName(), otherAgent.getAgentClassName(), otherSite.getName()), agentTemplates);
-		}
-		if (siteTemplates == null) {
-			siteTemplates = new LinkedList<IntermSite>();
-			agentReferences.put(AgentClassFactory.createCombinedClassName(agentClassName, site.getName(), otherAgent.getAgentClassName(), otherSite.getName()), agentTemplates);
-		}
-		agentTemplates.add(otherAgent);
-		siteTemplates.add(otherSite);
+	
+	public void defineSitePartner(IntermSite site, IntermSite otherSite) {
+		siteReferences.put(site, otherSite);
 	}
 
 	public void setStates(Agent thisAgent) {
@@ -70,24 +57,17 @@ public class AgentTemplate {
 			thisAgent.eSet(ref, state);
 		}
 	}
-
-	@SuppressWarnings("unchecked")
-	public void setReferences(Agent thisAgent, Map<AgentTemplate, Agent> tempInstances) {
-		for (String refName : agentReferences.keySet()) {
-			List<AgentTemplate> otherTemplates = agentReferences.get(refName);
-			EReference ref = agentFactory.getEClassRegistry().getRegisteredReference(refName);
-			if (ref.getUpperBound() != EStructuralFeature.UNBOUNDED_MULTIPLICITY) {
-				Agent otherAgent = tempInstances.get(otherTemplates.get(0));
-				thisAgent.eSet(ref, otherAgent);
-			} else {
-				for (AgentTemplate template : otherTemplates) {
-					Agent otherAgent = tempInstances.get(template);
-					((List<Agent >) thisAgent.eGet(ref)).add(otherAgent);
-				}
-
-			}
-
-		}
+	
+	public boolean isBound() {
+		return siteReferences.isEmpty();
+	}
+	
+	public static String createSiteRefName(IntermSite site, IntermSite otherSite) {
+		return site.getParent().getName().toUpperCase()+"_"+site.getName()+"_"+otherSite.getParent().getName().toUpperCase()+"_"+otherSite.getName();
+	}
+	
+	public static String createSiteRefName(IntermSiteInstance site, IntermSiteInstance otherSite) {
+		return site.getParent().getInstanceOf().getName().toUpperCase()+"_"+site.getName()+"_"+otherSite.getParent().getInstanceOf().getName().toUpperCase()+"_"+otherSite.getName();
 	}
 
 	public String getAgentClassName() {

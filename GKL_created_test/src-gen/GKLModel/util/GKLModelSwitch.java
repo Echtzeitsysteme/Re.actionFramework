@@ -69,6 +69,15 @@ public class GKLModelSwitch<T1> extends Switch<T1> {
 	@Override
 	protected T1 doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+		case GKLModelPackage.P: {
+			P p = (P) theEObject;
+			T1 result = caseP(p);
+			if (result == null)
+				result = caseAgent(p);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case GKLModelPackage.T: {
 			T t = (T) theEObject;
 			T1 result = caseT(t);
@@ -83,15 +92,6 @@ public class GKLModelSwitch<T1> extends Switch<T1> {
 			T1 result = caseK(k);
 			if (result == null)
 				result = caseAgent(k);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case GKLModelPackage.P: {
-			P p = (P) theEObject;
-			T1 result = caseP(p);
-			if (result == null)
-				result = caseAgent(p);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -117,6 +117,21 @@ public class GKLModelSwitch<T1> extends Switch<T1> {
 		default:
 			return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>P</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>P</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseP(P object) {
+		return null;
 	}
 
 	/**
@@ -146,21 +161,6 @@ public class GKLModelSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseK(K object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>P</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>P</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T1 caseP(P object) {
 		return null;
 	}
 

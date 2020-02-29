@@ -5,7 +5,6 @@
 package GKLModel.validation;
 
 import GKLModel.K;
-import GKLModel.P;
 import GKLModel.P_s;
 import GKLModel.U_s;
 
@@ -20,15 +19,11 @@ public interface TValidator {
 
 	boolean validateT_x_K_a(K value);
 
-	boolean validateT_x_P_a(P value);
-
 	boolean validateT_x_u(U_s value);
 
 	boolean validateT_x_p(P_s value);
 
 	boolean validateT_y_K_a(K value);
-
-	boolean validateT_y_P_a(P value);
 
 	boolean validateT_y_u(U_s value);
 

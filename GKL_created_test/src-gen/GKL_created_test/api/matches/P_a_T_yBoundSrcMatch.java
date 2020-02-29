@@ -1,27 +1,27 @@
 package GKL_created_test.api.matches;
 
-import GKL_created_test.api.rules.T_y_P_aBoundSrcRule;
-import GKLModel.T;
+import GKL_created_test.api.rules.P_a_T_yBoundSrcRule;
+import GKLModel.P;
 import org.emoflon.ibex.common.operational.IMatch;
 import org.emoflon.ibex.gt.api.GraphTransformationMatch;
 
 /**
- * A match for the rule <code>T_y_P_aBoundSrc()</code>.
+ * A match for the rule <code>P_a_T_yBoundSrc()</code>.
  */
-public class T_y_P_aBoundSrcMatch extends GraphTransformationMatch<T_y_P_aBoundSrcMatch, T_y_P_aBoundSrcRule> {
-	private T varSrc;
+public class P_a_T_yBoundSrcMatch extends GraphTransformationMatch<P_a_T_yBoundSrcMatch, P_a_T_yBoundSrcRule> {
+	private P varSrc;
 
 	/**
-	 * Creates a new match for the rule <code>T_y_P_aBoundSrc()</code>.
+	 * Creates a new match for the rule <code>P_a_T_yBoundSrc()</code>.
 	 * 
 	 * @param pattern
 	 *            the pattern
 	 * @param match
 	 *            the untyped match
 	 */
-	public T_y_P_aBoundSrcMatch(final T_y_P_aBoundSrcRule pattern, final IMatch match) {
+	public P_a_T_yBoundSrcMatch(final P_a_T_yBoundSrcRule pattern, final IMatch match) {
 		super(pattern, match);
-		varSrc = (T) match.get("src");
+		varSrc = (P) match.get("src");
 	}
 
 	/**
@@ -29,7 +29,7 @@ public class T_y_P_aBoundSrcMatch extends GraphTransformationMatch<T_y_P_aBoundS
 	 *
 	 * @return the src
 	 */
-	public T getSrc() {
+	public P getSrc() {
 		return varSrc;
 	}
 

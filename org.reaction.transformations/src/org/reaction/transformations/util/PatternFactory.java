@@ -44,8 +44,8 @@ public class PatternFactory {
 			pattern.getAgentInstances().addAll(localInstances);
 		} else {
 			pattern.setName(template.getName() + "madeConcrete");
-			List<IntermAgentInstance> concreteAiList = getConcreteAgentInstances();
-			pattern.getAgentInstances().addAll(concreteAiList);
+			makeInstancesConcrete();
+			pattern.getAgentInstances().addAll(instances.values());
 			pattern.getAgentInstances().addAll(localInstances);
 		}
 
@@ -56,24 +56,22 @@ public class PatternFactory {
 	 * @return a copy of the existent agent instance list with all unspecified
 	 *         states set to default state and all unspecified sites set to free.
 	 */
-	private List<IntermAgentInstance> getConcreteAgentInstances() {
-		List<IntermAgentInstance> instancesCopy = createAiCopies(instances.values());
-
-		for (IntermAgentInstance ai : instancesCopy) {
+	private void makeInstancesConcrete() {
+		
+		for (IntermAgentInstance ai : instances.values()) {
 			for (IntermSiteInstance si : ai.getSiteInstances()) {
 				if (si.getBindingState() == BindingState.UNSPECIFIED) {
 					si.setBindingState(BindingState.FREE);
 				}
-				if (si.getState() != null) {
+				if (si.getState() == null) {
 					List<IntermSiteState> possibleStates = si.getInstanceOf().getSiteStates();
-					if (possibleStates.size() > 0) {
+					if (possibleStates != null && possibleStates.size() > 0) {
 						si.setState(possibleStates.get(0));
 					}
 				}
 			}
 		}
 
-		return instancesCopy;
 	}
 
 	/**

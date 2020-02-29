@@ -1,8 +1,8 @@
 package GKL_created_test.api.rules;
 
 import GKL_created_test.api.GKL_created_testAPI;
-import GKL_created_test.api.matches.T_x_P_aBoundSrcMatch;
-import GKLModel.T;
+import GKL_created_test.api.matches.P_a_T_yBoundSrcMatch;
+import GKLModel.P;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -11,27 +11,27 @@ import org.emoflon.ibex.gt.api.GraphTransformationRule;
 import org.emoflon.ibex.gt.engine.GraphTransformationInterpreter;
 
 /**
- * The rule <code>T_x_P_aBoundSrc()</code> which does the following:
+ * The rule <code>P_a_T_yBoundSrc()</code> which does the following:
  * If this rule is not self-explaining, you really should add some comment in the specification.
  */
-public class T_x_P_aBoundSrcRule extends GraphTransformationRule<T_x_P_aBoundSrcMatch, T_x_P_aBoundSrcRule> {
-	private static String patternName = "T_x_P_aBoundSrc";
+public class P_a_T_yBoundSrcRule extends GraphTransformationRule<P_a_T_yBoundSrcMatch, P_a_T_yBoundSrcRule> {
+	private static String patternName = "P_a_T_yBoundSrc";
 
 	/**
-	 * Creates a new rule T_x_P_aBoundSrc().
+	 * Creates a new rule P_a_T_yBoundSrc().
 	 * 
 	 * @param api
 	 *            the API the rule belongs to
 	 * @param interpreter
 	 *            the interpreter
 	 */
-	public T_x_P_aBoundSrcRule(final GKL_created_testAPI api, final GraphTransformationInterpreter interpreter) {
+	public P_a_T_yBoundSrcRule(final GKL_created_testAPI api, final GraphTransformationInterpreter interpreter) {
 		super(api, interpreter, patternName);
 	}
 
 	@Override
-	protected T_x_P_aBoundSrcMatch convertMatch(final IMatch match) {
-		return new T_x_P_aBoundSrcMatch(this, match);
+	protected P_a_T_yBoundSrcMatch convertMatch(final IMatch match) {
+		return new P_a_T_yBoundSrcMatch(this, match);
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public class T_x_P_aBoundSrcRule extends GraphTransformationRule<T_x_P_aBoundSrc
 	 * @param object
 	 *            the object to set
 	 */
-	public T_x_P_aBoundSrcRule bindSrc(final T object) {
+	public P_a_T_yBoundSrcRule bindSrc(final P object) {
 		parameters.put("src", Objects.requireNonNull(object, "src must not be null!"));
 		return this;
 	}

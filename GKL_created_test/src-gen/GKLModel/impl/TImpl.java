@@ -4,7 +4,6 @@ package GKLModel.impl;
 
 import GKLModel.GKLModelPackage;
 import GKLModel.K;
-import GKLModel.P;
 import GKLModel.P_s;
 import GKLModel.T;
 import GKLModel.U_s;
@@ -27,11 +26,9 @@ import reactionContainer.impl.AgentImpl;
  * </p>
  * <ul>
  *   <li>{@link GKLModel.impl.TImpl#getT_x_K_a <em>TxKa</em>}</li>
- *   <li>{@link GKLModel.impl.TImpl#getT_x_P_a <em>TxPa</em>}</li>
  *   <li>{@link GKLModel.impl.TImpl#getT_x_u <em>Txu</em>}</li>
  *   <li>{@link GKLModel.impl.TImpl#getT_x_p <em>Txp</em>}</li>
  *   <li>{@link GKLModel.impl.TImpl#getT_y_K_a <em>TyKa</em>}</li>
- *   <li>{@link GKLModel.impl.TImpl#getT_y_P_a <em>TyPa</em>}</li>
  *   <li>{@link GKLModel.impl.TImpl#getT_y_u <em>Tyu</em>}</li>
  *   <li>{@link GKLModel.impl.TImpl#getT_y_p <em>Typ</em>}</li>
  * </ul>
@@ -48,16 +45,6 @@ public class TImpl extends AgentImpl implements T {
 	 * @ordered
 	 */
 	protected K t_x_K_a;
-
-	/**
-	 * The cached value of the '{@link #getT_x_P_a() <em>TxPa</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getT_x_P_a()
-	 * @generated
-	 * @ordered
-	 */
-	protected P t_x_P_a;
 
 	/**
 	 * The cached value of the '{@link #getT_x_u() <em>Txu</em>}' reference.
@@ -88,16 +75,6 @@ public class TImpl extends AgentImpl implements T {
 	 * @ordered
 	 */
 	protected K t_y_K_a;
-
-	/**
-	 * The cached value of the '{@link #getT_y_P_a() <em>TyPa</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getT_y_P_a()
-	 * @generated
-	 * @ordered
-	 */
-	protected P t_y_P_a;
 
 	/**
 	 * The cached value of the '{@link #getT_y_u() <em>Tyu</em>}' reference.
@@ -177,47 +154,6 @@ public class TImpl extends AgentImpl implements T {
 		t_x_K_a = newT_x_K_a;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GKLModelPackage.T__TXKA, oldT_x_K_a, t_x_K_a));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public P getT_x_P_a() {
-		if (t_x_P_a != null && t_x_P_a.eIsProxy()) {
-			InternalEObject oldT_x_P_a = (InternalEObject) t_x_P_a;
-			t_x_P_a = (P) eResolveProxy(oldT_x_P_a);
-			if (t_x_P_a != oldT_x_P_a) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GKLModelPackage.T__TXPA, oldT_x_P_a,
-							t_x_P_a));
-			}
-		}
-		return t_x_P_a;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public P basicGetT_x_P_a() {
-		return t_x_P_a;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setT_x_P_a(P newT_x_P_a) {
-		P oldT_x_P_a = t_x_P_a;
-		t_x_P_a = newT_x_P_a;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GKLModelPackage.T__TXPA, oldT_x_P_a, t_x_P_a));
 	}
 
 	/**
@@ -347,47 +283,6 @@ public class TImpl extends AgentImpl implements T {
 	 * @generated
 	 */
 	@Override
-	public P getT_y_P_a() {
-		if (t_y_P_a != null && t_y_P_a.eIsProxy()) {
-			InternalEObject oldT_y_P_a = (InternalEObject) t_y_P_a;
-			t_y_P_a = (P) eResolveProxy(oldT_y_P_a);
-			if (t_y_P_a != oldT_y_P_a) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GKLModelPackage.T__TYPA, oldT_y_P_a,
-							t_y_P_a));
-			}
-		}
-		return t_y_P_a;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public P basicGetT_y_P_a() {
-		return t_y_P_a;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setT_y_P_a(P newT_y_P_a) {
-		P oldT_y_P_a = t_y_P_a;
-		t_y_P_a = newT_y_P_a;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GKLModelPackage.T__TYPA, oldT_y_P_a, t_y_P_a));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public U_s getT_y_u() {
 		if (t_y_u != null && t_y_u.eIsProxy()) {
 			InternalEObject oldT_y_u = (InternalEObject) t_y_u;
@@ -474,10 +369,6 @@ public class TImpl extends AgentImpl implements T {
 			if (resolve)
 				return getT_x_K_a();
 			return basicGetT_x_K_a();
-		case GKLModelPackage.T__TXPA:
-			if (resolve)
-				return getT_x_P_a();
-			return basicGetT_x_P_a();
 		case GKLModelPackage.T__TXU:
 			if (resolve)
 				return getT_x_u();
@@ -490,10 +381,6 @@ public class TImpl extends AgentImpl implements T {
 			if (resolve)
 				return getT_y_K_a();
 			return basicGetT_y_K_a();
-		case GKLModelPackage.T__TYPA:
-			if (resolve)
-				return getT_y_P_a();
-			return basicGetT_y_P_a();
 		case GKLModelPackage.T__TYU:
 			if (resolve)
 				return getT_y_u();
@@ -517,9 +404,6 @@ public class TImpl extends AgentImpl implements T {
 		case GKLModelPackage.T__TXKA:
 			setT_x_K_a((K) newValue);
 			return;
-		case GKLModelPackage.T__TXPA:
-			setT_x_P_a((P) newValue);
-			return;
 		case GKLModelPackage.T__TXU:
 			setT_x_u((U_s) newValue);
 			return;
@@ -528,9 +412,6 @@ public class TImpl extends AgentImpl implements T {
 			return;
 		case GKLModelPackage.T__TYKA:
 			setT_y_K_a((K) newValue);
-			return;
-		case GKLModelPackage.T__TYPA:
-			setT_y_P_a((P) newValue);
 			return;
 		case GKLModelPackage.T__TYU:
 			setT_y_u((U_s) newValue);
@@ -553,9 +434,6 @@ public class TImpl extends AgentImpl implements T {
 		case GKLModelPackage.T__TXKA:
 			setT_x_K_a((K) null);
 			return;
-		case GKLModelPackage.T__TXPA:
-			setT_x_P_a((P) null);
-			return;
 		case GKLModelPackage.T__TXU:
 			setT_x_u((U_s) null);
 			return;
@@ -564,9 +442,6 @@ public class TImpl extends AgentImpl implements T {
 			return;
 		case GKLModelPackage.T__TYKA:
 			setT_y_K_a((K) null);
-			return;
-		case GKLModelPackage.T__TYPA:
-			setT_y_P_a((P) null);
 			return;
 		case GKLModelPackage.T__TYU:
 			setT_y_u((U_s) null);
@@ -588,16 +463,12 @@ public class TImpl extends AgentImpl implements T {
 		switch (featureID) {
 		case GKLModelPackage.T__TXKA:
 			return t_x_K_a != null;
-		case GKLModelPackage.T__TXPA:
-			return t_x_P_a != null;
 		case GKLModelPackage.T__TXU:
 			return t_x_u != null;
 		case GKLModelPackage.T__TXP:
 			return t_x_p != null;
 		case GKLModelPackage.T__TYKA:
 			return t_y_K_a != null;
-		case GKLModelPackage.T__TYPA:
-			return t_y_P_a != null;
 		case GKLModelPackage.T__TYU:
 			return t_y_u != null;
 		case GKLModelPackage.T__TYP:

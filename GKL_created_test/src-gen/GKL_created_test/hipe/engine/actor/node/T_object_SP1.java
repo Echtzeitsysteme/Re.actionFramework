@@ -46,9 +46,9 @@ public class T_object_SP1 extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortNodeMatchLeft<GKLModel.T>(getSelf(), name2actor.get("KT_x_25_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<GKLModel.T>(getSelf(), name2actor.get("PT_y_67_junction"), this::returnTrue));
-		ports.add(new PortNodeLeft<GKLModel.T>(getSelf(), name2actor.get("T_T_x_P_a_0_reference"), this::returnTrue));
+		ports.add(new PortNodeMatchRight<GKLModel.T>(getSelf(), name2actor.get("KT_x_25_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchRight<GKLModel.T>(getSelf(), name2actor.get("PT_y_67_junction"), this::returnTrue));
+		ports.add(new PortNodeRight<GKLModel.T>(getSelf(), name2actor.get("P_P_a_T_y_0_reference"), this::returnTrue));
 		ports.add(new PortNodeLeft<GKLModel.T>(getSelf(), name2actor.get("T_T_y_u_0_reference"), this::returnTrue));
 	}
 

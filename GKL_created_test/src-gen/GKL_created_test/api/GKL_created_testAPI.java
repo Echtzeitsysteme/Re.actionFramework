@@ -6,18 +6,18 @@ import GKL_created_test.api.rules.KT_yBwdRule;
 import GKL_created_test.api.rules.KT_yRule;
 import GKL_created_test.api.rules.Obs_T_pp_unboundRule;
 import GKL_created_test.api.rules.Obs_T_ppRule;
+import GKL_created_test.api.rules.P_a_T_xBoundSrcRule;
+import GKL_created_test.api.rules.P_a_T_xBoundTrgRule;
+import GKL_created_test.api.rules.P_a_T_yBoundSrcRule;
+import GKL_created_test.api.rules.P_a_T_yBoundTrgRule;
 import GKL_created_test.api.rules.PT_xBwdRule;
 import GKL_created_test.api.rules.PT_xRule;
 import GKL_created_test.api.rules.PT_yBwdRule;
 import GKL_created_test.api.rules.PT_yRule;
 import GKL_created_test.api.rules.T_x_K_aBoundSrcRule;
 import GKL_created_test.api.rules.T_x_K_aBoundTrgRule;
-import GKL_created_test.api.rules.T_x_P_aBoundSrcRule;
-import GKL_created_test.api.rules.T_x_P_aBoundTrgRule;
 import GKL_created_test.api.rules.T_y_K_aBoundSrcRule;
 import GKL_created_test.api.rules.T_y_K_aBoundTrgRule;
-import GKL_created_test.api.rules.T_y_P_aBoundSrcRule;
-import GKL_created_test.api.rules.T_y_P_aBoundTrgRule;
 import GKL_created_test.api.rules.Tp_xRule;
 import GKL_created_test.api.rules.Tp_yRule;
 import GKL_created_test.api.rules.Tu_xRule;
@@ -72,6 +72,46 @@ public class GKL_created_testAPI extends GraphTransformationAPI {
 	}
 
 	/**
+	 * Creates a new instance of the rule <code>P_a_T_xBoundSrc()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public P_a_T_xBoundSrcRule P_a_T_xBoundSrc() {
+		return new P_a_T_xBoundSrcRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>P_a_T_xBoundTrg()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public P_a_T_xBoundTrgRule P_a_T_xBoundTrg() {
+		return new P_a_T_xBoundTrgRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>P_a_T_yBoundSrc()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public P_a_T_yBoundSrcRule P_a_T_yBoundSrc() {
+		return new P_a_T_yBoundSrcRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>P_a_T_yBoundTrg()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public P_a_T_yBoundTrgRule P_a_T_yBoundTrg() {
+		return new P_a_T_yBoundTrgRule(this, interpreter);
+	}
+
+	/**
 	 * Creates a new instance of the rule <code>T_x_K_aBoundSrc()</code> which does the following:
 	 * If this rule is not self-explaining, you really should add some comment in the specification.
 	 *
@@ -92,26 +132,6 @@ public class GKL_created_testAPI extends GraphTransformationAPI {
 	}
 
 	/**
-	 * Creates a new instance of the rule <code>T_x_P_aBoundSrc()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public T_x_P_aBoundSrcRule T_x_P_aBoundSrc() {
-		return new T_x_P_aBoundSrcRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>T_x_P_aBoundTrg()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public T_x_P_aBoundTrgRule T_x_P_aBoundTrg() {
-		return new T_x_P_aBoundTrgRule(this, interpreter);
-	}
-
-	/**
 	 * Creates a new instance of the rule <code>T_y_K_aBoundSrc()</code> which does the following:
 	 * If this rule is not self-explaining, you really should add some comment in the specification.
 	 *
@@ -129,26 +149,6 @@ public class GKL_created_testAPI extends GraphTransformationAPI {
 	 */
 	public T_y_K_aBoundTrgRule T_y_K_aBoundTrg() {
 		return new T_y_K_aBoundTrgRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>T_y_P_aBoundSrc()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public T_y_P_aBoundSrcRule T_y_P_aBoundSrc() {
-		return new T_y_P_aBoundSrcRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>T_y_P_aBoundTrg()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public T_y_P_aBoundTrgRule T_y_P_aBoundTrg() {
-		return new T_y_P_aBoundTrgRule(this, interpreter);
 	}
 
 	/**

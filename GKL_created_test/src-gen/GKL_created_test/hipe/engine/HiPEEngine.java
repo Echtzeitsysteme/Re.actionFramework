@@ -22,12 +22,12 @@ import static akka.pattern.Patterns.ask;
 
 import GKL_created_test.hipe.engine.actor.NotificationActor;
 import GKL_created_test.hipe.engine.actor.DispatchActor;
+import GKL_created_test.hipe.engine.actor.edge.P_P_a_T_x_0_reference;
+import GKL_created_test.hipe.engine.actor.node.P_object;
+import GKL_created_test.hipe.engine.actor.edge.P_P_a_T_y_0_reference;
 import GKL_created_test.hipe.engine.actor.edge.T_T_x_K_a_0_reference;
 import GKL_created_test.hipe.engine.actor.node.K_object;
-import GKL_created_test.hipe.engine.actor.edge.T_T_x_P_a_0_reference;
-import GKL_created_test.hipe.engine.actor.node.P_object;
 import GKL_created_test.hipe.engine.actor.edge.T_T_y_K_a_0_reference;
-import GKL_created_test.hipe.engine.actor.edge.T_T_y_P_a_0_reference;
 import GKL_created_test.hipe.engine.actor.node.P_s_object;
 import GKL_created_test.hipe.engine.actor.edge.T_T_x_u_0_reference;
 import GKL_created_test.hipe.engine.actor.node.U_s_object;
@@ -103,22 +103,22 @@ public class HiPEEngine implements IHiPEEngine{
 		}
 	
 	public void createProductionNodes() {
+		classes.put("P_a_T_xBoundSrc_production", GenericProductionActor.class);
+		productionNodes2pattern.put("P_a_T_xBoundSrc_production", "P_a_T_xBoundSrc");
+		classes.put("P_a_T_xBoundTrg_production", GenericProductionActor.class);
+		productionNodes2pattern.put("P_a_T_xBoundTrg_production", "P_a_T_xBoundTrg");
+		classes.put("P_a_T_yBoundSrc_production", GenericProductionActor.class);
+		productionNodes2pattern.put("P_a_T_yBoundSrc_production", "P_a_T_yBoundSrc");
+		classes.put("P_a_T_yBoundTrg_production", GenericProductionActor.class);
+		productionNodes2pattern.put("P_a_T_yBoundTrg_production", "P_a_T_yBoundTrg");
 		classes.put("T_x_K_aBoundSrc_production", GenericProductionActor.class);
 		productionNodes2pattern.put("T_x_K_aBoundSrc_production", "T_x_K_aBoundSrc");
 		classes.put("T_x_K_aBoundTrg_production", GenericProductionActor.class);
 		productionNodes2pattern.put("T_x_K_aBoundTrg_production", "T_x_K_aBoundTrg");
-		classes.put("T_x_P_aBoundSrc_production", GenericProductionActor.class);
-		productionNodes2pattern.put("T_x_P_aBoundSrc_production", "T_x_P_aBoundSrc");
-		classes.put("T_x_P_aBoundTrg_production", GenericProductionActor.class);
-		productionNodes2pattern.put("T_x_P_aBoundTrg_production", "T_x_P_aBoundTrg");
 		classes.put("T_y_K_aBoundSrc_production", GenericProductionActor.class);
 		productionNodes2pattern.put("T_y_K_aBoundSrc_production", "T_y_K_aBoundSrc");
 		classes.put("T_y_K_aBoundTrg_production", GenericProductionActor.class);
 		productionNodes2pattern.put("T_y_K_aBoundTrg_production", "T_y_K_aBoundTrg");
-		classes.put("T_y_P_aBoundSrc_production", GenericProductionActor.class);
-		productionNodes2pattern.put("T_y_P_aBoundSrc_production", "T_y_P_aBoundSrc");
-		classes.put("T_y_P_aBoundTrg_production", GenericProductionActor.class);
-		productionNodes2pattern.put("T_y_P_aBoundTrg_production", "T_y_P_aBoundTrg");
 		classes.put("KT_x_production", GenericProductionActor.class);
 		productionNodes2pattern.put("KT_x_production", "KT_x");
 		classes.put("KT_xBwd_production", GenericProductionActor.class);
@@ -188,10 +188,10 @@ public class HiPEEngine implements IHiPEEngine{
 	}
 	
 	public void createReferenceNodes() {
+		classes.put("P_P_a_T_x_0_reference",P_P_a_T_x_0_reference.class);
+		classes.put("P_P_a_T_y_0_reference",P_P_a_T_y_0_reference.class);
 		classes.put("T_T_x_K_a_0_reference",T_T_x_K_a_0_reference.class);
-		classes.put("T_T_x_P_a_0_reference",T_T_x_P_a_0_reference.class);
 		classes.put("T_T_y_K_a_0_reference",T_T_y_K_a_0_reference.class);
-		classes.put("T_T_y_P_a_0_reference",T_T_y_P_a_0_reference.class);
 		classes.put("T_T_x_u_0_reference",T_T_x_u_0_reference.class);
 		classes.put("T_T_y_u_0_reference",T_T_y_u_0_reference.class);
 		classes.put("T_T_x_p_0_reference",T_T_x_p_0_reference.class);
@@ -200,8 +200,8 @@ public class HiPEEngine implements IHiPEEngine{
 	}
 	
 	public void createObjectNodes() {
-		classes.put("K_object",K_object.class);
 		classes.put("P_object",P_object.class);
+		classes.put("K_object",K_object.class);
 		classes.put("P_s_object",P_s_object.class);
 		classes.put("U_s_object",U_s_object.class);
 		classes.put("T_object_SP0",T_object_SP0.class);
