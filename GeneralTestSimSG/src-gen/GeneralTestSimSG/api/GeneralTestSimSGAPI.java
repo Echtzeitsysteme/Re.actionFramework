@@ -11,6 +11,7 @@ import GeneralTestSimSG.api.rules.A_c_X_yBoundTrgRule;
 import GeneralTestSimSG.api.rules.A_c_X_zBoundSrcRule;
 import GeneralTestSimSG.api.rules.A_c_X_zBoundTrgRule;
 import GeneralTestSimSG.api.rules.A_cFreeRule;
+import GeneralTestSimSG.api.rules.DegUnspecificRule;
 import GeneralTestSimSG.api.rules.GenericRule;
 import GeneralTestSimSG.api.rules.GenericWithStateRule;
 import GeneralTestSimSG.api.rules.GenericWithStateTestRule;
@@ -20,6 +21,7 @@ import GeneralTestSimSG.api.rules.Obs_aFreeRule;
 import GeneralTestSimSG.api.rules.Obs_axRule;
 import GeneralTestSimSG.api.rules.Obs_genericTestRule;
 import GeneralTestSimSG.api.rules.Obs_simpleSynthesisTestRule;
+import GeneralTestSimSG.api.rules.Obs_underspecSynthTestRule;
 import GeneralTestSimSG.api.rules.Obs_underspecTestRule;
 import GeneralTestSimSG.api.rules.Obs_unspecifiedStateChangeTestRule;
 import GeneralTestSimSG.api.rules.Obs_wildcardTestRule;
@@ -34,6 +36,7 @@ import GeneralTestSimSG.api.rules.SynthDegCompleteRule;
 import GeneralTestSimSG.api.rules.SynthDegPartialBwdRule;
 import GeneralTestSimSG.api.rules.SynthDegPartialRule;
 import GeneralTestSimSG.api.rules.UnderspecRule;
+import GeneralTestSimSG.api.rules.UnderspecSynthRule;
 import GeneralTestSimSG.api.rules.UnspecifiedStateChangeRule;
 import GeneralTestSimSG.api.rules.UnspecRule;
 import GeneralTestSimSG.api.rules.UnspecTestRule;
@@ -47,7 +50,7 @@ import org.emoflon.ibex.common.operational.IContextPatternInterpreter;
 import org.emoflon.ibex.gt.api.GraphTransformationAPI;
 
 /**
- * The GeneralTestSimSGAPI with 40 rules.
+ * The GeneralTestSimSGAPI with 43 rules.
  */
 public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	public static String patternPath = "GeneralTestSimSG/src-gen/GeneralTestSimSG/api/ibex-patterns.xmi";
@@ -410,6 +413,26 @@ public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	}
 
 	/**
+	 * Creates a new instance of the rule <code>degUnspecific()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public DegUnspecificRule degUnspecific() {
+		return new DegUnspecificRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>underspecSynth()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public UnderspecSynthRule underspecSynth() {
+		return new UnderspecSynthRule(this, interpreter);
+	}
+
+	/**
 	 * Creates a new instance of the rule <code>obs_underspecTest()</code> which does the following:
 	 * If this rule is not self-explaining, you really should add some comment in the specification.
 	 *
@@ -457,6 +480,16 @@ public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	 */
 	public Obs_wildcardTestRule obs_wildcardTest() {
 		return new Obs_wildcardTestRule(this, interpreter);
+	}
+
+	/**
+	 * Creates a new instance of the rule <code>obs_underspecSynthTest()</code> which does the following:
+	 * If this rule is not self-explaining, you really should add some comment in the specification.
+	 *
+	 * @return the new instance of the rule
+	 */
+	public Obs_underspecSynthTestRule obs_underspecSynthTest() {
+		return new Obs_underspecSynthTestRule(this, interpreter);
 	}
 
 	/**

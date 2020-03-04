@@ -48,7 +48,7 @@ public class U_s_object_SP2 extends AbstractActor {
 		ports = new LinkedList<>();
 		ports.add(new PortNodeMatchLeft<TestcasesModel.U_s>(getSelf(), name2actor.get("selfBinding_46_junction"), this::returnTrue));
 		ports.add(new PortNodeMatchLeft<TestcasesModel.U_s>(getSelf(), name2actor.get("underspec_84_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.U_s>(getSelf(), name2actor.get("wildcard_144_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchRight<TestcasesModel.U_s>(getSelf(), name2actor.get("wildcard_144_junction"), this::returnTrue));
 	}
 
 	@Override

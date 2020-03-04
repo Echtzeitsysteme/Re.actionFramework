@@ -23,7 +23,7 @@ public class Benchmark {
 		SimulationConfigurator config = api.getSimulationConfigurator();
 		config.setModel("GKLModel");
 		config.addSimpleTerminationCondition(100000, -1);
-//		config.addSimpleTerminationCondition(-1, 30000);
+//		config.addSimpleTerminationCondition(-1, 30);
 		config.addObservableStatistic();
 		 
 		Simulation sim = config.createSimulation();

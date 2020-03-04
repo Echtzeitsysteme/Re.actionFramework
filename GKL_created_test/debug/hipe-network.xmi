@@ -75,7 +75,7 @@
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.9"/>
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.13"/>
-      <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.16"/>
+      <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.16"/>
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.29"/>
     </ports>
     <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
@@ -110,7 +110,7 @@
     <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="trg" value="0"/>
     <signatureElts xmi:type="hipe.network:IntegerToIntegerMapEntry" key="1" value="0"/>
   </networknode>
-  <networknode xmi:type="hipe.network:JunctionNode" name="KT_x_25_junction" inputPort="//@networknode.10/@ports/@port.2 //@networknode.71/@ports/@port.1" patternName="KT_x_25">
+  <networknode xmi:type="hipe.network:JunctionNode" name="KT_x_25_junction" inputPort="//@networknode.71/@ports/@port.1 //@networknode.10/@ports/@port.2" patternName="KT_x_25">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.17"/>
     </ports>
@@ -145,8 +145,8 @@
     <overlaps xmi:type="hipe.network:Overlaps"/>
   </networknode>
   <networknode xmi:type="hipe.network:ProductionNode" name="KT_x_production" inputPort="//@networknode.20/@ports/@port.0" patternName="KT_x">
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="k" value="0"/>
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="t" value="1"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="t" value="0"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="k" value="1"/>
   </networknode>
   <networknode xmi:type="hipe.network:ProductionNode" name="KT_xBwd_production" inputPort="//@networknode.9/@ports/@port.4" patternName="KT_xBwd">
     <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="t" value="0"/>
@@ -518,7 +518,7 @@
   <networknode xmi:type="hipe.network:ObjectNode" name="T_object_SP1" dispatchnode="//@networknode.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.6"/>
-      <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.16"/>
+      <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.16"/>
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.36"/>
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.51"/>
     </ports>

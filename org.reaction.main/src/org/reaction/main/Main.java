@@ -28,11 +28,11 @@ public class Main {
 //		final String dslModelLocation = "C:\\Users\\tobia\\eclipse-workspaces\\languagePlayground\\dsl.dotTest\\bin\\Testcases.xmi";
 //		final String trgProjectLocation = "C:\\Users\\tobia\\eclipse-workspaces\\re.actionFramework\\GeneralTestSimSG";
 		
-//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\bin\\Testcases.xmi";
-//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
+		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\bin\\Testcases.xmi";
+		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
 		
-		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\bin\\GKL.xmi";
-		final String trgProjectLocation = "..\\..\\re.actionFramework\\GKL_created_test";
+//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\bin\\GKL.xmi";
+//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GKL_created_test";
 		
 		final String userDir = System.getProperty("user.dir");
 		final String tempModels = userDir + "/models/";
