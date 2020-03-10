@@ -12,7 +12,7 @@
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.17" rate="1.0"/>
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.18" rate="10.0"/>
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.19" rate="1.0"/>
-  <terminationConditions xmi:type="org.simsg:SimpleTerminationCondition" maxSimulationTime="30000.0"/>
+  <terminationConditions xmi:type="org.simsg:SimpleTerminationCondition" maxSimulationTime="30.0"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_T_pp" pattern="//@ibexPatternSet/@contextPatterns.20"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_T_pp_unbound" pattern="//@ibexPatternSet/@contextPatterns.21"/>
   <GtRuleSet xmi:type="GTLanguage:GTRuleSet">

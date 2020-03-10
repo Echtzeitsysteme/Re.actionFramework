@@ -17,12 +17,12 @@ public class Benchmark {
 
 		ReactionContainerPackage.eINSTANCE.eClass();	//TODO: Put this somewhere better
 		GKL_created_testSimSGApi api = new GKL_created_testSimSGApi();
-		api.configureForDemocles();
-//		api.configureForHiPE();
+//		api.configureForDemocles();
+		api.configureForHiPE();
 		api.configureStochasticSimulation();
 		SimulationConfigurator config = api.getSimulationConfigurator();
 		config.setModel("GKLModel");
-		config.addSimpleTerminationCondition(100000, -1);
+//		config.addSimpleTerminationCondition(100000, -1);
 //		config.addSimpleTerminationCondition(-1, 30);
 		config.addObservableStatistic();
 		 

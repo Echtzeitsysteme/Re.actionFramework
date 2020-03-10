@@ -186,6 +186,7 @@ public class ChangePatternFactory {
 					}
 
 				} else if (preBoundToBindable instanceof IntermAgentInstance) {
+					System.out.println("Found Bindable as IntermAgentInstance");
 					if (postBoundToBindable instanceof IntermSiteInstance) {
 						throw new UnsupportedOperationException(
 								"Did not know that this was possible yet. Caused by rule "

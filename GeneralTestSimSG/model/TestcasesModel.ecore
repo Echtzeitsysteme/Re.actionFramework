@@ -7,6 +7,7 @@
     <eStructuralFeatures xmi:type="ecore:EReference" name="A_b_X_z" eType="#//X"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="A_b_A_c" eType="#//A"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="A_b_A_b" eType="#//A"/>
+    <eStructuralFeatures xmi:type="ecore:EReference" name="A_b_X_y" eType="#//X"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="A_c_X_z" eType="#//X"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="A_c_X_y" eType="#//X"/>
     <eStructuralFeatures xmi:type="ecore:EReference" name="A_c_u" eType="#//U_s"/>

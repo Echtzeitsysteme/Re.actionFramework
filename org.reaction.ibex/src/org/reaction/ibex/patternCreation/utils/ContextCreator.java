@@ -637,7 +637,8 @@ public class ContextCreator {
 				}
 
 			} else if (boundTo instanceof IntermAgent) {
-
+				System.out.println("Found Bindable as IntermAgent");
+				
 				IntermAgent boundToAgent = (IntermAgent) boundTo;
 
 				String partnerName = boundToAgent.getName();
@@ -656,7 +657,7 @@ public class ContextCreator {
 				}
 
 			} else if (boundTo instanceof IntermAgentInstance) {
-
+				System.out.println("Found Bindable as IntermAgentInstance");
 				IntermAgentInstance boundToInstance = (IntermAgentInstance) boundTo;
 				String partnerName = boundToInstance.getName();
 				IBeXNode boundPartner;

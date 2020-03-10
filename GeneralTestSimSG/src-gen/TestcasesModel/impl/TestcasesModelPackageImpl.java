@@ -170,7 +170,7 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public EReference getA_A_c_X_z() {
+	public EReference getA_A_b_X_y() {
 		return (EReference) aEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -180,7 +180,7 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public EReference getA_A_c_X_y() {
+	public EReference getA_A_c_X_z() {
 		return (EReference) aEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -190,7 +190,7 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public EReference getA_A_c_u() {
+	public EReference getA_A_c_X_y() {
 		return (EReference) aEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -200,8 +200,18 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public EReference getA_A_c_p() {
+	public EReference getA_A_c_u() {
 		return (EReference) aEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getA_A_c_p() {
+		return (EReference) aEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -288,6 +298,7 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 		createEReference(aEClass, A__ABXZ);
 		createEReference(aEClass, A__ABAC);
 		createEReference(aEClass, A__ABAB);
+		createEReference(aEClass, A__ABXY);
 		createEReference(aEClass, A__ACXZ);
 		createEReference(aEClass, A__ACXY);
 		createEReference(aEClass, A__ACU);
@@ -349,6 +360,9 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getA_A_b_A_b(), this.getA(), null, "A_b_A_b", null, 0, 1, TestcasesModel.A.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getA_A_b_X_y(), this.getX(), null, "A_b_X_y", null, 0, 1, TestcasesModel.A.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getA_A_c_X_z(), this.getX(), null, "A_c_X_z", null, 0, 1, TestcasesModel.A.class, !IS_TRANSIENT,

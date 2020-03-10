@@ -50,10 +50,15 @@ public class DispatchActor extends AbstractActor {
 	}
 	
 	private void initializeAdd() {
-		type2addConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getK(), obj -> {
-			GKLModel.K _k = (GKLModel.K) obj;
+		type2addConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getP(), obj -> {
+			GKLModel.P _p = (GKLModel.P) obj;
 			util.newMessage();
-			name2actor.get("K_object").tell(new ObjectAdded<GKLModel.K>(_k), getSelf());
+			name2actor.get("P_object").tell(new ObjectAdded<GKLModel.P>(_p), getSelf());
+		});
+		type2addConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getU_s(), obj -> {
+			GKLModel.U_s _u_s = (GKLModel.U_s) obj;
+			util.newMessage();
+			name2actor.get("U_s_object").tell(new ObjectAdded<GKLModel.U_s>(_u_s), getSelf());
 		});
 		type2addConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getT(), obj -> {
 			GKLModel.T _t = (GKLModel.T) obj;
@@ -64,20 +69,15 @@ public class DispatchActor extends AbstractActor {
 			util.newMessage();
 			name2actor.get("T_object_SP2").tell(new ObjectAdded<GKLModel.T>(_t), getSelf());
 		});
-		type2addConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getP(), obj -> {
-			GKLModel.P _p = (GKLModel.P) obj;
+		type2addConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getK(), obj -> {
+			GKLModel.K _k = (GKLModel.K) obj;
 			util.newMessage();
-			name2actor.get("P_object").tell(new ObjectAdded<GKLModel.P>(_p), getSelf());
+			name2actor.get("K_object").tell(new ObjectAdded<GKLModel.K>(_k), getSelf());
 		});
 		type2addConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getP_s(), obj -> {
 			GKLModel.P_s _p_s = (GKLModel.P_s) obj;
 			util.newMessage();
 			name2actor.get("P_s_object").tell(new ObjectAdded<GKLModel.P_s>(_p_s), getSelf());
-		});
-		type2addConsumer.put(GKLModel.GKLModelPackage.eINSTANCE.getU_s(), obj -> {
-			GKLModel.U_s _u_s = (GKLModel.U_s) obj;
-			util.newMessage();
-			name2actor.get("U_s_object").tell(new ObjectAdded<GKLModel.U_s>(_u_s), getSelf());
 		});
 	}
 	

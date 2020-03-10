@@ -16,6 +16,7 @@ import reactionContainer.Agent;
  *   <li>{@link TestcasesModel.A#getA_b_X_z <em>AbXz</em>}</li>
  *   <li>{@link TestcasesModel.A#getA_b_A_c <em>AbAc</em>}</li>
  *   <li>{@link TestcasesModel.A#getA_b_A_b <em>AbAb</em>}</li>
+ *   <li>{@link TestcasesModel.A#getA_b_X_y <em>AbXy</em>}</li>
  *   <li>{@link TestcasesModel.A#getA_c_X_z <em>AcXz</em>}</li>
  *   <li>{@link TestcasesModel.A#getA_c_X_y <em>AcXy</em>}</li>
  *   <li>{@link TestcasesModel.A#getA_c_u <em>Acu</em>}</li>
@@ -92,6 +93,28 @@ public interface A extends Agent {
 	 * @generated
 	 */
 	void setA_b_A_b(A value);
+
+	/**
+	 * Returns the value of the '<em><b>AbXy</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>AbXy</em>' reference.
+	 * @see #setA_b_X_y(X)
+	 * @see TestcasesModel.TestcasesModelPackage#getA_A_b_X_y()
+	 * @model
+	 * @generated
+	 */
+	X getA_b_X_y();
+
+	/**
+	 * Sets the value of the '{@link TestcasesModel.A#getA_b_X_y <em>AbXy</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>AbXy</em>' reference.
+	 * @see #getA_b_X_y()
+	 * @generated
+	 */
+	void setA_b_X_y(X value);
 
 	/**
 	 * Returns the value of the '<em><b>AcXz</b></em>' reference.

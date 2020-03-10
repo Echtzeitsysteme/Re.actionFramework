@@ -15,6 +15,7 @@ Package TestcasesModel <platform:/resource/GeneralTestSimSG/model/TestcasesModel
     Reference A_b_X_z : X
     Reference A_b_A_c : A
     Reference A_b_A_b : A
+    Reference A_b_X_y : X
     Reference A_c_X_z : X
     Reference A_c_X_y : X
     Reference A_c_u : U_s

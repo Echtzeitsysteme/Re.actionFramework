@@ -15,6 +15,7 @@ import ecoreBCModel.IntermSiteInstance;
 import ecoreBCModel.IntermSiteState;
 
 import org.xtext.biochemics.dotDsl.BondSide;
+import org.xtext.biochemics.dotDsl.SiteInstance;
 
 import IBeXLanguage.IBeXContextPattern;
 
@@ -54,16 +55,16 @@ public class NameProvider {
 	}
 
 	public static String getFreeSitePatternName(IntermAgentInstance ai, IntermSiteInstance si) {
-		return ai.getInstanceOf().getName().toUpperCase()+"_"+si.getName()+"Free";
+		return ai.getInstanceOf().getName().toUpperCase() + "_" + si.getName() + "Free";
 	}
-	
+
 	public static String getComponentNameOfBoundPattern(IBeXContextPattern contextPattern, String component) {
 		String boundPatternName = contextPattern.getName();
-		//Cut "BoundSrc"/"BoundTrg" from end:
-		boundPatternName = boundPatternName.substring(0, boundPatternName.length()-8);
+		// Cut "BoundSrc"/"BoundTrg" from end:
+		boundPatternName = boundPatternName.substring(0, boundPatternName.length() - 8);
 		return getComponentNameOfBoundPattern(boundPatternName, component);
 	}
-	
+
 	public static String getComponentNameOfBoundPattern(String refName, String component) {
 
 		if (!component.equals("agent1") && !component.equals("agent2") && !component.equals("site1")
@@ -117,7 +118,14 @@ public class NameProvider {
 
 		Bond bond = (Bond) rbs.eContainer();
 		String instanceName = ((AgentInstance) bond.getLeft().getAbstractAgent()).getName();
-		String siteName = bond.getLeft().getSiteInstance().getSite().getName();
+		SiteInstance leftSite = bond.getLeft().getSiteInstance();
+
+		if (leftSite == null) {
+			return "local_for_" + instanceName + "_to_" + rbs.getAbstractAgent().getName() + "_"
+					+ rbs.getSiteInstance();
+		}
+
+		String siteName = leftSite.getSite().getName();
 
 		return "local_for_" + instanceName + "_" + siteName;
 	}

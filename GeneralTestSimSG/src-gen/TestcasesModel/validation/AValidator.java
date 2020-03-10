@@ -24,6 +24,8 @@ public interface AValidator {
 
 	boolean validateA_b_A_b(A value);
 
+	boolean validateA_b_X_y(X value);
+
 	boolean validateA_c_X_z(X value);
 
 	boolean validateA_c_X_y(X value);

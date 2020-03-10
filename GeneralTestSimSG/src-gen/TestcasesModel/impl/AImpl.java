@@ -28,6 +28,7 @@ import reactionContainer.impl.AgentImpl;
  *   <li>{@link TestcasesModel.impl.AImpl#getA_b_X_z <em>AbXz</em>}</li>
  *   <li>{@link TestcasesModel.impl.AImpl#getA_b_A_c <em>AbAc</em>}</li>
  *   <li>{@link TestcasesModel.impl.AImpl#getA_b_A_b <em>AbAb</em>}</li>
+ *   <li>{@link TestcasesModel.impl.AImpl#getA_b_X_y <em>AbXy</em>}</li>
  *   <li>{@link TestcasesModel.impl.AImpl#getA_c_X_z <em>AcXz</em>}</li>
  *   <li>{@link TestcasesModel.impl.AImpl#getA_c_X_y <em>AcXy</em>}</li>
  *   <li>{@link TestcasesModel.impl.AImpl#getA_c_u <em>Acu</em>}</li>
@@ -66,6 +67,16 @@ public class AImpl extends AgentImpl implements A {
 	 * @ordered
 	 */
 	protected A a_b_A_b;
+
+	/**
+	 * The cached value of the '{@link #getA_b_X_y() <em>AbXy</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getA_b_X_y()
+	 * @generated
+	 * @ordered
+	 */
+	protected X a_b_X_y;
 
 	/**
 	 * The cached value of the '{@link #getA_c_X_z() <em>AcXz</em>}' reference.
@@ -255,6 +266,47 @@ public class AImpl extends AgentImpl implements A {
 	 * @generated
 	 */
 	@Override
+	public X getA_b_X_y() {
+		if (a_b_X_y != null && a_b_X_y.eIsProxy()) {
+			InternalEObject oldA_b_X_y = (InternalEObject) a_b_X_y;
+			a_b_X_y = (X) eResolveProxy(oldA_b_X_y);
+			if (a_b_X_y != oldA_b_X_y) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestcasesModelPackage.A__ABXY, oldA_b_X_y,
+							a_b_X_y));
+			}
+		}
+		return a_b_X_y;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public X basicGetA_b_X_y() {
+		return a_b_X_y;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setA_b_X_y(X newA_b_X_y) {
+		X oldA_b_X_y = a_b_X_y;
+		a_b_X_y = newA_b_X_y;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestcasesModelPackage.A__ABXY, oldA_b_X_y, a_b_X_y));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public X getA_c_X_z() {
 		if (a_c_X_z != null && a_c_X_z.eIsProxy()) {
 			InternalEObject oldA_c_X_z = (InternalEObject) a_c_X_z;
@@ -433,6 +485,10 @@ public class AImpl extends AgentImpl implements A {
 			if (resolve)
 				return getA_b_A_b();
 			return basicGetA_b_A_b();
+		case TestcasesModelPackage.A__ABXY:
+			if (resolve)
+				return getA_b_X_y();
+			return basicGetA_b_X_y();
 		case TestcasesModelPackage.A__ACXZ:
 			if (resolve)
 				return getA_c_X_z();
@@ -470,6 +526,9 @@ public class AImpl extends AgentImpl implements A {
 		case TestcasesModelPackage.A__ABAB:
 			setA_b_A_b((A) newValue);
 			return;
+		case TestcasesModelPackage.A__ABXY:
+			setA_b_X_y((X) newValue);
+			return;
 		case TestcasesModelPackage.A__ACXZ:
 			setA_c_X_z((X) newValue);
 			return;
@@ -503,6 +562,9 @@ public class AImpl extends AgentImpl implements A {
 		case TestcasesModelPackage.A__ABAB:
 			setA_b_A_b((A) null);
 			return;
+		case TestcasesModelPackage.A__ABXY:
+			setA_b_X_y((X) null);
+			return;
 		case TestcasesModelPackage.A__ACXZ:
 			setA_c_X_z((X) null);
 			return;
@@ -533,6 +595,8 @@ public class AImpl extends AgentImpl implements A {
 			return a_b_A_c != null;
 		case TestcasesModelPackage.A__ABAB:
 			return a_b_A_b != null;
+		case TestcasesModelPackage.A__ABXY:
+			return a_b_X_y != null;
 		case TestcasesModelPackage.A__ACXZ:
 			return a_c_X_z != null;
 		case TestcasesModelPackage.A__ACXY:

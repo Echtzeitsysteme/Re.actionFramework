@@ -25,9 +25,6 @@ public class Main {
 		ReactionContainerPackage.eINSTANCE.eClass();
 		
 		// Load Model
-//		final String dslModelLocation = "C:\\Users\\tobia\\eclipse-workspaces\\languagePlayground\\dsl.dotTest\\bin\\Testcases.xmi";
-//		final String trgProjectLocation = "C:\\Users\\tobia\\eclipse-workspaces\\re.actionFramework\\GeneralTestSimSG";
-		
 		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\bin\\Testcases.xmi";
 		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
 		
@@ -87,7 +84,6 @@ public class Main {
 
 		ContainerGenerator containerGen = new ContainerEMF(intermModel);
 		
-		String trgProjectLocationTest = "C:\\Users\\tobia\\eclipse-workspaces\\re.actionFramework\\GeneralTestSimSG";
 		String metamodelPath = trgProjectLocation + "/model/" + intermModel.getName() + "Model.ecore";
 		String modelPath = trgProjectLocation + "/instances/simulation_instances/" + intermModel.getName() + "Model.xmi";
 

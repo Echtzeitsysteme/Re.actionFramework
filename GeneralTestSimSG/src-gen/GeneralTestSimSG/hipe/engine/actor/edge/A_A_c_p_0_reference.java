@@ -48,15 +48,15 @@ public class A_A_c_p_0_reference extends AbstractActor {
 	public void initActor(InitActor m) {
 		Map<String, ActorRef> name2actor = m.name2actor;
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("genericWithStateTest_119_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("obs_genericTest_167_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("obs_underspecTest_161_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("genericWithStateTest_125_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("obs_genericTest_176_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("obs_underspecTest_170_junction"), this::returnTrue));
 		ports.add(new PortEdge(getSelf(), name2actor.get("obs_unspecifiedStateChangeTest_production"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBinding_48_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegCompleteBwd_65_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegPartialBwd_79_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("underspec_86_junction"), this::returnTrue));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("wildcardStateChange_147_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBinding_54_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegCompleteBwd_71_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegPartialBwd_85_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("underspec_92_junction"), this::returnTrue));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("wildcardStateChange_153_junction"), this::returnTrue));
 	}	
 
 	@Override
