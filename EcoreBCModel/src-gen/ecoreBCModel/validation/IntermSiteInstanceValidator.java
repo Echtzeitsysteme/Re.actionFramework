@@ -4,7 +4,6 @@
  */
 package ecoreBCModel.validation;
 
-import ecoreBCModel.Bindable;
 import ecoreBCModel.BindingState;
 import ecoreBCModel.IntermAgentInstance;
 import ecoreBCModel.IntermSite;
@@ -25,8 +24,6 @@ public interface IntermSiteInstanceValidator {
 	boolean validateInstanceOf(IntermSite value);
 
 	boolean validateNotBoundTo(EList<IntermSiteInstance> value);
-
-	boolean validateBoundTo(Bindable value);
 
 	boolean validateBoundTo(IntermSiteInstance value);
 

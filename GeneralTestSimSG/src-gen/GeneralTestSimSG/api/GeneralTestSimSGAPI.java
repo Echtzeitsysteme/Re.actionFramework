@@ -14,10 +14,6 @@ import GeneralTestSimSG.api.rules.A_c_X_zBoundSrcRule;
 import GeneralTestSimSG.api.rules.A_c_X_zBoundTrgRule;
 import GeneralTestSimSG.api.rules.A_cFreeRule;
 import GeneralTestSimSG.api.rules.ConcreteSplitRule;
-import GeneralTestSimSG.api.rules.ConditionPattern_Ab_to_LocalAgent_XRule;
-import GeneralTestSimSG.api.rules.ConditionPattern_Ab_to_Xy_LocalRule;
-import GeneralTestSimSG.api.rules.ConditionPattern_Ac_to_LocalAgent_XRule;
-import GeneralTestSimSG.api.rules.ConditionPattern_Ac_to_Xy_LocalRule;
 import GeneralTestSimSG.api.rules.DegUnspecificRule;
 import GeneralTestSimSG.api.rules.GenericRule;
 import GeneralTestSimSG.api.rules.GenericWithStateRule;
@@ -25,8 +21,6 @@ import GeneralTestSimSG.api.rules.GenericWithStateTestRule;
 import GeneralTestSimSG.api.rules.InjectivityBwdRule;
 import GeneralTestSimSG.api.rules.InjectivityRule;
 import GeneralTestSimSG.api.rules.Obs_aFreeRule;
-import GeneralTestSimSG.api.rules.Obs_aNotXRule;
-import GeneralTestSimSG.api.rules.Obs_aNotXyRule;
 import GeneralTestSimSG.api.rules.Obs_axRule;
 import GeneralTestSimSG.api.rules.Obs_concreteSplitTestRule;
 import GeneralTestSimSG.api.rules.Obs_genericTestRule;
@@ -60,7 +54,7 @@ import org.emoflon.ibex.common.operational.IContextPatternInterpreter;
 import org.emoflon.ibex.gt.api.GraphTransformationAPI;
 
 /**
- * The GeneralTestSimSGAPI with 53 rules.
+ * The GeneralTestSimSGAPI with 47 rules.
  */
 public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	public static String patternPath = "GeneralTestSimSG/src-gen/GeneralTestSimSG/api/ibex-patterns.xmi";
@@ -540,66 +534,6 @@ public class GeneralTestSimSGAPI extends GraphTransformationAPI {
 	 */
 	public Obs_concreteSplitTestRule obs_concreteSplitTest() {
 		return new Obs_concreteSplitTestRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>conditionPattern_Ab_to_Xy_Local()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public ConditionPattern_Ab_to_Xy_LocalRule conditionPattern_Ab_to_Xy_Local() {
-		return new ConditionPattern_Ab_to_Xy_LocalRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>conditionPattern_Ac_to_Xy_Local()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public ConditionPattern_Ac_to_Xy_LocalRule conditionPattern_Ac_to_Xy_Local() {
-		return new ConditionPattern_Ac_to_Xy_LocalRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>obs_aNotXy()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public Obs_aNotXyRule obs_aNotXy() {
-		return new Obs_aNotXyRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>conditionPattern_Ab_to_LocalAgent_X()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public ConditionPattern_Ab_to_LocalAgent_XRule conditionPattern_Ab_to_LocalAgent_X() {
-		return new ConditionPattern_Ab_to_LocalAgent_XRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>conditionPattern_Ac_to_LocalAgent_X()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public ConditionPattern_Ac_to_LocalAgent_XRule conditionPattern_Ac_to_LocalAgent_X() {
-		return new ConditionPattern_Ac_to_LocalAgent_XRule(this, interpreter);
-	}
-
-	/**
-	 * Creates a new instance of the rule <code>obs_aNotX()</code> which does the following:
-	 * If this rule is not self-explaining, you really should add some comment in the specification.
-	 *
-	 * @return the new instance of the rule
-	 */
-	public Obs_aNotXRule obs_aNotX() {
-		return new Obs_aNotXRule(this, interpreter);
 	}
 
 	/**

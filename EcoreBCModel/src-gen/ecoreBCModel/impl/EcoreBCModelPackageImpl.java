@@ -2,7 +2,6 @@
  */
 package ecoreBCModel.impl;
 
-import ecoreBCModel.Bindable;
 import ecoreBCModel.BindingState;
 import ecoreBCModel.CommandType;
 import ecoreBCModel.EcoreBCModelFactory;
@@ -128,13 +127,6 @@ public class EcoreBCModelPackageImpl extends EPackageImpl implements EcoreBCMode
 	 * @generated
 	 */
 	private EClass intermCommandEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass bindableEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -693,16 +685,6 @@ public class EcoreBCModelPackageImpl extends EPackageImpl implements EcoreBCMode
 	 * @generated
 	 */
 	@Override
-	public EClass getBindable() {
-		return bindableEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EEnum getBindingState() {
 		return bindingStateEEnum;
 	}
@@ -807,8 +789,6 @@ public class EcoreBCModelPackageImpl extends EPackageImpl implements EcoreBCMode
 		createEReference(intermCommandEClass, INTERM_COMMAND__PATTERN_TO_MATCH);
 		createEAttribute(intermCommandEClass, INTERM_COMMAND__CNT);
 
-		bindableEClass = createEClass(BINDABLE);
-
 		// Create enums
 		bindingStateEEnum = createEEnum(BINDING_STATE);
 		commandTypeEEnum = createEEnum(COMMAND_TYPE);
@@ -848,12 +828,9 @@ public class EcoreBCModelPackageImpl extends EPackageImpl implements EcoreBCMode
 
 		// Add supertypes to classes
 		intermAgentEClass.getESuperTypes().add(this.getIntermComponent());
-		intermAgentEClass.getESuperTypes().add(this.getBindable());
 		intermRuleEClass.getESuperTypes().add(this.getIntermComponent());
 		intermInitialisationEClass.getESuperTypes().add(this.getIntermComponent());
 		intermObservableEClass.getESuperTypes().add(this.getIntermComponent());
-		intermAgentInstanceEClass.getESuperTypes().add(this.getBindable());
-		intermSiteInstanceEClass.getESuperTypes().add(this.getBindable());
 		intermCommandEClass.getESuperTypes().add(this.getIntermComponent());
 
 		// Initialize classes, features, and operations; add parameters
@@ -956,10 +933,10 @@ public class EcoreBCModelPackageImpl extends EPackageImpl implements EcoreBCMode
 		initEReference(getIntermSiteInstance_InstanceOf(), this.getIntermSite(), null, "instanceOf", null, 1, 1,
 				IntermSiteInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIntermSiteInstance_NotBoundTo(), this.getBindable(), null, "notBoundTo", null, 0, -1,
-				IntermSiteInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIntermSiteInstance_BoundTo(), this.getBindable(), null, "boundTo", null, 0, 1,
+		initEReference(getIntermSiteInstance_NotBoundTo(), this.getIntermSiteInstance(), null, "notBoundTo", null, 0,
+				-1, IntermSiteInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIntermSiteInstance_BoundTo(), this.getIntermSiteInstance(), null, "boundTo", null, 0, 1,
 				IntermSiteInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntermSiteInstance_BindingState(), this.getBindingState(), "bindingState", "UNSPECIFIED", 1,
@@ -990,8 +967,6 @@ public class EcoreBCModelPackageImpl extends EPackageImpl implements EcoreBCMode
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntermCommand_Cnt(), ecorePackage.getEDouble(), "cnt", "-1.0", 0, 1, IntermCommand.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(bindableEClass, Bindable.class, "Bindable", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(bindingStateEEnum, BindingState.class, "BindingState");

@@ -2,7 +2,6 @@
  */
 package ecoreBCModel.impl;
 
-import ecoreBCModel.Bindable;
 import ecoreBCModel.BindingState;
 import ecoreBCModel.EcoreBCModelPackage;
 import ecoreBCModel.IntermAgentInstance;
@@ -62,7 +61,7 @@ public class IntermSiteInstanceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Bindable> notBoundTo;
+	protected EList<IntermSiteInstance> notBoundTo;
 
 	/**
 	 * The cached value of the '{@link #getBoundTo() <em>Bound To</em>}' reference.
@@ -72,7 +71,7 @@ public class IntermSiteInstanceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 * @ordered
 	 */
-	protected Bindable boundTo;
+	protected IntermSiteInstance boundTo;
 
 	/**
 	 * The default value of the '{@link #getBindingState() <em>Binding State</em>}' attribute.
@@ -201,9 +200,9 @@ public class IntermSiteInstanceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public EList<Bindable> getNotBoundTo() {
+	public EList<IntermSiteInstance> getNotBoundTo() {
 		if (notBoundTo == null) {
-			notBoundTo = new EObjectResolvingEList<Bindable>(Bindable.class, this,
+			notBoundTo = new EObjectResolvingEList<IntermSiteInstance>(IntermSiteInstance.class, this,
 					EcoreBCModelPackage.INTERM_SITE_INSTANCE__NOT_BOUND_TO);
 		}
 		return notBoundTo;
@@ -215,10 +214,10 @@ public class IntermSiteInstanceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public Bindable getBoundTo() {
+	public IntermSiteInstance getBoundTo() {
 		if (boundTo != null && boundTo.eIsProxy()) {
 			InternalEObject oldBoundTo = (InternalEObject) boundTo;
-			boundTo = (Bindable) eResolveProxy(oldBoundTo);
+			boundTo = (IntermSiteInstance) eResolveProxy(oldBoundTo);
 			if (boundTo != oldBoundTo) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
@@ -233,7 +232,7 @@ public class IntermSiteInstanceImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Bindable basicGetBoundTo() {
+	public IntermSiteInstance basicGetBoundTo() {
 		return boundTo;
 	}
 
@@ -243,8 +242,8 @@ public class IntermSiteInstanceImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
-	public void setBoundTo(Bindable newBoundTo) {
-		Bindable oldBoundTo = boundTo;
+	public void setBoundTo(IntermSiteInstance newBoundTo) {
+		IntermSiteInstance oldBoundTo = boundTo;
 		boundTo = newBoundTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, EcoreBCModelPackage.INTERM_SITE_INSTANCE__BOUND_TO,
@@ -431,10 +430,10 @@ public class IntermSiteInstanceImpl extends MinimalEObjectImpl.Container impleme
 			return;
 		case EcoreBCModelPackage.INTERM_SITE_INSTANCE__NOT_BOUND_TO:
 			getNotBoundTo().clear();
-			getNotBoundTo().addAll((Collection<? extends Bindable>) newValue);
+			getNotBoundTo().addAll((Collection<? extends IntermSiteInstance>) newValue);
 			return;
 		case EcoreBCModelPackage.INTERM_SITE_INSTANCE__BOUND_TO:
-			setBoundTo((Bindable) newValue);
+			setBoundTo((IntermSiteInstance) newValue);
 			return;
 		case EcoreBCModelPackage.INTERM_SITE_INSTANCE__BINDING_STATE:
 			setBindingState((BindingState) newValue);
@@ -467,7 +466,7 @@ public class IntermSiteInstanceImpl extends MinimalEObjectImpl.Container impleme
 			getNotBoundTo().clear();
 			return;
 		case EcoreBCModelPackage.INTERM_SITE_INSTANCE__BOUND_TO:
-			setBoundTo((Bindable) null);
+			setBoundTo((IntermSiteInstance) null);
 			return;
 		case EcoreBCModelPackage.INTERM_SITE_INSTANCE__BINDING_STATE:
 			setBindingState(BINDING_STATE_EDEFAULT);

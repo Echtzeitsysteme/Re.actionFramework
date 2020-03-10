@@ -21,7 +21,6 @@ import IBeXLanguage.IBeXNode;
 import IBeXLanguage.IBeXNodePair;
 import IBeXLanguage.IBeXPatternInvocation;
 import IBeXLanguage.IBeXPatternSet;
-import ecoreBCModel.Bindable;
 import ecoreBCModel.IntermAgent;
 import ecoreBCModel.IntermAgentInstance;
 import ecoreBCModel.IntermComponent;
@@ -175,7 +174,7 @@ public class ContextCreator {
 		// Add node pairs = injectivity constraints
 		for (IBeXContext context : ibexPatternSet.getContextPatterns()) {
 			IBeXContextPattern contextPattern = (IBeXContextPattern) context;
-			//exclude bound patterns since patterns can validly bind to itself
+			// exclude bound patterns since patterns can validly bind to itself
 			if (!contextPattern.getName().endsWith("BoundTrg") && !contextPattern.getName().endsWith("BoundSrc")) {
 				List<IBeXNodePair> nodePairs = createNodePairs(contextPattern);
 				contextPattern.getInjectivityConstraints().addAll(nodePairs);
@@ -439,61 +438,41 @@ public class ContextCreator {
 		// Add Pattern Invocation for "Not Bound To"
 		// Other cases can be excluded since an unspecified node can not be bound
 		// neither is it free
-		for (Bindable notBoundTo : si.getNotBoundTo()) {
+		for (IntermSiteInstance siteNotBoundTo : si.getNotBoundTo()) {
 
 			// Get or Create nodes
-			if (notBoundTo instanceof IntermSiteInstance) {
-				IntermSiteInstance siteNotBoundTo = (IntermSiteInstance) notBoundTo;
-				IntermAgentInstance aiNotBoundTo = siteNotBoundTo.getParent();
-				IBeXNode nodeNotBoundTo;
-				if (aiNotBoundTo.isLocal()) {
+			IntermAgentInstance aiNotBoundTo = siteNotBoundTo.getParent();
+			IBeXNode nodeNotBoundTo;
+			if (aiNotBoundTo.isLocal()) {
+				nodeNotBoundTo = IBeXPatternFactory.createNode(aiNotBoundTo.getName(),
+						agentTypeRegistry.get(aiNotBoundTo.getInstanceOf().getName()));
+			} else {
+				nodeNotBoundTo = ModelHelper.getSignatureNodeFromContextPattern(contextPattern, aiNotBoundTo.getName());
+				if (nodeNotBoundTo == null) {
 					nodeNotBoundTo = IBeXPatternFactory.createNode(aiNotBoundTo.getName(),
 							agentTypeRegistry.get(aiNotBoundTo.getInstanceOf().getName()));
-				} else {
-					nodeNotBoundTo = ModelHelper.getSignatureNodeFromContextPattern(contextPattern,
-							aiNotBoundTo.getName());
-					if (nodeNotBoundTo == null) {
-						nodeNotBoundTo = IBeXPatternFactory.createNode(aiNotBoundTo.getName(),
-								agentTypeRegistry.get(aiNotBoundTo.getInstanceOf().getName()));
-						contextPattern.getSignatureNodes().add(nodeNotBoundTo);
-					}
+					contextPattern.getSignatureNodes().add(nodeNotBoundTo);
 				}
-
-				// Get or Create pattern to invoke and create invocation
-				IBeXContextPattern invokedPattern = getForbiddenPattern(ai, si, siteNotBoundTo);
-				IBeXPatternInvocation invoc = ibexFactory.createIBeXPatternInvocation();
-				invoc.setInvokedBy(contextPattern);
-				invoc.setInvokedPattern(invokedPattern);
-				invoc.setPositive(false);
-
-				// Set invocation mappings
-				IBeXNode invokedSrcNode = ModelHelper.getSignatureNodeFromContextPattern(invokedPattern, "src");
-				invoc.getMapping().put(unspecifiedNode, invokedSrcNode);
-
-				if (!aiNotBoundTo.isLocal()) {
-					IBeXNode invokedTrgNode = ModelHelper.getSignatureNodeFromContextPattern(invokedPattern, "trg");
-					invoc.getMapping().put(nodeNotBoundTo, invokedTrgNode);
-				}
-
-				// add pattern invocation
-				contextPattern.getInvocations().add(invoc);
 			}
 
-			if (notBoundTo instanceof IntermAgent) {
-				// Get or Create pattern to invoke and create invocation
-				IBeXContextPattern invokedPattern = getForbiddenPattern(ai, si, notBoundTo);
-				IBeXPatternInvocation invoc = ibexFactory.createIBeXPatternInvocation();
-				invoc.setInvokedBy(contextPattern);
-				invoc.setInvokedPattern(invokedPattern);
-				invoc.setPositive(false);
+			// Get or Create pattern to invoke and create invocation
+			IBeXContextPattern invokedPattern = getForbiddenPattern(ai, si, siteNotBoundTo);
+			IBeXPatternInvocation invoc = ibexFactory.createIBeXPatternInvocation();
+			invoc.setInvokedBy(contextPattern);
+			invoc.setInvokedPattern(invokedPattern);
+			invoc.setPositive(false);
 
-				// Set invocation mappings
-				IBeXNode invokedSrcNode = ModelHelper.getSignatureNodeFromContextPattern(invokedPattern, "src");
-				invoc.getMapping().put(unspecifiedNode, invokedSrcNode);
+			// Set invocation mappings
+			IBeXNode invokedSrcNode = ModelHelper.getSignatureNodeFromContextPattern(invokedPattern, "src");
+			invoc.getMapping().put(unspecifiedNode, invokedSrcNode);
 
-				// add pattern invocation
-				contextPattern.getInvocations().add(invoc);
+			if (!aiNotBoundTo.isLocal()) {
+				IBeXNode invokedTrgNode = ModelHelper.getSignatureNodeFromContextPattern(invokedPattern, "trg");
+				invoc.getMapping().put(nodeNotBoundTo, invokedTrgNode);
 			}
+
+			// add pattern invocation
+			contextPattern.getInvocations().add(invoc);
 		}
 	}
 
@@ -504,90 +483,55 @@ public class ContextCreator {
 	 * @return an IBeXContextPattern that can be invoked negatively as forbidden
 	 *         condition of the binding between the given sites src and trg.
 	 */
-	private IBeXContextPattern getForbiddenPattern(IntermAgentInstance ai, IntermSiteInstance src, Bindable trg) {
+	private IBeXContextPattern getForbiddenPattern(IntermAgentInstance ai, IntermSiteInstance src,
+			IntermSiteInstance trg) {
 
-		if (trg instanceof IntermSiteInstance) {
-			IntermSiteInstance trgSi = (IntermSiteInstance) trg;
-			String qualifiedName = NameProvider.getQualifiedConditionPatternName(ai, src, trgSi,
-					trgSi.getParent().isLocal());
-			IBeXContextPattern forbiddenPattern = getConditionPatternByName(qualifiedName);
-			if (forbiddenPattern != null) {
-				return forbiddenPattern;
-			}
-
-			// If condition pattern does not already exit -> create a new one
-			forbiddenPattern = IBeXLanguageFactory.eINSTANCE.createIBeXContextPattern();
-			forbiddenPattern.setName(qualifiedName);
-
-			IntermAgentInstance trgParent = trgSi.getParent();
-
-			// Create nodes
-			IBeXNode srcNode = IBeXPatternFactory.createNode("src",
-					agentTypeRegistry.get(src.getParent().getInstanceOf().getName()));
-			IBeXNode trgNode = IBeXPatternFactory.createNode("trg",
-					agentTypeRegistry.get(trgSi.getParent().getInstanceOf().getName()));
-
-			forbiddenPattern.getSignatureNodes().add(srcNode);
-			if (trgSi.getParent().isLocal()) {
-				forbiddenPattern.getLocalNodes().add(trgNode);
-			} else {
-				forbiddenPattern.getSignatureNodes().add(trgNode);
-			}
-
-			// create edge
-			IBeXEdge edge1 = IBeXPatternFactory.createEdge(srcNode, trgNode, getEdgeType(src, trgSi));
-			forbiddenPattern.getLocalEdges().add(edge1);
-
-			// Add state for target
-			IntermSiteState state = trgSi.getState();
-			if (state != null) {
-				String stateNodeName = NameProvider.getQualifiedStateNodeName(trgSi);
-				IBeXNode stateNode = IBeXPatternFactory.createNode(stateNodeName,
-						stateTypeRegistry.get(NameProvider.getStateTypeKey(trgSi)));
-				IBeXEdge stateEdge = IBeXPatternFactory.createEdge(trgNode, stateNode,
-						getEdgeTypeToState(trgParent, trgSi));
-
-				forbiddenPattern.getLocalNodes().add(stateNode);
-				forbiddenPattern.getLocalEdges().add(stateEdge);
-			}
-
-			conditionPatterns.put(qualifiedName, forbiddenPattern);
-			ibexPatternSet.getContextPatterns().add(forbiddenPattern);
-
+		String qualifiedName = NameProvider.getQualifiedConditionPatternName(ai, src, trg, trg.getParent().isLocal());
+		IBeXContextPattern forbiddenPattern = getConditionPatternByName(qualifiedName);
+		if (forbiddenPattern != null) {
 			return forbiddenPattern;
 		}
 
-		if (trg instanceof IntermAgent) {
-			IntermAgent trgAgent = (IntermAgent) trg;
-			String qualifiedName = NameProvider.getQualifiedConditionPatternName(ai, src, trgAgent, true);
-			IBeXContextPattern forbiddenPattern = getConditionPatternByName(qualifiedName);
-			if (forbiddenPattern != null) {
-				return forbiddenPattern;
-			}
+		// If condition pattern does not already exit -> create a new one
+		forbiddenPattern = IBeXLanguageFactory.eINSTANCE.createIBeXContextPattern();
+		forbiddenPattern.setName(qualifiedName);
 
-			// If condition pattern does not already exit -> create a new one
-			forbiddenPattern = IBeXLanguageFactory.eINSTANCE.createIBeXContextPattern();
-			forbiddenPattern.setName(qualifiedName);
+		IntermAgentInstance trgParent = trg.getParent();
 
-			// Create nodes
-			IBeXNode srcNode = IBeXPatternFactory.createNode("src",
-					agentTypeRegistry.get(src.getParent().getInstanceOf().getName()));
-			IBeXNode trgNode = IBeXPatternFactory.createNode("trg", agentTypeRegistry.get(trgAgent.getName()));
+		// Create nodes
+		IBeXNode srcNode = IBeXPatternFactory.createNode("src",
+				agentTypeRegistry.get(src.getParent().getInstanceOf().getName()));
+		IBeXNode trgNode = IBeXPatternFactory.createNode("trg",
+				agentTypeRegistry.get(trg.getParent().getInstanceOf().getName()));
 
-			forbiddenPattern.getSignatureNodes().add(srcNode);
+		forbiddenPattern.getSignatureNodes().add(srcNode);
+		if (trg.getParent().isLocal()) {
 			forbiddenPattern.getLocalNodes().add(trgNode);
-
-			// create edge
-			IBeXEdge edge = IBeXPatternFactory.createEdge(srcNode, trgNode, getEdgeTypeToAgent(src, trgAgent));
-			forbiddenPattern.getLocalEdges().add(edge);
-
-			conditionPatterns.put(qualifiedName, forbiddenPattern);
-			ibexPatternSet.getContextPatterns().add(forbiddenPattern);
-
-			return forbiddenPattern;
+		} else {
+			forbiddenPattern.getSignatureNodes().add(trgNode);
 		}
 
-		throw new UnsupportedOperationException("Could not handle type of " + trg.toString());
+		// create edge
+		IBeXEdge edge1 = IBeXPatternFactory.createEdge(srcNode, trgNode, getEdgeType(src, trg));
+		forbiddenPattern.getLocalEdges().add(edge1);
+
+		// Add state for target
+		IntermSiteState state = trg.getState();
+		if (state != null) {
+			String stateNodeName = NameProvider.getQualifiedStateNodeName(trg);
+			IBeXNode stateNode = IBeXPatternFactory.createNode(stateNodeName,
+					stateTypeRegistry.get(NameProvider.getStateTypeKey(trg)));
+			IBeXEdge stateEdge = IBeXPatternFactory.createEdge(trgNode, stateNode, getEdgeTypeToState(trgParent, trg));
+
+			forbiddenPattern.getLocalNodes().add(stateNode);
+			forbiddenPattern.getLocalEdges().add(stateEdge);
+		}
+
+		conditionPatterns.put(qualifiedName, forbiddenPattern);
+		ibexPatternSet.getContextPatterns().add(forbiddenPattern);
+
+		return forbiddenPattern;
+
 	}
 
 	/**
@@ -608,82 +552,28 @@ public class ContextCreator {
 			contextPattern.getSignatureNodes().add(boundNode);
 		}
 
-		Bindable boundTo = si.getBoundTo();
-		if (boundTo != null) {
-			if (boundTo instanceof IntermSiteInstance) {
+		IntermSiteInstance boundToSite = si.getBoundTo();
+		if (boundToSite != null) {
 
-				IntermSiteInstance boundToSite = (IntermSiteInstance) boundTo;
+			IntermAgentInstance boundToAgent = boundToSite.getParent();
+			String partnerName = boundToAgent.getName();
+			IBeXNode boundPartner;
 
-				IntermAgentInstance boundToAgent = boundToSite.getParent();
-				String partnerName = boundToAgent.getName();
-				IBeXNode boundPartner;
-
-				boundPartner = ModelHelper.getNodeFromContextPattern(contextPattern, partnerName);
-				if (boundPartner == null) {
-					boundPartner = IBeXPatternFactory.createNode(partnerName,
-							agentTypeRegistry.get(boundToAgent.getInstanceOf().getName()));
-					if (boundToAgent.isLocal()) {
-						contextPattern.getLocalNodes().add(boundPartner);
-					} else {
-						contextPattern.getSignatureNodes().add(boundPartner);
-					}
-
-				}
-
-				EReference edgeType = getEdgeType(si, boundToSite);
-				if (edgeType != null) {
-					IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner, edgeType);
-					contextPattern.getLocalEdges().add(connectingEdge);
-				}
-
-			} else if (boundTo instanceof IntermAgent) {
-				System.out.println("Found Bindable as IntermAgent");
-				
-				IntermAgent boundToAgent = (IntermAgent) boundTo;
-
-				String partnerName = boundToAgent.getName();
-				IBeXNode boundPartner;
-
-				// Create local node
-				boundPartner = IBeXPatternFactory.createNode(partnerName + "_local",
-						agentTypeRegistry.get(partnerName));
-				contextPattern.getLocalNodes().add(boundPartner);
-
-				EReference edgeType = getEdgeTypeToAgent(si, boundToAgent);
-				if (edgeType != null) {
-					// Create Edge
-					IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner, edgeType);
-					contextPattern.getLocalEdges().add(connectingEdge);
-				}
-
-			} else if (boundTo instanceof IntermAgentInstance) {
-				System.out.println("Found Bindable as IntermAgentInstance");
-				IntermAgentInstance boundToInstance = (IntermAgentInstance) boundTo;
-				String partnerName = boundToInstance.getName();
-				IBeXNode boundPartner;
-				if (boundToInstance.isLocal()) {
-					boundPartner = IBeXPatternFactory.createNode(partnerName,
-							agentTypeRegistry.get(boundToInstance.getInstanceOf().getName()));
+			boundPartner = ModelHelper.getNodeFromContextPattern(contextPattern, partnerName);
+			if (boundPartner == null) {
+				boundPartner = IBeXPatternFactory.createNode(partnerName,
+						agentTypeRegistry.get(boundToAgent.getInstanceOf().getName()));
+				if (boundToAgent.isLocal()) {
 					contextPattern.getLocalNodes().add(boundPartner);
 				} else {
-					boundPartner = ModelHelper.getSignatureNodeFromContextPattern(contextPattern, partnerName);
-					if (boundPartner == null) {
-						boundPartner = IBeXPatternFactory.createNode(partnerName,
-								agentTypeRegistry.get(boundToInstance.getInstanceOf().getName()));
-						contextPattern.getSignatureNodes().add(boundPartner);
-					}
+					contextPattern.getSignatureNodes().add(boundPartner);
 				}
+			}
 
-				// Create Edge
-				EReference edgeType = getEdgeTypeToAgent(si, boundToInstance);
-				if (edgeType != null) {
-					// Create Edge
-					IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner, edgeType);
-					contextPattern.getLocalEdges().add(connectingEdge);
-				}
-
-			} else {
-				throw new UnsupportedOperationException("Could not handle type of " + boundTo.toString());
+			EReference edgeType = getEdgeType(si, boundToSite);
+			if (edgeType != null) {
+				IBeXEdge connectingEdge = IBeXPatternFactory.createEdge(boundNode, boundPartner, edgeType);
+				contextPattern.getLocalEdges().add(connectingEdge);
 			}
 		}
 		// for example: a.b+?

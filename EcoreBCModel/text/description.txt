@@ -14,7 +14,7 @@ Package ecoreBCModel <platform:/resource/EcoreBCModel/model/ecoreBCModel.ecore>
 
   Class IntermComponent
 
-  Class IntermAgent -> IntermComponent, Bindable
+  Class IntermAgent -> IntermComponent
     Reference sites : IntermSite<<0..*>>
     Attribute name : String<<1..1>>
 
@@ -44,16 +44,16 @@ Package ecoreBCModel <platform:/resource/EcoreBCModel/model/ecoreBCModel.ecore>
     Reference agentInstances : IntermAgentInstance<<0..*>>
     Attribute name : String
 
-  Class IntermAgentInstance -> Bindable
+  Class IntermAgentInstance
     Reference siteInstances : IntermSiteInstance<<0..*>>
     Reference instanceOf : IntermAgent<<1..1>>
     Attribute name : String<<1..1>>
     Attribute local : Boolean
 
-  Class IntermSiteInstance -> Bindable
+  Class IntermSiteInstance
     Reference instanceOf : IntermSite<<1..1>>
-    Reference notBoundTo : Bindable<<0..*>>
-    Reference boundTo : Bindable
+    Reference notBoundTo : IntermSiteInstance<<0..*>>
+    Reference boundTo : IntermSiteInstance
     Attribute bindingState : BindingState<<1..1>>
     Attribute /name : String<<1..1>>
     Reference state : IntermSiteState
@@ -66,8 +66,6 @@ Package ecoreBCModel <platform:/resource/EcoreBCModel/model/ecoreBCModel.ecore>
     Attribute type : CommandType
     Reference patternToMatch : IntermPattern
     Attribute cnt : EDouble
-
-  Class Bindable
 
   Enum BindingState
     Literal BOUND = 0

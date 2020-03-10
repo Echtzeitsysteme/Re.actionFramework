@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import ecoreBCModel.Bindable;
 import ecoreBCModel.EcoreBCModelPackage;
 import ecoreBCModel.IntermAgent;
 import ecoreBCModel.IntermAgentInstance;
@@ -177,7 +176,7 @@ public abstract class ContainerGenerator {
 						statesOfSite = new LinkedList<>();
 					}
 					
-					Bindable siBindable = si.getBoundTo();
+					IntermSiteInstance siBoundTo = si.getBoundTo();
 					
 
 					IntermSiteState state = si.getState();
@@ -188,12 +187,12 @@ public abstract class ContainerGenerator {
 						}
 					}
 
-					if (siBindable != null) {
+					if (siBoundTo != null) {
 						IntermAgent boundToAgent = null;
 						IntermSiteInstance boundToSiteInstance = null;
 						IntermSite boundToSite = null;
-						if (siBindable instanceof IntermSiteInstance) {
-							IntermSiteInstance siPartner = (IntermSiteInstance) siBindable;
+						if (siBoundTo instanceof IntermSiteInstance) {
+							IntermSiteInstance siPartner = (IntermSiteInstance) siBoundTo;
 							boundToAgent = siPartner.getParent().getInstanceOf();
 							boundToSiteInstance = siPartner;
 							boundToSite = boundToSiteInstance.getInstanceOf();

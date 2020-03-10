@@ -364,47 +364,17 @@
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
   </rules>
-  <rules name="conditionPattern_Ab_to_Xy_Local" documentation="" executable="true" ruleNodes="//@rules.44/@nodes.0">
-    <nodes name="src">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-  </rules>
-  <rules name="conditionPattern_Ac_to_Xy_Local" documentation="" executable="true" ruleNodes="//@rules.45/@nodes.0">
-    <nodes name="src">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-  </rules>
-  <rules name="obs_aNotXy" documentation="" executable="true" ruleNodes="//@rules.46/@nodes.0">
+  <rules name="obs_aFree" documentation="" executable="true" ruleNodes="//@rules.44/@nodes.0">
     <nodes name="a">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </rules>
-  <rules name="conditionPattern_Ab_to_LocalAgent_X" documentation="" executable="true" ruleNodes="//@rules.47/@nodes.0">
-    <nodes name="src">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-  </rules>
-  <rules name="conditionPattern_Ac_to_LocalAgent_X" documentation="" executable="true" ruleNodes="//@rules.48/@nodes.0">
-    <nodes name="src">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-  </rules>
-  <rules name="obs_aNotX" documentation="" executable="true" ruleNodes="//@rules.49/@nodes.0">
-    <nodes name="a">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-  </rules>
-  <rules name="obs_aFree" documentation="" executable="true" ruleNodes="//@rules.50/@nodes.0">
-    <nodes name="a">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-  </rules>
-  <rules name="obs_xFree" documentation="" executable="true" ruleNodes="//@rules.51/@nodes.0">
+  <rules name="obs_xFree" documentation="" executable="true" ruleNodes="//@rules.45/@nodes.0">
     <nodes name="x">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
   </rules>
-  <rules name="obs_ax" documentation="" executable="true" ruleNodes="//@rules.52/@nodes.0 //@rules.52/@nodes.1">
+  <rules name="obs_ax" documentation="" executable="true" ruleNodes="//@rules.46/@nodes.0 //@rules.46/@nodes.1">
     <nodes name="a">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>

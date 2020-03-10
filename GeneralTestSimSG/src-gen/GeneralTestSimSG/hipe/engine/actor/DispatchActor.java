@@ -70,6 +70,15 @@ public class DispatchActor extends AbstractActor {
 			util.newMessage();
 			name2actor.get("P_s_object_SP2").tell(new ObjectAdded<TestcasesModel.P_s>(_p_s), getSelf());
 		});
+		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getU_s(), obj -> {
+			TestcasesModel.U_s _u_s = (TestcasesModel.U_s) obj;
+			util.newMessage();
+			name2actor.get("U_s_object_SP0").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
+			util.newMessage();
+			name2actor.get("U_s_object_SP1").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
+			util.newMessage();
+			name2actor.get("U_s_object_SP2").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
+		});
 		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA(), obj -> {
 			TestcasesModel.A _a = (TestcasesModel.A) obj;
 			util.newMessage();
@@ -84,17 +93,6 @@ public class DispatchActor extends AbstractActor {
 			name2actor.get("A_object_SP4").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
 			util.newMessage();
 			name2actor.get("A_object_SP5").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
-			util.newMessage();
-			name2actor.get("A_object_SP6").tell(new ObjectAdded<TestcasesModel.A>(_a), getSelf());
-		});
-		type2addConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getU_s(), obj -> {
-			TestcasesModel.U_s _u_s = (TestcasesModel.U_s) obj;
-			util.newMessage();
-			name2actor.get("U_s_object_SP0").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
-			util.newMessage();
-			name2actor.get("U_s_object_SP1").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
-			util.newMessage();
-			name2actor.get("U_s_object_SP2").tell(new ObjectAdded<TestcasesModel.U_s>(_u_s), getSelf());
 		});
 	}
 	
@@ -120,11 +118,11 @@ public class DispatchActor extends AbstractActor {
 		});
 		feature2addEdgeConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA_A_c_X_z(), notification -> {
 			util.newMessage();
-			name2actor.get("A_object_SP6").tell(new ReferenceAdded<TestcasesModel.A, TestcasesModel.X>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.X) notification.getNewValue(), name2actor.get("A_A_c_X_z_0_reference")), getSelf());
+			name2actor.get("A_object_SP0").tell(new ReferenceAdded<TestcasesModel.A, TestcasesModel.X>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.X) notification.getNewValue(), name2actor.get("A_A_c_X_z_0_reference")), getSelf());
 		});
 		feature2addEdgeConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA_A_c_X_y(), notification -> {
 			util.newMessage();
-			name2actor.get("A_object_SP0").tell(new ReferenceAdded<TestcasesModel.A, TestcasesModel.X>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.X) notification.getNewValue(), name2actor.get("A_A_c_X_y_0_reference")), getSelf());
+			name2actor.get("A_object_SP1").tell(new ReferenceAdded<TestcasesModel.A, TestcasesModel.X>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.X) notification.getNewValue(), name2actor.get("A_A_c_X_y_0_reference")), getSelf());
 		});
 		feature2addEdgeConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getX_X_z_p(), notification -> {
 			util.newMessage();
@@ -136,11 +134,11 @@ public class DispatchActor extends AbstractActor {
 		});
 		feature2addEdgeConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA_A_c_p(), notification -> {
 			util.newMessage();
-			name2actor.get("A_object_SP2").tell(new ReferenceAdded<TestcasesModel.A, TestcasesModel.P_s>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.P_s) notification.getNewValue(), name2actor.get("A_A_c_p_0_reference")), getSelf());
+			name2actor.get("A_object_SP3").tell(new ReferenceAdded<TestcasesModel.A, TestcasesModel.P_s>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.P_s) notification.getNewValue(), name2actor.get("A_A_c_p_0_reference")), getSelf());
 		});
 		feature2addEdgeConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA_A_c_u(), notification -> {
 			util.newMessage();
-			name2actor.get("A_object_SP4").tell(new ReferenceAdded<TestcasesModel.A, TestcasesModel.U_s>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.U_s) notification.getNewValue(), name2actor.get("A_A_c_u_0_reference")), getSelf());
+			name2actor.get("A_object_SP5").tell(new ReferenceAdded<TestcasesModel.A, TestcasesModel.U_s>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.U_s) notification.getNewValue(), name2actor.get("A_A_c_u_0_reference")), getSelf());
 		});
 	}
 	
@@ -163,11 +161,11 @@ public class DispatchActor extends AbstractActor {
 		});
 		feature2removeEdgeConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA_A_c_X_z(), notification -> {
 			util.newMessage();
-			name2actor.get("A_object_SP6").tell(new ReferenceDeleted<TestcasesModel.A, TestcasesModel.X>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.X) notification.getOldValue(), name2actor.get("A_A_c_X_z_0_reference")), getSelf());
+			name2actor.get("A_object_SP0").tell(new ReferenceDeleted<TestcasesModel.A, TestcasesModel.X>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.X) notification.getOldValue(), name2actor.get("A_A_c_X_z_0_reference")), getSelf());
 		});
 		feature2removeEdgeConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA_A_c_X_y(), notification -> {
 			util.newMessage();
-			name2actor.get("A_object_SP0").tell(new ReferenceDeleted<TestcasesModel.A, TestcasesModel.X>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.X) notification.getOldValue(), name2actor.get("A_A_c_X_y_0_reference")), getSelf());
+			name2actor.get("A_object_SP1").tell(new ReferenceDeleted<TestcasesModel.A, TestcasesModel.X>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.X) notification.getOldValue(), name2actor.get("A_A_c_X_y_0_reference")), getSelf());
 		});
 		feature2removeEdgeConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getX_X_z_p(), notification -> {
 			util.newMessage();
@@ -179,11 +177,11 @@ public class DispatchActor extends AbstractActor {
 		});
 		feature2removeEdgeConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA_A_c_p(), notification -> {
 			util.newMessage();
-			name2actor.get("A_object_SP2").tell(new ReferenceDeleted<TestcasesModel.A, TestcasesModel.P_s>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.P_s) notification.getOldValue(), name2actor.get("A_A_c_p_0_reference")), getSelf());
+			name2actor.get("A_object_SP3").tell(new ReferenceDeleted<TestcasesModel.A, TestcasesModel.P_s>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.P_s) notification.getOldValue(), name2actor.get("A_A_c_p_0_reference")), getSelf());
 		});
 		feature2removeEdgeConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA_A_c_u(), notification -> {
 			util.newMessage();
-			name2actor.get("A_object_SP4").tell(new ReferenceDeleted<TestcasesModel.A, TestcasesModel.U_s>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.U_s) notification.getOldValue(), name2actor.get("A_A_c_u_0_reference")), getSelf());
+			name2actor.get("A_object_SP5").tell(new ReferenceDeleted<TestcasesModel.A, TestcasesModel.U_s>((TestcasesModel.A) notification.getNotifier(), (TestcasesModel.U_s) notification.getOldValue(), name2actor.get("A_A_c_u_0_reference")), getSelf());
 		});
 	}
 
@@ -286,10 +284,6 @@ public class DispatchActor extends AbstractActor {
 		if (node instanceof TestcasesModel.A) {
 			util.newMessage();
 			name2actor.get("A_object_SP5").tell(new ObjectDeleted<TestcasesModel.A>((TestcasesModel.A) node), getSelf());
-		}
-		if (node instanceof TestcasesModel.A) {
-			util.newMessage();
-			name2actor.get("A_object_SP6").tell(new ObjectDeleted<TestcasesModel.A>((TestcasesModel.A) node), getSelf());
 		}
 		if (node instanceof TestcasesModel.X) {
 			util.newMessage();

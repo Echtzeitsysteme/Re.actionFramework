@@ -801,96 +801,30 @@
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </signatureNodes>
   </contextPatterns>
-  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="conditionPattern_Ab_to_Xy_Local">
-    <localEdges sourceNode="//@contextPatterns.44/@signatureNodes.0" targetNode="//@contextPatterns.44/@localNodes.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b_X_y"/>
-    </localEdges>
-    <localNodes name="trg" incomingEdges="//@contextPatterns.44/@localEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-    </localNodes>
-    <signatureNodes name="src" outgoingEdges="//@contextPatterns.44/@localEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </signatureNodes>
-  </contextPatterns>
-  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="conditionPattern_Ac_to_Xy_Local">
-    <localEdges sourceNode="//@contextPatterns.45/@signatureNodes.0" targetNode="//@contextPatterns.45/@localNodes.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_X_y"/>
-    </localEdges>
-    <localNodes name="trg" incomingEdges="//@contextPatterns.45/@localEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-    </localNodes>
-    <signatureNodes name="src" outgoingEdges="//@contextPatterns.45/@localEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </signatureNodes>
-  </contextPatterns>
-  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="obs_aNotXy">
-    <invocations invokedPattern="//@contextPatterns.44">
-      <mapping key="//@contextPatterns.46/@signatureNodes.0" value="//@contextPatterns.44/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.45">
-      <mapping key="//@contextPatterns.46/@signatureNodes.0" value="//@contextPatterns.45/@signatureNodes.0"/>
-    </invocations>
-    <signatureNodes name="a">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </signatureNodes>
-  </contextPatterns>
-  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="conditionPattern_Ab_to_LocalAgent_X">
-    <localEdges sourceNode="//@contextPatterns.47/@signatureNodes.0" targetNode="//@contextPatterns.47/@localNodes.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b_X_y"/>
-    </localEdges>
-    <localNodes name="trg" incomingEdges="//@contextPatterns.47/@localEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-    </localNodes>
-    <signatureNodes name="src" outgoingEdges="//@contextPatterns.47/@localEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </signatureNodes>
-  </contextPatterns>
-  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="conditionPattern_Ac_to_LocalAgent_X">
-    <localEdges sourceNode="//@contextPatterns.48/@signatureNodes.0" targetNode="//@contextPatterns.48/@localNodes.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_X_y"/>
-    </localEdges>
-    <localNodes name="trg" incomingEdges="//@contextPatterns.48/@localEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-    </localNodes>
-    <signatureNodes name="src" outgoingEdges="//@contextPatterns.48/@localEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </signatureNodes>
-  </contextPatterns>
-  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="obs_aNotX">
-    <invocations invokedPattern="//@contextPatterns.47">
-      <mapping key="//@contextPatterns.49/@signatureNodes.0" value="//@contextPatterns.47/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.48">
-      <mapping key="//@contextPatterns.49/@signatureNodes.0" value="//@contextPatterns.48/@signatureNodes.0"/>
-    </invocations>
-    <signatureNodes name="a">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </signatureNodes>
-  </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="obs_aFree">
     <invocations invokedPattern="//@contextPatterns.0">
-      <mapping key="//@contextPatterns.50/@signatureNodes.0" value="//@contextPatterns.0/@signatureNodes.0"/>
+      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.0/@signatureNodes.0"/>
     </invocations>
     <invocations invokedPattern="//@contextPatterns.2">
-      <mapping key="//@contextPatterns.50/@signatureNodes.0" value="//@contextPatterns.2/@signatureNodes.0"/>
+      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.2/@signatureNodes.0"/>
     </invocations>
     <invocations invokedPattern="//@contextPatterns.4">
-      <mapping key="//@contextPatterns.50/@signatureNodes.0" value="//@contextPatterns.4/@signatureNodes.0"/>
+      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.4/@signatureNodes.0"/>
     </invocations>
     <invocations invokedPattern="//@contextPatterns.6">
-      <mapping key="//@contextPatterns.50/@signatureNodes.0" value="//@contextPatterns.6/@signatureNodes.0"/>
+      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.6/@signatureNodes.0"/>
     </invocations>
     <invocations invokedPattern="//@contextPatterns.5">
-      <mapping key="//@contextPatterns.50/@signatureNodes.0" value="//@contextPatterns.5/@signatureNodes.0"/>
+      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.5/@signatureNodes.0"/>
     </invocations>
     <invocations invokedPattern="//@contextPatterns.8">
-      <mapping key="//@contextPatterns.50/@signatureNodes.0" value="//@contextPatterns.8/@signatureNodes.0"/>
+      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.8/@signatureNodes.0"/>
     </invocations>
     <invocations invokedPattern="//@contextPatterns.10">
-      <mapping key="//@contextPatterns.50/@signatureNodes.0" value="//@contextPatterns.10/@signatureNodes.0"/>
+      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.10/@signatureNodes.0"/>
     </invocations>
     <invocations invokedPattern="//@contextPatterns.3">
-      <mapping key="//@contextPatterns.50/@signatureNodes.0" value="//@contextPatterns.3/@signatureNodes.0"/>
+      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.3/@signatureNodes.0"/>
     </invocations>
     <signatureNodes name="a">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
@@ -898,16 +832,16 @@
   </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="obs_xFree">
     <invocations invokedPattern="//@contextPatterns.7">
-      <mapping key="//@contextPatterns.51/@signatureNodes.0" value="//@contextPatterns.7/@signatureNodes.0"/>
+      <mapping key="//@contextPatterns.45/@signatureNodes.0" value="//@contextPatterns.7/@signatureNodes.0"/>
     </invocations>
     <invocations invokedPattern="//@contextPatterns.11">
-      <mapping key="//@contextPatterns.51/@signatureNodes.0" value="//@contextPatterns.11/@signatureNodes.0"/>
+      <mapping key="//@contextPatterns.45/@signatureNodes.0" value="//@contextPatterns.11/@signatureNodes.0"/>
     </invocations>
     <invocations invokedPattern="//@contextPatterns.1">
-      <mapping key="//@contextPatterns.51/@signatureNodes.0" value="//@contextPatterns.1/@signatureNodes.0"/>
+      <mapping key="//@contextPatterns.45/@signatureNodes.0" value="//@contextPatterns.1/@signatureNodes.0"/>
     </invocations>
     <invocations invokedPattern="//@contextPatterns.9">
-      <mapping key="//@contextPatterns.51/@signatureNodes.0" value="//@contextPatterns.9/@signatureNodes.0"/>
+      <mapping key="//@contextPatterns.45/@signatureNodes.0" value="//@contextPatterns.9/@signatureNodes.0"/>
     </invocations>
     <signatureNodes name="x">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
@@ -1162,20 +1096,20 @@
   </createPatterns>
   <createPatterns name="concreteSplit"/>
   <deletePatterns name="simpleBinding">
-    <contextNodes name="a" outgoingEdges="//@deletePatterns.0/@deletedEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </contextNodes>
-    <contextNodes name="x" incomingEdges="//@deletePatterns.0/@deletedEdges.0" outgoingEdges="//@deletePatterns.0/@deletedEdges.1">
+    <contextNodes name="x" incomingEdges="//@deletePatterns.0/@deletedEdges.1" outgoingEdges="//@deletePatterns.0/@deletedEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </contextNodes>
-    <contextNodes name="ps" incomingEdges="//@deletePatterns.0/@deletedEdges.1">
+    <contextNodes name="a" outgoingEdges="//@deletePatterns.0/@deletedEdges.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <contextNodes name="ps" incomingEdges="//@deletePatterns.0/@deletedEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
     </contextNodes>
-    <deletedEdges sourceNode="//@deletePatterns.0/@contextNodes.0" targetNode="//@deletePatterns.0/@contextNodes.1">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b_X_z"/>
-    </deletedEdges>
-    <deletedEdges sourceNode="//@deletePatterns.0/@contextNodes.1" targetNode="//@deletePatterns.0/@contextNodes.2">
+    <deletedEdges sourceNode="//@deletePatterns.0/@contextNodes.0" targetNode="//@deletePatterns.0/@contextNodes.2">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_p"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.0/@contextNodes.1" targetNode="//@deletePatterns.0/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b_X_z"/>
     </deletedEdges>
   </deletePatterns>
   <deletePatterns name="simpleBindingBwd">
@@ -1216,32 +1150,35 @@
   </deletePatterns>
   <deletePatterns name="synthDegComplete"/>
   <deletePatterns name="synthDegCompleteBwd">
-    <contextNodes name="us" incomingEdges="//@deletePatterns.5/@deletedEdges.0 //@deletePatterns.5/@deletedEdges.3">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
-    </contextNodes>
-    <contextNodes name="ps" incomingEdges="//@deletePatterns.5/@deletedEdges.2">
+    <contextNodes name="ps" incomingEdges="//@deletePatterns.5/@deletedEdges.1 //@deletePatterns.5/@deletedEdges.4">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
     </contextNodes>
-    <deletedEdges sourceNode="//@deletePatterns.5/@deletedNodes.1" targetNode="//@deletePatterns.5/@contextNodes.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_u"/>
-    </deletedEdges>
-    <deletedEdges sourceNode="//@deletePatterns.5/@deletedNodes.0" targetNode="//@deletePatterns.5/@deletedNodes.1">
+    <contextNodes name="us" incomingEdges="//@deletePatterns.5/@deletedEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
+    </contextNodes>
+    <deletedEdges sourceNode="//@deletePatterns.5/@deletedNodes.1" targetNode="//@deletePatterns.5/@deletedNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_X_z"/>
     </deletedEdges>
-    <deletedEdges sourceNode="//@deletePatterns.5/@deletedNodes.0" targetNode="//@deletePatterns.5/@contextNodes.1">
+    <deletedEdges sourceNode="//@deletePatterns.5/@deletedNodes.1" targetNode="//@deletePatterns.5/@contextNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
     </deletedEdges>
-    <deletedEdges sourceNode="//@deletePatterns.5/@deletedNodes.2" targetNode="//@deletePatterns.5/@contextNodes.0">
+    <deletedEdges sourceNode="//@deletePatterns.5/@deletedNodes.0" targetNode="//@deletePatterns.5/@contextNodes.1">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_u"/>
     </deletedEdges>
-    <deletedNodes name="a" outgoingEdges="//@deletePatterns.5/@deletedEdges.1 //@deletePatterns.5/@deletedEdges.2">
+    <deletedEdges sourceNode="//@deletePatterns.5/@deletedNodes.2" targetNode="//@deletePatterns.5/@deletedNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_X_z"/>
+    </deletedEdges>
+    <deletedEdges sourceNode="//@deletePatterns.5/@deletedNodes.2" targetNode="//@deletePatterns.5/@contextNodes.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
+    </deletedEdges>
+    <deletedNodes name="x" incomingEdges="//@deletePatterns.5/@deletedEdges.0 //@deletePatterns.5/@deletedEdges.3" outgoingEdges="//@deletePatterns.5/@deletedEdges.2">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </deletedNodes>
+    <deletedNodes name="a" outgoingEdges="//@deletePatterns.5/@deletedEdges.0 //@deletePatterns.5/@deletedEdges.1">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </deletedNodes>
-    <deletedNodes name="x" incomingEdges="//@deletePatterns.5/@deletedEdges.1" outgoingEdges="//@deletePatterns.5/@deletedEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-    </deletedNodes>
-    <deletedNodes name="x" outgoingEdges="//@deletePatterns.5/@deletedEdges.3">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    <deletedNodes name="a" outgoingEdges="//@deletePatterns.5/@deletedEdges.3 //@deletePatterns.5/@deletedEdges.4">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </deletedNodes>
   </deletePatterns>
   <deletePatterns name="synthDegPartial">
@@ -1259,7 +1196,7 @@
     <contextNodes name="a" outgoingEdges="//@deletePatterns.7/@deletedEdges.1 //@deletePatterns.7/@deletedEdges.2">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </contextNodes>
-    <contextNodes name="us" incomingEdges="//@deletePatterns.7/@deletedEdges.0 //@deletePatterns.7/@deletedEdges.3">
+    <contextNodes name="us" incomingEdges="//@deletePatterns.7/@deletedEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
     </contextNodes>
     <contextNodes name="ps" incomingEdges="//@deletePatterns.7/@deletedEdges.2">
@@ -1274,24 +1211,18 @@
     <deletedEdges sourceNode="//@deletePatterns.7/@contextNodes.0" targetNode="//@deletePatterns.7/@contextNodes.2">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
     </deletedEdges>
-    <deletedEdges sourceNode="//@deletePatterns.7/@deletedNodes.1" targetNode="//@deletePatterns.7/@contextNodes.1">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z_u"/>
-    </deletedEdges>
     <deletedNodes name="x" incomingEdges="//@deletePatterns.7/@deletedEdges.1" outgoingEdges="//@deletePatterns.7/@deletedEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-    </deletedNodes>
-    <deletedNodes name="x" outgoingEdges="//@deletePatterns.7/@deletedEdges.3">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </deletedNodes>
   </deletePatterns>
   <deletePatterns name="underspec"/>
   <deletePatterns name="unspec"/>
   <deletePatterns name="unspecTest">
-    <deletedNodes name="x">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-    </deletedNodes>
     <deletedNodes name="a">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </deletedNodes>
+    <deletedNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </deletedNodes>
   </deletePatterns>
   <deletePatterns name="generic">
@@ -1347,10 +1278,10 @@
   </deletePatterns>
   <deletePatterns name="injectivity"/>
   <deletePatterns name="injectivityBwd">
-    <contextNodes name="a1" incomingEdges="//@deletePatterns.17/@deletedEdges.1" outgoingEdges="//@deletePatterns.17/@deletedEdges.0">
+    <contextNodes name="a2" incomingEdges="//@deletePatterns.17/@deletedEdges.1" outgoingEdges="//@deletePatterns.17/@deletedEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </contextNodes>
-    <contextNodes name="a2" incomingEdges="//@deletePatterns.17/@deletedEdges.0" outgoingEdges="//@deletePatterns.17/@deletedEdges.1">
+    <contextNodes name="a1" incomingEdges="//@deletePatterns.17/@deletedEdges.0" outgoingEdges="//@deletePatterns.17/@deletedEdges.1">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </contextNodes>
     <deletedEdges sourceNode="//@deletePatterns.17/@contextNodes.0" targetNode="//@deletePatterns.17/@contextNodes.1">
@@ -1390,13 +1321,13 @@
   </deletePatterns>
   <deletePatterns name="underspecSynth"/>
   <deletePatterns name="concreteSplit">
-    <contextNodes name="x" incomingEdges="//@deletePatterns.23/@deletedEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-    </contextNodes>
     <contextNodes name="a" outgoingEdges="//@deletePatterns.23/@deletedEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </contextNodes>
-    <deletedEdges sourceNode="//@deletePatterns.23/@contextNodes.1" targetNode="//@deletePatterns.23/@contextNodes.0">
+    <contextNodes name="x" incomingEdges="//@deletePatterns.23/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </contextNodes>
+    <deletedEdges sourceNode="//@deletePatterns.23/@contextNodes.0" targetNode="//@deletePatterns.23/@contextNodes.1">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b_X_y"/>
     </deletedEdges>
   </deletePatterns>

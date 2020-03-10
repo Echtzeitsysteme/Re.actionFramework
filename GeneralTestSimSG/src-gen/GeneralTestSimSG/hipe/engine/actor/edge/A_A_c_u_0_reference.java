@@ -50,7 +50,7 @@ public class A_A_c_u_0_reference extends AbstractActor {
 		ports = new LinkedList<>();
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("genericWithState_116_junction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("generic_106_junction"), this::returnTrue));
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("obs_underspecSynthTest_273_nacjunction"), this::returnTrue));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("obs_underspecSynthTest_259_nacjunction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("selfBindingBwd_59_junction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("synthDegPartial_76_junction"), this::returnTrue));
 		ports.add(new PortEdgeRight(getSelf(), name2actor.get("unspecifiedStateChange_132_junction"), this::returnTrue));

@@ -4,6 +4,8 @@ package ecoreBCModel;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Interm Site Instance</b></em>'.
@@ -26,7 +28,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface IntermSiteInstance extends Bindable {
+public interface IntermSiteInstance extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Instance Of</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -51,7 +53,7 @@ public interface IntermSiteInstance extends Bindable {
 
 	/**
 	 * Returns the value of the '<em><b>Not Bound To</b></em>' reference list.
-	 * The list contents are of type {@link ecoreBCModel.Bindable}.
+	 * The list contents are of type {@link ecoreBCModel.IntermSiteInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Not Bound To</em>' reference list.
@@ -59,19 +61,19 @@ public interface IntermSiteInstance extends Bindable {
 	 * @model
 	 * @generated
 	 */
-	EList<Bindable> getNotBoundTo();
+	EList<IntermSiteInstance> getNotBoundTo();
 
 	/**
 	 * Returns the value of the '<em><b>Bound To</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bound To</em>' reference.
-	 * @see #setBoundTo(Bindable)
+	 * @see #setBoundTo(IntermSiteInstance)
 	 * @see ecoreBCModel.EcoreBCModelPackage#getIntermSiteInstance_BoundTo()
 	 * @model
 	 * @generated
 	 */
-	Bindable getBoundTo();
+	IntermSiteInstance getBoundTo();
 
 	/**
 	 * Sets the value of the '{@link ecoreBCModel.IntermSiteInstance#getBoundTo <em>Bound To</em>}' reference.
@@ -81,7 +83,7 @@ public interface IntermSiteInstance extends Bindable {
 	 * @see #getBoundTo()
 	 * @generated
 	 */
-	void setBoundTo(Bindable value);
+	void setBoundTo(IntermSiteInstance value);
 
 	/**
 	 * Returns the value of the '<em><b>Binding State</b></em>' attribute.

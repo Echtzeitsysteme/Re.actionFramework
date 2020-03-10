@@ -7,7 +7,6 @@ import java.util.regex.Pattern;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
 
-import ecoreBCModel.Bindable;
 import ecoreBCModel.IntermAgent;
 import ecoreBCModel.IntermAgentInstance;
 import ecoreBCModel.IntermSite;
@@ -152,41 +151,25 @@ public class NameProvider {
 	 * @return a qualified name for managing condition patterns.
 	 */
 	public static String getQualifiedConditionPatternName(IntermAgentInstance aiSrc, IntermSiteInstance siSrc,
-			Bindable trg, boolean toLocalNode) {
+			IntermSiteInstance siTrg, boolean toLocalNode) {
 		StringBuilder sb = new StringBuilder("conditionPattern_");
 
-		if (trg instanceof IntermSiteInstance) {
-			IntermSiteInstance siTrg = (IntermSiteInstance) trg;
+		IntermAgentInstance aiTrg = siTrg.getParent();
+		IntermSiteState stateTrg = siTrg.getState();
 
-			IntermAgentInstance aiTrg = siTrg.getParent();
-			IntermSiteState stateTrg = siTrg.getState();
+		sb.append(aiSrc.getInstanceOf().getName());
+		sb.append(siSrc.getName());
+		sb.append("_to_");
+		sb.append(aiTrg.getInstanceOf().getName());
+		sb.append(siTrg.getName());
 
-			sb.append(aiSrc.getInstanceOf().getName());
-			sb.append(siSrc.getName());
-			sb.append("_to_");
-			sb.append(aiTrg.getInstanceOf().getName());
-			sb.append(siTrg.getName());
-
-			if (stateTrg != null) {
-				sb.append("_state_" + stateTrg.getName());
-			}
-			if (toLocalNode) {
-				sb.append("_Local");
-			}
-
+		if (stateTrg != null) {
+			sb.append("_state_" + stateTrg.getName());
 		}
-		if (trg instanceof IntermAgent) {
-			IntermAgent trgAgent = (IntermAgent) trg;
+		if (toLocalNode) {
+			sb.append("_Local");
+		}
 
-			sb.append(aiSrc.getInstanceOf().getName());
-			sb.append(siSrc.getName());
-			sb.append("_to_");
-			sb.append("LocalAgent_");
-			sb.append(trgAgent.getName().toUpperCase());
-		}
-		if (trg instanceof IntermAgentInstance) {
-			throw new UnsupportedOperationException("Could not handle type of " + trg.toString());
-		}
 		return sb.toString();
 	}
 

@@ -78,6 +78,5 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreBCModel.ecore#//IntermCommand/patternToMatch"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreBCModel.ecore#//IntermCommand/cnt"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="ecoreBCModel.ecore#//Bindable"/>
   </genPackages>
 </genmodel:GenModel>
