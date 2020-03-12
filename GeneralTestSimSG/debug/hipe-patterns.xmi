@@ -216,10 +216,10 @@
     <patternInvocations xmi:type="HiPEPattern:HiPEPatternInvocation" invokedPattern="//@patterns.3" positive="false"/>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPattern" name="synthDegComplete" partialPatterns="//@patterns.110">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokes="//@patterns.110/@nodes.0">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokes="//@patterns.110/@nodes.1">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokes="//@patterns.110/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokes="//@patterns.110/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
     </nodes>
   </patterns>
@@ -417,13 +417,13 @@
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPattern" name="injectivity" partialPatterns="//@patterns.286">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokes="//@patterns.0/@nodes.0 //@patterns.2/@nodes.0 //@patterns.4/@nodes.0 //@patterns.6/@nodes.0 //@patterns.5/@nodes.0 //@patterns.183/@nodes.2 //@patterns.273/@nodes.2 //@patterns.274/@nodes.2 //@patterns.275/@nodes.2 //@patterns.276/@nodes.2 //@patterns.277/@nodes.2 //@patterns.278/@nodes.2 //@patterns.279/@nodes.2 //@patterns.280/@nodes.2 //@patterns.281/@nodes.2 //@patterns.282/@nodes.2 //@patterns.283/@nodes.2 //@patterns.284/@nodes.2 //@patterns.285/@nodes.2 //@patterns.286/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokes="//@patterns.0/@nodes.0 //@patterns.2/@nodes.0 //@patterns.4/@nodes.0 //@patterns.6/@nodes.0 //@patterns.5/@nodes.0 //@patterns.183/@nodes.1 //@patterns.273/@nodes.1 //@patterns.274/@nodes.1 //@patterns.275/@nodes.1 //@patterns.276/@nodes.1 //@patterns.277/@nodes.1 //@patterns.278/@nodes.1 //@patterns.279/@nodes.1 //@patterns.280/@nodes.1 //@patterns.281/@nodes.1 //@patterns.282/@nodes.1 //@patterns.283/@nodes.1 //@patterns.284/@nodes.1 //@patterns.285/@nodes.1 //@patterns.286/@nodes.1">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokes="//@patterns.0/@nodes.0 //@patterns.2/@nodes.0 //@patterns.4/@nodes.0 //@patterns.6/@nodes.0 //@patterns.5/@nodes.0 //@patterns.183/@nodes.0 //@patterns.273/@nodes.0 //@patterns.274/@nodes.0 //@patterns.275/@nodes.0 //@patterns.276/@nodes.0 //@patterns.277/@nodes.0 //@patterns.278/@nodes.0 //@patterns.279/@nodes.0 //@patterns.280/@nodes.0 //@patterns.281/@nodes.0 //@patterns.282/@nodes.0 //@patterns.283/@nodes.0 //@patterns.284/@nodes.0 //@patterns.285/@nodes.0 //@patterns.286/@nodes.0">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokes="//@patterns.0/@nodes.0 //@patterns.2/@nodes.0 //@patterns.4/@nodes.0 //@patterns.6/@nodes.0 //@patterns.5/@nodes.0 //@patterns.183/@nodes.2 //@patterns.273/@nodes.2 //@patterns.274/@nodes.2 //@patterns.275/@nodes.2 //@patterns.276/@nodes.2 //@patterns.277/@nodes.2 //@patterns.278/@nodes.2 //@patterns.279/@nodes.2 //@patterns.280/@nodes.2 //@patterns.281/@nodes.2 //@patterns.282/@nodes.2 //@patterns.283/@nodes.2 //@patterns.284/@nodes.2 //@patterns.285/@nodes.2 //@patterns.286/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokes="//@patterns.7/@nodes.0 //@patterns.11/@nodes.0 //@patterns.1/@nodes.0 //@patterns.9/@nodes.0 //@patterns.183/@nodes.1 //@patterns.273/@nodes.1 //@patterns.274/@nodes.1 //@patterns.275/@nodes.1 //@patterns.276/@nodes.1 //@patterns.277/@nodes.1 //@patterns.278/@nodes.1 //@patterns.279/@nodes.1 //@patterns.280/@nodes.1 //@patterns.281/@nodes.1 //@patterns.282/@nodes.1 //@patterns.283/@nodes.1 //@patterns.284/@nodes.1 //@patterns.285/@nodes.1 //@patterns.286/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokes="//@patterns.7/@nodes.0 //@patterns.11/@nodes.0 //@patterns.1/@nodes.0 //@patterns.9/@nodes.0 //@patterns.183/@nodes.0 //@patterns.273/@nodes.0 //@patterns.274/@nodes.0 //@patterns.275/@nodes.0 //@patterns.276/@nodes.0 //@patterns.277/@nodes.0 //@patterns.278/@nodes.0 //@patterns.279/@nodes.0 //@patterns.280/@nodes.0 //@patterns.281/@nodes.0 //@patterns.282/@nodes.0 //@patterns.283/@nodes.0 //@patterns.284/@nodes.0 //@patterns.285/@nodes.0 //@patterns.286/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
     <patternInvocations xmi:type="HiPEPattern:HiPEPatternInvocation" invokedPattern="//@patterns.0" positive="false"/>
@@ -471,10 +471,10 @@
     <patternInvocations xmi:type="HiPEPattern:HiPEPatternInvocation" invokedPattern="//@patterns.3" positive="false"/>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPattern" name="wildcard" partialPatterns="//@patterns.294">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokes="//@patterns.30/@nodes.0 //@patterns.196/@nodes.1 //@patterns.294/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokes="//@patterns.30/@nodes.0 //@patterns.196/@nodes.0 //@patterns.294/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokes="//@patterns.196/@nodes.0 //@patterns.294/@nodes.0">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokes="//@patterns.196/@nodes.1 //@patterns.294/@nodes.1">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
     </nodes>
     <patternInvocations xmi:type="HiPEPattern:HiPEPatternInvocation" invokedPattern="//@patterns.30" positive="false"/>
@@ -1164,21 +1164,21 @@
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="synthDegComplete_64" partialPatterns="//@patterns.111 //@patterns.112" parentPattern="//@patterns.16">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokedBy="//@patterns.16/@nodes.0" invokes="//@patterns.111/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.16/@nodes.1" invokes="//@patterns.112/@nodes.0">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.16/@nodes.1" invokes="//@patterns.111/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokedBy="//@patterns.16/@nodes.0" invokes="//@patterns.112/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="synthDegComplete_65" parentPattern="//@patterns.110">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokedBy="//@patterns.110/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.110/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="synthDegComplete_66" parentPattern="//@patterns.110">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.110/@nodes.1">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="ps" invokedBy="//@patterns.110/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="synthDegCompleteBwd_67" partialPatterns="//@patterns.114 //@patterns.117" parentPattern="//@patterns.17" overlaps="//@patterns.113/@nodes.0">
@@ -1838,37 +1838,37 @@
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_137" partialPatterns="//@patterns.184 //@patterns.185" parentPattern="//@patterns.273">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.273/@nodes.0" invokes="//@patterns.184/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.273/@nodes.1" invokes="//@patterns.185/@nodes.0">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.273/@nodes.0" invokes="//@patterns.184/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.273/@nodes.2" invokes="//@patterns.185/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.273/@nodes.1" invokes="//@patterns.185/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
-    <nodeConstraints xmi:type="HiPEPattern:UnequalConstraint" leftNode="//@patterns.183/@nodes.2" rightNode="//@patterns.183/@nodes.0"/>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.273/@nodes.2" invokes="//@patterns.185/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_138" parentPattern="//@patterns.183">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.183/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.183/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_139" partialPatterns="//@patterns.186 //@patterns.187" parentPattern="//@patterns.183">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.183/@nodes.1" invokes="//@patterns.186/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.183/@nodes.1" invokes="//@patterns.186/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.183/@nodes.2" invokes="//@patterns.187/@nodes.0">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.183/@nodes.2" invokes="//@patterns.187/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodeConstraints xmi:type="HiPEPattern:UnequalConstraint" leftNode="//@patterns.185/@nodes.0" rightNode="//@patterns.185/@nodes.1"/>
+  </patterns>
+  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_140" parentPattern="//@patterns.185">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.185/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
-  <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_140" parentPattern="//@patterns.185">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.185/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-    </nodes>
-  </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_141" parentPattern="//@patterns.185">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.185/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.185/@nodes.1">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
@@ -1948,21 +1948,21 @@
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="wildcard_150" partialPatterns="//@patterns.197 //@patterns.198" parentPattern="//@patterns.294">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.31/@nodes.1 //@patterns.294/@nodes.0" invokes="//@patterns.197/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokedBy="//@patterns.31/@nodes.0 //@patterns.294/@nodes.1" invokes="//@patterns.198/@nodes.0">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokedBy="//@patterns.31/@nodes.0 //@patterns.294/@nodes.0" invokes="//@patterns.197/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.31/@nodes.1 //@patterns.294/@nodes.1" invokes="//@patterns.198/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="wildcard_151" parentPattern="//@patterns.196">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.196/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokedBy="//@patterns.196/@nodes.0">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="wildcard_152" parentPattern="//@patterns.196">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokedBy="//@patterns.196/@nodes.1">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.196/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="wildcardStateChange_153" partialPatterns="//@patterns.200 //@patterns.201" parentPattern="//@patterns.295">
@@ -2669,156 +2669,156 @@
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_227" partialPatterns="//@patterns.183 //@patterns.47" parentPattern="//@patterns.274" overlaps="//@patterns.183/@nodes.0 //@patterns.183/@nodes.1 //@patterns.183/@nodes.2" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.274/@nodes.0" invokes="//@patterns.183/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.274/@nodes.1" invokes="//@patterns.183/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.274/@nodes.0" invokes="//@patterns.183/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.274/@nodes.2" invokes="//@patterns.183/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.274/@nodes.1" invokes="//@patterns.183/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.274/@nodes.2" invokes="//@patterns.183/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_228" partialPatterns="//@patterns.273 //@patterns.53" parentPattern="//@patterns.275" overlaps="//@patterns.273/@nodes.0 //@patterns.273/@nodes.1 //@patterns.273/@nodes.2" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.275/@nodes.0" invokes="//@patterns.273/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.275/@nodes.1" invokes="//@patterns.273/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.275/@nodes.0" invokes="//@patterns.273/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.275/@nodes.2" invokes="//@patterns.273/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.275/@nodes.1" invokes="//@patterns.273/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.275/@nodes.2" invokes="//@patterns.273/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_229" partialPatterns="//@patterns.274 //@patterns.59" parentPattern="//@patterns.276" overlaps="//@patterns.274/@nodes.0 //@patterns.274/@nodes.1 //@patterns.274/@nodes.2" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.276/@nodes.0" invokes="//@patterns.274/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.276/@nodes.1" invokes="//@patterns.274/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.276/@nodes.0" invokes="//@patterns.274/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.276/@nodes.2" invokes="//@patterns.274/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.276/@nodes.1" invokes="//@patterns.274/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.276/@nodes.2" invokes="//@patterns.274/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_230" partialPatterns="//@patterns.275 //@patterns.65" parentPattern="//@patterns.277" overlaps="//@patterns.275/@nodes.0 //@patterns.275/@nodes.1 //@patterns.275/@nodes.2" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.277/@nodes.0" invokes="//@patterns.275/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.277/@nodes.1" invokes="//@patterns.275/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.277/@nodes.0" invokes="//@patterns.275/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.277/@nodes.2" invokes="//@patterns.275/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.277/@nodes.1" invokes="//@patterns.275/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.277/@nodes.2" invokes="//@patterns.275/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_231" partialPatterns="//@patterns.276 //@patterns.62" parentPattern="//@patterns.278" overlaps="//@patterns.276/@nodes.0 //@patterns.276/@nodes.1 //@patterns.276/@nodes.2" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.278/@nodes.0" invokes="//@patterns.276/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.278/@nodes.1" invokes="//@patterns.276/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.278/@nodes.0" invokes="//@patterns.276/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.278/@nodes.2" invokes="//@patterns.276/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.278/@nodes.1" invokes="//@patterns.276/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.278/@nodes.2" invokes="//@patterns.276/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_232" partialPatterns="//@patterns.277 //@patterns.47" parentPattern="//@patterns.279" overlaps="//@patterns.277/@nodes.0 //@patterns.277/@nodes.1 //@patterns.277/@nodes.2" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.279/@nodes.0" invokes="//@patterns.277/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.279/@nodes.1" invokes="//@patterns.277/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.279/@nodes.0" invokes="//@patterns.277/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.279/@nodes.2" invokes="//@patterns.277/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.279/@nodes.1" invokes="//@patterns.277/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.279/@nodes.2" invokes="//@patterns.277/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_233" partialPatterns="//@patterns.278 //@patterns.53" parentPattern="//@patterns.280" overlaps="//@patterns.278/@nodes.0 //@patterns.278/@nodes.1 //@patterns.278/@nodes.2" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.280/@nodes.0" invokes="//@patterns.278/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.280/@nodes.1" invokes="//@patterns.278/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.280/@nodes.0" invokes="//@patterns.278/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.280/@nodes.2" invokes="//@patterns.278/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.280/@nodes.1" invokes="//@patterns.278/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.280/@nodes.2" invokes="//@patterns.278/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_234" partialPatterns="//@patterns.279 //@patterns.59" parentPattern="//@patterns.281" overlaps="//@patterns.279/@nodes.0 //@patterns.279/@nodes.1 //@patterns.279/@nodes.2" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.281/@nodes.0" invokes="//@patterns.279/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.281/@nodes.1" invokes="//@patterns.279/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.281/@nodes.0" invokes="//@patterns.279/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.281/@nodes.2" invokes="//@patterns.279/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.281/@nodes.1" invokes="//@patterns.279/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.281/@nodes.2" invokes="//@patterns.279/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_235" partialPatterns="//@patterns.280 //@patterns.65" parentPattern="//@patterns.282" overlaps="//@patterns.280/@nodes.0 //@patterns.280/@nodes.1 //@patterns.280/@nodes.2" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.282/@nodes.0" invokes="//@patterns.280/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.282/@nodes.1" invokes="//@patterns.280/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.282/@nodes.0" invokes="//@patterns.280/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.282/@nodes.2" invokes="//@patterns.280/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.282/@nodes.1" invokes="//@patterns.280/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.282/@nodes.2" invokes="//@patterns.280/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_236" partialPatterns="//@patterns.281 //@patterns.62" parentPattern="//@patterns.283" overlaps="//@patterns.281/@nodes.0 //@patterns.281/@nodes.1 //@patterns.281/@nodes.2" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.283/@nodes.0" invokes="//@patterns.281/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.283/@nodes.1" invokes="//@patterns.281/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.283/@nodes.0" invokes="//@patterns.281/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.283/@nodes.2" invokes="//@patterns.281/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.283/@nodes.1" invokes="//@patterns.281/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.283/@nodes.2" invokes="//@patterns.281/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_237" partialPatterns="//@patterns.282 //@patterns.68" parentPattern="//@patterns.284" overlaps="//@patterns.282/@nodes.0 //@patterns.282/@nodes.1 //@patterns.282/@nodes.2" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.284/@nodes.0" invokes="//@patterns.282/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.284/@nodes.1" invokes="//@patterns.282/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.284/@nodes.0" invokes="//@patterns.282/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.284/@nodes.2" invokes="//@patterns.282/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.284/@nodes.1" invokes="//@patterns.282/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.284/@nodes.2" invokes="//@patterns.282/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_238" partialPatterns="//@patterns.283 //@patterns.80" parentPattern="//@patterns.285" overlaps="//@patterns.283/@nodes.0 //@patterns.283/@nodes.1 //@patterns.283/@nodes.2" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.285/@nodes.0" invokes="//@patterns.283/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.285/@nodes.1" invokes="//@patterns.283/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.285/@nodes.0" invokes="//@patterns.283/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.285/@nodes.2" invokes="//@patterns.283/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.285/@nodes.1" invokes="//@patterns.283/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.285/@nodes.2" invokes="//@patterns.283/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_239" partialPatterns="//@patterns.284 //@patterns.50" parentPattern="//@patterns.286" overlaps="//@patterns.284/@nodes.0 //@patterns.284/@nodes.1 //@patterns.284/@nodes.2" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.286/@nodes.0" invokes="//@patterns.284/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.286/@nodes.1" invokes="//@patterns.284/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2 //@patterns.286/@nodes.0" invokes="//@patterns.284/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.286/@nodes.2" invokes="//@patterns.284/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0 //@patterns.286/@nodes.1" invokes="//@patterns.284/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1 //@patterns.286/@nodes.2" invokes="//@patterns.284/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="injectivity_240" partialPatterns="//@patterns.285 //@patterns.74" parentPattern="//@patterns.28" overlaps="//@patterns.285/@nodes.0 //@patterns.285/@nodes.1 //@patterns.285/@nodes.2" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1" invokes="//@patterns.285/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2" invokes="//@patterns.285/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="x" invokedBy="//@patterns.28/@nodes.2" invokes="//@patterns.285/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0" invokes="//@patterns.285/@nodes.2">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a1" invokedBy="//@patterns.28/@nodes.0" invokes="//@patterns.285/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a2" invokedBy="//@patterns.28/@nodes.1" invokes="//@patterns.285/@nodes.2">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </patterns>
@@ -2906,11 +2906,11 @@
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="wildcard_248" partialPatterns="//@patterns.196 //@patterns.293" parentPattern="//@patterns.31" overlaps="//@patterns.196/@nodes.0 //@patterns.196/@nodes.1" positive="false">
-    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.31/@nodes.1" invokes="//@patterns.196/@nodes.0">
-      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
-    </nodes>
-    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokedBy="//@patterns.31/@nodes.0" invokes="//@patterns.196/@nodes.1">
+    <nodes xmi:type="HiPEPattern:HiPENode" name="a" invokedBy="//@patterns.31/@nodes.0" invokes="//@patterns.196/@nodes.0">
       <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes xmi:type="HiPEPattern:HiPENode" name="us" invokedBy="//@patterns.31/@nodes.1" invokes="//@patterns.196/@nodes.1">
+      <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
     </nodes>
   </patterns>
   <patterns xmi:type="HiPEPattern:HiPEPartialPattern" name="wildcardStateChange_249" partialPatterns="//@patterns.199 //@patterns.293" parentPattern="//@patterns.32" overlaps="//@patterns.199/@nodes.0 //@patterns.199/@nodes.1 //@patterns.199/@nodes.2" positive="false">

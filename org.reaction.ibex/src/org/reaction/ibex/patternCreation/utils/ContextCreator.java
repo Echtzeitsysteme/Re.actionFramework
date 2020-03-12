@@ -108,36 +108,6 @@ public class ContextCreator {
 				stateTypeRegistry.put(clazz.getName(), clazz);
 			}
 		}
-
-//		for (EObject obj : metamodelPackage.eContents()) {
-//			EClassImpl clazz = (EClassImpl) obj;
-//			if (ModelHelper.isAgent(clazz)) {
-//				agentTypeRegistry.put(clazz.getName(), clazz);
-//
-//				for (EObject classContent : clazz.eContents()) {
-//
-//					if (classContent instanceof EReference) {
-//						// if edge does not point to state and reference in other direction is already
-//						// existent, adjust mapping to that reference
-//						String refName = ((EReference) classContent).getName();
-//						EReference refToMap = (EReference) classContent;
-//						if (!((EReference) classContent).getEType().getName().endsWith("_s")) {
-//
-//							String inverseReferenceName = NameProvider.getInverseEdgeReferenceName(refName);
-//
-//							if (edgeTypeRegistry.containsKey(inverseReferenceName)) {
-//								refToMap = edgeTypeRegistry.get(inverseReferenceName);
-//							}
-//
-//						}
-//						edgeTypeRegistry.put(refName, refToMap);
-//					}
-//				}
-//
-//			} else {
-//				stateTypeRegistry.put(clazz.getName(), clazz);
-//			}
-//		}
 	}
 
 	public void generateIBeXPatterns() {

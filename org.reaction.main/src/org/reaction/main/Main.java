@@ -5,6 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.eclipse.emf.ecore.EPackage;
+import org.reaction.export.BNGLFactory;
 import org.reaction.ibex.patternCreation.GTCreator;
 import org.reaction.ibex.patternCreation.IBeXCreator;
 import org.reaction.ibex.patternCreation.SimDefCreator;
@@ -25,11 +26,11 @@ public class Main {
 		ReactionContainerPackage.eINSTANCE.eClass();
 		
 		// Load Model
-		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\bin\\Testcases.xmi";
-		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
+//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\bin\\Testcases.xmi";
+//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
 		
-//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\bin\\GKL.xmi";
-//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GKL_created_test";
+		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\bin\\GKL.xmi";
+		final String trgProjectLocation = "..\\..\\re.actionFramework\\GKL_created_test";
 		
 		final String userDir = System.getProperty("user.dir");
 		final String tempModels = userDir + "/models/";
@@ -49,11 +50,11 @@ public class Main {
 		deleteFolder(trgProjectModelFolder);
 		deleteFolder(trgProjectInstanceFolder);
 		
-		
+		ReactionModel dslModel = null;
 		// Reaction model to intermediate model
 		try {
 			System.out.println("Initiating Reaction to Intermediate Transformation...");
-			ReactionModel dslModel = EMFResourceHelper.loadReactionModel(dslModelLocation);
+			dslModel = EMFResourceHelper.loadReactionModel(dslModelLocation);
 			DslToIntermTransformation dslToInterm = new DslToIntermTransformation(dslModel);
 			intermModel = dslToInterm.generateIntermediateModel();
 
@@ -110,6 +111,7 @@ public class Main {
 
 		// Creating IBeX items
 		System.out.println("Initiating generation of IBeX items...");
+		String modelName = null;
 		try {
 			IBeXCreator ibexCreator = new IBeXCreator(intermModel, metamodelPackage);
 			IBeXPatternSet ibexPatternSet = ibexCreator.getIBeXPatternSet();
@@ -122,8 +124,9 @@ public class Main {
 			gtCreator.saveRuleSet(gtSaveLocation);
 
 			SimDefCreator simDefCreator = new SimDefCreator(intermModel, trgProjectLocation);
+			modelName = simDefCreator.getDefinition().getName();
 			String simDefSaveLocation = trgProjectLocation + "/instances/simulation_definitions/"
-					+ simDefCreator.getDefinition().getName() + ".xmi";
+					+ modelName + ".xmi";
 			simDefCreator.saveDefinition(simDefSaveLocation);
 		} catch (Exception e) {
 			System.err.println("Creating IBeX items failed with:");
@@ -134,6 +137,12 @@ public class Main {
 		
 		System.out.println("Transformation complete.");
 
+		System.out.println("Starting BNGL export.");
+		String exportLocation = userDir + "/export/";
+		BNGLFactory bnglFactory = new BNGLFactory(dslModel, intermModel, containerGen.getUsedAgentsInModel(), containerGen.getUsedStates());
+		bnglFactory.generateBNGL();
+		bnglFactory.saveFile(exportLocation + modelName +".bngl");
+		System.out.println("Finished BNGL export. Saved to "+exportLocation + "test.bngl");
 	}
 	
 	private static void deleteFolder(File folder) {

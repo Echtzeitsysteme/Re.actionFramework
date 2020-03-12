@@ -48,7 +48,7 @@ public class U_s_object_SP1 extends AbstractActor {
 		ports = new LinkedList<>();
 		ports.add(new PortNodeRight<TestcasesModel.U_s>(getSelf(), name2actor.get("X_X_z_u_0_reference"), this::returnTrue));
 		ports.add(new PortNodeMatchLeft<TestcasesModel.U_s>(getSelf(), name2actor.get("simpleSynthesis_129_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchRight<TestcasesModel.U_s>(getSelf(), name2actor.get("synthDegComplete_64_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.U_s>(getSelf(), name2actor.get("synthDegComplete_64_junction"), this::returnTrue));
 		ports.add(new PortNodeMatch<TestcasesModel.U_s>(getSelf(), name2actor.get("underspecSynth_production"), this::returnTrue));
 	}
 

@@ -1455,10 +1455,10 @@
       </createdEdges>
     </createPatterns>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="injectivity">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="a1" incomingEdges="//@ibexPatternSet/@createPatterns.16/@createdEdges.1" outgoingEdges="//@ibexPatternSet/@createPatterns.16/@createdEdges.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="a2" incomingEdges="//@ibexPatternSet/@createPatterns.16/@createdEdges.1" outgoingEdges="//@ibexPatternSet/@createPatterns.16/@createdEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </contextNodes>
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="a2" incomingEdges="//@ibexPatternSet/@createPatterns.16/@createdEdges.0" outgoingEdges="//@ibexPatternSet/@createPatterns.16/@createdEdges.1">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="a1" incomingEdges="//@ibexPatternSet/@createPatterns.16/@createdEdges.0" outgoingEdges="//@ibexPatternSet/@createPatterns.16/@createdEdges.1">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </contextNodes>
       <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.16/@contextNodes.0" targetNode="//@ibexPatternSet/@createPatterns.16/@contextNodes.1">
@@ -1741,13 +1741,13 @@
     </deletePatterns>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="underspecSynth"/>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="concreteSplit">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@deletePatterns.23/@deletedEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-      </contextNodes>
       <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="x" incomingEdges="//@ibexPatternSet/@deletePatterns.23/@deletedEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </contextNodes>
-      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.23/@contextNodes.0" targetNode="//@ibexPatternSet/@deletePatterns.23/@contextNodes.1">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@deletePatterns.23/@deletedEdges.0">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+      </contextNodes>
+      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.23/@contextNodes.1" targetNode="//@ibexPatternSet/@deletePatterns.23/@contextNodes.0">
         <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b_X_y"/>
       </deletedEdges>
     </deletePatterns>

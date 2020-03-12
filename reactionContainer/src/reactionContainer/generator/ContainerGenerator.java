@@ -165,13 +165,13 @@ public abstract class ContainerGenerator {
 			for (IntermAgentInstance ai : agentInstances) {
 
 				// put in list of existent agents
-				if (!agentsInModel.contains(ai.getInstanceOf())) {
-					agentsInModel.add(ai.getInstanceOf());
+				if (!getUsedAgentsInModel().contains(ai.getInstanceOf())) {
+					getUsedAgentsInModel().add(ai.getInstanceOf());
 				}
 
 				for (IntermSiteInstance si : ai.getSiteInstances()) {
 					String key = ai.getInstanceOf().getName()+"_"+si.getName();
-					List<IntermSiteState> statesOfSite = statesInModel.get(key);
+					List<IntermSiteState> statesOfSite = getUsedStates().get(key);
 					if(statesOfSite == null) {
 						statesOfSite = new LinkedList<>();
 					}
@@ -183,7 +183,7 @@ public abstract class ContainerGenerator {
 					if (state != null) {
 						if (!statesOfSite.contains(state)) {
 							statesOfSite.add(state);
-							statesInModel.put(key, statesOfSite);
+							getUsedStates().put(key, statesOfSite);
 						}
 					}
 
@@ -201,21 +201,21 @@ public abstract class ContainerGenerator {
 						}
 
 						IntermAgent agentParent = ai.getInstanceOf();
-						if (!agentsInModel.contains(agentParent)) {
-							agentsInModel.add(agentParent);
+						if (!getUsedAgentsInModel().contains(agentParent)) {
+							getUsedAgentsInModel().add(agentParent);
 						}
 
 
 						IntermSiteState partnerState = boundToSiteInstance.getState();
 						String partnerKey = boundToAgent.getName()+"_"+boundToSite.getName();
-						List<IntermSiteState> statesOfPartnerSite = statesInModel.get(partnerKey);
+						List<IntermSiteState> statesOfPartnerSite = getUsedStates().get(partnerKey);
 						if(statesOfPartnerSite == null) {
 							statesOfPartnerSite = new LinkedList<>();
 						}
 						if (partnerState != null) {
 							if(!statesOfPartnerSite.contains(partnerState)) {
 								statesOfPartnerSite.add(partnerState);
-								statesInModel.put(partnerKey, statesOfPartnerSite);
+								getUsedStates().put(partnerKey, statesOfPartnerSite);
 							}
 						}
 
@@ -339,12 +339,12 @@ public abstract class ContainerGenerator {
 		ReactionContainerPackage.eINSTANCE.getESubpackages().add(dynamicMetaModel);
 
 		stateClassFactory = new StateClassFactory(dynamicMetaModel);
-		agentClassFactory = new AgentClassFactory(dynamicMetaModel, stateClassFactory, siteConnections, statesInModel);
+		agentClassFactory = new AgentClassFactory(dynamicMetaModel, stateClassFactory, siteConnections, getUsedStates());
 
-		agentsInModel.forEach(x -> {
+		getUsedAgentsInModel().forEach(x -> {
 			agentClassFactory.createClass(x);
 		});
-		agentsInModel.forEach(x -> {
+		getUsedAgentsInModel().forEach(x -> {
 			agentClassFactory.createAgentReferences(x);
 		});
 	}
@@ -359,6 +359,7 @@ public abstract class ContainerGenerator {
 		});
 
 	}
+	
 
 	public URI createMetaModelURI() {
 		URI metamodelPathUri = URI.createFileURI(metaModelPath);
@@ -375,5 +376,13 @@ public abstract class ContainerGenerator {
 
 		String test = sb.toString();
 		return URI.createPlatformResourceURI(test, true);
+	}
+
+	public List<IntermAgent> getUsedAgentsInModel() {
+		return agentsInModel;
+	}
+
+	public Map<String, List<IntermSiteState>> getUsedStates() {
+		return statesInModel;
 	}
 }

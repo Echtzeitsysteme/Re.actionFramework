@@ -23,6 +23,7 @@ Import-Package: GTLanguage,
  IBeXLanguage,
  ecoreBCModel,
  org.emoflon.ibex.common.patterns,
+ org.reaction.export,
  org.xtext.biochemics.dotDsl,
  org.xtext.biochemics.dotDsl.impl,
  org.xtext.biochemics.interpreter
