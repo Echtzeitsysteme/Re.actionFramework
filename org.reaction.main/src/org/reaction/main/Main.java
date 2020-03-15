@@ -24,38 +24,41 @@ public class Main {
 	public static void main(String[] args) {
 
 		ReactionContainerPackage.eINSTANCE.eClass();
-		
+
 		// Load Model
 //		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Testcases.xmi";
 //		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
-		
-//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Testcases.xmi";
-//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
-		
+
+		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Testcases.xmi";
+		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
+
 //		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\GKL.xmi";
-//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GKL_created_test";
-		
-		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Alzheimer.xmi";
-		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\GSK3b";
-		
+//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
+
+//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Alzheimer.xmi";
+//		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\GSK3b";
+
+//		final String dslModelLocation = "..\\..\\re.actionEvaluation\\models\\gkl\\GKL200.xmi";
+//		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\gklSimSG";
+		final String customMetamodelName = null;
 		final String userDir = System.getProperty("user.dir");
 		final String tempModels = userDir + "/models/";
-		
+
 		IntermediateModel intermModel;
 
-		// Clear directories
-		System.out.println("Clearing directories...");
-		
-		//Clear tempModel Folder
-		File tempModelFolder = new File(tempModels);
-		deleteFolder(tempModelFolder);
-		
-		//Clear trgProjectLocations
-		File trgProjectModelFolder = new File(trgProjectLocation+"/model/");
-		File trgProjectInstanceFolder = new File(trgProjectLocation+"/instances/");
-		deleteFolder(trgProjectModelFolder);
-		deleteFolder(trgProjectInstanceFolder);
-		
+//		// Clear directories
+//		System.out.println("Clearing directories...");
+//		
+//		//Clear tempModel Folder
+//		File tempModelFolder = new File(tempModels);
+//		deleteFolder(tempModelFolder);
+//		
+//		//Clear trgProjectLocations
+//		File trgProjectModelFolder = new File(trgProjectLocation+"/model/");
+//		File trgProjectInstanceFolder = new File(trgProjectLocation+"/instances/");
+//		deleteFolder(trgProjectModelFolder);
+//		deleteFolder(trgProjectInstanceFolder);
+
 		ReactionModel dslModel = null;
 		// Reaction model to intermediate model
 		try {
@@ -90,9 +93,13 @@ public class Main {
 		System.out.println("Initiating Intermediate to SimSG Transformation...");
 
 		ContainerGenerator containerGen = new ContainerEMF(intermModel);
-		
+
 		String metamodelPath = trgProjectLocation + "/model/" + intermModel.getName() + "Model.ecore";
-		String modelPath = trgProjectLocation + "/instances/simulation_instances/" + intermModel.getName() + "Model.xmi";
+		if (customMetamodelName != null) {
+			metamodelPath = trgProjectLocation + "/model/" + customMetamodelName + ".ecore";
+		}
+		String modelPath = trgProjectLocation + "/instances/simulation_instances/" + intermModel.getName()
+				+ "Model.xmi";
 
 		try {
 			containerGen.doGenerate(modelPath, metamodelPath);
@@ -131,8 +138,7 @@ public class Main {
 
 			SimDefCreator simDefCreator = new SimDefCreator(intermModel, trgProjectLocation);
 			modelName = simDefCreator.getDefinition().getName();
-			String simDefSaveLocation = trgProjectLocation + "/instances/simulation_definitions/"
-					+ modelName + ".xmi";
+			String simDefSaveLocation = trgProjectLocation + "/instances/simulation_definitions/" + modelName + ".xmi";
 			simDefCreator.saveDefinition(simDefSaveLocation);
 		} catch (Exception e) {
 			System.err.println("Creating IBeX items failed with:");
@@ -140,22 +146,23 @@ public class Main {
 			return;
 		}
 		System.out.println("IBeX items created successfully.");
-		
+
 		System.out.println("Transformation complete.");
 
 		System.out.println("Starting BNGL export.");
 		String exportLocation = userDir + "/export/";
-		BNGLFactory bnglFactory = new BNGLFactory(dslModel, intermModel, containerGen.getUsedAgentsInModel(), containerGen.getUsedStates());
+		BNGLFactory bnglFactory = new BNGLFactory(dslModel, intermModel, containerGen.getUsedAgentsInModel(),
+				containerGen.getUsedStates());
 		bnglFactory.generateBNGL();
-		bnglFactory.saveFile(exportLocation + modelName +".bngl");
-		System.out.println("Finished BNGL export. Saved to "+exportLocation + "test.bngl");
+		bnglFactory.saveFile(exportLocation + modelName + ".bngl");
+		System.out.println("Finished BNGL export. Saved to " + exportLocation + "test.bngl");
 	}
-	
+
 	private static void deleteFolder(File folder) {
-		for(File f : folder.listFiles()) {
-			if(f.isDirectory()) {
+		for (File f : folder.listFiles()) {
+			if (f.isDirectory()) {
 				deleteFolder(f);
-			}else {
+			} else {
 				f.delete();
 			}
 		}

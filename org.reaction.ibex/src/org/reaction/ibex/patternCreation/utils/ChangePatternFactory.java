@@ -27,8 +27,6 @@ import reactionContainer.ReactionContainerPackage;
 
 public class ChangePatternFactory {
 
-	static boolean created = false;
-
 	private EPackage metamodelPackage;
 
 	private IBeXCreatePattern createPattern;
@@ -44,8 +42,7 @@ public class ChangePatternFactory {
 	private Map<IntermAgentInstance, IntermAgentInstance> changesMap;
 	private List<IntermAgentInstance> createdInstances;
 
-	private ChangePatternFactory(EPackage metamodelPackage) {
-		created = true;
+	public ChangePatternFactory(EPackage metamodelPackage) {
 		this.metamodelPackage = metamodelPackage;
 		init();
 	}
@@ -645,13 +642,5 @@ public class ChangePatternFactory {
 
 	public IBeXDeletePattern getDeletePattern() {
 		return deletePattern;
-	}
-
-	public static ChangePatternFactory getInstance(EPackage metamodelPackage) {
-		if (created == false) {
-			return new ChangePatternFactory(metamodelPackage);
-		} else {
-			return null;
-		}
 	}
 }

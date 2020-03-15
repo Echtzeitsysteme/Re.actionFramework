@@ -256,7 +256,7 @@ public class SimDefCreator {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Model saved to: " + uri.path());
+		System.out.println("SimulationDefinition saved to: " + uri.path());
 	}
 
 	@Override
