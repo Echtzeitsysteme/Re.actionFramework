@@ -144,7 +144,7 @@ public class NameProvider {
 		int agentNameLength = agentClass.getName().length();
 		String siteName = siteReference.getName().substring(agentNameLength + 1);
 
-		return agentClass.getName().toUpperCase() + "_" + siteName + "Bound";
+		return agentClass.getName() + "_" + siteName + "Bound";
 	}
 
 	/**
@@ -203,8 +203,8 @@ public class NameProvider {
 	public static String getEdgeTypeKey(IntermSiteInstance si, IntermSiteInstance siTrg) {
 		IntermAgentInstance ai = si.getParent();
 		IntermAgentInstance aiTrg = siTrg.getParent();
-		return ai.getInstanceOf().getName().toUpperCase() + "_" + si.getName() + "_"
-				+ aiTrg.getInstanceOf().getName().toUpperCase() + "_" + siTrg.getName();
+		return ai.getInstanceOf().getName() + "_" + si.getName() + "_"
+				+ aiTrg.getInstanceOf().getName() + "_" + siTrg.getName();
 	}
 
 	/**
@@ -229,7 +229,7 @@ public class NameProvider {
 	 * @return the key-string to get an edge type from the edge type map
 	 */
 	public static String getEdgeTypeToStateKey(IntermAgentInstance ai, IntermSiteInstance si) {
-		String key = ai.getInstanceOf().getName().toUpperCase() + "_" + si.getName();
+		String key = ai.getInstanceOf().getName() + "_" + si.getName();
 		IntermSiteState state = si.getState();
 		if (state != null) {
 			key = key + "_" + si.getState().getName();

@@ -1035,10 +1035,10 @@
     </createdEdges>
   </createPatterns>
   <createPatterns name="injectivity">
-    <contextNodes name="a1" incomingEdges="//@createPatterns.16/@createdEdges.1" outgoingEdges="//@createPatterns.16/@createdEdges.0">
+    <contextNodes name="a2" incomingEdges="//@createPatterns.16/@createdEdges.1" outgoingEdges="//@createPatterns.16/@createdEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </contextNodes>
-    <contextNodes name="a2" incomingEdges="//@createPatterns.16/@createdEdges.0" outgoingEdges="//@createPatterns.16/@createdEdges.1">
+    <contextNodes name="a1" incomingEdges="//@createPatterns.16/@createdEdges.0" outgoingEdges="//@createPatterns.16/@createdEdges.1">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </contextNodes>
     <createdEdges sourceNode="//@createPatterns.16/@contextNodes.0" targetNode="//@createPatterns.16/@contextNodes.1">
@@ -1321,13 +1321,13 @@
   </deletePatterns>
   <deletePatterns name="underspecSynth"/>
   <deletePatterns name="concreteSplit">
-    <contextNodes name="a" outgoingEdges="//@deletePatterns.23/@deletedEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </contextNodes>
     <contextNodes name="x" incomingEdges="//@deletePatterns.23/@deletedEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </contextNodes>
-    <deletedEdges sourceNode="//@deletePatterns.23/@contextNodes.0" targetNode="//@deletePatterns.23/@contextNodes.1">
+    <contextNodes name="a" outgoingEdges="//@deletePatterns.23/@deletedEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </contextNodes>
+    <deletedEdges sourceNode="//@deletePatterns.23/@contextNodes.1" targetNode="//@deletePatterns.23/@contextNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b_X_y"/>
     </deletedEdges>
   </deletePatterns>

@@ -38,7 +38,7 @@ public class IBeXCreator {
 		contextCreator = new ContextCreator(model, metamodelPackage);
 		ibexPatternSet = contextCreator.getIBeXPatternSet();
 		changeCreator = new ChangeCreator(model, metamodelPackage, ibexPatternSet);
-		ibexPatternSet = changeCreator.getIBeXPatternSet();	//TODO: Why does this work without adding the patterns of the new pattern set?
+		ibexPatternSet = changeCreator.getIBeXPatternSet();
 	}
 
 	public IBeXPatternSet getIBeXPatternSet() {

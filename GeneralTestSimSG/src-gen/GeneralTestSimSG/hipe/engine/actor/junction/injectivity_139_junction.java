@@ -52,8 +52,8 @@ public class injectivity_139_junction extends GenericJunctionActor{
 	}
 	
 	public boolean check_constraint_2(HMatch match) {
-		TestcasesModel.A a2 = (TestcasesModel.A) match.getNodes()[1];
-		TestcasesModel.A a1 = (TestcasesModel.A) match.getNodes()[0];
+		TestcasesModel.A a1 = (TestcasesModel.A) match.getNodes()[1];
+		TestcasesModel.A a2 = (TestcasesModel.A) match.getNodes()[0];
 		boolean predicate = !a1.equals(a2);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

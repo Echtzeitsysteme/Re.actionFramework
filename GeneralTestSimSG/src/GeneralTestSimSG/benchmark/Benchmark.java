@@ -19,8 +19,9 @@ public class Benchmark {
 		api.configureForDemocles();
 		api.configureStochasticSimulation();
 		SimulationConfigurator config = api.getSimulationConfigurator();
-		config.setModel("TestcasesModel");
-		config.addSimpleTerminationCondition(10000, -1);
+		config.setModel("GKLModel");
+		config.addSimpleTerminationCondition(100000, -1);
+//		config.addSimpleTerminationCondition(10000, -1);
 //		config.addSimpleTerminationCondition(-1, 20.0);
 		config.addObservableStatistic();
 		 

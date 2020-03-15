@@ -12,6 +12,7 @@ import java.util.Map;
 import org.xtext.biochemics.dotDsl.Agent;
 import org.xtext.biochemics.dotDsl.AgentDeclaration;
 import org.xtext.biochemics.dotDsl.ArithmeticExpr;
+import org.xtext.biochemics.dotDsl.Initialisation;
 import org.xtext.biochemics.dotDsl.ReactionModel;
 import org.xtext.biochemics.dotDsl.Rule;
 import org.xtext.biochemics.dotDsl.RuleType;
@@ -30,7 +31,8 @@ public class BNGLFactory {
 	protected List<AgentDeclaration> agentDeclarations;
 	protected Map<String, List<IntermSiteState>> statesInModel;
 	private List<Variable> vars;
-	private List<IntermInitialisation> inits;
+	private List<Initialisation> inits;
+	private List<IntermInitialisation> intermInits;
 	private List<Rule> rules;
 	private List<IntermRule> intermRules;
 	private List<IntermObservable> intermObs;
@@ -59,8 +61,10 @@ public class BNGLFactory {
 
 	private void init() {
 		sb = new StringBuilder("");
+		calculator = new Calculator();
 		vars = ExportUtils.getVariablesFromModel(dslModel);
-		inits = ExportUtils.getInitsFromIntermModel(intermModel);
+		inits = ExportUtils.getInitsFromModel(dslModel);
+		intermInits = ExportUtils.getInitsFromIntermModel(intermModel);
 		agentDeclarations = ExportUtils.getAgentDeclarationsFromModel(dslModel);
 		rules = ExportUtils.getRulesFromModel(dslModel);
 		intermRules = ExportUtils.getRulesFromIntermModel(intermModel);
@@ -94,6 +98,7 @@ public class BNGLFactory {
 
 		for (Variable var : vars) {
 			sb.append("\t" + var.getName() + "\t" + calculator.evaluate(var.getValue()));
+			br();
 		}
 
 		sb.append("end parameters");
@@ -141,9 +146,10 @@ public class BNGLFactory {
 		sb.append("begin species");
 		br();
 
-		for (IntermInitialisation init : inits) {
-			IntermPattern initPattern = init.getInitPattern();
-			int amount = init.getCnt();
+		for (int i = 0; i < intermInits.size(); i++) {
+			IntermInitialisation intermInit = intermInits.get(i);
+			IntermPattern initPattern = intermInit.getInitPattern();
+			ArithmeticExpr amount = inits.get(i).getHead().getCnt();
 			List<IntermAgentInstance> instances = initPattern.getAgentInstances();
 			for (IntermAgentInstance ai : instances) {
 
@@ -165,7 +171,7 @@ public class BNGLFactory {
 
 				// Add amount
 				sb.append("\t");
-				sb.append(amount);
+				sb.append(ArithmeticExpressionConverter.toString(amount));
 				br();
 			}
 		}

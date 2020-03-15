@@ -379,13 +379,13 @@
     </createdEdges>
   </createPatterns>
   <createPatterns name="PT_x">
-    <contextNodes name="t" incomingEdges="//@createPatterns.6/@createdEdges.0">
-      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
-    </contextNodes>
     <contextNodes name="p" outgoingEdges="//@createPatterns.6/@createdEdges.0">
       <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
     </contextNodes>
-    <createdEdges sourceNode="//@createPatterns.6/@contextNodes.1" targetNode="//@createPatterns.6/@contextNodes.0">
+    <contextNodes name="t" incomingEdges="//@createPatterns.6/@createdEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+    </contextNodes>
+    <createdEdges sourceNode="//@createPatterns.6/@contextNodes.0" targetNode="//@createPatterns.6/@contextNodes.1">
       <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_x"/>
     </createdEdges>
   </createPatterns>
@@ -402,13 +402,13 @@
     </createdEdges>
   </createPatterns>
   <createPatterns name="PT_y">
-    <contextNodes name="p" outgoingEdges="//@createPatterns.9/@createdEdges.0">
-      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
-    </contextNodes>
     <contextNodes name="t" incomingEdges="//@createPatterns.9/@createdEdges.0">
       <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
     </contextNodes>
-    <createdEdges sourceNode="//@createPatterns.9/@contextNodes.0" targetNode="//@createPatterns.9/@contextNodes.1">
+    <contextNodes name="p" outgoingEdges="//@createPatterns.9/@createdEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+    </contextNodes>
+    <createdEdges sourceNode="//@createPatterns.9/@contextNodes.1" targetNode="//@createPatterns.9/@contextNodes.0">
       <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_y"/>
     </createdEdges>
   </createPatterns>
@@ -426,13 +426,13 @@
   </createPatterns>
   <deletePatterns name="KT_x"/>
   <deletePatterns name="KT_xBwd">
-    <contextNodes name="k" incomingEdges="//@deletePatterns.1/@deletedEdges.0">
-      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
-    </contextNodes>
     <contextNodes name="t" outgoingEdges="//@deletePatterns.1/@deletedEdges.0">
       <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
     </contextNodes>
-    <deletedEdges sourceNode="//@deletePatterns.1/@contextNodes.1" targetNode="//@deletePatterns.1/@contextNodes.0">
+    <contextNodes name="k" incomingEdges="//@deletePatterns.1/@deletedEdges.0">
+      <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+    </contextNodes>
+    <deletedEdges sourceNode="//@deletePatterns.1/@contextNodes.0" targetNode="//@deletePatterns.1/@contextNodes.1">
       <type href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_K_a"/>
     </deletedEdges>
   </deletePatterns>

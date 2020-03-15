@@ -323,10 +323,6 @@ public class ContextCreator {
 		return edgeTypeRegistry.get(key);
 	}
 
-	private EReference getEdgeTypeToAgent(IntermSiteInstance si, IntermAgentInstance ai) {
-		return getEdgeTypeToAgent(si, ai.getInstanceOf());
-	}
-
 	private EReference getEdgeTypeToState(IntermAgentInstance ai, IntermSiteInstance si) {
 		return edgeTypeRegistry.get(NameProvider.getEdgeTypeToStateKey(ai, si));
 	}
@@ -683,7 +679,20 @@ public class ContextCreator {
 		List<IntermAgentInstance> instances = pattern.getAgentInstances();
 
 		for (IntermAgentInstance ai : instances) {
-			for (IntermSiteInstance si : ai.getSiteInstances()) {
+			
+			List<IntermSiteInstance> siList = ai.getSiteInstances();
+			
+			//only create agent node if the agent does not have any sites
+			if(siList.isEmpty()) {
+				String aiName = ai.getName();
+				IBeXNode node = ModelHelper.getNodeFromContextPattern(contextPattern, aiName);
+				if(node == null) {
+					node = IBeXPatternFactory.createNode(aiName, agentTypeRegistry.get(ai.getInstanceOf().getName()));
+					contextPattern.getSignatureNodes().add(node);
+				}
+			}
+			
+			for (IntermSiteInstance si : siList) {
 
 				// Only create "actively binding" nodes for signature nodes. Local nodes will
 				// and should only be created as passive part to bind signature nodes to

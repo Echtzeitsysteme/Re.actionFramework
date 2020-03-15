@@ -28,7 +28,7 @@ public class ChangeCreator {
 	
 	private void init() {
 		changePatternTemplates = new LinkedList<>();
-		changePatternFactory = ChangePatternFactory.getInstance(metamodelPackage, ibexPatternSet);
+		changePatternFactory = ChangePatternFactory.getInstance(metamodelPackage);
 		generateTemplates();
 		generateChangePatterns();
 	}

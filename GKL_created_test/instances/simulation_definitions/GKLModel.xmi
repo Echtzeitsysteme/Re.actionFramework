@@ -12,7 +12,7 @@
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.17" rate="1.0"/>
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.18" rate="10.0"/>
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.19" rate="1.0"/>
-  <terminationConditions xmi:type="org.simsg:SimpleTerminationCondition" maxSimulationTime="30.0"/>
+  <terminationConditions xmi:type="org.simsg:SimpleTerminationCondition" maxIterations="100"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_T_pp" pattern="//@ibexPatternSet/@contextPatterns.20"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_T_pp_unbound" pattern="//@ibexPatternSet/@contextPatterns.21"/>
   <GtRuleSet xmi:type="GTLanguage:GTRuleSet">
@@ -573,13 +573,13 @@
       </createdEdges>
     </createPatterns>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="PT_x">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" incomingEdges="//@ibexPatternSet/@createPatterns.6/@createdEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
-      </contextNodes>
       <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="p" outgoingEdges="//@ibexPatternSet/@createPatterns.6/@createdEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
       </contextNodes>
-      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.6/@contextNodes.1" targetNode="//@ibexPatternSet/@createPatterns.6/@contextNodes.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" incomingEdges="//@ibexPatternSet/@createPatterns.6/@createdEdges.0">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
+      </contextNodes>
+      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.6/@contextNodes.0" targetNode="//@ibexPatternSet/@createPatterns.6/@contextNodes.1">
         <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_x"/>
       </createdEdges>
     </createPatterns>
@@ -596,13 +596,13 @@
       </createdEdges>
     </createPatterns>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="PT_y">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="p" outgoingEdges="//@ibexPatternSet/@createPatterns.9/@createdEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
-      </contextNodes>
       <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" incomingEdges="//@ibexPatternSet/@createPatterns.9/@createdEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </contextNodes>
-      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.9/@contextNodes.0" targetNode="//@ibexPatternSet/@createPatterns.9/@contextNodes.1">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="p" outgoingEdges="//@ibexPatternSet/@createPatterns.9/@createdEdges.0">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P"/>
+      </contextNodes>
+      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.9/@contextNodes.1" targetNode="//@ibexPatternSet/@createPatterns.9/@contextNodes.0">
         <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//P/P_a_T_y"/>
       </createdEdges>
     </createPatterns>
@@ -620,13 +620,13 @@
     </createPatterns>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="KT_x"/>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="KT_xBwd">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="k" incomingEdges="//@ibexPatternSet/@deletePatterns.1/@deletedEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
-      </contextNodes>
       <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="t" outgoingEdges="//@ibexPatternSet/@deletePatterns.1/@deletedEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T"/>
       </contextNodes>
-      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.1/@contextNodes.1" targetNode="//@ibexPatternSet/@deletePatterns.1/@contextNodes.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="k" incomingEdges="//@ibexPatternSet/@deletePatterns.1/@deletedEdges.0">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//K"/>
+      </contextNodes>
+      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.1/@contextNodes.0" targetNode="//@ibexPatternSet/@deletePatterns.1/@contextNodes.1">
         <type xmi:type="ecore:EReference" href="platform:/resource/GKL_created_test/model/GKLModel.ecore#//T/T_x_K_a"/>
       </deletedEdges>
     </deletePatterns>

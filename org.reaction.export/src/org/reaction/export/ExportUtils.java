@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.eclipse.xtext.EcoreUtil2;
 import org.xtext.biochemics.dotDsl.AgentDeclaration;
+import org.xtext.biochemics.dotDsl.Initialisation;
 import org.xtext.biochemics.dotDsl.ReactionModel;
 import org.xtext.biochemics.dotDsl.Rule;
 import org.xtext.biochemics.dotDsl.Variable;
@@ -68,6 +69,11 @@ public class ExportUtils {
 		return EcoreUtil2.getAllContentsOfType(intermModel, IntermRule.class);
 	}
 
+
+	public static List<Initialisation> getInitsFromModel(ReactionModel dslModel) {
+		return EcoreUtil2.getAllContentsOfType(dslModel, Initialisation.class);
+	}
+	
 	public static List<IntermInitialisation> getInitsFromIntermModel(IntermediateModel intermModel) {
 		return EcoreUtil2.getAllContentsOfType(intermModel, IntermInitialisation.class);
 	}

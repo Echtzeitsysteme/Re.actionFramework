@@ -1,5 +1,9 @@
 begin model
 
+begin parameters
+	initAmount	100.0
+end parameters
+
 begin molecule types
 	K(a)
 	P(a)
@@ -7,9 +11,9 @@ begin molecule types
 end molecule types
 
 begin species
-	P(a)	100
-	T(x~u,y~u)	100
-	K(a)	100
+	P(a)	initAmount
+	T(x~u,y~u)	initAmount
+	K(a)	initAmount
 end species
 
 begin reaction rules
@@ -34,4 +38,4 @@ end model
 
 generate_network({overwrite=>1})
 
-simulate({method=>"ssa", t_end=>30, n_steps=>30})
+simulate({method=>"ssa", t_end=>50, n_steps=>50})

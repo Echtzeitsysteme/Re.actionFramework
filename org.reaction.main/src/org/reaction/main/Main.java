@@ -26,11 +26,17 @@ public class Main {
 		ReactionContainerPackage.eINSTANCE.eClass();
 		
 		// Load Model
-//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\bin\\Testcases.xmi";
+//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Testcases.xmi";
 //		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
 		
-		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\bin\\GKL.xmi";
-		final String trgProjectLocation = "..\\..\\re.actionFramework\\GKL_created_test";
+//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Testcases.xmi";
+//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
+		
+//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\GKL.xmi";
+//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GKL_created_test";
+		
+		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Alzheimer.xmi";
+		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\GSK3b";
 		
 		final String userDir = System.getProperty("user.dir");
 		final String tempModels = userDir + "/models/";

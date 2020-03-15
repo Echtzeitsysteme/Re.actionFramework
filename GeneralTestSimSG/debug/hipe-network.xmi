@@ -249,7 +249,7 @@
     <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="x" value="2"/>
     <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="ps" value="3"/>
   </networknode>
-  <networknode xmi:type="hipe.network:JunctionNode" name="simpleBindingBwd_46_junction" inputPort="//@networknode.201/@ports/@port.0 //@networknode.189/@ports/@port.1" patternName="simpleBindingBwd_46">
+  <networknode xmi:type="hipe.network:JunctionNode" name="simpleBindingBwd_46_junction" inputPort="//@networknode.189/@ports/@port.1 //@networknode.201/@ports/@port.0" patternName="simpleBindingBwd_46">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.26"/>
     </ports>
@@ -323,8 +323,8 @@
     <overlaps xmi:type="hipe.network:Overlaps"/>
   </networknode>
   <networknode xmi:type="hipe.network:ProductionNode" name="simpleBindingBwd_production" inputPort="//@networknode.33/@ports/@port.0" patternName="simpleBindingBwd">
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="ps" value="0"/>
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="a" value="1"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="a" value="0"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="ps" value="1"/>
     <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="x" value="2"/>
     <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="us" value="3"/>
   </networknode>
@@ -593,7 +593,7 @@
     <signatureElts xmi:type="hipe.network:IntegerToIntegerMapEntry" key="1" value="1"/>
     <signatureElts xmi:type="hipe.network:IntegerToIntegerMapEntry" key="3" value="2"/>
   </networknode>
-  <networknode xmi:type="hipe.network:JunctionNode" name="unspec_98_junction" inputPort="//@networknode.197/@ports/@port.2 //@networknode.187/@ports/@port.2" patternName="unspec_98">
+  <networknode xmi:type="hipe.network:JunctionNode" name="unspec_98_junction" inputPort="//@networknode.187/@ports/@port.2 //@networknode.197/@ports/@port.2" patternName="unspec_98">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portSlot="CENTER" portTarget="//@networknode.67"/>
     </ports>
@@ -604,8 +604,8 @@
     </mappings>
   </networknode>
   <networknode xmi:type="hipe.network:ProductionNode" name="unspec_production" inputPort="//@networknode.66/@ports/@port.0" patternName="unspec">
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="us" value="0"/>
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="a" value="1"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="a" value="0"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="us" value="1"/>
   </networknode>
   <networknode xmi:type="hipe.network:JunctionNode" name="unspecTest_101_junction" inputPort="//@networknode.195/@ports/@port.1 //@networknode.188/@ports/@port.2" patternName="unspecTest_101">
     <ports xmi:type="hipe.network:Ports">
@@ -813,8 +813,8 @@
         <indices>0</indices>
         <types xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
         <types xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-        <nodeNames>a2</nodeNames>
         <nodeNames>a1</nodeNames>
+        <nodeNames>a2</nodeNames>
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="hipe-patterns.xmi#//@patterns.185"/>
       </port>
     </ports>
@@ -921,8 +921,8 @@
   </networknode>
   <networknode xmi:type="hipe.network:ProductionNode" name="injectivity_production" inputPort="//@networknode.107/@ports/@port.0" patternName="injectivity">
     <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="x" value="0"/>
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="a1" value="1"/>
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="a2" value="2"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="a2" value="1"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="a1" value="2"/>
   </networknode>
   <networknode xmi:type="hipe.network:JunctionNode" name="injectivityBwd_144_junction" inputPort="//@networknode.8/@ports/@port.12 //@networknode.8/@ports/@port.13" patternName="injectivityBwd_144">
     <ports xmi:type="hipe.network:Ports">
@@ -1408,7 +1408,7 @@
   <networknode xmi:type="hipe.network:ProductionNode" name="obs_xFree_production" inputPort="//@networknode.183/@ports/@port.0" patternName="obs_xFree">
     <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="x" value="0"/>
   </networknode>
-  <networknode xmi:type="hipe.network:JunctionNode" name="obs_ax_197_junction" inputPort="//@networknode.194/@ports/@port.3 //@networknode.191/@ports/@port.3" patternName="obs_ax_197">
+  <networknode xmi:type="hipe.network:JunctionNode" name="obs_ax_197_junction" inputPort="//@networknode.191/@ports/@port.3 //@networknode.194/@ports/@port.3" patternName="obs_ax_197">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portSlot="CENTER" portTarget="//@networknode.186"/>
     </ports>
@@ -1419,14 +1419,14 @@
     </mappings>
   </networknode>
   <networknode xmi:type="hipe.network:ProductionNode" name="obs_ax_production" inputPort="//@networknode.185/@ports/@port.0" patternName="obs_ax">
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="x" value="0"/>
-    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="a" value="1"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="a" value="0"/>
+    <labelToIndex xmi:type="hipe.network:StringToIntegerMapEntry" key="x" value="1"/>
   </networknode>
   <networknode xmi:type="hipe.network:ObjectNode" name="A_object_SP0" dispatchnode="//@networknode.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.2"/>
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.14"/>
-      <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.66"/>
+      <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.66"/>
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.120"/>
     </ports>
     <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
@@ -1443,7 +1443,7 @@
   <networknode xmi:type="hipe.network:ObjectNode" name="A_object_SP2" dispatchnode="//@networknode.0">
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.5"/>
-      <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.24"/>
+      <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.24"/>
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.83"/>
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.157"/>
     </ports>
@@ -1468,7 +1468,7 @@
         <pattern xmi:type="HiPEPattern:HiPEPartialPattern" href="hipe-patterns.xmi#//@patterns.101"/>
       </port>
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.92"/>
-      <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.185"/>
+      <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.185"/>
     </ports>
     <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
   </networknode>
@@ -1494,7 +1494,7 @@
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.11"/>
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.25"/>
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.133"/>
-      <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.185"/>
+      <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.185"/>
     </ports>
     <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
   </networknode>
@@ -1518,7 +1518,7 @@
     <ports xmi:type="hipe.network:Ports">
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.22"/>
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.39"/>
-      <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.66"/>
+      <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.66"/>
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.123"/>
     </ports>
     <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
@@ -1550,7 +1550,7 @@
   </networknode>
   <networknode xmi:type="hipe.network:ObjectNode" name="P_s_object_SP1" dispatchnode="//@networknode.0">
     <ports xmi:type="hipe.network:Ports">
-      <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.24"/>
+      <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.24"/>
       <port xmi:type="hipe.network:SimplePort" portSlot="RIGHT" portTarget="//@networknode.50"/>
       <port xmi:type="hipe.network:SimplePort" portTarget="//@networknode.90"/>
     </ports>

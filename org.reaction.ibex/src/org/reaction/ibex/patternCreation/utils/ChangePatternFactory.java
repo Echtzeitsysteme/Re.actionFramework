@@ -36,8 +36,6 @@ public class ChangePatternFactory {
 
 	private IBeXLanguageFactory ibexFactory = IBeXLanguageFactory.eINSTANCE;
 
-	private IBeXPatternSet ibexPatternSet;
-
 	private Map<String, EClassImpl> agentTypeRegistry;
 	private Map<String, EReference> edgeTypeRegistry;
 	private Map<String, EClassImpl> stateTypeRegistry;
@@ -46,10 +44,9 @@ public class ChangePatternFactory {
 	private Map<IntermAgentInstance, IntermAgentInstance> changesMap;
 	private List<IntermAgentInstance> createdInstances;
 
-	private ChangePatternFactory(EPackage metamodelPackage, IBeXPatternSet ibexPatternSet) {
+	private ChangePatternFactory(EPackage metamodelPackage) {
 		created = true;
 		this.metamodelPackage = metamodelPackage;
-		this.ibexPatternSet = ibexPatternSet;
 		init();
 	}
 
@@ -650,9 +647,9 @@ public class ChangePatternFactory {
 		return deletePattern;
 	}
 
-	public static ChangePatternFactory getInstance(EPackage metamodelPackage, IBeXPatternSet ibexPatternSet) {
+	public static ChangePatternFactory getInstance(EPackage metamodelPackage) {
 		if (created == false) {
-			return new ChangePatternFactory(metamodelPackage, ibexPatternSet);
+			return new ChangePatternFactory(metamodelPackage);
 		} else {
 			return null;
 		}

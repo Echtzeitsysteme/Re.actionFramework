@@ -1,0 +1,1346 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecoreBCModel:IntermediateModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecoreBCModel="platform:/resource/EcoreBCModel/model/ecoreBCModel.ecore" name="Alzheimer">
+  <components xsi:type="ecoreBCModel:IntermAgent" name="NFT"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="P53mRNA"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="ATP"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="Mdm2">
+    <sites name="z" parent="Mdm2">
+      <siteStates name="u"/>
+      <siteStates name="p"/>
+    </sites>
+    <sites name="ubi" parent="Mdm2">
+      <siteStates name="unb"/>
+      <siteStates name="ub1"/>
+      <siteStates name="ub2"/>
+      <siteStates name="ub3"/>
+      <siteStates name="ub4"/>
+    </sites>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="P53DUB"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="ROS"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="AbetaPlaque"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="Abeta"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="Tau">
+    <sites name="phos" parent="Tau">
+      <siteStates name="u"/>
+      <siteStates name="p1"/>
+      <siteStates name="p2"/>
+    </sites>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="Proteasome">
+    <sites name="x" parent="Proteasome"/>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="DamDNA"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="Mdm2DUB"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="AMP"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="BasalROS"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="ATMI"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="ADP"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="GSK3b">
+    <sites name="x" parent="GSK3b"/>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="AggTau">
+    <sites name="y" parent="AggTau"/>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="Ub"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="P53">
+    <sites name="b" parent="P53">
+      <siteStates name="u"/>
+      <siteStates name="p"/>
+      <siteStates name="ub1"/>
+      <siteStates name="ub2"/>
+      <siteStates name="ub3"/>
+      <siteStates name="ub4"/>
+    </sites>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="AggAbeta">
+    <sites name="y" parent="AggAbeta"/>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="E2">
+    <sites name="x" parent="E2">
+      <siteStates name="unb"/>
+      <siteStates name="ubi"/>
+    </sites>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="IR"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="ATMA"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="E1">
+    <sites name="x" parent="E1">
+      <siteStates name="unb"/>
+      <siteStates name="ubi"/>
+    </sites>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="PPT"/>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="Mdm2mRNA">
+    <sites name="x" parent="Mdm2mRNA"/>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="MT">
+    <sites name="l" parent="MT"/>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="95" initPattern="//@patternContainer/@patterns.3"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="100" initPattern="//@patternContainer/@patterns.8"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="200" initPattern="//@patternContainer/@patterns.12"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="1000" initPattern="//@patternContainer/@patterns.16"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="200" initPattern="//@patternContainer/@patterns.10"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="5" initPattern="//@patternContainer/@patterns.2"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="10" initPattern="//@patternContainer/@patterns.5"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="10000" initPattern="//@patternContainer/@patterns.15"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="500" initPattern="//@patternContainer/@patterns.0"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="4000" initPattern="//@patternContainer/@patterns.6"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="100" initPattern="//@patternContainer/@patterns.7"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="100" initPattern="//@patternContainer/@patterns.14"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="200" initPattern="//@patternContainer/@patterns.9"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="10" initPattern="//@patternContainer/@patterns.13"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="10" initPattern="//@patternContainer/@patterns.4"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="1000" initPattern="//@patternContainer/@patterns.17"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="5" initPattern="//@patternContainer/@patterns.1"/>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="500" initPattern="//@patternContainer/@patterns.11"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="GSK3b_p53" rate="2.0E-6" lhs="//@patternContainer/@patterns.18" rhs="//@patternContainer/@patterns.19"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="GSK3b_p53Bwd" rate="0.002" lhs="//@patternContainer/@patterns.19" rhs="//@patternContainer/@patterns.18"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="Mdm2mRNASynthesis" rate="7.0E-4" lhs="//@patternContainer/@patterns.20" rhs="//@patternContainer/@patterns.21"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="Mdm2GSK3Phospho1" rate="0.005" lhs="//@patternContainer/@patterns.22" rhs="//@patternContainer/@patterns.23"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="Mdm2GSK3Phospho2_3" rate="0.5" lhs="//@patternContainer/@patterns.24" rhs="//@patternContainer/@patterns.25"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauSynthesis" rate="8.0E-5" lhs="//@patternContainer/@patterns.26" rhs="//@patternContainer/@patterns.27"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="Proteasome_Tau" rate="1.93E-4" lhs="//@patternContainer/@patterns.28" rhs="//@patternContainer/@patterns.29"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauDegradation" rate="0.01" lhs="//@patternContainer/@patterns.30" rhs="//@patternContainer/@patterns.31"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauMT" rate="0.1" lhs="//@patternContainer/@patterns.32" rhs="//@patternContainer/@patterns.33"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauMTBwd" rate="1.0E-4" lhs="//@patternContainer/@patterns.33" rhs="//@patternContainer/@patterns.32"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauPhosphorylation1_3" rate="0.1" lhs="//@patternContainer/@patterns.34" rhs="//@patternContainer/@patterns.35"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauPhosphorylation2_4" rate="0.1" lhs="//@patternContainer/@patterns.36" rhs="//@patternContainer/@patterns.37"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauPhosphorylation5" rate="2.0E-4" lhs="//@patternContainer/@patterns.38" rhs="//@patternContainer/@patterns.39"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauPhosphorylation6" rate="2.0E-4" lhs="//@patternContainer/@patterns.40" rhs="//@patternContainer/@patterns.41"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauDephosphorylation" rate="0.01" lhs="//@patternContainer/@patterns.42" rhs="//@patternContainer/@patterns.43"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauAgg1" rate="1.0E-8" lhs="//@patternContainer/@patterns.44" rhs="//@patternContainer/@patterns.45"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauAgg2" rate="1.0E-8" lhs="//@patternContainer/@patterns.46" rhs="//@patternContainer/@patterns.47"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauP1Agg1" rate="1.0E-8" lhs="//@patternContainer/@patterns.48" rhs="//@patternContainer/@patterns.49"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauP1Agg2" rate="1.0E-8" lhs="//@patternContainer/@patterns.50" rhs="//@patternContainer/@patterns.51"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauP2Agg1" rate="1.0E-7" lhs="//@patternContainer/@patterns.52" rhs="//@patternContainer/@patterns.53"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="TauP2Agg2" rate="1.0E-7" lhs="//@patternContainer/@patterns.54" rhs="//@patternContainer/@patterns.55"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="tangleForm1" rate="0.001" lhs="//@patternContainer/@patterns.56" rhs="//@patternContainer/@patterns.57"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="tangleForm2" rate="0.001" lhs="//@patternContainer/@patterns.58" rhs="//@patternContainer/@patterns.59"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="ProteasomeInhibitionAggTau" rate="1.0E-5" lhs="//@patternContainer/@patterns.60" rhs="//@patternContainer/@patterns.61"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="AbetaProduction" rate="5.0E-5" lhs="//@patternContainer/@patterns.62" rhs="//@patternContainer/@patterns.63"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="AbetaDegradation" rate="5.0E-5" lhs="//@patternContainer/@patterns.64" rhs="//@patternContainer/@patterns.65"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="AbetaAgg1" rate="1.0E-8" lhs="//@patternContainer/@patterns.66" rhs="//@patternContainer/@patterns.67"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="AbetaAgg2" rate="1.0E-8" lhs="//@patternContainer/@patterns.68" rhs="//@patternContainer/@patterns.69"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="AbetaPlaque1" rate="0.001" lhs="//@patternContainer/@patterns.70" rhs="//@patternContainer/@patterns.71"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="AbetaPlaque2" rate="0.001" lhs="//@patternContainer/@patterns.72" rhs="//@patternContainer/@patterns.73"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="ProteasomeInhibitionAggAbeta" rate="1.0E-5" lhs="//@patternContainer/@patterns.74" rhs="//@patternContainer/@patterns.75"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53Transcription" rate="1.0E-5" lhs="//@patternContainer/@patterns.76" rhs="//@patternContainer/@patterns.77"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="AbetaROSProduction" rate="1.0E-5" lhs="//@patternContainer/@patterns.78" rhs="//@patternContainer/@patterns.79"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53Synthesis" rate="0.007" lhs="//@patternContainer/@patterns.80" rhs="//@patternContainer/@patterns.81"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53_Mdm2" rate="0.001155" lhs="//@patternContainer/@patterns.82" rhs="//@patternContainer/@patterns.83"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53_Mdm2Bwd" rate="0.0116" lhs="//@patternContainer/@patterns.83" rhs="//@patternContainer/@patterns.82"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="E1Ub" rate="2.0E-4" lhs="//@patternContainer/@patterns.84" rhs="//@patternContainer/@patterns.85"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="E2Ub" rate="0.001" lhs="//@patternContainer/@patterns.86" rhs="//@patternContainer/@patterns.87"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53Ubiquitination" rate="5.0E-5" lhs="//@patternContainer/@patterns.88" rhs="//@patternContainer/@patterns.89"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53PolyUbiquitination1" rate="0.01" lhs="//@patternContainer/@patterns.90" rhs="//@patternContainer/@patterns.91"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53PolyUbiquitination2" rate="0.01" lhs="//@patternContainer/@patterns.92" rhs="//@patternContainer/@patterns.93"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53PolyUbiquitination3" rate="0.01" lhs="//@patternContainer/@patterns.94" rhs="//@patternContainer/@patterns.95"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53DeUbiquitination" rate="1.0E-7" lhs="//@patternContainer/@patterns.96" rhs="//@patternContainer/@patterns.97"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53PolyDeUbiquitination2" rate="1.0E-7" lhs="//@patternContainer/@patterns.98" rhs="//@patternContainer/@patterns.99"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53PolyDeUbiquitination3" rate="1.0E-7" lhs="//@patternContainer/@patterns.100" rhs="//@patternContainer/@patterns.101"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53PolyDeUbiquitination4" rate="1.0E-7" lhs="//@patternContainer/@patterns.102" rhs="//@patternContainer/@patterns.103"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53ProteasomeBinding" rate="2.0E-6" lhs="//@patternContainer/@patterns.104" rhs="//@patternContainer/@patterns.105"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53Degradation" rate="0.005" lhs="//@patternContainer/@patterns.106" rhs="//@patternContainer/@patterns.107"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="mdm2mRNASynthesis" rate="5.0E-4" lhs="//@patternContainer/@patterns.108" rhs="//@patternContainer/@patterns.109"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="mdm2mRNADegradation" rate="5.0E-4" lhs="//@patternContainer/@patterns.110" rhs="//@patternContainer/@patterns.111"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="Mdm2Synthesis" rate="4.95E-4" lhs="//@patternContainer/@patterns.112" rhs="//@patternContainer/@patterns.113"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="mdm2Ubiquination" rate="4.56E-6" lhs="//@patternContainer/@patterns.114" rhs="//@patternContainer/@patterns.115"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="mdm2PolyUbiquination1" rate="0.00456" lhs="//@patternContainer/@patterns.116" rhs="//@patternContainer/@patterns.117"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="mdm2PolyUbiquination2" rate="0.00456" lhs="//@patternContainer/@patterns.118" rhs="//@patternContainer/@patterns.119"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="mdm2PolyUbiquination3" rate="0.00456" lhs="//@patternContainer/@patterns.120" rhs="//@patternContainer/@patterns.121"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="mdm2deubiquination" rate="1.0E-7" lhs="//@patternContainer/@patterns.122" rhs="//@patternContainer/@patterns.123"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="mdm2polyDeubiquination1" rate="1.0E-7" lhs="//@patternContainer/@patterns.124" rhs="//@patternContainer/@patterns.125"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="mdm2polyDeubiquination2" rate="1.0E-7" lhs="//@patternContainer/@patterns.126" rhs="//@patternContainer/@patterns.127"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="mdm2polyDeubiquination3" rate="1.0E-7" lhs="//@patternContainer/@patterns.128" rhs="//@patternContainer/@patterns.129"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="Mdm2ProteasomeBind" rate="2.0E-6" lhs="//@patternContainer/@patterns.130" rhs="//@patternContainer/@patterns.131"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="Mdm2Degradation" rate="0.01" lhs="//@patternContainer/@patterns.132" rhs="//@patternContainer/@patterns.133"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="ATMActivation" rate="1.0E-4" lhs="//@patternContainer/@patterns.134" rhs="//@patternContainer/@patterns.135"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="ATMInactivation" rate="5.0E-4" lhs="//@patternContainer/@patterns.136" rhs="//@patternContainer/@patterns.137"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53Phospho" rate="2.0E-4" lhs="//@patternContainer/@patterns.138" rhs="//@patternContainer/@patterns.139"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="P53DePhospho" rate="0.5" lhs="//@patternContainer/@patterns.140" rhs="//@patternContainer/@patterns.141"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="Mdm2Phospho" rate="2.0" lhs="//@patternContainer/@patterns.142" rhs="//@patternContainer/@patterns.143"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="Mdm2DePhospho" rate="0.5" lhs="//@patternContainer/@patterns.144" rhs="//@patternContainer/@patterns.145"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="p53mRNASynthesis" rate="0.001" lhs="//@patternContainer/@patterns.146" rhs="//@patternContainer/@patterns.147"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="p53mRNADegradation" rate="1.0E-4" lhs="//@patternContainer/@patterns.148" rhs="//@patternContainer/@patterns.149"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="IRDamage" rate="0.08" lhs="//@patternContainer/@patterns.150" rhs="//@patternContainer/@patterns.151"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="DNARepair" rate="2.0E-5" lhs="//@patternContainer/@patterns.152" rhs="//@patternContainer/@patterns.153"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="ROSDamage" rate="1.0E-5" lhs="//@patternContainer/@patterns.154" rhs="//@patternContainer/@patterns.155"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="BasalROSDamage" rate="1.0E-9" lhs="//@patternContainer/@patterns.156" rhs="//@patternContainer/@patterns.157"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="obs_mdm2" obsPattern="//@patternContainer/@patterns.158"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="obs_mdm2mRNA" obsPattern="//@patternContainer/@patterns.159"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="obs_mdm2DUB" obsPattern="//@patternContainer/@patterns.160"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="obs_p53" obsPattern="//@patternContainer/@patterns.161"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="obs_p53mRNA" obsPattern="//@patternContainer/@patterns.162"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="obs_p53DUB" obsPattern="//@patternContainer/@patterns.163"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="obs_p53gsk" obsPattern="//@patternContainer/@patterns.164"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="obs_damDNA" obsPattern="//@patternContainer/@patterns.165"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="obs_tauTangle" obsPattern="//@patternContainer/@patterns.166"/>
+  <components xsi:type="ecoreBCModel:IntermObservable" name="obs_abetaPlaque" obsPattern="//@patternContainer/@patterns.167"/>
+  <patternContainer>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.0/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" bindingState="FREE" name="b" state="//@components.19/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.1/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" bindingState="FREE" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.2/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.2/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.3/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.3/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.3/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.3/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.3/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="Mdm2mRNA" name="mdm2mRna">
+        <siteInstances instanceOf="//@components.26/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.4/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="P53mRNA" name="p53mRna"/>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="Ub" name="ub"/>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="E1" name="e1">
+        <siteInstances instanceOf="//@components.24/@sites.0" bindingState="FREE" name="x" state="//@components.24/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.7/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.8/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="P53DUB" name="p53Dub"/>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="Mdm2DUB" name="mdm2Dub"/>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.11/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="ATMI" name="atmi"/>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="BasalROS" name="basalRos"/>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="MT" name="mt">
+        <siteInstances instanceOf="//@components.27/@sites.0" boundTo="//@patternContainer/@patterns.14/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="l" parent="//@patternContainer/@patterns.14/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" boundTo="//@patternContainer/@patterns.14/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="phos" state="//@components.8/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.14/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="ATP" name="atp"/>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="ADP" name="adp"/>
+    </patterns>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="AMP" name="amp"/>
+    </patterns>
+    <patterns name="GSK3b_p53Lhs">
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.18/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.18/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="GSK3b_p53Rhs">
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" boundTo="//@patternContainer/@patterns.19/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.19/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.19/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.19/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2mRNASynthesisLhs">
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" boundTo="//@patternContainer/@patterns.20/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.20/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.20/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.20/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2mRNASynthesisRhs">
+      <agentInstances instanceOf="Mdm2mRNA" name="mdm2mRNA">
+        <siteInstances instanceOf="//@components.26/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.21/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" boundTo="//@patternContainer/@patterns.21/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.21/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.21/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.21/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2GSK3Phospho1Lhs">
+      <agentInstances instanceOf="P53" name="p53_1">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.22/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.5" parent="//@patternContainer/@patterns.22/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.22/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.22/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.22/@agentInstances.2"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.22/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2GSK3Phospho1Rhs">
+      <agentInstances instanceOf="P53" name="p53_1">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.23/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.5" parent="//@patternContainer/@patterns.23/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.23/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.23/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.23/@agentInstances.2"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.23/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2GSK3Phospho2_3Lhs">
+      <agentInstances instanceOf="P53" name="p53_2">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.24/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.24/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53_1">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.24/@agentInstances.3/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.5" parent="//@patternContainer/@patterns.24/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" boundTo="//@patternContainer/@patterns.24/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.24/@agentInstances.2"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.24/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.24/@agentInstances.3"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.24/@agentInstances.3"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2GSK3Phospho2_3Rhs">
+      <agentInstances instanceOf="P53" name="p53_2">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.25/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.25/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53_1">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.25/@agentInstances.3/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.5" parent="//@patternContainer/@patterns.25/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" boundTo="//@patternContainer/@patterns.25/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.25/@agentInstances.2"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.25/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.25/@agentInstances.3"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.25/@agentInstances.3"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauSynthesisLhs"/>
+    <patterns name="TauSynthesisRhs">
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" parent="//@patternContainer/@patterns.27/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Proteasome_TauLhs">
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.28/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.28/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Proteasome_TauRhs">
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" boundTo="//@patternContainer/@patterns.29/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.29/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" boundTo="//@patternContainer/@patterns.29/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="phos" state="//@components.8/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.29/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauDegradationLhs">
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" boundTo="//@patternContainer/@patterns.30/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.30/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" boundTo="//@patternContainer/@patterns.30/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="phos" state="//@components.8/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.30/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauDegradationRhs">
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.31/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauMTLhs">
+      <agentInstances instanceOf="MT" name="mt">
+        <siteInstances instanceOf="//@components.27/@sites.0" bindingState="FREE" name="l" parent="//@patternContainer/@patterns.32/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.32/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauMTRhs">
+      <agentInstances instanceOf="MT" name="mt">
+        <siteInstances instanceOf="//@components.27/@sites.0" boundTo="//@patternContainer/@patterns.33/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="l" parent="//@patternContainer/@patterns.33/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" boundTo="//@patternContainer/@patterns.33/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="phos" state="//@components.8/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.33/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauPhosphorylation1_3Lhs">
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.34/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" boundTo="//@patternContainer/@patterns.34/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.34/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.34/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.34/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauPhosphorylation1_3Rhs">
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.35/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" boundTo="//@patternContainer/@patterns.35/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.35/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.35/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.35/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauPhosphorylation2_4Lhs">
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.36/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" boundTo="//@patternContainer/@patterns.36/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.36/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.36/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.36/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauPhosphorylation2_4Rhs">
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.2" parent="//@patternContainer/@patterns.37/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" boundTo="//@patternContainer/@patterns.37/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.37/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.37/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.37/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauPhosphorylation5Lhs">
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.38/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.38/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauPhosphorylation5Rhs">
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.39/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.39/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauPhosphorylation6Lhs">
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.40/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.40/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauPhosphorylation6Rhs">
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.2" parent="//@patternContainer/@patterns.41/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.41/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauDephosphorylationLhs">
+      <agentInstances instanceOf="PPT" name="ppt"/>
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.2" parent="//@patternContainer/@patterns.42/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauDephosphorylationRhs">
+      <agentInstances instanceOf="PPT" name="ppt"/>
+      <agentInstances instanceOf="Tau" name="tau">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.43/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauAgg1Lhs">
+      <agentInstances instanceOf="Tau" name="tau2">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" parent="//@patternContainer/@patterns.44/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Tau" name="tau1">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.44/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauAgg1Rhs">
+      <agentInstances instanceOf="AggTau" name="agg2">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.45/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="AggTau" name="agg1">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.45/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauAgg2Lhs">
+      <agentInstances instanceOf="AggTau" name="agg1">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.46/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Tau" name="tau1">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.46/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauAgg2Rhs">
+      <agentInstances instanceOf="AggTau" name="agg2">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.47/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="AggTau" name="agg1">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.47/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauP1Agg1Lhs">
+      <agentInstances instanceOf="Tau" name="tau2">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" parent="//@patternContainer/@patterns.48/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Tau" name="tau1">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.48/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauP1Agg1Rhs">
+      <agentInstances instanceOf="AggTau" name="agg2">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.49/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="AggTau" name="agg1">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.49/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauP1Agg2Lhs">
+      <agentInstances instanceOf="AggTau" name="agg1">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.50/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Tau" name="tau1">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.50/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauP1Agg2Rhs">
+      <agentInstances instanceOf="AggTau" name="agg2">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.51/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="AggTau" name="agg1">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.51/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauP2Agg1Lhs">
+      <agentInstances instanceOf="Tau" name="tau2">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" parent="//@patternContainer/@patterns.52/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Tau" name="tau1">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.2" parent="//@patternContainer/@patterns.52/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauP2Agg1Rhs">
+      <agentInstances instanceOf="AggTau" name="agg2">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.53/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="AggTau" name="agg1">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.53/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauP2Agg2Lhs">
+      <agentInstances instanceOf="AggTau" name="agg1">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.54/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Tau" name="tau1">
+        <siteInstances instanceOf="//@components.8/@sites.0" bindingState="FREE" name="phos" state="//@components.8/@sites.0/@siteStates.2" parent="//@patternContainer/@patterns.54/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="TauP2Agg2Rhs">
+      <agentInstances instanceOf="AggTau" name="agg2">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.55/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="AggTau" name="agg1">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.55/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="tangleForm1Lhs">
+      <agentInstances instanceOf="AggTau" name="agg2">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.56/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="AggTau" name="agg1">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.56/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="tangleForm1Rhs">
+      <agentInstances instanceOf="NFT" name="nft2"/>
+      <agentInstances instanceOf="NFT" name="nft1"/>
+    </patterns>
+    <patterns name="tangleForm2Lhs">
+      <agentInstances instanceOf="NFT" name="nft1"/>
+      <agentInstances instanceOf="AggTau" name="agg1">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.58/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="tangleForm2Rhs">
+      <agentInstances instanceOf="NFT" name="nft2"/>
+      <agentInstances instanceOf="NFT" name="nft1"/>
+    </patterns>
+    <patterns name="ProteasomeInhibitionAggTauLhs">
+      <agentInstances instanceOf="AggTau" name="agg">
+        <siteInstances instanceOf="//@components.17/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.60/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.60/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="ProteasomeInhibitionAggTauRhs">
+      <agentInstances instanceOf="AggTau" name="agg">
+        <siteInstances instanceOf="//@components.17/@sites.0" boundTo="//@patternContainer/@patterns.61/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.61/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" boundTo="//@patternContainer/@patterns.61/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.61/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="AbetaProductionLhs">
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" boundTo="//@patternContainer/@patterns.62/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.62/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.62/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.62/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="AbetaProductionRhs">
+      <agentInstances instanceOf="Abeta" name="abeta"/>
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" boundTo="//@patternContainer/@patterns.63/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.63/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.63/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.63/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="AbetaDegradationLhs">
+      <agentInstances instanceOf="Abeta" name="abeta"/>
+    </patterns>
+    <patterns name="AbetaDegradationRhs"/>
+    <patterns name="AbetaAgg1Lhs">
+      <agentInstances instanceOf="Abeta" name="abeta1"/>
+      <agentInstances instanceOf="Abeta" name="abeta2"/>
+    </patterns>
+    <patterns name="AbetaAgg1Rhs">
+      <agentInstances instanceOf="AggAbeta" name="agg1">
+        <siteInstances instanceOf="//@components.20/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.67/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="AbetaAgg2Lhs">
+      <agentInstances instanceOf="Abeta" name="abeta1"/>
+      <agentInstances instanceOf="AggAbeta" name="agg1">
+        <siteInstances instanceOf="//@components.20/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.68/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="AbetaAgg2Rhs">
+      <agentInstances instanceOf="AggAbeta" name="agg2">
+        <siteInstances instanceOf="//@components.20/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.69/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="AggAbeta" name="agg1">
+        <siteInstances instanceOf="//@components.20/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.69/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="AbetaPlaque1Lhs">
+      <agentInstances instanceOf="AggAbeta" name="agg2">
+        <siteInstances instanceOf="//@components.20/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.70/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="AggAbeta" name="agg1">
+        <siteInstances instanceOf="//@components.20/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.70/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="AbetaPlaque1Rhs">
+      <agentInstances instanceOf="AbetaPlaque" name="plaque1"/>
+      <agentInstances instanceOf="AbetaPlaque" name="plaque2"/>
+    </patterns>
+    <patterns name="AbetaPlaque2Lhs">
+      <agentInstances instanceOf="AbetaPlaque" name="plaque1"/>
+      <agentInstances instanceOf="AggAbeta" name="agg1">
+        <siteInstances instanceOf="//@components.20/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.72/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="AbetaPlaque2Rhs">
+      <agentInstances instanceOf="AbetaPlaque" name="plaque1"/>
+      <agentInstances instanceOf="AbetaPlaque" name="plaque2"/>
+    </patterns>
+    <patterns name="ProteasomeInhibitionAggAbetaLhs">
+      <agentInstances instanceOf="AggAbeta" name="agg">
+        <siteInstances instanceOf="//@components.20/@sites.0" bindingState="FREE" name="y" parent="//@patternContainer/@patterns.74/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.74/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="ProteasomeInhibitionAggAbetaRhs">
+      <agentInstances instanceOf="AggAbeta" name="agg">
+        <siteInstances instanceOf="//@components.20/@sites.0" boundTo="//@patternContainer/@patterns.75/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="y" parent="//@patternContainer/@patterns.75/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" boundTo="//@patternContainer/@patterns.75/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.75/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53TranscriptionLhs">
+      <agentInstances instanceOf="Abeta" name="abeta"/>
+    </patterns>
+    <patterns name="P53TranscriptionRhs">
+      <agentInstances instanceOf="Abeta" name="abeta"/>
+      <agentInstances instanceOf="P53mRNA" name="p53mRNA"/>
+    </patterns>
+    <patterns name="AbetaROSProductionLhs">
+      <agentInstances instanceOf="AggAbeta" name="agg">
+        <siteInstances instanceOf="//@components.20/@sites.0" name="y" parent="//@patternContainer/@patterns.78/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="AbetaROSProductionRhs">
+      <agentInstances instanceOf="AggAbeta" name="agg">
+        <siteInstances instanceOf="//@components.20/@sites.0" name="y" parent="//@patternContainer/@patterns.79/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53mRNA" name="p53mRNA"/>
+    </patterns>
+    <patterns name="P53SynthesisLhs">
+      <agentInstances instanceOf="P53mRNA" name="p53mRNA"/>
+    </patterns>
+    <patterns name="P53SynthesisRhs">
+      <agentInstances instanceOf="P53mRNA" name="p53mRNA"/>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" bindingState="FREE" name="b" state="//@components.19/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.81/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53_Mdm2Lhs">
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" bindingState="FREE" name="b" state="//@components.19/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.82/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" bindingState="FREE" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.82/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.82/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53_Mdm2Rhs">
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.83/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.83/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.83/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.83/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.83/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="E1UbLhs">
+      <agentInstances instanceOf="E1" name="e1">
+        <siteInstances instanceOf="//@components.24/@sites.0" bindingState="FREE" name="x" state="//@components.24/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.84/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="ATP" name="atp"/>
+      <agentInstances instanceOf="Ub" name="ub"/>
+    </patterns>
+    <patterns name="E1UbRhs">
+      <agentInstances instanceOf="AMP" name="amp"/>
+      <agentInstances instanceOf="E1" name="e1">
+        <siteInstances instanceOf="//@components.24/@sites.0" bindingState="FREE" name="x" state="//@components.24/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.85/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="E2UbLhs">
+      <agentInstances instanceOf="E1" name="e1">
+        <siteInstances instanceOf="//@components.24/@sites.0" bindingState="FREE" name="x" state="//@components.24/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.86/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Ub" name="ub"/>
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.86/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="E2UbRhs">
+      <agentInstances instanceOf="E1" name="e1">
+        <siteInstances instanceOf="//@components.24/@sites.0" bindingState="FREE" name="x" state="//@components.24/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.87/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.87/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53UbiquitinationLhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.88/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.88/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.88/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.88/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.88/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.88/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53UbiquitinationRhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.89/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.89/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.89/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.89/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.89/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.3" parent="//@patternContainer/@patterns.89/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53PolyUbiquitination1Lhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.90/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.90/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.90/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.90/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.90/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.2" parent="//@patternContainer/@patterns.90/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53PolyUbiquitination1Rhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.91/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.91/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.91/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.91/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.91/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.3" parent="//@patternContainer/@patterns.91/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53PolyUbiquitination2Lhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.92/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.92/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.92/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.92/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.92/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.3" parent="//@patternContainer/@patterns.92/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53PolyUbiquitination2Rhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.93/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.93/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.93/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.93/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.93/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.4" parent="//@patternContainer/@patterns.93/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53PolyUbiquitination3Lhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.94/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.94/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.94/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.94/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.94/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.4" parent="//@patternContainer/@patterns.94/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53PolyUbiquitination3Rhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.95/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.95/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.95/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.95/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.95/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.5" parent="//@patternContainer/@patterns.95/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53DeUbiquitinationLhs">
+      <agentInstances instanceOf="P53DUB" name="p53dub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.96/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.96/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.96/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.96/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.2" parent="//@patternContainer/@patterns.96/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53DeUbiquitinationRhs">
+      <agentInstances instanceOf="P53DUB" name="p53dub"/>
+      <agentInstances instanceOf="Ub" name="ub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.97/@agentInstances.3/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.97/@agentInstances.2"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.97/@agentInstances.2"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.97/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.97/@agentInstances.3"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53PolyDeUbiquitination2Lhs">
+      <agentInstances instanceOf="P53DUB" name="p53dub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.98/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.98/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.98/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.98/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.3" parent="//@patternContainer/@patterns.98/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53PolyDeUbiquitination2Rhs">
+      <agentInstances instanceOf="P53DUB" name="p53dub"/>
+      <agentInstances instanceOf="Ub" name="ub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.99/@agentInstances.3/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.99/@agentInstances.2"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.99/@agentInstances.2"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.99/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.2" parent="//@patternContainer/@patterns.99/@agentInstances.3"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53PolyDeUbiquitination3Lhs">
+      <agentInstances instanceOf="P53DUB" name="p53dub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.100/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.100/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.100/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.100/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.4" parent="//@patternContainer/@patterns.100/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53PolyDeUbiquitination3Rhs">
+      <agentInstances instanceOf="P53DUB" name="p53dub"/>
+      <agentInstances instanceOf="Ub" name="ub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.101/@agentInstances.3/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.101/@agentInstances.2"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.101/@agentInstances.2"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.101/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.3" parent="//@patternContainer/@patterns.101/@agentInstances.3"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53PolyDeUbiquitination4Lhs">
+      <agentInstances instanceOf="P53DUB" name="p53dub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.102/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.102/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.102/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.102/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.5" parent="//@patternContainer/@patterns.102/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53PolyDeUbiquitination4Rhs">
+      <agentInstances instanceOf="P53DUB" name="p53dub"/>
+      <agentInstances instanceOf="Ub" name="ub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.103/@agentInstances.3/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.103/@agentInstances.2"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.103/@agentInstances.2"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.103/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.4" parent="//@patternContainer/@patterns.103/@agentInstances.3"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53ProteasomeBindingLhs">
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.104/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" boundTo="//@patternContainer/@patterns.104/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="z" state="//@components.3/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.104/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.104/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.104/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.5" parent="//@patternContainer/@patterns.104/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53ProteasomeBindingRhs">
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" boundTo="//@patternContainer/@patterns.105/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.105/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" bindingState="FREE" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.105/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.105/@agentInstances.1"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.105/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.5" parent="//@patternContainer/@patterns.105/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53DegradationLhs">
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" boundTo="//@patternContainer/@patterns.106/@agentInstances.2/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.106/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="ATP" name="atp"/>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.106/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="b" state="//@components.19/@sites.0/@siteStates.5" parent="//@patternContainer/@patterns.106/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53DegradationRhs">
+      <agentInstances instanceOf="Ub" name="ub2"/>
+      <agentInstances instanceOf="Ub" name="ub1"/>
+      <agentInstances instanceOf="Ub" name="ub4"/>
+      <agentInstances instanceOf="Ub" name="ub3"/>
+      <agentInstances instanceOf="ADP" name="adp"/>
+    </patterns>
+    <patterns name="mdm2mRNASynthesisLhs">
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" bindingState="FREE" name="b" state="//@components.19/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.108/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2mRNASynthesisRhs">
+      <agentInstances instanceOf="Mdm2mRNA" name="mdm2mRna">
+        <siteInstances instanceOf="//@components.26/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.109/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" bindingState="FREE" name="b" state="//@components.19/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.109/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2mRNADegradationLhs">
+      <agentInstances instanceOf="Mdm2mRNA" name="mdm2mRna">
+        <siteInstances instanceOf="//@components.26/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.110/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2mRNADegradationRhs"/>
+    <patterns name="Mdm2SynthesisLhs">
+      <agentInstances instanceOf="Mdm2mRNA" name="mdm2mRna">
+        <siteInstances instanceOf="//@components.26/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.112/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2SynthesisRhs">
+      <agentInstances instanceOf="Mdm2mRNA" name="mdm2mRna">
+        <siteInstances instanceOf="//@components.26/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.113/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" bindingState="FREE" name="z" parent="//@patternContainer/@patterns.113/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" parent="//@patternContainer/@patterns.113/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2UbiquinationLhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.114/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.114/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.114/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2UbiquinationRhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.115/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.115/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.115/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2PolyUbiquination1Lhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.116/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.116/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.116/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2PolyUbiquination1Rhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.117/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.117/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.2" parent="//@patternContainer/@patterns.117/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2PolyUbiquination2Lhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.118/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.118/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.2" parent="//@patternContainer/@patterns.118/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2PolyUbiquination2Rhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.119/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.119/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.3" parent="//@patternContainer/@patterns.119/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2PolyUbiquination3Lhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.120/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.120/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.3" parent="//@patternContainer/@patterns.120/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2PolyUbiquination3Rhs">
+      <agentInstances instanceOf="E2" name="e2">
+        <siteInstances instanceOf="//@components.21/@sites.0" bindingState="FREE" name="x" state="//@components.21/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.121/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.121/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.4" parent="//@patternContainer/@patterns.121/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2deubiquinationLhs">
+      <agentInstances instanceOf="Mdm2DUB" name="mdm2dub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.122/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.122/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2deubiquinationRhs">
+      <agentInstances instanceOf="Mdm2DUB" name="mdm2dub"/>
+      <agentInstances instanceOf="Ub" name="ub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.123/@agentInstances.2"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.0" parent="//@patternContainer/@patterns.123/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2polyDeubiquination1Lhs">
+      <agentInstances instanceOf="Mdm2DUB" name="mdm2dub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.124/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.2" parent="//@patternContainer/@patterns.124/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2polyDeubiquination1Rhs">
+      <agentInstances instanceOf="Mdm2DUB" name="mdm2dub"/>
+      <agentInstances instanceOf="Ub" name="ub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.125/@agentInstances.2"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.1" parent="//@patternContainer/@patterns.125/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2polyDeubiquination2Lhs">
+      <agentInstances instanceOf="Mdm2DUB" name="mdm2dub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.126/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.3" parent="//@patternContainer/@patterns.126/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2polyDeubiquination2Rhs">
+      <agentInstances instanceOf="Mdm2DUB" name="mdm2dub"/>
+      <agentInstances instanceOf="Ub" name="ub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.127/@agentInstances.2"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.2" parent="//@patternContainer/@patterns.127/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2polyDeubiquination3Lhs">
+      <agentInstances instanceOf="Mdm2DUB" name="mdm2dub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.128/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.4" parent="//@patternContainer/@patterns.128/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="mdm2polyDeubiquination3Rhs">
+      <agentInstances instanceOf="Mdm2DUB" name="mdm2dub"/>
+      <agentInstances instanceOf="Ub" name="ub"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.129/@agentInstances.2"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.3" parent="//@patternContainer/@patterns.129/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2ProteasomeBindLhs">
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" bindingState="FREE" name="x" parent="//@patternContainer/@patterns.130/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.130/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" bindingState="FREE" name="ubi" state="//@components.3/@sites.1/@siteStates.4" parent="//@patternContainer/@patterns.130/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2ProteasomeBindRhs">
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" boundTo="//@patternContainer/@patterns.131/@agentInstances.1/@siteInstances.1" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.131/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.131/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" boundTo="//@patternContainer/@patterns.131/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="ubi" state="//@components.3/@sites.1/@siteStates.4" parent="//@patternContainer/@patterns.131/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2DegradationLhs">
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" boundTo="//@patternContainer/@patterns.132/@agentInstances.2/@siteInstances.1" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.132/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="ATP" name="atp"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.132/@agentInstances.2"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" boundTo="//@patternContainer/@patterns.132/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="ubi" state="//@components.3/@sites.1/@siteStates.4" parent="//@patternContainer/@patterns.132/@agentInstances.2"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2DegradationRhs">
+      <agentInstances instanceOf="Proteasome" name="prot">
+        <siteInstances instanceOf="//@components.9/@sites.0" notBoundTo="//@patternContainer/@patterns.133/@agentInstances.6/@siteInstances.1" name="x" parent="//@patternContainer/@patterns.133/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="Ub" name="ub2"/>
+      <agentInstances instanceOf="Ub" name="ub1"/>
+      <agentInstances instanceOf="Ub" name="ub4"/>
+      <agentInstances instanceOf="Ub" name="ub3"/>
+      <agentInstances instanceOf="ADP" name="adp"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.133/@agentInstances.6"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" notBoundTo="//@patternContainer/@patterns.133/@agentInstances.0/@siteInstances.0" name="ubi" state="//@components.3/@sites.1/@siteStates.4" parent="//@patternContainer/@patterns.133/@agentInstances.6"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="ATMActivationLhs">
+      <agentInstances instanceOf="ATMI" name="atmi"/>
+      <agentInstances instanceOf="DamDNA" name="damDNA"/>
+    </patterns>
+    <patterns name="ATMActivationRhs">
+      <agentInstances instanceOf="DamDNA" name="damDNA"/>
+      <agentInstances instanceOf="ATMA" name="atma"/>
+    </patterns>
+    <patterns name="ATMInactivationLhs">
+      <agentInstances instanceOf="ATMA" name="atma"/>
+    </patterns>
+    <patterns name="ATMInactivationRhs">
+      <agentInstances instanceOf="ATMI" name="atmi"/>
+    </patterns>
+    <patterns name="P53PhosphoLhs">
+      <agentInstances instanceOf="ATMA" name="atma"/>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" bindingState="FREE" name="b" state="//@components.19/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.138/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53PhosphoRhs">
+      <agentInstances instanceOf="ATMA" name="atma"/>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" bindingState="FREE" name="b" state="//@components.19/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.139/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53DePhosphoLhs">
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" bindingState="FREE" name="b" state="//@components.19/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.140/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="P53DePhosphoRhs">
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" bindingState="FREE" name="b" state="//@components.19/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.141/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2PhosphoLhs">
+      <agentInstances instanceOf="ATMA" name="atma"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" bindingState="FREE" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.142/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.142/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2PhosphoRhs">
+      <agentInstances instanceOf="ATMA" name="atma"/>
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" bindingState="FREE" name="z" state="//@components.3/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.143/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.143/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2DePhosphoLhs">
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" bindingState="FREE" name="z" state="//@components.3/@sites.0/@siteStates.1" parent="//@patternContainer/@patterns.144/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.144/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="Mdm2DePhosphoRhs">
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" bindingState="FREE" name="z" state="//@components.3/@sites.0/@siteStates.0" parent="//@patternContainer/@patterns.145/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.145/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="p53mRNASynthesisLhs"/>
+    <patterns name="p53mRNASynthesisRhs">
+      <agentInstances instanceOf="P53mRNA" name="p53mRna"/>
+    </patterns>
+    <patterns name="p53mRNADegradationLhs">
+      <agentInstances instanceOf="P53mRNA" name="p53mRna"/>
+    </patterns>
+    <patterns name="p53mRNADegradationRhs"/>
+    <patterns name="IRDamageLhs">
+      <agentInstances instanceOf="IR" name="ir"/>
+    </patterns>
+    <patterns name="IRDamageRhs">
+      <agentInstances instanceOf="IR" name="ir"/>
+      <agentInstances instanceOf="DamDNA" name="damDNA"/>
+    </patterns>
+    <patterns name="DNARepairLhs">
+      <agentInstances instanceOf="DamDNA" name="damDNA"/>
+    </patterns>
+    <patterns name="DNARepairRhs"/>
+    <patterns name="ROSDamageLhs">
+      <agentInstances instanceOf="ROS" name="ros"/>
+    </patterns>
+    <patterns name="ROSDamageRhs">
+      <agentInstances instanceOf="ROS" name="ros"/>
+      <agentInstances instanceOf="DamDNA" name="damDNA"/>
+    </patterns>
+    <patterns name="BasalROSDamageLhs">
+      <agentInstances instanceOf="BasalROS" name="basalRos"/>
+    </patterns>
+    <patterns name="BasalROSDamageRhs">
+      <agentInstances instanceOf="BasalROS" name="basalRos"/>
+      <agentInstances instanceOf="DamDNA" name="damDNA"/>
+    </patterns>
+    <patterns name="obs_mdm2">
+      <agentInstances instanceOf="Mdm2" name="mdm2">
+        <siteInstances instanceOf="//@components.3/@sites.0" name="z" parent="//@patternContainer/@patterns.158/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.3/@sites.1" name="ubi" parent="//@patternContainer/@patterns.158/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="obs_mdm2mRNA">
+      <agentInstances instanceOf="Mdm2mRNA" name="mdm2mRna">
+        <siteInstances instanceOf="//@components.26/@sites.0" name="x" parent="//@patternContainer/@patterns.159/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="obs_mdm2DUB">
+      <agentInstances instanceOf="Mdm2DUB" name="mdm2dub"/>
+    </patterns>
+    <patterns name="obs_p53">
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" name="b" parent="//@patternContainer/@patterns.161/@agentInstances.0"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="obs_p53mRNA">
+      <agentInstances instanceOf="P53mRNA" name="p53mRna"/>
+    </patterns>
+    <patterns name="obs_p53DUB">
+      <agentInstances instanceOf="P53DUB" name="p53dub"/>
+    </patterns>
+    <patterns name="obs_p53gsk">
+      <agentInstances instanceOf="GSK3b" name="gsk">
+        <siteInstances instanceOf="//@components.16/@sites.0" boundTo="//@patternContainer/@patterns.164/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="x" parent="//@patternContainer/@patterns.164/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="P53" name="p53">
+        <siteInstances instanceOf="//@components.19/@sites.0" boundTo="//@patternContainer/@patterns.164/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="b" parent="//@patternContainer/@patterns.164/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="obs_damDNA">
+      <agentInstances instanceOf="DamDNA" name="damDNA"/>
+    </patterns>
+    <patterns name="obs_tauTangle">
+      <agentInstances instanceOf="NFT" name="nft"/>
+    </patterns>
+    <patterns name="obs_abetaPlaque">
+      <agentInstances instanceOf="AbetaPlaque" name="abetaPlaque"/>
+    </patterns>
+  </patternContainer>
+</ecoreBCModel:IntermediateModel>
