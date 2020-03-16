@@ -38,6 +38,7 @@
     <genClasses ecoreClass="ecoreBCModel.ecore#//IntermSite">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreBCModel.ecore#//IntermSite/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecoreBCModel.ecore#//IntermSite/siteStates"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreBCModel.ecore#//IntermSite/parent"/>
     </genClasses>
     <genClasses ecoreClass="ecoreBCModel.ecore#//IntermInitialisation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreBCModel.ecore#//IntermInitialisation/cnt"/>
@@ -77,6 +78,5 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecoreBCModel.ecore#//IntermCommand/patternToMatch"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecoreBCModel.ecore#//IntermCommand/cnt"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="ecoreBCModel.ecore#//Bindable"/>
   </genPackages>
 </genmodel:GenModel>

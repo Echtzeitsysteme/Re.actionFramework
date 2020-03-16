@@ -58,6 +58,61 @@ public interface TestcasesModelPackage extends EPackage {
 	TestcasesModelPackage eINSTANCE = TestcasesModel.impl.TestcasesModelPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link TestcasesModel.impl.TImpl <em>T</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see TestcasesModel.impl.TImpl
+	 * @see TestcasesModel.impl.TestcasesModelPackageImpl#getT()
+	 * @generated
+	 */
+	int T = 0;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T__ID = ReactionContainerPackage.AGENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Ti</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T__TI = ReactionContainerPackage.AGENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Tj</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T__TJ = ReactionContainerPackage.AGENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T_FEATURE_COUNT = ReactionContainerPackage.AGENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>T</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int T_OPERATION_COUNT = ReactionContainerPackage.AGENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link TestcasesModel.impl.XImpl <em>X</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,7 +120,7 @@ public interface TestcasesModelPackage extends EPackage {
 	 * @see TestcasesModel.impl.TestcasesModelPackageImpl#getX()
 	 * @generated
 	 */
-	int X = 0;
+	int X = 1;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -138,7 +193,7 @@ public interface TestcasesModelPackage extends EPackage {
 	 * @see TestcasesModel.impl.TestcasesModelPackageImpl#getU_s()
 	 * @generated
 	 */
-	int US = 1;
+	int US = 2;
 
 	/**
 	 * The number of structural features of the '<em>Us</em>' class.
@@ -166,7 +221,7 @@ public interface TestcasesModelPackage extends EPackage {
 	 * @see TestcasesModel.impl.TestcasesModelPackageImpl#getP_s()
 	 * @generated
 	 */
-	int PS = 2;
+	int PS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Ps</em>' class.
@@ -185,61 +240,6 @@ public interface TestcasesModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int PS_OPERATION_COUNT = ReactionContainerPackage.STATE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link TestcasesModel.impl.TImpl <em>T</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see TestcasesModel.impl.TImpl
-	 * @see TestcasesModel.impl.TestcasesModelPackageImpl#getT()
-	 * @generated
-	 */
-	int T = 3;
-
-	/**
-	 * The feature id for the '<em><b>ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int T__ID = ReactionContainerPackage.AGENT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Ti</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int T__TI = ReactionContainerPackage.AGENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Tj</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int T__TJ = ReactionContainerPackage.AGENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>T</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int T_FEATURE_COUNT = ReactionContainerPackage.AGENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>T</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int T_OPERATION_COUNT = ReactionContainerPackage.AGENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link TestcasesModel.impl.AImpl <em>A</em>}' class.
@@ -315,6 +315,38 @@ public interface TestcasesModelPackage extends EPackage {
 	int A_OPERATION_COUNT = ReactionContainerPackage.AGENT_OPERATION_COUNT + 0;
 
 	/**
+	 * Returns the meta object for class '{@link TestcasesModel.T <em>T</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>T</em>'.
+	 * @see TestcasesModel.T
+	 * @generated
+	 */
+	EClass getT();
+
+	/**
+	 * Returns the meta object for the reference '{@link TestcasesModel.T#getT_i <em>Ti</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ti</em>'.
+	 * @see TestcasesModel.T#getT_i()
+	 * @see #getT()
+	 * @generated
+	 */
+	EReference getT_T_i();
+
+	/**
+	 * Returns the meta object for the reference '{@link TestcasesModel.T#getT_j <em>Tj</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Tj</em>'.
+	 * @see TestcasesModel.T#getT_j()
+	 * @see #getT()
+	 * @generated
+	 */
+	EReference getT_T_j();
+
+	/**
 	 * Returns the meta object for class '{@link TestcasesModel.X <em>X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -387,38 +419,6 @@ public interface TestcasesModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getP_s();
-
-	/**
-	 * Returns the meta object for class '{@link TestcasesModel.T <em>T</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>T</em>'.
-	 * @see TestcasesModel.T
-	 * @generated
-	 */
-	EClass getT();
-
-	/**
-	 * Returns the meta object for the reference '{@link TestcasesModel.T#getT_i <em>Ti</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Ti</em>'.
-	 * @see TestcasesModel.T#getT_i()
-	 * @see #getT()
-	 * @generated
-	 */
-	EReference getT_T_i();
-
-	/**
-	 * Returns the meta object for the reference '{@link TestcasesModel.T#getT_j <em>Tj</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Tj</em>'.
-	 * @see TestcasesModel.T#getT_j()
-	 * @see #getT()
-	 * @generated
-	 */
-	EReference getT_T_j();
 
 	/**
 	 * Returns the meta object for class '{@link TestcasesModel.A <em>A</em>}'.
@@ -498,6 +498,32 @@ public interface TestcasesModelPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
+		 * The meta object literal for the '{@link TestcasesModel.impl.TImpl <em>T</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see TestcasesModel.impl.TImpl
+		 * @see TestcasesModel.impl.TestcasesModelPackageImpl#getT()
+		 * @generated
+		 */
+		EClass T = eINSTANCE.getT();
+
+		/**
+		 * The meta object literal for the '<em><b>Ti</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference T__TI = eINSTANCE.getT_T_i();
+
+		/**
+		 * The meta object literal for the '<em><b>Tj</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference T__TJ = eINSTANCE.getT_T_j();
+
+		/**
 		 * The meta object literal for the '{@link TestcasesModel.impl.XImpl <em>X</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -558,32 +584,6 @@ public interface TestcasesModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PS = eINSTANCE.getP_s();
-
-		/**
-		 * The meta object literal for the '{@link TestcasesModel.impl.TImpl <em>T</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see TestcasesModel.impl.TImpl
-		 * @see TestcasesModel.impl.TestcasesModelPackageImpl#getT()
-		 * @generated
-		 */
-		EClass T = eINSTANCE.getT();
-
-		/**
-		 * The meta object literal for the '<em><b>Ti</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference T__TI = eINSTANCE.getT_T_i();
-
-		/**
-		 * The meta object literal for the '<em><b>Tj</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference T__TJ = eINSTANCE.getT_T_j();
 
 		/**
 		 * The meta object literal for the '{@link TestcasesModel.impl.AImpl <em>A</em>}' class.

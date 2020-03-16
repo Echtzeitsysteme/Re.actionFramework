@@ -86,8 +86,6 @@ public class EcoreBCModelSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseIntermComponent(intermAgent);
 			if (result == null)
-				result = caseBindable(intermAgent);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -143,16 +141,12 @@ public class EcoreBCModelSwitch<T> extends Switch<T> {
 			IntermAgentInstance intermAgentInstance = (IntermAgentInstance) theEObject;
 			T result = caseIntermAgentInstance(intermAgentInstance);
 			if (result == null)
-				result = caseBindable(intermAgentInstance);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case EcoreBCModelPackage.INTERM_SITE_INSTANCE: {
 			IntermSiteInstance intermSiteInstance = (IntermSiteInstance) theEObject;
 			T result = caseIntermSiteInstance(intermSiteInstance);
-			if (result == null)
-				result = caseBindable(intermSiteInstance);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -169,13 +163,6 @@ public class EcoreBCModelSwitch<T> extends Switch<T> {
 			T result = caseIntermCommand(intermCommand);
 			if (result == null)
 				result = caseIntermComponent(intermCommand);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case EcoreBCModelPackage.BINDABLE: {
-			Bindable bindable = (Bindable) theEObject;
-			T result = caseBindable(bindable);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -377,21 +364,6 @@ public class EcoreBCModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIntermCommand(IntermCommand object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bindable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bindable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBindable(Bindable object) {
 		return null;
 	}
 

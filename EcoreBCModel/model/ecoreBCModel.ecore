@@ -11,7 +11,7 @@
         defaultValueLiteral="UNTITLED"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntermComponent" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="IntermAgent" eSuperTypes="#//IntermComponent #//Bindable">
+  <eClassifiers xsi:type="ecore:EClass" name="IntermAgent" eSuperTypes="#//IntermComponent">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sites" upperBound="-1"
         eType="#//IntermSite" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
@@ -29,6 +29,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="siteStates" upperBound="-1"
         eType="#//IntermSiteState" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+        eType="#//IntermAgent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntermInitialisation" eSuperTypes="#//IntermComponent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cnt" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -55,7 +57,7 @@
     <eLiterals name="FREE" value="1"/>
     <eLiterals name="UNSPECIFIED" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IntermAgentInstance" eSuperTypes="#//Bindable">
+  <eClassifiers xsi:type="ecore:EClass" name="IntermAgentInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="siteInstances" upperBound="-1"
         eType="#//IntermSiteInstance" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
@@ -64,12 +66,12 @@
         defaultValueLiteral="UNTITLED"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="local" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IntermSiteInstance" eSuperTypes="#//Bindable">
+  <eClassifiers xsi:type="ecore:EClass" name="IntermSiteInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="instanceOf" lowerBound="1"
         eType="#//IntermSite"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="notBoundTo" upperBound="-1"
-        eType="#//Bindable"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="boundTo" eType="#//Bindable"/>
+        eType="#//IntermSiteInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boundTo" eType="#//IntermSiteInstance"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bindingState" lowerBound="1"
         eType="#//BindingState" defaultValueLiteral="UNSPECIFIED"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"
@@ -92,5 +94,4 @@
     <eLiterals name="ITERATIONS" value="1"/>
     <eLiterals name="MATCHES" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Bindable" abstract="true" interface="true"/>
 </ecore:EPackage>

@@ -8,6 +8,9 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import GTLanguage.GTLanguageFactory;
@@ -90,10 +93,49 @@ public class GTCreator {
 		// create resource
 		Resource resource = resSet.createResource(URI.createFileURI(saveLocation));
 		resource.getContents().add(gtRules);
+		
+		Map<Object, Object> options = ((XMLResource) resource).getDefaultSaveOptions();
+		options.put(XMIResource.OPTION_ENCODING, "ASCII");
+		options.put(XMIResource.OPTION_SAVE_ONLY_IF_CHANGED, XMIResource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
+		options.put(XMLResource.OPTION_URI_HANDLER, new URIHandlerImpl() {
+			@Override
+			public URI deresolve(final URI uri) {
+				if (!uri.isPlatform()) {
+					// DONT TOUCH----------------------------------------------
+					String[] uriSegments = uri.segments();
+					String uriString;
+					final String MODEL_STRING = "model";
+					int modelPos = -1;
+
+					// find "model"-segment
+					for (int i = 0; i < uriSegments.length; i++) {
+						if (uriSegments[i].equals(MODEL_STRING)) {
+							modelPos = i;
+							break;
+						}
+					}
+
+					// create platform uri
+					StringBuilder sb = new StringBuilder("platform:/resource");
+					for (int i = modelPos - 1; i < uriSegments.length; i++) {
+						sb.append("/");
+						sb.append(uriSegments[i]);
+					}
+
+					sb.append("#");
+					sb.append(uri.fragment());
+					uriString = sb.toString();
+
+					return URI.createURI(uriString, true);
+				} else {
+					return uri;
+				}
+			}
+		});
 
 		// now save the content.
 		try {
-			resource.save(Collections.EMPTY_MAP);
+			resource.save(options);
 			System.out.print("Successful.\n");
 		} catch (IOException e) {
 			// Auto-generated catch block

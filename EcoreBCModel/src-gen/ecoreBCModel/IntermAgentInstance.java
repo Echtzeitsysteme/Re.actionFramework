@@ -4,6 +4,8 @@ package ecoreBCModel;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Interm Agent Instance</b></em>'.
@@ -23,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface IntermAgentInstance extends Bindable {
+public interface IntermAgentInstance extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Site Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link ecoreBCModel.IntermSiteInstance}.

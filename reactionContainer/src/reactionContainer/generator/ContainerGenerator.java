@@ -1,22 +1,16 @@
 package reactionContainer.generator;
 
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Collections;
+import java.nio.file.FileSystems;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
-import org.eclipse.emf.ecore.EPackage.Registry;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -26,10 +20,21 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 import ecoreBCModel.EcoreBCModelPackage;
 import ecoreBCModel.IntermAgent;
+import ecoreBCModel.IntermAgentInstance;
 import ecoreBCModel.IntermComponent;
 import ecoreBCModel.IntermInitialisation;
+import ecoreBCModel.IntermObservable;
+import ecoreBCModel.IntermPattern;
+import ecoreBCModel.IntermRule;
+import ecoreBCModel.IntermSite;
+import ecoreBCModel.IntermSiteInstance;
+import ecoreBCModel.IntermSiteState;
 import ecoreBCModel.IntermediateModel;
-import reactionContainer.*;
+import reactionContainer.Agent;
+import reactionContainer.Container;
+import reactionContainer.ReactionContainerFactory;
+import reactionContainer.ReactionContainerPackage;
+import reactionContainer.State;
 import reactionContainer.impl.ReactionContainerFactoryImpl;
 import reactionContainer.util.AgentClassFactory;
 import reactionContainer.util.StateClassFactory;
@@ -49,7 +54,10 @@ public abstract class ContainerGenerator {
 	protected StateClassFactory stateClassFactory;
 	protected Map<String, State> stateInstances;
 
-	private Map<IntermInitialisation, InitializationTemplate> templates;
+	protected Map<IntermInitialisation, InitializationTemplate> templates;
+	protected Map<String, List<IntermSite>> siteConnections;
+	protected List<IntermAgent> agentsInModel;
+	protected Map<String, List<IntermSiteState>> statesInModel;
 
 	protected URI containerURI;
 	protected String metaModelPath;
@@ -66,31 +74,31 @@ public abstract class ContainerGenerator {
 	}
 
 	public ContainerGenerator(URI modelLocation) {
-		init();
-
 		this.modelLocation = modelLocation;
 		isInitialized = loadResource();
 		if (isInitialized)
 			isInitialized = loadModel();
+
+		init();
 	}
 
 	public ContainerGenerator(Resource model) {
-		init();
-
 		modelResource = model;
 		isInitialized = model != null;
 		if (isInitialized) {
 			modelLocation = modelResource.getURI();
 			isInitialized = loadModel();
 		}
+
+		init();
 	}
 
 	public ContainerGenerator(IntermediateModel model) {
-		init();
-
 		modelResource = null;
 		isInitialized = model != null;
 		this.model = (IntermediateModel) model;
+
+		init();
 	}
 
 	private boolean loadResource() {
@@ -136,9 +144,11 @@ public abstract class ContainerGenerator {
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
 
 		ResourceSet resSet = new ResourceSetImpl();
-		Resource res = resSet.createResource(URI.createFileURI(metaModelPath));
-		res.getContents().add(dynamicMetaModel);
+		String absoluteMetaModelPath = FileSystems.getDefault().getPath(metaModelPath).normalize().toAbsolutePath().toString();
 
+		Resource res = resSet.createResource(URI.createFileURI(absoluteMetaModelPath));
+		res.getContents().add(dynamicMetaModel);
+		
 		EPackage.Registry.INSTANCE.put(dynamicMetaModel.getNsURI(), dynamicMetaModel);
 
 		Map<Object, Object> saveOptions = ((XMIResource) res).getDefaultSaveOptions();
@@ -166,7 +176,7 @@ public abstract class ContainerGenerator {
 		createAndSetResource();
 
 		containerModel = factory.createContainer();
-		containerModel.setModelName(model.getName()+"Model");
+		containerModel.setModelName(model.getName() + "Model");
 
 		createStateInstances();
 		generateInitializationTemplates();
@@ -231,22 +241,23 @@ public abstract class ContainerGenerator {
 			containerModel.getStates().add(state);
 			stateInstances.put(state.eClass().getName(), state);
 		});
-		;
+
 	}
+	
 
 	public URI createMetaModelURI() {
 		URI metamodelPathUri = URI.createFileURI(metaModelPath);
-		int i=0;
-		while(!metamodelPathUri.segment(i).equals("model")) {
+		int i = 0;
+		while (!metamodelPathUri.segment(i).equals("model")) {
 			i++;
 		}
 		i--;
-		
+
 		StringBuilder sb = new StringBuilder();
-		for(int j=i; j < metamodelPathUri.segmentCount(); j++) {
-			sb.append("/"+metamodelPathUri.segment(j));
+		for (int j = i; j < metamodelPathUri.segmentCount(); j++) {
+			sb.append("/" + metamodelPathUri.segment(j));
 		}
-		
+
 		String test = sb.toString();
 		return URI.createPlatformResourceURI(test, true);
 	}

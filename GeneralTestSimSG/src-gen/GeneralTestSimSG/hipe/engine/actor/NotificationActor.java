@@ -1,5 +1,6 @@
 package GeneralTestSimSG.hipe.engine.actor;
 
+import java.text.DecimalFormat;
 import java.util.Collections;
 import java.util.Collection;
 import java.util.LinkedHashSet;
@@ -28,6 +29,8 @@ import hipe.engine.message.NewInput;
 import hipe.engine.message.NoMoreInput;
 import hipe.engine.message.NotificationMessage;
 
+import hipe.generic.actor.junction.util.HiPEConfig;
+
 public class NotificationActor extends AbstractActor {
 	
 	private Queue<Notification> notificationCache = new LinkedBlockingQueue<Notification>();
@@ -36,6 +39,7 @@ public class NotificationActor extends AbstractActor {
 	
 	private Map<Object, Function<EObject, Collection<EObject>>> explorationConsumer = new HashMap<>();
 	
+	private int counter = 0;
 	public long time = 0;
 	public long tell_time = 0;
 	
@@ -45,7 +49,31 @@ public class NotificationActor extends AbstractActor {
 	}
 	
 	private void initializeExploration() {
+		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA(), obj -> {
+			Collection<EObject> children = new LinkedList<>();
+			return children;
+		});
+		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getX(), obj -> {
+			Collection<EObject> children = new LinkedList<>();
+			return children;
+		});
+		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getU_s(), obj -> {
+			Collection<EObject> children = new LinkedList<>();
+			return children;
+		});
+		explorationConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getAgent(), obj -> {
+			Collection<EObject> children = new LinkedList<>();
+			return children;
+		});
+		explorationConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getState(), obj -> {
+			Collection<EObject> children = new LinkedList<>();
+			return children;
+		});
 		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getT(), obj -> {
+			Collection<EObject> children = new LinkedList<>();
+			return children;
+		});
+		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getP_s(), obj -> {
 			Collection<EObject> children = new LinkedList<>();
 			return children;
 		});
@@ -54,30 +82,6 @@ public class NotificationActor extends AbstractActor {
 			reactionContainer.Container _container = (reactionContainer.Container) obj;
 			children.addAll(_container.getStates());
 			children.addAll(_container.getAgents());
-			return children;
-		});
-		explorationConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getState(), obj -> {
-			Collection<EObject> children = new LinkedList<>();
-			return children;
-		});
-		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getX(), obj -> {
-			Collection<EObject> children = new LinkedList<>();
-			return children;
-		});
-		explorationConsumer.put(reactionContainer.ReactionContainerPackage.eINSTANCE.getAgent(), obj -> {
-			Collection<EObject> children = new LinkedList<>();
-			return children;
-		});
-		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getU_s(), obj -> {
-			Collection<EObject> children = new LinkedList<>();
-			return children;
-		});
-		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getP_s(), obj -> {
-			Collection<EObject> children = new LinkedList<>();
-			return children;
-		});
-		explorationConsumer.put(TestcasesModel.TestcasesModelPackage.eINSTANCE.getA(), obj -> {
-			Collection<EObject> children = new LinkedList<>();
 			return children;
 		});
 	}
@@ -90,8 +94,11 @@ public class NotificationActor extends AbstractActor {
 
 	@Override
 	public void postStop() throws Exception {
-
-		super.postStop();
+		if(HiPEConfig.loggingActivated) {
+			DecimalFormat df = new DecimalFormat("0.#####");
+	        df.setMaximumFractionDigits(5);
+			System.err.println("NotificationNode" + ";"  + counter + ";" + df.format((double) time / (double) (1000 * 1000 * 1000)));
+		}
 	}
 
 	@Override
@@ -108,6 +115,7 @@ public class NotificationActor extends AbstractActor {
 	 */
 	public void handleNotification(NotificationMessage notification) {
 		long tic = System.nanoTime();
+		counter++;
 		resolveNotification(notification.notification);
 		getSender().tell(true, getSelf());
 		time += System.nanoTime() - tic;
@@ -119,10 +127,8 @@ public class NotificationActor extends AbstractActor {
 		while(!notificationCache.isEmpty()) {
 			dispatchActor.tell(notificationCache.poll(), getSelf());
 		}
-		tell_time += System.nanoTime() - tell_tic;
 		dispatchActor.tell(msg, getSelf());
 		discoveredObjects = Collections.synchronizedSet(new LinkedHashSet<>());
-		System.err.println("NotificationActor analysis time: " + (double) time / (double) (1000 * 1000 * 1000) + " - tell_time: " + (double) tell_time / (double) (1000 * 1000 * 1000));
 	}
 	
 	private void resolveNotification(Notification notification) {
@@ -198,7 +204,6 @@ public class NotificationActor extends AbstractActor {
 			}
 			frontier.addAll(explorationConsumer.get(child.eClass()).apply(child));
 		}
-		
 	}
 	
 	private void resolveAdd(Notification notification) {

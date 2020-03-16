@@ -279,13 +279,22 @@ public interface EcoreBCModelPackage extends EPackage {
 	int INTERM_SITE__SITE_STATES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERM_SITE__PARENT = 2;
+
+	/**
 	 * The number of structural features of the '<em>Interm Site</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_SITE_FEATURE_COUNT = 2;
+	int INTERM_SITE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Interm Site</em>' class.
@@ -472,34 +481,6 @@ public interface EcoreBCModelPackage extends EPackage {
 	int INTERM_PATTERN_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link ecoreBCModel.Bindable <em>Bindable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see ecoreBCModel.Bindable
-	 * @see ecoreBCModel.impl.EcoreBCModelPackageImpl#getBindable()
-	 * @generated
-	 */
-	int BINDABLE = 13;
-
-	/**
-	 * The number of structural features of the '<em>Bindable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINDABLE_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Bindable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINDABLE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link ecoreBCModel.impl.IntermAgentInstanceImpl <em>Interm Agent Instance</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -516,7 +497,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_AGENT_INSTANCE__SITE_INSTANCES = BINDABLE_FEATURE_COUNT + 0;
+	int INTERM_AGENT_INSTANCE__SITE_INSTANCES = 0;
 
 	/**
 	 * The feature id for the '<em><b>Instance Of</b></em>' reference.
@@ -525,7 +506,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_AGENT_INSTANCE__INSTANCE_OF = BINDABLE_FEATURE_COUNT + 1;
+	int INTERM_AGENT_INSTANCE__INSTANCE_OF = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -534,7 +515,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_AGENT_INSTANCE__NAME = BINDABLE_FEATURE_COUNT + 2;
+	int INTERM_AGENT_INSTANCE__NAME = 2;
 
 	/**
 	 * The feature id for the '<em><b>Local</b></em>' attribute.
@@ -543,7 +524,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_AGENT_INSTANCE__LOCAL = BINDABLE_FEATURE_COUNT + 3;
+	int INTERM_AGENT_INSTANCE__LOCAL = 3;
 
 	/**
 	 * The number of structural features of the '<em>Interm Agent Instance</em>' class.
@@ -552,7 +533,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_AGENT_INSTANCE_FEATURE_COUNT = BINDABLE_FEATURE_COUNT + 4;
+	int INTERM_AGENT_INSTANCE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Interm Agent Instance</em>' class.
@@ -561,7 +542,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_AGENT_INSTANCE_OPERATION_COUNT = BINDABLE_OPERATION_COUNT + 0;
+	int INTERM_AGENT_INSTANCE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link ecoreBCModel.impl.IntermSiteInstanceImpl <em>Interm Site Instance</em>}' class.
@@ -580,7 +561,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_SITE_INSTANCE__INSTANCE_OF = BINDABLE_FEATURE_COUNT + 0;
+	int INTERM_SITE_INSTANCE__INSTANCE_OF = 0;
 
 	/**
 	 * The feature id for the '<em><b>Not Bound To</b></em>' reference list.
@@ -589,7 +570,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_SITE_INSTANCE__NOT_BOUND_TO = BINDABLE_FEATURE_COUNT + 1;
+	int INTERM_SITE_INSTANCE__NOT_BOUND_TO = 1;
 
 	/**
 	 * The feature id for the '<em><b>Bound To</b></em>' reference.
@@ -598,7 +579,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_SITE_INSTANCE__BOUND_TO = BINDABLE_FEATURE_COUNT + 2;
+	int INTERM_SITE_INSTANCE__BOUND_TO = 2;
 
 	/**
 	 * The feature id for the '<em><b>Binding State</b></em>' attribute.
@@ -607,7 +588,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_SITE_INSTANCE__BINDING_STATE = BINDABLE_FEATURE_COUNT + 3;
+	int INTERM_SITE_INSTANCE__BINDING_STATE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -616,7 +597,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_SITE_INSTANCE__NAME = BINDABLE_FEATURE_COUNT + 4;
+	int INTERM_SITE_INSTANCE__NAME = 4;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' reference.
@@ -625,7 +606,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_SITE_INSTANCE__STATE = BINDABLE_FEATURE_COUNT + 5;
+	int INTERM_SITE_INSTANCE__STATE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
@@ -634,7 +615,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_SITE_INSTANCE__PARENT = BINDABLE_FEATURE_COUNT + 6;
+	int INTERM_SITE_INSTANCE__PARENT = 6;
 
 	/**
 	 * The number of structural features of the '<em>Interm Site Instance</em>' class.
@@ -643,7 +624,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_SITE_INSTANCE_FEATURE_COUNT = BINDABLE_FEATURE_COUNT + 7;
+	int INTERM_SITE_INSTANCE_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Interm Site Instance</em>' class.
@@ -652,7 +633,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERM_SITE_INSTANCE_OPERATION_COUNT = BINDABLE_OPERATION_COUNT + 0;
+	int INTERM_SITE_INSTANCE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link ecoreBCModel.impl.PatternContainerImpl <em>Pattern Container</em>}' class.
@@ -754,7 +735,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @see ecoreBCModel.impl.EcoreBCModelPackageImpl#getBindingState()
 	 * @generated
 	 */
-	int BINDING_STATE = 14;
+	int BINDING_STATE = 13;
 
 	/**
 	 * The meta object id for the '{@link ecoreBCModel.CommandType <em>Command Type</em>}' enum.
@@ -764,7 +745,7 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @see ecoreBCModel.impl.EcoreBCModelPackageImpl#getCommandType()
 	 * @generated
 	 */
-	int COMMAND_TYPE = 15;
+	int COMMAND_TYPE = 14;
 
 	/**
 	 * Returns the meta object for class '{@link ecoreBCModel.IntermediateModel <em>Intermediate Model</em>}'.
@@ -936,6 +917,17 @@ public interface EcoreBCModelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIntermSite_SiteStates();
+
+	/**
+	 * Returns the meta object for the reference '{@link ecoreBCModel.IntermSite#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Parent</em>'.
+	 * @see ecoreBCModel.IntermSite#getParent()
+	 * @see #getIntermSite()
+	 * @generated
+	 */
+	EReference getIntermSite_Parent();
 
 	/**
 	 * Returns the meta object for class '{@link ecoreBCModel.IntermInitialisation <em>Interm Initialisation</em>}'.
@@ -1260,16 +1252,6 @@ public interface EcoreBCModelPackage extends EPackage {
 	EAttribute getIntermCommand_Cnt();
 
 	/**
-	 * Returns the meta object for class '{@link ecoreBCModel.Bindable <em>Bindable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Bindable</em>'.
-	 * @see ecoreBCModel.Bindable
-	 * @generated
-	 */
-	EClass getBindable();
-
-	/**
 	 * Returns the meta object for enum '{@link ecoreBCModel.BindingState <em>Binding State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1449,6 +1431,14 @@ public interface EcoreBCModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTERM_SITE__SITE_STATES = eINSTANCE.getIntermSite_SiteStates();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERM_SITE__PARENT = eINSTANCE.getIntermSite_Parent();
 
 		/**
 		 * The meta object literal for the '{@link ecoreBCModel.impl.IntermInitialisationImpl <em>Interm Initialisation</em>}' class.
@@ -1705,16 +1695,6 @@ public interface EcoreBCModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INTERM_COMMAND__CNT = eINSTANCE.getIntermCommand_Cnt();
-
-		/**
-		 * The meta object literal for the '{@link ecoreBCModel.Bindable <em>Bindable</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see ecoreBCModel.Bindable
-		 * @see ecoreBCModel.impl.EcoreBCModelPackageImpl#getBindable()
-		 * @generated
-		 */
-		EClass BINDABLE = eINSTANCE.getBindable();
 
 		/**
 		 * The meta object literal for the '{@link ecoreBCModel.BindingState <em>Binding State</em>}' enum.

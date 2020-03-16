@@ -57,13 +57,13 @@ public class DslToIntermTransformation {
 		transformAgents();
 		intermModel.getComponents().addAll(agentToIntermAgent.values());
 
-		// Transfrom Rules and add to model
-		transformRules();
-		intermModel.getComponents().addAll(translatedRules);
-
 		// Transform Initialisations and add to model
 		transformInitialisations();
 		intermModel.getComponents().addAll(initToIntermInit.values());
+		
+		// Transfrom Rules and add to model
+		transformRules();
+		intermModel.getComponents().addAll(translatedRules);
 
 		// Transform observables and add to model
 		transformObservables();
@@ -122,8 +122,6 @@ public class DslToIntermTransformation {
 	 * @return
 	 */
 	private List<Initialisation> findInitialisationsInModel() {
-		// TODO: Separate Handling for Initialisations in Complexes? Probably not
-		// necessary
 		return EcoreUtil2.getAllContentsOfType(originalModel, Initialisation.class);
 	}
 
@@ -134,7 +132,6 @@ public class DslToIntermTransformation {
 	 * @return
 	 */
 	private List<Observable> findObservablesInModel() {
-		// TODO: Separate Handling for Observables in Complexes? Probably not necessary
 		return EcoreUtil2.getAllContentsOfType(originalModel, Observable.class);
 	}
 
@@ -156,9 +153,10 @@ public class DslToIntermTransformation {
 		for (Agent agent : agentsInDeclarations) {
 			IntermAgent newAgent = EcoreBCModelFactory.eINSTANCE.createIntermAgent();
 			newAgent.setName(agent.getName());
-			List<IntermSite> newSites = createSites(agent.getSites());
-			newAgent.getSites().addAll(newSites);
 			agentToIntermAgent.put(agent, newAgent);
+			List<IntermSite> newSites = createSites(agent);
+			newAgent.getSites().addAll(newSites);
+
 		}
 	}
 
@@ -270,11 +268,12 @@ public class DslToIntermTransformation {
 	 * @param sites - original sites to be transformed
 	 * @return the transformed sites for the intermediate model
 	 */
-	private List<IntermSite> createSites(List<Site> sites) {
+	private List<IntermSite> createSites(Agent agent) {
 
 		List<IntermSite> intermSites = new ArrayList<>();
-		for (Site site : sites) {
+		for (Site site : agent.getSites()) {
 			IntermSite newSite = createSite(site);
+			newSite.setParent(agentToIntermAgent(agent));
 			intermSites.add(newSite);
 		}
 		return intermSites;

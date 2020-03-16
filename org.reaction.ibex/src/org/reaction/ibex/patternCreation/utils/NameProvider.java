@@ -82,41 +82,25 @@ public class NameProvider {
 	 * @return a qualified name for managing condition patterns.
 	 */
 	public static String getQualifiedConditionPatternName(IntermAgentInstance aiSrc, IntermSiteInstance siSrc,
-			Bindable trg, boolean toLocalNode) {
+			IntermSiteInstance siTrg, boolean toLocalNode) {
 		StringBuilder sb = new StringBuilder("conditionPattern_");
 
-		if (trg instanceof IntermSiteInstance) {
-			IntermSiteInstance siTrg = (IntermSiteInstance) trg;
+		IntermAgentInstance aiTrg = siTrg.getParent();
+		IntermSiteState stateTrg = siTrg.getState();
 
-			IntermAgentInstance aiTrg = siTrg.getParent();
-			IntermSiteState stateTrg = siTrg.getState();
+		sb.append(aiSrc.getInstanceOf().getName());
+		sb.append(siSrc.getName());
+		sb.append("_to_");
+		sb.append(aiTrg.getInstanceOf().getName());
+		sb.append(siTrg.getName());
 
-			sb.append(aiSrc.getInstanceOf().getName());
-			sb.append(siSrc.getName());
-			sb.append("_to_");
-			sb.append(aiTrg.getInstanceOf().getName());
-			sb.append(siTrg.getName());
-
-			if (stateTrg != null) {
-				sb.append("_state_" + stateTrg.getName());
-			}
-			if (toLocalNode) {
-				sb.append("_Local");
-			}
-
+		if (stateTrg != null) {
+			sb.append("_state_" + stateTrg.getName());
 		}
-		if (trg instanceof IntermAgent) {
-			IntermAgent trgAgent = (IntermAgent) trg;
-
-			sb.append(aiSrc.getInstanceOf().getName());
-			sb.append(siSrc.getName());
-			sb.append("_to_");
-			sb.append("LocalAgent_");
-			sb.append(trgAgent.getName().toUpperCase());
+		if (toLocalNode) {
+			sb.append("_Local");
 		}
-		if (trg instanceof IntermAgentInstance) {
-			throw new UnsupportedOperationException("Could not handle type of " + trg.toString());
-		}
+		
 		return sb.toString();
 	}
 
@@ -149,15 +133,26 @@ public class NameProvider {
 	 * @param toState - true, if it is an edge pointing to a state node
 	 * @return the key-string to get an edge type from the edge type map
 	 */
-	public static String getEdgeTypeKey(IntermAgentInstance ai, IntermSiteInstance si, boolean toState) {
+	public static String getEdgeTypeKey(IntermAgentInstance ai, IntermSiteInstance si) {
 		String key = ai.getInstanceOf().getName().toUpperCase() + "_" + si.getName();
+		return key;
+	}
+	
+	/**
+	 * @param ai      - the agent where the edge starts
+	 * @param si      - the site where the edge starts
+	 * @param toState - true, if it is an edge pointing to a state node
+	 * @return the key-string to get an edge type from the edge type map
+	 */
+	public static String getEdgeTypeKeyToState(IntermAgentInstance ai, IntermSiteInstance si) {
+		String key = getEdgeTypeKey(ai, si);
 		IntermSiteState state = si.getState();
-		if (state != null && toState) {
+		if (state != null) {
 			key = key + "_" + si.getState().getName();
 		}
 
 		// If no state given but state is possible, return key for default state
-		if (state == null && toState) {
+		if (state == null) {
 			List<IntermSiteState> possibleStates = si.getInstanceOf().getSiteStates();
 			if (possibleStates.size() > 0) {
 				IntermSiteState defaultState = possibleStates.get(0);
@@ -170,5 +165,6 @@ public class NameProvider {
 
 		return key;
 	}
+	
 
 }

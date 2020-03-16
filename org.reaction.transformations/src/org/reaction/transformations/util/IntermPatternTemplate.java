@@ -83,7 +83,7 @@ public class IntermPatternTemplate {
 	 * @return the partner to be bound or not be bound to. Can be of type
 	 *         IntermAgent, IntermAgentInstance or IntermSiteInstance.
 	 */
-	private Bindable findPartner(BondSide rbs) {
+	private IntermSiteInstance findPartner(BondSide rbs) {
 		SiteInstance rbsSi = rbs.getSiteInstance();
 
 		AbstractAgent abstrAgent = rbs.getAbstractAgent();
@@ -116,7 +116,8 @@ public class IntermPatternTemplate {
 			} else {
 				// Only Agent given: return agent
 				IntermAgent intermAgent = transformation.agentToIntermAgent((Agent) abstrAgent);
-				return intermAgent;
+				throw new UnsupportedOperationException("You broke something when removing Bindable Interface.");
+//				return intermAgent;
 			}
 		}
 		if (abstrAgent instanceof AgentInstance) {
@@ -136,7 +137,8 @@ public class IntermPatternTemplate {
 				return siteInstance;
 			} else {
 				IntermAgentInstance intermRightAi = instances.get(rightAi.getName());
-				return intermRightAi;
+				throw new UnsupportedOperationException("You broke something when removing Bindable Interface.");
+//				return intermRightAi;
 			}
 
 		}
@@ -169,10 +171,12 @@ public class IntermPatternTemplate {
 
 		// update state (if existent) or recognize as unspecified
 		if (leftSi != null) {
-			if (leftSi.getSiteState() != null) {
-				leftIntermSi.setState(getIntermSiteState(leftIntermSi, leftSi.getSiteState()));
-			} else {
-				addSiteWithUnspecifiedState(leftIntermSi);
+			if (leftSi.getSite().getStates().size() > 0) {
+				if (leftSi.getSiteState() != null) {
+					leftIntermSi.setState(getIntermSiteState(leftIntermSi, leftSi.getSiteState()));
+				} else {
+					addSiteWithUnspecifiedState(leftIntermSi);
+				}
 			}
 		}
 
@@ -195,7 +199,7 @@ public class IntermPatternTemplate {
 			else {
 
 				BondSide rbs = (BondSide) rbsOrWild;
-				Bindable partner = findPartner(rbs);
+				IntermSiteInstance partner = findPartner(rbs); // Finds partner AND sets state
 
 				if (bondType == BondType.UNBOUND) {
 					for (IntermSiteInstance si : intermLeftSiteInstances) {
@@ -209,42 +213,26 @@ public class IntermPatternTemplate {
 				}
 			}
 		}
-		// left side unspecified
-		//TODO: Probably not necessary since all created instances are in unspecified state at default?
-//		else {
-//			BindingState stateToSet = BindingState.UNSPECIFIED;
-//
-//			for (IntermSiteInstance si : intermLeftSiteInstances) {
-//				si.setBindingState(stateToSet);
-//			}
-//
-//		}
 	}
 
 	/**
 	 * Connects two given intermediate site instances and updates their binding
 	 * statuses.
 	 */
-	private void connectSiteInstanceTo(IntermSiteInstance si1, Bindable partner) {
+	private void connectSiteInstanceTo(IntermSiteInstance si1, IntermSiteInstance partner) {
 		si1.setBoundTo(partner);
 		si1.setBindingState(BindingState.BOUND);
 
-		if (partner instanceof IntermSiteInstance) {
-			IntermSiteInstance si2 = (IntermSiteInstance) partner;
-			si2.setBoundTo(si1);
-			si2.setBindingState(BindingState.BOUND);
-		}
+		partner.setBoundTo(si1);
+		partner.setBindingState(BindingState.BOUND);
 	}
 
 	/**
 	 * Forbids the connection between two given intermediate site instances
 	 */
-	private void forbidSiteInstanceConnection(IntermSiteInstance si1, Bindable partner) {
+	private void forbidSiteInstanceConnection(IntermSiteInstance si1, IntermSiteInstance partner) {
 		si1.getNotBoundTo().add(partner);
-		if (partner instanceof IntermSiteInstance) {
-			IntermSiteInstance si2 = (IntermSiteInstance) partner;
-			si2.getNotBoundTo().add(si1);
-		}
+		partner.getNotBoundTo().add(si1);
 	}
 
 	/**

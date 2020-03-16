@@ -110,7 +110,7 @@ public class ChangePatternFactory {
 				// Create state as specified
 				IBeXNode stateNode = getOrCreateStateNode(createPattern, si);
 				if (stateNode != null) {
-					createEdge(newNode, stateNode, NameProvider.getEdgeTypeKey(ai, si, true));
+					createEdge(newNode, stateNode, NameProvider.getEdgeTypeKeyToState(ai, si));
 				}
 
 			}
@@ -143,8 +143,8 @@ public class ChangePatternFactory {
 
 		if (pre.getBindingState() == BindingState.BOUND) {
 
-			Bindable preBoundToBindable = pre.getBoundTo();
-			Bindable postBoundToBindable = post.getBoundTo();
+			IntermSiteInstance preBoundToBindable = pre.getBoundTo();
+			IntermSiteInstance postBoundToBindable = post.getBoundTo();
 
 			if (post.getBindingState() == BindingState.BOUND) {
 
@@ -259,21 +259,14 @@ public class ChangePatternFactory {
 
 		// establish new connection
 		IntermAgentInstance ai = si.getParent();
-		Bindable boundToBindable = si.getBoundTo();
-		if (!(boundToBindable instanceof IntermSiteInstance)) {
-			throw new RuntimeException(
-					"All instances on the right hand side of a rule must be well defined. Encountered generic or unclear binding at site "
-							+ boundToBindable + " in rule " + template.getRule().getName() + ". Exiting.");
-		}
-
-		IntermSiteInstance siBoundTo = (IntermSiteInstance) boundToBindable;
+		IntermSiteInstance siBoundTo = si.getBoundTo();
 		IntermAgentInstance aiBoundTo = siBoundTo.getParent();
 
 		// create new bond
 		IBeXNode boundNode = getOrCreateNode(createPattern, ai);
 		IBeXNode boundTo = getOrCreateNode(createPattern, aiBoundTo);
 
-		createEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(ai, si, false));
+		createEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(ai, si));
 	}
 
 	/**
@@ -291,14 +284,7 @@ public class ChangePatternFactory {
 
 		// establish new connection
 		IntermAgentInstance ai = si.getParent();
-		Bindable boundToBindable = si.getBoundTo();
-		if (boundToBindable != null && !(boundToBindable instanceof IntermSiteInstance)) {
-			throw new RuntimeException(
-					"All instances on the right hand side of a rule must be well defined. Encountered generic or unclear binding in rule "
-							+ template.getRule().getName());
-		}
-
-		IntermSiteInstance siBoundTo = (IntermSiteInstance) boundToBindable;
+		IntermSiteInstance siBoundTo = si.getBoundTo();
 
 		IBeXNode boundNode = getOrCreateNode(deletePattern, ai);
 		if (siBoundTo != null) {
@@ -307,11 +293,11 @@ public class ChangePatternFactory {
 			// create new bond
 			IBeXNode boundTo = getOrCreateNode(deletePattern, aiBoundTo);
 
-			deleteEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(ai, si, false));
+			deleteEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(ai, si));
 		} else {
 			// Deletion of underspecified bond:
 			IBeXNode boundTo = getOrCreateGenericNode(deletePattern, NameProvider.getQualifiedLocalNodeName(si));
-			deleteEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(ai, si, false));
+			deleteEdge(boundNode, boundTo, NameProvider.getEdgeTypeKey(ai, si));
 		}
 	}
 
@@ -343,7 +329,7 @@ public class ChangePatternFactory {
 			IBeXNode stateNodePost = getOrCreateStateNode(createPattern, siPost);
 
 			// add edges
-			createEdge(nodeInStatePost, stateNodePost, NameProvider.getEdgeTypeKey(aiPost, siPost, true));
+			createEdge(nodeInStatePost, stateNodePost, NameProvider.getEdgeTypeKeyToState(aiPost, siPost));
 		} else {
 
 			if (statePost == null) {
@@ -367,8 +353,8 @@ public class ChangePatternFactory {
 					IBeXNode stateNodePost = getOrCreateStateNode(createPattern, siPost);
 
 					// add edges
-					deleteEdge(nodeInStatePre, stateNodePre, NameProvider.getEdgeTypeKey(aiPre, siPre, true));
-					createEdge(nodeInStatePost, stateNodePost, NameProvider.getEdgeTypeKey(aiPost, siPost, true));
+					deleteEdge(nodeInStatePre, stateNodePre, NameProvider.getEdgeTypeKeyToState(aiPre, siPre));
+					createEdge(nodeInStatePost, stateNodePost, NameProvider.getEdgeTypeKeyToState(aiPost, siPost));
 				}
 			}
 		}
@@ -410,18 +396,10 @@ public class ChangePatternFactory {
 	 */
 	private void createBindingInformationForNewInstance(IntermAgentInstance ai) {
 		for (IntermSiteInstance si : ai.getSiteInstances()) {
-
 			IBeXNode boundNode = ModelHelper.getNodeFromCreatePattern(createPattern, ai.getName());
 
-			Bindable siBoundToBindable = si.getBoundTo();
-			if (siBoundToBindable == null) {
-				// No connection to create
-				continue;
-			}
-
-			if (siBoundToBindable instanceof IntermSiteInstance) {
-
-				IntermSiteInstance siBoundTo = (IntermSiteInstance) siBoundToBindable;
+			if (si.getBindingState() == BindingState.BOUND) {
+				IntermSiteInstance siBoundTo = si.getBoundTo();
 				IntermAgentInstance aiBoundTo = siBoundTo.getParent();
 
 				String aiBoundToName = aiBoundTo.getName();
@@ -430,13 +408,8 @@ public class ChangePatternFactory {
 					nodeBoundTo = createNode(aiBoundTo);
 				}
 
-				createEdge(boundNode, nodeBoundTo, NameProvider.getEdgeTypeKey(ai, si, false));
-
-			} else {
-				throw new RuntimeException(
-						"Encountered Binding instance without site specification. This should not be possible on the right hand side of a rule. Exiting.");
+				createEdge(boundNode, nodeBoundTo, NameProvider.getEdgeTypeKey(ai, si));
 			}
-
 		}
 	}
 
@@ -515,7 +488,7 @@ public class ChangePatternFactory {
 	 * @return the deleted node
 	 */
 	private IBeXNode deleteNode(IntermAgentInstance ai) {
-		
+
 		// delete node itself
 		IBeXNode deletedNode = IBeXPatternFactory.createNode(ai.getName(),
 				metamodelAgentTypes.get(ai.getInstanceOf().getName()));
@@ -528,28 +501,21 @@ public class ChangePatternFactory {
 
 			// delete all edges connected to it
 			for (IntermSiteInstance si : ai.getSiteInstances()) {
-				Bindable boundToBindable = si.getBoundTo();
+				IntermSiteInstance boundTo = si.getBoundTo();
 
-				if (boundToBindable instanceof IntermSiteInstance) {
-					IntermSiteInstance boundTo = (IntermSiteInstance) boundToBindable;
+				// delete connecting edge
+				if (si.getBindingState() == BindingState.BOUND) {
 					IntermAgentInstance boundToParent = boundTo.getParent();
 
 					IBeXNode boundToNode = getOrCreateNode(deletePattern, boundToParent);
-					deleteEdge(deletedNode, boundToNode, NameProvider.getEdgeTypeKey(ai, si, false));
-
-					// delete state
-					if (!ai.isLocal() && si.getState() != null) {
-						IBeXNode stateNode = getOrCreateStateNode(deletePattern, si);
-						deleteEdge(deletedNode, stateNode, NameProvider.getEdgeTypeKey(ai, si, true));
-					}
-				}
-				if (boundToBindable instanceof IntermAgentInstance) {
-					throw new UnsupportedOperationException();
-				}
-				if (boundToBindable instanceof IntermAgent) {
-					throw new UnsupportedOperationException();
+					deleteEdge(deletedNode, boundToNode, NameProvider.getEdgeTypeKey(ai, si));
 				}
 
+				// delete state
+				if (!ai.isLocal() && si.getState() != null) {
+					IBeXNode stateNode = getOrCreateStateNode(deletePattern, si);
+					deleteEdge(deletedNode, stateNode, NameProvider.getEdgeTypeKeyToState(ai, si));
+				}
 			}
 
 			return deletedNode;
