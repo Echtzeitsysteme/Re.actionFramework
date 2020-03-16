@@ -2,6 +2,7 @@ package reactionContainer.util;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EcoreFactory;
 
 import ecoreBCModel.IntermSiteState;
 import reactionContainer.State;

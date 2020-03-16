@@ -1,24 +1,24 @@
 begin model
 
 begin parameters
-	gsk3bInit	500.0
-	p53Init	5.0
-	mdm2Init	5.0
-	mdm2_p53Init	95.0
-	mdm2_mRNAInit	10.0
-	p53_mRNAInit	10.0
-	UbInit	4000.0
-	E1Init	100.0
-	E2Init	100.0
-	p53DubInit	200.0
-	mdm2DubInit	200.0
-	proteasomeInit	500.0
-	atmiInit	200.0
-	basalRosInit	10.0
-	mtTauInit	100.0
-	atpInit	10000.0
-	adpInit	1000.0
-	ampInit	1000.0
+	gsk3bInit	100.0
+	p53Init	1.0
+	mdm2Init	1.0
+	mdm2_p53Init	19.0
+	mdm2_mRNAInit	2.0
+	p53_mRNAInit	2.0
+	UbInit	800.0
+	E1Init	20.0
+	E2Init	20.0
+	p53DubInit	40.0
+	mdm2DubInit	40.0
+	proteasomeInit	100.0
+	atmiInit	40.0
+	basalRosInit	2.0
+	mtTauInit	20.0
+	atpInit	2000.0
+	adpInit	200.0
+	ampInit	200.0
 	ksynp53mRNA	0.001
 	kdegp53mRNA	1.0E-4
 	ksynMdm2mRNA	5.0E-4
@@ -111,25 +111,25 @@ end molecule types
 
 begin species
 	P53(b~u)	gsk3bInit
-	Mdm2(z~u,ubi~unb)	gsk3bInit
-	E2(x~unb)	p53Init
-	ATMI()	mdm2Init
-	ADP()	mdm2_p53Init
-	Mdm2DUB()	mdm2_mRNAInit
-	Mdm2(z~u,ubi~unb)	p53_mRNAInit
-	P53mRNA()	UbInit
-	ATP()	E1Init
-	GSK3b(x)	E2Init
-	Ub()	p53DubInit
-	E1(x~unb)	mdm2DubInit
-	MT(l)	proteasomeInit
-	Tau(phos~u)	proteasomeInit
-	P53DUB()	atmiInit
-	BasalROS()	basalRosInit
-	Mdm2mRNA(x)	mtTauInit
-	AMP()	atpInit
-	P53(b~u)	adpInit
-	Proteasome(x)	ampInit
+	Mdm2mRNA(x)	p53Init
+	Proteasome(x)	mdm2Init
+	P53DUB()	mdm2_p53Init
+	AMP()	mdm2_mRNAInit
+	MT(l)	p53_mRNAInit
+	Tau(phos~u)	p53_mRNAInit
+	Mdm2(z~u,ubi~unb)	UbInit
+	Ub()	E1Init
+	E2(x~unb)	E2Init
+	BasalROS()	p53DubInit
+	Mdm2DUB()	mdm2DubInit
+	P53(b~u)	proteasomeInit
+	Mdm2(z~u,ubi~unb)	proteasomeInit
+	P53mRNA()	atmiInit
+	ATMI()	basalRosInit
+	ATP()	mtTauInit
+	E1(x~unb)	atpInit
+	GSK3b(x)	adpInit
+	ADP()	ampInit
 end species
 
 begin reaction rules
@@ -224,4 +224,4 @@ end model
 
 generate_network({overwrite=>1})
 
-simulate({method=>"ssa", t_end=>50, n_steps=>50})
+simulate({method=>"ssa", t_end=>100, n_steps=>100})

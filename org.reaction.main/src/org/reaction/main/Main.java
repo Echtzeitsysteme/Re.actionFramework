@@ -29,35 +29,36 @@ public class Main {
 //		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Testcases.xmi";
 //		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
 
-		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Testcases.xmi";
-		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
+//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Testcases.xmi";
+//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
 
 //		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\GKL.xmi";
 //		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
 
-//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Alzheimer.xmi";
-//		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\GSK3b";
-
-//		final String dslModelLocation = "..\\..\\re.actionEvaluation\\models\\gkl\\GKL200.xmi";
+		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Alzheimer.xmi";
+		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\AlzheimersSimSG";
+//
+//		final String dslModelLocation = "..\\..\\re.actionEvaluation\\models\\gkl\\GKL1600.xmi";
 //		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\gklSimSG";
-		final String customMetamodelName = null;
 		final String userDir = System.getProperty("user.dir");
 		final String tempModels = userDir + "/models/";
 
 		IntermediateModel intermModel;
 
-//		// Clear directories
-//		System.out.println("Clearing directories...");
-//		
-//		//Clear tempModel Folder
-//		File tempModelFolder = new File(tempModels);
-//		deleteFolder(tempModelFolder);
-//		
-//		//Clear trgProjectLocations
-//		File trgProjectModelFolder = new File(trgProjectLocation+"/model/");
-//		File trgProjectInstanceFolder = new File(trgProjectLocation+"/instances/");
-//		deleteFolder(trgProjectModelFolder);
-//		deleteFolder(trgProjectInstanceFolder);
+		// Clear directories
+		System.out.println("Clearing directories...");
+		
+		//Clear tempModel Folder
+		File tempModelFolder = new File(tempModels);
+		deleteFolder(tempModelFolder);
+		
+		//Clear trgProjectLocations
+		File trgProjectModelFolder = new File(trgProjectLocation+"/model/");
+		File trgProjectInstanceFolderDefs = new File(trgProjectLocation+"/instances/simulation_definitions/");
+		File trgProjectInstanceFolderInis = new File(trgProjectLocation+"/instances/simulation_instances/");
+		deleteFolder(trgProjectModelFolder);
+		deleteFolder(trgProjectInstanceFolderDefs);
+		deleteFolder(trgProjectInstanceFolderInis);
 
 		ReactionModel dslModel = null;
 		// Reaction model to intermediate model
@@ -95,9 +96,6 @@ public class Main {
 		ContainerGenerator containerGen = new ContainerEMF(intermModel);
 
 		String metamodelPath = trgProjectLocation + "/model/" + intermModel.getName() + "Model.ecore";
-		if (customMetamodelName != null) {
-			metamodelPath = trgProjectLocation + "/model/" + customMetamodelName + ".ecore";
-		}
 		String modelPath = trgProjectLocation + "/instances/simulation_instances/" + intermModel.getName()
 				+ "Model.xmi";
 

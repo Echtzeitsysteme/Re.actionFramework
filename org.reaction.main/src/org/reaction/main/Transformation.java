@@ -25,22 +25,12 @@ public class Transformation {
 	String dslModelLocation;
 	String modelName;
 	String trgProjectLocation;
-	String customMetamodelName;
 	BNGLFactory bnglFactory;
 
-	public Transformation(String dslModelLocation, String dslModelName, String trgProjectLocation) {
+	public Transformation(String dslModelLocation, String modelName, String metamodelName, String trgProjectLocation) {
 		this.dslModelLocation = dslModelLocation;
-		this.modelName = dslModelName;
+		this.modelName = modelName;
 		this.trgProjectLocation = trgProjectLocation;
-		this.customMetamodelName = null;
-	}
-
-	public Transformation(String dslModelLocation, String dslModelName, String trgProjectLocation,
-			String customMetamodelName) {
-		this.dslModelLocation = dslModelLocation;
-		this.modelName = dslModelName;
-		this.trgProjectLocation = trgProjectLocation;
-		this.customMetamodelName = customMetamodelName;
 	}
 
 	public void start() {
@@ -59,7 +49,7 @@ public class Transformation {
 //		deleteFolder(trgProjectModelFolder);
 //		deleteFolder(trgProjectInstanceFolder);
 		final String userDir = System.getProperty("user.dir");
-		final String tempModels = userDir + "\\models\\";
+		final String tempModels = userDir + "\\intermModels\\";
 		final String dslModelFile = dslModelLocation + modelName + ".xmi";
 		ReactionModel dslModel = null;
 		// Reaction model to intermediate model
@@ -68,11 +58,7 @@ public class Transformation {
 			dslModel = EMFResourceHelper.loadReactionModel(dslModelFile);
 			DslToIntermTransformation dslToInterm = new DslToIntermTransformation(dslModel);
 			intermModel = dslToInterm.generateIntermediateModel();
-			if (customMetamodelName != null) {
-				intermModel.setName(customMetamodelName);
-			} else {
-				intermModel.setName(modelName);
-			}
+			intermModel.setName(modelName);
 
 			String intermModelSaveLocation = tempModels + modelName + "Intermediate.xmi";
 			EMFResourceHelper.saveResource(intermModel, intermModelSaveLocation);
@@ -87,12 +73,8 @@ public class Transformation {
 
 		ContainerGenerator containerGen = new ContainerEMF(intermModel);
 
-		String metamodelPath = trgProjectLocation + "/model/" + intermModel.getName() + "Model.ecore";
-		if (customMetamodelName != null) {
-			metamodelPath = trgProjectLocation + "/model/" + customMetamodelName + "Model.ecore";
-		}
-		String modelPath = trgProjectLocation + "/instances/simulation_instances/" + modelName
-				+ "Model.xmi";
+		String metamodelPath = trgProjectLocation + "/model/" + modelName + "Model.ecore";
+		String modelPath = trgProjectLocation + "/instances/simulation_instances/" + modelName + "Model.xmi";
 
 		try {
 			containerGen.doGenerate(modelPath, metamodelPath);
@@ -130,7 +112,8 @@ public class Transformation {
 			gtCreator.saveRuleSet(gtSaveLocation);
 
 			SimDefCreator simDefCreator = new SimDefCreator(intermModel, trgProjectLocation);
-			String simDefSaveLocation = trgProjectLocation + "/instances/simulation_definitions/" + modelName + "Model.xmi";
+			String simDefSaveLocation = trgProjectLocation + "/instances/simulation_definitions/" + modelName
+					+ "Model.xmi";
 			simDefCreator.saveDefinition(simDefSaveLocation);
 		} catch (Exception e) {
 			System.err.println("Creating IBeX items failed with:");
@@ -144,7 +127,7 @@ public class Transformation {
 				containerGen.getUsedStates());
 		bnglFactory.generateBNGL();
 	}
-	
+
 	public void exportAsBNGL(String exportLocation) {
 		System.out.println("Starting BNGL export.");
 

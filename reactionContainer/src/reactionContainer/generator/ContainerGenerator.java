@@ -261,10 +261,9 @@ public abstract class ContainerGenerator {
 		ResourceSet resSet = new ResourceSetImpl();
 		String absoluteMetaModelPath = FileSystems.getDefault().getPath(metaModelPath).normalize().toAbsolutePath().toString();
 
-
 		Resource res = resSet.createResource(URI.createFileURI(absoluteMetaModelPath));
 		res.getContents().add(dynamicMetaModel);
-
+		
 		EPackage.Registry.INSTANCE.put(dynamicMetaModel.getNsURI(), dynamicMetaModel);
 
 		Map<Object, Object> saveOptions = ((XMIResource) res).getDefaultSaveOptions();
@@ -329,6 +328,7 @@ public abstract class ContainerGenerator {
 	protected void generateAgentClasses() {
 
 		dynamicMetaModel = EcoreFactory.eINSTANCE.createEPackage();
+		
 		String dynamicMetaModelName = model.getName() + "Model";
 		dynamicMetaModel.setName(dynamicMetaModelName);
 		dynamicMetaModel.setNsPrefix(dynamicMetaModelName);
@@ -338,6 +338,8 @@ public abstract class ContainerGenerator {
 		ReactionContainerPackage.eINSTANCE.getESubpackages().clear();
 		ReactionContainerPackage.eINSTANCE.getESubpackages().add(dynamicMetaModel);
 
+		EPackage test = dynamicMetaModel.getESuperPackage();
+		
 		stateClassFactory = new StateClassFactory(dynamicMetaModel);
 		agentClassFactory = new AgentClassFactory(dynamicMetaModel, stateClassFactory, siteConnections, getUsedStates());
 
