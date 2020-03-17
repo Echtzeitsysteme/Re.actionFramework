@@ -7,18 +7,18 @@ begin parameters
 	mdm2_p53Init	19.0
 	mdm2_mRNAInit	2.0
 	p53_mRNAInit	2.0
-	UbInit	800.0
-	E1Init	20.0
-	E2Init	20.0
-	p53DubInit	40.0
-	mdm2DubInit	40.0
-	proteasomeInit	100.0
-	atmiInit	40.0
-	basalRosInit	2.0
-	mtTauInit	20.0
-	atpInit	2000.0
-	adpInit	200.0
-	ampInit	200.0
+	UbInit	400.0
+	E1Init	10.0
+	E2Init	10.0
+	p53DubInit	20.0
+	mdm2DubInit	20.0
+	proteasomeInit	50.0
+	atmiInit	20.0
+	basalRosInit	1.0
+	mtTauInit	10.0
+	atpInit	800.0
+	adpInit	50.0
+	ampInit	50.0
 	ksynp53mRNA	0.001
 	kdegp53mRNA	1.0E-4
 	ksynMdm2mRNA	5.0E-4
@@ -110,26 +110,26 @@ begin molecule types
 end molecule types
 
 begin species
-	P53(b~u)	gsk3bInit
-	Mdm2mRNA(x)	p53Init
-	Proteasome(x)	mdm2Init
-	P53DUB()	mdm2_p53Init
-	AMP()	mdm2_mRNAInit
-	MT(l)	p53_mRNAInit
-	Tau(phos~u)	p53_mRNAInit
-	Mdm2(z~u,ubi~unb)	UbInit
-	Ub()	E1Init
-	E2(x~unb)	E2Init
-	BasalROS()	p53DubInit
-	Mdm2DUB()	mdm2DubInit
-	P53(b~u)	proteasomeInit
-	Mdm2(z~u,ubi~unb)	proteasomeInit
-	P53mRNA()	atmiInit
-	ATMI()	basalRosInit
-	ATP()	mtTauInit
-	E1(x~unb)	atpInit
-	GSK3b(x)	adpInit
-	ADP()	ampInit
+	Mdm2mRNA(x)	gsk3bInit
+	E2(x~unb)	p53Init
+	ADP()	mdm2Init
+	GSK3b(x)	mdm2_p53Init
+	P53DUB()	mdm2_mRNAInit
+	P53(b~u)	p53_mRNAInit
+	Mdm2(z~u,ubi~unb)	p53_mRNAInit
+	ATP()	UbInit
+	Mdm2DUB()	E1Init
+	P53(b~u)	E2Init
+	AMP()	p53DubInit
+	Proteasome(x)	mdm2DubInit
+	E1(x~unb)	proteasomeInit
+	ATMI()	atmiInit
+	BasalROS()	basalRosInit
+	P53mRNA()	mtTauInit
+	Mdm2(z~u,ubi~unb)	atpInit
+	Ub()	adpInit
+	MT(l)	ampInit
+	Tau(phos~u)	ampInit
 end species
 
 begin reaction rules

@@ -25,7 +25,7 @@ public class IBeXCreator {
 
 	private ContextCreator contextCreator;
 	private ChangeCreator changeCreator;
-	
+
 	private IBeXPatternSet ibexPatternSet;
 
 	public IBeXCreator(IntermediateModel model, EPackage metamodelPackage) {

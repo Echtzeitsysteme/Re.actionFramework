@@ -50,7 +50,6 @@ public class ContextCreator {
 	 * patternName = "{UpperCaseAgentName}_{lowerCaseSiteName}Bound"
 	 */
 	private Map<String, IBeXContextPattern> boundPatterns;
-	private Map<String, IBeXContextPattern> freePatterns;
 	private Map<String, IBeXContextPattern> conditionPatterns;
 
 	private IBeXLanguageFactory ibexFactory;
@@ -60,7 +59,6 @@ public class ContextCreator {
 		this.model = model;
 		this.metamodelPackage = metamodelPackage;
 		boundPatterns = new HashMap<>();
-		freePatterns = new HashMap<>();
 		conditionPatterns = new HashMap<>();
 		init();
 	}
@@ -300,27 +298,6 @@ public class ContextCreator {
 
 	private EReference getEdgeType(IntermSiteInstance si, IntermSiteInstance siTrg) {
 		return edgeTypeRegistry.get(NameProvider.getEdgeTypeKey(si, siTrg));
-	}
-
-	private EReference getEdgeTypeToAgent(IntermSiteInstance si, IntermAgent agent) {
-
-		List<IntermSite> agentSites = agent.getSites();
-		int i = 0;
-		String keyPrefix = si.getParent().getInstanceOf().getName().toUpperCase() + "_" + si.getName() + "_"
-				+ agent.getName().toUpperCase() + "_";
-		String key = keyPrefix + agentSites.get(i).getName();
-		while (!edgeTypeRegistry.containsKey(key)) {
-			i++;
-
-			if (i == agentSites.size()) {
-				throw new IllegalStateException("No reference in metamodel for connecting " + si.getParent().getName()
-						+ "." + si.getName() + " with Agent " + agent.getName());
-			}
-
-			key = keyPrefix + agentSites.get(i).getName();
-		}
-
-		return edgeTypeRegistry.get(key);
 	}
 
 	private EReference getEdgeTypeToState(IntermAgentInstance ai, IntermSiteInstance si) {
@@ -679,19 +656,23 @@ public class ContextCreator {
 		List<IntermAgentInstance> instances = pattern.getAgentInstances();
 
 		for (IntermAgentInstance ai : instances) {
-			
+
 			List<IntermSiteInstance> siList = ai.getSiteInstances();
-			
-			//only create agent node if the agent does not have any sites
-			if(siList.isEmpty()) {
+
+			// only create agent node if the agent does not have any sites
+			if (siList.isEmpty()) {
 				String aiName = ai.getName();
 				IBeXNode node = ModelHelper.getNodeFromContextPattern(contextPattern, aiName);
-				if(node == null) {
+				if (node == null) {
 					node = IBeXPatternFactory.createNode(aiName, agentTypeRegistry.get(ai.getInstanceOf().getName()));
-					contextPattern.getSignatureNodes().add(node);
+					if (ai.isLocal()) {
+						contextPattern.getLocalNodes().add(node);
+					} else {
+						contextPattern.getSignatureNodes().add(node);
+					}
 				}
 			}
-			
+
 			for (IntermSiteInstance si : siList) {
 
 				// Only create "actively binding" nodes for signature nodes. Local nodes will
