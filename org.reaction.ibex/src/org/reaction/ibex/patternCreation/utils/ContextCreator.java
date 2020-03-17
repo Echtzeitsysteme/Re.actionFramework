@@ -573,7 +573,23 @@ public class ContextCreator {
 		List<IntermAgentInstance> instances = pattern.getAgentInstances();
 
 		for (IntermAgentInstance ai : instances) {
-			for (IntermSiteInstance si : ai.getSiteInstances()) {
+			
+			List<IntermSiteInstance> siList = ai.getSiteInstances();
+			// create agent node if the agent does not have any sites
+			if (siList.isEmpty()) {
+				String aiName = ai.getName();
+				IBeXNode node = ModelHelper.getNodeFromContextPattern(contextPattern, aiName);
+				if (node == null) {
+					node = IBeXPatternFactory.createNode(aiName, metamodelAgentTypes.get(ai.getInstanceOf().getName()));
+					if (ai.isLocal()) {
+						contextPattern.getLocalNodes().add(node);
+					} else {
+						contextPattern.getSignatureNodes().add(node);
+					}
+				}
+			}
+			
+			for (IntermSiteInstance si : siList) {
 
 				// Only create "actively binding" nodes for signature nodes. Local nodes will
 				// and should only be created as passive part to bind signature nodes to
