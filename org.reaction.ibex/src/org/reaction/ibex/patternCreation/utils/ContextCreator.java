@@ -493,14 +493,6 @@ public class ContextCreator {
 			boundInvoc.setInvokedBy(contextPattern);
 			boundInvoc.getMapping().put(boundNode, ModelHelper.getNodeFromContextPattern(invokedPattern, "src"));
 			contextPattern.getInvocations().add(boundInvoc);
-			
-			// Create Local Node and bind to it
-//			IBeXNode localNode = IBeXPatternFactory.createNode(ai.getName() + "_" + si.getName() + "_local",
-//					ReactionContainerPackage.Literals.AGENT);
-//			IBeXEdge edgeToLocal = IBeXPatternFactory.createEdge(boundNode, localNode, getEdgeType(ai, si, false));
-//
-//			contextPattern.getLocalNodes().add(localNode);
-//			contextPattern.getLocalEdges().add(edgeToLocal);
 		}
 	}
 

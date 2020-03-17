@@ -17,7 +17,6 @@ import IBeXLanguage.IBeXEdge;
 import IBeXLanguage.IBeXLanguageFactory;
 import IBeXLanguage.IBeXNode;
 import IBeXLanguage.IBeXPattern;
-import ecoreBCModel.Bindable;
 import ecoreBCModel.BindingState;
 import ecoreBCModel.IntermAgent;
 import ecoreBCModel.IntermAgentInstance;

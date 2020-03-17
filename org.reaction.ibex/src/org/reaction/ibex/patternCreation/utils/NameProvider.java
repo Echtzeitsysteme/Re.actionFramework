@@ -5,7 +5,6 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
 
-import ecoreBCModel.Bindable;
 import ecoreBCModel.IntermAgent;
 import ecoreBCModel.IntermAgentInstance;
 import ecoreBCModel.IntermSiteInstance;
@@ -134,7 +133,7 @@ public class NameProvider {
 	 * @return the key-string to get an edge type from the edge type map
 	 */
 	public static String getEdgeTypeKey(IntermAgentInstance ai, IntermSiteInstance si) {
-		String key = ai.getInstanceOf().getName().toUpperCase() + "_" + si.getName();
+		String key = ai.getInstanceOf().getName() + "_" + si.getName();
 		return key;
 	}
 	
