@@ -143,8 +143,11 @@ public class ContextCreator {
 		// Add node pairs = injectivity constraints
 		for (IBeXContext context : ibexPatternSet.getContextPatterns()) {
 			IBeXContextPattern contextPattern = (IBeXContextPattern) context;
-			List<IBeXNodePair> nodePairs = createNodePairs(contextPattern);
-			contextPattern.getInjectivityConstraints().addAll(nodePairs);
+			// Except Bound Patterns
+			if (!contextPattern.getName().endsWith("Bound")) {
+				List<IBeXNodePair> nodePairs = createNodePairs(contextPattern);
+				contextPattern.getInjectivityConstraints().addAll(nodePairs);
+			}
 		}
 
 	}
@@ -275,12 +278,12 @@ public class ContextCreator {
 	}
 
 	private EReference getEdgeType(IntermAgentInstance ai, IntermSiteInstance si, boolean toState) {
-		if(toState) {
+		if (toState) {
 			return metamodelEdgeTypes.get(NameProvider.getEdgeTypeKeyToState(ai, si));
-		}else {
+		} else {
 			return metamodelEdgeTypes.get(NameProvider.getEdgeTypeKey(ai, si));
 		}
-		
+
 	}
 
 	/**
@@ -481,13 +484,23 @@ public class ContextCreator {
 		}
 		// for example: a.b+?
 		else {
+			// invoke bound pattern
+			IBeXPatternInvocation boundInvoc = ibexFactory.createIBeXPatternInvocation();
+			String invokedPatternName = NameProvider.getBoundSitePatternName(ai, si);
+			IBeXContextPattern invokedPattern = getContextPatternByName(invokedPatternName);
+			boundInvoc.setInvokedPattern(invokedPattern);
+			boundInvoc.setPositive(true);
+			boundInvoc.setInvokedBy(contextPattern);
+			boundInvoc.getMapping().put(boundNode, ModelHelper.getNodeFromContextPattern(invokedPattern, "src"));
+			contextPattern.getInvocations().add(boundInvoc);
+			
 			// Create Local Node and bind to it
-			IBeXNode localNode = IBeXPatternFactory.createNode(ai.getName() + "_" + si.getName() + "_local",
-					ReactionContainerPackage.Literals.AGENT);
-			IBeXEdge edgeToLocal = IBeXPatternFactory.createEdge(boundNode, localNode, getEdgeType(ai, si, false));
-
-			contextPattern.getLocalNodes().add(localNode);
-			contextPattern.getLocalEdges().add(edgeToLocal);
+//			IBeXNode localNode = IBeXPatternFactory.createNode(ai.getName() + "_" + si.getName() + "_local",
+//					ReactionContainerPackage.Literals.AGENT);
+//			IBeXEdge edgeToLocal = IBeXPatternFactory.createEdge(boundNode, localNode, getEdgeType(ai, si, false));
+//
+//			contextPattern.getLocalNodes().add(localNode);
+//			contextPattern.getLocalEdges().add(edgeToLocal);
 		}
 	}
 

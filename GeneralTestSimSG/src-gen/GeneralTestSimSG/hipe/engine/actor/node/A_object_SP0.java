@@ -29,12 +29,12 @@ public class A_object_SP0 extends GenericObjectActor<TestcasesModel.A> {
 	protected void initializePorts(Map<String, ActorRef> name2actor, ObjectNode node) {
 		ports = new LinkedList<>();
 		ports.add(new PortNodeLeft<TestcasesModel.A>(getSelf(), name2actor.get("A_A_b_0_reference"), this::returnTrue));
-		ports.add(new PortNodeMatch<TestcasesModel.A>(getSelf(), name2actor.get("degUnspecific_production"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("selfBinding_40_junction"), this::check_constraint_9));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("selfBinding_40_junction"), this::check_constraint_1));
 		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("unspecTest_93_junction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("wildcard_146_junction"), this::returnTrue));
 	}
 	
-	public boolean check_constraint_9(TestcasesModel.A a) {
+	public boolean check_constraint_1(TestcasesModel.A a) {
 		return a.getA_b().equals(a);
 	}
 	

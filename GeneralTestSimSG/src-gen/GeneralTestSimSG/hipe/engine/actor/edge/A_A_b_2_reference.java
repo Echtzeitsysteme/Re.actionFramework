@@ -29,11 +29,11 @@ public class A_A_b_2_reference extends GenericReferenceActor<TestcasesModel.A,re
 	@Override
 	protected void initializePorts(Map<String, ActorRef> name2actor, ReferenceNode node) {
 		ports = new LinkedList<>();
-		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("injectivityBwd_141_junction"), this::check_constraint_22));
-		ports.add(new PortEdgeRight(getSelf(), name2actor.get("injectivityBwd_141_junction"), this::check_constraint_23));
+		ports.add(new PortEdgeLeft(getSelf(), name2actor.get("injectivityBwd_141_junction"), this::check_constraint_4));
+		ports.add(new PortEdgeRight(getSelf(), name2actor.get("injectivityBwd_141_junction"), this::check_constraint_5));
 	}	
 
-	public boolean check_constraint_22(EdgeMatch edge) {
+	public boolean check_constraint_4(EdgeMatch edge) {
 		TestcasesModel.A a1 = (TestcasesModel.A) edge.source();
 		reactionContainer.Agent a2 = (reactionContainer.Agent) edge.target();
 		boolean predicate = !a1.equals(a2);
@@ -41,7 +41,7 @@ public class A_A_b_2_reference extends GenericReferenceActor<TestcasesModel.A,re
 		return predicate;
 	}
 	
-	public boolean check_constraint_23(EdgeMatch edge) {
+	public boolean check_constraint_5(EdgeMatch edge) {
 		TestcasesModel.A a2 = (TestcasesModel.A) edge.source();
 		reactionContainer.Agent a1 = (reactionContainer.Agent) edge.target();
 		boolean predicate = !a1.equals(a2);

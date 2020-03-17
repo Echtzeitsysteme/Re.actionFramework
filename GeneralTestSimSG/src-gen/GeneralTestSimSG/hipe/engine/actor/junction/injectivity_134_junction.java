@@ -30,7 +30,7 @@ public class injectivity_134_junction extends GenericJunctionActor{
 	@Override
 	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
-		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("injectivity_218_nacjunction"), this::check_constraint_17));
+		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("injectivity_210_nacjunction"), this::check_constraint_3));
 	}
 	
 	@Override
@@ -51,9 +51,9 @@ public class injectivity_134_junction extends GenericJunctionActor{
 		message.initialMessage.decrement();
 	}
 	
-	public boolean check_constraint_17(HMatch match) {
-		TestcasesModel.A a1 = (TestcasesModel.A) match.getNodes()[1];
-		TestcasesModel.A a2 = (TestcasesModel.A) match.getNodes()[0];
+	public boolean check_constraint_3(HMatch match) {
+		TestcasesModel.A a2 = (TestcasesModel.A) match.getNodes()[1];
+		TestcasesModel.A a1 = (TestcasesModel.A) match.getNodes()[0];
 		boolean predicate = !a1.equals(a2);
 		match.setConstraintSatisfied(predicate);
 		return predicate;

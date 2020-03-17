@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <IBeXLanguage:IBeXPatternSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:IBeXLanguage="platform:/resource/org.emoflon.ibex.common/model/Common.ecore">
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="a_bBound">
-    <injectivityConstraints values="//@contextPatterns.0/@signatureNodes.0 //@contextPatterns.0/@localNodes.0"/>
     <localEdges sourceNode="//@contextPatterns.0/@signatureNodes.0" targetNode="//@contextPatterns.0/@localNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b"/>
     </localEdges>
@@ -13,7 +12,6 @@
     </signatureNodes>
   </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="a_cBound">
-    <injectivityConstraints values="//@contextPatterns.1/@signatureNodes.0 //@contextPatterns.1/@localNodes.0"/>
     <localEdges sourceNode="//@contextPatterns.1/@signatureNodes.0" targetNode="//@contextPatterns.1/@localNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
     </localEdges>
@@ -25,7 +23,6 @@
     </signatureNodes>
   </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="t_iBound">
-    <injectivityConstraints values="//@contextPatterns.2/@signatureNodes.0 //@contextPatterns.2/@localNodes.0"/>
     <localEdges sourceNode="//@contextPatterns.2/@signatureNodes.0" targetNode="//@contextPatterns.2/@localNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_i"/>
     </localEdges>
@@ -37,7 +34,6 @@
     </signatureNodes>
   </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="t_jBound">
-    <injectivityConstraints values="//@contextPatterns.3/@signatureNodes.0 //@contextPatterns.3/@localNodes.0"/>
     <localEdges sourceNode="//@contextPatterns.3/@signatureNodes.0" targetNode="//@contextPatterns.3/@localNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//T/T_j"/>
     </localEdges>
@@ -49,7 +45,6 @@
     </signatureNodes>
   </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="x_yBound">
-    <injectivityConstraints values="//@contextPatterns.4/@signatureNodes.0 //@contextPatterns.4/@localNodes.0"/>
     <localEdges sourceNode="//@contextPatterns.4/@signatureNodes.0" targetNode="//@contextPatterns.4/@localNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_y"/>
     </localEdges>
@@ -61,7 +56,6 @@
     </signatureNodes>
   </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="x_zBound">
-    <injectivityConstraints values="//@contextPatterns.5/@signatureNodes.0 //@contextPatterns.5/@localNodes.0"/>
     <localEdges sourceNode="//@contextPatterns.5/@signatureNodes.0" targetNode="//@contextPatterns.5/@localNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X/X_z"/>
     </localEdges>
@@ -426,14 +420,10 @@
     </signatureNodes>
   </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="wildcard">
-    <injectivityConstraints values="//@contextPatterns.24/@signatureNodes.0 //@contextPatterns.24/@localNodes.0"/>
-    <localEdges sourceNode="//@contextPatterns.24/@signatureNodes.0" targetNode="//@contextPatterns.24/@localNodes.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
-    </localEdges>
-    <localNodes name="a_c_local" incomingEdges="//@contextPatterns.24/@localEdges.0">
-      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
-    </localNodes>
-    <signatureNodes name="a" outgoingEdges="//@contextPatterns.24/@localEdges.0">
+    <invocations positive="true" invokedPattern="//@contextPatterns.1">
+      <mapping key="//@contextPatterns.24/@signatureNodes.0" value="//@contextPatterns.1/@signatureNodes.0"/>
+    </invocations>
+    <signatureNodes name="a">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </signatureNodes>
     <signatureNodes name="us">
@@ -441,20 +431,16 @@
     </signatureNodes>
   </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="wildcardStateChange">
-    <injectivityConstraints values="//@contextPatterns.25/@signatureNodes.0 //@contextPatterns.25/@localNodes.0"/>
-    <localEdges sourceNode="//@contextPatterns.25/@signatureNodes.0" targetNode="//@contextPatterns.25/@localNodes.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
-    </localEdges>
+    <invocations positive="true" invokedPattern="//@contextPatterns.1">
+      <mapping key="//@contextPatterns.25/@signatureNodes.0" value="//@contextPatterns.1/@signatureNodes.0"/>
+    </invocations>
     <localEdges sourceNode="//@contextPatterns.25/@signatureNodes.0" targetNode="//@contextPatterns.25/@signatureNodes.1">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_p"/>
     </localEdges>
-    <localNodes name="a_c_local" incomingEdges="//@contextPatterns.25/@localEdges.0">
-      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
-    </localNodes>
-    <signatureNodes name="a" outgoingEdges="//@contextPatterns.25/@localEdges.0 //@contextPatterns.25/@localEdges.1">
+    <signatureNodes name="a" outgoingEdges="//@contextPatterns.25/@localEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </signatureNodes>
-    <signatureNodes name="ps" incomingEdges="//@contextPatterns.25/@localEdges.1">
+    <signatureNodes name="ps" incomingEdges="//@contextPatterns.25/@localEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
     </signatureNodes>
     <signatureNodes name="us">
@@ -462,20 +448,16 @@
     </signatureNodes>
   </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="wildcardStateChangeBwd">
-    <injectivityConstraints values="//@contextPatterns.26/@signatureNodes.0 //@contextPatterns.26/@localNodes.0"/>
-    <localEdges sourceNode="//@contextPatterns.26/@signatureNodes.0" targetNode="//@contextPatterns.26/@localNodes.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c"/>
-    </localEdges>
+    <invocations positive="true" invokedPattern="//@contextPatterns.1">
+      <mapping key="//@contextPatterns.26/@signatureNodes.0" value="//@contextPatterns.1/@signatureNodes.0"/>
+    </invocations>
     <localEdges sourceNode="//@contextPatterns.26/@signatureNodes.0" targetNode="//@contextPatterns.26/@signatureNodes.1">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
     </localEdges>
-    <localNodes name="a_c_local" incomingEdges="//@contextPatterns.26/@localEdges.0">
-      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Agent"/>
-    </localNodes>
-    <signatureNodes name="a" outgoingEdges="//@contextPatterns.26/@localEdges.0 //@contextPatterns.26/@localEdges.1">
+    <signatureNodes name="a" outgoingEdges="//@contextPatterns.26/@localEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </signatureNodes>
-    <signatureNodes name="us" incomingEdges="//@contextPatterns.26/@localEdges.1">
+    <signatureNodes name="us" incomingEdges="//@contextPatterns.26/@localEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
     </signatureNodes>
     <signatureNodes name="ps">
