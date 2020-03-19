@@ -42,11 +42,10 @@ public class ModelHelper {
 		}
 		return false;
 	}
-	
 
 	/**
-	 * @return true, if an instance with the given name is
-	 *         contained in the given list of instances.
+	 * @return true, if an instance with the given name is contained in the given
+	 *         list of instances.
 	 */
 	public static boolean isInstanceInList(String instanceName, List<IntermAgentInstance> instances) {
 		for (IntermAgentInstance listInstance : instances) {
@@ -56,7 +55,6 @@ public class ModelHelper {
 		}
 		return false;
 	}
-	
 
 	/**
 	 * @return true, if an instance with the same name as the given instance is
@@ -79,7 +77,8 @@ public class ModelHelper {
 		if (clazz == agentClass) {
 			return true;
 		} else {
-			return clazz.getESuperTypes().get(0) == agentClass;
+			List<EClass> superTypes = clazz.getESuperTypes();
+			return superTypes.isEmpty() ? false : clazz.getESuperTypes().get(0) == agentClass;
 		}
 	}
 
@@ -105,18 +104,18 @@ public class ModelHelper {
 	}
 
 	/**
-	 * @return an already existent node with the given name within the given
-	 *         pattern or null if no such node exists.
+	 * @return an already existent node with the given name within the given pattern
+	 *         or null if no such node exists.
 	 */
 	public static IBeXNode getNodeFromDeletePattern(IBeXDeletePattern pattern, String name) {
 		IBeXNode foundNode = getDeletedNodeFromDeletePattern(pattern, name);
-		if(foundNode == null) {
+		if (foundNode == null) {
 			return getContextNodeFromDeletePattern(pattern, name);
-		}else {
+		} else {
 			return foundNode;
 		}
 	}
-	
+
 	/**
 	 * @return an already existent deleted node with the given name within the given
 	 *         pattern or null if no such node exists.
@@ -124,7 +123,7 @@ public class ModelHelper {
 	public static IBeXNode getDeletedNodeFromDeletePattern(IBeXDeletePattern pattern, String name) {
 		return getNodeFromList(pattern.getContextNodes(), name);
 	}
-	
+
 	/**
 	 * @return an already existent deleted node with the given name within the given
 	 *         pattern or null if no such node exists.
@@ -132,20 +131,20 @@ public class ModelHelper {
 	public static IBeXNode getContextNodeFromDeletePattern(IBeXDeletePattern pattern, String name) {
 		return getNodeFromList(pattern.getDeletedNodes(), name);
 	}
-	
+
 	/**
-	 * @return an already existent node with the given name within the given
-	 *         pattern or null if no such node exists.
+	 * @return an already existent node with the given name within the given pattern
+	 *         or null if no such node exists.
 	 */
 	public static IBeXNode getNodeFromCreatePattern(IBeXCreatePattern pattern, String name) {
 		IBeXNode foundNode = getCreatedNodeFromCreatePattern(pattern, name);
-		if(foundNode == null) {
+		if (foundNode == null) {
 			return getContextNodeFromCreatePattern(pattern, name);
-		}else {
+		} else {
 			return foundNode;
 		}
 	}
-	
+
 	/**
 	 * @return an already existent created node with the given name within the given
 	 *         pattern or null if no such node exists.
@@ -169,9 +168,9 @@ public class ModelHelper {
 	 */
 	public static IBeXNode getNodeFromContextPattern(IBeXContextPattern pattern, String name) {
 		IBeXNode foundNode = getSignatureNodeFromContextPattern(pattern, name);
-		if(foundNode == null) {
+		if (foundNode == null) {
 			return getLocalNodeFromContextPattern(pattern, name);
-		}else {
+		} else {
 			return foundNode;
 		}
 	}
@@ -193,8 +192,8 @@ public class ModelHelper {
 	}
 
 	/**
-	 * @return an already existent node with the given name within the given
-	 *         list or null if no such node exists.
+	 * @return an already existent node with the given name within the given list or
+	 *         null if no such node exists.
 	 */
 	private static IBeXNode getNodeFromList(List<IBeXNode> nodes, String name) {
 		for (IBeXNode node : nodes) {
@@ -204,7 +203,7 @@ public class ModelHelper {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * @return the first site instance found in the given list with the desired
 	 *         name.
