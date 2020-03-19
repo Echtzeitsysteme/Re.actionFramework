@@ -2,12 +2,10 @@
  */
 package reactionContainer.impl;
 
-import GKLModel.GKLModelPackage;
-
-import GKLModel.impl.GKLModelPackageImpl;
-
 import TestcasesModel.TestcasesModelPackage;
+
 import TestcasesModel.impl.TestcasesModelPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;

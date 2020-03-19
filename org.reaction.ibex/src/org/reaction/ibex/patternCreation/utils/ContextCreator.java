@@ -655,6 +655,14 @@ public class ContextCreator {
 
 		List<IntermAgentInstance> instances = pattern.getAgentInstances();
 
+		//Add container node for imitating blank pattern
+		if(instances.isEmpty()) {
+			IBeXNode blankNode = IBeXPatternFactory.createNode("blank", ReactionContainerPackage.Literals.CONTAINER);
+			contextPattern.getSignatureNodes().add(blankNode);
+			return contextPattern;
+		}
+		
+		
 		for (IntermAgentInstance ai : instances) {
 
 			List<IntermSiteInstance> siList = ai.getSiteInstances();

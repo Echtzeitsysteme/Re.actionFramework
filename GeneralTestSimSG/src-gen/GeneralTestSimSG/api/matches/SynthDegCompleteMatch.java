@@ -3,6 +3,7 @@ package GeneralTestSimSG.api.matches;
 import GeneralTestSimSG.api.rules.SynthDegCompleteRule;
 import org.emoflon.ibex.common.operational.IMatch;
 import org.emoflon.ibex.gt.api.GraphTransformationMatch;
+import reactionContainer.Container;
 import TestcasesModel.P_s;
 import TestcasesModel.U_s;
 
@@ -10,6 +11,7 @@ import TestcasesModel.U_s;
  * A match for the rule <code>synthDegComplete()</code>.
  */
 public class SynthDegCompleteMatch extends GraphTransformationMatch<SynthDegCompleteMatch, SynthDegCompleteRule> {
+	private Container varBlank;
 	private P_s varPs;
 	private U_s varUs;
 
@@ -23,8 +25,18 @@ public class SynthDegCompleteMatch extends GraphTransformationMatch<SynthDegComp
 	 */
 	public SynthDegCompleteMatch(final SynthDegCompleteRule pattern, final IMatch match) {
 		super(pattern, match);
+		varBlank = (Container) match.get("blank");
 		varPs = (P_s) match.get("ps");
 		varUs = (U_s) match.get("us");
+	}
+
+	/**
+	 * Returns the blank.
+	 *
+	 * @return the blank
+	 */
+	public Container getBlank() {
+		return varBlank;
 	}
 
 	/**
@@ -48,6 +60,7 @@ public class SynthDegCompleteMatch extends GraphTransformationMatch<SynthDegComp
 	@Override
 	public String toString() {
 		String s = "match {" + System.lineSeparator();
+		s += "	blank --> " + varBlank + System.lineSeparator();
 		s += "	ps --> " + varPs + System.lineSeparator();
 		s += "	us --> " + varUs + System.lineSeparator();
 		s += "} for " + getPattern();

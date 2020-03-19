@@ -246,6 +246,9 @@
     </signatureNodes>
   </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="synthDegComplete">
+    <signatureNodes name="blank">
+      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Container"/>
+    </signatureNodes>
     <signatureNodes name="ps">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
     </signatureNodes>
@@ -619,6 +622,9 @@
     </signatureNodes>
   </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="underspecSynth">
+    <signatureNodes name="blank">
+      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Container"/>
+    </signatureNodes>
     <signatureNodes name="us">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
     </signatureNodes>

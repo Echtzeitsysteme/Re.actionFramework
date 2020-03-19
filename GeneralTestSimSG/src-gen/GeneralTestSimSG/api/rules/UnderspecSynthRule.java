@@ -8,6 +8,7 @@ import java.util.Objects;
 import org.emoflon.ibex.common.operational.IMatch;
 import org.emoflon.ibex.gt.api.GraphTransformationRule;
 import org.emoflon.ibex.gt.engine.GraphTransformationInterpreter;
+import reactionContainer.Container;
 import TestcasesModel.U_s;
 
 /**
@@ -37,8 +38,20 @@ public class UnderspecSynthRule extends GraphTransformationRule<UnderspecSynthMa
 	@Override
 	protected List<String> getParameterNames() {
 		List<String> names = new ArrayList<String>();
+		names.add("blank");
 		names.add("us");
 		return names;
+	}
+
+	/**
+	 * Binds the node blank to the given object.
+	 *
+	 * @param object
+	 *            the object to set
+	 */
+	public UnderspecSynthRule bindBlank(final Container object) {
+		parameters.put("blank", Objects.requireNonNull(object, "blank must not be null!"));
+		return this;
 	}
 
 	/**
@@ -55,6 +68,7 @@ public class UnderspecSynthRule extends GraphTransformationRule<UnderspecSynthMa
 	@Override
 	public String toString() {
 		String s = "rule " + patternName + " {" + System.lineSeparator();
+		s += "	blank --> " + parameters.get("blank") + System.lineSeparator();
 		s += "	us --> " + parameters.get("us") + System.lineSeparator();
 		s += "}";
 		return s;

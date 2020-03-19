@@ -2,6 +2,7 @@ package GeneralTestSimSG.api;
 
 import org.emoflon.ibex.common.operational.IContextPatternInterpreter;
 import org.emoflon.ibex.gt.api.GraphTransformationApp;
+import reactionContainer.ReactionContainerPackage;
 import TestcasesModel.TestcasesModelPackage;
 
 /**
@@ -34,6 +35,7 @@ public class GeneralTestSimSGApp extends GraphTransformationApp<GeneralTestSimSG
 	@Override
 	public void registerMetaModels() {
 		registerMetaModel(TestcasesModelPackage.eINSTANCE);
+		registerMetaModel(ReactionContainerPackage.eINSTANCE);
 	}
 
 	@Override

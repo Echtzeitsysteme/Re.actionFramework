@@ -24,7 +24,7 @@
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.34" rate="1.0"/>
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.35" rate="1.0"/>
   <ruleAnnotations xmi:type="org.simsg:StochasticRate" GTRule="//@GtRuleSet/@rules.36" rate="1.0"/>
-  <terminationConditions xmi:type="org.simsg:SimpleTerminationCondition" maxSimulationTime="20000.0"/>
+  <terminationConditions xmi:type="org.simsg:SimpleTerminationCondition" maxSimulationTime="20.0"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_underspecTest" pattern="//@ibexPatternSet/@contextPatterns.37"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_genericTest" pattern="//@ibexPatternSet/@contextPatterns.38"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_simpleSynthesisTest" pattern="//@ibexPatternSet/@contextPatterns.39"/>
@@ -146,7 +146,10 @@
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
     </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="synthDegComplete" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.16/@nodes.0 //@GtRuleSet/@rules.16/@nodes.1">
+    <rules xmi:type="GTLanguage:GTRule" name="synthDegComplete" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.16/@nodes.0 //@GtRuleSet/@rules.16/@nodes.1 //@GtRuleSet/@rules.16/@nodes.2">
+      <nodes xmi:type="GTLanguage:GTNode" name="blank">
+        <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Container"/>
+      </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="ps">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </nodes>
@@ -331,7 +334,10 @@
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
     </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="underspecSynth" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.35/@nodes.0">
+    <rules xmi:type="GTLanguage:GTRule" name="underspecSynth" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.35/@nodes.0 //@GtRuleSet/@rules.35/@nodes.1">
+      <nodes xmi:type="GTLanguage:GTNode" name="blank">
+        <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Container"/>
+      </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
@@ -666,6 +672,9 @@
       </signatureNodes>
     </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="synthDegComplete">
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="blank">
+        <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Container"/>
+      </signatureNodes>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="ps">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
       </signatureNodes>
@@ -1039,6 +1048,9 @@
       </signatureNodes>
     </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="underspecSynth">
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="blank">
+        <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Container"/>
+      </signatureNodes>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="us">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </signatureNodes>

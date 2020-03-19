@@ -110,7 +110,10 @@
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
     </nodes>
   </rules>
-  <rules name="synthDegComplete" documentation="" executable="true" ruleNodes="//@rules.16/@nodes.0 //@rules.16/@nodes.1">
+  <rules name="synthDegComplete" documentation="" executable="true" ruleNodes="//@rules.16/@nodes.0 //@rules.16/@nodes.1 //@rules.16/@nodes.2">
+    <nodes name="blank">
+      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Container"/>
+    </nodes>
     <nodes name="ps">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//P_s"/>
     </nodes>
@@ -295,7 +298,10 @@
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </rules>
-  <rules name="underspecSynth" documentation="" executable="true" ruleNodes="//@rules.35/@nodes.0">
+  <rules name="underspecSynth" documentation="" executable="true" ruleNodes="//@rules.35/@nodes.0 //@rules.35/@nodes.1">
+    <nodes name="blank">
+      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Container"/>
+    </nodes>
     <nodes name="us">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
     </nodes>

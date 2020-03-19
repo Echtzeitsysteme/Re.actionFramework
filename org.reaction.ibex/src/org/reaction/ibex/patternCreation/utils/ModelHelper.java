@@ -243,7 +243,8 @@ public class ModelHelper {
 		if (clazz == agentClass) {
 			return true;
 		} else {
-			return clazz.getESuperTypes().get(0) == agentClass;
+			List<EClass> superTypes = clazz.getESuperTypes();
+			return superTypes.isEmpty() ? false : superTypes.get(0) == agentClass;
 		}
 	}
 
