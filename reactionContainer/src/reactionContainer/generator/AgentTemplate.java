@@ -62,12 +62,8 @@ public class AgentTemplate {
 		return siteReferences.isEmpty();
 	}
 	
-	public static String createSiteRefName(IntermSite site, IntermSite otherSite) {
-		return site.getParent().getName().toUpperCase()+"_"+site.getName()+"_"+otherSite.getParent().getName().toUpperCase()+"_"+otherSite.getName();
-	}
-	
 	public static String createSiteRefName(IntermSiteInstance site, IntermSiteInstance otherSite) {
-		return site.getParent().getInstanceOf().getName().toUpperCase()+"_"+site.getName()+"_"+otherSite.getParent().getInstanceOf().getName().toUpperCase()+"_"+otherSite.getName();
+		return site.getParent().getInstanceOf().getName()+"_"+site.getName()+"_"+otherSite.getParent().getInstanceOf().getName()+"_"+otherSite.getName();
 	}
 
 	public String getAgentClassName() {

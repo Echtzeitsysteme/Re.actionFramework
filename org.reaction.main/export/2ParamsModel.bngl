@@ -1,0 +1,30 @@
+begin model
+
+begin molecule types
+	U(a,b)
+	V(a,b)
+	W(a,b)
+	X(a,b)
+	Y(a,b)
+	Z(a,b)
+end molecule types
+
+begin species
+	U(a,b)	20.0
+	V(a,b)	20.0
+end species
+
+begin reaction rules
+	osc:	U(a) + V(a) <-> U(a!1).V(a!1)		1.0, 1.0
+end reaction rules
+
+begin observables
+end observables
+
+end model
+
+#----------------Simulation Details below----------------#
+
+generate_network({overwrite=>1})
+
+simulate({method=>"ssa", t_end=>1000, n_steps=>1000})
