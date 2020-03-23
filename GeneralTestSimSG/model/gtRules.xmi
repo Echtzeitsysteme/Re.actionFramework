@@ -298,20 +298,20 @@
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
   </rules>
-  <rules name="underspecSynth" documentation="" executable="true" ruleNodes="//@rules.35/@nodes.0 //@rules.35/@nodes.1">
-    <nodes name="blank">
-      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Container"/>
-    </nodes>
-    <nodes name="us">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
-    </nodes>
-  </rules>
-  <rules name="concreteSplit" documentation="" executable="true" ruleNodes="//@rules.36/@nodes.0 //@rules.36/@nodes.1">
+  <rules name="concreteSplit" documentation="" executable="true" ruleNodes="//@rules.35/@nodes.0 //@rules.35/@nodes.1">
     <nodes name="a">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
     <nodes name="x">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </nodes>
+  </rules>
+  <rules name="underspecSynth" documentation="" executable="true" ruleNodes="//@rules.36/@nodes.0 //@rules.36/@nodes.1">
+    <nodes name="blank">
+      <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Container"/>
+    </nodes>
+    <nodes name="us">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
     </nodes>
   </rules>
   <rules name="obs_underspecTest" documentation="" executable="true" ruleNodes="//@rules.37/@nodes.0 //@rules.37/@nodes.1 //@rules.37/@nodes.2">
@@ -354,38 +354,20 @@
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
   </rules>
-  <rules name="obs_underspecSynthTest" documentation="" executable="true" ruleNodes="//@rules.42/@nodes.0 //@rules.42/@nodes.1">
+  <rules name="obs_concreteSplitTest" documentation="" executable="true" ruleNodes="//@rules.42/@nodes.0 //@rules.42/@nodes.1">
+    <nodes name="a">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </nodes>
+    <nodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </nodes>
+  </rules>
+  <rules name="obs_underspecSynthTest" documentation="" executable="true" ruleNodes="//@rules.43/@nodes.0 //@rules.43/@nodes.1">
     <nodes name="a">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </nodes>
     <nodes name="us">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
-    </nodes>
-  </rules>
-  <rules name="obs_concreteSplitTest" documentation="" executable="true" ruleNodes="//@rules.43/@nodes.0 //@rules.43/@nodes.1">
-    <nodes name="a">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes name="x">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-    </nodes>
-  </rules>
-  <rules name="obs_aFree" documentation="" executable="true" ruleNodes="//@rules.44/@nodes.0">
-    <nodes name="a">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-  </rules>
-  <rules name="obs_xFree" documentation="" executable="true" ruleNodes="//@rules.45/@nodes.0">
-    <nodes name="x">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-    </nodes>
-  </rules>
-  <rules name="obs_ax" documentation="" executable="true" ruleNodes="//@rules.46/@nodes.0 //@rules.46/@nodes.1">
-    <nodes name="a">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </nodes>
-    <nodes name="x">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </nodes>
   </rules>
 </GTLanguage:GTRuleSet>

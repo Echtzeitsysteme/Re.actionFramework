@@ -27,8 +27,8 @@ begin reaction rules
 	wildcard:	A(c!+) -> A(c!+) + X(y,z)		1.0
 	wildcardStateChange:	A(c~p!+) <-> A(c~u!+)		1.0, 2.0
 	degUnspecific:	A() -> 		1.0
-	underspecSynth:	 -> A()		1.0
 	concreteSplit:	A(b!1).X(y!1) -> A() + X()		1.0
+	underspecSynth:	 -> A()		1.0
 end reaction rules
 
 begin observables
@@ -37,11 +37,8 @@ begin observables
 	Molecules simpleSynthesisTest	X(y!?,z~u!?)
 	Molecules unspecifiedStateChangeTest	A(b!?,c~p!?)
 	Molecules wildcardTest	X(y,z)
-	Molecules underspecSynthTest	A(b,c~u)
 	Molecules concreteSplitTest	A(b,c) + X(y,z)
-	Molecules aFree	A(b,c)
-	Molecules xFree	X(y,z)
-	Molecules ax	A(b!?,c!?) + X(y!?,z!?)
+	Molecules underspecSynthTest	A(b,c~u)
 end observables
 
 end model

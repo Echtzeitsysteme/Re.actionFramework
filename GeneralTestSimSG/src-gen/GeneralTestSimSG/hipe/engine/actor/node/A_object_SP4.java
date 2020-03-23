@@ -30,7 +30,6 @@ public class A_object_SP4 extends GenericObjectActor<TestcasesModel.A> {
 		ports = new LinkedList<>();
 		ports.add(new PortNodeRight<TestcasesModel.A>(getSelf(), name2actor.get("A_A_b_A_b_0_reference"), this::returnTrue));
 		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("injectivity_138_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("obs_ax_200_junction"), this::returnTrue));
 		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("selfBinding_54_junction"), this::check_constraint_1));
 	}
 	

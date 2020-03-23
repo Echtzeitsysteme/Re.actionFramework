@@ -26,8 +26,8 @@ public class Main {
 		ReactionContainerPackage.eINSTANCE.eClass();
 
 		// Load Model
-//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Testcases.xmi";
-//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
+		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Testcases.xmi";
+		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
 
 //		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Testcases.xmi";
 //		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
@@ -35,8 +35,8 @@ public class Main {
 //		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\GKL.xmi";
 //		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
 //
-		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Alzheimer.xmi";
-		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\AlzheimersSimSG";
+//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Alzheimer.xmi";
+//		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\AlzheimersSimSG";
 //
 //		final String dslModelLocation = "..\\..\\re.actionEvaluation\\models\\gkl\\GKL100.xmi";
 //		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\gklSimSG";
@@ -131,7 +131,6 @@ public class Main {
 			ibexCreator.savePatternSet(ibexSaveLocation);
 
 			GTCreator gtCreator = new GTCreator(ibexPatternSet);
-//			GTRuleSet gtRuleSet = gtCreator.getGTRuleSet();
 			String gtSaveLocation = trgProjectLocation + "/model/gtRules.xmi";
 			gtCreator.saveRuleSet(gtSaveLocation);
 

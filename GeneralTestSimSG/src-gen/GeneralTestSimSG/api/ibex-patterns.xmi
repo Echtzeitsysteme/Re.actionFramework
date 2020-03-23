@@ -621,23 +621,23 @@
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </signatureNodes>
   </contextPatterns>
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="concreteSplit">
+    <localEdges sourceNode="//@contextPatterns.35/@signatureNodes.0" targetNode="//@contextPatterns.35/@signatureNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b_X_y"/>
+    </localEdges>
+    <signatureNodes name="a" outgoingEdges="//@contextPatterns.35/@localEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+    </signatureNodes>
+    <signatureNodes name="x" incomingEdges="//@contextPatterns.35/@localEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    </signatureNodes>
+  </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="underspecSynth">
     <signatureNodes name="blank">
       <type href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Container"/>
     </signatureNodes>
     <signatureNodes name="us">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
-    </signatureNodes>
-  </contextPatterns>
-  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="concreteSplit">
-    <localEdges sourceNode="//@contextPatterns.36/@signatureNodes.0" targetNode="//@contextPatterns.36/@signatureNodes.1">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b_X_y"/>
-    </localEdges>
-    <signatureNodes name="a" outgoingEdges="//@contextPatterns.36/@localEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </signatureNodes>
-    <signatureNodes name="x" incomingEdges="//@contextPatterns.36/@localEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </signatureNodes>
   </contextPatterns>
   <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="obs_underspecTest">
@@ -728,7 +728,7 @@
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </signatureNodes>
   </contextPatterns>
-  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="obs_underspecSynthTest">
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="obs_concreteSplitTest">
     <invocations invokedPattern="//@contextPatterns.0">
       <mapping key="//@contextPatterns.42/@signatureNodes.0" value="//@contextPatterns.0/@signatureNodes.0"/>
     </invocations>
@@ -753,17 +753,26 @@
     <invocations invokedPattern="//@contextPatterns.3">
       <mapping key="//@contextPatterns.42/@signatureNodes.0" value="//@contextPatterns.3/@signatureNodes.0"/>
     </invocations>
-    <localEdges sourceNode="//@contextPatterns.42/@signatureNodes.0" targetNode="//@contextPatterns.42/@signatureNodes.1">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
-    </localEdges>
-    <signatureNodes name="a" outgoingEdges="//@contextPatterns.42/@localEdges.0">
+    <invocations invokedPattern="//@contextPatterns.7">
+      <mapping key="//@contextPatterns.42/@signatureNodes.1" value="//@contextPatterns.7/@signatureNodes.0"/>
+    </invocations>
+    <invocations invokedPattern="//@contextPatterns.11">
+      <mapping key="//@contextPatterns.42/@signatureNodes.1" value="//@contextPatterns.11/@signatureNodes.0"/>
+    </invocations>
+    <invocations invokedPattern="//@contextPatterns.1">
+      <mapping key="//@contextPatterns.42/@signatureNodes.1" value="//@contextPatterns.1/@signatureNodes.0"/>
+    </invocations>
+    <invocations invokedPattern="//@contextPatterns.9">
+      <mapping key="//@contextPatterns.42/@signatureNodes.1" value="//@contextPatterns.9/@signatureNodes.0"/>
+    </invocations>
+    <signatureNodes name="a">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </signatureNodes>
-    <signatureNodes name="us" incomingEdges="//@contextPatterns.42/@localEdges.0">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
+    <signatureNodes name="x">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </signatureNodes>
   </contextPatterns>
-  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="obs_concreteSplitTest">
+  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="obs_underspecSynthTest">
     <invocations invokedPattern="//@contextPatterns.0">
       <mapping key="//@contextPatterns.43/@signatureNodes.0" value="//@contextPatterns.0/@signatureNodes.0"/>
     </invocations>
@@ -788,77 +797,14 @@
     <invocations invokedPattern="//@contextPatterns.3">
       <mapping key="//@contextPatterns.43/@signatureNodes.0" value="//@contextPatterns.3/@signatureNodes.0"/>
     </invocations>
-    <invocations invokedPattern="//@contextPatterns.7">
-      <mapping key="//@contextPatterns.43/@signatureNodes.1" value="//@contextPatterns.7/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.11">
-      <mapping key="//@contextPatterns.43/@signatureNodes.1" value="//@contextPatterns.11/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.1">
-      <mapping key="//@contextPatterns.43/@signatureNodes.1" value="//@contextPatterns.1/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.9">
-      <mapping key="//@contextPatterns.43/@signatureNodes.1" value="//@contextPatterns.9/@signatureNodes.0"/>
-    </invocations>
-    <signatureNodes name="a">
+    <localEdges sourceNode="//@contextPatterns.43/@signatureNodes.0" targetNode="//@contextPatterns.43/@signatureNodes.1">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+    </localEdges>
+    <signatureNodes name="a" outgoingEdges="//@contextPatterns.43/@localEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </signatureNodes>
-    <signatureNodes name="x">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-    </signatureNodes>
-  </contextPatterns>
-  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="obs_aFree">
-    <invocations invokedPattern="//@contextPatterns.0">
-      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.0/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.2">
-      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.2/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.4">
-      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.4/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.6">
-      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.6/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.5">
-      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.5/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.8">
-      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.8/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.10">
-      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.10/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.3">
-      <mapping key="//@contextPatterns.44/@signatureNodes.0" value="//@contextPatterns.3/@signatureNodes.0"/>
-    </invocations>
-    <signatureNodes name="a">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </signatureNodes>
-  </contextPatterns>
-  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="obs_xFree">
-    <invocations invokedPattern="//@contextPatterns.7">
-      <mapping key="//@contextPatterns.45/@signatureNodes.0" value="//@contextPatterns.7/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.11">
-      <mapping key="//@contextPatterns.45/@signatureNodes.0" value="//@contextPatterns.11/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.1">
-      <mapping key="//@contextPatterns.45/@signatureNodes.0" value="//@contextPatterns.1/@signatureNodes.0"/>
-    </invocations>
-    <invocations invokedPattern="//@contextPatterns.9">
-      <mapping key="//@contextPatterns.45/@signatureNodes.0" value="//@contextPatterns.9/@signatureNodes.0"/>
-    </invocations>
-    <signatureNodes name="x">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-    </signatureNodes>
-  </contextPatterns>
-  <contextPatterns xsi:type="IBeXLanguage:IBeXContextPattern" name="obs_ax">
-    <signatureNodes name="a">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-    </signatureNodes>
-    <signatureNodes name="x">
-      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+    <signatureNodes name="us" incomingEdges="//@contextPatterns.43/@localEdges.0">
+      <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
     </signatureNodes>
   </contextPatterns>
   <createPatterns name="simpleBinding">
@@ -1089,18 +1035,18 @@
     </createdEdges>
   </createPatterns>
   <createPatterns name="degUnspecific"/>
+  <createPatterns name="concreteSplit"/>
   <createPatterns name="underspecSynth">
-    <contextNodes name="us" incomingEdges="//@createPatterns.22/@createdEdges.0">
+    <contextNodes name="us" incomingEdges="//@createPatterns.23/@createdEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
     </contextNodes>
-    <createdEdges sourceNode="//@createPatterns.22/@createdNodes.0" targetNode="//@createPatterns.22/@contextNodes.0">
+    <createdEdges sourceNode="//@createPatterns.23/@createdNodes.0" targetNode="//@createPatterns.23/@contextNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
     </createdEdges>
-    <createdNodes name="a" outgoingEdges="//@createPatterns.22/@createdEdges.0">
+    <createdNodes name="a" outgoingEdges="//@createPatterns.23/@createdEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </createdNodes>
   </createPatterns>
-  <createPatterns name="concreteSplit"/>
   <deletePatterns name="simpleBinding">
     <contextNodes name="x" incomingEdges="//@deletePatterns.0/@deletedEdges.1" outgoingEdges="//@deletePatterns.0/@deletedEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
@@ -1325,16 +1271,16 @@
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </deletedNodes>
   </deletePatterns>
-  <deletePatterns name="underspecSynth"/>
   <deletePatterns name="concreteSplit">
-    <contextNodes name="x" incomingEdges="//@deletePatterns.23/@deletedEdges.0">
+    <contextNodes name="x" incomingEdges="//@deletePatterns.22/@deletedEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
     </contextNodes>
-    <contextNodes name="a" outgoingEdges="//@deletePatterns.23/@deletedEdges.0">
+    <contextNodes name="a" outgoingEdges="//@deletePatterns.22/@deletedEdges.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
     </contextNodes>
-    <deletedEdges sourceNode="//@deletePatterns.23/@contextNodes.1" targetNode="//@deletePatterns.23/@contextNodes.0">
+    <deletedEdges sourceNode="//@deletePatterns.22/@contextNodes.1" targetNode="//@deletePatterns.22/@contextNodes.0">
       <type href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b_X_y"/>
     </deletedEdges>
   </deletePatterns>
+  <deletePatterns name="underspecSynth"/>
 </IBeXLanguage:IBeXPatternSet>

@@ -30,11 +30,8 @@
   <observations xmi:type="org.simsg:PatternObservation" name="obs_simpleSynthesisTest" pattern="//@ibexPatternSet/@contextPatterns.39"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_unspecifiedStateChangeTest" pattern="//@ibexPatternSet/@contextPatterns.40"/>
   <observations xmi:type="org.simsg:PatternObservation" name="obs_wildcardTest" pattern="//@ibexPatternSet/@contextPatterns.41"/>
-  <observations xmi:type="org.simsg:PatternObservation" name="obs_underspecSynthTest" pattern="//@ibexPatternSet/@contextPatterns.42"/>
-  <observations xmi:type="org.simsg:PatternObservation" name="obs_concreteSplitTest" pattern="//@ibexPatternSet/@contextPatterns.43"/>
-  <observations xmi:type="org.simsg:PatternObservation" name="obs_aFree" pattern="//@ibexPatternSet/@contextPatterns.44"/>
-  <observations xmi:type="org.simsg:PatternObservation" name="obs_xFree" pattern="//@ibexPatternSet/@contextPatterns.45"/>
-  <observations xmi:type="org.simsg:PatternObservation" name="obs_ax" pattern="//@ibexPatternSet/@contextPatterns.46"/>
+  <observations xmi:type="org.simsg:PatternObservation" name="obs_concreteSplitTest" pattern="//@ibexPatternSet/@contextPatterns.42"/>
+  <observations xmi:type="org.simsg:PatternObservation" name="obs_underspecSynthTest" pattern="//@ibexPatternSet/@contextPatterns.43"/>
   <GtRuleSet xmi:type="GTLanguage:GTRuleSet">
     <rules xmi:type="GTLanguage:GTRule" name="A_b_X_zBoundSrc" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.0/@nodes.0">
       <nodes xmi:type="GTLanguage:GTNode" name="src">
@@ -334,20 +331,20 @@
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
     </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="underspecSynth" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.35/@nodes.0 //@GtRuleSet/@rules.35/@nodes.1">
-      <nodes xmi:type="GTLanguage:GTNode" name="blank">
-        <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Container"/>
-      </nodes>
-      <nodes xmi:type="GTLanguage:GTNode" name="us">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
-      </nodes>
-    </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="concreteSplit" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.36/@nodes.0 //@GtRuleSet/@rules.36/@nodes.1">
+    <rules xmi:type="GTLanguage:GTRule" name="concreteSplit" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.35/@nodes.0 //@GtRuleSet/@rules.35/@nodes.1">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="x">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+      </nodes>
+    </rules>
+    <rules xmi:type="GTLanguage:GTRule" name="underspecSynth" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.36/@nodes.0 //@GtRuleSet/@rules.36/@nodes.1">
+      <nodes xmi:type="GTLanguage:GTNode" name="blank">
+        <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Container"/>
+      </nodes>
+      <nodes xmi:type="GTLanguage:GTNode" name="us">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </nodes>
     </rules>
     <rules xmi:type="GTLanguage:GTRule" name="obs_underspecTest" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.37/@nodes.0 //@GtRuleSet/@rules.37/@nodes.1 //@GtRuleSet/@rules.37/@nodes.2">
@@ -390,38 +387,20 @@
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
     </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="obs_underspecSynthTest" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.42/@nodes.0 //@GtRuleSet/@rules.42/@nodes.1">
+    <rules xmi:type="GTLanguage:GTRule" name="obs_concreteSplitTest" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.42/@nodes.0 //@GtRuleSet/@rules.42/@nodes.1">
+      <nodes xmi:type="GTLanguage:GTNode" name="a">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+      </nodes>
+      <nodes xmi:type="GTLanguage:GTNode" name="x">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+      </nodes>
+    </rules>
+    <rules xmi:type="GTLanguage:GTRule" name="obs_underspecSynthTest" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.43/@nodes.0 //@GtRuleSet/@rules.43/@nodes.1">
       <nodes xmi:type="GTLanguage:GTNode" name="a">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </nodes>
       <nodes xmi:type="GTLanguage:GTNode" name="us">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
-      </nodes>
-    </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="obs_concreteSplitTest" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.43/@nodes.0 //@GtRuleSet/@rules.43/@nodes.1">
-      <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-      </nodes>
-      <nodes xmi:type="GTLanguage:GTNode" name="x">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-      </nodes>
-    </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="obs_aFree" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.44/@nodes.0">
-      <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-      </nodes>
-    </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="obs_xFree" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.45/@nodes.0">
-      <nodes xmi:type="GTLanguage:GTNode" name="x">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-      </nodes>
-    </rules>
-    <rules xmi:type="GTLanguage:GTRule" name="obs_ax" documentation="" executable="true" ruleNodes="//@GtRuleSet/@rules.46/@nodes.0 //@GtRuleSet/@rules.46/@nodes.1">
-      <nodes xmi:type="GTLanguage:GTNode" name="a">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-      </nodes>
-      <nodes xmi:type="GTLanguage:GTNode" name="x">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </nodes>
     </rules>
   </GtRuleSet>
@@ -1047,23 +1026,23 @@
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </signatureNodes>
     </contextPatterns>
+    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="concreteSplit">
+      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.35/@signatureNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.35/@signatureNodes.1">
+        <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b_X_y"/>
+      </localEdges>
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@contextPatterns.35/@localEdges.0">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
+      </signatureNodes>
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="x" incomingEdges="//@ibexPatternSet/@contextPatterns.35/@localEdges.0">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+      </signatureNodes>
+    </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="underspecSynth">
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="blank">
         <type xmi:type="ecore:EClass" href="platform:/resource/reactionContainer/model/reactionContainer.ecore#//Container"/>
       </signatureNodes>
       <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="us">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
-      </signatureNodes>
-    </contextPatterns>
-    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="concreteSplit">
-      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.36/@signatureNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.36/@signatureNodes.1">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b_X_y"/>
-      </localEdges>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@contextPatterns.36/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-      </signatureNodes>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="x" incomingEdges="//@ibexPatternSet/@contextPatterns.36/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </signatureNodes>
     </contextPatterns>
     <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="obs_underspecTest">
@@ -1154,7 +1133,7 @@
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </signatureNodes>
     </contextPatterns>
-    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="obs_underspecSynthTest">
+    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="obs_concreteSplitTest">
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.0">
         <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.42/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.0/@signatureNodes.0"/>
       </invocations>
@@ -1179,17 +1158,26 @@
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.3">
         <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.42/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.3/@signatureNodes.0"/>
       </invocations>
-      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.42/@signatureNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.42/@signatureNodes.1">
-        <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
-      </localEdges>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@contextPatterns.42/@localEdges.0">
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.7">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.42/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.7/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.11">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.42/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.11/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.1">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.42/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.1/@signatureNodes.0"/>
+      </invocations>
+      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.9">
+        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.42/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.9/@signatureNodes.0"/>
+      </invocations>
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="a">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </signatureNodes>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="us" incomingEdges="//@ibexPatternSet/@contextPatterns.42/@localEdges.0">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="x">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </signatureNodes>
     </contextPatterns>
-    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="obs_concreteSplitTest">
+    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="obs_underspecSynthTest">
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.0">
         <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.43/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.0/@signatureNodes.0"/>
       </invocations>
@@ -1214,77 +1202,14 @@
       <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.3">
         <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.43/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.3/@signatureNodes.0"/>
       </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.7">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.43/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.7/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.11">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.43/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.11/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.1">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.43/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.1/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.9">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.43/@signatureNodes.1" value="//@ibexPatternSet/@contextPatterns.9/@signatureNodes.0"/>
-      </invocations>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="a">
+      <localEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@contextPatterns.43/@signatureNodes.0" targetNode="//@ibexPatternSet/@contextPatterns.43/@signatureNodes.1">
+        <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
+      </localEdges>
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@contextPatterns.43/@localEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </signatureNodes>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="x">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-      </signatureNodes>
-    </contextPatterns>
-    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="obs_aFree">
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.0">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.44/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.0/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.2">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.44/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.2/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.4">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.44/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.4/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.6">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.44/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.6/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.5">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.44/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.5/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.8">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.44/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.8/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.10">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.44/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.10/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.3">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.44/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.3/@signatureNodes.0"/>
-      </invocations>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="a">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-      </signatureNodes>
-    </contextPatterns>
-    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="obs_xFree">
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.7">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.45/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.7/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.11">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.45/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.11/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.1">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.45/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.1/@signatureNodes.0"/>
-      </invocations>
-      <invocations xmi:type="IBeXLanguage:IBeXPatternInvocation" invokedPattern="//@ibexPatternSet/@contextPatterns.9">
-        <mapping xmi:type="IBeXLanguage:IBeXNodeToNodeMapping" key="//@ibexPatternSet/@contextPatterns.45/@signatureNodes.0" value="//@ibexPatternSet/@contextPatterns.9/@signatureNodes.0"/>
-      </invocations>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="x">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
-      </signatureNodes>
-    </contextPatterns>
-    <contextPatterns xmi:type="IBeXLanguage:IBeXContextPattern" name="obs_ax">
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="a">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
-      </signatureNodes>
-      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="x">
-        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
+      <signatureNodes xmi:type="IBeXLanguage:IBeXNode" name="us" incomingEdges="//@ibexPatternSet/@contextPatterns.43/@localEdges.0">
+        <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </signatureNodes>
     </contextPatterns>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="simpleBinding">
@@ -1515,18 +1440,18 @@
       </createdEdges>
     </createPatterns>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="degUnspecific"/>
+    <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="concreteSplit"/>
     <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="underspecSynth">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="us" incomingEdges="//@ibexPatternSet/@createPatterns.22/@createdEdges.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="us" incomingEdges="//@ibexPatternSet/@createPatterns.23/@createdEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//U_s"/>
       </contextNodes>
-      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.22/@createdNodes.0" targetNode="//@ibexPatternSet/@createPatterns.22/@contextNodes.0">
+      <createdEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@createPatterns.23/@createdNodes.0" targetNode="//@ibexPatternSet/@createPatterns.23/@contextNodes.0">
         <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_c_u"/>
       </createdEdges>
-      <createdNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@createPatterns.22/@createdEdges.0">
+      <createdNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@createPatterns.23/@createdEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </createdNodes>
     </createPatterns>
-    <createPatterns xmi:type="IBeXLanguage:IBeXCreatePattern" name="concreteSplit"/>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="simpleBinding">
       <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="x" incomingEdges="//@ibexPatternSet/@deletePatterns.0/@deletedEdges.1" outgoingEdges="//@ibexPatternSet/@deletePatterns.0/@deletedEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
@@ -1751,17 +1676,17 @@
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </deletedNodes>
     </deletePatterns>
-    <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="underspecSynth"/>
     <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="concreteSplit">
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="x" incomingEdges="//@ibexPatternSet/@deletePatterns.23/@deletedEdges.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="x" incomingEdges="//@ibexPatternSet/@deletePatterns.22/@deletedEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//X"/>
       </contextNodes>
-      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@deletePatterns.23/@deletedEdges.0">
+      <contextNodes xmi:type="IBeXLanguage:IBeXNode" name="a" outgoingEdges="//@ibexPatternSet/@deletePatterns.22/@deletedEdges.0">
         <type xmi:type="ecore:EClass" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A"/>
       </contextNodes>
-      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.23/@contextNodes.1" targetNode="//@ibexPatternSet/@deletePatterns.23/@contextNodes.0">
+      <deletedEdges xmi:type="IBeXLanguage:IBeXEdge" sourceNode="//@ibexPatternSet/@deletePatterns.22/@contextNodes.1" targetNode="//@ibexPatternSet/@deletePatterns.22/@contextNodes.0">
         <type xmi:type="ecore:EReference" href="platform:/resource/GeneralTestSimSG/model/TestcasesModel.ecore#//A/A_b_X_y"/>
       </deletedEdges>
     </deletePatterns>
+    <deletePatterns xmi:type="IBeXLanguage:IBeXDeletePattern" name="underspecSynth"/>
   </ibexPatternSet>
 </org.simsg:SimDefinition>
