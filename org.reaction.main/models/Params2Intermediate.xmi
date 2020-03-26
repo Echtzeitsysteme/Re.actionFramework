@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecoreBCModel:IntermediateModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecoreBCModel="platform:/resource/EcoreBCModel/model/ecoreBCModel.ecore" name="Params2">
+  <components xsi:type="ecoreBCModel:IntermAgent" name="U">
+    <sites name="a" parent="U"/>
+    <sites name="b" parent="U"/>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="V">
+    <sites name="a" parent="V"/>
+    <sites name="b" parent="V"/>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="Y">
+    <sites name="a" parent="Y"/>
+    <sites name="b" parent="Y"/>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="Z">
+    <sites name="a" parent="Z"/>
+    <sites name="b" parent="Z"/>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="W">
+    <sites name="a" parent="W"/>
+    <sites name="b" parent="W"/>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermAgent" name="X">
+    <sites name="a" parent="X"/>
+    <sites name="b" parent="X"/>
+  </components>
+  <components xsi:type="ecoreBCModel:IntermInitialisation" cnt="20" initPattern="//@patternContainer/@patterns.0"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="osc" rate="1.0" lhs="//@patternContainer/@patterns.1" rhs="//@patternContainer/@patterns.2"/>
+  <components xsi:type="ecoreBCModel:IntermRule" name="oscBwd" rate="1.0" lhs="//@patternContainer/@patterns.2" rhs="//@patternContainer/@patterns.1"/>
+  <components xsi:type="ecoreBCModel:IntermCommand" type="ITERATIONS" cnt="1000.0"/>
+  <patternContainer>
+    <patterns name="init1madeConcrete">
+      <agentInstances instanceOf="U" name="u">
+        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="a" parent="//@patternContainer/@patterns.0/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.0/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="V" name="v">
+        <siteInstances instanceOf="//@components.1/@sites.0" bindingState="FREE" name="a" parent="//@patternContainer/@patterns.0/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.1/@sites.1" bindingState="FREE" name="b" parent="//@patternContainer/@patterns.0/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="oscLhs">
+      <agentInstances instanceOf="U" name="u">
+        <siteInstances instanceOf="//@components.0/@sites.0" bindingState="FREE" name="a" parent="//@patternContainer/@patterns.1/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" name="b" parent="//@patternContainer/@patterns.1/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="V" name="v">
+        <siteInstances instanceOf="//@components.1/@sites.0" bindingState="FREE" name="a" parent="//@patternContainer/@patterns.1/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.1/@sites.1" name="b" parent="//@patternContainer/@patterns.1/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+    <patterns name="oscRhs">
+      <agentInstances instanceOf="U" name="u">
+        <siteInstances instanceOf="//@components.0/@sites.0" boundTo="//@patternContainer/@patterns.2/@agentInstances.1/@siteInstances.0" bindingState="BOUND" name="a" parent="//@patternContainer/@patterns.2/@agentInstances.0"/>
+        <siteInstances instanceOf="//@components.0/@sites.1" name="b" parent="//@patternContainer/@patterns.2/@agentInstances.0"/>
+      </agentInstances>
+      <agentInstances instanceOf="V" name="v">
+        <siteInstances instanceOf="//@components.1/@sites.0" boundTo="//@patternContainer/@patterns.2/@agentInstances.0/@siteInstances.0" bindingState="BOUND" name="a" parent="//@patternContainer/@patterns.2/@agentInstances.1"/>
+        <siteInstances instanceOf="//@components.1/@sites.1" name="b" parent="//@patternContainer/@patterns.2/@agentInstances.1"/>
+      </agentInstances>
+    </patterns>
+  </patternContainer>
+</ecoreBCModel:IntermediateModel>

@@ -110,8 +110,26 @@ begin molecule types
 end molecule types
 
 begin species
-	P53(b~u)	mdm2_p53Init
-	Mdm2(z~u,ubi~unb)	mdm2_p53Init
+	P53(b~u)	gsk3bInit
+	Mdm2mRNA(x)	p53Init
+	Proteasome(x)	mdm2Init
+	P53DUB()	mdm2_p53Init
+	AMP()	mdm2_mRNAInit
+	MT(l)	p53_mRNAInit
+	Tau(phos~u)	p53_mRNAInit
+	Mdm2(z~u,ubi~unb)	UbInit
+	Ub()	E1Init
+	E2(x~unb)	E2Init
+	BasalROS()	p53DubInit
+	Mdm2DUB()	mdm2DubInit
+	P53(b~u)	proteasomeInit
+	Mdm2(z~u,ubi~unb)	proteasomeInit
+	P53mRNA()	atmiInit
+	ATMI()	basalRosInit
+	ATP()	mtTauInit
+	E1(x~unb)	atpInit
+	GSK3b(x)	adpInit
+	ADP()	ampInit
 end species
 
 begin reaction rules
@@ -172,7 +190,7 @@ begin reaction rules
 	mdm2polyDeubiquination2:	Mdm2DUB() + Mdm2(ubi~ub3) -> Mdm2DUB() + Ub() + Mdm2(ubi~ub2)		kactDUBMdm2
 	mdm2polyDeubiquination3:	Mdm2DUB() + Mdm2(ubi~ub4) -> Mdm2DUB() + Ub() + Mdm2(ubi~ub3)		kactDUBMdm2
 	Mdm2ProteasomeBind:	Proteasome(x) + Mdm2(ubi~ub4) -> Proteasome(x!1).Mdm2(ubi~ub4!1)		kbinProt
-	Mdm2Degradation:	Proteasome(x!1).Mdm2(ubi~ub4!1) + ATP() -> Proteasome() + Ub() + Ub() + Ub() + Ub() + ADP() + Mdm2()		(kdegMdm2/5000.0)
+	Mdm2Degradation:	Proteasome(x!1).Mdm2(ubi~ub4!1) + ATP() -> Proteasome(x) + Ub() + Ub() + Ub() + Ub() + ADP() + Mdm2(ubi~ub4)		(kdegMdm2/5000.0)
 	ATMActivation:	ATMI() + DamDNA() -> DamDNA() + ATMA()		kactATM
 	ATMInactivation:	ATMA() -> ATMI()		kinactATM
 	P53Phospho:	ATMA() + P53(b~u) -> ATMA() + P53(b~p)		kphosp53
@@ -190,12 +208,9 @@ end reaction rules
 begin observables
 	Molecules mdm2	Mdm2(z!?,ubi!?)
 	Molecules mdm2mRNA	Mdm2mRNA(x!?)
-	Molecules mdm2DUB	Mdm2DUB()
 	Molecules p53	P53(b!?)
 	Molecules p53mRNA	P53mRNA()
-	Molecules p53DUB	P53DUB()
 	Molecules p53gsk	GSK3b(x!1).P53(b!1)
-	Molecules damDNA	DamDNA()
 	Molecules tauTangle	NFT()
 	Molecules abetaPlaque	AbetaPlaque()
 end observables
@@ -206,4 +221,4 @@ end model
 
 generate_network({overwrite=>1})
 
-simulate({method=>"ssa", t_end=>100000, n_steps=>100000})
+simulate({method=>"ssa", t_end=>30000, n_steps=>30000})
