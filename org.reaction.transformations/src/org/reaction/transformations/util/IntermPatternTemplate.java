@@ -89,7 +89,6 @@ public class IntermPatternTemplate {
 		AbstractAgent abstrAgent = rbs.getAbstractAgent();
 		if (abstrAgent instanceof Agent) {
 			// Agent and Site Instance given: create local instance and return it
-			if (rbsSi != null) {
 				IntermAgentInstance localInstance = this.createLocalAgent((Agent) abstrAgent);
 				String localInstanceName = NameProvider.getQualifiedLocalNodeName(rbs);
 				localInstance.setName(localInstanceName);
@@ -113,12 +112,6 @@ public class IntermPatternTemplate {
 				localInstances.add(localInstance);
 
 				return localSite;
-			} else {
-				// Only Agent given: return agent
-				IntermAgent intermAgent = transformation.agentToIntermAgent((Agent) abstrAgent);
-				throw new UnsupportedOperationException("You broke something when removing Bindable Interface.");
-//				return intermAgent;
-			}
 		}
 		if (abstrAgent instanceof AgentInstance) {
 			// Find right bond side objects
@@ -335,7 +328,7 @@ public class IntermPatternTemplate {
 		// create local agent
 		IntermAgentInstance localInstance = EcoreBCModelFactory.eINSTANCE.createIntermAgentInstance();
 		localInstance.setInstanceOf(rightIAgent);
-		localInstance.setLocal(true);
+		localInstance.setLocal(false);
 
 		return localInstance;
 	}

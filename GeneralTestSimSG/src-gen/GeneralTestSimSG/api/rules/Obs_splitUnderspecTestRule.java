@@ -1,7 +1,7 @@
 package GeneralTestSimSG.api.rules;
 
 import GeneralTestSimSG.api.GeneralTestSimSGAPI;
-import GeneralTestSimSG.api.matches.Obs_underspecTestMatch;
+import GeneralTestSimSG.api.matches.Obs_splitUnderspecTestMatch;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -9,39 +9,36 @@ import org.emoflon.ibex.common.operational.IMatch;
 import org.emoflon.ibex.gt.api.GraphTransformationRule;
 import org.emoflon.ibex.gt.engine.GraphTransformationInterpreter;
 import TestcasesModel.A;
-import TestcasesModel.P_s;
 import TestcasesModel.X;
 
 /**
- * The rule <code>obs_underspecTest()</code> which does the following:
+ * The rule <code>obs_splitUnderspecTest()</code> which does the following:
  * If this rule is not self-explaining, you really should add some comment in the specification.
  */
-public class Obs_underspecTestRule extends GraphTransformationRule<Obs_underspecTestMatch, Obs_underspecTestRule> {
-	private static String patternName = "obs_underspecTest";
+public class Obs_splitUnderspecTestRule extends GraphTransformationRule<Obs_splitUnderspecTestMatch, Obs_splitUnderspecTestRule> {
+	private static String patternName = "obs_splitUnderspecTest";
 
 	/**
-	 * Creates a new rule obs_underspecTest().
+	 * Creates a new rule obs_splitUnderspecTest().
 	 * 
 	 * @param api
 	 *            the API the rule belongs to
 	 * @param interpreter
 	 *            the interpreter
 	 */
-	public Obs_underspecTestRule(final GeneralTestSimSGAPI api, final GraphTransformationInterpreter interpreter) {
+	public Obs_splitUnderspecTestRule(final GeneralTestSimSGAPI api, final GraphTransformationInterpreter interpreter) {
 		super(api, interpreter, patternName);
 	}
 
 	@Override
-	protected Obs_underspecTestMatch convertMatch(final IMatch match) {
-		return new Obs_underspecTestMatch(this, match);
+	protected Obs_splitUnderspecTestMatch convertMatch(final IMatch match) {
+		return new Obs_splitUnderspecTestMatch(this, match);
 	}
 
 	@Override
 	protected List<String> getParameterNames() {
 		List<String> names = new ArrayList<String>();
 		names.add("a");
-		names.add("local_for_a_c");
-		names.add("ps");
 		names.add("x");
 		return names;
 	}
@@ -52,30 +49,8 @@ public class Obs_underspecTestRule extends GraphTransformationRule<Obs_underspec
 	 * @param object
 	 *            the object to set
 	 */
-	public Obs_underspecTestRule bindA(final A object) {
+	public Obs_splitUnderspecTestRule bindA(final A object) {
 		parameters.put("a", Objects.requireNonNull(object, "a must not be null!"));
-		return this;
-	}
-
-	/**
-	 * Binds the node local_for_a_c to the given object.
-	 *
-	 * @param object
-	 *            the object to set
-	 */
-	public Obs_underspecTestRule bindLocal_for_a_c(final X object) {
-		parameters.put("local_for_a_c", Objects.requireNonNull(object, "local_for_a_c must not be null!"));
-		return this;
-	}
-
-	/**
-	 * Binds the node ps to the given object.
-	 *
-	 * @param object
-	 *            the object to set
-	 */
-	public Obs_underspecTestRule bindPs(final P_s object) {
-		parameters.put("ps", Objects.requireNonNull(object, "ps must not be null!"));
 		return this;
 	}
 
@@ -85,7 +60,7 @@ public class Obs_underspecTestRule extends GraphTransformationRule<Obs_underspec
 	 * @param object
 	 *            the object to set
 	 */
-	public Obs_underspecTestRule bindX(final X object) {
+	public Obs_splitUnderspecTestRule bindX(final X object) {
 		parameters.put("x", Objects.requireNonNull(object, "x must not be null!"));
 		return this;
 	}
@@ -94,8 +69,6 @@ public class Obs_underspecTestRule extends GraphTransformationRule<Obs_underspec
 	public String toString() {
 		String s = "rule " + patternName + " {" + System.lineSeparator();
 		s += "	a --> " + parameters.get("a") + System.lineSeparator();
-		s += "	local_for_a_c --> " + parameters.get("local_for_a_c") + System.lineSeparator();
-		s += "	ps --> " + parameters.get("ps") + System.lineSeparator();
 		s += "	x --> " + parameters.get("x") + System.lineSeparator();
 		s += "}";
 		return s;

@@ -160,7 +160,7 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public EReference getA_A_b_A_b() {
+	public EReference getA_A_c_A_b() {
 		return (EReference) aEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -170,7 +170,7 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public EReference getA_A_b_X_y() {
+	public EReference getA_A_b_A_b() {
 		return (EReference) aEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -180,7 +180,7 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public EReference getA_A_c_X_z() {
+	public EReference getA_A_b_X_y() {
 		return (EReference) aEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -190,7 +190,7 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public EReference getA_A_c_X_y() {
+	public EReference getA_A_c_X_z() {
 		return (EReference) aEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -200,7 +200,7 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public EReference getA_A_c_u() {
+	public EReference getA_A_c_X_y() {
 		return (EReference) aEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -210,8 +210,18 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public EReference getA_A_c_p() {
+	public EReference getA_A_c_u() {
 		return (EReference) aEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getA_A_c_p() {
+		return (EReference) aEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -230,7 +240,7 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public EReference getX_X_z_u() {
+	public EReference getX_X_z_A_b() {
 		return (EReference) xEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -240,8 +250,48 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 	 * @generated
 	 */
 	@Override
-	public EReference getX_X_z_p() {
+	public EReference getX_X_y_A_b() {
 		return (EReference) xEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getX_X_z_A_c() {
+		return (EReference) xEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getX_X_y_A_c() {
+		return (EReference) xEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getX_X_z_u() {
+		return (EReference) xEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getX_X_z_p() {
+		return (EReference) xEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -297,6 +347,7 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 		aEClass = createEClass(A);
 		createEReference(aEClass, A__ABXZ);
 		createEReference(aEClass, A__ABAC);
+		createEReference(aEClass, A__ACAB);
 		createEReference(aEClass, A__ABAB);
 		createEReference(aEClass, A__ABXY);
 		createEReference(aEClass, A__ACXZ);
@@ -305,6 +356,10 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 		createEReference(aEClass, A__ACP);
 
 		xEClass = createEClass(X);
+		createEReference(xEClass, X__XZAB);
+		createEReference(xEClass, X__XYAB);
+		createEReference(xEClass, X__XZAC);
+		createEReference(xEClass, X__XYAC);
 		createEReference(xEClass, X__XZU);
 		createEReference(xEClass, X__XZP);
 
@@ -353,24 +408,27 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(aEClass, TestcasesModel.A.class, "A", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getA_A_b_X_z(), this.getX(), null, "A_b_X_z", null, 0, 1, TestcasesModel.A.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getA_A_b_A_c(), this.getA(), null, "A_b_A_c", null, 0, 1, TestcasesModel.A.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getA_A_b_X_z(), this.getX(), this.getX_X_z_A_b(), "A_b_X_z", null, 0, 1, TestcasesModel.A.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getA_A_b_A_c(), this.getA(), this.getA_A_c_A_b(), "A_b_A_c", null, 0, 1, TestcasesModel.A.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getA_A_c_A_b(), this.getA(), this.getA_A_b_A_c(), "A_c_A_b", null, 0, 1, TestcasesModel.A.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getA_A_b_A_b(), this.getA(), null, "A_b_A_b", null, 0, 1, TestcasesModel.A.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getA_A_b_X_y(), this.getX(), null, "A_b_X_y", null, 0, 1, TestcasesModel.A.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getA_A_c_X_z(), this.getX(), null, "A_c_X_z", null, 0, 1, TestcasesModel.A.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getA_A_c_X_y(), this.getX(), null, "A_c_X_y", null, 0, 1, TestcasesModel.A.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getA_A_b_X_y(), this.getX(), this.getX_X_y_A_b(), "A_b_X_y", null, 0, 1, TestcasesModel.A.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getA_A_c_X_z(), this.getX(), this.getX_X_z_A_c(), "A_c_X_z", null, 0, 1, TestcasesModel.A.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getA_A_c_X_y(), this.getX(), this.getX_X_y_A_c(), "A_c_X_y", null, 0, 1, TestcasesModel.A.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getA_A_c_u(), this.getU_s(), null, "A_c_u", null, 0, 1, TestcasesModel.A.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
@@ -379,6 +437,18 @@ public class TestcasesModelPackageImpl extends EPackageImpl implements Testcases
 				IS_ORDERED);
 
 		initEClass(xEClass, TestcasesModel.X.class, "X", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getX_X_z_A_b(), this.getA(), this.getA_A_b_X_z(), "X_z_A_b", null, 0, 1, TestcasesModel.X.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getX_X_y_A_b(), this.getA(), this.getA_A_b_X_y(), "X_y_A_b", null, 0, 1, TestcasesModel.X.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getX_X_z_A_c(), this.getA(), this.getA_A_c_X_z(), "X_z_A_c", null, 0, 1, TestcasesModel.X.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getX_X_y_A_c(), this.getA(), this.getA_A_c_X_y(), "X_y_A_c", null, 0, 1, TestcasesModel.X.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getX_X_z_u(), this.getU_s(), null, "X_z_u", null, 0, 1, TestcasesModel.X.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);

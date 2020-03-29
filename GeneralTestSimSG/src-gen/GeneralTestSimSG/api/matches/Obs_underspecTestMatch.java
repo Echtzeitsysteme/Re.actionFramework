@@ -12,6 +12,7 @@ import TestcasesModel.X;
  */
 public class Obs_underspecTestMatch extends GraphTransformationMatch<Obs_underspecTestMatch, Obs_underspecTestRule> {
 	private A varA;
+	private X varLocal_for_a_c;
 	private P_s varPs;
 	private X varX;
 
@@ -26,6 +27,7 @@ public class Obs_underspecTestMatch extends GraphTransformationMatch<Obs_undersp
 	public Obs_underspecTestMatch(final Obs_underspecTestRule pattern, final IMatch match) {
 		super(pattern, match);
 		varA = (A) match.get("a");
+		varLocal_for_a_c = (X) match.get("local_for_a_c");
 		varPs = (P_s) match.get("ps");
 		varX = (X) match.get("x");
 	}
@@ -37,6 +39,15 @@ public class Obs_underspecTestMatch extends GraphTransformationMatch<Obs_undersp
 	 */
 	public A getA() {
 		return varA;
+	}
+
+	/**
+	 * Returns the local_for_a_c.
+	 *
+	 * @return the local_for_a_c
+	 */
+	public X getLocal_for_a_c() {
+		return varLocal_for_a_c;
 	}
 
 	/**
@@ -61,6 +72,7 @@ public class Obs_underspecTestMatch extends GraphTransformationMatch<Obs_undersp
 	public String toString() {
 		String s = "match {" + System.lineSeparator();
 		s += "	a --> " + varA + System.lineSeparator();
+		s += "	local_for_a_c --> " + varLocal_for_a_c + System.lineSeparator();
 		s += "	ps --> " + varPs + System.lineSeparator();
 		s += "	x --> " + varX + System.lineSeparator();
 		s += "} for " + getPattern();

@@ -95,13 +95,22 @@ public interface TestcasesModelPackage extends EPackage {
 	int A__ABAC = ReactionContainerPackage.AGENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>AcAb</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int A__ACAB = ReactionContainerPackage.AGENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>AbAb</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int A__ABAB = ReactionContainerPackage.AGENT_FEATURE_COUNT + 2;
+	int A__ABAB = ReactionContainerPackage.AGENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>AbXy</b></em>' reference.
@@ -110,7 +119,7 @@ public interface TestcasesModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__ABXY = ReactionContainerPackage.AGENT_FEATURE_COUNT + 3;
+	int A__ABXY = ReactionContainerPackage.AGENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>AcXz</b></em>' reference.
@@ -119,7 +128,7 @@ public interface TestcasesModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__ACXZ = ReactionContainerPackage.AGENT_FEATURE_COUNT + 4;
+	int A__ACXZ = ReactionContainerPackage.AGENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>AcXy</b></em>' reference.
@@ -128,7 +137,7 @@ public interface TestcasesModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__ACXY = ReactionContainerPackage.AGENT_FEATURE_COUNT + 5;
+	int A__ACXY = ReactionContainerPackage.AGENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Acu</b></em>' reference.
@@ -137,7 +146,7 @@ public interface TestcasesModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__ACU = ReactionContainerPackage.AGENT_FEATURE_COUNT + 6;
+	int A__ACU = ReactionContainerPackage.AGENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Acp</b></em>' reference.
@@ -146,7 +155,7 @@ public interface TestcasesModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A__ACP = ReactionContainerPackage.AGENT_FEATURE_COUNT + 7;
+	int A__ACP = ReactionContainerPackage.AGENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>A</em>' class.
@@ -155,7 +164,7 @@ public interface TestcasesModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int A_FEATURE_COUNT = ReactionContainerPackage.AGENT_FEATURE_COUNT + 8;
+	int A_FEATURE_COUNT = ReactionContainerPackage.AGENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>A</em>' class.
@@ -186,13 +195,49 @@ public interface TestcasesModelPackage extends EPackage {
 	int X__ID = ReactionContainerPackage.AGENT__ID;
 
 	/**
+	 * The feature id for the '<em><b>XzAb</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int X__XZAB = ReactionContainerPackage.AGENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>XyAb</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int X__XYAB = ReactionContainerPackage.AGENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>XzAc</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int X__XZAC = ReactionContainerPackage.AGENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>XyAc</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int X__XYAC = ReactionContainerPackage.AGENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The feature id for the '<em><b>Xzu</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int X__XZU = ReactionContainerPackage.AGENT_FEATURE_COUNT + 0;
+	int X__XZU = ReactionContainerPackage.AGENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Xzp</b></em>' reference.
@@ -201,7 +246,7 @@ public interface TestcasesModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int X__XZP = ReactionContainerPackage.AGENT_FEATURE_COUNT + 1;
+	int X__XZP = ReactionContainerPackage.AGENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>X</em>' class.
@@ -210,7 +255,7 @@ public interface TestcasesModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int X_FEATURE_COUNT = ReactionContainerPackage.AGENT_FEATURE_COUNT + 2;
+	int X_FEATURE_COUNT = ReactionContainerPackage.AGENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>X</em>' class.
@@ -310,6 +355,17 @@ public interface TestcasesModelPackage extends EPackage {
 	EReference getA_A_b_A_c();
 
 	/**
+	 * Returns the meta object for the reference '{@link TestcasesModel.A#getA_c_A_b <em>AcAb</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>AcAb</em>'.
+	 * @see TestcasesModel.A#getA_c_A_b()
+	 * @see #getA()
+	 * @generated
+	 */
+	EReference getA_A_c_A_b();
+
+	/**
 	 * Returns the meta object for the reference '{@link TestcasesModel.A#getA_b_A_b <em>AbAb</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -384,6 +440,50 @@ public interface TestcasesModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getX();
+
+	/**
+	 * Returns the meta object for the reference '{@link TestcasesModel.X#getX_z_A_b <em>XzAb</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>XzAb</em>'.
+	 * @see TestcasesModel.X#getX_z_A_b()
+	 * @see #getX()
+	 * @generated
+	 */
+	EReference getX_X_z_A_b();
+
+	/**
+	 * Returns the meta object for the reference '{@link TestcasesModel.X#getX_y_A_b <em>XyAb</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>XyAb</em>'.
+	 * @see TestcasesModel.X#getX_y_A_b()
+	 * @see #getX()
+	 * @generated
+	 */
+	EReference getX_X_y_A_b();
+
+	/**
+	 * Returns the meta object for the reference '{@link TestcasesModel.X#getX_z_A_c <em>XzAc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>XzAc</em>'.
+	 * @see TestcasesModel.X#getX_z_A_c()
+	 * @see #getX()
+	 * @generated
+	 */
+	EReference getX_X_z_A_c();
+
+	/**
+	 * Returns the meta object for the reference '{@link TestcasesModel.X#getX_y_A_c <em>XyAc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>XyAc</em>'.
+	 * @see TestcasesModel.X#getX_y_A_c()
+	 * @see #getX()
+	 * @generated
+	 */
+	EReference getX_X_y_A_c();
 
 	/**
 	 * Returns the meta object for the reference '{@link TestcasesModel.X#getX_z_u <em>Xzu</em>}'.
@@ -477,6 +577,14 @@ public interface TestcasesModelPackage extends EPackage {
 		EReference A__ABAC = eINSTANCE.getA_A_b_A_c();
 
 		/**
+		 * The meta object literal for the '<em><b>AcAb</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference A__ACAB = eINSTANCE.getA_A_c_A_b();
+
+		/**
 		 * The meta object literal for the '<em><b>AbAb</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -533,6 +641,38 @@ public interface TestcasesModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass X = eINSTANCE.getX();
+
+		/**
+		 * The meta object literal for the '<em><b>XzAb</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference X__XZAB = eINSTANCE.getX_X_z_A_b();
+
+		/**
+		 * The meta object literal for the '<em><b>XyAb</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference X__XYAB = eINSTANCE.getX_X_y_A_b();
+
+		/**
+		 * The meta object literal for the '<em><b>XzAc</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference X__XZAC = eINSTANCE.getX_X_z_A_c();
+
+		/**
+		 * The meta object literal for the '<em><b>XyAc</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference X__XYAC = eINSTANCE.getX_X_y_A_c();
 
 		/**
 		 * The meta object literal for the '<em><b>Xzu</b></em>' reference feature.

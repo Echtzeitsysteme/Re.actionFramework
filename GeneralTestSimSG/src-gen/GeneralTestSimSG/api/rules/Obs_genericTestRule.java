@@ -10,6 +10,7 @@ import org.emoflon.ibex.gt.api.GraphTransformationRule;
 import org.emoflon.ibex.gt.engine.GraphTransformationInterpreter;
 import TestcasesModel.A;
 import TestcasesModel.P_s;
+import TestcasesModel.X;
 
 /**
  * The rule <code>obs_genericTest()</code> which does the following:
@@ -39,6 +40,7 @@ public class Obs_genericTestRule extends GraphTransformationRule<Obs_genericTest
 	protected List<String> getParameterNames() {
 		List<String> names = new ArrayList<String>();
 		names.add("a");
+		names.add("local_for_a_c");
 		names.add("ps");
 		return names;
 	}
@@ -51,6 +53,17 @@ public class Obs_genericTestRule extends GraphTransformationRule<Obs_genericTest
 	 */
 	public Obs_genericTestRule bindA(final A object) {
 		parameters.put("a", Objects.requireNonNull(object, "a must not be null!"));
+		return this;
+	}
+
+	/**
+	 * Binds the node local_for_a_c to the given object.
+	 *
+	 * @param object
+	 *            the object to set
+	 */
+	public Obs_genericTestRule bindLocal_for_a_c(final X object) {
+		parameters.put("local_for_a_c", Objects.requireNonNull(object, "local_for_a_c must not be null!"));
 		return this;
 	}
 
@@ -69,6 +82,7 @@ public class Obs_genericTestRule extends GraphTransformationRule<Obs_genericTest
 	public String toString() {
 		String s = "rule " + patternName + " {" + System.lineSeparator();
 		s += "	a --> " + parameters.get("a") + System.lineSeparator();
+		s += "	local_for_a_c --> " + parameters.get("local_for_a_c") + System.lineSeparator();
 		s += "	ps --> " + parameters.get("ps") + System.lineSeparator();
 		s += "}";
 		return s;

@@ -139,85 +139,43 @@ public class ChangePatternFactory {
 
 		if (pre.getBindingState() == BindingState.BOUND) {
 
-			IntermSiteInstance preBoundToBindable = pre.getBoundTo();
-			IntermSiteInstance postBoundToBindable = post.getBoundTo();
+			IntermSiteInstance preBoundTo = pre.getBoundTo();
+			IntermSiteInstance postBoundTo = post.getBoundTo();
 
 			if (post.getBindingState() == BindingState.BOUND) {
 
-				if (preBoundToBindable == null && postBoundToBindable == null) {
+				if (preBoundTo == null && postBoundTo == null) {
 					/* Nothing to do -> propagated wildcard */
 					/* Example: a.b+?, <..> => a.b+?, <..> */
 					return;
 				}
-
-				if (!(postBoundToBindable instanceof IntermSiteInstance)) {
-					throw new RuntimeException(
-							"All instances on the right hand side of a rule must be well defined. Encountered generic or unclear binding in rule "
-									+ template.getRule().getName() + ". Exiting.");
-				}
-
-				IntermSiteInstance postBoundTo = (IntermSiteInstance) postBoundToBindable;
-				if (preBoundToBindable == null) {
-
-					throw new UnsupportedOperationException("TODO. Caused by rule: " + template.getRule().getName());
-					// TODO ?
-					// deleteGenericNode(NameProvider.getQualifiedLocalNodeName(pre));
-
-				} else if (preBoundToBindable instanceof IntermSiteInstance) {
-					if (postBoundToBindable instanceof IntermSiteInstance) {
-
-						IntermSiteInstance preBoundTo = (IntermSiteInstance) preBoundToBindable;
-						if (preBoundTo.getName().equals(postBoundTo.getName())) {
-							/* Binding stayed the same, nothing to do */
-							return;
-						}
-						deleteBond(pre);
-						createBond(post);
-					} else {
-						throw new RuntimeException(
-								"All instances on the right hand side of a rule must be well defined. Encountered generic or unclear binding, exiting.");
+				if (preBoundTo != null) {
+					if (preBoundTo.getName().equals(postBoundTo.getName())) {
+						/* Binding stayed the same, nothing to do */
+						return;
 					}
-
-				} else if (preBoundToBindable instanceof IntermAgentInstance) {
-					System.out.println("Found Bindable as IntermAgentInstance");
-					if (postBoundToBindable instanceof IntermSiteInstance) {
-						throw new UnsupportedOperationException(
-								"Did not know that this was possible yet. Caused by rule "
-										+ template.getRule().getName());
-					} else if (preBoundToBindable instanceof IntermAgent) {
-						throw new UnsupportedOperationException(
-								"Did not know that this was possible yet. Caused by rule "
-										+ template.getRule().getName());
-					}
+					deleteBond(pre);
+					createBond(post);
 				}
 			} else if (post.getBindingState() == BindingState.UNSPECIFIED) {
 
 				// Check if it only is unspecified because the bond given in the pre condition
 				// has explicitly been forbidden in the post condition
-				if (preBoundToBindable instanceof IntermSiteInstance) {
-					IntermSiteInstance preBoundTo = (IntermSiteInstance) preBoundToBindable;
-					List<IntermSiteInstance> onlySiteInstances = post.getNotBoundTo().stream()
-							.filter(partner -> partner instanceof IntermSiteInstance)
-							.map(partner -> (IntermSiteInstance) partner).collect(Collectors.toList());
-					if (ModelHelper.isInstanceInList(preBoundTo, onlySiteInstances)) {
-						deleteBond(pre);
-					}
-				} else {
-					throw new UnsupportedOperationException(
-							"Encountered bound partner not of type IntermSiteInstance when establishing change from Free to Unspecified in rule "
-									+ template.getRule().getName() + ". Exiting.");
+				List<IntermSiteInstance> onlySiteInstances = post.getNotBoundTo().stream()
+						.filter(partner -> partner instanceof IntermSiteInstance)
+						.map(partner -> (IntermSiteInstance) partner).collect(Collectors.toList());
+				if (ModelHelper.isInstanceInList(preBoundTo, onlySiteInstances)) {
+					deleteBond(pre);
 				}
+
 			} else if (post.getBindingState() == BindingState.FREE) {
 				deleteBond(pre);
 			}
-
 		}
 
 		if (pre.getBindingState() == BindingState.UNSPECIFIED) {
 			if (post.getBindingState() == BindingState.BOUND) {
-
 				throw new RuntimeException("Underspecified transformation rule: " + template.getRule().getName());
-
 			} else if (post.getBindingState() == BindingState.UNSPECIFIED) {
 				/* Nothing to do */
 				return;
@@ -228,10 +186,8 @@ public class ChangePatternFactory {
 
 		if (pre.getBindingState() == BindingState.FREE) {
 			if (post.getBindingState() == BindingState.BOUND) {
-
 				// only create new bond
 				createBond(post);
-
 			} else if (post.getBindingState() == BindingState.UNSPECIFIED) {
 				/* Nothing to do */
 				return;
@@ -374,10 +330,10 @@ public class ChangePatternFactory {
 
 		// delete node if not existent in post condition
 		if (aiPost == null) {
-			if (!aiPre.isLocal()) {
+			if (!ModelHelper.isInstanceLocal(aiPre)) {
 				deleteNode(aiPre);
-				return;
 			}
+			return;
 		}
 
 		for (IntermSiteInstance siPre : aiPre.getSiteInstances()) {
@@ -499,7 +455,11 @@ public class ChangePatternFactory {
 			deletePattern.getContextNodes().add(deletedNode);
 			return deletedNode;
 		} else {
-			deletePattern.getDeletedNodes().add(deletedNode);
+			if (!ModelHelper.isInstanceLocal(ai)) {
+				deletePattern.getDeletedNodes().add(deletedNode);
+			}else {
+				deletePattern.getContextNodes().add(deletedNode);
+			}
 
 			// delete all edges connected to it
 			for (IntermSiteInstance si : ai.getSiteInstances()) {
@@ -509,7 +469,9 @@ public class ChangePatternFactory {
 					IntermAgentInstance boundToParent = boundTo.getParent();
 
 					IBeXNode boundToNode = getOrCreateNode(deletePattern, boundToParent);
-					deleteEdge(deletedNode, boundToNode, NameProvider.getEdgeTypeKey(si, boundTo));
+					if (ModelHelper.getEdgeFromDeletePattern(deletePattern, deletedNode, boundToNode) != null) {
+						deleteEdge(deletedNode, boundToNode, NameProvider.getEdgeTypeKey(si, boundTo));
+					}
 
 					// delete state
 					if (!ai.isLocal() && si.getState() != null) {

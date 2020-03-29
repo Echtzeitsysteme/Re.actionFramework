@@ -23,14 +23,15 @@ import hipe.generic.actor.GenericObjectActor;
 
 import hipe.generic.actor.junction.util.HiPEConfig;
 		
-public class A_object_SP4 extends GenericObjectActor<TestcasesModel.A> {
+public class A_object_SP2 extends GenericObjectActor<TestcasesModel.A> {
 	
 	@Override
 	protected void initializePorts(Map<String, ActorRef> name2actor, ObjectNode node) {
 		ports = new LinkedList<>();
-		ports.add(new PortNodeRight<TestcasesModel.A>(getSelf(), name2actor.get("A_A_b_A_b_0_reference"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("injectivity_138_junction"), this::returnTrue));
-		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("selfBinding_54_junction"), this::check_constraint_1));
+		ports.add(new PortNodeRight<TestcasesModel.A>(getSelf(), name2actor.get("A_A_b_A_c_0_reference"), this::returnTrue));
+		ports.add(new PortNodeLeft<TestcasesModel.A>(getSelf(), name2actor.get("A_A_c_X_y_0_reference"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("A_cFree_239_nacjunction"), this::returnTrue));
+		ports.add(new PortNodeMatchLeft<TestcasesModel.A>(getSelf(), name2actor.get("selfBinding_51_junction"), this::check_constraint_1));
 	}
 	
 	public boolean check_constraint_1(TestcasesModel.A a) {

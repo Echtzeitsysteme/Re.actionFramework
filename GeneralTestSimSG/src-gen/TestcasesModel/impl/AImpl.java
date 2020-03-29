@@ -9,6 +9,7 @@ import TestcasesModel.U_s;
 import TestcasesModel.X;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -27,6 +28,7 @@ import reactionContainer.impl.AgentImpl;
  * <ul>
  *   <li>{@link TestcasesModel.impl.AImpl#getA_b_X_z <em>AbXz</em>}</li>
  *   <li>{@link TestcasesModel.impl.AImpl#getA_b_A_c <em>AbAc</em>}</li>
+ *   <li>{@link TestcasesModel.impl.AImpl#getA_c_A_b <em>AcAb</em>}</li>
  *   <li>{@link TestcasesModel.impl.AImpl#getA_b_A_b <em>AbAb</em>}</li>
  *   <li>{@link TestcasesModel.impl.AImpl#getA_b_X_y <em>AbXy</em>}</li>
  *   <li>{@link TestcasesModel.impl.AImpl#getA_c_X_z <em>AcXz</em>}</li>
@@ -57,6 +59,16 @@ public class AImpl extends AgentImpl implements A {
 	 * @ordered
 	 */
 	protected A a_b_A_c;
+
+	/**
+	 * The cached value of the '{@link #getA_c_A_b() <em>AcAb</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getA_c_A_b()
+	 * @generated
+	 * @ordered
+	 */
+	protected A a_c_A_b;
 
 	/**
 	 * The cached value of the '{@link #getA_b_A_b() <em>AbAb</em>}' reference.
@@ -170,12 +182,39 @@ public class AImpl extends AgentImpl implements A {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setA_b_X_z(X newA_b_X_z) {
+	public NotificationChain basicSetA_b_X_z(X newA_b_X_z, NotificationChain msgs) {
 		X oldA_b_X_z = a_b_X_z;
 		a_b_X_z = newA_b_X_z;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestcasesModelPackage.A__ABXZ, oldA_b_X_z, a_b_X_z));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TestcasesModelPackage.A__ABXZ, oldA_b_X_z, newA_b_X_z);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setA_b_X_z(X newA_b_X_z) {
+		if (newA_b_X_z != a_b_X_z) {
+			NotificationChain msgs = null;
+			if (a_b_X_z != null)
+				msgs = ((InternalEObject) a_b_X_z).eInverseRemove(this, TestcasesModelPackage.X__XZAB, X.class, msgs);
+			if (newA_b_X_z != null)
+				msgs = ((InternalEObject) newA_b_X_z).eInverseAdd(this, TestcasesModelPackage.X__XZAB, X.class, msgs);
+			msgs = basicSetA_b_X_z(newA_b_X_z, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestcasesModelPackage.A__ABXZ, newA_b_X_z,
+					newA_b_X_z));
 	}
 
 	/**
@@ -211,12 +250,107 @@ public class AImpl extends AgentImpl implements A {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setA_b_A_c(A newA_b_A_c) {
+	public NotificationChain basicSetA_b_A_c(A newA_b_A_c, NotificationChain msgs) {
 		A oldA_b_A_c = a_b_A_c;
 		a_b_A_c = newA_b_A_c;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestcasesModelPackage.A__ABAC, oldA_b_A_c, a_b_A_c));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TestcasesModelPackage.A__ABAC, oldA_b_A_c, newA_b_A_c);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setA_b_A_c(A newA_b_A_c) {
+		if (newA_b_A_c != a_b_A_c) {
+			NotificationChain msgs = null;
+			if (a_b_A_c != null)
+				msgs = ((InternalEObject) a_b_A_c).eInverseRemove(this, TestcasesModelPackage.A__ACAB, A.class, msgs);
+			if (newA_b_A_c != null)
+				msgs = ((InternalEObject) newA_b_A_c).eInverseAdd(this, TestcasesModelPackage.A__ACAB, A.class, msgs);
+			msgs = basicSetA_b_A_c(newA_b_A_c, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestcasesModelPackage.A__ABAC, newA_b_A_c,
+					newA_b_A_c));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public A getA_c_A_b() {
+		if (a_c_A_b != null && a_c_A_b.eIsProxy()) {
+			InternalEObject oldA_c_A_b = (InternalEObject) a_c_A_b;
+			a_c_A_b = (A) eResolveProxy(oldA_c_A_b);
+			if (a_c_A_b != oldA_c_A_b) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestcasesModelPackage.A__ACAB, oldA_c_A_b,
+							a_c_A_b));
+			}
+		}
+		return a_c_A_b;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public A basicGetA_c_A_b() {
+		return a_c_A_b;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetA_c_A_b(A newA_c_A_b, NotificationChain msgs) {
+		A oldA_c_A_b = a_c_A_b;
+		a_c_A_b = newA_c_A_b;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TestcasesModelPackage.A__ACAB, oldA_c_A_b, newA_c_A_b);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setA_c_A_b(A newA_c_A_b) {
+		if (newA_c_A_b != a_c_A_b) {
+			NotificationChain msgs = null;
+			if (a_c_A_b != null)
+				msgs = ((InternalEObject) a_c_A_b).eInverseRemove(this, TestcasesModelPackage.A__ABAC, A.class, msgs);
+			if (newA_c_A_b != null)
+				msgs = ((InternalEObject) newA_c_A_b).eInverseAdd(this, TestcasesModelPackage.A__ABAC, A.class, msgs);
+			msgs = basicSetA_c_A_b(newA_c_A_b, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestcasesModelPackage.A__ACAB, newA_c_A_b,
+					newA_c_A_b));
 	}
 
 	/**
@@ -293,12 +427,39 @@ public class AImpl extends AgentImpl implements A {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setA_b_X_y(X newA_b_X_y) {
+	public NotificationChain basicSetA_b_X_y(X newA_b_X_y, NotificationChain msgs) {
 		X oldA_b_X_y = a_b_X_y;
 		a_b_X_y = newA_b_X_y;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestcasesModelPackage.A__ABXY, oldA_b_X_y, a_b_X_y));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TestcasesModelPackage.A__ABXY, oldA_b_X_y, newA_b_X_y);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setA_b_X_y(X newA_b_X_y) {
+		if (newA_b_X_y != a_b_X_y) {
+			NotificationChain msgs = null;
+			if (a_b_X_y != null)
+				msgs = ((InternalEObject) a_b_X_y).eInverseRemove(this, TestcasesModelPackage.X__XYAB, X.class, msgs);
+			if (newA_b_X_y != null)
+				msgs = ((InternalEObject) newA_b_X_y).eInverseAdd(this, TestcasesModelPackage.X__XYAB, X.class, msgs);
+			msgs = basicSetA_b_X_y(newA_b_X_y, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestcasesModelPackage.A__ABXY, newA_b_X_y,
+					newA_b_X_y));
 	}
 
 	/**
@@ -334,12 +495,39 @@ public class AImpl extends AgentImpl implements A {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setA_c_X_z(X newA_c_X_z) {
+	public NotificationChain basicSetA_c_X_z(X newA_c_X_z, NotificationChain msgs) {
 		X oldA_c_X_z = a_c_X_z;
 		a_c_X_z = newA_c_X_z;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestcasesModelPackage.A__ACXZ, oldA_c_X_z, a_c_X_z));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TestcasesModelPackage.A__ACXZ, oldA_c_X_z, newA_c_X_z);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setA_c_X_z(X newA_c_X_z) {
+		if (newA_c_X_z != a_c_X_z) {
+			NotificationChain msgs = null;
+			if (a_c_X_z != null)
+				msgs = ((InternalEObject) a_c_X_z).eInverseRemove(this, TestcasesModelPackage.X__XZAC, X.class, msgs);
+			if (newA_c_X_z != null)
+				msgs = ((InternalEObject) newA_c_X_z).eInverseAdd(this, TestcasesModelPackage.X__XZAC, X.class, msgs);
+			msgs = basicSetA_c_X_z(newA_c_X_z, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestcasesModelPackage.A__ACXZ, newA_c_X_z,
+					newA_c_X_z));
 	}
 
 	/**
@@ -375,12 +563,39 @@ public class AImpl extends AgentImpl implements A {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setA_c_X_y(X newA_c_X_y) {
+	public NotificationChain basicSetA_c_X_y(X newA_c_X_y, NotificationChain msgs) {
 		X oldA_c_X_y = a_c_X_y;
 		a_c_X_y = newA_c_X_y;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestcasesModelPackage.A__ACXY, oldA_c_X_y, a_c_X_y));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					TestcasesModelPackage.A__ACXY, oldA_c_X_y, newA_c_X_y);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setA_c_X_y(X newA_c_X_y) {
+		if (newA_c_X_y != a_c_X_y) {
+			NotificationChain msgs = null;
+			if (a_c_X_y != null)
+				msgs = ((InternalEObject) a_c_X_y).eInverseRemove(this, TestcasesModelPackage.X__XYAC, X.class, msgs);
+			if (newA_c_X_y != null)
+				msgs = ((InternalEObject) newA_c_X_y).eInverseAdd(this, TestcasesModelPackage.X__XYAC, X.class, msgs);
+			msgs = basicSetA_c_X_y(newA_c_X_y, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestcasesModelPackage.A__ACXY, newA_c_X_y,
+					newA_c_X_y));
 	}
 
 	/**
@@ -471,6 +686,66 @@ public class AImpl extends AgentImpl implements A {
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case TestcasesModelPackage.A__ABXZ:
+			if (a_b_X_z != null)
+				msgs = ((InternalEObject) a_b_X_z).eInverseRemove(this, TestcasesModelPackage.X__XZAB, X.class, msgs);
+			return basicSetA_b_X_z((X) otherEnd, msgs);
+		case TestcasesModelPackage.A__ABAC:
+			if (a_b_A_c != null)
+				msgs = ((InternalEObject) a_b_A_c).eInverseRemove(this, TestcasesModelPackage.A__ACAB, A.class, msgs);
+			return basicSetA_b_A_c((A) otherEnd, msgs);
+		case TestcasesModelPackage.A__ACAB:
+			if (a_c_A_b != null)
+				msgs = ((InternalEObject) a_c_A_b).eInverseRemove(this, TestcasesModelPackage.A__ABAC, A.class, msgs);
+			return basicSetA_c_A_b((A) otherEnd, msgs);
+		case TestcasesModelPackage.A__ABXY:
+			if (a_b_X_y != null)
+				msgs = ((InternalEObject) a_b_X_y).eInverseRemove(this, TestcasesModelPackage.X__XYAB, X.class, msgs);
+			return basicSetA_b_X_y((X) otherEnd, msgs);
+		case TestcasesModelPackage.A__ACXZ:
+			if (a_c_X_z != null)
+				msgs = ((InternalEObject) a_c_X_z).eInverseRemove(this, TestcasesModelPackage.X__XZAC, X.class, msgs);
+			return basicSetA_c_X_z((X) otherEnd, msgs);
+		case TestcasesModelPackage.A__ACXY:
+			if (a_c_X_y != null)
+				msgs = ((InternalEObject) a_c_X_y).eInverseRemove(this, TestcasesModelPackage.X__XYAC, X.class, msgs);
+			return basicSetA_c_X_y((X) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case TestcasesModelPackage.A__ABXZ:
+			return basicSetA_b_X_z(null, msgs);
+		case TestcasesModelPackage.A__ABAC:
+			return basicSetA_b_A_c(null, msgs);
+		case TestcasesModelPackage.A__ACAB:
+			return basicSetA_c_A_b(null, msgs);
+		case TestcasesModelPackage.A__ABXY:
+			return basicSetA_b_X_y(null, msgs);
+		case TestcasesModelPackage.A__ACXZ:
+			return basicSetA_c_X_z(null, msgs);
+		case TestcasesModelPackage.A__ACXY:
+			return basicSetA_c_X_y(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case TestcasesModelPackage.A__ABXZ:
@@ -481,6 +756,10 @@ public class AImpl extends AgentImpl implements A {
 			if (resolve)
 				return getA_b_A_c();
 			return basicGetA_b_A_c();
+		case TestcasesModelPackage.A__ACAB:
+			if (resolve)
+				return getA_c_A_b();
+			return basicGetA_c_A_b();
 		case TestcasesModelPackage.A__ABAB:
 			if (resolve)
 				return getA_b_A_b();
@@ -523,6 +802,9 @@ public class AImpl extends AgentImpl implements A {
 		case TestcasesModelPackage.A__ABAC:
 			setA_b_A_c((A) newValue);
 			return;
+		case TestcasesModelPackage.A__ACAB:
+			setA_c_A_b((A) newValue);
+			return;
 		case TestcasesModelPackage.A__ABAB:
 			setA_b_A_b((A) newValue);
 			return;
@@ -559,6 +841,9 @@ public class AImpl extends AgentImpl implements A {
 		case TestcasesModelPackage.A__ABAC:
 			setA_b_A_c((A) null);
 			return;
+		case TestcasesModelPackage.A__ACAB:
+			setA_c_A_b((A) null);
+			return;
 		case TestcasesModelPackage.A__ABAB:
 			setA_b_A_b((A) null);
 			return;
@@ -593,6 +878,8 @@ public class AImpl extends AgentImpl implements A {
 			return a_b_X_z != null;
 		case TestcasesModelPackage.A__ABAC:
 			return a_b_A_c != null;
+		case TestcasesModelPackage.A__ACAB:
+			return a_c_A_b != null;
 		case TestcasesModelPackage.A__ABAB:
 			return a_b_A_b != null;
 		case TestcasesModelPackage.A__ABXY:

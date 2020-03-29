@@ -60,7 +60,7 @@ public class NameProvider {
 	public static String getComponentNameOfBoundPattern(IBeXContextPattern contextPattern, String component) {
 		String boundPatternName = contextPattern.getName();
 		// Cut "BoundSrc"/"BoundTrg" from end:
-		boundPatternName = boundPatternName.substring(0, boundPatternName.length() - 8);
+		boundPatternName = boundPatternName.substring(0, boundPatternName.length() - 5);
 		return getComponentNameOfBoundPattern(boundPatternName, component);
 	}
 
@@ -133,18 +133,14 @@ public class NameProvider {
 	 * @returns the valid and hopefully unique name for a bound pattern
 	 */
 	public static String getBoundSitePatternName(IntermAgentInstance ai, IntermSiteInstance si) {
-		return ai.getInstanceOf().getName().toUpperCase() + "_" + si.getInstanceOf().getName() + "Bound";
+		return ai.getInstanceOf().getName() + "_" + si.getInstanceOf().getName() + "Bound";
 	}
 
 	/**
 	 * @returns the valid and hopefully unique name for a bound pattern
 	 */
 	public static String getBoundSitePatternName(EClass agentClass, EReference siteReference) {
-
-		int agentNameLength = agentClass.getName().length();
-		String siteName = siteReference.getName().substring(agentNameLength + 1);
-
-		return agentClass.getName() + "_" + siteName + "Bound";
+		return siteReference.getName()+"Bound";
 	}
 
 	/**

@@ -90,7 +90,7 @@ public class IBeXCreator {
 		try {
 			resource.save(options);
 		} catch (IOException e) {
-			System.out.println("Error trying to save the ibex-patterns at " + ibexSaveLocation);
+			System.err.println("Error trying to save the ibex-patterns at " + ibexSaveLocation);
 			return;
 		}
 	}

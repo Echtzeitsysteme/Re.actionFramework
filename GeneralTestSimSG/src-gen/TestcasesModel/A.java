@@ -15,6 +15,7 @@ import reactionContainer.Agent;
  * <ul>
  *   <li>{@link TestcasesModel.A#getA_b_X_z <em>AbXz</em>}</li>
  *   <li>{@link TestcasesModel.A#getA_b_A_c <em>AbAc</em>}</li>
+ *   <li>{@link TestcasesModel.A#getA_c_A_b <em>AcAb</em>}</li>
  *   <li>{@link TestcasesModel.A#getA_b_A_b <em>AbAb</em>}</li>
  *   <li>{@link TestcasesModel.A#getA_b_X_y <em>AbXy</em>}</li>
  *   <li>{@link TestcasesModel.A#getA_c_X_z <em>AcXz</em>}</li>
@@ -30,12 +31,14 @@ import reactionContainer.Agent;
 public interface A extends Agent {
 	/**
 	 * Returns the value of the '<em><b>AbXz</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link TestcasesModel.X#getX_z_A_b <em>XzAb</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>AbXz</em>' reference.
 	 * @see #setA_b_X_z(X)
 	 * @see TestcasesModel.TestcasesModelPackage#getA_A_b_X_z()
-	 * @model
+	 * @see TestcasesModel.X#getX_z_A_b
+	 * @model opposite="X_z_A_b"
 	 * @generated
 	 */
 	X getA_b_X_z();
@@ -52,12 +55,14 @@ public interface A extends Agent {
 
 	/**
 	 * Returns the value of the '<em><b>AbAc</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link TestcasesModel.A#getA_c_A_b <em>AcAb</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>AbAc</em>' reference.
 	 * @see #setA_b_A_c(A)
 	 * @see TestcasesModel.TestcasesModelPackage#getA_A_b_A_c()
-	 * @model
+	 * @see TestcasesModel.A#getA_c_A_b
+	 * @model opposite="A_c_A_b"
 	 * @generated
 	 */
 	A getA_b_A_c();
@@ -71,6 +76,30 @@ public interface A extends Agent {
 	 * @generated
 	 */
 	void setA_b_A_c(A value);
+
+	/**
+	 * Returns the value of the '<em><b>AcAb</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link TestcasesModel.A#getA_b_A_c <em>AbAc</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>AcAb</em>' reference.
+	 * @see #setA_c_A_b(A)
+	 * @see TestcasesModel.TestcasesModelPackage#getA_A_c_A_b()
+	 * @see TestcasesModel.A#getA_b_A_c
+	 * @model opposite="A_b_A_c"
+	 * @generated
+	 */
+	A getA_c_A_b();
+
+	/**
+	 * Sets the value of the '{@link TestcasesModel.A#getA_c_A_b <em>AcAb</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>AcAb</em>' reference.
+	 * @see #getA_c_A_b()
+	 * @generated
+	 */
+	void setA_c_A_b(A value);
 
 	/**
 	 * Returns the value of the '<em><b>AbAb</b></em>' reference.
@@ -96,12 +125,14 @@ public interface A extends Agent {
 
 	/**
 	 * Returns the value of the '<em><b>AbXy</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link TestcasesModel.X#getX_y_A_b <em>XyAb</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>AbXy</em>' reference.
 	 * @see #setA_b_X_y(X)
 	 * @see TestcasesModel.TestcasesModelPackage#getA_A_b_X_y()
-	 * @model
+	 * @see TestcasesModel.X#getX_y_A_b
+	 * @model opposite="X_y_A_b"
 	 * @generated
 	 */
 	X getA_b_X_y();
@@ -118,12 +149,14 @@ public interface A extends Agent {
 
 	/**
 	 * Returns the value of the '<em><b>AcXz</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link TestcasesModel.X#getX_z_A_c <em>XzAc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>AcXz</em>' reference.
 	 * @see #setA_c_X_z(X)
 	 * @see TestcasesModel.TestcasesModelPackage#getA_A_c_X_z()
-	 * @model
+	 * @see TestcasesModel.X#getX_z_A_c
+	 * @model opposite="X_z_A_c"
 	 * @generated
 	 */
 	X getA_c_X_z();
@@ -140,12 +173,14 @@ public interface A extends Agent {
 
 	/**
 	 * Returns the value of the '<em><b>AcXy</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link TestcasesModel.X#getX_y_A_c <em>XyAc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>AcXy</em>' reference.
 	 * @see #setA_c_X_y(X)
 	 * @see TestcasesModel.TestcasesModelPackage#getA_A_c_X_y()
-	 * @model
+	 * @see TestcasesModel.X#getX_y_A_c
+	 * @model opposite="X_y_A_c"
 	 * @generated
 	 */
 	X getA_c_X_y();

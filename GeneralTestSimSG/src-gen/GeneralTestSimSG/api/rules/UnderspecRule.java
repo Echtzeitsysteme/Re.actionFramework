@@ -11,6 +11,7 @@ import org.emoflon.ibex.gt.engine.GraphTransformationInterpreter;
 import TestcasesModel.A;
 import TestcasesModel.P_s;
 import TestcasesModel.U_s;
+import TestcasesModel.X;
 
 /**
  * The rule <code>underspec()</code> which does the following:
@@ -40,6 +41,7 @@ public class UnderspecRule extends GraphTransformationRule<UnderspecMatch, Under
 	protected List<String> getParameterNames() {
 		List<String> names = new ArrayList<String>();
 		names.add("a");
+		names.add("local_for_a_c");
 		names.add("ps");
 		names.add("us");
 		return names;
@@ -53,6 +55,17 @@ public class UnderspecRule extends GraphTransformationRule<UnderspecMatch, Under
 	 */
 	public UnderspecRule bindA(final A object) {
 		parameters.put("a", Objects.requireNonNull(object, "a must not be null!"));
+		return this;
+	}
+
+	/**
+	 * Binds the node local_for_a_c to the given object.
+	 *
+	 * @param object
+	 *            the object to set
+	 */
+	public UnderspecRule bindLocal_for_a_c(final X object) {
+		parameters.put("local_for_a_c", Objects.requireNonNull(object, "local_for_a_c must not be null!"));
 		return this;
 	}
 
@@ -82,6 +95,7 @@ public class UnderspecRule extends GraphTransformationRule<UnderspecMatch, Under
 	public String toString() {
 		String s = "rule " + patternName + " {" + System.lineSeparator();
 		s += "	a --> " + parameters.get("a") + System.lineSeparator();
+		s += "	local_for_a_c --> " + parameters.get("local_for_a_c") + System.lineSeparator();
 		s += "	ps --> " + parameters.get("ps") + System.lineSeparator();
 		s += "	us --> " + parameters.get("us") + System.lineSeparator();
 		s += "}";

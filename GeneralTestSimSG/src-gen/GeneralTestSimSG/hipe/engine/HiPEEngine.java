@@ -23,8 +23,8 @@ import static akka.pattern.Patterns.ask;
 import GeneralTestSimSG.hipe.engine.actor.NotificationActor;
 import GeneralTestSimSG.hipe.engine.actor.DispatchActor;
 import GeneralTestSimSG.hipe.engine.actor.edge.A_A_b_A_b_0_reference;
-import GeneralTestSimSG.hipe.engine.actor.junction.injectivity_138_junction;
-import GeneralTestSimSG.hipe.engine.actor.node.A_object_SP4;
+import GeneralTestSimSG.hipe.engine.actor.junction.injectivity_135_junction;
+import GeneralTestSimSG.hipe.engine.actor.node.A_object_SP2;
 
 import hipe.engine.IHiPEEngine;
 import hipe.engine.message.InitActor;
@@ -104,30 +104,28 @@ public class HiPEEngine implements IHiPEEngine{
 		}
 	
 	public void createProductionNodes() {
-		classes.put("A_b_X_zBoundSrc_production", GenericProductionActor.class);
-		productionNodes2pattern.put("A_b_X_zBoundSrc_production", "A_b_X_zBoundSrc");
-		classes.put("A_b_X_zBoundTrg_production", GenericProductionActor.class);
-		productionNodes2pattern.put("A_b_X_zBoundTrg_production", "A_b_X_zBoundTrg");
-		classes.put("A_b_A_cBoundSrc_production", GenericProductionActor.class);
-		productionNodes2pattern.put("A_b_A_cBoundSrc_production", "A_b_A_cBoundSrc");
-		classes.put("A_b_A_cBoundTrg_production", GenericProductionActor.class);
-		productionNodes2pattern.put("A_b_A_cBoundTrg_production", "A_b_A_cBoundTrg");
-		classes.put("A_b_A_bBoundSrc_production", GenericProductionActor.class);
-		productionNodes2pattern.put("A_b_A_bBoundSrc_production", "A_b_A_bBoundSrc");
-		classes.put("A_b_A_bBoundTrg_production", GenericProductionActor.class);
-		productionNodes2pattern.put("A_b_A_bBoundTrg_production", "A_b_A_bBoundTrg");
-		classes.put("A_b_X_yBoundSrc_production", GenericProductionActor.class);
-		productionNodes2pattern.put("A_b_X_yBoundSrc_production", "A_b_X_yBoundSrc");
-		classes.put("A_b_X_yBoundTrg_production", GenericProductionActor.class);
-		productionNodes2pattern.put("A_b_X_yBoundTrg_production", "A_b_X_yBoundTrg");
-		classes.put("A_c_X_zBoundSrc_production", GenericProductionActor.class);
-		productionNodes2pattern.put("A_c_X_zBoundSrc_production", "A_c_X_zBoundSrc");
-		classes.put("A_c_X_zBoundTrg_production", GenericProductionActor.class);
-		productionNodes2pattern.put("A_c_X_zBoundTrg_production", "A_c_X_zBoundTrg");
-		classes.put("A_c_X_yBoundSrc_production", GenericProductionActor.class);
-		productionNodes2pattern.put("A_c_X_yBoundSrc_production", "A_c_X_yBoundSrc");
-		classes.put("A_c_X_yBoundTrg_production", GenericProductionActor.class);
-		productionNodes2pattern.put("A_c_X_yBoundTrg_production", "A_c_X_yBoundTrg");
+		classes.put("A_b_X_zBound_production", GenericProductionActor.class);
+		productionNodes2pattern.put("A_b_X_zBound_production", "A_b_X_zBound");
+		classes.put("A_b_A_cBound_production", GenericProductionActor.class);
+		productionNodes2pattern.put("A_b_A_cBound_production", "A_b_A_cBound");
+		classes.put("A_c_A_bBound_production", GenericProductionActor.class);
+		productionNodes2pattern.put("A_c_A_bBound_production", "A_c_A_bBound");
+		classes.put("A_b_A_bBound_production", GenericProductionActor.class);
+		productionNodes2pattern.put("A_b_A_bBound_production", "A_b_A_bBound");
+		classes.put("A_b_X_yBound_production", GenericProductionActor.class);
+		productionNodes2pattern.put("A_b_X_yBound_production", "A_b_X_yBound");
+		classes.put("A_c_X_zBound_production", GenericProductionActor.class);
+		productionNodes2pattern.put("A_c_X_zBound_production", "A_c_X_zBound");
+		classes.put("A_c_X_yBound_production", GenericProductionActor.class);
+		productionNodes2pattern.put("A_c_X_yBound_production", "A_c_X_yBound");
+		classes.put("X_z_A_bBound_production", GenericProductionActor.class);
+		productionNodes2pattern.put("X_z_A_bBound_production", "X_z_A_bBound");
+		classes.put("X_y_A_bBound_production", GenericProductionActor.class);
+		productionNodes2pattern.put("X_y_A_bBound_production", "X_y_A_bBound");
+		classes.put("X_z_A_cBound_production", GenericProductionActor.class);
+		productionNodes2pattern.put("X_z_A_cBound_production", "X_z_A_cBound");
+		classes.put("X_y_A_cBound_production", GenericProductionActor.class);
+		productionNodes2pattern.put("X_y_A_cBound_production", "X_y_A_cBound");
 		classes.put("simpleBinding_production", GenericProductionActor.class);
 		productionNodes2pattern.put("simpleBinding_production", "simpleBinding");
 		classes.put("simpleBindingBwd_production", GenericProductionActor.class);
@@ -178,6 +176,8 @@ public class HiPEEngine implements IHiPEEngine{
 		productionNodes2pattern.put("concreteSplit_production", "concreteSplit");
 		classes.put("underspecSynth_production", GenericProductionActor.class);
 		productionNodes2pattern.put("underspecSynth_production", "underspecSynth");
+		classes.put("splitUnderspec_production", GenericProductionActor.class);
+		productionNodes2pattern.put("splitUnderspec_production", "splitUnderspec");
 		classes.put("obs_underspecTest_production", GenericProductionActor.class);
 		productionNodes2pattern.put("obs_underspecTest_production", "obs_underspecTest");
 		classes.put("obs_genericTest_production", GenericProductionActor.class);
@@ -192,24 +192,25 @@ public class HiPEEngine implements IHiPEEngine{
 		productionNodes2pattern.put("obs_concreteSplitTest_production", "obs_concreteSplitTest");
 		classes.put("obs_underspecSynthTest_production", GenericProductionActor.class);
 		productionNodes2pattern.put("obs_underspecSynthTest_production", "obs_underspecSynthTest");
+		classes.put("obs_splitUnderspecTest_production", GenericProductionActor.class);
+		productionNodes2pattern.put("obs_splitUnderspecTest_production", "obs_splitUnderspecTest");
 		
 	}
 	
 	public void createJunctionNodes() {
-		classes.put("simpleBinding_39_junction", GenericJunctionActor.class);
-		classes.put("simpleBinding_37_junction", GenericJunctionActor.class);
-		classes.put("simpleBindingBwd_46_junction", GenericJunctionActor.class);
-		classes.put("simpleBindingBwd_45_junction", GenericJunctionActor.class);
-		classes.put("simpleBindingBwd_198_nacjunction", GenericNACJunctionActor.class);
+		classes.put("simpleBinding_36_junction", GenericJunctionActor.class);
+		classes.put("simpleBinding_34_junction", GenericJunctionActor.class);
+		classes.put("simpleBindingBwd_43_junction", GenericJunctionActor.class);
+		classes.put("simpleBindingBwd_42_junction", GenericJunctionActor.class);
 		classes.put("simpleBindingBwd_199_nacjunction", GenericNACJunctionActor.class);
 		classes.put("simpleBindingBwd_200_nacjunction", GenericNACJunctionActor.class);
 		classes.put("simpleBindingBwd_201_nacjunction", GenericNACJunctionActor.class);
 		classes.put("simpleBindingBwd_202_nacjunction", GenericNACJunctionActor.class);
 		classes.put("simpleBindingBwd_203_nacjunction", GenericNACJunctionActor.class);
 		classes.put("simpleBindingBwd_204_nacjunction", GenericNACJunctionActor.class);
-		classes.put("selfBinding_54_junction", GenericJunctionActor.class);
-		classes.put("selfBinding_52_junction", GenericJunctionActor.class);
-		classes.put("selfBindingBwd_59_junction", GenericJunctionActor.class);
+		classes.put("selfBinding_51_junction", GenericJunctionActor.class);
+		classes.put("selfBinding_49_junction", GenericJunctionActor.class);
+		classes.put("selfBindingBwd_56_junction", GenericJunctionActor.class);
 		classes.put("selfBindingBwd_205_nacjunction", GenericNACJunctionActor.class);
 		classes.put("selfBindingBwd_206_nacjunction", GenericNACJunctionActor.class);
 		classes.put("selfBindingBwd_207_nacjunction", GenericNACJunctionActor.class);
@@ -217,39 +218,39 @@ public class HiPEEngine implements IHiPEEngine{
 		classes.put("selfBindingBwd_209_nacjunction", GenericNACJunctionActor.class);
 		classes.put("selfBindingBwd_210_nacjunction", GenericNACJunctionActor.class);
 		classes.put("selfBindingBwd_211_nacjunction", GenericNACJunctionActor.class);
-		classes.put("selfBindingBwd_212_nacjunction", GenericNACJunctionActor.class);
-		classes.put("synthDegComplete_66_junction", GenericJunctionActor.class);
-		classes.put("synthDegComplete_64_junction", GenericJunctionActor.class);
-		classes.put("synthDegCompleteBwd_71_junction", GenericJunctionActor.class);
-		classes.put("synthDegCompleteBwd_69_junction", GenericJunctionActor.class);
-		classes.put("synthDegPartial_78_junction", GenericJunctionActor.class);
+		classes.put("synthDegComplete_63_junction", GenericJunctionActor.class);
+		classes.put("synthDegComplete_61_junction", GenericJunctionActor.class);
+		classes.put("synthDegCompleteBwd_68_junction", GenericJunctionActor.class);
+		classes.put("synthDegCompleteBwd_66_junction", GenericJunctionActor.class);
+		classes.put("synthDegPartial_75_junction", GenericJunctionActor.class);
+		classes.put("synthDegPartial_212_nacjunction", GenericNACJunctionActor.class);
 		classes.put("synthDegPartial_213_nacjunction", GenericNACJunctionActor.class);
 		classes.put("synthDegPartial_214_nacjunction", GenericNACJunctionActor.class);
-		classes.put("synthDegPartial_215_nacjunction", GenericNACJunctionActor.class);
-		classes.put("synthDegPartialBwd_85_junction", GenericJunctionActor.class);
-		classes.put("synthDegPartialBwd_83_junction", GenericJunctionActor.class);
-		classes.put("underspec_94_junction", GenericJunctionActor.class);
-		classes.put("underspec_92_junction", GenericJunctionActor.class);
-		classes.put("unspec_100_junction", GenericJunctionActor.class);
-		classes.put("unspecTest_103_junction", GenericJunctionActor.class);
+		classes.put("synthDegPartialBwd_82_junction", GenericJunctionActor.class);
+		classes.put("synthDegPartialBwd_80_junction", GenericJunctionActor.class);
+		classes.put("underspec_91_junction", GenericJunctionActor.class);
+		classes.put("underspec_89_junction", GenericJunctionActor.class);
+		classes.put("unspec_97_junction", GenericJunctionActor.class);
+		classes.put("unspecTest_100_junction", GenericJunctionActor.class);
+		classes.put("unspecTest_215_nacjunction", GenericNACJunctionActor.class);
 		classes.put("unspecTest_216_nacjunction", GenericNACJunctionActor.class);
 		classes.put("unspecTest_217_nacjunction", GenericNACJunctionActor.class);
 		classes.put("unspecTest_218_nacjunction", GenericNACJunctionActor.class);
-		classes.put("unspecTest_219_nacjunction", GenericNACJunctionActor.class);
-		classes.put("generic_108_junction", GenericJunctionActor.class);
-		classes.put("generic_106_junction", GenericJunctionActor.class);
-		classes.put("genericWithState_116_junction", GenericJunctionActor.class);
-		classes.put("genericWithState_114_junction", GenericJunctionActor.class);
+		classes.put("generic_105_junction", GenericJunctionActor.class);
+		classes.put("generic_103_junction", GenericJunctionActor.class);
+		classes.put("genericWithState_113_junction", GenericJunctionActor.class);
+		classes.put("genericWithState_111_junction", GenericJunctionActor.class);
 		classes.put("genericWithStateTest_triangle_0_triangleJunction", GenericTriangleJunctionActor.class);
-		classes.put("simpleSynthesis_130_junction", GenericJunctionActor.class);
+		classes.put("simpleSynthesis_127_junction", GenericJunctionActor.class);
+		classes.put("simpleSynthesis_219_nacjunction", GenericNACJunctionActor.class);
 		classes.put("simpleSynthesis_220_nacjunction", GenericNACJunctionActor.class);
 		classes.put("simpleSynthesis_221_nacjunction", GenericNACJunctionActor.class);
 		classes.put("simpleSynthesis_222_nacjunction", GenericNACJunctionActor.class);
-		classes.put("simpleSynthesis_223_nacjunction", GenericNACJunctionActor.class);
-		classes.put("simpleSynthesis_224_nacjunction", GenericNACJunctionActor.class);
-		classes.put("unspecifiedStateChange_133_junction", GenericJunctionActor.class);
-		classes.put("injectivity_140_junction", GenericJunctionActor.class);
-		classes.put("injectivity_138_junction", injectivity_138_junction.class);
+		classes.put("unspecifiedStateChange_130_junction", GenericJunctionActor.class);
+		classes.put("injectivity_137_junction", GenericJunctionActor.class);
+		classes.put("injectivity_135_junction", injectivity_135_junction.class);
+		classes.put("injectivity_223_nacjunction", GenericNACJunctionActor.class);
+		classes.put("injectivity_224_nacjunction", GenericNACJunctionActor.class);
 		classes.put("injectivity_225_nacjunction", GenericNACJunctionActor.class);
 		classes.put("injectivity_226_nacjunction", GenericNACJunctionActor.class);
 		classes.put("injectivity_227_nacjunction", GenericNACJunctionActor.class);
@@ -260,71 +261,76 @@ public class HiPEEngine implements IHiPEEngine{
 		classes.put("injectivity_232_nacjunction", GenericNACJunctionActor.class);
 		classes.put("injectivity_233_nacjunction", GenericNACJunctionActor.class);
 		classes.put("injectivity_234_nacjunction", GenericNACJunctionActor.class);
-		classes.put("injectivity_235_nacjunction", GenericNACJunctionActor.class);
-		classes.put("injectivity_236_nacjunction", GenericNACJunctionActor.class);
-		classes.put("injectivity_237_nacjunction", GenericNACJunctionActor.class);
-		classes.put("injectivity_238_nacjunction", GenericNACJunctionActor.class);
-		classes.put("injectivityBwd_145_junction", GenericJunctionActor.class);
-		classes.put("injectivityBwd_143_junction", GenericJunctionActor.class);
-		classes.put("injectivityBwd_239_nacjunction", GenericNACJunctionActor.class);
-		classes.put("injectivityBwd_240_nacjunction", GenericNACJunctionActor.class);
-		classes.put("injectivityBwd_241_nacjunction", GenericNACJunctionActor.class);
-		classes.put("injectivityBwd_242_nacjunction", GenericNACJunctionActor.class);
-		classes.put("A_cFree_243_nacjunction", GenericNACJunctionActor.class);
-		classes.put("A_cFree_244_nacjunction", GenericNACJunctionActor.class);
-		classes.put("A_cFree_245_nacjunction", GenericNACJunctionActor.class);
-		classes.put("wildcard_151_junction", GenericJunctionActor.class);
-		classes.put("wildcard_246_nacjunction", GenericNACJunctionActor.class);
-		classes.put("wildcardStateChange_154_junction", GenericJunctionActor.class);
-		classes.put("wildcardStateChange_247_nacjunction", GenericNACJunctionActor.class);
-		classes.put("wildcardStateChangeBwd_159_junction", GenericJunctionActor.class);
-		classes.put("wildcardStateChangeBwd_248_nacjunction", GenericNACJunctionActor.class);
-		classes.put("underspecSynth_168_junction", GenericJunctionActor.class);
-		classes.put("obs_underspecTest_173_junction", GenericJunctionActor.class);
+		classes.put("injectivityBwd_140_junction", GenericJunctionActor.class);
+		classes.put("injectivityBwd_235_nacjunction", GenericNACJunctionActor.class);
+		classes.put("injectivityBwd_236_nacjunction", GenericNACJunctionActor.class);
+		classes.put("injectivityBwd_237_nacjunction", GenericNACJunctionActor.class);
+		classes.put("injectivityBwd_238_nacjunction", GenericNACJunctionActor.class);
+		classes.put("A_cFree_239_nacjunction", GenericNACJunctionActor.class);
+		classes.put("A_cFree_240_nacjunction", GenericNACJunctionActor.class);
+		classes.put("A_cFree_241_nacjunction", GenericNACJunctionActor.class);
+		classes.put("wildcard_146_junction", GenericJunctionActor.class);
+		classes.put("wildcard_242_nacjunction", GenericNACJunctionActor.class);
+		classes.put("wildcardStateChange_149_junction", GenericJunctionActor.class);
+		classes.put("wildcardStateChange_243_nacjunction", GenericNACJunctionActor.class);
+		classes.put("wildcardStateChangeBwd_154_junction", GenericJunctionActor.class);
+		classes.put("wildcardStateChangeBwd_244_nacjunction", GenericNACJunctionActor.class);
+		classes.put("underspecSynth_163_junction", GenericJunctionActor.class);
 		classes.put("obs_underspecTest_171_junction", GenericJunctionActor.class);
-		classes.put("obs_underspecTest_249_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_underspecTest_250_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_underspecTest_251_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_underspecTest_252_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_genericTest_179_junction", GenericJunctionActor.class);
-		classes.put("obs_wildcardTest_253_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_wildcardTest_254_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_wildcardTest_255_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_wildcardTest_256_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_concreteSplitTest_192_junction", GenericJunctionActor.class);
+		classes.put("obs_underspecTest_169_junction", GenericJunctionActor.class);
+		classes.put("obs_underspecTest_245_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_underspecTest_246_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_underspecTest_247_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_underspecTest_248_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_genericTest_177_junction", GenericJunctionActor.class);
+		classes.put("obs_wildcardTest_249_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_wildcardTest_250_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_wildcardTest_251_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_wildcardTest_252_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_concreteSplitTest_190_junction", GenericJunctionActor.class);
+		classes.put("obs_concreteSplitTest_253_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_concreteSplitTest_254_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_concreteSplitTest_255_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_concreteSplitTest_256_nacjunction", GenericNACJunctionActor.class);
 		classes.put("obs_concreteSplitTest_257_nacjunction", GenericNACJunctionActor.class);
 		classes.put("obs_concreteSplitTest_258_nacjunction", GenericNACJunctionActor.class);
 		classes.put("obs_concreteSplitTest_259_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_concreteSplitTest_260_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_concreteSplitTest_261_nacjunction", GenericNACJunctionActor.class);
 		createJunctionNodes_1();
 			}	
 		
 			private void createJunctionNodes_1() {
-		classes.put("obs_concreteSplitTest_260_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_concreteSplitTest_261_nacjunction", GenericNACJunctionActor.class);
 		classes.put("obs_concreteSplitTest_262_nacjunction", GenericNACJunctionActor.class);
 		classes.put("obs_concreteSplitTest_263_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_concreteSplitTest_264_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_concreteSplitTest_265_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_concreteSplitTest_266_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_concreteSplitTest_267_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_concreteSplitTest_268_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_underspecSynthTest_264_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_underspecSynthTest_265_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_underspecSynthTest_266_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_underspecSynthTest_267_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_underspecSynthTest_268_nacjunction", GenericNACJunctionActor.class);
 		classes.put("obs_underspecSynthTest_269_nacjunction", GenericNACJunctionActor.class);
 		classes.put("obs_underspecSynthTest_270_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_underspecSynthTest_271_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_underspecSynthTest_272_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_underspecSynthTest_273_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_underspecSynthTest_274_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_underspecSynthTest_275_nacjunction", GenericNACJunctionActor.class);
-		classes.put("obs_underspecSynthTest_276_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_splitUnderspecTest_196_junction", GenericJunctionActor.class);
+		classes.put("obs_splitUnderspecTest_271_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_splitUnderspecTest_272_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_splitUnderspecTest_273_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_splitUnderspecTest_274_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_splitUnderspecTest_275_nacjunction", GenericNACJunctionActor.class);
+		classes.put("obs_splitUnderspecTest_276_nacjunction", GenericNACJunctionActor.class);
 	}
 	
 	public void createReferenceNodes() {
 		classes.put("A_A_b_X_z_0_reference",A_A_b_X_z_0_reference.class);
 		classes.put("A_A_b_A_c_0_reference",A_A_b_A_c_0_reference.class);
+		classes.put("A_A_c_A_b_0_reference",A_A_c_A_b_0_reference.class);
 		classes.put("A_A_b_A_b_0_reference",A_A_b_A_b_0_reference.class);
 		classes.put("A_A_b_X_y_0_reference",A_A_b_X_y_0_reference.class);
 		classes.put("A_A_c_X_z_0_reference",A_A_c_X_z_0_reference.class);
 		classes.put("A_A_c_X_y_0_reference",A_A_c_X_y_0_reference.class);
+		classes.put("X_X_z_A_b_0_reference",X_X_z_A_b_0_reference.class);
+		classes.put("X_X_y_A_b_0_reference",X_X_y_A_b_0_reference.class);
+		classes.put("X_X_z_A_c_0_reference",X_X_z_A_c_0_reference.class);
+		classes.put("X_X_y_A_c_0_reference",X_X_y_A_c_0_reference.class);
 		classes.put("X_X_z_p_0_reference",X_X_z_p_0_reference.class);
 		classes.put("X_X_z_u_0_reference",X_X_z_u_0_reference.class);
 		classes.put("A_A_c_p_0_reference",A_A_c_p_0_reference.class);
@@ -340,9 +346,12 @@ public class HiPEEngine implements IHiPEEngine{
 		classes.put("A_object_SP3",A_object_SP3.class);
 		classes.put("A_object_SP4",A_object_SP4.class);
 		classes.put("A_object_SP5",A_object_SP5.class);
+		classes.put("A_object_SP6",A_object_SP6.class);
 		classes.put("X_object_SP0",X_object_SP0.class);
 		classes.put("X_object_SP1",X_object_SP1.class);
 		classes.put("X_object_SP2",X_object_SP2.class);
+		classes.put("X_object_SP3",X_object_SP3.class);
+		classes.put("X_object_SP4",X_object_SP4.class);
 		classes.put("U_s_object_SP0",U_s_object_SP0.class);
 		classes.put("U_s_object_SP1",U_s_object_SP1.class);
 		classes.put("U_s_object_SP2",U_s_object_SP2.class);
@@ -355,10 +364,15 @@ public class HiPEEngine implements IHiPEEngine{
 	public void initializeReferenceNodes() {
 		name2initRefGen.put("A_A_b_X_z_0_reference", new InitGenReferenceActor<TestcasesModel.A,TestcasesModel.X>(name2actor, name2node.get("A_A_b_X_z_0_reference"), (o) -> o instanceof TestcasesModel.A, (o) -> o.getA_b_X_z(), null, false));
 		name2initRefGen.put("A_A_b_A_c_0_reference", new InitGenReferenceActor<TestcasesModel.A,TestcasesModel.A>(name2actor, name2node.get("A_A_b_A_c_0_reference"), (o) -> o instanceof TestcasesModel.A, (o) -> o.getA_b_A_c(), null, true));
+		name2initRefGen.put("A_A_c_A_b_0_reference", new InitGenReferenceActor<TestcasesModel.A,TestcasesModel.A>(name2actor, name2node.get("A_A_c_A_b_0_reference"), (o) -> o instanceof TestcasesModel.A, (o) -> o.getA_c_A_b(), null, true));
 		name2initRefGen.put("A_A_b_A_b_0_reference", new InitGenReferenceActor<TestcasesModel.A,TestcasesModel.A>(name2actor, name2node.get("A_A_b_A_b_0_reference"), (o) -> o instanceof TestcasesModel.A, (o) -> o.getA_b_A_b(), null, true));
 		name2initRefGen.put("A_A_b_X_y_0_reference", new InitGenReferenceActor<TestcasesModel.A,TestcasesModel.X>(name2actor, name2node.get("A_A_b_X_y_0_reference"), (o) -> o instanceof TestcasesModel.A, (o) -> o.getA_b_X_y(), null, false));
 		name2initRefGen.put("A_A_c_X_z_0_reference", new InitGenReferenceActor<TestcasesModel.A,TestcasesModel.X>(name2actor, name2node.get("A_A_c_X_z_0_reference"), (o) -> o instanceof TestcasesModel.A, (o) -> o.getA_c_X_z(), null, false));
 		name2initRefGen.put("A_A_c_X_y_0_reference", new InitGenReferenceActor<TestcasesModel.A,TestcasesModel.X>(name2actor, name2node.get("A_A_c_X_y_0_reference"), (o) -> o instanceof TestcasesModel.A, (o) -> o.getA_c_X_y(), null, false));
+		name2initRefGen.put("X_X_z_A_b_0_reference", new InitGenReferenceActor<TestcasesModel.X,TestcasesModel.A>(name2actor, name2node.get("X_X_z_A_b_0_reference"), (o) -> o instanceof TestcasesModel.X, (o) -> o.getX_z_A_b(), null, false));
+		name2initRefGen.put("X_X_y_A_b_0_reference", new InitGenReferenceActor<TestcasesModel.X,TestcasesModel.A>(name2actor, name2node.get("X_X_y_A_b_0_reference"), (o) -> o instanceof TestcasesModel.X, (o) -> o.getX_y_A_b(), null, false));
+		name2initRefGen.put("X_X_z_A_c_0_reference", new InitGenReferenceActor<TestcasesModel.X,TestcasesModel.A>(name2actor, name2node.get("X_X_z_A_c_0_reference"), (o) -> o instanceof TestcasesModel.X, (o) -> o.getX_z_A_c(), null, false));
+		name2initRefGen.put("X_X_y_A_c_0_reference", new InitGenReferenceActor<TestcasesModel.X,TestcasesModel.A>(name2actor, name2node.get("X_X_y_A_c_0_reference"), (o) -> o instanceof TestcasesModel.X, (o) -> o.getX_y_A_c(), null, false));
 		name2initRefGen.put("X_X_z_p_0_reference", new InitGenReferenceActor<TestcasesModel.X,TestcasesModel.P_s>(name2actor, name2node.get("X_X_z_p_0_reference"), (o) -> o instanceof TestcasesModel.X, (o) -> o.getX_z_p(), null, false));
 		name2initRefGen.put("X_X_z_u_0_reference", new InitGenReferenceActor<TestcasesModel.X,TestcasesModel.U_s>(name2actor, name2node.get("X_X_z_u_0_reference"), (o) -> o instanceof TestcasesModel.X, (o) -> o.getX_z_u(), null, false));
 		name2initRefGen.put("A_A_c_p_0_reference", new InitGenReferenceActor<TestcasesModel.A,TestcasesModel.P_s>(name2actor, name2node.get("A_A_c_p_0_reference"), (o) -> o instanceof TestcasesModel.A, (o) -> o.getA_c_p(), null, false));
@@ -408,12 +422,15 @@ public class HiPEEngine implements IHiPEEngine{
 class Container_object extends GenericObjectActor<reactionContainer.Container> { }
 class A_object_SP0 extends GenericObjectActor<TestcasesModel.A> { }
 class A_object_SP1 extends GenericObjectActor<TestcasesModel.A> { }
-class A_object_SP2 extends GenericObjectActor<TestcasesModel.A> { }
 class A_object_SP3 extends GenericObjectActor<TestcasesModel.A> { }
+class A_object_SP4 extends GenericObjectActor<TestcasesModel.A> { }
 class A_object_SP5 extends GenericObjectActor<TestcasesModel.A> { }
+class A_object_SP6 extends GenericObjectActor<TestcasesModel.A> { }
 class X_object_SP0 extends GenericObjectActor<TestcasesModel.X> { }
 class X_object_SP1 extends GenericObjectActor<TestcasesModel.X> { }
 class X_object_SP2 extends GenericObjectActor<TestcasesModel.X> { }
+class X_object_SP3 extends GenericObjectActor<TestcasesModel.X> { }
+class X_object_SP4 extends GenericObjectActor<TestcasesModel.X> { }
 class U_s_object_SP0 extends GenericObjectActor<TestcasesModel.U_s> { }
 class U_s_object_SP1 extends GenericObjectActor<TestcasesModel.U_s> { }
 class U_s_object_SP2 extends GenericObjectActor<TestcasesModel.U_s> { }
@@ -423,9 +440,14 @@ class P_s_object_SP2 extends GenericObjectActor<TestcasesModel.P_s> { }
 
 class A_A_b_X_z_0_reference extends GenericReferenceActor<TestcasesModel.A, TestcasesModel.X> { }
 class A_A_b_A_c_0_reference extends GenericReferenceActor<TestcasesModel.A, TestcasesModel.A> { }
+class A_A_c_A_b_0_reference extends GenericReferenceActor<TestcasesModel.A, TestcasesModel.A> { }
 class A_A_b_X_y_0_reference extends GenericReferenceActor<TestcasesModel.A, TestcasesModel.X> { }
 class A_A_c_X_z_0_reference extends GenericReferenceActor<TestcasesModel.A, TestcasesModel.X> { }
 class A_A_c_X_y_0_reference extends GenericReferenceActor<TestcasesModel.A, TestcasesModel.X> { }
+class X_X_z_A_b_0_reference extends GenericReferenceActor<TestcasesModel.X, TestcasesModel.A> { }
+class X_X_y_A_b_0_reference extends GenericReferenceActor<TestcasesModel.X, TestcasesModel.A> { }
+class X_X_z_A_c_0_reference extends GenericReferenceActor<TestcasesModel.X, TestcasesModel.A> { }
+class X_X_y_A_c_0_reference extends GenericReferenceActor<TestcasesModel.X, TestcasesModel.A> { }
 class X_X_z_p_0_reference extends GenericReferenceActor<TestcasesModel.X, TestcasesModel.P_s> { }
 class X_X_z_u_0_reference extends GenericReferenceActor<TestcasesModel.X, TestcasesModel.U_s> { }
 class A_A_c_p_0_reference extends GenericReferenceActor<TestcasesModel.A, TestcasesModel.P_s> { }

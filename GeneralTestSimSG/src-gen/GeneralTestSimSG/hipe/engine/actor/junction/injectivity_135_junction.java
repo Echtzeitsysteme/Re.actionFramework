@@ -25,12 +25,12 @@ import hipe.generic.actor.junction.GenericJunctionActor;
 
 import hipe.network.JunctionNode;
 
-public class injectivity_138_junction extends GenericJunctionActor{
+public class injectivity_135_junction extends GenericJunctionActor{
 	
 	@Override
 	protected void initializePorts(Map<String, ActorRef> name2actor, JunctionNode node) {
 		ports = new LinkedList<>();
-		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("injectivity_225_nacjunction"), this::check_constraint_2));
+		ports.add(new PortJunctionLeft(getSelf(), name2actor.get("injectivity_223_nacjunction"), this::check_constraint_2));
 	}
 	
 	@Override

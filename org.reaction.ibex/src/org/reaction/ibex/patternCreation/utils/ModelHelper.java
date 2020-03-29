@@ -19,6 +19,7 @@ import IBeXLanguage.IBeXEdge;
 import IBeXLanguage.IBeXNode;
 import IBeXLanguage.IBeXPatternInvocation;
 import IBeXLanguage.IBeXPatternSet;
+import ecoreBCModel.IntermAgent;
 import ecoreBCModel.IntermAgentInstance;
 import ecoreBCModel.IntermSiteInstance;
 import reactionContainer.ReactionContainerPackage;
@@ -169,17 +170,46 @@ public class ModelHelper {
 
 			String agent1 = NameProvider.getComponentNameOfBoundPattern(contextPattern, "agent1");
 			String site1 = NameProvider.getComponentNameOfBoundPattern(contextPattern, "site1");
-			String agent2 = NameProvider.getComponentNameOfBoundPattern(contextPattern, "agent2");
-			String site2 = NameProvider.getComponentNameOfBoundPattern(contextPattern, "site2");
-			if (agent1.equals(ai.getInstanceOf().getName().toUpperCase()) && site1.equals(si.getName())) {
-				boundPatterns.add(contextPattern);
-			}
-			if (agent2.equals(ai.getInstanceOf().getName().toUpperCase()) && site2.equals(si.getName())) {
+			if (agent1.equals(ai.getInstanceOf().getName()) && site1.equals(si.getName())) {
 				boundPatterns.add(contextPattern);
 			}
 		}
 
 		return boundPatterns;
+	}
+	
+	public static IBeXEdge getEdgeFromContextPattern (IBeXContextPattern contextPattern, IBeXNode src, IBeXNode trg) {
+		for(IBeXEdge e : contextPattern.getLocalEdges()) {
+			IBeXNode eSrc = e.getSourceNode();
+			IBeXNode eTrg = e.getTargetNode();
+			if(eSrc.equals(src) && eTrg.equals(trg)) {
+				return e;
+			}
+			if(eSrc.equals(trg) && eTrg.equals(src)) {
+				return e;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static IBeXEdge getEdgeFromDeletePattern (IBeXDeletePattern deletePattern, IBeXNode src, IBeXNode trg) {
+		for(IBeXEdge e : deletePattern.getDeletedEdges()) {
+			IBeXNode eSrc = e.getSourceNode();
+			IBeXNode eTrg = e.getTargetNode();
+			if(eSrc.equals(src) && eTrg.equals(trg)) {
+				return e;
+			}
+			if(eSrc.equals(trg) && eTrg.equals(src)) {
+				return e;
+			}
+		}
+		
+		return null;
+	}
+	
+	public static boolean isInstanceLocal(IntermAgentInstance ai) {
+		return ai.getName().startsWith("local");
 	}
 	
 	/**

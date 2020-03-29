@@ -337,8 +337,6 @@ public abstract class ContainerGenerator {
 
 		ReactionContainerPackage.eINSTANCE.getESubpackages().clear();
 		ReactionContainerPackage.eINSTANCE.getESubpackages().add(dynamicMetaModel);
-
-		EPackage test = dynamicMetaModel.getESuperPackage();
 		
 		stateClassFactory = new StateClassFactory(dynamicMetaModel);
 		agentClassFactory = new AgentClassFactory(dynamicMetaModel, stateClassFactory, siteConnections, getUsedStates());

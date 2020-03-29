@@ -6,12 +6,14 @@ import org.emoflon.ibex.gt.api.GraphTransformationMatch;
 import TestcasesModel.A;
 import TestcasesModel.P_s;
 import TestcasesModel.U_s;
+import TestcasesModel.X;
 
 /**
  * A match for the rule <code>underspec()</code>.
  */
 public class UnderspecMatch extends GraphTransformationMatch<UnderspecMatch, UnderspecRule> {
 	private A varA;
+	private X varLocal_for_a_c;
 	private P_s varPs;
 	private U_s varUs;
 
@@ -26,6 +28,7 @@ public class UnderspecMatch extends GraphTransformationMatch<UnderspecMatch, Und
 	public UnderspecMatch(final UnderspecRule pattern, final IMatch match) {
 		super(pattern, match);
 		varA = (A) match.get("a");
+		varLocal_for_a_c = (X) match.get("local_for_a_c");
 		varPs = (P_s) match.get("ps");
 		varUs = (U_s) match.get("us");
 	}
@@ -37,6 +40,15 @@ public class UnderspecMatch extends GraphTransformationMatch<UnderspecMatch, Und
 	 */
 	public A getA() {
 		return varA;
+	}
+
+	/**
+	 * Returns the local_for_a_c.
+	 *
+	 * @return the local_for_a_c
+	 */
+	public X getLocal_for_a_c() {
+		return varLocal_for_a_c;
 	}
 
 	/**
@@ -61,6 +73,7 @@ public class UnderspecMatch extends GraphTransformationMatch<UnderspecMatch, Und
 	public String toString() {
 		String s = "match {" + System.lineSeparator();
 		s += "	a --> " + varA + System.lineSeparator();
+		s += "	local_for_a_c --> " + varLocal_for_a_c + System.lineSeparator();
 		s += "	ps --> " + varPs + System.lineSeparator();
 		s += "	us --> " + varUs + System.lineSeparator();
 		s += "} for " + getPattern();

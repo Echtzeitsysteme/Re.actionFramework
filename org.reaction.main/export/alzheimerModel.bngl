@@ -110,26 +110,26 @@ begin molecule types
 end molecule types
 
 begin species
-	P53(b~u)	gsk3bInit
-	Mdm2mRNA(x)	p53Init
-	Proteasome(x)	mdm2Init
-	P53DUB()	mdm2_p53Init
-	AMP()	mdm2_mRNAInit
-	MT(l)	p53_mRNAInit
-	Tau(phos~u)	p53_mRNAInit
-	Mdm2(z~u,ubi~unb)	UbInit
-	Ub()	E1Init
-	E2(x~unb)	E2Init
-	BasalROS()	p53DubInit
-	Mdm2DUB()	mdm2DubInit
-	P53(b~u)	proteasomeInit
-	Mdm2(z~u,ubi~unb)	proteasomeInit
-	P53mRNA()	atmiInit
-	ATMI()	basalRosInit
-	ATP()	mtTauInit
-	E1(x~unb)	atpInit
-	GSK3b(x)	adpInit
-	ADP()	ampInit
+	E1(x~unb)	gsk3bInit
+	E2(x~unb)	p53Init
+	ADP()	mdm2Init
+	P53(b~u)	mdm2_p53Init
+	Mdm2(z~u,ubi~unb)	mdm2_p53Init
+	BasalROS()	mdm2_mRNAInit
+	P53(b~u)	p53_mRNAInit
+	P53mRNA()	UbInit
+	AMP()	E1Init
+	ATMI()	E2Init
+	Ub()	p53DubInit
+	P53DUB()	mdm2DubInit
+	GSK3b(x)	proteasomeInit
+	Mdm2DUB()	atmiInit
+	Mdm2mRNA(x)	basalRosInit
+	Mdm2(z~u,ubi~unb)	mtTauInit
+	Proteasome(x)	atpInit
+	MT(l)	adpInit
+	Tau(phos~u)	adpInit
+	ATP()	ampInit
 end species
 
 begin reaction rules

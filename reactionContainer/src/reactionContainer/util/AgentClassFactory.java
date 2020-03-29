@@ -63,11 +63,7 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 			String key = object.getName() + "_" + siteOfAgent.getName();
 			if (siteConnections.containsKey(key)) {
 				for (IntermSite possibleSite : siteConnections.get(object.getName() + "_" + siteOfAgent.getName())) {
-					EReference createdReference = createReferenceFromTo(object, siteOfAgent, possibleSite.getParent(),
-							possibleSite);
-					if (createdReference != null) {
-						agentClass.getEStructuralFeatures().add(createdReference);
-					}
+					createReferenceFromTo(object, siteOfAgent, possibleSite.getParent(), possibleSite);
 				}
 			}
 
@@ -100,34 +96,24 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 		return agentClass;
 	}
 
-	public EReference createReference(IntermAgent agent, IntermSite site) {
-		String refName = createReferenceName(agent, site);
-		if (classRegistry.containsReference(refName)) {
-			return classRegistry.getRegisteredReference(refName);
-		}
-
-		return createGeneralSingleReference(refName);
-	}
-
-	public EReference createReferenceFromTo(IntermAgent agent, IntermSite site, IntermAgent otherAgent,
+	public boolean createReferenceFromTo(IntermAgent agent, IntermSite site, IntermAgent otherAgent,
 			IntermSite otherSite) {
 		String refName = createReferenceName(agent, site, otherAgent, otherSite);
+		String inverseRefName = getInverseReferenceName(refName);
 		if (classRegistry.containsReference(refName)) {
-			return classRegistry.getRegisteredReference(refName);
+			return false;
 		}
 
-		return createSingleReference(refName, otherAgent.getName());
-	}
+		EClass agentClass = classRegistry.getRegisteredClass(agent.getName());
+		EClass oppositeAgentClass = classRegistry.getRegisteredClass(otherAgent.getName());
+		EReference ref = createSingleReference(agentClass, refName, otherAgent.getName());
+		if(!refName.equals(inverseRefName)) {
+			EReference oppositeRef = createSingleReference(oppositeAgentClass, inverseRefName, agent.getName());
+			ref.setEOpposite(oppositeRef);
+			oppositeRef.setEOpposite(ref);
+		}
 
-	public EReference createGeneralSingleReference(String refName) {
-		EReference reference = ecoreFactory.createEReference();
-		reference.setUpperBound(1);
-		reference.setLowerBound(0);
-		reference.setName(refName);
-
-		reference.setEType(ReactionContainerPackage.Literals.AGENT);
-		classRegistry.registerReference(reference);
-		return reference;
+		return true;
 	}
 
 	/**
@@ -136,7 +122,7 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 	 * @return the created reference or null, if it failed or an inverse edge
 	 *         reference is already existent and registered
 	 */
-	public EReference createSingleReference(String refName, String typeName) {
+	public EReference createSingleReference(EClass agentClass, String refName, String typeName) {
 		if (checkReferenceAlreadyRegistered(refName)) {
 			return null;
 		}
@@ -147,7 +133,9 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 		reference.setName(refName);
 
 		reference.setEType(classRegistry.getRegisteredClass(typeName));
+		agentClass.getEStructuralFeatures().add(reference);
 		classRegistry.registerReference(reference);
+		
 		return reference;
 	}
 
@@ -171,9 +159,7 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 	}
 
 	private boolean checkReferenceAlreadyRegistered(String refName) {
-		String inverseRefName = getInverseReferenceName(refName);
-		return classRegistry.getRegisteredReference(refName) != null
-				|| classRegistry.getRegisteredReference(inverseRefName) != null;
+		return classRegistry.getRegisteredReference(refName) != null;
 	}
 
 	private String getInverseReferenceName(String refName) {

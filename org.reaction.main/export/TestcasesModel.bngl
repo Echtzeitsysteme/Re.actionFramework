@@ -29,6 +29,7 @@ begin reaction rules
 	degUnspecific:	A() -> 		1.0
 	concreteSplit:	A(b!1).X(y!1) -> A() + X()		1.0
 	underspecSynth:	 -> A()		1.0
+	splitUnderspec:	A(b!1).X(y!1) -> A(b)		1.0
 end reaction rules
 
 begin observables
@@ -39,6 +40,7 @@ begin observables
 	Molecules wildcardTest	X(y,z)
 	Molecules concreteSplitTest	A(b,c) + X(y,z)
 	Molecules underspecSynthTest	A(b,c~u)
+	Molecules splitUnderspecTest	A(b,c!?) + X(y,z!?)
 end observables
 
 end model
