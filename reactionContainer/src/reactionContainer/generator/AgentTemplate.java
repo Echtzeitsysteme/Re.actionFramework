@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import ecoreBCModel.IntermAgent;
 import ecoreBCModel.IntermSite;
+import ecoreBCModel.IntermSiteInstance;
 import ecoreBCModel.IntermSiteState;
 import reactionContainer.Agent;
 import reactionContainer.State;
@@ -81,6 +82,10 @@ public class AgentTemplate {
 			}
 
 		}
+	}
+	
+	public static String createSiteRefName(IntermSiteInstance site, IntermSiteInstance otherSite) {
+		return site.getParent().getInstanceOf().getName()+"_"+site.getName();
 	}
 
 	public String getAgentClassName() {
