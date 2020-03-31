@@ -26,8 +26,8 @@ public class Main {
 		ReactionContainerPackage.eINSTANCE.eClass();
 
 		// Load Model
-		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Testcases.xmi";
-		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
+//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Testcases.xmi";
+//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
 
 //		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\GKL.xmi";
 //		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
@@ -35,10 +35,10 @@ public class Main {
 //		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Alzheimer.xmi";
 //		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\AlzheimersSimSG";
 
-//		final String dslModelLocation = "..\\..\\re.actionEvaluation\\models\\gkl\\GKL100.xmi";
-//		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\gklSimSG";
+		final String dslModelLocation = "..\\..\\re.actionEvaluation\\models\\gkl\\GKL1600.xmi";
+		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\gklSimSG";
 		
-//		final String dslModelLocation = "..\\..\\re.actionEvaluation\\models\\customPatterns\\Params2.xmi";
+//		final String dslModelLocation = "..\\..\\re.actionEvaluation\\models\\customPatterns\\Params5.xmi";
 //		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\PatternSizeSimSG";
 		
 		final String userDir = System.getProperty("user.dir");

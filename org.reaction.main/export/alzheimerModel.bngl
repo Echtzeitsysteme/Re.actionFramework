@@ -16,6 +16,7 @@ begin parameters
 	atmiInit	40.0
 	basalRosInit	2.0
 	mtTauInit	20.0
+	pptInit	10.0
 	atpInit	2000.0
 	adpInit	200.0
 	ampInit	200.0
@@ -90,7 +91,7 @@ begin molecule types
 	NFT()
 	Proteasome(x)
 	Mdm2(z~u~p,ubi~unb~ub1~ub2~ub3~ub4)
-	Mdm2mRNA(x)
+	Mdm2mRNA()
 	Mdm2DUB()
 	Abeta()
 	AggAbeta(y)
@@ -110,52 +111,58 @@ begin molecule types
 end molecule types
 
 begin species
-	E1(x~unb)	gsk3bInit
-	E2(x~unb)	p53Init
-	ADP()	mdm2Init
-	P53(b~u)	mdm2_p53Init
-	Mdm2(z~u,ubi~unb)	mdm2_p53Init
-	BasalROS()	mdm2_mRNAInit
-	P53(b~u)	p53_mRNAInit
-	P53mRNA()	UbInit
-	AMP()	E1Init
-	ATMI()	E2Init
-	Ub()	p53DubInit
-	P53DUB()	mdm2DubInit
-	GSK3b(x)	proteasomeInit
-	Mdm2DUB()	atmiInit
-	Mdm2mRNA(x)	basalRosInit
-	Mdm2(z~u,ubi~unb)	mtTauInit
-	Proteasome(x)	atpInit
-	MT(l)	adpInit
-	Tau(phos~u)	adpInit
-	ATP()	ampInit
+	P53mRNA()	gsk3bInit
+	ATMI()	p53Init
+	Mdm2DUB()	mdm2Init
+	E1(x~unb)	mdm2_p53Init
+	AMP()	mdm2_mRNAInit
+	PPT()	p53_mRNAInit
+	P53(b~u)	UbInit
+	Mdm2(z~u,ubi~unb)	UbInit
+	P53DUB()	E1Init
+	Mdm2mRNA()	E2Init
+	Proteasome(x)	p53DubInit
+	P53(b~u)	mdm2DubInit
+	Ub()	proteasomeInit
+	MT(l)	atmiInit
+	Tau(phos~u)	atmiInit
+	GSK3b(x)	basalRosInit
+	BasalROS()	mtTauInit
+	Mdm2(z~u,ubi~unb)	pptInit
+	ATP()	atpInit
+	E2(x~unb)	adpInit
+	ADP()	ampInit
 end species
 
 begin reaction rules
-	GSK3b_p53:	GSK3b(x) + P53(b) <-> GSK3b(x!1).P53(b!1)		kbinGSK3bp53, krelGSK3bp53
-	Mdm2mRNASynthesis:	GSK3b(x!1).P53(b!1) -> Mdm2mRNA(x) + GSK3b(x!1).P53(b!1)		ksynMdm2mRNAGSK3bp53
-	Mdm2GSK3Phospho1:	P53(b~ub4!1).Mdm2(z~u!1) + GSK3b(x) -> P53(b~ub4!1).Mdm2(z~p!1) + GSK3b(x)		kphosMdm2GSK3b
-	Mdm2GSK3Phospho2_3:	P53(b!1).GSK3b(x!1) + P53(b~ub4!1).Mdm2(z~u!1) -> P53(b!1).GSK3b(x!1) + P53(b~ub4!1).Mdm2(z~p!1)		kphosMdm2GSK3bp53
+	GSK3b_p53U:	GSK3b(x) + P53(b~u) <-> GSK3b(x!1).P53(b~u!1)		kbinGSK3bp53, krelGSK3bp53
+	GSK3b_p53P:	GSK3b(x) + P53(b~p) <-> GSK3b(x!1).P53(b~p!1)		kbinGSK3bp53, krelGSK3bp53
+	Mdm2mRNASynthesisU:	GSK3b(x!1).P53(b~u!1) -> Mdm2mRNA() + GSK3b(x!1).P53(b~u!1)		ksynMdm2mRNAGSK3bp53
+	Mdm2mRNASynthesisP:	GSK3b(x!1).P53(b~p!1) -> Mdm2mRNA() + GSK3b(x!1).P53(b~p!1)		ksynMdm2mRNAGSK3bp53
+	Mdm2GSK3Phospho1:	P53(b~ub4!1).Mdm2(z~u!1,ubi~unb) + GSK3b(x) -> P53(b~ub4!1).Mdm2(z~p!1,ubi~unb) + GSK3b(x)		kphosMdm2GSK3b
+	Mdm2GSK3Phospho2_3:	P53(b!1).GSK3b(x!1) + P53(b~ub4!1).Mdm2(z~u!1,ubi~unb) -> P53(b!1).GSK3b(x!1) + P53(b~ub4!1).Mdm2(z~p!1,ubi~unb)		kphosMdm2GSK3bp53
 	TauSynthesis:	 -> Tau(phos)		ksynTau
 	Proteasome_Tau:	Proteasome(x) + Tau(phos~u) -> Proteasome(x!1).Tau(phos~u!1)		kbinTauProt
 	TauDegradation:	Proteasome(x!1).Tau(phos~u!1) -> Proteasome(x)		kdegTau
 	TauMT:	MT(l) + Tau(phos~u) <-> MT(l!1).Tau(phos~u!1)		kbinMTTau, krelMTTau
-	TauPhosphorylation1_3:	Tau(phos~u) + GSK3b(x!1).P53(b!1) -> Tau(phos~p1) + GSK3b(x!1).P53(b!1)		kphospTauGSK3bp53
-	TauPhosphorylation2_4:	Tau(phos~p1) + GSK3b(x!1).P53(b!1) -> Tau(phos~p2) + GSK3b(x!1).P53(b!1)		kphospTauGSK3bp53
+	TauPhosphorylation1:	Tau(phos~u) + GSK3b(x!1).P53(b~u!1) -> Tau(phos~p1) + GSK3b(x!1).P53(b~u!1)		kphospTauGSK3bp53
+	TauPhosphorylation3:	Tau(phos~u) + GSK3b(x!1).P53(b~p!1) -> Tau(phos~p1) + GSK3b(x!1).P53(b~p!1)		kphospTauGSK3bp53
+	TauPhosphorylation2:	Tau(phos~p1) + GSK3b(x!1).P53(b~u!1) -> Tau(phos~p2) + GSK3b(x!1).P53(b~u!1)		kphospTauGSK3bp53
+	TauPhosphorylation4:	Tau(phos~p1) + GSK3b(x!1).P53(b~p!1) -> Tau(phos~p2) + GSK3b(x!1).P53(b~p!1)		kphospTauGSK3bp53
 	TauPhosphorylation5:	Tau(phos~u) + GSK3b(x) -> Tau(phos~p1) + GSK3b(x)		kphospTauGSK3b
 	TauPhosphorylation6:	Tau(phos~p1) + GSK3b(x) -> Tau(phos~p2) + GSK3b(x)		kphospTauGSK3b
 	TauDephosphorylation:	PPT() + Tau(phos~p2) -> PPT() + Tau(phos~p1)		kdephospTau
-	TauAgg1:	Tau(phos) + Tau(phos~u) -> AggTau(y) + AggTau(y)		(kaggTau/2.0)
+	TauAgg1:	Tau(phos~u) + Tau(phos~u) -> AggTau(y) + AggTau(y)		(kaggTau/2.0)
 	TauAgg2:	AggTau(y) + Tau(phos~u) -> AggTau(y) + AggTau(y)		kaggTau
-	TauP1Agg1:	Tau(phos) + Tau(phos~p1) -> AggTau(y) + AggTau(y)		(kaggTauP1/2.0)
+	TauP1Agg1:	Tau(phos~p1) + Tau(phos~p1) -> AggTau(y) + AggTau(y)		(kaggTauP1/2.0)
 	TauP1Agg2:	AggTau(y) + Tau(phos~p1) -> AggTau(y) + AggTau(y)		kaggTauP1
-	TauP2Agg1:	Tau(phos) + Tau(phos~p2) -> AggTau(y) + AggTau(y)		(kaggTauP2/2.0)
+	TauP2Agg1:	Tau(phos~p2) + Tau(phos~p2) -> AggTau(y) + AggTau(y)		(kaggTauP2/2.0)
 	TauP2Agg2:	AggTau(y) + Tau(phos~p2) -> AggTau(y) + AggTau(y)		kaggTauP2
 	tangleForm1:	AggTau(y) + AggTau(y) -> NFT() + NFT()		ktangfor
 	tangleForm2:	NFT() + AggTau(y) -> NFT() + NFT()		ktangfor
 	ProteasomeInhibitionAggTau:	AggTau(y) + Proteasome(x) -> AggTau(y!1).Proteasome(x!1)		kinhibprot
-	AbetaProduction:	GSK3b(x!1).P53(b!1) -> Abeta() + GSK3b(x!1).P53(b!1)		kprodAbeta
+	AbetaProductionU:	GSK3b(x!1).P53(b~u!1) -> Abeta() + GSK3b(x!1).P53(b~u!1)		kprodAbeta
+	AbetaProductionP:	GSK3b(x!1).P53(b~p!1) -> Abeta() + GSK3b(x!1).P53(b~p!1)		kprodAbeta
 	AbetaDegradation:	Abeta() -> 		kprodAbeta
 	AbetaAgg1:	Abeta() + Abeta() -> AggAbeta(y)		(kaggAbeta/2.0)
 	AbetaAgg2:	Abeta() + AggAbeta(y) -> AggAbeta(y) + AggAbeta(y)		kaggAbeta
@@ -163,25 +170,27 @@ begin reaction rules
 	AbetaPlaque2:	AbetaPlaque() + AggAbeta(y) -> AbetaPlaque() + AbetaPlaque()		kpf
 	ProteasomeInhibitionAggAbeta:	AggAbeta(y) + Proteasome(x) -> AggAbeta(y!1).Proteasome(x!1)		kinhibprot
 	P53Transcription:	Abeta() -> Abeta() + P53mRNA()		ksynp53mRNAAbeta
-	AbetaROSProduction:	AggAbeta() -> AggAbeta() + P53mRNA()		kgenROSAbeta
+	AbetaROSProduction1:	AggAbeta(y) -> AggAbeta(y) + ROS()		kgenROSAbeta
+	AbetaRosProduction2:	AggAbeta(y!1).Proteasome(x!1) -> AggAbeta(y!1).Proteasome(x!1) + ROS()		kgenROSAbeta
 	P53Synthesis:	P53mRNA() -> P53mRNA() + P53(b~u)		ksynp53
-	P53_Mdm2:	P53(b~u) + Mdm2(z~u) <-> P53(b~u!1).Mdm2(z~u!1)		kbinMdm2p53, krelMdm2p53
+	P53_Mdm2:	P53(b~u) + Mdm2(z~u,ubi~unb) <-> P53(b~u!1).Mdm2(z~u!1,ubi~unb)		kbinMdm2p53, krelMdm2p53
 	E1Ub:	E1(x~unb) + ATP() + Ub() -> AMP() + E1(x~ubi)		(kbinE1Ub/5000.0)
-	E2Ub:	E1(x~unb) + Ub() + E2(x~unb) -> E1(x~unb) + E2(x~ubi)		kbinE2Ub
-	P53Ubiquitination:	E2(x~ubi) + Mdm2(z~u!1).P53(b~u!1) -> E2(x~unb) + Mdm2(z~u!1).P53(b~ub2!1)		kp53Ub
-	P53PolyUbiquitination1:	E2(x~ubi) + Mdm2(z~u!1).P53(b~ub1!1) -> E2(x~unb) + Mdm2(z~u!1).P53(b~ub2!1)		kp53PolyUb
-	P53PolyUbiquitination2:	E2(x~ubi) + Mdm2(z~u!1).P53(b~ub2!1) -> E2(x~unb) + Mdm2(z~u!1).P53(b~ub3!1)		kp53PolyUb
-	P53PolyUbiquitination3:	E2(x~ubi) + Mdm2(z~u!1).P53(b~ub3!1) -> E2(x~unb) + Mdm2(z~u!1).P53(b~ub4!1)		kp53PolyUb
-	P53DeUbiquitination:	P53DUB() + Mdm2(z~u!1).P53(b~ub1!1) -> P53DUB() + Ub() + Mdm2(z~u!1).P53(b~u!1)		kactDUBp53
-	P53PolyDeUbiquitination2:	P53DUB() + Mdm2(z~u!1).P53(b~ub2!1) -> P53DUB() + Ub() + Mdm2(z~u!1).P53(b~ub1!1)		kactDUBp53
-	P53PolyDeUbiquitination3:	P53DUB() + Mdm2(z~u!1).P53(b~ub3!1) -> P53DUB() + Ub() + Mdm2(z~u!1).P53(b~ub2!1)		kactDUBp53
-	P53PolyDeUbiquitination4:	P53DUB() + Mdm2(z~u!1).P53(b~ub4!1) -> P53DUB() + Ub() + Mdm2(z~u!1).P53(b~ub3!1)		kactDUBp53
+	E2Ub:	E1(x~ubi) + E2(x~unb) -> E1(x~unb) + E2(x~ubi)		kbinE2Ub
+	P53Ubiquitination:	E2(x~ubi) + Mdm2(z~u!1,ubi~unb).P53(b~u!1) -> E2(x~unb) + Mdm2(z~u!1,ubi~unb).P53(b~ub1!1)		kp53Ub
+	P53PolyUbiquitination1:	E2(x~ubi) + Mdm2(z~u!1,ubi~unb).P53(b~ub1!1) -> E2(x~unb) + Mdm2(z~u!1,ubi~unb).P53(b~ub2!1)		kp53PolyUb
+	P53PolyUbiquitination2:	E2(x~ubi) + Mdm2(z~u!1,ubi~unb).P53(b~ub2!1) -> E2(x~unb) + Mdm2(z~u!1,ubi~unb).P53(b~ub3!1)		kp53PolyUb
+	P53PolyUbiquitination3:	E2(x~ubi) + Mdm2(z~u!1,ubi~unb).P53(b~ub3!1) -> E2(x~unb) + Mdm2(z~u!1,ubi~unb).P53(b~ub4!1)		kp53PolyUb
+	P53DeUbiquitination:	P53DUB() + Mdm2(z~u!1,ubi~unb).P53(b~ub1!1) -> P53DUB() + Ub() + Mdm2(z~u!1,ubi~unb).P53(b~u!1)		kactDUBp53
+	P53PolyDeUbiquitination2:	P53DUB() + Mdm2(z~u!1,ubi~unb).P53(b~ub2!1) -> P53DUB() + Ub() + Mdm2(z~u!1,ubi~unb).P53(b~ub1!1)		kactDUBp53
+	P53PolyDeUbiquitination3:	P53DUB() + Mdm2(z~u!1,ubi~unb).P53(b~ub3!1) -> P53DUB() + Ub() + Mdm2(z~u!1,ubi~unb).P53(b~ub2!1)		kactDUBp53
+	P53PolyDeUbiquitination4:	P53DUB() + Mdm2(z~u!1,ubi~unb).P53(b~ub4!1) -> P53DUB() + Ub() + Mdm2(z~u!1,ubi~unb).P53(b~ub3!1)		kactDUBp53
 	P53ProteasomeBinding:	Proteasome(x) + Mdm2(z~p!1).P53(b~ub4!1) -> Proteasome(x!1).P53(b~ub4!1) + Mdm2(z~u)		kbinProt
-	P53Degradation:	Proteasome(x!1).P53(b~ub4!1) + ATP() -> Ub() + Ub() + Ub() + Ub() + ADP()		(kdegp53/5000.0)
-	mdm2mRNASynthesis:	P53(b~u) -> Mdm2mRNA(x) + P53(b~u)		ksynMdm2mRNA
-	mdm2mRNADegradation:	Mdm2mRNA(x) -> 		kdegMdm2mRNA
-	Mdm2Synthesis:	Mdm2mRNA(x) -> Mdm2mRNA(x) + Mdm2(z,ubi)		ksynMdm2
-	mdm2Ubiquination:	E2(x~ubi) + Mdm2(ubi~unb) -> E2(x~unb) + Mdm2(ubi~ub1)		kMdm2Ub
+	P53Degradation:	Proteasome(x!1).P53(b~ub4!1) + ATP() -> Proteasome() + Ub() + Ub() + Ub() + Ub() + ADP()		(kdegp53/5000.0)
+	mdm2mRNASynthesis:	P53(b) -> Mdm2mRNA() + P53(b)		ksynMdm2mRNA
+	mdm2mRNADegradation:	Mdm2mRNA() -> 		kdegMdm2mRNA
+	Mdm2Synthesis:	Mdm2mRNA() -> Mdm2mRNA() + Mdm2(z,ubi)		ksynMdm2
+	mdm2UbiquinationU:	E2(x~ubi) + Mdm2(z~u,ubi~unb) -> E2(x~unb) + Mdm2(z~u,ubi~ub1)		kMdm2Ub
+	mdm2UbiquinationP:	E2(x~ubi) + Mdm2(z~p,ubi~unb) -> E2(x~unb) + Mdm2(z~p,ubi~ub1)		kMdm2PUb
 	mdm2PolyUbiquination1:	E2(x~ubi) + Mdm2(ubi~ub1) -> E2(x~unb) + Mdm2(ubi~ub2)		kMdm2PolyUb
 	mdm2PolyUbiquination2:	E2(x~ubi) + Mdm2(ubi~ub2) -> E2(x~unb) + Mdm2(ubi~ub3)		kMdm2PolyUb
 	mdm2PolyUbiquination3:	E2(x~ubi) + Mdm2(ubi~ub3) -> E2(x~unb) + Mdm2(ubi~ub4)		kMdm2PolyUb
@@ -195,8 +204,8 @@ begin reaction rules
 	ATMInactivation:	ATMA() -> ATMI()		kinactATM
 	P53Phospho:	ATMA() + P53(b~u) -> ATMA() + P53(b~p)		kphosp53
 	P53DePhospho:	P53(b~p) -> P53(b~u)		kdephosp53
-	Mdm2Phospho:	ATMA() + Mdm2(z~u) -> ATMA() + Mdm2(z~p)		kphosMdm2
-	Mdm2DePhospho:	Mdm2(z~p) -> Mdm2(z~u)		kdephosMdm2
+	Mdm2Phospho:	ATMA() + Mdm2(z~u,ubi~unb) -> ATMA() + Mdm2(z~p,ubi~unb)		kphosMdm2
+	Mdm2DePhospho:	Mdm2(z~p,ubi~unb) -> Mdm2(z~u,ubi~unb)		kdephosMdm2
 	p53mRNASynthesis:	 -> P53mRNA()		ksynp53mRNA
 	p53mRNADegradation:	P53mRNA() -> 		kdegp53mRNA
 	IRDamage:	IR() -> IR() + DamDNA()		kdam
@@ -207,7 +216,7 @@ end reaction rules
 
 begin observables
 	Molecules mdm2	Mdm2(z!?,ubi!?)
-	Molecules mdm2mRNA	Mdm2mRNA(x!?)
+	Molecules mdm2mRNA	Mdm2mRNA()
 	Molecules p53	P53(b!?)
 	Molecules p53mRNA	P53mRNA()
 	Molecules p53gsk	GSK3b(x!1).P53(b!1)
