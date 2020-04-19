@@ -27,7 +27,7 @@ Any files with the `.react`-extension in there should be recognized by Xtext. Pl
 ### Working example
 This repository contains a working example model of the so-called *Goldbeter-Koshland-Loop (GKL)*. You can find it in the `example`-folder. Once you opened the `GKL.react`-file within the dynamic Re.action-Workspace, a .xmi-file representing the specified model should be created and modified every time any changes are saved. The transformation and integration of the specified model into a corresponding simulation model for *SimSG* has yet to be done manually as given by the following instructions:
 1. Go into `org.reaction.main`
-2. Run the `Main` file to start the transformation. Any needed files for the simulation to run will be placed in the `org.reaction.gklExample`-SimSG-project
+2. Run the `Main`-file  as Java Application to start the transformation. Any needed files for the simulation to run will be placed in the `org.reaction.gklExample`-SimSG-project
 3. Build the SimSG-Project `org.reaction.gklExample` by right-clicking it and choosing `SimSG -> Build selected projects fully`
 4. If you still get compilation errors, try building the project as normal Java project now
 5. Now you are able to run e.g. `GKLBenchmark` in `org.reaction.gklExample.benchmark`. You can choose between the Pattern Matching Engines *HiPE* and *Democles* by (un-)commenting the corresponding lines in the `GKLBenchmark`-file
