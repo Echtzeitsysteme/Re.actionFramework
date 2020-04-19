@@ -38,4 +38,4 @@ end model
 
 generate_network({overwrite=>1})
 
-simulate({method=>"ssa", t_end=>50, n_steps=>50})
+simulate({method=>"ssa", t_end=>30000, n_steps=>30000})

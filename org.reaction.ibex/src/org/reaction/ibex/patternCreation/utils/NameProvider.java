@@ -6,20 +6,16 @@ import java.util.regex.Pattern;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
+import org.reaction.dsl.reactionLanguage.*;
 
-import ecoreBCModel.IntermAgent;
-import ecoreBCModel.IntermAgentInstance;
-import ecoreBCModel.IntermSite;
-import ecoreBCModel.IntermSiteInstance;
-import ecoreBCModel.IntermSiteState;
-
-import org.xtext.biochemics.dotDsl.BondSide;
-import org.xtext.biochemics.dotDsl.SiteInstance;
+import intermModel.IntermAgent;
+import intermModel.IntermAgentInstance;
+import intermModel.IntermSite;
+import intermModel.IntermSiteInstance;
+import intermModel.IntermSiteState;
 
 import IBeXLanguage.IBeXContextPattern;
 
-import org.xtext.biochemics.dotDsl.Bond;
-import org.xtext.biochemics.dotDsl.AgentInstance;
 
 public class NameProvider {
 

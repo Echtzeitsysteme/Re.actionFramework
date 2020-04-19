@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EClassImpl;
 import org.emoflon.ibex.common.patterns.IBeXPatternFactory;
-import org.emoflon.ibex.common.patterns.IBeXPatternUtils;
 
 import IBeXLanguage.IBeXContext;
 import IBeXLanguage.IBeXContextPattern;
@@ -22,16 +21,14 @@ import IBeXLanguage.IBeXNode;
 import IBeXLanguage.IBeXNodePair;
 import IBeXLanguage.IBeXPatternInvocation;
 import IBeXLanguage.IBeXPatternSet;
-import ecoreBCModel.IntermAgent;
-import ecoreBCModel.IntermAgentInstance;
-import ecoreBCModel.IntermComponent;
-import ecoreBCModel.IntermObservable;
-import ecoreBCModel.IntermPattern;
-import ecoreBCModel.IntermRule;
-import ecoreBCModel.IntermSite;
-import ecoreBCModel.IntermSiteInstance;
-import ecoreBCModel.IntermSiteState;
-import ecoreBCModel.IntermediateModel;
+import intermModel.IntermAgentInstance;
+import intermModel.IntermComponent;
+import intermModel.IntermObservable;
+import intermModel.IntermPattern;
+import intermModel.IntermRule;
+import intermModel.IntermSiteInstance;
+import intermModel.IntermSiteState;
+import intermModel.IntermediateModel;
 import reactionContainer.ReactionContainerPackage;
 
 public class ContextCreator {

@@ -9,19 +9,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.xtext.biochemics.dotDsl.Agent;
-import org.xtext.biochemics.dotDsl.AgentDeclaration;
-import org.xtext.biochemics.dotDsl.ArithmeticExpr;
-import org.xtext.biochemics.dotDsl.Initialisation;
-import org.xtext.biochemics.dotDsl.ReactionModel;
-import org.xtext.biochemics.dotDsl.Rule;
-import org.xtext.biochemics.dotDsl.RuleType;
-import org.xtext.biochemics.dotDsl.Site;
-import org.xtext.biochemics.dotDsl.SiteState;
-import org.xtext.biochemics.dotDsl.Variable;
-import org.xtext.biochemics.interpreter.Calculator;
+import org.reaction.dsl.interpreter.Calculator;
+import org.reaction.dsl.reactionLanguage.*;
 
-import ecoreBCModel.*;
+import intermModel.*;
 
 public class BNGLFactory {
 

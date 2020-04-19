@@ -5,16 +5,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.eclipse.emf.ecore.EPackage;
+import org.reaction.dsl.reactionLanguage.ReactionLanguagePackage;
+import org.reaction.dsl.reactionLanguage.ReactionModel;
 import org.reaction.export.BNGLFactory;
 import org.reaction.ibex.patternCreation.GTCreator;
 import org.reaction.ibex.patternCreation.IBeXCreator;
 import org.reaction.ibex.patternCreation.SimDefCreator;
-import org.reaction.transformations.dslToIntermediateModel.DslToIntermTransformation;
-import org.reaction.transformations.util.EMFResourceHelper;
-import org.xtext.biochemics.dotDsl.ReactionModel;
-
+import org.reaction.intermTrafo.transformation.IntermTransformation;
+import org.reaction.intermTrafo.util.EMFResourceHelper;
 import IBeXLanguage.IBeXPatternSet;
-import ecoreBCModel.IntermediateModel;
+import intermModel.IntermediateModel;
 import reactionContainer.ReactionContainerPackage;
 import reactionContainer.generator.ContainerEMF;
 import reactionContainer.generator.ContainerGenerator;
@@ -23,23 +23,12 @@ public class Main {
 
 	public static void main(String[] args) {
 
+		ReactionLanguagePackage.eINSTANCE.eClass();
 		ReactionContainerPackage.eINSTANCE.eClass();
 
-		// Load Model
-//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Testcases.xmi";
-//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
-
-//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\GKL.xmi";
-//		final String trgProjectLocation = "..\\..\\re.actionFramework\\GeneralTestSimSG";
-//
-//		final String dslModelLocation = "..\\..\\languagePlayground\\dsl.dotTest\\src\\Alzheimer.xmi";
-//		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\AlzheimersSimSG";
-
-		final String dslModelLocation = "..\\..\\re.actionEvaluation\\models\\gkl\\GKL1600.xmi";
-		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\gklSimSG";
-		
-//		final String dslModelLocation = "..\\..\\re.actionEvaluation\\models\\customPatterns\\Params5.xmi";
-//		final String trgProjectLocation = "..\\..\\re.actionEvaluation\\PatternSizeSimSG";
+		// Load Model ---- Adjust paths in the following two lines to load and place files correctly
+		final String dslModelLocation =   "..\\example\\GKL.xmi";
+		final String trgProjectLocation = "..\\org.reaction.gklExample";
 		
 		final String userDir = System.getProperty("user.dir");
 		final String tempModels = userDir + "/models/";
@@ -49,24 +38,24 @@ public class Main {
 		// Clear directories
 		System.out.println("Clearing directories...");
 		
-		//Clear tempModel Folder
-		File tempModelFolder = new File(tempModels);
-		deleteFolder(tempModelFolder);
-		
-		//Clear trgProjectLocations
-		File trgProjectModelFolder = new File(trgProjectLocation+"/model/");
-		File trgProjectInstanceFolderDefs = new File(trgProjectLocation+"/instances/simulation_definitions/");
-		File trgProjectInstanceFolderInis = new File(trgProjectLocation+"/instances/simulation_instances/");
-		deleteFolder(trgProjectModelFolder);
-		deleteFolder(trgProjectInstanceFolderDefs);
-		deleteFolder(trgProjectInstanceFolderInis);
+//		//Clear tempModel Folder
+//		File tempModelFolder = new File(tempModels);
+//		deleteFolder(tempModelFolder);
+//		
+//		//Clear trgProjectLocations
+//		File trgProjectModelFolder = new File(trgProjectLocation+"/model/");
+//		File trgProjectInstanceFolderDefs = new File(trgProjectLocation+"/instances/simulation_definitions/");
+//		File trgProjectInstanceFolderInis = new File(trgProjectLocation+"/instances/simulation_instances/");
+//		deleteFolder(trgProjectModelFolder);
+//		deleteFolder(trgProjectInstanceFolderDefs);
+//		deleteFolder(trgProjectInstanceFolderInis);
 
 		ReactionModel dslModel = null;
 		// Reaction model to intermediate model
 		try {
 			System.out.println("Initiating Reaction to Intermediate Transformation...");
 			dslModel = EMFResourceHelper.loadReactionModel(dslModelLocation);
-			DslToIntermTransformation dslToInterm = new DslToIntermTransformation(dslModel);
+			IntermTransformation dslToInterm = new IntermTransformation(dslModel);
 			intermModel = dslToInterm.generateIntermediateModel();
 
 			// Get dsl Model name --> TODO: let it be entered within language

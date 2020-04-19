@@ -9,9 +9,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import ecoreBCModel.IntermAgent;
-import ecoreBCModel.IntermSite;
-import ecoreBCModel.IntermSiteState;
+import intermModel.IntermAgent;
+import intermModel.IntermSite;
+import intermModel.IntermSiteState;
 import reactionContainer.Agent;
 import reactionContainer.ReactionContainerPackage;
 

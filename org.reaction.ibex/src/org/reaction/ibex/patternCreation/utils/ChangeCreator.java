@@ -4,9 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 import org.eclipse.emf.ecore.EPackage;
 import IBeXLanguage.IBeXPatternSet;
-import ecoreBCModel.IntermComponent;
-import ecoreBCModel.IntermRule;
-import ecoreBCModel.IntermediateModel;
+import intermModel.IntermComponent;
+import intermModel.IntermRule;
+import intermModel.IntermediateModel;
 
 public class ChangeCreator {
 

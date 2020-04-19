@@ -18,18 +18,7 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import ecoreBCModel.EcoreBCModelPackage;
-import ecoreBCModel.IntermAgent;
-import ecoreBCModel.IntermAgentInstance;
-import ecoreBCModel.IntermComponent;
-import ecoreBCModel.IntermInitialisation;
-import ecoreBCModel.IntermObservable;
-import ecoreBCModel.IntermPattern;
-import ecoreBCModel.IntermRule;
-import ecoreBCModel.IntermSite;
-import ecoreBCModel.IntermSiteInstance;
-import ecoreBCModel.IntermSiteState;
-import ecoreBCModel.IntermediateModel;
+import intermModel.*;
 import reactionContainer.Agent;
 import reactionContainer.Container;
 import reactionContainer.ReactionContainerFactory;
@@ -65,7 +54,7 @@ public abstract class ContainerGenerator {
 	protected Resource containerRes;
 
 	private void init() {
-		EcoreBCModelPackage.eINSTANCE.eClass();
+		IntermModelPackage.eINSTANCE.eClass();
 		ReactionContainerPackage.eINSTANCE.eClass();
 		factory = ReactionContainerFactoryImpl.init();
 

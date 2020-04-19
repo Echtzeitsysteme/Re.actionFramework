@@ -5,8 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import ecoreBCModel.IntermAgentInstance;
-import ecoreBCModel.IntermRule;
+import intermModel.IntermAgentInstance;
+import intermModel.IntermRule;
 
 public class ChangePatternTemplate {
 

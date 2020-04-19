@@ -1,7 +1,6 @@
 package org.reaction.ibex.patternCreation;
 
 import java.io.IOException;
-import java.util.Collections;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;

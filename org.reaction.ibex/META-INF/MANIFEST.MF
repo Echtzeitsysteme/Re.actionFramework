@@ -7,8 +7,9 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-10
-Export-Package: org.reaction.ibex.patternCreation.utils,
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.reaction.ibex.patternCreation,
+ org.reaction.ibex.patternCreation.utils,
  org.reaction.transformations.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
@@ -17,12 +18,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore.xmi.source;bundle-version="2.16.0",
  SimulationDefinition,
  reactionContainer;bundle-version="0.1.0",
- org.xtext.biochemics.dotdsl;bundle-version="1.0.0"
+ org.emoflon.ibex.gt;bundle-version="1.0.0",
+ org.reaction.intermModel,
+ org.reaction.dsl
 Bundle-ActivationPolicy: lazy
-Import-Package: GTLanguage,
- IBeXLanguage,
- ecoreBCModel,
- org.emoflon.ibex.common.patterns,
- org.xtext.biochemics.dotDsl,
- org.xtext.biochemics.dotDsl.impl,
- org.xtext.biochemics.interpreter

@@ -4,21 +4,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.xtext.EcoreUtil2;
-import org.xtext.biochemics.dotDsl.AgentDeclaration;
-import org.xtext.biochemics.dotDsl.Initialisation;
-import org.xtext.biochemics.dotDsl.ReactionModel;
-import org.xtext.biochemics.dotDsl.Rule;
-import org.xtext.biochemics.dotDsl.Variable;
+import org.reaction.dsl.reactionLanguage.*;
 
-import ecoreBCModel.BindingState;
-import ecoreBCModel.CommandType;
-import ecoreBCModel.IntermAgentInstance;
-import ecoreBCModel.IntermCommand;
-import ecoreBCModel.IntermInitialisation;
-import ecoreBCModel.IntermObservable;
-import ecoreBCModel.IntermRule;
-import ecoreBCModel.IntermSiteInstance;
-import ecoreBCModel.IntermediateModel;
+import intermModel.*;
+
 
 public class ExportUtils {
 

@@ -1,22 +1,18 @@
 package org.reaction.main;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.eclipse.emf.ecore.EPackage;
+import org.reaction.dsl.reactionLanguage.ReactionModel;
 import org.reaction.export.BNGLFactory;
 import org.reaction.ibex.patternCreation.GTCreator;
 import org.reaction.ibex.patternCreation.IBeXCreator;
 import org.reaction.ibex.patternCreation.SimDefCreator;
-import org.reaction.transformations.dslToIntermediateModel.DslToIntermTransformation;
-import org.reaction.transformations.util.EMFResourceHelper;
-import org.xtext.biochemics.dotDsl.ReactionModel;
+import org.reaction.intermTrafo.transformation.IntermTransformation;
+import org.reaction.intermTrafo.util.EMFResourceHelper;
 
 import IBeXLanguage.IBeXPatternSet;
-import ecoreBCModel.IntermediateModel;
-import reactionContainer.ReactionContainerPackage;
+import intermModel.IntermediateModel;
 import reactionContainer.generator.ContainerEMF;
 import reactionContainer.generator.ContainerGenerator;
 
@@ -27,7 +23,7 @@ public class Transformation {
 	String trgProjectLocation;
 	BNGLFactory bnglFactory;
 
-	public Transformation(String dslModelLocation, String modelName, String metamodelName, String trgProjectLocation) {
+	public Transformation(String dslModelLocation, String modelName, String trgProjectLocation) {
 		this.dslModelLocation = dslModelLocation;
 		this.modelName = modelName;
 		this.trgProjectLocation = trgProjectLocation;
@@ -56,12 +52,12 @@ public class Transformation {
 		try {
 			System.out.println("Initiating Reaction to Intermediate Transformation...");
 			dslModel = EMFResourceHelper.loadReactionModel(dslModelFile);
-			DslToIntermTransformation dslToInterm = new DslToIntermTransformation(dslModel);
+			IntermTransformation dslToInterm = new IntermTransformation(dslModel);
 			intermModel = dslToInterm.generateIntermediateModel();
 			intermModel.setName(modelName);
 
-			String intermModelSaveLocation = tempModels + modelName + "Intermediate.xmi";
-			EMFResourceHelper.saveResource(intermModel, intermModelSaveLocation);
+//			String intermModelSaveLocation = tempModels + modelName + "Intermediate.xmi";
+//			EMFResourceHelper.saveResource(intermModel, intermModelSaveLocation);
 		} catch (Exception e) {
 			System.err.println("\nTransforming to Intermediate Model failed with:");
 			e.printStackTrace();

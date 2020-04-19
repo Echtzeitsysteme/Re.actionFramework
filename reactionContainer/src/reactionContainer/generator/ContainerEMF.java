@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import ecoreBCModel.IntermediateModel;
+import intermModel.IntermediateModel;
 
 public class ContainerEMF extends ContainerGenerator {
 	

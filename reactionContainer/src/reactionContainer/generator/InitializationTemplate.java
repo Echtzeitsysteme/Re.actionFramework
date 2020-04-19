@@ -7,12 +7,7 @@ import java.util.Map;
 
 import org.eclipse.emf.ecore.EReference;
 
-import ecoreBCModel.BindingState;
-import ecoreBCModel.IntermAgentInstance;
-import ecoreBCModel.IntermPattern;
-import ecoreBCModel.IntermSite;
-import ecoreBCModel.IntermSiteInstance;
-import ecoreBCModel.IntermSiteState;
+import intermModel.*;
 import reactionContainer.Agent;
 import reactionContainer.State;
 import reactionContainer.util.AgentClassFactory;

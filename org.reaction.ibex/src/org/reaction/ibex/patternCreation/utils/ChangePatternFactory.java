@@ -17,12 +17,7 @@ import IBeXLanguage.IBeXEdge;
 import IBeXLanguage.IBeXLanguageFactory;
 import IBeXLanguage.IBeXNode;
 import IBeXLanguage.IBeXPattern;
-import IBeXLanguage.IBeXPatternSet;
-import ecoreBCModel.BindingState;
-import ecoreBCModel.IntermAgent;
-import ecoreBCModel.IntermAgentInstance;
-import ecoreBCModel.IntermSiteInstance;
-import ecoreBCModel.IntermSiteState;
+import intermModel.*;
 import reactionContainer.ReactionContainerPackage;
 
 public class ChangePatternFactory {

@@ -1,18 +1,15 @@
 package reactionContainer.generator;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
 
-import ecoreBCModel.IntermAgent;
-import ecoreBCModel.IntermSite;
-import ecoreBCModel.IntermSiteInstance;
-import ecoreBCModel.IntermSiteState;
+import intermModel.IntermAgent;
+import intermModel.IntermSite;
+import intermModel.IntermSiteInstance;
+import intermModel.IntermSiteState;
 import reactionContainer.Agent;
 import reactionContainer.State;
 import reactionContainer.util.AgentClassFactory;

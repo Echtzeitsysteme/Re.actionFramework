@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.reaction.intermModel/src-gen" creationIcons="false"
+    editDirectory="/IntermModel.edit/src-gen" editorDirectory="/IntermModel.editor/src-gen"
+    modelPluginID="IntermModel" modelName="IntermModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>intermModel.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="IntermModel" disposableProviderFactory="true" ecorePackage="intermModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="intermModel.ecore#//CommandType">
+      <genEnumLiterals ecoreEnumLiteral="intermModel.ecore#//CommandType/TIME"/>
+      <genEnumLiterals ecoreEnumLiteral="intermModel.ecore#//CommandType/ITERATIONS"/>
+      <genEnumLiterals ecoreEnumLiteral="intermModel.ecore#//CommandType/MATCHES"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="intermModel.ecore#//BindingState">
+      <genEnumLiterals ecoreEnumLiteral="intermModel.ecore#//BindingState/BOUND"/>
+      <genEnumLiterals ecoreEnumLiteral="intermModel.ecore#//BindingState/FREE"/>
+      <genEnumLiterals ecoreEnumLiteral="intermModel.ecore#//BindingState/UNSPECIFIED"/>
+    </genEnums>
+    <genClasses ecoreClass="intermModel.ecore#//IntermSite">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermSite/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermSite/siteStates"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermSite/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="intermModel.ecore#//IntermInitialisation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermInitialisation/cnt"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermInitialisation/initPattern"/>
+    </genClasses>
+    <genClasses ecoreClass="intermModel.ecore#//IntermSiteInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermSiteInstance/instanceOf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermSiteInstance/notBoundTo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermSiteInstance/boundTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermSiteInstance/bindingState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermSiteInstance/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermSiteInstance/state"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermSiteInstance/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="intermModel.ecore#//PatternContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intermModel.ecore#//PatternContainer/patterns"/>
+    </genClasses>
+    <genClasses ecoreClass="intermModel.ecore#//IntermSiteState">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermSiteState/name"/>
+    </genClasses>
+    <genClasses ecoreClass="intermModel.ecore#//IntermPattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermPattern/agentInstances"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermPattern/name"/>
+    </genClasses>
+    <genClasses ecoreClass="intermModel.ecore#//IntermRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermRule/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermRule/rate"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermRule/lhs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermRule/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="intermModel.ecore#//IntermObservable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermObservable/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermObservable/obsPattern"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="intermModel.ecore#//IntermComponent"/>
+    <genClasses ecoreClass="intermModel.ecore#//IntermAgent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermAgent/sites"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermAgent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="intermModel.ecore#//IntermediateModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermediateModel/components"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermediateModel/patternContainer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermediateModel/name"/>
+    </genClasses>
+    <genClasses ecoreClass="intermModel.ecore#//IntermCommand">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermCommand/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermCommand/patternToMatch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermCommand/cnt"/>
+    </genClasses>
+    <genClasses ecoreClass="intermModel.ecore#//IntermAgentInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermAgentInstance/siteInstances"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference intermModel.ecore#//IntermAgentInstance/instanceOf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermAgentInstance/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute intermModel.ecore#//IntermAgentInstance/local"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

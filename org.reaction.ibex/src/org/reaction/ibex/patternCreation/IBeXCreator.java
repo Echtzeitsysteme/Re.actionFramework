@@ -15,7 +15,7 @@ import org.reaction.ibex.patternCreation.utils.ChangeCreator;
 import org.reaction.ibex.patternCreation.utils.ContextCreator;
 
 import IBeXLanguage.IBeXPatternSet;
-import ecoreBCModel.IntermediateModel;
+import intermModel.IntermediateModel;
 
 public class IBeXCreator {
 

@@ -3,7 +3,7 @@ package reactionContainer.util;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
-import ecoreBCModel.IntermAgent;
+import intermModel.IntermAgent;
 import reactionContainer.Agent;
 
 public class AgentFactory extends EObjectFactory<Agent, IntermAgent>{

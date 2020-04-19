@@ -22,17 +22,8 @@ import IBeXLanguage.IBeXContext;
 import IBeXLanguage.IBeXContextPattern;
 import IBeXLanguage.IBeXLanguagePackage;
 import IBeXLanguage.IBeXPatternSet;
-import SimulationDefinition.PatternObservation;
-import SimulationDefinition.PatternTerminationCondition;
-import SimulationDefinition.SimDefinition;
-import SimulationDefinition.SimpleTerminationCondition;
-import SimulationDefinition.SimulationDefinitionFactory;
-import SimulationDefinition.StochasticRate;
-import ecoreBCModel.IntermCommand;
-import ecoreBCModel.IntermComponent;
-import ecoreBCModel.IntermObservable;
-import ecoreBCModel.IntermRule;
-import ecoreBCModel.IntermediateModel;
+import SimulationDefinition.*;
+import intermModel.*;
 
 public class SimDefCreator {
 

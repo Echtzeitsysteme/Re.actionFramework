@@ -2,10 +2,8 @@ package org.reaction.ibex.patternCreation.utils;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
@@ -19,9 +17,8 @@ import IBeXLanguage.IBeXEdge;
 import IBeXLanguage.IBeXNode;
 import IBeXLanguage.IBeXPatternInvocation;
 import IBeXLanguage.IBeXPatternSet;
-import ecoreBCModel.IntermAgent;
-import ecoreBCModel.IntermAgentInstance;
-import ecoreBCModel.IntermSiteInstance;
+import intermModel.IntermAgentInstance;
+import intermModel.IntermSiteInstance;
 import reactionContainer.ReactionContainerPackage;
 
 public class ModelHelper {

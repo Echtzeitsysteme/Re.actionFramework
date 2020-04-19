@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.reaction.dsl
+Bundle-ManifestVersion: 2
+Bundle-Name: org.reaction.dsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.reaction.dsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+ org.eclipse.xtend.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.reaction.dsl,
+ org.reaction.dsl.generator,
+ org.reaction.dsl.interpreter,
+ org.reaction.dsl.parser.antlr,
+ org.reaction.dsl.parser.antlr.internal,
+ org.reaction.dsl.reactionLanguage,
+ org.reaction.dsl.reactionLanguage.impl,
+ org.reaction.dsl.reactionLanguage.util,
+ org.reaction.dsl.scoping,
+ org.reaction.dsl.serializer,
+ org.reaction.dsl.services,
+ org.reaction.dsl.validation,
+ org.reaction.dsl.formatting2
+Import-Package: org.apache.log4j
