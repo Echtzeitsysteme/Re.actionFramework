@@ -1,7 +1,7 @@
 .metadata
 .project
-/bin/
+**/bin/
 *.xmi
-/src-gen/
-/xtend-gen/
-/export/
+**/src-gen/
+**/xtend-gen/
+**/export/
