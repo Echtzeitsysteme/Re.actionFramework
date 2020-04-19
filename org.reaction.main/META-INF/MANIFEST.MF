@@ -21,6 +21,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.emoflon.ibex.gt;bundle-version="1.0.0",
  org.reaction.export;bundle-version="1.0.0",
  org.reaction.ibex;bundle-version="1.0.0",
- org.reaction.intermModel;bundle-version="0.1.0",
- org.reaction.dsl
+ org.reaction.dsl,
+ IntermModel;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

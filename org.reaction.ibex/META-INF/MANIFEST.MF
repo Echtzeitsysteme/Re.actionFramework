@@ -19,6 +19,6 @@ Require-Bundle: org.eclipse.core.runtime,
  SimulationDefinition,
  reactionContainer;bundle-version="0.1.0",
  org.emoflon.ibex.gt;bundle-version="1.0.0",
- org.reaction.intermModel,
- org.reaction.dsl
+ org.reaction.dsl,
+ IntermModel;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

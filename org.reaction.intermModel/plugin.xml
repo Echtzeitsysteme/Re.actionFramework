@@ -10,8 +10,7 @@
       <!-- @generated intermModel -->
       <package
             uri="http://www.example.org/intermModel"
-            class="intermModel.IntermModelPackage"
-            genModel="model/intermModel.genmodel"/>
+            class="intermModel.IntermModelPackage"/>
    </extension>
 
 </plugin>
