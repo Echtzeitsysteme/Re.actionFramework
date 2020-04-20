@@ -34,6 +34,6 @@ This repository contains a working example model of the so-called *Goldbeter-Kos
 
 ### Running own models
 If you want to run any model of your own, you basically follow the same instructions as given with the example above. Except you have to adjust the origin- and target-location in the `Main`-file in `org.reaction.main` before starting the transformation.
-* `srcModelLocation` has to point to the `.xmi`-file that was created automatically after saving you `.react`-model
+* `srcModelLocation` has to point to the `.xmi`-file that was created automatically after saving your `.react`-model
 * `trgProjectLocation` has to point to the *SimSG*-Project folder you want to run the simulation with
 If you run any simulations as given by the working example above, make sure that the model of the `SimulationConfigurator` is set to the name of your `.xmi`-file (excluding the file-extension).
