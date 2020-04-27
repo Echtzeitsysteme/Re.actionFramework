@@ -43,3 +43,4 @@ If you run any simulations as given by the working example above, make sure that
 * If your .xtend-files seem somehow corrupted or strangely formatted, make sure to set the editor's textfile encoding to 'Other: UTF-8' in `Window->Preferences->General->Workspace`
 * In any case it could be sufficient to try checking for updates even though all requirements were just freshly installed
 * Try building everything by use of the update sites contained in your workspace after pulling all necessary repositories. In Order to do so, choose the corresponding update site, open its `site.xml` and choose 'Build All'
+* If the build of any SimSG-projects fails, delete the project from your workspace, close the workspace and then reopen it. Open the project again and also try again. If this does not work immediately, try it several times. Usually it should work after doing this once
