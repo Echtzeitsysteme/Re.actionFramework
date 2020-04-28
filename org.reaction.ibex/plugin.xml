@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.simsg.ui.SimSGModelBuilderExtension">
+      <builder_extension
+            class="org.reaction.build.simsg.ReactionModelBuilder">
+      </builder_extension>
+   </extension>
+
+</plugin>

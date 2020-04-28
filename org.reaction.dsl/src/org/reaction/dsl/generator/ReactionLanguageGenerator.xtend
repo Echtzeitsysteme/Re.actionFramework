@@ -23,7 +23,7 @@ import org.reaction.dsl.reactionLanguage.ReactionModel
 class ReactionLanguageGenerator extends AbstractGenerator {
 
 override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		saveResource(resource)
+//		saveResource(resource)
 	}
 	
 	//TODO: Save only finished and fully transformaed files

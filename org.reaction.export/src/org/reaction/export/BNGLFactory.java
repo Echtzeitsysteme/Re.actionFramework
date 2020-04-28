@@ -9,18 +9,28 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import org.xtext.biochemics.dotDsl.Agent;
-import org.xtext.biochemics.dotDsl.AgentDeclaration;
-import org.xtext.biochemics.dotDsl.ArithmeticExpr;
-import org.xtext.biochemics.dotDsl.ReactionModel;
-import org.xtext.biochemics.dotDsl.Rule;
-import org.xtext.biochemics.dotDsl.RuleType;
-import org.xtext.biochemics.dotDsl.Site;
-import org.xtext.biochemics.dotDsl.SiteState;
-import org.xtext.biochemics.dotDsl.Variable;
-import org.xtext.biochemics.interpreter.Calculator;
+import org.reaction.dsl.interpreter.Calculator;
+import org.reaction.dsl.reactionLanguage.Agent;
+import org.reaction.dsl.reactionLanguage.AgentDeclaration;
+import org.reaction.dsl.reactionLanguage.ArithmeticExpr;
+import org.reaction.dsl.reactionLanguage.ReactionModel;
+import org.reaction.dsl.reactionLanguage.Rule;
+import org.reaction.dsl.reactionLanguage.RuleType;
+import org.reaction.dsl.reactionLanguage.Site;
+import org.reaction.dsl.reactionLanguage.SiteState;
+import org.reaction.dsl.reactionLanguage.Variable;
 
-import ecoreBCModel.*;
+import IntermediateModel.BindingState;
+import IntermediateModel.IntermAgent;
+import IntermediateModel.IntermAgentInstance;
+import IntermediateModel.IntermCommand;
+import IntermediateModel.IntermInitialisation;
+import IntermediateModel.IntermObservable;
+import IntermediateModel.IntermPattern;
+import IntermediateModel.IntermRule;
+import IntermediateModel.IntermSiteInstance;
+import IntermediateModel.IntermSiteState;
+import IntermediateModel.IntermediateModelContainer;
 
 public class BNGLFactory {
 
@@ -35,11 +45,11 @@ public class BNGLFactory {
 	private List<IntermRule> intermRules;
 	private List<IntermObservable> intermObs;
 	private List<IntermCommand> intermComms;
-	private IntermediateModel intermModel;
+	private IntermediateModelContainer intermModel;
 	private StringBuilder sb;
 	private final String lineBreak = System.getProperty("line.separator");
 
-	public BNGLFactory(ReactionModel dslModel, IntermediateModel intermModel, List<IntermAgent> agentsInModel,
+	public BNGLFactory(ReactionModel dslModel, IntermediateModelContainer intermModel, List<IntermAgent> agentsInModel,
 			Map<String, List<IntermSiteState>> statesInModel) {
 		this.agentsInModel = agentsInModel;
 		this.statesInModel = statesInModel;

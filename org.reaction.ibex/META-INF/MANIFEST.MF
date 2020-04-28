@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.reaction.ibex;singleton:=true
+Bundle-SymbolicName: org.reaction.build;singleton:=true
 Automatic-Module-Name: org.simsg.container
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
@@ -19,5 +19,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.reaction.dsl,
  org.emoflon.ibex.patternmodel,
  org.reaction.intermediatemodel,
- org.reaction.reactionmodel
+ org.reaction.reactionmodel,
+ org.simsg.ui;bundle-version="1.0.0",
+ org.eclipse.core.resources
 Bundle-ActivationPolicy: lazy

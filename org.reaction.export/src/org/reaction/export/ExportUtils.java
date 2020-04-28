@@ -4,20 +4,21 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.xtext.EcoreUtil2;
-import org.xtext.biochemics.dotDsl.AgentDeclaration;
-import org.xtext.biochemics.dotDsl.ReactionModel;
-import org.xtext.biochemics.dotDsl.Rule;
-import org.xtext.biochemics.dotDsl.Variable;
+import org.reaction.dsl.reactionLanguage.AgentDeclaration;
+import org.reaction.dsl.reactionLanguage.ReactionModel;
+import org.reaction.dsl.reactionLanguage.Rule;
+import org.reaction.dsl.reactionLanguage.Variable;
 
-import ecoreBCModel.BindingState;
-import ecoreBCModel.CommandType;
-import ecoreBCModel.IntermAgentInstance;
-import ecoreBCModel.IntermCommand;
-import ecoreBCModel.IntermInitialisation;
-import ecoreBCModel.IntermObservable;
-import ecoreBCModel.IntermRule;
-import ecoreBCModel.IntermSiteInstance;
-import ecoreBCModel.IntermediateModel;
+import IntermediateModel.BindingState;
+import IntermediateModel.CommandType;
+import IntermediateModel.IntermAgentInstance;
+import IntermediateModel.IntermCommand;
+import IntermediateModel.IntermInitialisation;
+import IntermediateModel.IntermObservable;
+import IntermediateModel.IntermRule;
+import IntermediateModel.IntermSiteInstance;
+import IntermediateModel.IntermediateModelContainer;
+
 
 public class ExportUtils {
 
@@ -64,19 +65,19 @@ public class ExportUtils {
 		return EcoreUtil2.getAllContentsOfType(dslModel, Rule.class);
 	}
 
-	public static List<IntermRule> getRulesFromIntermModel(IntermediateModel intermModel) {
+	public static List<IntermRule> getRulesFromIntermModel(IntermediateModelContainer intermModel) {
 		return EcoreUtil2.getAllContentsOfType(intermModel, IntermRule.class);
 	}
 
-	public static List<IntermInitialisation> getInitsFromIntermModel(IntermediateModel intermModel) {
+	public static List<IntermInitialisation> getInitsFromIntermModel(IntermediateModelContainer intermModel) {
 		return EcoreUtil2.getAllContentsOfType(intermModel, IntermInitialisation.class);
 	}
 	
-	public static List<IntermObservable> getObsFromIntermModel(IntermediateModel intermModel) {
+	public static List<IntermObservable> getObsFromIntermModel(IntermediateModelContainer intermModel) {
 		return EcoreUtil2.getAllContentsOfType(intermModel, IntermObservable.class);
 	}
 	
-	public static List<IntermCommand> getCommandsFromIntermModel(IntermediateModel intermModel){
+	public static List<IntermCommand> getCommandsFromIntermModel(IntermediateModelContainer intermModel){
 		return EcoreUtil2.getAllContentsOfType(intermModel, IntermCommand.class);
 	}
 	
