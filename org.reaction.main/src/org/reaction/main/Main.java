@@ -13,18 +13,17 @@ import org.reaction.ibex.patternCreation.IBeXCreator;
 import org.reaction.ibex.patternCreation.SimDefCreator;
 import org.reaction.intermTrafo.transformation.IntermTransformation;
 import org.reaction.intermTrafo.util.EMFResourceHelper;
-import IBeXLanguage.IBeXPatternSet;
-import intermModel.IntermediateModel;
-import reactionContainer.ReactionContainerPackage;
-import reactionContainer.generator.ContainerEMF;
-import reactionContainer.generator.ContainerGenerator;
+
+import IntermediateModel.IntermediateModelContainer;
+import ReactionModel.ReactionModelPackage;
+
 
 public class Main {
 
 	public static void main(String[] args) {
 
 		ReactionLanguagePackage.eINSTANCE.eClass();
-		ReactionContainerPackage.eINSTANCE.eClass();
+		ReactionModelPackage.eINSTANCE.eClass();
 
 		// Load Model ---- Adjust paths in the following two lines to load and place files correctly
 		final String dslModelLocation =   "..\\example\\GKL.xmi";
@@ -33,7 +32,7 @@ public class Main {
 		final String userDir = System.getProperty("user.dir");
 		final String tempModels = userDir + "/models/";
 
-		IntermediateModel intermModel;
+		IntermediateModelContainer intermModel;
 
 		// Clear directories
 		System.out.println("Clearing directories...");
