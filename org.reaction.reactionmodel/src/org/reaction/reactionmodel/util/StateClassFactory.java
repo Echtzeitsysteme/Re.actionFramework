@@ -1,14 +1,14 @@
-package reactionContainer.util;
+package org.reaction.reactionmodel.util;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import intermModel.IntermAgent;
-import intermModel.IntermSite;
-import intermModel.IntermSiteState;
-import reactionContainer.ReactionContainerPackage;
-import reactionContainer.State;
+import IntermediateModel.IntermAgent;
+import IntermediateModel.IntermSite;
+import IntermediateModel.IntermSiteState;
+import ReactionModel.ReactionModelPackage;
+import ReactionModel.State;
 
 public class StateClassFactory extends EClassFactory<IntermSiteState, State> {
 	
@@ -32,7 +32,7 @@ public class StateClassFactory extends EClassFactory<IntermSiteState, State> {
 		}
 		
 		EClass stateClass = ecoreFactory.createEClass();
-		stateClass.getESuperTypes().add(ReactionContainerPackage.Literals.STATE);
+		stateClass.getESuperTypes().add(ReactionModelPackage.Literals.STATE);
 		stateClass.setName(qualifiedName);
 		ecorePackage.getEClassifiers().add(stateClass);
 		classRegistry.registerClass(stateClass);

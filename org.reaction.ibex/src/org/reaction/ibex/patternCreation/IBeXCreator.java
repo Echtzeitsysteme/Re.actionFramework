@@ -1,5 +1,6 @@
 package org.reaction.ibex.patternCreation;
 
+import IntermediateModel.IntermediateModelContainer;
 import java.io.IOException;
 import java.util.Map;
 
@@ -11,15 +12,14 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternSet;
 import org.reaction.ibex.patternCreation.utils.ChangeCreator;
 import org.reaction.ibex.patternCreation.utils.ContextCreator;
 
-import IBeXLanguage.IBeXPatternSet;
-import intermModel.IntermediateModel;
 
 public class IBeXCreator {
 
-	private IntermediateModel model;
+	private IntermediateModelContainer model;
 
 	private EPackage metamodelPackage;
 
@@ -28,7 +28,7 @@ public class IBeXCreator {
 
 	private IBeXPatternSet ibexPatternSet;
 
-	public IBeXCreator(IntermediateModel model, EPackage metamodelPackage) {
+	public IBeXCreator(IntermediateModelContainer model, EPackage metamodelPackage) {
 		this.model = model;
 		this.metamodelPackage = metamodelPackage;
 		init();

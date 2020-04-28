@@ -6,15 +6,14 @@ import java.util.regex.Pattern;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContextPattern;
 import org.reaction.dsl.reactionLanguage.*;
 
-import intermModel.IntermAgent;
-import intermModel.IntermAgentInstance;
-import intermModel.IntermSite;
-import intermModel.IntermSiteInstance;
-import intermModel.IntermSiteState;
-
-import IBeXLanguage.IBeXContextPattern;
+import IntermediateModel.IntermAgent;
+import IntermediateModel.IntermAgentInstance;
+import IntermediateModel.IntermSite;
+import IntermediateModel.IntermSiteInstance;
+import IntermediateModel.IntermSiteState;
 
 
 public class NameProvider {

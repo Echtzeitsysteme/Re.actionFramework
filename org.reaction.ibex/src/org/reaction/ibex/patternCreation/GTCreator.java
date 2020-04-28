@@ -11,16 +11,15 @@ import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContext;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContextPattern;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXNode;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternSet;
 import GTLanguage.GTLanguageFactory;
 import GTLanguage.GTLanguagePackage;
 import GTLanguage.GTNode;
 import GTLanguage.GTRule;
 import GTLanguage.GTRuleSet;
-import IBeXLanguage.IBeXContext;
-import IBeXLanguage.IBeXContextPattern;
-import IBeXLanguage.IBeXNode;
-import IBeXLanguage.IBeXPatternSet;
 
 public class GTCreator {
 

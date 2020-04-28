@@ -1,19 +1,19 @@
-package reactionContainer.generator;
+package org.reaction.reactionmodel.generator;
+
+import IntermediateModel.IntermAgent;
+import IntermediateModel.IntermSite;
+import IntermediateModel.IntermSiteInstance;
+import IntermediateModel.IntermSiteState;
+import ReactionModel.Agent;
+import ReactionModel.State;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-
-import intermModel.IntermAgent;
-import intermModel.IntermSite;
-import intermModel.IntermSiteInstance;
-import intermModel.IntermSiteState;
-import reactionContainer.Agent;
-import reactionContainer.State;
-import reactionContainer.util.AgentClassFactory;
-import reactionContainer.util.StateClassFactory;
+import org.reaction.reactionmodel.util.AgentClassFactory;
+import org.reaction.reactionmodel.util.StateClassFactory;
 
 public class AgentTemplate {
 

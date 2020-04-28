@@ -1,4 +1,4 @@
-package reactionContainer.util;
+package org.reaction.reactionmodel.util;
 
 import java.util.Collection;
 import java.util.HashMap;

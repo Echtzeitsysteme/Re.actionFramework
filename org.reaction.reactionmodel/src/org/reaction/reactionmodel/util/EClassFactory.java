@@ -1,11 +1,10 @@
-package reactionContainer.util;
+package org.reaction.reactionmodel.util;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
-
-import reactionContainer.util.EObjectFactory;
+import org.reaction.reactionmodel.util.EObjectFactory;
 
 
 public abstract class EClassFactory<Template extends EObject, Instance extends EObject> {

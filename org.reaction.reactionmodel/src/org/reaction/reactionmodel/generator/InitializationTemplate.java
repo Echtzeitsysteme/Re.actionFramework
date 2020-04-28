@@ -1,4 +1,4 @@
-package reactionContainer.generator;
+package org.reaction.reactionmodel.generator;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -6,12 +6,17 @@ import java.util.LinkedList;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EReference;
+import org.reaction.reactionmodel.util.AgentClassFactory;
+import org.reaction.reactionmodel.util.StateClassFactory;
 
-import intermModel.*;
-import reactionContainer.Agent;
-import reactionContainer.State;
-import reactionContainer.util.AgentClassFactory;
-import reactionContainer.util.StateClassFactory;
+import IntermediateModel.BindingState;
+import IntermediateModel.IntermAgentInstance;
+import IntermediateModel.IntermPattern;
+import IntermediateModel.IntermSite;
+import IntermediateModel.IntermSiteInstance;
+import IntermediateModel.IntermSiteState;
+import ReactionModel.Agent;
+import ReactionModel.State;
 
 public class InitializationTemplate {
 

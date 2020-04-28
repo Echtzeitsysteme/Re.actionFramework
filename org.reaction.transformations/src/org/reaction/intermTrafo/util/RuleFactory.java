@@ -8,7 +8,10 @@ import org.reaction.dsl.reactionLanguage.Rule;
 import org.reaction.dsl.reactionLanguage.RuleType;
 import org.reaction.intermTrafo.transformation.*;
 
-import intermModel.*;
+import IntermediateModel.IntermPattern;
+import IntermediateModel.IntermRule;
+import IntermediateModel.IntermediateModelFactory;
+import IntermediateModel.PatternContainer;
 
 public class RuleFactory {
 
@@ -61,7 +64,7 @@ public class RuleFactory {
 		patternContainer.getPatterns().add(leftPattern);
 		patternContainer.getPatterns().add(rightPattern);
 		
-		IntermRule ruleFwd = IntermModelFactory.eINSTANCE.createIntermRule();
+		IntermRule ruleFwd = IntermediateModelFactory.eINSTANCE.createIntermRule();
 		ruleFwd.setName(originalRule.getHead().getName());
 		ruleFwd.setLhs(leftPattern);
 		ruleFwd.setRhs(rightPattern);
@@ -69,7 +72,7 @@ public class RuleFactory {
 		allRules.add(ruleFwd);
 		
 		if(isBwd) {
-			IntermRule ruleBwd = IntermModelFactory.eINSTANCE.createIntermRule();
+			IntermRule ruleBwd = IntermediateModelFactory.eINSTANCE.createIntermRule();
 			ruleBwd.setName(ruleFwd.getName()+"Bwd");
 			ruleBwd.setLhs(rightPattern);
 			ruleBwd.setRhs(leftPattern);

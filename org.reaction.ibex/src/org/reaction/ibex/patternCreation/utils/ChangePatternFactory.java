@@ -10,15 +10,18 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EClassImpl;
 import org.emoflon.ibex.common.patterns.IBeXPatternFactory;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXCreatePattern;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXDeletePattern;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXEdge;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXNode;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPattern;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternModelFactory;
 
-import IBeXLanguage.IBeXCreatePattern;
-import IBeXLanguage.IBeXDeletePattern;
-import IBeXLanguage.IBeXEdge;
-import IBeXLanguage.IBeXLanguageFactory;
-import IBeXLanguage.IBeXNode;
-import IBeXLanguage.IBeXPattern;
-import intermModel.*;
-import reactionContainer.ReactionContainerPackage;
+import IntermediateModel.BindingState;
+import IntermediateModel.IntermAgentInstance;
+import IntermediateModel.IntermSiteInstance;
+import IntermediateModel.IntermSiteState;
+import ReactionModel.ReactionModelPackage;
 
 public class ChangePatternFactory {
 
@@ -27,7 +30,7 @@ public class ChangePatternFactory {
 	private IBeXCreatePattern createPattern;
 	private IBeXDeletePattern deletePattern;
 
-	private IBeXLanguageFactory ibexFactory = IBeXLanguageFactory.eINSTANCE;
+	private IBeXPatternModelFactory ibexFactory = IBeXPatternModelFactory.eINSTANCE;
 
 	private Map<String, EClassImpl> agentTypeRegistry;
 	private Map<String, EReference> edgeTypeRegistry;
@@ -487,7 +490,7 @@ public class ChangePatternFactory {
 	 * @return the deleted node
 	 */
 	private IBeXNode deleteGenericNode(String instanceName) {
-		IBeXNode deletedNode = IBeXPatternFactory.createNode(instanceName, ReactionContainerPackage.Literals.AGENT);
+		IBeXNode deletedNode = IBeXPatternFactory.createNode(instanceName, ReactionModelPackage.Literals.AGENT);
 		deletedNode.setName(instanceName);
 		deletePattern.getDeletedNodes().add(deletedNode);
 		return deletedNode;

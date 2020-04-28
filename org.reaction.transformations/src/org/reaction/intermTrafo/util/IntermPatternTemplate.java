@@ -1,5 +1,13 @@
 package org.reaction.intermTrafo.util;
 
+import IntermediateModel.BindingState;
+import IntermediateModel.IntermAgent;
+import IntermediateModel.IntermAgentInstance;
+import IntermediateModel.IntermSiteInstance;
+import IntermediateModel.IntermSiteState;
+import IntermediateModel.IntermediateModelFactory;
+import IntermediateModel.PatternContainer;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -12,8 +20,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.reaction.dsl.reactionLanguage.*;
 import org.reaction.ibex.patternCreation.utils.NameProvider;
 import org.reaction.intermTrafo.transformation.IntermTransformation;
-
-import intermModel.*;
 
 
 /**
@@ -94,7 +100,7 @@ public class IntermPatternTemplate {
 				localInstance.setName(localInstanceName);
 
 				// create local site
-				IntermSiteInstance localSite = IntermModelFactory.eINSTANCE.createIntermSiteInstance();
+				IntermSiteInstance localSite = IntermediateModelFactory.eINSTANCE.createIntermSiteInstance();
 				localSite.setInstanceOf(transformation.siteToIntermSite(rbsSi.getSite()));
 				localSite.setName(rbsSi.getSite().getName());
 				localSite.setBindingState(BindingState.UNSPECIFIED);
@@ -309,7 +315,7 @@ public class IntermPatternTemplate {
 	 */
 	private IntermAgentInstance transformAgent(AgentInstance ai) {
 
-		IntermAgentInstance intermAi = IntermModelFactory.eINSTANCE.createIntermAgentInstance();
+		IntermAgentInstance intermAi = IntermediateModelFactory.eINSTANCE.createIntermAgentInstance();
 		intermAi.setName(ai.getName());
 		intermAi.setInstanceOf(transformation.agentToIntermAgent(ai.getInstanceOf()));
 		intermAi.getSiteInstances().addAll(deriveSiteInstances(intermAi, ai));
@@ -326,7 +332,7 @@ public class IntermPatternTemplate {
 		IntermAgent rightIAgent = transformation.agentToIntermAgent(agent);
 
 		// create local agent
-		IntermAgentInstance localInstance = IntermModelFactory.eINSTANCE.createIntermAgentInstance();
+		IntermAgentInstance localInstance = IntermediateModelFactory.eINSTANCE.createIntermAgentInstance();
 		localInstance.setInstanceOf(rightIAgent);
 		localInstance.setLocal(false);
 
@@ -345,7 +351,7 @@ public class IntermPatternTemplate {
 		List<IntermSiteInstance> intermSiList = new ArrayList<>();
 
 		for (Site site : ai.getInstanceOf().getSites()) {
-			IntermSiteInstance intermSi = IntermModelFactory.eINSTANCE.createIntermSiteInstance();
+			IntermSiteInstance intermSi = IntermediateModelFactory.eINSTANCE.createIntermSiteInstance();
 			intermSi.setName(site.getName());
 			intermSi.setParent(intermAi);
 			intermSi.setBindingState(BindingState.UNSPECIFIED);

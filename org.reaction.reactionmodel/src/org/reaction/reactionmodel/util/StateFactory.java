@@ -1,10 +1,10 @@
-package reactionContainer.util;
+package org.reaction.reactionmodel.util;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
-import intermModel.IntermSiteState;
-import reactionContainer.State;
+import IntermediateModel.IntermSiteState;
+import ReactionModel.State;
 
 public class StateFactory extends EObjectFactory<State, IntermSiteState> {
 	

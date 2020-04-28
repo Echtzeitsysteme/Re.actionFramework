@@ -1,4 +1,4 @@
-package reactionContainer.util;
+package org.reaction.reactionmodel.util;
 
 import java.util.List;
 import java.util.Map;
@@ -9,11 +9,11 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import intermModel.IntermAgent;
-import intermModel.IntermSite;
-import intermModel.IntermSiteState;
-import reactionContainer.Agent;
-import reactionContainer.ReactionContainerPackage;
+import IntermediateModel.IntermAgent;
+import IntermediateModel.IntermSite;
+import IntermediateModel.IntermSiteState;
+import ReactionModel.Agent;
+import ReactionModel.ReactionModelPackage;
 
 public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 
@@ -41,7 +41,7 @@ public class AgentClassFactory extends EClassFactory<IntermAgent, Agent> {
 		}
 
 		EClass agentClass = ecoreFactory.createEClass();
-		agentClass.getESuperTypes().add(ReactionContainerPackage.Literals.AGENT);
+		agentClass.getESuperTypes().add(ReactionModelPackage.Literals.AGENT);
 		agentClass.setName(object.getName());
 		ecorePackage.getEClassifiers().add(agentClass);
 		classRegistry.registerClass(agentClass);

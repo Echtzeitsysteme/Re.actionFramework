@@ -5,8 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import intermModel.IntermAgentInstance;
-import intermModel.IntermRule;
+import IntermediateModel.IntermAgentInstance;
+import IntermediateModel.IntermRule;
+
 
 public class ChangePatternTemplate {
 

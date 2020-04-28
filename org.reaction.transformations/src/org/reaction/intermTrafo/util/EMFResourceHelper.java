@@ -15,7 +15,8 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.reaction.dsl.reactionLanguage.ReactionLanguagePackage;
 import org.reaction.dsl.reactionLanguage.ReactionModel;
 
-import intermModel.*;
+import IntermediateModel.IntermediateModelContainer;
+import IntermediateModel.IntermediateModelPackage;
 
 public class EMFResourceHelper {
 
@@ -49,14 +50,14 @@ public class EMFResourceHelper {
 		return reactionModel;
 	}
 
-	public static IntermediateModel loadIntermModel(String resourceLocation) {
+	public static IntermediateModelContainer loadIntermModel(String resourceLocation) {
 
 		System.out.print("Loading model from " + resourceLocation + "... ");
 
 		final URI uri = URI.createFileURI(resourceLocation);
 
-		IntermModelPackage.eINSTANCE.eClass();
-		EPackage ePackage = IntermModelPackage.eINSTANCE;
+		IntermediateModelPackage.eINSTANCE.eClass();
+		EPackage ePackage = IntermediateModelPackage.eINSTANCE;
 
 		// Register the XMI resource factory for the .website extension
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
@@ -73,7 +74,7 @@ public class EMFResourceHelper {
 
 		// Get the first model element and cast it to the right type, in my
 		// example everything is hierarchical included in this first node
-		IntermediateModel intermModel = (IntermediateModel) resource.getContents().get(0);
+		IntermediateModelContainer intermModel = (IntermediateModelContainer) resource.getContents().get(0);
 
 		System.out.print("Successful.\n");
 		return intermModel;

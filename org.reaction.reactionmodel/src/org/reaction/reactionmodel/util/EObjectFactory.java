@@ -1,4 +1,4 @@
-package reactionContainer.util;
+package org.reaction.reactionmodel.util;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EFactory;

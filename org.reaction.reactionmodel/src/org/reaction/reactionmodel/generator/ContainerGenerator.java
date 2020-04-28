@@ -1,4 +1,4 @@
-package reactionContainer.generator;
+package org.reaction.reactionmodel.generator;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;
@@ -17,26 +17,37 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.reaction.reactionmodel.util.AgentClassFactory;
+import org.reaction.reactionmodel.util.StateClassFactory;
 
-import intermModel.*;
-import reactionContainer.Agent;
-import reactionContainer.Container;
-import reactionContainer.ReactionContainerFactory;
-import reactionContainer.ReactionContainerPackage;
-import reactionContainer.State;
-import reactionContainer.impl.ReactionContainerFactoryImpl;
-import reactionContainer.util.AgentClassFactory;
-import reactionContainer.util.StateClassFactory;
+import IntermediateModel.IntermAgent;
+import IntermediateModel.IntermAgentInstance;
+import IntermediateModel.IntermComponent;
+import IntermediateModel.IntermInitialisation;
+import IntermediateModel.IntermObservable;
+import IntermediateModel.IntermPattern;
+import IntermediateModel.IntermRule;
+import IntermediateModel.IntermSite;
+import IntermediateModel.IntermSiteInstance;
+import IntermediateModel.IntermSiteState;
+import IntermediateModel.IntermediateModelContainer;
+import IntermediateModel.IntermediateModelPackage;
+import ReactionModel.Agent;
+import ReactionModel.ReactionContainer;
+import ReactionModel.ReactionModelFactory;
+import ReactionModel.ReactionModelPackage;
+import ReactionModel.State;
+import ReactionModel.impl.ReactionModelFactoryImpl;
 
 public abstract class ContainerGenerator {
 	private String projectPath;
 	private URI modelLocation;
 	private Resource modelResource;
-	protected IntermediateModel model;
+	protected IntermediateModelContainer model;
 	private boolean isInitialized;
 
-	private ReactionContainerFactory factory;
-	protected Container containerModel;
+	private ReactionModelFactory factory;
+	protected ReactionContainer containerModel;
 
 	protected EPackage dynamicMetaModel;
 	protected AgentClassFactory agentClassFactory;
@@ -54,9 +65,9 @@ public abstract class ContainerGenerator {
 	protected Resource containerRes;
 
 	private void init() {
-		IntermModelPackage.eINSTANCE.eClass();
-		ReactionContainerPackage.eINSTANCE.eClass();
-		factory = ReactionContainerFactoryImpl.init();
+		IntermediateModelPackage.eINSTANCE.eClass();
+		ReactionModelPackage.eINSTANCE.eClass();
+		factory = ReactionModelFactoryImpl.init();
 
 		projectPath = this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
 		projectPath = projectPath.replaceFirst("/bin", "");
@@ -84,10 +95,10 @@ public abstract class ContainerGenerator {
 		init();
 	}
 
-	public ContainerGenerator(IntermediateModel model) {
+	public ContainerGenerator(IntermediateModelContainer model) {
 		modelResource = null;
 		isInitialized = model != null;
-		this.model = (IntermediateModel) model;
+		this.model = (IntermediateModelContainer) model;
 
 		init();
 	}
@@ -112,7 +123,7 @@ public abstract class ContainerGenerator {
 	}
 
 	private boolean loadModel() {
-		model = (IntermediateModel) modelResource.getContents().get(0);
+		model = (IntermediateModelContainer) modelResource.getContents().get(0);
 		if (model != null)
 			return true;
 
@@ -279,7 +290,7 @@ public abstract class ContainerGenerator {
 		setContainerURI(modelPath);
 		createAndSetResource();
 
-		containerModel = factory.createContainer();
+		containerModel = factory.createReactionContainer();
 		containerModel.setModelName(model.getName() + "Model");
 
 		createStateInstances();
@@ -324,8 +335,8 @@ public abstract class ContainerGenerator {
 		URI uri = createMetaModelURI();
 		dynamicMetaModel.setNsURI(uri.toString());
 
-		ReactionContainerPackage.eINSTANCE.getESubpackages().clear();
-		ReactionContainerPackage.eINSTANCE.getESubpackages().add(dynamicMetaModel);
+		ReactionModelPackage.eINSTANCE.getESubpackages().clear();
+		ReactionModelPackage.eINSTANCE.getESubpackages().add(dynamicMetaModel);
 		
 		stateClassFactory = new StateClassFactory(dynamicMetaModel);
 		agentClassFactory = new AgentClassFactory(dynamicMetaModel, stateClassFactory, siteConnections, getUsedStates());

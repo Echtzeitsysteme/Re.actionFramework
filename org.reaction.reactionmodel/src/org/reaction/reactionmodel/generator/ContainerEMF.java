@@ -1,4 +1,4 @@
-package reactionContainer.generator;
+package org.reaction.reactionmodel.generator;
 
 import java.util.Map;
 
@@ -8,7 +8,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import intermModel.IntermediateModel;
+import IntermediateModel.IntermediateModelContainer;
+
 
 public class ContainerEMF extends ContainerGenerator {
 	
@@ -20,7 +21,7 @@ public class ContainerEMF extends ContainerGenerator {
 		super(model);
 	}
 
-	public ContainerEMF(IntermediateModel model) {
+	public ContainerEMF(IntermediateModelContainer model) {
 		super(model);
 	}
 

@@ -5,7 +5,13 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import intermModel.*;
+import IntermediateModel.BindingState;
+import IntermediateModel.IntermAgentInstance;
+import IntermediateModel.IntermPattern;
+import IntermediateModel.IntermSiteInstance;
+import IntermediateModel.IntermSiteState;
+import IntermediateModel.IntermediateModelFactory;
+
 
 public class PatternFactory {
 
@@ -32,7 +38,7 @@ public class PatternFactory {
 	 * @return the pattern resulting from the template
 	 */
 	public IntermPattern getPattern(boolean concretePattern) {
-		IntermPattern pattern = IntermModelFactory.eINSTANCE.createIntermPattern();
+		IntermPattern pattern = IntermediateModelFactory.eINSTANCE.createIntermPattern();
 		if (!concretePattern || (unspecifiedSiteInstances != null && unspecifiedSiteInstances.isEmpty())) {
 			pattern.setName(template.getName());
 			pattern.getAgentInstances().addAll(instances.values());
@@ -75,7 +81,7 @@ public class PatternFactory {
 	public List<IntermAgentInstance> createAiCopies(List<IntermAgentInstance> original) {
 		List<IntermAgentInstance> copy = new ArrayList<>();
 		for (IntermAgentInstance ai : original) {
-			IntermAgentInstance aiCopy = IntermModelFactory.eINSTANCE.createIntermAgentInstance();
+			IntermAgentInstance aiCopy = IntermediateModelFactory.eINSTANCE.createIntermAgentInstance();
 			aiCopy.setInstanceOf(ai.getInstanceOf());
 			aiCopy.setName(ai.getName());
 			aiCopy.setLocal(ai.isLocal());
@@ -91,7 +97,7 @@ public class PatternFactory {
 	public List<IntermAgentInstance> createAiCopies(Collection<IntermAgentInstance> original) {
 		List<IntermAgentInstance> copies = new ArrayList<>();
 		for (IntermAgentInstance ai : original) {
-			IntermAgentInstance aiCopy = IntermModelFactory.eINSTANCE.createIntermAgentInstance();
+			IntermAgentInstance aiCopy = IntermediateModelFactory.eINSTANCE.createIntermAgentInstance();
 			aiCopy.setInstanceOf(ai.getInstanceOf());
 			aiCopy.setName(ai.getName());
 			aiCopy.setLocal(ai.isLocal());
@@ -105,7 +111,7 @@ public class PatternFactory {
 
 		List<IntermSiteInstance> copy = new ArrayList<>();
 		for (IntermSiteInstance si : original) {
-			IntermSiteInstance siCopy = IntermModelFactory.eINSTANCE.createIntermSiteInstance();
+			IntermSiteInstance siCopy = IntermediateModelFactory.eINSTANCE.createIntermSiteInstance();
 			siCopy.setName(si.getName());
 			siCopy.setInstanceOf(si.getInstanceOf());
 			siCopy.setBindingState(si.getBindingState());

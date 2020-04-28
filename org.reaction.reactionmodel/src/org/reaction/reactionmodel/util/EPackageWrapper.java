@@ -1,4 +1,4 @@
-package reactionContainer.util;
+package org.reaction.reactionmodel.util;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,7 +8,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import intermModel.IntermAgent;
+import IntermediateModel.IntermAgent;
+
 
 public class EPackageWrapper {
 	EPackage ePack;

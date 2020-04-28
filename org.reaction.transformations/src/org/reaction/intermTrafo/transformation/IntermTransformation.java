@@ -11,7 +11,19 @@ import org.reaction.dsl.interpreter.Calculator;
 import org.reaction.dsl.reactionLanguage.*;
 import org.reaction.intermTrafo.util.*;
 
-import intermModel.*;
+import IntermediateModel.CommandType;
+import IntermediateModel.IntermAgent;
+import IntermediateModel.IntermCommand;
+import IntermediateModel.IntermInitialisation;
+import IntermediateModel.IntermObservable;
+import IntermediateModel.IntermPattern;
+import IntermediateModel.IntermRule;
+import IntermediateModel.IntermSite;
+import IntermediateModel.IntermSiteState;
+import IntermediateModel.IntermediateModelContainer;
+import IntermediateModel.IntermediateModelFactory;
+import IntermediateModel.PatternContainer;
+
 
 public class IntermTransformation {
 
@@ -35,7 +47,7 @@ public class IntermTransformation {
 	List<IntermCommand> translatedCommands;
 
 	public IntermTransformation(ReactionModel model) {
-		patternContainer = IntermModelFactory.eINSTANCE.createPatternContainer();
+		patternContainer = IntermediateModelFactory.eINSTANCE.createPatternContainer();
 		this.originalModel = model;
 		calculator = new Calculator();
 		init();
@@ -44,11 +56,11 @@ public class IntermTransformation {
 	/**
 	 * @return the intermediate model
 	 */
-	public IntermediateModel generateIntermediateModel() {
+	public IntermediateModelContainer generateIntermediateModel() {
 
 		System.out.print("Generating new Model...");
 
-		IntermediateModel intermModel = IntermModelFactory.eINSTANCE.createIntermediateModel();
+		IntermediateModelContainer intermModel = IntermediateModelFactory.eINSTANCE.createIntermediateModelContainer();
 		intermModel.setPatternContainer(patternContainer);
 
 		// Transform Agents and add to model
@@ -152,7 +164,7 @@ public class IntermTransformation {
 	private void transformAgents() {
 		agentToIntermAgent = new HashMap<>();
 		for (Agent agent : agentsInDeclarations) {
-			IntermAgent newAgent = IntermModelFactory.eINSTANCE.createIntermAgent();
+			IntermAgent newAgent = IntermediateModelFactory.eINSTANCE.createIntermAgent();
 			newAgent.setName(agent.getName());
 			agentToIntermAgent.put(agent, newAgent);
 			List<IntermSite> newSites = createSites(agent);
@@ -185,7 +197,7 @@ public class IntermTransformation {
 		for (Initialisation init : initialisationsInModel) {
 
 			// Cnt evaluation
-			IntermInitialisation newInit = IntermModelFactory.eINSTANCE.createIntermInitialisation();
+			IntermInitialisation newInit = IntermediateModelFactory.eINSTANCE.createIntermInitialisation();
 			newInit.setCnt((int) Math.floor(calculator.evaluate(init.getHead().getCnt())));
 
 			// pattern transformation
@@ -209,7 +221,7 @@ public class IntermTransformation {
 		translatedObservables = new ArrayList<>();
 
 		for (Observable obs : observablesInModel) {
-			IntermObservable iObs = IntermModelFactory.eINSTANCE.createIntermObservable();
+			IntermObservable iObs = IntermediateModelFactory.eINSTANCE.createIntermObservable();
 			iObs.setName(obs.getName());
 
 			ObservableBody obsBody = obs.getBody();
@@ -237,7 +249,7 @@ public class IntermTransformation {
 
 		for (TerminateCommand comm : commandsInModel) {
 
-			IntermCommand iComm = IntermModelFactory.eINSTANCE.createIntermCommand();
+			IntermCommand iComm = IntermediateModelFactory.eINSTANCE.createIntermCommand();
 
 			if (comm instanceof TerminateTime) {
 				iComm.setType(CommandType.TIME);
@@ -284,7 +296,7 @@ public class IntermTransformation {
 	 * @return the intermediate site for the given site
 	 */
 	private IntermSite createSite(Site site) {
-		IntermSite newSite = IntermModelFactory.eINSTANCE.createIntermSite();
+		IntermSite newSite = IntermediateModelFactory.eINSTANCE.createIntermSite();
 		newSite.setName(site.getName());
 		List<IntermSiteState> newStates = createStates(site.getStates());
 		newSite.getSiteStates().addAll(newStates);
@@ -298,7 +310,7 @@ public class IntermTransformation {
 	private List<IntermSiteState> createStates(List<SiteState> states) {
 		List<IntermSiteState> intermStates = new ArrayList<>();
 		for (SiteState state : states) {
-			IntermSiteState newState = IntermModelFactory.eINSTANCE.createIntermSiteState();
+			IntermSiteState newState = IntermediateModelFactory.eINSTANCE.createIntermSiteState();
 			newState.setName(state.getName());
 			intermStates.add(newState);
 		}

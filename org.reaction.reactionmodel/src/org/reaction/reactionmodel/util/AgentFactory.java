@@ -1,10 +1,10 @@
-package reactionContainer.util;
+package org.reaction.reactionmodel.util;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
-import intermModel.IntermAgent;
-import reactionContainer.Agent;
+import IntermediateModel.IntermAgent;
+import ReactionModel.Agent;
 
 public class AgentFactory extends EObjectFactory<Agent, IntermAgent>{
 	
