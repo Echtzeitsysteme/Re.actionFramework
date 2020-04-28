@@ -8,8 +8,11 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.reaction.ibex.patternCreation,
+Export-Package: org.reaction.build.simsg,
+ org.reaction.ibex.patternCreation,
  org.reaction.ibex.patternCreation.utils,
+ org.reaction.intermTrafo.transformation,
+ org.reaction.intermTrafo.util,
  org.reaction.transformations.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,

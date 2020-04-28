@@ -24,4 +24,4 @@ complex (p: P, t:T){
 observe T_pp (t: T): t.x(p), t.y(p)	
 observe T_pp_unbound (t: T): t.x(p)//0, t.y(p)//0
 
-terminate iterations = 30000    
+terminate iterations = 30000     

@@ -78,7 +78,7 @@ public class GTCreator {
 	 */
 	public void saveRuleSet(String saveLocation) {
 
-		System.out.print("Saving GT rule set to " + saveLocation + "... ");
+//		System.out.print("Saving GT rule set to " + saveLocation + "... ");
 
 		// Register the XMI resource factory
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
@@ -134,7 +134,7 @@ public class GTCreator {
 		// now save the content.
 		try {
 			resource.save(options);
-			System.out.print("Successful.\n");
+//			System.out.print("Successful.\n");
 		} catch (IOException e) {
 			// Auto-generated catch block
 			e.printStackTrace();

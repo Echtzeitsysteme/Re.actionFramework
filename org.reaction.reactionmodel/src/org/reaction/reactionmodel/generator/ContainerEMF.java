@@ -41,7 +41,7 @@ public class ContainerEMF extends ContainerGenerator {
 		
 		
 		((XMIResource)containerRes).save(saveOptions);
-		System.out.println("Model saved to: "+containerURI.path());
+//		System.out.println("Model saved to: "+containerURI.path());
 	}
 	
 	

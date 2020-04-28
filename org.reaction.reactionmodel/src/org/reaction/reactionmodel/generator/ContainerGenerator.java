@@ -259,9 +259,10 @@ public abstract class ContainerGenerator {
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
 
 		ResourceSet resSet = new ResourceSetImpl();
-		String absoluteMetaModelPath = FileSystems.getDefault().getPath(metaModelPath).normalize().toAbsolutePath().toString();
+		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
+//		String absoluteMetaModelPath = FileSystems.getDefault().getPath(metaModelPath).normalize().toAbsolutePath().toString();
 
-		Resource res = resSet.createResource(URI.createFileURI(absoluteMetaModelPath));
+		Resource res = resSet.createResource(URI.createURI("platform:/resource"+metaModelPath, true));
 		res.getContents().add(dynamicMetaModel);
 		
 		EPackage.Registry.INSTANCE.put(dynamicMetaModel.getNsURI(), dynamicMetaModel);
@@ -278,6 +279,10 @@ public abstract class ContainerGenerator {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public EPackage getMetamodel() {
+		return dynamicMetaModel;
 	}
 
 	public void doGenerate(String modelPath, String metaModelPath) throws Exception {
