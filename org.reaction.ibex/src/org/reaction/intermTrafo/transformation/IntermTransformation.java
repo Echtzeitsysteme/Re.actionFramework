@@ -58,10 +58,11 @@ public class IntermTransformation {
 	 */
 	public IntermediateModelContainer generateIntermediateModel() {
 
-		System.out.print("Generating new Model...");
+//		System.out.print("Generating new Model...");
 
 		IntermediateModelContainer intermModel = IntermediateModelFactory.eINSTANCE.createIntermediateModelContainer();
 		intermModel.setPatternContainer(patternContainer);
+		intermModel.setName(originalModel.eResource().getURI().trimFileExtension().lastSegment());
 
 		// Transform Agents and add to model
 		transformAgents();
@@ -83,7 +84,7 @@ public class IntermTransformation {
 		transformCommands();
 		intermModel.getComponents().addAll(translatedCommands);
 		
-		System.out.print(" Done.\n");
+//		System.out.print(" Done.\n");
 		return intermModel;
 	}
 
