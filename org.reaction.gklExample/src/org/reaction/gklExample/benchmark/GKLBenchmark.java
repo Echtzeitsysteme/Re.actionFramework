@@ -5,12 +5,12 @@ import org.simsg.core.simulation.Simulation;
 import org.simsg.core.simulation.SimulationConfigurator;
 import org.simsg.core.utils.Runtimer;
 
-import reactionContainer.ReactionContainerPackage;
+import ReactionModel.ReactionModelPackage;
 
 public class GKLBenchmark {
 
 	public static void main(String[] args) {
-		ReactionContainerPackage.eINSTANCE.eClass();
+		ReactionModelPackage.eINSTANCE.eClass();
 		GklExampleSimSGApi api = new GklExampleSimSGApi();
 
 		// Choose Pattern Matching Engine to use

@@ -50,7 +50,7 @@ public class IBeXCreator {
 		Resource resource = resSet.createResource(URI.createFileURI(ibexSaveLocation));
 		resource.getContents().add(ibexPatternSet);
 		Map<Object, Object> options = ((XMLResource) resource).getDefaultSaveOptions();
-		options.put(XMIResource.OPTION_ENCODING, "ASCII");
+		options.put(XMIResource.OPTION_ENCODING, "UTF-8");
 		options.put(XMIResource.OPTION_SAVE_ONLY_IF_CHANGED, XMIResource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
 //		options.put(XMLResource.OPTION_URI_HANDLER, new URIHandlerImpl() {
 //			@Override
@@ -93,5 +93,6 @@ public class IBeXCreator {
 			System.err.println("Error trying to save the ibex-patterns at " + ibexSaveLocation);
 			return;
 		}
+//		resource.unload();
 	}
 }

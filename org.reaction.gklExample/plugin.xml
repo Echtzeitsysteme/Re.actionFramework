@@ -6,25 +6,15 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated GKLModel -->
-      <package
-            uri="platform:/resource/org.reaction.gklExample/model/GKL.ecore"
-            class="GKLModel.GKLModelPackage"/>
-   </extension>
+
+
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated GKLModel -->
-      <package
-            uri="platform:/resource/org.reaction.reactionmodel/model/ReactionModel.ecore"
-            class="ReactionModel.ReactionModelPackage"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated GKLModel -->
+      <!-- @generated GKL -->
       <package
             uri="platform:/resource/org.reaction.gklExample/model/GKL.ecore"
-            class="ReactionModel.GKLModel.GKLModelPackage"/>
+            class="GKLModel.GKLModelPackage"
+            genModel="model/GKL.genmodel"/>
    </extension>
 
 </plugin>

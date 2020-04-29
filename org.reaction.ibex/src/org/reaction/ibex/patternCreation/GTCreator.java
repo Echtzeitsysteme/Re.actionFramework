@@ -139,5 +139,6 @@ public class GTCreator {
 			// Auto-generated catch block
 			e.printStackTrace();
 		}
+//		resource.unload();
 	}
 }

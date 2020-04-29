@@ -97,6 +97,8 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 			try {
 				gen.doGenerate(folder.getFullPath().toPortableString()+"/"+intermediateModel.getName()+"_container.xmi", folder.getFullPath().toPortableString()+"/"+intermediateModel.getName()+".ecore");
 				metaModels.put(editorModel, gen.getMetamodel());
+				org.eclipse.emf.ecore.EPackage.Registry reg = EPackage.Registry.INSTANCE;
+				reg.put(gen.getMetamodel().getNsURI(), gen.getMetamodel());
 			} catch (Exception e) {
 				logger.error("Could not generate metamodels. Error: \n" + e.getMessage());
 				return;
@@ -116,6 +118,13 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 			gtRules.put(editorModel, creator.getGTRuleSet());
 			creator.saveRuleSet(folder.getFullPath().toPortableString()+"/"+intermediateModel.getName()+"_gtrules.xmi");
 		});
+		
+		//cleanup
+		intermediateModels.values().forEach(x -> x.eResource().unload());
+		metaModels.values().forEach(x -> x.eResource().unload());
+		ibexPatterns.values().forEach(x -> x.eResource().unload());
+		gtRules.values().forEach(x -> x.eResource().unload());
+		
 		double toc = System.currentTimeMillis();
 		logger.log(Priority.INFO, "Creating metamodels from specifications.. Done! ("+ (toc-tic)/1000.0 + " seconds.)");
 	}
@@ -139,6 +148,7 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 		} catch (IOException e) {
 			LogUtils.error(logger, "Couldn't save resource: \n "+e.getMessage());
 		}
+//		modelResource.unload();
 	}
 	
 	/**

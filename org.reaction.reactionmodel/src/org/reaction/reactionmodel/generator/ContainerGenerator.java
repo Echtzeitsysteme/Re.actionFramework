@@ -9,13 +9,16 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
+import org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.reaction.reactionmodel.util.AgentClassFactory;
 import org.reaction.reactionmodel.util.StateClassFactory;
@@ -104,8 +107,7 @@ public abstract class ContainerGenerator {
 	}
 
 	private boolean loadResource() {
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("ReactionRules",
-				new XMIResourceFactoryImpl());
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().putIfAbsent("xmi", new XMIResourceFactoryImpl());
 		ResourceSet rs = new ResourceSetImpl();
 		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 		modelResource = null;
@@ -268,17 +270,24 @@ public abstract class ContainerGenerator {
 		EPackage.Registry.INSTANCE.put(dynamicMetaModel.getNsURI(), dynamicMetaModel);
 
 		Map<Object, Object> saveOptions = ((XMIResource) res).getDefaultSaveOptions();
-		saveOptions.put(XMIResource.OPTION_ENCODING, "UTF-8");
-		saveOptions.put(XMIResource.OPTION_USE_XMI_TYPE, Boolean.TRUE);
-		saveOptions.put(XMIResource.OPTION_SAVE_TYPE_INFORMATION, Boolean.TRUE);
-		saveOptions.put(XMIResource.OPTION_SCHEMA_LOCATION_IMPLEMENTATION, Boolean.TRUE);
-
+//		saveOptions.put(XMIResource.OPTION_ENCODING, "UTF-8");
+//		saveOptions.put(XMIResource.OPTION_USE_XMI_TYPE, Boolean.TRUE);
+//		saveOptions.put(XMIResource.OPTION_SAVE_TYPE_INFORMATION, Boolean.TRUE);
+//		saveOptions.put(XMIResource.OPTION_SCHEMA_LOCATION_IMPLEMENTATION, Boolean.TRUE);
+		saveOptions.put(XMIResource.OPTION_SAVE_ONLY_IF_CHANGED, XMIResource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
+		saveOptions.put(XMLResource.OPTION_URI_HANDLER, new URIHandlerImpl() {
+			@Override
+			public URI deresolve(URI uri) {
+				return uri;
+			}
+		});
 		try {
 			((XMIResource) res).save(saveOptions);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+//		res.unload();
 	}
 	
 	public EPackage getMetamodel() {
@@ -339,9 +348,13 @@ public abstract class ContainerGenerator {
 		dynamicMetaModel.setNsPrefix(dynamicMetaModelName);
 		URI uri = createMetaModelURI();
 		dynamicMetaModel.setNsURI(uri.toString());
+		
+		EAnnotation genAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
+		genAnnotation.setSource("http://www.eclipse.org/emf/2002/GenModel");
+		dynamicMetaModel.getEAnnotations().add(genAnnotation);
 
-		ReactionModelPackage.eINSTANCE.getESubpackages().clear();
-		ReactionModelPackage.eINSTANCE.getESubpackages().add(dynamicMetaModel);
+//		ReactionModelPackage.eINSTANCE.getESubpackages().clear();
+//		ReactionModelPackage.eINSTANCE.getESubpackages().add(dynamicMetaModel);
 		
 		stateClassFactory = new StateClassFactory(dynamicMetaModel);
 		agentClassFactory = new AgentClassFactory(dynamicMetaModel, stateClassFactory, siteConnections, getUsedStates());

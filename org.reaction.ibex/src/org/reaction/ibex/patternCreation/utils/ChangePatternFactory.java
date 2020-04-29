@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -55,6 +56,9 @@ public class ChangePatternFactory {
 		edgeTypeRegistry = new HashMap<>();
 
 		for (EObject obj : metamodelPackage.eContents()) {
+			if(obj instanceof EAnnotation)
+				continue;
+			
 			EClassImpl clazz = (EClassImpl) obj;
 			if (ModelHelper.isAgent(clazz)) {
 				agentTypeRegistry.put(clazz.getName(), clazz);
