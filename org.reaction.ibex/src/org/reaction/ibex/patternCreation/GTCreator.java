@@ -93,43 +93,43 @@ public class GTCreator {
 		resource.getContents().add(gtRules);
 		
 		Map<Object, Object> options = ((XMLResource) resource).getDefaultSaveOptions();
-		options.put(XMIResource.OPTION_ENCODING, "ASCII");
+		options.put(XMIResource.OPTION_ENCODING, "UTF-8");
 		options.put(XMIResource.OPTION_SAVE_ONLY_IF_CHANGED, XMIResource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
-		options.put(XMLResource.OPTION_URI_HANDLER, new URIHandlerImpl() {
-			@Override
-			public URI deresolve(final URI uri) {
-				if (!uri.isPlatform()) {
-					// DONT TOUCH----------------------------------------------
-					String[] uriSegments = uri.segments();
-					String uriString;
-					final String MODEL_STRING = "model";
-					int modelPos = -1;
-
-					// find "model"-segment
-					for (int i = 0; i < uriSegments.length; i++) {
-						if (uriSegments[i].equals(MODEL_STRING)) {
-							modelPos = i;
-							break;
-						}
-					}
-
-					// create platform uri
-					StringBuilder sb = new StringBuilder("platform:/resource");
-					for (int i = modelPos - 1; i < uriSegments.length; i++) {
-						sb.append("/");
-						sb.append(uriSegments[i]);
-					}
-
-					sb.append("#");
-					sb.append(uri.fragment());
-					uriString = sb.toString();
-
-					return URI.createURI(uriString, true);
-				} else {
-					return uri;
-				}
-			}
-		});
+//		options.put(XMLResource.OPTION_URI_HANDLER, new URIHandlerImpl() {
+//			@Override
+//			public URI deresolve(final URI uri) {
+//				if (!uri.isPlatform()) {
+//					// DONT TOUCH----------------------------------------------
+//					String[] uriSegments = uri.segments();
+//					String uriString;
+//					final String MODEL_STRING = "model";
+//					int modelPos = -1;
+//
+//					// find "model"-segment
+//					for (int i = 0; i < uriSegments.length; i++) {
+//						if (uriSegments[i].equals(MODEL_STRING)) {
+//							modelPos = i;
+//							break;
+//						}
+//					}
+//
+//					// create platform uri
+//					StringBuilder sb = new StringBuilder("platform:/resource");
+//					for (int i = modelPos - 1; i < uriSegments.length; i++) {
+//						sb.append("/");
+//						sb.append(uriSegments[i]);
+//					}
+//
+//					sb.append("#");
+//					sb.append(uri.fragment());
+//					uriString = sb.toString();
+//
+//					return URI.createURI(uriString, true);
+//				} else {
+//					return uri;
+//				}
+//			}
+//		});
 
 		// now save the content.
 		try {

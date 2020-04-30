@@ -87,6 +87,7 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 		});
 		
 		IFolder folder = project.getFolder(SimSGBuilder.DEFAULT_METAMODEL_LOCATION);
+		IFolder instancesFolder = project.getFolder(SimSGBuilder.DEFAULT_MODEL_LOCATION);
 		intermediateModels.values().forEach(iModel -> {
 			saveResource(iModel, folder.getFullPath().toPortableString()+"/"+iModel.getName()+"_intermediate.xmi");
 		});
@@ -95,7 +96,7 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 		intermediateModels.forEach((editorModel, intermediateModel) -> {
 			ContainerGenerator gen = new ContainerEMF(intermediateModel);
 			try {
-				gen.doGenerate(folder.getFullPath().toPortableString()+"/"+intermediateModel.getName()+"_container.xmi", folder.getFullPath().toPortableString()+"/"+intermediateModel.getName()+".ecore");
+				gen.doGenerate(instancesFolder.getFullPath().toPortableString()+"/"+intermediateModel.getName()+"_container.xmi", folder.getFullPath().toPortableString()+"/"+intermediateModel.getName()+".ecore");
 				metaModels.put(editorModel, gen.getMetamodel());
 				org.eclipse.emf.ecore.EPackage.Registry reg = EPackage.Registry.INSTANCE;
 				reg.put(gen.getMetamodel().getNsURI(), gen.getMetamodel());
