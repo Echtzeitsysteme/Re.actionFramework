@@ -5,12 +5,17 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.eclipse.emf.ecore.EPackage;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternSet;
 import org.reaction.dsl.reactionLanguage.ReactionLanguagePackage;
 import org.reaction.dsl.reactionLanguage.ReactionModel;
 import org.reaction.export.BNGLFactory;
+import org.reaction.ibex.patternCreation.GTCreator;
+import org.reaction.ibex.patternCreation.IBeXCreator;
+import org.reaction.ibex.patternCreation.SimDefCreator;
 import org.reaction.reactionmodel.generator.ContainerEMF;
 import org.reaction.reactionmodel.generator.ContainerGenerator;
 import org.reaction.intermTrafo.transformation.IntermTransformation;
+import org.reaction.intermTrafo.util.EMFResourceHelper;
 
 import IntermediateModel.IntermediateModelContainer;
 import ReactionModel.ReactionModelPackage;

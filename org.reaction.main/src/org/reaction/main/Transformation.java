@@ -11,6 +11,8 @@ import org.reaction.ibex.patternCreation.IBeXCreator;
 import org.reaction.ibex.patternCreation.SimDefCreator;
 import org.reaction.intermTrafo.transformation.IntermTransformation;
 import org.reaction.intermTrafo.util.EMFResourceHelper;
+import org.reaction.reactionmodel.generator.ContainerEMF;
+import org.reaction.reactionmodel.generator.ContainerGenerator;
 
 import IntermediateModel.IntermediateModelContainer;
 

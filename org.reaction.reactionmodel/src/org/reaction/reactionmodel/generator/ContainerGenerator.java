@@ -293,6 +293,10 @@ public abstract class ContainerGenerator {
 	public EPackage getMetamodel() {
 		return dynamicMetaModel;
 	}
+	
+	public ReactionContainer getContainerModel() {
+		return containerModel;
+	}
 
 	public void doGenerate(String modelPath, String metaModelPath) throws Exception {
 		setMetaModelPath(metaModelPath);
@@ -314,8 +318,7 @@ public abstract class ContainerGenerator {
 		containerRes.getContents().add(containerModel);
 		saveModel();
 		saveMetaModel();
-
-		containerRes.unload();
+		
 	}
 
 	private void generateInitializationTemplates() {
