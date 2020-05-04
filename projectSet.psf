@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psf version="2.0">
+<provider id="org.eclipse.egit.core.GitProvider">
+<project reference="1.0,https://github.com/Echtzeitsysteme/Re.actionFramework.git,master,org.reaction.ibex"/>
+<project reference="1.0,https://github.com/Echtzeitsysteme/Re.actionFramework.git,master,org.reaction.dsl"/>
+<project reference="1.0,https://github.com/Echtzeitsysteme/Re.actionFramework.git,master,org.reaction.dsl.ide"/>
+<project reference="1.0,https://github.com/Echtzeitsysteme/Re.actionFramework.git,master,org.reaction.dsl.ui"/>
+<project reference="1.0,https://github.com/Echtzeitsysteme/Re.actionFramework.git,master,org.reaction.export"/>
+<project reference="1.0,https://github.com/Echtzeitsysteme/Re.actionFramework.git,master,org.reaction.intermediatemodel"/>
+<project reference="1.0,https://github.com/Echtzeitsysteme/Re.actionFramework.git,master,org.reaction.reactionmodel"/>
+</provider>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1588057213013_18" label="re.action" name="re.action">
+<item elementID="=org.reaction.export" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.reaction.reactionmodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.reaction.dsl.ui" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.reaction.intermediatemodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.reaction.build" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.reaction.dsl" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.reaction.dsl.ide" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSets>
+</psf>
