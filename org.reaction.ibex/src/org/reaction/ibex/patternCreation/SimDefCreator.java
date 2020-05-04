@@ -14,20 +14,24 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContext;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContextPattern;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternModelPackage;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternSet;
 
 import GTLanguage.GTLanguagePackage;
 import GTLanguage.GTRule;
 import GTLanguage.GTRuleSet;
-import IBeXLanguage.IBeXContext;
-import IBeXLanguage.IBeXContextPattern;
-import IBeXLanguage.IBeXLanguagePackage;
-import IBeXLanguage.IBeXPatternSet;
+import IntermediateModel.IntermCommand;
+import IntermediateModel.IntermComponent;
+import IntermediateModel.IntermObservable;
+import IntermediateModel.IntermRule;
+import IntermediateModel.IntermediateModelContainer;
 import SimulationDefinition.*;
-import intermModel.*;
 
 public class SimDefCreator {
 
-	private IntermediateModel model;
+	private IntermediateModelContainer model;
 	private String trgProjectLocation;
 
 	private URI gtRulesUri;
@@ -42,7 +46,7 @@ public class SimDefCreator {
 	private SimDefinition definition;
 	private SimulationDefinitionFactory factory = SimulationDefinitionFactory.eINSTANCE;
 
-	public SimDefCreator(IntermediateModel model, String trgProjectLocation) {
+	public SimDefCreator(IntermediateModelContainer model, String trgProjectLocation) {
 		this.model = model;
 		this.trgProjectLocation = trgProjectLocation;
 		init();
@@ -299,7 +303,7 @@ public class SimDefCreator {
 	}
 
 	private void setIBeXPatterns() {
-		IBeXLanguagePackage.eINSTANCE.eClass();
+		IBeXPatternModelPackage.eINSTANCE.eClass();
 		IBeXPatternSet patterns = null;
 		try {
 			Resource rs = loadResource(ibexPatternsUri);

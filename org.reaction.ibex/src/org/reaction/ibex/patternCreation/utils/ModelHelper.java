@@ -8,18 +8,18 @@ import java.util.regex.Pattern;
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContext;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContextPattern;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXCreatePattern;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXDeletePattern;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXEdge;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXNode;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternInvocation;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternSet;
 
-import IBeXLanguage.IBeXContext;
-import IBeXLanguage.IBeXContextPattern;
-import IBeXLanguage.IBeXCreatePattern;
-import IBeXLanguage.IBeXDeletePattern;
-import IBeXLanguage.IBeXEdge;
-import IBeXLanguage.IBeXNode;
-import IBeXLanguage.IBeXPatternInvocation;
-import IBeXLanguage.IBeXPatternSet;
-import intermModel.IntermAgentInstance;
-import intermModel.IntermSiteInstance;
-import reactionContainer.ReactionContainerPackage;
+import IntermediateModel.IntermAgentInstance;
+import IntermediateModel.IntermSiteInstance;
+import ReactionModel.ReactionModelPackage;
 
 public class ModelHelper {
 
@@ -266,7 +266,7 @@ public class ModelHelper {
 	 * @return true if the given class inherited from the agent class
 	 */
 	public static boolean isAgent(EClass clazz) {
-		EClass agentClass = ReactionContainerPackage.Literals.AGENT;
+		EClass agentClass = ReactionModelPackage.Literals.AGENT;
 		if (clazz == agentClass) {
 			return true;
 		} else {

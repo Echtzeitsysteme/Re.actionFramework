@@ -3,14 +3,16 @@ package org.reaction.ibex.patternCreation.utils;
 import java.util.LinkedList;
 import java.util.List;
 import org.eclipse.emf.ecore.EPackage;
-import IBeXLanguage.IBeXPatternSet;
-import intermModel.IntermComponent;
-import intermModel.IntermRule;
-import intermModel.IntermediateModel;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternSet;
+
+import IntermediateModel.IntermComponent;
+import IntermediateModel.IntermRule;
+import IntermediateModel.IntermediateModelContainer;
+
 
 public class ChangeCreator {
 
-	private IntermediateModel model;
+	private IntermediateModelContainer model;
 	private EPackage metamodelPackage;
 	
 	private List<ChangePatternTemplate> changePatternTemplates;
@@ -18,7 +20,7 @@ public class ChangeCreator {
 	
 	private IBeXPatternSet ibexPatternSet;
 
-	public ChangeCreator(IntermediateModel model, EPackage metamodelPackage, IBeXPatternSet ibexPatternSet) {
+	public ChangeCreator(IntermediateModelContainer model, EPackage metamodelPackage, IBeXPatternSet ibexPatternSet) {
 		this.model = model;
 		this.metamodelPackage = metamodelPackage;
 		this.ibexPatternSet = ibexPatternSet;

@@ -6,33 +6,34 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EClassImpl;
 import org.emoflon.ibex.common.patterns.IBeXPatternFactory;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContext;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContextPattern;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXEdge;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXNode;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXNodePair;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternInvocation;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternModelFactory;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternSet;
 
-import IBeXLanguage.IBeXContext;
-import IBeXLanguage.IBeXContextPattern;
-import IBeXLanguage.IBeXEdge;
-import IBeXLanguage.IBeXLanguageFactory;
-import IBeXLanguage.IBeXNode;
-import IBeXLanguage.IBeXNodePair;
-import IBeXLanguage.IBeXPatternInvocation;
-import IBeXLanguage.IBeXPatternSet;
-import intermModel.IntermAgentInstance;
-import intermModel.IntermComponent;
-import intermModel.IntermObservable;
-import intermModel.IntermPattern;
-import intermModel.IntermRule;
-import intermModel.IntermSiteInstance;
-import intermModel.IntermSiteState;
-import intermModel.IntermediateModel;
-import reactionContainer.ReactionContainerPackage;
+import IntermediateModel.IntermAgentInstance;
+import IntermediateModel.IntermComponent;
+import IntermediateModel.IntermObservable;
+import IntermediateModel.IntermPattern;
+import IntermediateModel.IntermRule;
+import IntermediateModel.IntermSiteInstance;
+import IntermediateModel.IntermSiteState;
+import IntermediateModel.IntermediateModelContainer;
+import ReactionModel.ReactionModelPackage;
 
 public class ContextCreator {
-	private IntermediateModel model;
+	private IntermediateModelContainer model;
 
 	private EPackage metamodelPackage;
 
@@ -50,10 +51,10 @@ public class ContextCreator {
 	private Map<String, IBeXContextPattern> boundPatterns;
 	private Map<String, IBeXContextPattern> conditionPatterns;
 
-	private IBeXLanguageFactory ibexFactory;
+	private IBeXPatternModelFactory ibexFactory;
 	private IBeXPatternSet ibexPatternSet;
 
-	public ContextCreator(IntermediateModel model, EPackage metamodelPackage) {
+	public ContextCreator(IntermediateModelContainer model, EPackage metamodelPackage) {
 		this.model = model;
 		this.metamodelPackage = metamodelPackage;
 		boundPatterns = new HashMap<>();
@@ -62,7 +63,7 @@ public class ContextCreator {
 	}
 
 	private void init() {
-		ibexFactory = IBeXLanguageFactory.eINSTANCE;
+		ibexFactory = IBeXPatternModelFactory.eINSTANCE;
 		ibexPatternSet = ibexFactory.createIBeXPatternSet();
 		findAgentsAndStates();
 		setModelComponents();
@@ -89,6 +90,9 @@ public class ContextCreator {
 		stateTypeRegistry = new HashMap<>();
 		edgeTypeRegistry = new HashMap<>();
 		for (EObject obj : metamodelPackage.eContents()) {
+			if(obj instanceof EAnnotation)
+				continue;
+			
 			EClassImpl clazz = (EClassImpl) obj;
 			if (ModelHelper.isAgent(clazz)) {
 				agentTypeRegistry.put(clazz.getName(), clazz);
@@ -169,8 +173,8 @@ public class ContextCreator {
 					continue;
 				}
 
-				if (n1.getType() == ReactionContainerPackage.Literals.AGENT
-						|| n2.getType() == ReactionContainerPackage.Literals.AGENT || n1.getType() == n2.getType()) {
+				if (n1.getType() == ReactionModelPackage.Literals.AGENT
+						|| n2.getType() == ReactionModelPackage.Literals.AGENT || n1.getType() == n2.getType()) {
 
 					IBeXNodePair pair = ibexFactory.createIBeXNodePair();
 					pair.getValues().add(n1);
@@ -201,7 +205,7 @@ public class ContextCreator {
 			for (EReference ref : contents) {
 				// skip if reference points to state
 				EClass refType = ref.getEReferenceType();
-				EClass stateClass = ReactionContainerPackage.Literals.STATE;
+				EClass stateClass = ReactionModelPackage.Literals.STATE;
 				List<EClass> superTypes = refType.getESuperTypes();
 				if (!superTypes.isEmpty()) {
 					EClass superType = superTypes.get(0);
@@ -395,7 +399,7 @@ public class ContextCreator {
 		}
 
 		// If condition pattern does not already exit -> create a new one
-		forbiddenPattern = IBeXLanguageFactory.eINSTANCE.createIBeXContextPattern();
+		forbiddenPattern = IBeXPatternModelFactory.eINSTANCE.createIBeXContextPattern();
 		forbiddenPattern.setName(qualifiedName);
 
 		IntermAgentInstance trgParent = trg.getParent();
@@ -604,7 +608,7 @@ public class ContextCreator {
 
 		// Add container node for imitating blank pattern
 		if (instances.isEmpty()) {
-			IBeXNode blankNode = IBeXPatternFactory.createNode("blank", ReactionContainerPackage.Literals.CONTAINER);
+			IBeXNode blankNode = IBeXPatternFactory.createNode("blank", ReactionModelPackage.Literals.REACTION_CONTAINER);
 			contextPattern.getSignatureNodes().add(blankNode);
 			return contextPattern;
 		}

@@ -1,24 +1,28 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: org.reaction.ibex;singleton:=true
+Bundle-SymbolicName: org.reaction.build;singleton:=true
 Automatic-Module-Name: org.simsg.container
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.reaction.ibex.patternCreation,
+Export-Package: org.reaction.build.simsg,
+ org.reaction.ibex.patternCreation,
  org.reaction.ibex.patternCreation.utils,
+ org.reaction.intermTrafo.transformation,
+ org.reaction.intermTrafo.util,
  org.reaction.transformations.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.xtext;bundle-version="2.20.0",
- org.eclipse.emf.common.source;bundle-version="2.17.0",
- org.eclipse.emf.ecore.xmi.source;bundle-version="2.16.0",
+ org.eclipse.xtext,
  SimulationDefinition,
- reactionContainer;bundle-version="0.1.0",
- org.emoflon.ibex.gt;bundle-version="1.0.0",
+ org.emoflon.ibex.gt,
  org.reaction.dsl,
- IntermModel;bundle-version="1.0.0"
+ org.emoflon.ibex.patternmodel,
+ org.reaction.intermediatemodel,
+ org.reaction.reactionmodel,
+ org.simsg.ui;bundle-version="1.0.0",
+ org.eclipse.core.resources
 Bundle-ActivationPolicy: lazy

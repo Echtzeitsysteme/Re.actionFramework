@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="org.reaction.gklExample/gen/" modelPluginID="org.reaction.gklExample"
+    modelName="GKL" generateSchema="true" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="platform:/plugin/org.reaction.reactionmodel/model/ReactionModel.genmodel#//ReactionModel"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>GKL.ecore</foreignModel>
+  <genPackages prefix="GKLModel" disposableProviderFactory="true" ecorePackage="GKL.ecore#/">
+    <genClasses ecoreClass="GKL.ecore#//P">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GKL.ecore#//P/P_a_T_x"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GKL.ecore#//P/P_a_T_y"/>
+    </genClasses>
+    <genClasses ecoreClass="GKL.ecore#//T">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GKL.ecore#//T/T_x_P_a"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GKL.ecore#//T/T_y_P_a"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GKL.ecore#//T/T_x_K_a"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GKL.ecore#//T/T_x_u"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GKL.ecore#//T/T_x_p"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GKL.ecore#//T/T_y_K_a"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GKL.ecore#//T/T_y_u"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GKL.ecore#//T/T_y_p"/>
+    </genClasses>
+    <genClasses ecoreClass="GKL.ecore#//K">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GKL.ecore#//K/K_a_T_x"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference GKL.ecore#//K/K_a_T_y"/>
+    </genClasses>
+    <genClasses ecoreClass="GKL.ecore#//U_s"/>
+    <genClasses ecoreClass="GKL.ecore#//P_s"/>
+  </genPackages>
+</genmodel:GenModel>

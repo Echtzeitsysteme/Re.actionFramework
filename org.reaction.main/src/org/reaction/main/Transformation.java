@@ -3,6 +3,7 @@ package org.reaction.main;
 import java.io.File;
 
 import org.eclipse.emf.ecore.EPackage;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternSet;
 import org.reaction.dsl.reactionLanguage.ReactionModel;
 import org.reaction.export.BNGLFactory;
 import org.reaction.ibex.patternCreation.GTCreator;
@@ -10,11 +11,10 @@ import org.reaction.ibex.patternCreation.IBeXCreator;
 import org.reaction.ibex.patternCreation.SimDefCreator;
 import org.reaction.intermTrafo.transformation.IntermTransformation;
 import org.reaction.intermTrafo.util.EMFResourceHelper;
+import org.reaction.reactionmodel.generator.ContainerEMF;
+import org.reaction.reactionmodel.generator.ContainerGenerator;
 
-import IBeXLanguage.IBeXPatternSet;
-import intermModel.IntermediateModel;
-import reactionContainer.generator.ContainerEMF;
-import reactionContainer.generator.ContainerGenerator;
+import IntermediateModel.IntermediateModelContainer;
 
 public class Transformation {
 
@@ -30,7 +30,7 @@ public class Transformation {
 	}
 
 	public void start() {
-		IntermediateModel intermModel;
+		IntermediateModelContainer intermModel;
 
 //		// Clear directories
 //		System.out.println("Clearing directories...");

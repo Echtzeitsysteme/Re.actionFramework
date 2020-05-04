@@ -1,15 +1,15 @@
 package org.reaction.export;
 
-import org.xtext.biochemics.dotDsl.ArithmeticExpr;
-import org.xtext.biochemics.dotDsl.Div;
-import org.xtext.biochemics.dotDsl.FunctionCall;
-import org.xtext.biochemics.dotDsl.Minus;
-import org.xtext.biochemics.dotDsl.Multi;
-import org.xtext.biochemics.dotDsl.NumberLiteral;
-import org.xtext.biochemics.dotDsl.Plus;
-import org.xtext.biochemics.dotDsl.Pow;
-import org.xtext.biochemics.dotDsl.VarRef;
-import org.xtext.biochemics.interpreter.Calculator;
+import org.reaction.dsl.interpreter.Calculator;
+import org.reaction.dsl.reactionLanguage.ArithmeticExpr;
+import org.reaction.dsl.reactionLanguage.Div;
+import org.reaction.dsl.reactionLanguage.FunctionCall;
+import org.reaction.dsl.reactionLanguage.Minus;
+import org.reaction.dsl.reactionLanguage.Multi;
+import org.reaction.dsl.reactionLanguage.NumberLiteral;
+import org.reaction.dsl.reactionLanguage.Plus;
+import org.reaction.dsl.reactionLanguage.Pow;
+import org.reaction.dsl.reactionLanguage.VarRef;
 
 public class ArithmeticExpressionConverter {
 
