@@ -27,8 +27,8 @@ public class ContainerEMF extends ContainerGenerator {
 
 	@Override
 	protected void setContainerURI(String path) {
-		containerURI = URI.createFileURI(path);
-
+//		containerURI = URI.createFileURI(path);
+		containerURI = URI.createPlatformResourceURI(path, true);
 	}
 
 	@Override
@@ -36,8 +36,9 @@ public class ContainerEMF extends ContainerGenerator {
 		Map<Object, Object> saveOptions = ((XMIResource)containerRes).getDefaultSaveOptions();
 		saveOptions.put(XMIResource.OPTION_ENCODING,"UTF-8");
 		saveOptions.put(XMIResource.OPTION_USE_XMI_TYPE, Boolean.TRUE);
+		saveOptions.put(XMIResource.OPTION_SAVE_ONLY_IF_CHANGED, XMIResource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
 		saveOptions.put(XMIResource.OPTION_SAVE_TYPE_INFORMATION,Boolean.TRUE);
-//		saveOptions.put(XMIResource.OPTION_SCHEMA_LOCATION_IMPLEMENTATION, Boolean.TRUE);
+		saveOptions.put(XMIResource.OPTION_SCHEMA_LOCATION_IMPLEMENTATION, Boolean.TRUE);
 		
 		
 		((XMIResource)containerRes).save(saveOptions);
