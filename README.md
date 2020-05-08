@@ -19,8 +19,8 @@ As soon as you have a working eMoflon and SimSG setup follow these last instruct
 1. Checkout this repository (https://github.com/Echtzeitsysteme/Re.actionFramework) into the workspace containing eMoflon and SimSG. It is recommended to use the .psf-file for that
 2. Create the necessary language artifacts. To do so, find the `ReactionLanguage.xtext` in `org.reaction.dsl`, right-click it and choose `"Run as.." -> "Generate Xtext Artifacts"`.
 3. Create all necessary models by running the corresponding `.genmodel`-workflows. These include:
- * `org.reaction.intermediatemodel -> model -> IntermediateModel.genmodel`
- * `org.reaction.reactionmodel -> model -> ReactionModel.genmodel`
+    * `org.reaction.intermediatemodel -> model -> IntermediateModel.genmodel`
+    * `org.reaction.reactionmodel -> model -> ReactionModel.genmodel`
 Open all of them in the editor. There, right-click the top-level item and choose `Generate Model Code`. Do so for both of them.
 5. Done! You're ready to go!
 
