@@ -21,7 +21,7 @@ As soon as you have a working eMoflon and SimSG setup follow these last instruct
 3. Create all necessary models by running the corresponding `.genmodel`-workflows. These include:
     * `org.reaction.intermediatemodel -> model -> IntermediateModel.genmodel`
     * `org.reaction.reactionmodel -> model -> ReactionModel.genmodel`
-Open all of them in the editor. There, right-click the top-level item and choose `Generate Model Code`. Do so for both of them.
+    * Open both of them in the editor, right-click the top-level item and choose `Generate Model Code`
 5. Done! You're ready to go!
 
 ## How to Use
