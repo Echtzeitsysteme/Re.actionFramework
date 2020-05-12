@@ -19,7 +19,7 @@ If you don't already have a working setup of eMoflon it is recommended to start 
     * `org.reaction.intermediatemodel -> model -> IntermediateModel.genmodel`
     * `org.reaction.reactionmodel -> model -> ReactionModel.genmodel`
     * Open both of them in the editor, right-click the top-level item and choose `Generate Model Code`
-6. Done! You're ready to go!
+6. Done! You can now start a dynamic workspace supporting SimSG and Re.action by running any SimSG-project as Eclipse Application
 
 ### Creating and running your own models
 To create your own models in *Re.action* and run their corresponding simulation in SimSG, follow these steps:
@@ -47,7 +47,7 @@ This repository contains a working example model of the so-called *Goldbeter-Kos
     * `org.reaction.intermediatemodel -> model -> IntermediateModel.genmodel`
     * `org.reaction.reactionmodel -> model -> ReactionModel.genmodel`
     * Open both of them in the editor, right-click the top-level item and choose `Generate Model Code`
-6. Done! You're ready to go!
+6. Done! You can now start a dynamic workspace supporting SimSG and Re.action by running any SimSG-project as Eclipse Application
 
 ## Troubleshooting ##
 * If your .xtend-files seem somehow corrupted or strangely formatted, make sure to set the editor's textfile encoding to 'Other: UTF-8' in `Window->Preferences->General->Workspace`
