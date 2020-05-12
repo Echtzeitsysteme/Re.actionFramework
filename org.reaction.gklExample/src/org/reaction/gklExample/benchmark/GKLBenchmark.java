@@ -21,7 +21,7 @@ public class GKLBenchmark {
 		SimulationConfigurator config = api.getSimulationConfigurator();
 
 		// Set Model to use
-		config.setModel("GKLModel");
+		config.setModel("GKLModel"); // The name of your .react-file + "Model"
 		config.addObservableStatistic();
 
 		Simulation sim = config.createSimulation();
