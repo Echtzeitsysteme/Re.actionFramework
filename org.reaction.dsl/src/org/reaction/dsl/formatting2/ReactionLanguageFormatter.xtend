@@ -62,7 +62,7 @@ class ReactionLanguageFormatter extends AbstractFormatter2 {
 		for (ComplexElement cElem : complex.elements) {
 			cElem.format
 		}
-		complex.regionFor.keyword(complexAccess.rightCurlyBracketKeyword_4).append[newLine]
+		complex.regionFor.keyword(complexAccess.rightCurlyBracketKeyword_5).append[newLine]
 	}
 
 	def dispatch void format(Signature sig, extension IFormattableDocument document) {

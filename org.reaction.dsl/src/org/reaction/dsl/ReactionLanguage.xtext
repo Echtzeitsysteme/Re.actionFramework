@@ -26,6 +26,7 @@ SiteState:
 Complex:
 	'complex' signature=Signature '{'
 	(elements+=ComplexElement)*
+	(NEWLINE)?
 	'}';
 
 ComplexElement:
@@ -144,32 +145,6 @@ PrimaryExpr returns ArithmeticExpr:
 
 enum MathFunc:
 	SQRT='sqrt' | ABS='abs';
-
-//	ArithmeticType:
-//	UNSIGNED_INT | SIGNED_INT | UNSIGNED_DOUBLE | SIGNED_DOUBLE | UNSIGNED_SCIENTIFIC_DOUBLE | SIGNED_SCIENTIFIC_DOUBLE
-//;
-//terminal UNSIGNED_INT returns ecore::EInt:
-//	('0'..'9')+
-//;
-//terminal SIGNED_INT returns ecore::EInt:
-//	'-' ('0'..'9')+
-//;
-//
-//terminal UNSIGNED_DOUBLE returns ecore::EDouble:
-//	('0'..'9')*'.'('0'..'9')+
-//;
-//
-//terminal SIGNED_DOUBLE returns ecore::EDouble:
-//	'-' ('0'..'9')*'.'('0'..'9')+
-//;
-//
-//terminal UNSIGNED_SCIENTIFIC_DOUBLE returns ecore::EDouble:
-//	('0'..'9')+('.'('0'..'9')+)?'E'('0'..'9')+
-//;
-//
-//terminal SIGNED_SCIENTIFIC_DOUBLE returns ecore::EDouble:
-//	'-'('0'..'9')+('.'('0'..'9')+)?'E'('0'..'9')+
-//;
 
 ArithmeticType returns ecore::EDouble:
 	UnsignedInt | SignedInt | UnsignedDouble | SignedDouble | UnsignedScientificDouble | SignedScientificDouble;
