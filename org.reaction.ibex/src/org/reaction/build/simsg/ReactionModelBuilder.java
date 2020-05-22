@@ -14,6 +14,7 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.common.util.WrappedException;
@@ -74,6 +75,22 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 			return;
 		}
 
+		IFolder metamodelFolder = project.getFolder(SimSGBuilder.DEFAULT_METAMODEL_LOCATION);
+		IFolder instancesFolder = project.getFolder(SimSGBuilder.DEFAULT_MODEL_LOCATION);
+		IFolder definitionsFolder = project.getFolder(SimSGBuilder.DEFAULT_DEFINITION_LOCATION);
+		
+		final IPath instancesPath = instancesFolder.getLocation();
+
+		final String metamodelLocation = metamodelFolder.getFullPath().toPortableString();
+		final String instancesLocation = instancesFolder.getFullPath().toPortableString();
+		final String definitionsLocation = definitionsFolder.getFullPath().toPortableString();
+
+		final String intermediateModelSuffix = "_intermediate.xmi";
+		final String containerSuffix = "_container.xmi";
+		final String ibexPatternsSuffix = "_ibexpatterns.xmi";
+		final String gtRulesSuffix = "_gtrules.xmi";
+		final String definitionSuffix = "_definition.xmi";
+
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
@@ -103,11 +120,9 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 			intermediateModels.put(editorModel, trafo.generateIntermediateModel());
 		});
 
-		IFolder folder = project.getFolder(SimSGBuilder.DEFAULT_METAMODEL_LOCATION);
-		IFolder instancesFolder = project.getFolder(SimSGBuilder.DEFAULT_MODEL_LOCATION);
+
 		intermediateModels.values().forEach(iModel -> {
-			saveResource(iModel,
-					folder.getFullPath().toPortableString() + "/" + iModel.getName() + "_intermediate.xmi");
+			saveResource(iModel, metamodelLocation + "/" + iModel.getName() + intermediateModelSuffix);
 		});
 
 		Map<ReactionModel, EPackage> metaModels = new HashMap<>();
@@ -115,10 +130,8 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 		intermediateModels.forEach((editorModel, intermediateModel) -> {
 			ContainerGenerator gen = new ContainerEMF(intermediateModel);
 			try {
-				gen.doGenerate(
-						instancesFolder.getFullPath().toPortableString() + "/" + intermediateModel.getName()
-								+ "_container.xmi",
-						folder.getFullPath().toPortableString() + "/" + intermediateModel.getName() + ".ecore");
+				gen.doGenerate(instancesLocation + "/" + intermediateModel.getName() + containerSuffix,
+						metamodelLocation + "/" + intermediateModel.getName() + ".ecore");
 				metaModels.put(editorModel, gen.getMetamodel());
 				org.eclipse.emf.ecore.EPackage.Registry reg = EPackage.Registry.INSTANCE;
 				reg.put(gen.getMetamodel().getNsURI(), gen.getMetamodel());
@@ -133,19 +146,16 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 		intermediateModels.forEach((editorModel, intermediateModel) -> {
 			IBeXCreator creator = new IBeXCreator(intermediateModel, metaModels.get(editorModel));
 			ibexPatterns.put(editorModel, creator.getIBeXPatternSet());
-			creator.savePatternSet(
-					folder.getFullPath().toPortableString() + "/" + intermediateModel.getName() + "_ibexpatterns.xmi");
+			creator.savePatternSet(metamodelLocation + "/" + intermediateModel.getName() + ibexPatternsSuffix);
 		});
 
 		Map<ReactionModel, GTRuleSet> gtRules = new HashMap<>();
 		intermediateModels.forEach((editorModel, intermediateModel) -> {
 			GTCreator creator = new GTCreator(ibexPatterns.get(editorModel));
 			gtRules.put(editorModel, creator.getGTRuleSet());
-			creator.saveRuleSet(
-					folder.getFullPath().toPortableString() + "/" + intermediateModel.getName() + "_gtrules.xmi");
+			creator.saveRuleSet(metamodelLocation + "/" + intermediateModel.getName() + gtRulesSuffix);
 		});
 
-		IFolder definitionsFolder = project.getFolder(SimSGBuilder.DEFAULT_DEFINITION_LOCATION);
 		Map<ReactionModel, SimDefinition> definitions = new HashMap<>();
 		metaModels.forEach((editorModel, metamodel) -> {
 			GTRuleSet gtRulesSet = gtRules.get(editorModel);
@@ -156,12 +166,11 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 			gen.addMetaModel(metamodel);
 			gen.setGtRules(gtRulesSet);
 			gen.setIBeXPatterns(ibexPatternSet);
-			gen.setModelURI(instancesFolder.getLocation() + "/" + intermediateModel.getName() + "_container.xmi");
+			gen.setModelURI(instancesPath + "/" + intermediateModel.getName() + containerSuffix);
 //			gen.setModelURI(containerModels.get(editorModel).eResource().getURI().);
 
 			addComponentsToDefinition(gen.getDefinition(), gtRulesSet, ibexPatternSet, intermediateModel);
-			gen.saveDefinition(definitionsFolder.getFullPath().toPortableString() + "/" + intermediateModel.getName()
-					+ "_definition.xmi");
+			gen.saveDefinition(definitionsLocation + "/" + intermediateModel.getName() + definitionSuffix);
 			definitions.put(editorModel, gen.getDefinition());
 		});
 
@@ -231,6 +240,8 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 	public static void addComponentsToDefinition(SimDefinition definition, GTRuleSet rules, IBeXPatternSet patterns,
 			IntermediateModelContainer intermediateModel) {
 
+		final String obsPrefix = "obs_";
+
 		intermediateModel.getComponents().stream().filter(component -> (component instanceof IntermRule))
 				.map(rule -> (IntermRule) rule).forEach(rule -> {
 					addRuleRateAnnotation(definition, rules, rule.getName(), rule.getRate());
@@ -238,7 +249,7 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 
 		intermediateModel.getComponents().stream().filter(component -> (component instanceof IntermObservable))
 				.map(obs -> (IntermObservable) obs).forEach(obs -> {
-					addPatternObservation(definition, "obs_" + obs.getName(), patterns);
+					addPatternObservation(definition, obsPrefix + obs.getName(), patterns);
 				});
 
 		intermediateModel.getComponents().stream().filter(component -> (component instanceof IntermCommand))
