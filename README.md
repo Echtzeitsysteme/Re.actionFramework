@@ -3,7 +3,7 @@ This repository provides the *Re.action* language including the necessary framew
 
 ## Requirements
 * Java SE 8 or higher
- * Eclipse Modeling Tools (do NOT get the latest version but make sure to use [version 2019-09R](https://www.eclipse.org/downloads/packages/release/2019-09/r/eclipse-modeling-tools) instead)
+ * Eclipse Modeling Tools (do NOT get the latest version but make sure to use [version 2019-12R](https://www.eclipse.org/downloads/packages/release/2019-12/r/eclipse-modeling-tools) instead)
 * Working [eMoflon](https://github.com/eMoflon/emoflon-ibex) setup
 * [SimSG](https://github.com/Echtzeitsysteme/SimSG)
 
@@ -39,7 +39,7 @@ This repository contains a working example model of the so-called *Goldbeter-Kos
 5. Now you are able to run e.g. `GKLBenchmark` in `org.reaction.gklExample.benchmark`. You can choose between the Pattern Matching Engines *HiPE* and *Democles* by (un-)commenting the corresponding lines in the `GKLBenchmark`-file.
 
 ## How to Develop
-1. Install eMoflon as instructed [here](https://github.com/eMoflon/emoflon-ibex#how-to-develop) in the "How to Develop"-section (Do not get the latest version of the Eclipse modeling tools but version 2019-09R as given in the [requirements section](https://github.com/Echtzeitsysteme/Re.actionFramework#requirements)!) 
+1. Install eMoflon as instructed [here](https://github.com/eMoflon/emoflon-ibex#how-to-develop) in the "How to Develop"-section (Do not get the latest version of the Eclipse modeling tools but version 2019-12R as given in the [requirements section](https://github.com/Echtzeitsysteme/Re.actionFramework#requirements)!) 
 2. Install SimSG according to [this repository](https://github.com/Echtzeitsysteme/SimSG). Ignore all errors until you have completed each and every of the following steps. If after finishing every step errors still persist, consult the [Troubleshooting-Section](https://github.com/Echtzeitsysteme/Re.actionFramework#troubleshooting).
 3. Checkout this repository (https://github.com/Echtzeitsysteme/Re.actionFramework) into the workspace containing eMoflon and SimSG. It is recommended to use the .psf-file for that
 4. Create the necessary language artifacts. To do so, find the `ReactionLanguage.xtext` in `org.reaction.dsl`, right-click it and choose `"Run as.." -> "Generate Xtext Artifacts"`.
