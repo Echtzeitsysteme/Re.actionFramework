@@ -11,7 +11,7 @@ If you don't already have a working setup of eMoflon it is recommended to start 
  
 ## How to Use
 
-1. Install eMoflon as provided [here](https://github.com/eMoflon/emoflon-ibex#how-to-install) in the "How to Install"-section (Do not get the latest version of the Eclipse modeling tools but version 2019-09R as given in the [requirements section](https://github.com/Echtzeitsysteme/Re.actionFramework#requirements)!)
+1. Install eMoflon as provided [here](https://github.com/eMoflon/emoflon-ibex#how-to-install) in the "How to Install"-section (Do not get the latest version of the Eclipse modeling tools but version 2019-12R as given in the [requirements section](https://github.com/Echtzeitsysteme/Re.actionFramework#requirements)!)
 2. Install SimSG as provided [here](https://github.com/Echtzeitsysteme/SimSG)
 3. Checkout this repository (https://github.com/Echtzeitsysteme/Re.actionFramework) into the workspace containing SimSG. It is recommended to use the .psf-file for that
 4. Create the necessary language artifacts. To do so, find the `ReactionLanguage.xtext` in `org.reaction.dsl`, right-click it and choose `"Run as.." -> "Generate Xtext Artifacts"`.
