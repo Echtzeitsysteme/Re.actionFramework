@@ -7,7 +7,7 @@ This repository provides the *Re.action* language including the necessary framew
 * Working [eMoflon](https://github.com/eMoflon/emoflon-ibex) setup
 * [SimSG](https://github.com/Echtzeitsysteme/SimSG)
 
-If you don't already have a working setup of eMoflon it is recommended to start with a fresh and clean install of eclipse as provided by the [Eclipse Modeling Tools](https://www.eclipse.org/downloads/packages/release/2019-09/r/eclipse-modeling-tools).
+If you don't already have a working setup of eMoflon it is recommended to start with a fresh and clean install of eclipse as provided by the [Eclipse Modeling Tools](https://www.eclipse.org/downloads/packages/release/2019-12/r/eclipse-modeling-tools).
  
 ## How to Use
 
