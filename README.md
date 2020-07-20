@@ -32,7 +32,7 @@ To create your own models in *Re.action* and run their corresponding simulation 
 Any files with the `.react`-extension should be recognized as such by Xtext. Please be aware that maybe not all invalid language components or expressions throw an error or warning message yet. If you encounter any of these, feel free to communicate them via the 'Issues'-section.
 
 ### Running example
-This [Re.action test repository](https://github.com/Echtzeitsysteme/Re.actionFramework-tests) contains a working example model of the so-called *Goldbeter-Koshland-Loop (GKL)*. You can find it in the `org.reaction.gklExample`-folder. To see it in action, follow the instructions on the repository's readme.
+The [Re.action test repository](https://github.com/Echtzeitsysteme/Re.actionFramework-tests) contains a working example model of the so-called *Goldbeter-Koshland-Loop (GKL)*. You can find it in the `org.reaction.gklExample`-folder. To see it in action, follow the instructions on the repository's readme.
 
 ## How to Develop
 1. Install eMoflon as instructed [here](https://github.com/eMoflon/emoflon-ibex#how-to-develop) in the "How to Develop"-section (Do not get the latest version of the Eclipse modeling tools but version 2019-12R as given in the [requirements section](https://github.com/Echtzeitsysteme/Re.actionFramework#requirements)!) 
