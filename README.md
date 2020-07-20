@@ -32,11 +32,7 @@ To create your own models in *Re.action* and run their corresponding simulation 
 Any files with the `.react`-extension should be recognized as such by Xtext. Please be aware that maybe not all invalid language components or expressions throw an error or warning message yet. If you encounter any of these, feel free to communicate them via the 'Issues'-section.
 
 ### Running example
-This repository contains a working example model of the so-called *Goldbeter-Koshland-Loop (GKL)*. You can find it in the `org.reaction.gklExample`-folder. To see it in action, follow these instructions in your dynamic workspace:
-1. Import the `org.reaction.gklExample`-folder 
-2. Build it by right-clicking and choosing `SimSG -> Build selected projects fully` or using the corresponding icon in the toolbar while in the SimSG perspective
-4. If you still get compilation errors, try building the project as normal Java project now
-5. Now you are able to run e.g. `GKLBenchmark` in `org.reaction.gklExample.benchmark`. You can choose between the Pattern Matching Engines *HiPE* and *Democles* by (un-)commenting the corresponding lines in the `GKLBenchmark`-file.
+This [Re.action test repository](https://github.com/Echtzeitsysteme/Re.actionFramework-tests) contains a working example model of the so-called *Goldbeter-Koshland-Loop (GKL)*. You can find it in the `org.reaction.gklExample`-folder. To see it in action, follow the instructions on the repository's readme.
 
 ## How to Develop
 1. Install eMoflon as instructed [here](https://github.com/eMoflon/emoflon-ibex#how-to-develop) in the "How to Develop"-section (Do not get the latest version of the Eclipse modeling tools but version 2019-12R as given in the [requirements section](https://github.com/Echtzeitsysteme/Re.actionFramework#requirements)!) 
