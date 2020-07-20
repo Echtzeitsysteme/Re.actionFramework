@@ -47,7 +47,7 @@ public class GTCreator {
 		for (IBeXContext context : ibexPatterns.getContextPatterns()) {
 			IBeXContextPattern contextPattern = (IBeXContextPattern) context;
 			
-			if(contextPattern.getName().matches(".*Bound")) {
+			if(contextPattern.getName().matches(".*_BoundGeneratedForCondition")) {
 				continue;
 			}
 			
