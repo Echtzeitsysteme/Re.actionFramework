@@ -1,5 +1,20 @@
 # Re.actionFramework
-This repository provides the *Re.action* language including the necessary framework for integrating and using it with the Tool [SimSG](https://github.com/Echtzeitsysteme/SimSG).
+### Re.action a domain specific language for specifying rule-based simulations of biochemical processes
+Modern biochemistry opens new perspectives in understanding and finding remedies for diseases like
+cancer, diabetes or Alzheimer’s, where regulatory mechanisms of cells in an organism’s metabolism
+fail. This is made possible due to broad and highly specialized knowledge in biochemical contexts,
+obtained by computer-based simulations of diverse cell and enzyme interactions.
+This framework relies the tool [SimSG]https://github.com/Echtzeitsysteme/SimSG which performs the simulation of such interactions via the rule-based method. Herein, the
+behavior of complex biochemical process in a system is split into several reoccuring patterns, to be
+completely modeled and simulated by the use of pattern matching tools and the according model
+transformations.
+Already existent and well-established specifications such as Kappa or the BioNetGenLanguage provide
+extensive possibilities to model such systems and simulations employing domain-specific languages.
+Still, these have issues in terms of their usability and are to an extend unintuitive to use.
+In regard to those parameters the specification language Re.action, modeling rule-based simulations, and a corresponding
+framework for integrating it into the already existent simulation tool SimSG was developed and implemented.
+
+### This repository provides the *Re.action* language including the necessary framework for integrating and using it with the Tool [SimSG](https://github.com/Echtzeitsysteme/SimSG).
 
 ## Requirements
 * Java SE 8 or higher
