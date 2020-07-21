@@ -4,14 +4,14 @@ Modern biochemistry opens new perspectives in understanding and finding remedies
 cancer, diabetes or Alzheimer’s, where regulatory mechanisms of cells in an organism’s metabolism
 fail. This is made possible due to broad and highly specialized knowledge in biochemical contexts,
 obtained by computer-based simulations of diverse cell and enzyme interactions.
-This framework relies the tool [SimSG]https://github.com/Echtzeitsysteme/SimSG which performs the simulation of such interactions via the rule-based method. Herein, the
-behavior of complex biochemical process in a system is split into several reoccuring patterns, to be
+For example, the general-purpose tool [SimSG]https://github.com/Echtzeitsysteme/SimSG can perform the simulation of such interactions via the rule-based method. 
+Herein, the behavior of complex biochemical process in a system is split into several reoccuring patterns, to be
 completely modeled and simulated by the use of pattern matching tools and the according model
 transformations.
 Already existent and well-established specifications such as Kappa or the BioNetGenLanguage provide
 extensive possibilities to model such systems and simulations employing domain-specific languages.
-Still, these have issues in terms of their usability and are to an extend unintuitive to use.
-In regard to those parameters the specification language Re.action, modeling rule-based simulations, and a corresponding
+Still, these have issues in terms of their usability and are, to an extend, unintuitive to use.
+In regard to those parameters the new specification language Re.action and a corresponding
 framework for integrating it into the already existent simulation tool SimSG was developed and implemented.
 
 ### This repository provides the *Re.action* language including the necessary framework for integrating and using it with the Tool [SimSG](https://github.com/Echtzeitsysteme/SimSG).
@@ -63,5 +63,5 @@ The [Re.action test repository](https://github.com/Echtzeitsysteme/Re.actionFram
 ## Troubleshooting ##
 * If your .xtend-files seem somehow corrupted or strangely formatted, make sure to set the editor's textfile encoding to 'Other: UTF-8' in `Window->Preferences->General->Workspace`
 * In any case it could be sufficient to try checking for updates even though all requirements were just freshly installed
-* If some dependencies in the SimSG-project or elsewhere in your dynamic workspace could not be resolved, make sure that this older was not already in use by other dynamic workspaces instances of eclipse you somewhen used. If this is the case, delete the folder and restart the dynamic workspace, so all plugin- and metadata will be recreated with the correct configuration.
+* If some dependencies in the SimSG-project or elsewhere in your dynamic workspace could not be resolved, make sure that this folder was not already in use by other dynamic workspaces instances of eclipse you somewhen used. If this is the case, delete the folder and restart the dynamic workspace, so all plugin- and metadata will be recreated with the correct configuration.
 * If the build of any SimSG-projects fails, delete the project from your workspace, close the workspace and then reopen it. Open the project again and now try building once more. If this does not work immediately, try it several times. Usually it should work after doing it once
