@@ -43,7 +43,7 @@ To create your own models in *Re.action* and run their corresponding simulation 
 * Create a new `.react`-file in the src-folder and specify your model in there
 * While in the SimSG perspective, select your project and click on the "Build selected projects fully" button or right-click your project and choose `SimSG -> Build selected projects fully` (works in any perspective)
  * You may have to build the project normally again for all errors to disappear (`Project -> Build Project`)
-* You can now create any source files in the src-folder to work with your model and the corresponding simulation! If you want to know how to run a simulation, have a look at the [running example](https://github.com/Echtzeitsysteme/Re.actionFramework#running-example].
+* You can now create any source files in the src-folder to work with your model and the corresponding simulation! If you want to know how to run a simulation, have a look at the [running example](https://github.com/Echtzeitsysteme/Re.actionFramework#running-example).
 Any files with the `.react`-extension should be recognized as such by Xtext. Please be aware that maybe not all invalid language components or expressions throw an error or warning message yet. If you encounter any of these, feel free to communicate them via the 'Issues'-section.
 
 ### Running example
