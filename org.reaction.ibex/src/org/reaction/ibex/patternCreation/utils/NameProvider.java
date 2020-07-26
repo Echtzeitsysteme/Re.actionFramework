@@ -128,14 +128,14 @@ public class NameProvider {
 	 * @returns the valid and hopefully unique name for a bound pattern
 	 */
 	public static String getBoundSitePatternName(IntermAgentInstance ai, IntermSiteInstance si) {
-		return ai.getInstanceOf().getName() + "_" + si.getInstanceOf().getName() + "_BoundGeneratedForCondition";
+		return ai.getInstanceOf().getName() + "_" + si.getInstanceOf().getName() + "Bound";
 	}
 
 	/**
 	 * @returns the valid and hopefully unique name for a bound pattern
 	 */
 	public static String getBoundSitePatternName(EClass agentClass, EReference siteReference) {
-		return siteReference.getName()+"_BoundGeneratedForCondition";
+		return siteReference.getName()+"Bound";
 	}
 
 	/**
