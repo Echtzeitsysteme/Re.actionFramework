@@ -4,7 +4,7 @@ Modern biochemistry opens new perspectives in understanding and finding remedies
 cancer, diabetes or Alzheimer’s, where regulatory mechanisms of cells in an organism’s metabolism
 fail. This is made possible due to broad and highly specialized knowledge in biochemical contexts,
 obtained by computer-based simulations of diverse cell and enzyme interactions.
-For example, the general-purpose tool [SimSG]https://github.com/Echtzeitsysteme/SimSG can perform the simulation of such interactions via the rule-based method. 
+For example, the general-purpose tool [SimSG](https://github.com/Echtzeitsysteme/SimSG) can perform the simulation of such interactions via the rule-based method. 
 Herein, the behavior of complex biochemical process in a system is split into several reoccuring patterns, to be
 completely modeled and simulated by the use of pattern matching tools and the according model
 transformations.
