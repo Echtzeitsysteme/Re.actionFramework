@@ -55,7 +55,12 @@ public class NameProvider {
 	public static String getComponentNameOfBoundPattern(IBeXContextPattern contextPattern, String component) {
 		String boundPatternName = contextPattern.getName();
 		// Cut "BoundSrc"/"BoundTrg" from end:
-		boundPatternName = boundPatternName.substring(0, boundPatternName.length() - 5);
+		if(boundPatternName.endsWith("BoundGeneratedForCondition")) {
+			boundPatternName = boundPatternName.substring(0, boundPatternName.length() - 27);		
+		}
+		else {
+			boundPatternName = boundPatternName.substring(0, boundPatternName.length() - 5);			
+		}
 		return getComponentNameOfBoundPattern(boundPatternName, component);
 	}
 

@@ -160,8 +160,8 @@ public class ModelHelper {
 		List<IBeXContextPattern> boundPatterns = new LinkedList<>();
 
 		for (IBeXContext context : patternSet.getContextPatterns()) {
-			IBeXContextPattern contextPattern = (IBeXContextPattern) context;
-			if (!contextPattern.getName().endsWith("Bound")) {
+ 			IBeXContextPattern contextPattern = (IBeXContextPattern) context;
+			if (!contextPattern.getName().endsWith("Bound") && !contextPattern.getName().endsWith("BoundGeneratedForCondition")) {
 				continue;
 			}
 
