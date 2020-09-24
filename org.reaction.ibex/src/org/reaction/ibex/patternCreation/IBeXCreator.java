@@ -1,7 +1,9 @@
 package org.reaction.ibex.patternCreation;
 
+import IntermediateModel.IntermRule;
 import IntermediateModel.IntermediateModelContainer;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -9,11 +11,13 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.XMLResource;
-import org.eclipse.emf.ecore.xmi.impl.URIHandlerImpl;
-import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternSet;
-import org.reaction.ibex.patternCreation.utils.ChangeCreator;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContextPattern;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXEdge;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXModel;
+import org.reaction.ibex.patternCreation.utils.RuleCreator;
 import org.reaction.ibex.patternCreation.utils.ContextCreator;
 
 
@@ -23,10 +27,11 @@ public class IBeXCreator {
 
 	private EPackage metamodelPackage;
 
+	private Map<IntermRule, IBeXContextPattern> rule2pattern = new HashMap<>();
 	private ContextCreator contextCreator;
-	private ChangeCreator changeCreator;
+	private RuleCreator changeCreator;
 
-	private IBeXPatternSet ibexPatternSet;
+	private IBeXModel ibexModel;
 
 	public IBeXCreator(IntermediateModelContainer model, EPackage metamodelPackage) {
 		this.model = model;
@@ -35,64 +40,28 @@ public class IBeXCreator {
 	}
 
 	private void init() {
-		contextCreator = new ContextCreator(model, metamodelPackage);
-		ibexPatternSet = contextCreator.getIBeXPatternSet();
-		changeCreator = new ChangeCreator(model, metamodelPackage, ibexPatternSet);
-		ibexPatternSet = changeCreator.getIBeXPatternSet();
+		contextCreator = new ContextCreator(model, metamodelPackage, rule2pattern);
+		ibexModel = contextCreator.getIBeXModel();
+		changeCreator = new RuleCreator(model, metamodelPackage, ibexModel, rule2pattern);
+		ibexModel = changeCreator.getIBeXModel();
 	}
 
-	public IBeXPatternSet getIBeXPatternSet() {
-		return ibexPatternSet;
+	public IBeXModel getIBeXModel() {
+		return ibexModel;
 	}
 
 	public void savePatternSet(String ibexSaveLocation) {
 		ResourceSet resSet = new ResourceSetImpl();
 		Resource resource = resSet.createResource(URI.createFileURI(ibexSaveLocation));
-		resource.getContents().add(ibexPatternSet);
+		resource.getContents().add(ibexModel);
 		Map<Object, Object> options = ((XMLResource) resource).getDefaultSaveOptions();
 		options.put(XMIResource.OPTION_ENCODING, "UTF-8");
 		options.put(XMIResource.OPTION_SAVE_ONLY_IF_CHANGED, XMIResource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
-//		options.put(XMLResource.OPTION_URI_HANDLER, new URIHandlerImpl() {
-//			@Override
-//			public URI deresolve(final URI uri) {
-//				if (!uri.isPlatform()) {
-//					// DONT TOUCH----------------------------------------------
-//					String[] uriSegments = uri.segments();
-//					String uriString;
-//					final String MODEL_STRING = "model";
-//					int modelPos = -1;
-//
-//					// find "model"-segment
-//					for (int i = 0; i < uriSegments.length; i++) {
-//						if (uriSegments[i].equals(MODEL_STRING)) {
-//							modelPos = i;
-//							break;
-//						}
-//					}
-//
-//					// create platform uri
-//					StringBuilder sb = new StringBuilder("platform:/resource");
-//					for (int i = modelPos - 1; i < uriSegments.length; i++) {
-//						sb.append("/");
-//						sb.append(uriSegments[i]);
-//					}
-//
-//					sb.append("#");
-//					sb.append(uri.fragment());
-//					uriString = sb.toString();
-//
-//					return URI.createURI(uriString, true);
-//				} else {
-//					return uri;
-//				}
-//			}
-//		});
 		try {
 			resource.save(options);
 		} catch (IOException e) {
-			System.err.println("Error trying to save the ibex-patterns at " + ibexSaveLocation);
+			System.err.println("Error trying to save the ibex-patterns at " + ibexSaveLocation + "\n\tMessage: "+e.getMessage());
 			return;
 		}
-//		resource.unload();
 	}
 }

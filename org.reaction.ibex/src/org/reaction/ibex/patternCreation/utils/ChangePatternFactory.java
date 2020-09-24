@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EClassImpl;
 import org.emoflon.ibex.common.patterns.IBeXPatternFactory;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContextPattern;
 import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXCreatePattern;
 import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXDeletePattern;
 import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXEdge;
@@ -28,6 +29,7 @@ public class ChangePatternFactory {
 
 	private EPackage metamodelPackage;
 
+	private IBeXContextPattern context;
 	private IBeXCreatePattern createPattern;
 	private IBeXDeletePattern deletePattern;
 
@@ -76,8 +78,9 @@ public class ChangePatternFactory {
 		}
 	}
 
-	public void generateChangePatterns(ChangePatternTemplate template) {
+	public void generateChangePatterns(final ChangePatternTemplate template, final IBeXContextPattern context) {
 		this.template = template;
+		this.context = context;
 		changesMap = template.getChangesMap();
 		createdInstances = template.getCreatedInstances();
 		generateChangePatterns();
@@ -101,12 +104,23 @@ public class ChangePatternFactory {
 
 			// Create new node
 			IBeXNode newNode = getOrCreateNode(createPattern, ai);
-
+			// Check if this node exists in the context
+			IBeXNode contextNode = findNodeInContext(newNode);
+			if(contextNode != null && createPattern.getContextNodes().remove(newNode)) {
+				newNode = contextNode;
+				createPattern.getContextNodes().add(contextNode);
+			}
 			// Create state nodes
 			for (IntermSiteInstance si : ai.getSiteInstances()) {
 
 				// Create state as specified
 				IBeXNode stateNode = getOrCreateStateNode(createPattern, si);
+				// Check if this node exists in the context
+				IBeXNode stateContextNode = findNodeInContext(stateNode);
+				if(stateContextNode != null && createPattern.getContextNodes().remove(stateNode)) {
+					stateNode = stateContextNode;
+					createPattern.getContextNodes().add(stateContextNode);
+				}
 				if (stateNode != null) {
 					createEdge(newNode, stateNode, NameProvider.getEdgeTypeToStateKey(ai, si));
 				}
@@ -116,6 +130,32 @@ public class ChangePatternFactory {
 			// Connections of new agents
 			createBindingInformationForNewInstance(ai);
 		}
+	}
+	
+	private IBeXNode findNodeInContext(final IBeXNode queryNode) {
+		if(queryNode.getName() == null)
+			return null;
+		
+		IBeXNode n = context.getSignatureNodes().stream()
+				.filter(node -> node.getType().equals(queryNode.getType()))
+				.filter(node -> node.getName() != null)
+				.filter(node -> node.getName().equals(queryNode.getName())).findAny().orElse(null);
+		if(n != null)
+			return n;
+		
+		n = context.getLocalNodes().stream()
+				.filter(node -> node.getType().equals(queryNode.getType()))
+				.filter(node -> node.getName() != null)
+				.filter(node -> node.getName().equals(queryNode.getName())).findAny().orElse(null);
+		return n;
+	}
+	
+	private IBeXEdge findEdgeInContext(final IBeXEdge queryEdge) {
+		IBeXEdge n = context.getLocalEdges().stream()
+				.filter(edge -> edge.getType().equals(queryEdge.getType()))
+				.filter(edge -> edge.getSourceNode().equals(queryEdge.getSourceNode()))
+				.filter(edge -> edge.getTargetNode().equals(queryEdge.getTargetNode())).findAny().orElse(null);
+		return n;
 	}
 
 	/**
@@ -433,6 +473,12 @@ public class ChangePatternFactory {
 		IBeXNode newNode = IBeXPatternFactory.createNode(ai.getName(),
 				agentTypeRegistry.get(ai.getInstanceOf().getName()));
 		newNode.setName(ai.getName());
+		// check if this node already exists in context
+		IBeXNode contextNode = findNodeInContext(newNode);
+		if(contextNode != null) {
+			newNode = contextNode;
+		}
+		
 		if (ModelHelper.isInstanceInList(ai, createdInstances)) {
 			createPattern.getCreatedNodes().add(newNode);
 		} else {
@@ -453,6 +499,8 @@ public class ChangePatternFactory {
 		IBeXNode deletedNode = IBeXPatternFactory.createNode(ai.getName(),
 				agentTypeRegistry.get(ai.getInstanceOf().getName()));
 		deletedNode.setName(ai.getName());
+		deletedNode = findNodeInContext(deletedNode);
+		
 		if (changesMap.get(ai) != null) {
 			deletePattern.getContextNodes().add(deletedNode);
 			return deletedNode;
@@ -471,6 +519,16 @@ public class ChangePatternFactory {
 					IntermAgentInstance boundToParent = boundTo.getParent();
 
 					IBeXNode boundToNode = getOrCreateNode(deletePattern, boundToParent);
+					// Check if this node exists in the context
+					IBeXNode contextNode = findNodeInContext(boundToNode);
+					if(contextNode != null) {
+						boundToNode = contextNode;
+						if(deletePattern.getContextNodes().remove(contextNode))
+							deletePattern.getContextNodes().add(contextNode);
+						
+						if(deletePattern.getDeletedNodes().remove(contextNode))
+							deletePattern.getDeletedNodes().add(contextNode);
+					}
 					if (ModelHelper.getEdgeFromDeletePattern(deletePattern, deletedNode, boundToNode) != null) {
 						deleteEdge(deletedNode, boundToNode, NameProvider.getEdgeTypeKey(si, boundTo));
 					}
@@ -478,6 +536,16 @@ public class ChangePatternFactory {
 					// delete state
 					if (!ai.isLocal() && si.getState() != null) {
 						IBeXNode stateNode = getOrCreateStateNode(deletePattern, si);
+						// Check if this node exists in the context
+						IBeXNode stateContextNode = findNodeInContext(stateNode);
+						if(stateContextNode != null) {
+							stateNode = stateContextNode;
+							if(deletePattern.getContextNodes().remove(stateContextNode))
+								deletePattern.getContextNodes().add(stateContextNode);
+							
+							if(deletePattern.getDeletedNodes().remove(stateContextNode))
+								deletePattern.getDeletedNodes().add(stateContextNode);
+						}
 						deleteEdge(deletedNode, stateNode, NameProvider.getEdgeTypeToStateKey(ai, si));
 					}
 				}
@@ -496,6 +564,11 @@ public class ChangePatternFactory {
 	private IBeXNode deleteGenericNode(String instanceName) {
 		IBeXNode deletedNode = IBeXPatternFactory.createNode(instanceName, ReactionModelPackage.Literals.AGENT);
 		deletedNode.setName(instanceName);
+		//Check if node already exists in Context
+		IBeXNode contextNode = findNodeInContext(deletedNode);
+		if(contextNode != null)
+			deletedNode = contextNode;
+		
 		deletePattern.getDeletedNodes().add(deletedNode);
 		return deletedNode;
 	}
@@ -529,12 +602,20 @@ public class ChangePatternFactory {
 				if (!defaultState) {
 					stateNode = IBeXPatternFactory.createNode(stateNodeName,
 							stateTypeRegistry.get(NameProvider.getStateTypeKey(siteInState)));
+					stateNode.setName(stateNodeName);
+					//Check if node already exists in Context
+					IBeXNode contextNode = findNodeInContext(stateNode);
+					if(contextNode != null)
+						stateNode = contextNode;
 				} else {
 					stateNode = IBeXPatternFactory.createNode(stateNodeName,
 							stateTypeRegistry.get(NameProvider.getDefaultStateTypeKey(siteInState)));
-				}
-
-				stateNode.setName(stateNodeName);
+					stateNode.setName(stateNodeName);
+					//Check if node already exists in Context
+					IBeXNode contextNode = findNodeInContext(stateNode);
+					if(contextNode != null)
+						stateNode = contextNode;
+				}				
 				createPattern.getContextNodes().add(stateNode);
 			}
 			return stateNode;
@@ -543,11 +624,23 @@ public class ChangePatternFactory {
 			IBeXDeletePattern deletePattern = (IBeXDeletePattern) pattern;
 
 			IBeXNode stateNode = ModelHelper.getNodeFromDeletePattern(deletePattern, stateNodeName);
+			
 			if (stateNode == null) {
 				stateNode = IBeXPatternFactory.createNode(stateNodeName,
 						stateTypeRegistry.get(NameProvider.getStateTypeKey(siteInState)));
 				stateNode.setName(stateNodeName);
+				
+				//Check if node already exists in Context
+				IBeXNode contextNode2 = findNodeInContext(stateNode);
+				if(contextNode2 != null)
+					stateNode = contextNode2;
+				
 				deletePattern.getContextNodes().add(stateNode);
+			} else {
+				//Check if node already exists in Context
+				IBeXNode contextNode = findNodeInContext(stateNode);
+				if(contextNode != null)
+					stateNode = contextNode;
 			}
 			return stateNode;
 		}
@@ -571,6 +664,15 @@ public class ChangePatternFactory {
 		}
 
 		IBeXEdge edge = IBeXPatternFactory.createEdge(src, trg, edgeType);
+		//Check if this edge already exists in context -> who knows how this method is actually used ..
+		IBeXEdge contextEdge = findEdgeInContext(edge);
+		if(contextEdge != null) {
+			edge.getSourceNode().getOutgoingEdges().remove(edge);
+			edge.getTargetNode().getIncomingEdges().remove(edge);
+			edge = contextEdge;
+			
+		}
+		
 		createPattern.getCreatedEdges().add(edge);
 		return edge;
 	}
@@ -596,6 +698,14 @@ public class ChangePatternFactory {
 //		IBeXEdge oldEdge = ModelHelper.findEdgeInContextPattern(preConditionPattern, src, trg, edgeType);
 
 		IBeXEdge edge = IBeXPatternFactory.createEdge(src, trg, edgeType);
+		//Check if this edge already exists in context
+		IBeXEdge contextEdge = findEdgeInContext(edge);
+		if(contextEdge != null) {
+			edge.getSourceNode().getOutgoingEdges().remove(edge);
+			edge.getTargetNode().getIncomingEdges().remove(edge);
+			edge = contextEdge;
+		}
+		
 		deletePattern.getDeletedEdges().add(edge);
 		return edge;
 	}

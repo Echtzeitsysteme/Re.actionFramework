@@ -1,11 +1,9 @@
 package org.reaction.ibex.patternCreation;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -16,12 +14,9 @@ import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContext;
 import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContextPattern;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXModel;
 import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternModelPackage;
-import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternSet;
 
-import GTLanguage.GTLanguagePackage;
-import GTLanguage.GTRule;
-import GTLanguage.GTRuleSet;
 import IntermediateModel.IntermCommand;
 import IntermediateModel.IntermComponent;
 import IntermediateModel.IntermObservable;
@@ -34,10 +29,9 @@ public class SimDefCreator {
 	private IntermediateModelContainer model;
 	private String trgProjectLocation;
 
-	private URI gtRulesUri;
 	private URI ibexPatternsUri;
-	private Map<String, URI> metaModelUris = new HashMap<>();
 	private URI modelUri;
+	private IBeXModel ibexModel;
 
 	private List<IntermRule> modelRules;
 	private List<IntermObservable> modelObs;
@@ -55,8 +49,7 @@ public class SimDefCreator {
 	private void init() {
 		definition = factory.createSimDefinition();
 		definition.setName(model.getName() + "Model");
-		setGtRules(trgProjectLocation + "/model/gtRules.xmi");
-		setIBeXPatterns(trgProjectLocation + "/model/ibex-patterns.xmi");
+		setIBeXModel(trgProjectLocation + "/model/ibex-patterns.xmi");
 		setModelURI(trgProjectLocation + "/instances/simulation_instances/"+model.getName()+"Model.xmi");
 
 		setModelComponents();
@@ -65,10 +58,6 @@ public class SimDefCreator {
 	}
 
 	private void createDefinition() {
-
-		for (IntermRule rule : modelRules) {
-			addRuleRateAnnotation(rule.getName(), rule.getRate());
-		}
 
 		for (IntermObservable obs : modelObs) {
 			addPatternObservation("obs_"+obs.getName());
@@ -109,24 +98,14 @@ public class SimDefCreator {
 		}
 	}
 
-	public void setGtRules(String path) {
-		setGtRulesURI(path);
-		setGtRules();
+	public void setIBeXModel(String path) {
+		setIBeXModelURI(path);
+		setIBeXModel();
 	}
 
-	public void setGtRules(URI uri) {
-		setGtRulesURI(uri);
-		setGtRules();
-	}
-
-	public void setIBeXPatterns(String path) {
-		setIBeXPatternsURI(path);
-		setIBeXPatterns();
-	}
-
-	public void setIBeXPatterns(URI uri) {
-		setIBeXPatternsURI(uri);
-		setIBeXPatterns();
+	public void setIBeXModel(URI uri) {
+		setIBeXModelURI(uri);
+		setIBeXModel();
 	}
 
 	public void setModelURI(String path) {
@@ -139,44 +118,9 @@ public class SimDefCreator {
 		definition.setSimulationModelURI(uri.toString());
 	}
 
-	public void addMetaModel(String name, URI uri) throws IOException {
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
-		ResourceSet rs = new ResourceSetImpl();
-		rs.getResourceFactoryRegistry().getExtensionToFactoryMap().put("ecore", new EcoreResourceFactoryImpl());
-		Resource resource = rs.getResource(uri, true);
-
-		if (resource == null) {
-			throw new IOException("Could not load resource: " + uri.path());
-		}
-
-		if (resource.getContents().isEmpty()) {
-			throw new IOException("Could not load resource: " + uri.path());
-		}
-
-		definition.getMetaModels().put(name, uri.toPlatformString(true));
-	}
-
-	public void addRuleRateAnnotation(String ruleName, double rate) {
-		GTRule rule = null;
-		for (GTRule r : definition.getGtRuleSet().getRules()) {
-			if (r.getName().equals(ruleName)) {
-				rule = r;
-				break;
-			}
-		}
-		if (rule == null) {
-			System.err.println("Rule with name: <" + ruleName + "> not found!");
-			return;
-		}
-		StochasticRate annotation = factory.createStochasticRate();
-		annotation.setGTRule(rule);
-		annotation.setRate(rate);
-		definition.getRuleAnnotations().add(annotation);
-	}
-
 	public void addPatternObservation(String patternName) {
 		IBeXContextPattern pattern = null;
-		for (IBeXContext p : definition.getIbexPatternSet().getContextPatterns()) {
+		for (IBeXContext p : ibexModel.getPatternSet().getContextPatterns()) {
 			if (p.getName().equals(patternName)) {
 				pattern = (IBeXContextPattern) p;
 				break;
@@ -206,7 +150,7 @@ public class SimDefCreator {
 
 	public void addTerminationConditionPattern(String patternName, int threshold) {
 		IBeXContextPattern pattern = null;
-		for (IBeXContext p : definition.getIbexPatternSet().getContextPatterns()) {
+		for (IBeXContext p : ibexModel.getPatternSet().getContextPatterns()) {
 			if (p.getName().equals(patternName)) {
 				pattern = (IBeXContextPattern) p;
 				break;
@@ -259,59 +203,32 @@ public class SimDefCreator {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Simulation-Definition name: " + definition.getName());
 		sb.append("Contained URIs: \n");
-		sb.append("GtRules-URI: " + gtRulesUri + "\n");
-		sb.append("IBeXPatterns-URI: " + ibexPatternsUri + "\n");
+		sb.append("IBeXModel-URI: " + ibexPatternsUri + "\n");
 		sb.append("SimulationModel-URI: " + modelUri + "\n");
-		for (Entry<String, URI> metamodel : metaModelUris.entrySet()) {
-			sb.append("SimulationMetaModel: " + metamodel.getKey() + ", " + metamodel.getValue() + "\n");
-		}
 		return sb.toString();
 	}
 
 	// private helper methods
-
-	private void setGtRulesURI(String path) {
+	private void setIBeXModelURI(String path) {
 		URI fileUri = URI.createFileURI(path);
-		setGtRulesURI(fileUri);
+		setIBeXModelURI(fileUri);
 	}
 
-	private void setGtRulesURI(URI uri) {
-		gtRulesUri = uri;
-		definition.setGtRulesURI(uri.toString());
-	}
-
-	private void setIBeXPatternsURI(String path) {
-		URI fileUri = URI.createFileURI(path);
-		setIBeXPatternsURI(fileUri);
-	}
-
-	private void setIBeXPatternsURI(URI uri) {
+	private void setIBeXModelURI(URI uri) {
 		ibexPatternsUri = uri;
-		definition.setIbexPatternsURI(uri.toString());
+		definition.setIbexModelURI(uri.toString());
 	}
 
-	private void setGtRules() {
-		GTLanguagePackage.eINSTANCE.eClass();
-		GTRuleSet rules = null;
-		try {
-			Resource rs = loadResource(gtRulesUri);
-			rules = (GTRuleSet) rs.getContents().get(0);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		definition.setGtRuleSet(rules);
-	}
-
-	private void setIBeXPatterns() {
+	private void setIBeXModel() {
 		IBeXPatternModelPackage.eINSTANCE.eClass();
-		IBeXPatternSet patterns = null;
+		IBeXModel patterns = null;
 		try {
 			Resource rs = loadResource(ibexPatternsUri);
-			patterns = (IBeXPatternSet) rs.getContents().get(0);
+			patterns = (IBeXModel) rs.getContents().get(0);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		definition.setIbexPatternSet(patterns);
+		this.ibexModel = patterns;
 	}
 
 	public static Resource loadResource(URI uri) throws Exception {
