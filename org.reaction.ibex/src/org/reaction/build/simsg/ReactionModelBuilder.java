@@ -29,11 +29,10 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.xtext.EcoreUtil2;
 import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContext;
 import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContextPattern;
-import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXPatternSet;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXModel;
 import org.moflon.core.utilities.LogUtils;
 import org.reaction.dsl.ReactionLanguageStandaloneSetup;
 import org.reaction.dsl.reactionLanguage.ReactionModel;
-import org.reaction.ibex.patternCreation.GTCreator;
 import org.reaction.ibex.patternCreation.IBeXCreator;
 import org.reaction.intermTrafo.transformation.IntermTransformation;
 import org.reaction.reactionmodel.generator.ContainerEMF;
@@ -42,11 +41,8 @@ import org.simsg.simulationdefinition.utils.SimulationDefinitionGenerator;
 import org.simsg.ui.build.ModelBuilderExtension;
 import org.simsg.ui.build.SimSGBuilder;
 
-import GTLanguage.GTRule;
-import GTLanguage.GTRuleSet;
 import IntermediateModel.IntermCommand;
 import IntermediateModel.IntermObservable;
-import IntermediateModel.IntermRule;
 import IntermediateModel.IntermediateModelContainer;
 import ReactionModel.ReactionContainer;
 import SimulationDefinition.PatternObservation;
@@ -54,7 +50,6 @@ import SimulationDefinition.PatternTerminationCondition;
 import SimulationDefinition.SimDefinition;
 import SimulationDefinition.SimpleTerminationCondition;
 import SimulationDefinition.SimulationDefinitionFactory;
-import SimulationDefinition.StochasticRate;
 
 public class ReactionModelBuilder implements ModelBuilderExtension {
 
@@ -84,11 +79,13 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 		final String metamodelLocation = metamodelFolder.getFullPath().toPortableString();
 		final String instancesLocation = instancesFolder.getFullPath().toPortableString();
 		final String definitionsLocation = definitionsFolder.getFullPath().toPortableString();
+		
+		final String metamodelProjectRelative = metamodelFolder.getProjectRelativePath().toPortableString();
+		final String instancesProjectRelative = instancesFolder.getProjectRelativePath().toPortableString();
 
 		final String intermediateModelSuffix = "_intermediate.xmi";
 		final String containerSuffix = "_container.xmi";
 		final String ibexPatternsSuffix = "_ibexpatterns.xmi";
-		final String gtRulesSuffix = "_gtrules.xmi";
 		final String definitionSuffix = "_definition.xmi";
 
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
@@ -142,34 +139,23 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 			}
 		});
 
-		Map<ReactionModel, IBeXPatternSet> ibexPatterns = new HashMap<>();
+		Map<ReactionModel, IBeXModel> ibexModels = new HashMap<>();
 		intermediateModels.forEach((editorModel, intermediateModel) -> {
 			IBeXCreator creator = new IBeXCreator(intermediateModel, metaModels.get(editorModel));
-			ibexPatterns.put(editorModel, creator.getIBeXPatternSet());
+			ibexModels.put(editorModel, creator.getIBeXModel());
 			creator.savePatternSet(metamodelLocation + "/" + intermediateModel.getName() + ibexPatternsSuffix);
-		});
-
-		Map<ReactionModel, GTRuleSet> gtRules = new HashMap<>();
-		intermediateModels.forEach((editorModel, intermediateModel) -> {
-			GTCreator creator = new GTCreator(ibexPatterns.get(editorModel));
-			gtRules.put(editorModel, creator.getGTRuleSet());
-			creator.saveRuleSet(metamodelLocation + "/" + intermediateModel.getName() + gtRulesSuffix);
 		});
 
 		Map<ReactionModel, SimDefinition> definitions = new HashMap<>();
 		metaModels.forEach((editorModel, metamodel) -> {
-			GTRuleSet gtRulesSet = gtRules.get(editorModel);
-			IBeXPatternSet ibexPatternSet = ibexPatterns.get(editorModel);
+			IBeXModel ibexModel = ibexModels.get(editorModel);
 			IntermediateModelContainer intermediateModel = intermediateModels.get(editorModel);
 
 			SimulationDefinitionGenerator gen = new SimulationDefinitionGenerator(metamodel.getName());
-			gen.addMetaModel(metamodel);
-			gen.setGtRules(gtRulesSet);
-			gen.setIBeXPatterns(ibexPatternSet);
-			gen.setModelURI(instancesPath + "/" + intermediateModel.getName() + containerSuffix);
-//			gen.setModelURI(containerModels.get(editorModel).eResource().getURI().);
+			gen.setIBeXModel(ibexModel, metamodelProjectRelative + "/" + intermediateModel.getName() + ibexPatternsSuffix);
+			gen.setModelURI(instancesProjectRelative + "/" + intermediateModel.getName() + containerSuffix);
 
-			addComponentsToDefinition(gen.getDefinition(), gtRulesSet, ibexPatternSet, intermediateModel);
+			addComponentsToDefinition(gen.getDefinition(), ibexModel, intermediateModel);
 			gen.saveDefinition(definitionsLocation + "/" + intermediateModel.getName() + definitionSuffix);
 			definitions.put(editorModel, gen.getDefinition());
 		});
@@ -177,8 +163,7 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 		// cleanup
 		intermediateModels.values().stream().filter(x -> x.eResource() != null).forEach(x -> x.eResource().unload());
 		metaModels.values().stream().filter(x -> x.eResource() != null).forEach(x -> x.eResource().unload());
-		ibexPatterns.values().stream().filter(x -> x.eResource() != null).forEach(x -> x.eResource().unload());
-		gtRules.values().stream().filter(x -> x.eResource() != null).forEach(x -> x.eResource().unload());
+		ibexModels.values().stream().filter(x -> x.eResource() != null).forEach(x -> x.eResource().unload());
 		definitions.values().stream().filter(x -> x.eResource() != null).forEach(x -> x.eResource().unload());
 		containerModels.values().stream().filter(x -> x.eResource() != null).forEach(x -> x.eResource().unload());
 
@@ -237,19 +222,14 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 
 	}
 
-	public static void addComponentsToDefinition(SimDefinition definition, GTRuleSet rules, IBeXPatternSet patterns,
+	public static void addComponentsToDefinition(SimDefinition definition, IBeXModel ibexModel,
 			IntermediateModelContainer intermediateModel) {
 
 		final String obsPrefix = "obs_";
 
-		intermediateModel.getComponents().stream().filter(component -> (component instanceof IntermRule))
-				.map(rule -> (IntermRule) rule).forEach(rule -> {
-					addRuleRateAnnotation(definition, rules, rule.getName(), rule.getRate());
-				});
-
 		intermediateModel.getComponents().stream().filter(component -> (component instanceof IntermObservable))
 				.map(obs -> (IntermObservable) obs).forEach(obs -> {
-					addPatternObservation(definition, obsPrefix + obs.getName(), patterns);
+					addPatternObservation(definition, obsPrefix + obs.getName(), ibexModel);
 				});
 
 		intermediateModel.getComponents().stream().filter(component -> (component instanceof IntermCommand))
@@ -262,34 +242,16 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 						addTerminationConditionIterations(definition, (int) comm.getCnt());
 						break;
 					case MATCHES:
-						addTerminationConditionPattern(definition, comm.getPatternToMatch().getName(),
+						addTerminationConditionPattern(definition, ibexModel, comm.getPatternToMatch().getName(),
 								(int) comm.getCnt()); // TODO: deliver correct pattern name parameter
 					}
 				});
 
 	}
 
-	public static void addRuleRateAnnotation(SimDefinition definition, GTRuleSet rules, String ruleName, double rate) {
-		GTRule rule = null;
-		for (GTRule r : rules.getRules()) {
-			if (r.getName().equals(ruleName)) {
-				rule = r;
-				break;
-			}
-		}
-		if (rule == null) {
-			System.err.println("Rule with name: <" + ruleName + "> not found!");
-			return;
-		}
-		StochasticRate annotation = SimulationDefinitionFactory.eINSTANCE.createStochasticRate();
-		annotation.setGTRule(rule);
-		annotation.setRate(rate);
-		definition.getRuleAnnotations().add(annotation);
-	}
-
-	public static void addPatternObservation(SimDefinition definition, String patternName, IBeXPatternSet patterns) {
+	public static void addPatternObservation(SimDefinition definition, String patternName, IBeXModel ibexModel) {
 		IBeXContextPattern pattern = null;
-		for (IBeXContext p : patterns.getContextPatterns()) {
+		for (IBeXContext p : ibexModel.getPatternSet().getContextPatterns()) {
 			if (p.getName().equals(patternName)) {
 				pattern = (IBeXContextPattern) p;
 				break;
@@ -317,9 +279,9 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 		definition.getTerminationConditions().add(term);
 	}
 
-	public static void addTerminationConditionPattern(SimDefinition definition, String patternName, int threshold) {
+	public static void addTerminationConditionPattern(SimDefinition definition, IBeXModel ibexModel, String patternName, int threshold) {
 		IBeXContextPattern pattern = null;
-		for (IBeXContext p : definition.getIbexPatternSet().getContextPatterns()) {
+		for (IBeXContext p : ibexModel.getPatternSet().getContextPatterns()) {
 			if (p.getName().equals(patternName)) {
 				pattern = (IBeXContextPattern) p;
 				break;

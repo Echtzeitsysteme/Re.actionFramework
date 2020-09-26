@@ -2,7 +2,7 @@
 <?eclipse version="3.0"?>
 <plugin>
 	<extension point="org.eclipse.emf.ecore.generated_package">
-		<package 
+		<package
 			uri = "http://www.reaction.org/dsl/ReactionLanguage"
 			class = "org.reaction.dsl.reactionLanguage.ReactionLanguagePackage"
 			genModel = "model/generated/ReactionLanguage.genmodel" />

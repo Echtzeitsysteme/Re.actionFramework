@@ -23,20 +23,6 @@ import ReactionModel.ReactionModelPackage;
 
 public class ModelHelper {
 
-	/**
-	 * @return the first context pattern found in the contexts of the pattern set
-	 *         with matching name
-	 */
-	public static IBeXContextPattern getContextPatternByName(IBeXPatternSet patternSet, String name) {
-		for (IBeXContext context : patternSet.getContextPatterns()) {
-			IBeXContextPattern pattern = (IBeXContextPattern) context;
-			if (pattern.getName().equals(name)) {
-				return pattern;
-			}
-		}
-		return null;
-	}
-
 	public static boolean patternAlreadyInvokedWithNode(IBeXContextPattern contextPattern, IBeXContextPattern invokedPattern, IBeXNode node) {
 		List<IBeXPatternInvocation> invocations = contextPattern.getInvocations();
 		for(IBeXPatternInvocation invoc : invocations) {
