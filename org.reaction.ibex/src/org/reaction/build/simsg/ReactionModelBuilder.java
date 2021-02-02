@@ -1,10 +1,12 @@
 package org.reaction.build.simsg;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.apache.log4j.Logger;
@@ -27,8 +29,11 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.xtext.EcoreUtil2;
+import org.emoflon.ibex.gt.transformations.IBeXDisjointPatternFinder;
+import org.emoflon.ibex.gt.transformations.IBeXDisjointPatternTransformation;
 import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContext;
 import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXContextPattern;
+import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXDisjointContextPattern;
 import org.emoflon.ibex.patternmodel.IBeXPatternModel.IBeXModel;
 import org.moflon.core.utilities.LogUtils;
 import org.reaction.dsl.ReactionLanguageStandaloneSetup;
@@ -143,6 +148,34 @@ public class ReactionModelBuilder implements ModelBuilderExtension {
 		intermediateModels.forEach((editorModel, intermediateModel) -> {
 			IBeXCreator creator = new IBeXCreator(intermediateModel, metaModels.get(editorModel));
 			ibexModels.put(editorModel, creator.getIBeXModel());
+			// Optimize Disjoint Patterns
+			Map<IBeXContextPattern, IBeXDisjointPatternTransformation> pattern2Transformation = Collections.synchronizedMap(new HashMap<>());
+			ibexModels.get(editorModel).getPatternSet().getContextPatterns().parallelStream()
+					.filter(pattern -> (pattern instanceof IBeXContextPattern))
+					.map(pattern -> (IBeXContextPattern)pattern)
+					.forEach(pattern -> {
+						IBeXDisjointPatternFinder finder = new IBeXDisjointPatternFinder(pattern);
+						if(finder.isDisjoint()) {
+							pattern2Transformation.put(pattern, new IBeXDisjointPatternTransformation(pattern, finder.getSubgraphs()));
+						}
+					});
+			
+			Map<IBeXContextPattern, IBeXDisjointContextPattern> optimizedPatterns = Collections.synchronizedMap(new HashMap<>());
+			pattern2Transformation.keySet().parallelStream()
+				.forEach(pattern -> {
+					IBeXDisjointPatternTransformation trafo = pattern2Transformation.get(pattern);
+					optimizedPatterns.put(pattern, trafo.transformToContextPattern());
+				});
+			
+			optimizedPatterns.keySet().parallelStream()
+				.forEach(pattern -> {
+					IBeXDisjointContextPattern optPattern = optimizedPatterns.get(pattern);
+					optPattern.setNonOptimizedPattern(pattern);
+					IBeXDisjointPatternTransformation trafo = pattern2Transformation.get(pattern);
+					trafo.transformAttributeConstraint(optPattern);
+				});
+			
+			ibexModels.get(editorModel).getPatternSet().getContextPatterns().addAll(optimizedPatterns.values());
 			creator.savePatternSet(metamodelLocation + "/" + intermediateModel.getName() + ibexPatternsSuffix);
 		});
 
